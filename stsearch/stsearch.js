@@ -18,6 +18,7 @@ var load_index = function(index, func) {
   if (source in datas == false) {
     $.getJSON('./data/' + source, function(data) {
       datas[source] = data['records'];
+      datas[source].sort(function(a, b) { return b['timestamp'] - a['timestamp'] });
       nextindex++;
       if (index == 0) {
         $('#keyword').focus();
@@ -56,6 +57,7 @@ var search_in_index = function(keyword, index) {
     var record = records[i];
     if (pt.test(record['title'])) {
       $('#results').append('<p><a href="' + record['url'] + '" target="_blank">' + record['title'] + '</a> - ' + record['vendor'] + '</p>');
+      console.log(record);
     }
   }
 

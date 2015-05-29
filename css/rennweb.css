@@ -2,7 +2,8 @@ body {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  background: #fdf6e3;
+  /*background: #fdf6e3;*/
+  background: white;
   color: #657b83;
   font-family: sans-serif;
 }

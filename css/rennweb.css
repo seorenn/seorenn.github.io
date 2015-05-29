@@ -14,7 +14,7 @@ body {
 
 .frame-row {
   width: 100%;
-  border: red 1px dashed;
+  /*border: red 1px dashed;*/
 }
 
 .frame-row-header {
@@ -30,7 +30,7 @@ body {
 .content-frame {
   width: 100%;
   margin: 0 auto;
-  border: blue 1px dashed;
+  /*border: blue 1px dashed;*/
 }
 
 #header {

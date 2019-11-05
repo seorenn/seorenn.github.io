@@ -1,0 +1,134 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+    font-family: sans-serif;
+    word-break: keep-all;
+    line-height: 1.9rem;
+    font-size: 16px;
+}
+
+#content {
+    text-align: left;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#content header {
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+#content header h1 {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #e6e6e6;
+}
+
+#content header h2 {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #a4a4a4;
+}
+
+#content h2, h3, h4, h5, h6, p, blockquote {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#content h1, h2, h3, h4, h5, h6 {
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #e6e6e6;
+}
+
+#content h2 {
+    font-size: 1.8rem;
+    margin-top: 2.3rem;
+    margin-bottom: 2.3rem;
+}
+
+#content h3 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+#content h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#content p {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+    color: #a4a4a4;
+}
+
+#content a {
+    color: #df3a01;
+}
+
+#content pre {
+    max-width: 1024px;
+    background-color: #1c1c1c;
+    padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+    border-radius: 12px / 12px;
+    color: #e6e6e6;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+#content blockquote {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 1px solid #b40404;
+}
+
+#content blockquote p {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #bdbdbd;
+}
+
+#content ul, ol {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+    color: #a4a4a4;
+    font-size: 1rem;
+}
+
+#footer {
+    margin-top: 64px;
+    text-align: center;
+}
+
+#time {
+    line-height: 1.0rem;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    color: #6e6e6e;
+}
+
+#copyright {
+    line-height: 1.0rem;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    color: #6e6e6e;
+}

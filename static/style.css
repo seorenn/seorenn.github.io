@@ -35,6 +35,11 @@ body {
     color: #a4a4a4;
 }
 
+#content h2 a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #a4a4a4;
+}
+
 #content h2, h3, h4, h5, h6, p, blockquote {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -74,7 +79,8 @@ body {
     color: #a4a4a4;
 }
 
-#content a {
+#content a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
     color: #df3a01;
 }
 
@@ -86,6 +92,14 @@ body {
     color: #e6e6e6;
     font-size: 1rem;
     font-family: monospace;
+}
+
+#content code {
+    padding: 2px 4px 2px 4px;
+    font-family: monospace;
+    background: #1c1c1c;
+    color: #e6e6e6;
+    font-size: 0.9rem;
 }
 
 #content blockquote {
@@ -110,6 +124,20 @@ body {
     margin-bottom: 1.8rem;
     color: #a4a4a4;
     font-size: 1rem;
+}
+
+#content hr {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border: none;
+    border-top: 1px solid #333;
+}
+
+#content img {
+    width: 100%;
+    max-width: 100%;
 }
 
 #footer {

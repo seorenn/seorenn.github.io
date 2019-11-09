@@ -91,12 +91,12 @@ body {
     border-radius: 12px / 12px;
     color: #e6e6e6;
     font-size: 1rem;
-    font-family: monospace;
+    font-family: Menlo, Monaco, monospace;
 }
 
 #content code {
     padding: 2px 4px 2px 4px;
-    font-family: monospace;
+    font-family: Menlo, Monaco, monospace;
     background: #1c1c1c;
     color: #e6e6e6;
     font-size: 0.9rem;

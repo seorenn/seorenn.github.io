@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-08 Fri 16:15 -->
+<!-- 2019-11-08 Fri 19:42 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish 삽질기 - Seorenn</title>
@@ -93,7 +93,7 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장이다. E
 </pre>
 </div>
 <p>
-사실 마지막 os-rss 모듈은 RSS를 만들기 위한 것이 아니면 필요가 없는데 나중에
+사실 마지막 <code>ox-rss</code> 모듈은 RSS를 만들기 위한 것이 아니면 필요가 없는데 나중에
 필요할지도 몰라서 일단 넣어놨다.
 </p>
 
@@ -173,10 +173,6 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장이다. E
          <span style="color: #c678dd;">:html-head-include-default-style</span> nil
          <span style="color: #c678dd;">:html-head-include-scripts</span> nil
          <span style="color: #c678dd;">:htmlized-source</span> t
-         <span style="color: #c678dd;">:html-head</span> nil
-         <span style="color: #c678dd;">:html-head-extra</span> <span style="color: #98be65;">"&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"/static/style.css\"/&gt;"</span>
-         <span style="color: #c678dd;">:html-preamble</span> nil
-         <span style="color: #c678dd;">:html-postamble</span> nil
          )
         (<span style="color: #98be65;">"static"</span>
          <span style="color: #c678dd;">:base-directory</span> <span style="color: #98be65;">"~/org/static"</span>
@@ -193,6 +189,22 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장이다. E
         (<span style="color: #98be65;">"web"</span> <span style="color: #c678dd;">:components</span> (<span style="color: #98be65;">"doc"</span> <span style="color: #98be65;">"static"</span> <span style="color: #98be65;">"img"</span>))))
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-org883d7e4" class="outline-2">
+<h2 id="org883d7e4">Publish 해보기</h2>
+<div class="outline-text-2" id="text-org883d7e4">
+<p>
+아마도 별도의 단축키는 셋업되지 않았을 것 같으니 그냥 <code>org-publish-all</code> 함수를 쓰는게 속 편할지도
+모르겠다. 대충 <code>M-x org-publish-all</code> 로 실행시키거나, 혹은 Doom Emacs 라면
+<code>SPC : org-publish-all</code> 로 실행시키면 된다.
+</p>
+
+<p>
+별 문제가 없다면 이 명령 만으로 목적대로 원하는 디렉토리에 html과 함께 정적
+파일들도 복사될 것이다. github page에 올리는 것이니 마무리로 git으로 commit과
+push만 하면 사이트에 올릴 수도 있다.
+</p>
 
 <p>
 (업데이트 중)

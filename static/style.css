@@ -140,6 +140,11 @@ body {
     max-width: 100%;
 }
 
+#content .inlinead {
+    width: 100%;
+    max-width: 100%;
+}
+
 #footer {
     margin-top: 64px;
     text-align: center;

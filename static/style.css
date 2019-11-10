@@ -56,19 +56,19 @@ body {
 #content h2 {
     font-size: 1.8rem;
     margin-top: 2.3rem;
-    margin-bottom: 2.3rem;
+    margin-bottom: 1rem;
 }
 
 #content h3 {
     font-size: 1.4rem;
     margin-top: 1.6rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 0.9rem;
 }
 
 #content h4 {
     font-size: 1rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 #content p {

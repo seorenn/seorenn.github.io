@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-11-10 Sun 21:51 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doom Emacs 설치하기 - Seorenn</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Doom Emacs 설치하기</h1>
+<h2><a href="/">by Seorenn</a></h2></header>
+<div id="outline-container-org0901181" class="outline-2">
+<h2 id="org0901181">Emacs 설치</h2>
+<div class="outline-text-2" id="text-org0901181">
+<p>
+Doom Emacs 는 Emacs용 설정 스크립트이기 때문에 Emacs 는 별도로 설치해야 합니다.
+Emacs 를 설치하는 방법은 여러가지가 있습니다만 여기서는 macOS 에서 Homebrew 를
+통해 설치하는 것을 가정하여 다음의 방법으로 설치할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew install emacs
+</pre>
+</div>
+<p>
+다만 최근의 Emacs formulae 에서 <code>--with-cocoa</code> 옵션이 사라진 것으로 유추되어서
+이렇게 설치하게 되면 터미널 전용 버전으로 설치가 됩니다.
+</p>
+
+<p>
+만약 특별히 빌드할 필요가 없다면 cask 를 이용해 GUI 옵션이 포함된 바이너리를
+설치할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew cask install emacs
+</pre>
+</div>
+<p>
+이 방법은 macOS에서 GNU Emacs 를 가장 빠르게 설치할 수 있는 방법입니다.
+</p>
+
+<p>
+혹은 GNU Emacs 오리지널이 아니라 약간 튜닝된 버전을 원한다면 Emacs Plus를 설치할
+수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew tap d12frosted/emacs-plus
+brew install emacs-plus <span style="color: #51afef;">[</span>options<span style="color: #51afef;">]</span>
+</pre>
+</div>
+<p>
+option 으로는 여러 가지가 있지만 개인적으로는 Spacemacs Icon만 제외시키면
+신경 쓸 필요가 없을 것 같습니다. 즉 Doom Emacs 를 쓸 예정이라면 아래와 같이
+설치하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew install emacs-plus --without-spacemacs-icon
+</pre>
+</div>
+<p>
+나머지 OS용 Emacs 설치 방법도 구글에서 검색하면 쉽게 찾을 수 있습니다.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab51105" class="outline-2">
+<h2 id="orgab51105">Doom Emacs 설치</h2>
+<div class="outline-text-2" id="text-orgab51105">
+<p>
+우선 Doom Emacs 저장소를 clone 해야 합니다. <code>git</code> 이 설치되어 있다는 가정하에
+아래와 같은 방식으로 클론할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+</pre>
+</div>
+<p>
+클론이 완료가 되면 일단 클론한 디렉토리로 진입해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">cd</span> ~/.emacs.d
+</pre>
+</div>
+<p>
+이제 한가지 결정을 해야 합니다. 안정 버전을 사용할 것인가
+아니면 개발 버전을 사용할 것인가 말이지요.
+</p>
+
+<p>
+Doom Emacs 도 Spacemacs 와 비슷하게 안정 버전 릴리즈가 굉장히 느린 편입니다.
+따라서 신기능을 최대한 빠르게 써보고 싶다면 개발 버전을 사용하는 것을
+추천합니다. 아래의 커맨드로 개발 버전으로 바꿀 수 있습니다.
+</p>
+<pre class="example">
+git checkout develop
+</pre>
+<p>
+안정버전을 사용하겠다면 위의 커맨드는 생략해도 무방합니다.
+</p>
+
+<p>
+이제 필요한 기본 설정 파일 및 패키지들을 설치해야 합니다. <code>.emacs.d</code> 디렉토리에
+있는 상태로 아래 커맨드를 입력하면 됩니다.
+</p>
+<pre class="example">
+bin/doom install
+</pre>
+<p>
+이렇게 하면 몇 가지 필요한 옵션을 물어오고 이에 대답을 끝내면 각종 패키지
+다운로드가 진행됩니다. 조금은 오래 걸릴 수도 있으니 잠깐 커피 타임을 가지면 좋을
+것 같습니다.
+</p>
+
+<p>
+설치가 완료되면 이제 기본적인 Doom Emacs 가 셋업된 상태입니다.
+Emacs 를 기동시켜서 제대로 동작하는지 확인해 봅시다.
+</p>
+</div>
+</div>
+<div id="outline-container-orge56dada" class="outline-2">
+<h2 id="orge56dada">업그레이드</h2>
+<div class="outline-text-2" id="text-orge56dada">
+<p>
+Doom Emacs 도 개발이 잦아서 변화가 자주 있는 편입니다. 또한 각종 확장들도 별도로
+업그레이드가 이뤄집니다. 따라서 업그레이드 하는 방법을 꼭 알아두는 편이
+좋습니다.
+</p>
+
+<p>
+터미널에서 아래의 명령으로 Doom Emacs 및 확장을 한 번에 업그레이드 할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">~/.emacs.d/bin/doom upgrade
+</pre>
+</div>
+<p>
+혹은 <code>upgrade</code> 의 축약어인 <code>up</code> 을 이용할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">~/.emacs.d/bin/doom up
+</pre>
+</div>
+<p>
+이렇게 하면 Doom Emacs 자체 및 관련된 패키지들이 몽땅 업그레이드가 됩니다.
+</p>
+
+<p>
+주의: 혹여 실수로 <code>git pull</code> 같은 명령은 실행하지 않는 편이 좋습니다. 잘못하다
+망가지면 되돌리는 것이 귀찮아질 수도 있습니다.
+</p>
+
+<hr>
+
+<p>
+관련글: <a href="./doom-emacs.html">Doom Emacs</a>
+</p>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 10일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

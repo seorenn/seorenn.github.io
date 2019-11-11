@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-11 Mon 17:23 -->
+<!-- 2019-11-11 Mon 21:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doom Emacs 설치하기 - Seorenn</title>
@@ -24,62 +24,19 @@ gtag('config', 'UA-44534026-1');
 <header>
 <h1 class="title">Doom Emacs 설치하기</h1>
 <h2><a href="/">by Seorenn</a></h2></header>
-<div id="outline-container-org0901181" class="outline-2">
-<h2 id="org0901181">Emacs 설치</h2>
-<div class="outline-text-2" id="text-org0901181">
+<div id="outline-container-org791e510" class="outline-2">
+<h2 id="org791e510">Emacs 설치</h2>
+<div class="outline-text-2" id="text-org791e510">
 <p>
 Doom Emacs 는 Emacs용 설정 스크립트이기 때문에 Emacs 는 별도로 설치해야 합니다.
-Emacs 를 설치하는 방법은 여러가지가 있습니다만 여기서는 macOS 에서 Homebrew 를
-통해 설치하는 것을 가정하여 다음의 방법으로 설치할 수 있습니다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">brew install emacs
-</pre>
-</div>
-<p>
-다만 최근의 Emacs formulae 에서 <code>--with-cocoa</code> 옵션이 사라진 것으로 유추되어서
-이렇게 설치하게 되면 터미널 전용 버전으로 설치가 됩니다.
-</p>
-
-<p>
-만약 특별히 빌드할 필요가 없다면 cask 를 이용해 GUI 옵션이 포함된 바이너리를
-설치할 수도 있습니다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">brew cask install emacs
-</pre>
-</div>
-<p>
-이 방법은 macOS에서 GNU Emacs 를 가장 빠르게 설치할 수 있는 방법입니다.
-</p>
-
-<p>
-혹은 GNU Emacs 오리지널이 아니라 약간 튜닝된 버전을 원한다면 Emacs Plus를 설치할
-수도 있습니다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">brew tap d12frosted/emacs-plus
-brew install emacs-plus <span style="color: #51afef;">[</span>options<span style="color: #51afef;">]</span>
-</pre>
-</div>
-<p>
-option 으로는 여러 가지가 있지만 개인적으로는 Spacemacs Icon만 제외시키면
-신경 쓸 필요가 없을 것 같습니다. 즉 Doom Emacs 를 쓸 예정이라면 아래와 같이
-설치하면 됩니다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">brew install emacs-plus --without-spacemacs-icon
-</pre>
-</div>
-<p>
-나머지 OS용 Emacs 설치 방법도 구글에서 검색하면 쉽게 찾을 수 있습니다.
+<a href="./install-emacs.html">Emacs 설치</a>글을 참고하여 설치를 합니다.
+이미 설치가 되어있다면 다음으로 넘어갑니다.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgab51105" class="outline-2">
-<h2 id="orgab51105">Doom Emacs 설치</h2>
-<div class="outline-text-2" id="text-orgab51105">
+<div id="outline-container-org13c0e16" class="outline-2">
+<h2 id="org13c0e16">Doom Emacs 설치</h2>
+<div class="outline-text-2" id="text-org13c0e16">
 <p>
 우선 Doom Emacs 저장소를 clone 해야 합니다. <code>git</code> 이 설치되어 있다는 가정하에
 아래와 같은 방식으로 클론할 수 있습니다.
@@ -131,9 +88,9 @@ Emacs 를 기동시켜서 제대로 동작하는지 확인해 봅시다.
 </p>
 </div>
 </div>
-<div id="outline-container-orge56dada" class="outline-2">
-<h2 id="orge56dada">업그레이드</h2>
-<div class="outline-text-2" id="text-orge56dada">
+<div id="outline-container-orgf023637" class="outline-2">
+<h2 id="orgf023637">업그레이드</h2>
+<div class="outline-text-2" id="text-orgf023637">
 <p>
 Doom Emacs 도 개발이 잦아서 변화가 자주 있는 편입니다. 또한 각종 확장들도 별도로
 업그레이드가 이뤄집니다. 따라서 업그레이드 하는 방법을 꼭 알아두는 편이
@@ -164,10 +121,16 @@ Doom Emacs 도 개발이 잦아서 변화가 자주 있는 편입니다. 또한 
 </p>
 
 <hr>
+</div>
+</div>
 
-<p>
-관련글: <a href="./doom-emacs.html">Doom Emacs</a>
-</p>
+<div id="outline-container-org1c5c093" class="outline-2">
+<h2 id="org1c5c093">관련글</h2>
+<div class="outline-text-2" id="text-org1c5c093">
+<ul class="org-ul">
+<li><a href="./doom-emacs.html">Doom Emacs</a></li>
+<li><a href="./emacs.html">Emacs</a></li>
+</ul>
 </div>
 </div>
 <div id="footer"><div id="time">2019년 11월 11일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>

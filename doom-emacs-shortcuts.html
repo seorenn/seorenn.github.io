@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-11 Mon 17:23 -->
+<!-- 2019-11-11 Mon 21:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doom Emacs 단축키 메모 - Seorenn</title>
@@ -27,75 +27,84 @@ gtag('config', 'UA-44534026-1');
 실제로 사용하면서 유용하다 싶은 단축키를 정리하는 거기 때문에 자주 업데이트 될 문서입니다.
 </p>
 
-<div id="outline-container-org0e6edda" class="outline-2">
-<h2 id="org0e6edda">공통(Common)</h2>
-<div class="outline-text-2" id="text-org0e6edda">
+<div id="outline-container-org05f22da" class="outline-2">
+<h2 id="org05f22da">공통(Common)</h2>
+<div class="outline-text-2" id="text-org05f22da">
 </div>
-<div id="outline-container-org3983dd3" class="outline-3">
-<h3 id="org3983dd3">설정(Configuration) 관련</h3>
-<div class="outline-text-3" id="text-org3983dd3">
+<div id="outline-container-org25f30f3" class="outline-3">
+<h3 id="org25f30f3">설정(Configuration) 관련</h3>
+<div class="outline-text-3" id="text-org25f30f3">
 <ul class="org-ul">
-<li><code>SPC f p</code>: 설정 파일 열기 (선택 다이얼로그가 뜬다)</li>
+<li><code>SPC f p</code> 설정 파일 열기 (선택 다이얼로그가 뜬다)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf49c30d" class="outline-3">
-<h3 id="orgf49c30d">버퍼(Buffer) 관련</h3>
-<div class="outline-text-3" id="text-orgf49c30d">
+<div id="outline-container-org637a1bd" class="outline-3">
+<h3 id="org637a1bd">버퍼(Buffer) 관련</h3>
+<div class="outline-text-3" id="text-org637a1bd">
 <ul class="org-ul">
-<li><code>SPC ,</code> 혹은 <code>SPC b b</code>: 워크스페이스(혹은 프로젝트) 버퍼 전환</li>
-<li><code>SPC `</code>: 이번 버퍼로 전환</li>
-<li><code>SPC b B</code>: 버퍼 전환</li>
+<li><code>SPC ,</code> 혹은 <code>SPC b b</code> 워크스페이스(혹은 프로젝트) 버퍼 전환</li>
+<li><code>SPC `</code> 이전 버퍼로 전환</li>
+<li><code>SPC b B</code> 버퍼 전환</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3e8ca2b" class="outline-3">
-<h3 id="org3e8ca2b">프로젝트(Project)</h3>
-<div class="outline-text-3" id="text-org3e8ca2b">
+<div id="outline-container-orgbffce5b" class="outline-3">
+<h3 id="orgbffce5b">프로젝트(Project)</h3>
+<div class="outline-text-3" id="text-orgbffce5b">
 <ul class="org-ul">
-<li><code>SPC p p</code>: 프로젝트 전환</li>
-<li><code>SPC SPC</code>: 프로젝트 파일 열기</li>
+<li><code>SPC p p</code> 프로젝트 전환</li>
+<li><code>SPC SPC</code> 프로젝트 파일 열기</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc8869d4" class="outline-3">
-<h3 id="orgc8869d4">창(Window)</h3>
-<div class="outline-text-3" id="text-orgc8869d4">
+<div id="outline-container-org95842c3" class="outline-3">
+<h3 id="org95842c3">창(Window)</h3>
+<div class="outline-text-3" id="text-org95842c3">
 <p>
 참고로 이맥스에서 윈도우란 창이 분할된 것 혹은 페인(Pane)이라 불리우는 것을
 의미하니 용어에 주의하자.
 </p>
 <ul class="org-ul">
-<li><code>SPC w s</code>: 창을 위아래로 나누기</li>
-<li><code>SPC w v</code>: 창을 좌우로 나누기</li>
-<li><code>SPC w c</code>: 창 닫기</li>
-<li><code>SPC w j 혹은 k</code>: 아래쪽 창 혹은 윗쪽 창으로 이동하기 (j, k는 Vi 키맵으로 연상하자)</li>
-<li><code>SPC w h 혹은 l</code>: 왼쪽 창 혹은 오른쪽쪽 창으로 이동하기 (h, l은 Vi 키맵으로 연상하자)</li>
+<li><code>SPC w s</code> 창을 위아래로 나누기</li>
+<li><code>SPC w v</code> 창을 좌우로 나누기</li>
+<li><code>SPC w c</code> 창 닫기</li>
+<li><code>SPC w j 혹은 k</code> 아래쪽 창 혹은 윗쪽 창으로 이동하기 (j, k는 Vi 키맵으로 연상하자)</li>
+<li><code>SPC w h 혹은 l</code> 왼쪽 창 혹은 오른쪽쪽 창으로 이동하기 (h, l은 Vi 키맵으로 연상하자)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9230b48" class="outline-3">
-<h3 id="org9230b48">쉘(Shell) 혹은 터미널(Terminal)</h3>
-<div class="outline-text-3" id="text-org9230b48">
+<div id="outline-container-org74e41cb" class="outline-3">
+<h3 id="org74e41cb">쉘(Shell) 혹은 터미널(Terminal)</h3>
+<div class="outline-text-3" id="text-org74e41cb">
 <ul class="org-ul">
-<li><code>SPC o t</code>: 터미널 열기</li>
+<li><code>SPC o t</code> 터미널 열기</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orga2eed06" class="outline-2">
-<h2 id="orga2eed06">특수</h2>
-<div class="outline-text-2" id="text-orga2eed06">
+<div id="outline-container-orgad68b59" class="outline-2">
+<h2 id="orgad68b59">특수</h2>
+<div class="outline-text-2" id="text-orgad68b59">
 </div>
-<div id="outline-container-org61e991b" class="outline-3">
-<h3 id="org61e991b">Emacs Lisp 관련</h3>
-<div class="outline-text-3" id="text-org61e991b">
+<div id="outline-container-org4f43e2f" class="outline-3">
+<h3 id="org4f43e2f">Emacs Lisp 관련</h3>
+<div class="outline-text-3" id="text-org4f43e2f">
 <ul class="org-ul">
-<li><code>SPC ;</code>: 명령 실행하기(eval expression)</li>
-<li><code>gr</code>: 선택영역 실행하기(eval region)</li>
-<li><code>gR</code>: 버퍼 전체 실행하기(eval buffer). 근데 버그가 있는지 첫 문단만 실행됨.
+<li><code>SPC :</code> 함수 실행하기(Emacs 의 <code>M-x</code> 와 동일). 콜론 주의.</li>
+<li><code>SPC ;</code> 명령 실행하기(eval expression). 세미콜론임에 주의</li>
+<li><code>gr</code> 선택영역 실행하기(eval region)</li>
+<li><code>gR</code> 버퍼 전체 실행하기(eval buffer). 근데 버그가 있는지 첫 문단만 실행됨.
 추후 수정될 가능성 있음.</li>
-<li><code>SPC m e b</code>: 버퍼 전체 실행하기(eval buffer). 이건 잘 돌아감.</li>
+<li><code>SPC m e b</code> 버퍼 전체 실행하기(eval buffer). 이건 잘 돌아감.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d34bfc" class="outline-3">
+<h3 id="org1d34bfc">프로그래밍 관련</h3>
+<div class="outline-text-3" id="text-org1d34bfc">
+<ul class="org-ul">
+<li><code>gc</code> 선택영역을 주석(commenting)으로 처리하거나 혹은 해제(uncommenting)</li>
 </ul>
 
 <hr>

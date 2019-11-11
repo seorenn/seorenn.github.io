@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-11 Mon 17:23 -->
+<!-- 2019-11-11 Mon 21:50 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Python 3 Static Typing - Seorenn</title>
@@ -63,9 +63,9 @@ name = <span style="color: #da8548; font-weight: bold;">100</span>    <span styl
 왔습니다. 그러다 결국 Python 3 버전에서 정적 타이핑과 비슷한 기능이 소개되기 시작합니다.
 </p>
 
-<div id="outline-container-org5da240d" class="outline-2">
-<h2 id="org5da240d">Type Annotation</h2>
-<div class="outline-text-2" id="text-org5da240d">
+<div id="outline-container-org658c5a5" class="outline-2">
+<h2 id="org658c5a5">Type Annotation</h2>
+<div class="outline-text-2" id="text-org658c5a5">
 <p>
 Python의 정적 타이핑은 아직 없습니다.
 대신 비슷한 기능이 3.0 부터 시작되어서 Function Annotation(3.0+),
@@ -110,9 +110,9 @@ Type Annotation(3.5+), Variable Annotation(3.6+)로 추가되어 왔습니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org19daf4e" class="outline-2">
-<h2 id="org19daf4e">어떻게 체크하나?</h2>
-<div class="outline-text-2" id="text-org19daf4e">
+<div id="outline-container-org6ddbae1" class="outline-2">
+<h2 id="org6ddbae1">어떻게 체크하나?</h2>
+<div class="outline-text-2" id="text-org6ddbae1">
 <p>
 그런데 앞서 정적 타이핑이 아니라 Type Annotation 혹은 타입 힌팅이라고 칭한
 이유가 있습니다. Python 은 컴파일이 필요한 언어가 아니기 때문에 미연에 타입을
@@ -167,9 +167,9 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 </div>
 </div>
-<div id="outline-container-org21d4401" class="outline-2">
-<h2 id="org21d4401">복잡한 타입의 힌트</h2>
-<div class="outline-text-2" id="text-org21d4401">
+<div id="outline-container-org5f2cfee" class="outline-2">
+<h2 id="org5f2cfee">복잡한 타입의 힌트</h2>
+<div class="outline-text-2" id="text-org5f2cfee">
 <p>
 기본적인 타입은 앞서 살펴본 것처럼 정말 단순하게 타입 이름만 적어주면 됩니다.
 하지만 리스트나 사전형 같은 복잡한 타입은 그냥은 안 되고 <code>typing</code> 모듈의 힘을
@@ -222,9 +222,9 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 </div>
 </div>
-<div id="outline-container-orga475719" class="outline-2">
-<h2 id="orga475719">좀 더 복잡한 타입?</h2>
-<div class="outline-text-2" id="text-orga475719">
+<div id="outline-container-orgea05611" class="outline-2">
+<h2 id="orgea05611">좀 더 복잡한 타입?</h2>
+<div class="outline-text-2" id="text-orgea05611">
 <p>
 리스트나 튜플, 사전형의 경우 값의 타입이 다채로울 수 있습니다. 만약 키는
 문자열이지만 값은 아무 타입을 가질 수 있는 사전형 타입 힌트를 정의하려 한다면
@@ -260,9 +260,9 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 </div>
 </div>
-<div id="outline-container-orgf8f1bc2" class="outline-2">
-<h2 id="orgf8f1bc2">Optional?</h2>
-<div class="outline-text-2" id="text-orgf8f1bc2">
+<div id="outline-container-orga258242" class="outline-2">
+<h2 id="orga258242">Optional?</h2>
+<div class="outline-text-2" id="text-orga258242">
 <p>
 앞서 본 예제들은 NULL 과 비슷한 <code>None</code> 값을 가질 수가 없다는 특징이 있는데 이
 값을 가지려면 어떻게 해야할까요?
@@ -294,9 +294,9 @@ some_value: <span style="color: #dcaeea;">Optional</span>[<span style="color: #c
 </p>
 </div>
 </div>
-<div id="outline-container-org704efce" class="outline-2">
-<h2 id="org704efce">기타</h2>
-<div class="outline-text-2" id="text-org704efce">
+<div id="outline-container-org6ee90ed" class="outline-2">
+<h2 id="org6ee90ed">기타</h2>
+<div class="outline-text-2" id="text-org6ee90ed">
 <p>
 글이 너무 길어질 것 같아서 참고할 수 있을만한 내용을 간단히 언급하겠습니다.
 </p>
@@ -310,9 +310,9 @@ some_value: <span style="color: #dcaeea;">Optional</span>[<span style="color: #c
 </p>
 </div>
 </div>
-<div id="outline-container-org879d852" class="outline-2">
-<h2 id="org879d852">결론</h2>
-<div class="outline-text-2" id="text-org879d852">
+<div id="outline-container-orga83ad1a" class="outline-2">
+<h2 id="orga83ad1a">결론</h2>
+<div class="outline-text-2" id="text-orga83ad1a">
 <p>
 안타깝게도 파이썬은 아직 정적 타이핑이 제공된다고 보기에는 힘듭니다.
 </p>
@@ -345,9 +345,9 @@ PEP-484 "No type checking happens at runtime"
 </p>
 </div>
 </div>
-<div id="outline-container-orga3bd9e3" class="outline-2">
-<h2 id="orga3bd9e3">관련글</h2>
-<div class="outline-text-2" id="text-orga3bd9e3">
+<div id="outline-container-org4fa8964" class="outline-2">
+<h2 id="org4fa8964">관련글</h2>
+<div class="outline-text-2" id="text-org4fa8964">
 <ul class="org-ul">
 <li><a href="./python.html">Python</a></li>
 <li><a href="./swift.html">Swift</a></li>

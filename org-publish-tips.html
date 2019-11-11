@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-10 Sun 21:32 -->
+<!-- 2019-11-11 Mon 14:35 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish 팁 모음 - Seorenn</title>
@@ -10,14 +10,47 @@
 <link rel="stylesheet" type="text/css" href="/static/style.css"/>
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-44534026-1');
+</script>
 </head>
 <body>
 <div id="content">
 <header>
 <h1 class="title">org-publish 팁 모음</h1>
-<h2><a href="/">by Seorenn</a></h2></header><p>
-(아직 내용이 비어있습니다)
+<h2><a href="/">by Seorenn</a></h2></header>
+<div id="outline-container-orgc742f91" class="outline-2">
+<h2 id="orgc742f91">전부 업데이트하기</h2>
+<div class="outline-text-2" id="text-orgc742f91">
+<p>
+org-publish 는 기본적으로 변경된 파일만 업데이트를 하는데 만약 설정을 바꾸는
+바람에 모든 글을 다시 익스포트해야 한다면 일일이 파일을 touch 해야 하는 등
+번거롭습니다. 이럴 때는 다음 명령어 한 방에 해결이 될 수도 있습니다.
 </p>
-<div id="footer"><div id="time">2019년 11월 10일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div class="org-src-container">
+<pre class="src src-lisp">(org-publish <span style="color: #98be65;">"PROJECT_NAME"</span> t)
+</pre>
+</div>
+<p>
+Doom Emacs 를 사용 중이라면 <code>SPC ;</code> 단축키로 위 명령을 쉽게 입력해서 실행시킬
+수도 있습니다.
+</p>
+
+<hr>
+
+<p>
+관련글:
+</p>
+<ul class="org-ul">
+<li><a href="./org-publish.html">org-publish</a></li>
+<li><a href="./doom-emacs.html">Doom Emacs</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 11일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

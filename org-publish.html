@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-11 Mon 23:47 -->
+<!-- 2019-11-12 Tue 13:09 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Org Publish - Seorenn</title>
@@ -172,11 +172,34 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 <h2 id="orgff73e18">Publish 해보기</h2>
 <div class="outline-text-2" id="text-orgff73e18">
 <p>
-편찬(publish)을 하기 위해서는 <code>org-publish-all</code> 함수를 호출하면 됩니다.
-일반 Emacs 라면 <code>M-x org-publish-all</code> 로 실행시키거나, 혹은 Doom Emacs 라면
-<code>SPC : org-publish-all</code> 로 실행시키면 됩니다. Spacemacs 일 경우에는 <code>SPC SPC
-org-publish-all</code> 로 실행시킬 수 있습니다.
+편찬(publish)을 하기 위해서는 <code>org-publish</code> 함수를 호출하면 됩니다. 이 함수는
+프로젝트를 편찬하기 위한 목적이라 하위 프로젝트를 묶어놓은 프로젝트를 지정하면
+딱 좋은 그런 함수입니다. 따라서 위의 예제를 기반으로 아래와 같이 실행시키면 모든
+프로젝트의 문서가 익스포트 되어가 복제가 됩니다.
 </p>
+<div class="org-src-container">
+<pre class="src src-lisp">(org-publish <span style="color: #98be65;">"web"</span>)
+</pre>
+</div>
+<p>
+Doom Emacs 를 사용한다면 <code>SPC ;</code> 를 누른 후 위의 커맨드를 그대로 입력하면
+됩니다.
+</p>
+
+<p>
+하지만 귀찮으면 그냥 <code>org-publish-all</code> 함수를 실행시키는 방법도 있습니다.
+프로젝트를 중복으로 편찬하려 시도하겠지만 어차피 타임스탬프가 저장되어서 다시
+익스포트 하지는 않기 때문에 큰 문제는 없습니다.
+일반 Emacs 라면 <code>M-x</code> <code>org-publish-all</code> 로 실행시키거나, 혹은 Doom Emacs 라면
+<code>SPC :</code> <code>org-publish-all</code> 로 실행시키면 됩니다. Spacemacs 일 경우에는 <code>SPC SPC</code>
+<code>org-publish-all</code> 로 실행시킬 수 있습니다.
+</p>
+<blockquote>
+<p>
+개인적으로 org-publish-all 함수 사용 시 간혹 Emacs 가 멈춰버리는 증상을 겪은
+적이 있습니다. 혹시나 비슷한 증상을 겪는다면 대신 org-publish 를 사용해 봅시다.
+</p>
+</blockquote>
 
 <p>
 별 문제가 없다면 이 명령 만으로 목적대로 원하는 디렉토리에 html과 함께 정적
@@ -203,6 +226,6 @@ org-publish-all</code> 로 실행시킬 수 있습니다.
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 11일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 12일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

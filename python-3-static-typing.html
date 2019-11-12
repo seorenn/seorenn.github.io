@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-11 Mon 23:47 -->
+<!-- 2019-11-12 Tue 16:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Python 3 Static Typing - Seorenn</title>
@@ -45,7 +45,7 @@ gtag('config', 'UA-44534026-1');
     <span style="color: #51afef;">return</span> (v * <span style="color: #da8548; font-weight: bold;">2</span>) - <span style="color: #da8548; font-weight: bold;">1</span>
 
 make_double(<span style="color: #da8548; font-weight: bold;">10</span>)
-make_double(<span style="color: #98be65;">"test"</span>)   <span style="color: #5B6268;"># </span><span style="color: #5B6268;">TypeError</span>
+make_double(<span style="color: #98be65;">"test"</span>) <span style="color: #5B6268;"># </span><span style="color: #5B6268;">&#51060; &#53076;&#46300;&#44032; &#49892;&#54665;&#46104;&#50612;&#50556; TypeError &#48156;&#49373;</span>
 </pre>
 </div>
 <p>
@@ -56,7 +56,7 @@ make_double(<span style="color: #98be65;">"test"</span>)   <span style="color: #
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">var</span> name: <span style="color: #c678dd;">String</span> = <span style="color: #98be65;">"Conrad"</span>
 <span style="color: #51afef;">var</span> nickname = <span style="color: #98be65;">"Seorenn"</span>
-name = <span style="color: #da8548; font-weight: bold;">100</span>    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Error</span>
+name = <span style="color: #da8548; font-weight: bold;">100</span>    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#52980;&#54028;&#51068; &#49884; Error &#44032; &#48156;&#49373;</span>
 </pre>
 </div>
 <p>
@@ -71,7 +71,7 @@ name = <span style="color: #da8548; font-weight: bold;">100</span>    <span styl
 Python의 정적 타이핑은 아직 없습니다.
 대신 비슷한 기능이 3.0 부터 시작되어서 Function Annotation(3.0+),
 Type Annotation(3.5+), Variable Annotation(3.6+)로 추가되어 왔습니다.
-이것들을 전부 뭉뚱그려서 저는 Type Annotation 이라고 대충 부르며,
+이것들을 전부 뭉뚱그려서 Type Annotation 이라고 대충 부를 수 있으며,
 개인적으로는 타입 힌팅이라고 부르겠습니다.
 </p>
 
@@ -117,7 +117,7 @@ Type Annotation(3.5+), Variable Annotation(3.6+)로 추가되어 왔습니다.
 <p>
 그런데 앞서 정적 타이핑이 아니라 Type Annotation 혹은 타입 힌팅이라고 칭한
 이유가 있습니다. Python 은 컴파일이 필요한 언어가 아니기 때문에 미연에 타입을
-체크하는 단계를 가질 수가 없습니다.
+체크하는 단계를 가질 수가 없기 때문입니다.
 </p>
 
 <p>
@@ -160,11 +160,12 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 
 <p>
-하지만 위의 코드를 그대로 실행시켜도 아무런 에러가 생기지 않습니다. 파이썬은
-아직 정적 타이핑이 없기 때문입니다. 즉 위의 타입 힌트는 <code>mypy</code> 로 타입을 체크할
-때만 의미가 있고, 실제로 파이썬 인터프리터로 실행시킬 때는 아무런 의미가 없기
-때문입니다. 뭐 그래도 문서화에 도움을 주기 때문에 완전히 무의미한 것은 또
-아니기도 합니다.
+하지만 위의 코드를 <code>python</code> 을 이용해 그대로 실행시켜도 아무런 에러가 생기지
+않습니다.
+파이썬은 아직 정적 타이핑이 없기 때문입니다.
+즉 위의 타입 힌트는 <code>mypy</code> 로 타입을 체크할 때만 의미가 있고,
+실제로 파이썬 인터프리터로 실행시킬 때는 아무런 의미가 없기 때문입니다.
+뭐 그래도 문서화에 도움을 주기 때문에 완전히 무의미한 것은 또 아니기도 합니다.
 </p>
 </div>
 </div>
@@ -173,7 +174,7 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 <div class="outline-text-2" id="text-org5f2cfee">
 <p>
 기본적인 타입은 앞서 살펴본 것처럼 정말 단순하게 타입 이름만 적어주면 됩니다.
-하지만 리스트나 사전형 같은 복잡한 타입은 그냥은 안 되고 <code>typing</code> 모듈의 힘을
+하지만 리스트(list)나 사전형(dictionary) 같은 복잡한 타입은 그냥은 안 되고 <code>typing</code> 모듈의 힘을
 빌려야 정의가 가능합니다.
 </p>
 <div class="org-src-container">
@@ -239,13 +240,16 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </pre>
 </div>
 <p>
-<code>Any</code> 라는 특수한 타입 힌트가 쓰였습니다. 아무 타입이라는 의미로 추측이
-가능합니다. Swift에서 쓰이는 Any와 의미가 비슷하기도 하네요.
+<code>Any</code> 라는 특수한 타입 힌트가 쓰였습니다.
+아무 타입이라는 의미로 추측이 가능합니다.
+Swift에서 쓰이는 Any와 의미가 비슷하기도 하네요.
 </p>
 
 <p>
-이 방법 외에도, 만약 <code>Any</code> 를 쓰기가 싫은 대신 명확한 몇 가지 타입만을 가지면
-된다는 힌트를 주고 싶다면 아래처럼 <code>Union</code> 을 사용할 수도 있습니다.
+이 방법 외에도,
+만약 <code>Any</code> 를 쓰기가 싫은 대신
+명확한 몇 가지 타입만을 가지면 된다는 힌트를 주고 싶다면
+아래처럼 <code>Union</code> 을 사용할 수도 있습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #51afef;">from</span> typing <span style="color: #51afef;">import</span> Dict, Union, List
@@ -255,9 +259,12 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </pre>
 </div>
 <p>
-여기서 매개변수 <code>values</code> 는 문자열 키와 함께 문자열, 정수, 문자열 리스트를
-값으로 선언할 수 있는 타입 힌트를 정의하고 있습니다. 뭔가 복잡해 보이지만 이런
-식으로 콜렉션 안에서도 콜렉션 타입을 쓸 수 있다는 것을 같이 볼 수 있는 좋은 예제 같습니다.
+여기서 매개변수 <code>values</code> 는 문자열 키와 함께
+문자열, 정수, 문자열 리스트를 값으로 선언할 수 있는
+타입 힌트를 정의하고 있습니다.
+뭔가 복잡해 보이지만 이런 식으로
+콜렉션 안에서도 콜렉션 타입을 쓸 수 있다는 것을
+같이 볼 수 있는 좋은 예제 같습니다.
 </p>
 </div>
 </div>
@@ -265,12 +272,12 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 <h2 id="orga258242">Optional?</h2>
 <div class="outline-text-2" id="text-orga258242">
 <p>
-앞서 본 예제들은 NULL 과 비슷한 <code>None</code> 값을 가질 수가 없다는 특징이 있는데 이
-값을 가지려면 어떻게 해야할까요?
+앞서 본 예제들은 NULL 과 비슷한 <code>None</code> 값을 가질 수가 없다는 특징이 있는데
+이 값을 가지려면 어떻게 해야할까요?
 </p>
 
 <p>
-단순하게는 <code>Union</code> 을 이용하는 방법이 있습니다.
+단순하게는 앞서 소개한 <code>Union</code> 을 이용하는 방법이 있습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python">some_value: <span style="color: #dcaeea;">Union</span>[<span style="color: #c678dd;">int</span>, <span style="color: #a9a1e1;">None</span>] = <span style="color: #a9a1e1;">None</span>
@@ -281,7 +288,8 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 
 <p>
-하지만 이를 좀 더 편하게 할 수 있는 것이 있습니다. 바로 <code>Optional</code> 입니다.
+하지만 이를 좀 더 편하게 할 수 있는 것이 있습니다.
+바로 <code>Optional</code> 입니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #51afef;">from</span> typing <span style="color: #51afef;">import</span> Optional
@@ -289,9 +297,9 @@ some_value: <span style="color: #dcaeea;">Optional</span>[<span style="color: #c
 </pre>
 </div>
 <p>
-위 코드에서 <code>some_value</code> 는 <code>int</code> 타입 뿐만 아니라 <code>None</code> 도 값으로 가질 수
-있다고 힌트를 명시하고 있습니다. 아무래도 이 방법이 <code>Union</code> 을 사용하는 것
-보다는 더 편한 것 같습니다.
+위 코드에서 <code>some_value</code> 는 <code>int</code> 타입 뿐만 아니라
+<code>None</code> 도 값으로 가질 수 있다고 힌트를 명시하고 있습니다.
+아무래도 이 방법이 <code>Union</code> 을 사용하는 것 보다는 더 편한 것 같습니다.
 </p>
 </div>
 </div>
@@ -327,16 +335,17 @@ PEP-484 "No type checking happens at runtime"
 </p>
 
 <p>
-하지만 저는 적어도 현재의 타입 힌트만 주는 기능은 정적 타이핑이라고 생각하지
-않습니다. 최소한 인터프리터가 시작 전 강제로 타입을 체크하도록 하는 것이
-필요하겠지만 그렇게 해버리면 퍼포먼스 문제도 생기도 당연히 생각처럼 쉽게 되는 일
-또한 아니겠지요. 그래서 뭐가 맞다라고 이야기 하기에도 개인적으로 미숙할
-뿐입니다.
+저는 적어도 현재의 타입 힌트만 주는 기능은 정적 타이핑이라고 생각하지 않습니다.
+최소한 인터프리터가 시작 전 강제로 타입을 체크하도록 하는 것이 필요하겠지만
+그렇게 해버리면 퍼포먼스 문제도 생길지도 모르니
+당연히 생각처럼 쉽게 되는 일 또한 아니겠지요.
+그래서 뭐가 맞다라고 이야기 하기에도 개인적으로 미숙할 뿐입니다.
 </p>
 
 <p>
-어쨌거나 <code>mypy</code> 라는 외부 도구를 이용해서 정적 타이핑을 흉내낼 수 있다는 점
-만으로도 파이썬 프로그래밍의 세계가 좀 더 견고해지리라는 것은 확실합니다.
+어쨌거나 <code>mypy</code> 라는 외부 도구를 이용해서
+정적 타이핑을 흉내낼 수 있다는 점 만으로도
+파이썬 프로그래밍의 세계가 좀 더 견고해지리라는 것은 확실합니다.
 거기다 몇몇 IDE 에디터들은 이미 mypy로 연동을 하고 있는 수준이기 때문에
 편집 단계에서 문제를 미연에 해결하는 것 또한 가능한 수준입니다.
 </p>
@@ -357,6 +366,6 @@ Python Typing</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 11일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 12일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

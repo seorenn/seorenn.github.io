@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-12 Tue 22:02 -->
+<!-- 2019-11-14 Thu 17:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Combine Framework - Seorenn</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="Combine(콤바인) Framework(프레임워크)에 대한 간략한 가이드 (작성중)"
+>
 <link rel="stylesheet" type="text/css" href="/static/style.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="canonical" href="https://seorenn.github.io/combine-framework.html"/>
@@ -24,9 +26,11 @@ gtag('config', 'UA-44534026-1');
 <div id="content">
 <header>
 <h1 class="title">Combine Framework</h1>
-<h2><a href="/">by Seorenn</a></h2></header><p>
-Rx는 슬쩍 구경만 해보고 써보지 않은 이가 공부하는 Combine Framework 글.
+<h2><a href="/">by Seorenn</a></h2></header><blockquote>
+<p>
+이 글은 Rx 를 모르는 사람이 쓰는 Combine 글입니다.
 </p>
+</blockquote>
 
 <p>
 (심각하게 작성 중인 글)
@@ -34,13 +38,53 @@ Rx는 슬쩍 구경만 해보고 써보지 않은 이가 공부하는 Combine Fr
 
 <hr>
 
+
+
+
 <div id="outline-container-org8d16c78" class="outline-2">
 <h2 id="org8d16c78">이게 뭘까?</h2>
 <div class="outline-text-2" id="text-org8d16c78">
+<p>
+Combine 은 애플의 반응형 프로그래밍 라이브러리입니다. 어 근데 반응형이요? 이 '반응형' 이라는 말이 참
+괴롭습니다. 이름만 봐서는 도저히 이해가 안 되니깐요.
+</p>
+
+<p>
+우선 코드부터 시작합시다.
+</p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">import</span> Combine
 </pre>
 </div>
+<p>
+네. Combine 은 프레임워크입니다. 그래서 임포트해야 쓸 수 있습니다.
+</p>
+
+<p>
+그런데 뭐가 무엇에 반응하는 건데요?
+</p>
+</div>
+</div>
+<div id="outline-container-org6f03b5a" class="outline-2">
+<h2 id="org6f03b5a">다짜고짜 예제</h2>
+<div class="outline-text-2" id="text-org6f03b5a">
+<p>
+일단 아래 예제를 살펴봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">let</span> _ = <span style="color: #c678dd;">Just</span>(<span style="color: #da8548; font-weight: bold;">10</span>)
+    .<span style="color: #c678dd;">map</span> { value -&gt; <span style="color: #c678dd;">Int</span> <span style="color: #51afef;">in</span>
+        <span style="color: #51afef;">return</span> value * <span style="color: #da8548; font-weight: bold;">2</span>
+    }
+    .<span style="color: #dcaeea;">sink</span> { value <span style="color: #51afef;">in</span>
+        <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"Finished with value \(</span>value<span style="color: #98be65;">)"</span>)
+    }
+</pre>
+</div>
+<p>
+이 코드가 실행되면 어이없게도(?) <code>Finished with value 20</code> 이라는 결과가 찍히고
+종료됩니다. 마치 <code>map</code> 안의 내용과 <code>sink</code> 의 내용이 순차적으로 실행된 것 처럼요.
+</p>
 </div>
 </div>
 <div id="outline-container-orgbaacbfc" class="outline-2">
@@ -73,6 +117,6 @@ Publisher 의 함수인데 새로운 Publisher 를 돌려준다는 특징이 있
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 12일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

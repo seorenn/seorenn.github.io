@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-14 Thu 17:15 -->
+<!-- 2019-11-16 Sat 00:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Combine Framework - Seorenn</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="Combine(콤바인) Framework(프레임워크)에 대한 간략한 가이드 (작성중)"
+<meta name="description" content="Combine Framework(컴바인 프레임워크)에 대한 간략한 가이드"
 >
 <link rel="stylesheet" type="text/css" href="/static/style.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
@@ -32,21 +32,17 @@ gtag('config', 'UA-44534026-1');
 </p>
 </blockquote>
 
-<p>
-(심각하게 작성 중인 글)
-</p>
-
-<hr>
-
-
-
-
 <div id="outline-container-org8d16c78" class="outline-2">
 <h2 id="org8d16c78">이게 뭘까?</h2>
 <div class="outline-text-2" id="text-org8d16c78">
 <p>
-Combine 은 애플의 반응형 프로그래밍 라이브러리입니다. 어 근데 반응형이요? 이 '반응형' 이라는 말이 참
-괴롭습니다. 이름만 봐서는 도저히 이해가 안 되니깐요.
+Combine 은 이벤트 처리 오퍼레이터를 조합하여 비동기 이벤트 처리 프레임워크
+입니다. 근데 이건 좀 어려운 이야기고, 보통은 Rx 라는 것이 사용하던 반응형(Reactive)
+프로그래밍 라이브러리라는 표현이 더 쉬운 표현 같습니다.
+</p>
+
+<p>
+어쨌든 이름이나 간략한 설명 만으로는 도저히 이해는 안 되는게 정상입니다.
 </p>
 
 <p>
@@ -58,16 +54,13 @@ Combine 은 애플의 반응형 프로그래밍 라이브러리입니다. 어 �
 </div>
 <p>
 네. Combine 은 프레임워크입니다. 그래서 임포트해야 쓸 수 있습니다.
-</p>
-
-<p>
-그런데 뭐가 무엇에 반응하는 건데요?
+그래서 어쩌라는 거냐구요?
 </p>
 </div>
 </div>
-<div id="outline-container-org6f03b5a" class="outline-2">
-<h2 id="org6f03b5a">다짜고짜 예제</h2>
-<div class="outline-text-2" id="text-org6f03b5a">
+<div id="outline-container-org61ddb9c" class="outline-2">
+<h2 id="org61ddb9c">다짜고짜 예제부터</h2>
+<div class="outline-text-2" id="text-org61ddb9c">
 <p>
 일단 아래 예제를 살펴봅시다.
 </p>
@@ -85,24 +78,115 @@ Combine 은 애플의 반응형 프로그래밍 라이브러리입니다. 어 �
 이 코드가 실행되면 어이없게도(?) <code>Finished with value 20</code> 이라는 결과가 찍히고
 종료됩니다. 마치 <code>map</code> 안의 내용과 <code>sink</code> 의 내용이 순차적으로 실행된 것 처럼요.
 </p>
+
+<p>
+각 단계에서의 정확한 타입을 살펴보면 아래와 같습니다.
+</p>
+<ul class="org-ul">
+<li><code>Just</code> 는 <code>Publisher</code> 프로토콜을 따르는 값(구조체) 타입</li>
+<li><code>map</code> 은 <code>Publisher</code> 를 따르는 <code>Just</code> 타입 인스턴스를 리턴</li>
+<li><code>sink</code> 는 <code>AnyCancellable</code> 타입 인스턴스를 리턴</li>
+</ul>
+<p>
+일단 여기서 Publisher 라는 명칭이 등장합니다.
+</p>
 </div>
 </div>
 <div id="outline-container-orgbaacbfc" class="outline-2">
 <h2 id="orgbaacbfc">Publisher and Subscriber</h2>
+<div class="outline-text-2" id="text-orgbaacbfc">
+<p>
+컴바인의 개념 중 가장 중요한 것은 퍼블리셔(Publisher)와
+서브스크라이버(Subscriber)입니다.
+</p>
+
+<p>
+퍼블리셔는 데이터를 제공하는 역할입니다. 컴바인에서는 다양한 퍼블리셔 타입을
+제공하는데 예제에 나오는 <code>Just</code> 는 1회성 데이터를 제공하기 위한 퍼블리셔입니다.
+이런 퍼블리셔는 누군가에게 데이터를 전달하는 위한 목적으로 존재합니다.
+</p>
+
+<p>
+그리고 이런 퍼블리셔끼리 연결된 체인의 끝에는 서브스크라이버가 존재하며 최종적으로
+데이터를 전달받게 됩니다. 즉 예제의 코드는 <code>Just(10)</code> 이라는 데이터가 <code>map</code> 에 전달되어서
+다시 <code>Just(20)</code> 으로 가공되고 이것이 <code>sink</code> 로 전달됩니다. 결과적으로 <code>sink</code> 가
+서버스크라이버 역할이라는 것을 알 수 있습니다.
+</p>
+
+<p>
+여기까지만 보면 그냥 데이터의 흐름을 정의하는 것으로도 보이는데 그다지
+반응형과는 관계가 없는 것 같습니다. 하지만
+만약 퍼블리셔의 값이 변경될 수 있다면 어떻게 될까요? 퍼블리셔의 값이
+변경되면 자동으로 체인에 연결된 각종 코드가 실행되게 될까요? 네. 반응형이란게
+바로 그런걸 의미하니깐요.
+</p>
+</div>
 </div>
 <div id="outline-container-org4fcb61a" class="outline-2">
 <h2 id="org4fcb61a">Subject</h2>
 <div class="outline-text-2" id="text-org4fcb61a">
 <p>
-Publisher 와 Subscriber 의 특징을 둘 다 가지는 미친놈
+컴바인에는 서브젝트(Subject)라는 특수한 타입도 존재합니다.
+이 타입은 외부에서 데이터를 전달할 수 있는 특수한 퍼블리셔입니다.
+어디선가는 퍼블리셔이면서 서브스크라이버로 될 수 있다는 식으로 설명하곤 합니다만
+현재 상황에선 이 말은 이해하기 힘드니 퍼블리셔 입장에서만 살펴봅시다.
+</p>
+
+<p>
+Subject 를 만족하는 기본 타입 중 <code>PassthroughSubject</code> 를 사용하는 예입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">let</span> p = PassthroughSubject&lt;<span style="color: #c678dd;">Int</span>, <span style="color: #c678dd;">Never</span>&gt;()
+<span style="color: #51afef;">let</span> s = p.<span style="color: #dcaeea;">sink</span> { value <span style="color: #51afef;">in</span>
+    <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"finished with \(</span>value<span style="color: #98be65;">)"</span>)
+}
+
+p.<span style="color: #c678dd;">send</span>(<span style="color: #da8548; font-weight: bold;">10</span>)
+p.<span style="color: #c678dd;">send</span>(<span style="color: #da8548; font-weight: bold;">20</span>)
+</pre>
+</div>
+<p>
+<code>PassthroughSubject</code> 는 이름처럼 데이터를 체인에 던져주기만 하는 서브젝트입니다.
+서브젝트가 가지는 공통적인 메소드로 <code>send</code> 가 있는데 이걸 이용하면 데이터가
+체인에 뿌려지게 됩니다.
+</p>
+
+<p>
+그래서 이 타입의 퍼블리셔에게 <code>send(10)</code> 을 던지면 바로 'finished with 10'
+이라는 메시지가 출력됩니다. 마찬가지로 <code>send(20)</code> 이 실행되면 'finished with 20'
+이 콘솔에 표시됩니다.
+</p>
+
+<p>
+다른 예제와는 다르게 <code>s</code> 라는 변수에 서브스크라이버를 받아둔 이유는 이
+서브스크라이버가 자동으로 메모리에서 해제되지 않게 붙잡아두기 위함입니다.
+</p>
+
+<p>
+이 정도면 어느정도 반응하는 모습을 볼 수 있는 최소한의 예가 될 수 있을지도 모르겠습니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org41c9a9f" class="outline-2">
-<h2 id="org41c9a9f">Operator</h2>
-<div class="outline-text-2" id="text-org41c9a9f">
+<div id="outline-container-org5bbdfd3" class="outline-2">
+<h2 id="org5bbdfd3">마무리</h2>
+<div class="outline-text-2" id="text-org5bbdfd3">
 <p>
-Publisher 의 함수인데 새로운 Publisher 를 돌려준다는 특징이 있다.
+컴바인은 이렇게 퍼블리셔와 서브스크라이버 개념을 제공하고 이를 이용한 비동기
+이벤트 프로세싱을 할 수 있게 기본을 구축해주는 프레임워크입니다.
+가장 간단한 부분만을 간략하게 설명하는데 이 정도 분량이
+필요하네요. 사실 쉽다면 쉽겠지만 방대하다면 또 방대한 것이 바로 이 반응형
+프로그래밍입니다.
+</p>
+
+<p>
+물론 RxSwift 같은 것에 익숙하다면 굉장히 쉽게 이해하고 바로
+사용했을지도 모르겠지요. 하지만 저는 모르기 때문에 이해하기가 참 어려웠습니다.
+이 글을 쓰면서 비로소 아주 기초적인 부분이 이해되기 시작했습니다.
+</p>
+
+<p>
+컴바인과 관련된 글은 이 글 이후에도 계속 만들어 나갈 예정입니다. 아직 내용이
+부족하니깐요. 저도 공부가 필요하고&#x2026; 아래 관련글을 계속 살펴봐주세요.
 </p>
 
 <hr>
@@ -117,6 +201,6 @@ Publisher 의 함수인데 새로운 Publisher 를 돌려준다는 특징이 있
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

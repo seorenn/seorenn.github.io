@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-11-17 Sun 13:58 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emacs Lisp 팁 - Seorenn</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="Emacs Lisp 사용 시 도움이 되는 팁 모음"
+>
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/emacs-lisp-tips.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Emacs Lisp 팁</h1>
+<h2><a href="/">by Seorenn</a></h2></header>
+<div id="outline-container-org13f12c9" class="outline-2">
+<h2 id="org13f12c9">에러나 경고</h2>
+<div class="outline-text-2" id="text-org13f12c9">
+</div>
+<div id="outline-container-org022760c" class="outline-3">
+<h3 id="org022760c">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-org022760c">
+<p>
+예를 들어 아래와 같은 코드에서
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> (foo bar)
+  ...)
+</pre>
+</div>
+<p>
+<code>bar</code> 라는 매개변수를 사용하지 않으면 아래와 같은 경고를 볼 수 있습니다.
+</p>
+<blockquote>
+<p>
+Unused lexical argument 'bar'
+</p>
+</blockquote>
+<p>
+이런 경고 메세지를 지우고 싶다면 매개변수 이름 앞에 언더스코프(혹은 언더라인)을 붙여줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> (foo _bar)
+  ...)
+</pre>
+</div>
+
+<hr>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01001b0" class="outline-2">
+<h2 id="org01001b0">관련글</h2>
+<div class="outline-text-2" id="text-org01001b0">
+<ul class="org-ul">
+<li><a href="./lisp.html">Lisp</a></li>
+<li><a href="./emacs.html">Emacs</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

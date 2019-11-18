@@ -22,6 +22,8 @@ body {
 #content header h1 {
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     font-size: 2.0rem;
     font-weight: bold;
     color: #e6e6e6;
@@ -30,6 +32,7 @@ body {
 #content header h2 {
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
+    padding-left: 1rem;
     font-size: 0.8rem;
     font-weight: normal;
     color: #a4a4a4;

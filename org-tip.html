@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-17 Sun 23:04 -->
+<!-- 2019-11-19 Tue 20:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Org Mode 팁 모음 - Seorenn Static Pages</title>
@@ -26,9 +26,41 @@ gtag('config', 'UA-44534026-1');
 <div id="content">
 <header>
 <h1 class="title">Org Mode 팁 모음</h1>
-<h2><a href="/">Seorenn Static Pages</a></h2></header><p>
-(작성 중)
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-org8912155" class="outline-2">
+<h2 id="org8912155">링크 렌더링 하지 않기</h2>
+<div class="outline-text-2" id="text-org8912155">
+<p>
+Doom Emacs나 Spacemacs의 기본 설정 상태에서는 링크가 자동으로 렌더링 되어서 보기
+편하게 바뀝니다. 예를 들어 <code>[[https://foo.bar][link name]]</code> 같은 코드는 그냥
+link name으로만 표시되지요. 하지만 읽기는 편한데 이걸 수정해야 할 때는
+곤욕입니다. 링크를 수정할지 이름을 수정할지 모르니까요. 이럴 때는 아래와 같은
+코드를 설정에 추가해 줍시다.
 </p>
-<div id="footer"><div id="time">2019년 11월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div class="org-src-container">
+<pre class="src src-lisp">(setq org-link-descriptive nil)
+</pre>
+</div>
+<p>
+이러면 링크 텍스트가 그대로 표시되기 때문에 수정하기에는 좀 더 편합니다.
+</p>
+
+<hr>
+</div>
+</div>
+
+<div id="outline-container-org75a1e41" class="outline-2">
+<h2 id="org75a1e41">관련글</h2>
+<div class="outline-text-2" id="text-org75a1e41">
+<ul class="org-ul">
+<li><a href="./org-mode.html">Org Mode</a></li>
+<li><a href="./org-tip.html">Org Mode 팁 모음</a></li>
+<li><a href="./org-publish.html">Org Publish</a></li>
+<li><a href="./emacs.html">Emacs</a></li>
+<li><a href="./doom-emacs.html">Doom Emacs</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 19일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

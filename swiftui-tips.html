@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-11-19 Tue 16:24 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SwiftUI 팁 모음 - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="SwiftUI Tips"
+>
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/swiftui-tips.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">SwiftUI 팁 모음</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-orgd55b04e" class="outline-2">
+<h2 id="orgd55b04e">미리보기(Preview) 크기 조절하기</h2>
+<div class="outline-text-2" id="text-orgd55b04e">
+<p>
+Xcode 에서 SwiftUI 미리보기 창에 표시되는 크기를 특정 사이즈로 고정하고 싶다면
+SwiftUI View 파일을 생성할 때 만들어지는 보일러플레이트 코드의 Previews 부분을
+아래처럼 수정할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        <span style="color: #c678dd;">SampleView</span>()
+            .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">500</span>, height: <span style="color: #da8548; font-weight: bold;">300</span>))
+    }
+}
+</pre>
+</div>
+<p>
+이러면 미리보기가 500x300 크기로 고정이 됩니다.
+</p>
+
+<hr>
+</div>
+</div>
+
+<div id="outline-container-org0e5fc29" class="outline-2">
+<h2 id="org0e5fc29">관련글</h2>
+<div class="outline-text-2" id="text-org0e5fc29">
+<ul class="org-ul">
+<li><a href="./swift.html">Swift</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 19일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

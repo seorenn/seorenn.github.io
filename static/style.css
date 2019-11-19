@@ -1,4 +1,6 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: black;
     color: whitesmoke;
     font-family: sans-serif;
@@ -9,14 +11,15 @@ body {
 
 #content {
     text-align: left;
-    max-width: 1024px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 #content header {
     width: 100%;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #111;
 }
 
 #content header h1 {
@@ -84,17 +87,22 @@ body {
 
 #content a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
-    color: #df3a01;
+    color: #ff8000;
+}
+
+#content .org-src-container {
+    max-width: 100%;
+    background-color: #071513;
 }
 
 #content pre {
-    max-width: 1024px;
-    background-color: #1c1c1c;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 1.2rem 1.6rem 1.2rem 1.6rem;
-    border-radius: 12px / 12px;
     color: #e6e6e6;
     font-size: 1rem;
     font-family: Menlo, Monaco, monospace;
+    white-space: pre-wrap;
 }
 
 #content code {
@@ -138,14 +146,19 @@ body {
     border-top: 1px solid #333;
 }
 
+#content figure {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #content img {
-    width: 100%;
     max-width: 100%;
 }
 
 #content .inlinead {
     width: 100%;
     max-width: 100%;
+    text-align: center;
 }
 
 #footer {

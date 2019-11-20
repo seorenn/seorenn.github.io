@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-11-19 Tue 22:45 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SwiftUI in Playground - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="플레이그라운드에서 SwiftUI를 사용하는 방법"
+>
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/swiftui-in-playground.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">SwiftUI in Playground</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-org7b30f7e" class="outline-2">
+<h2 id="org7b30f7e">OS 공통</h2>
+<div class="outline-text-2" id="text-org7b30f7e">
+<p>
+iOS든 macOS든 가리지 않고 아래 코드로 플레이그라운드에서 SwiftUI를 시험해 볼 수
+있습니다.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">import</span> SwiftUI
+<span style="color: #51afef;">import</span> PlaygroundSupport
+
+<span style="color: #51afef;">struct</span> <span style="color: #c678dd;">ContentView</span>: View {
+    <span style="color: #51afef;">var</span> body: <span style="color: #51afef;">some</span> View {
+        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Hello Playground!"</span>)
+    }
+}
+
+PlaygroundPage.<span style="color: #c678dd;">current</span>.<span style="color: #c678dd;">setLiveView</span>(<span style="color: #c678dd;">ContentView</span>())
+</pre>
+</div>
+
+<p>
+실행시킨 후 창 우측 상단에 있는 'Adjuest Editor Options' 메뉴에서 Live View 를
+켜주면 뷰의 모습을 볼 수 있습니다.
+</p>
+
+<p>
+macOS 에서는 텍스트가 상단에 표시되고, iOS의 경우는 텍스트가 가운데에 표시된다는
+차이가 있습니다.
+</p>
+
+<p>
+아직 SwiftUI를 플레이그라운드에서 완벽히 돌리기엔 무리가 있다는 점을 알아둡시다.
+</p>
+
+<p>
+참고로 하단의 코드를 <code>PlaygroundPage.current.liveView = ContentView()</code> 처럼
+쓰고 싶을 수도 있는데 이렇게 하면 <code>PlaygroundLiveViewable</code> 을 따르지 않는다며
+오류가 납니다. Objective-C 구현체가 아니기 때문에 <code>setLiveView(...)</code> 와
+<code>liveView = ...</code> 코드는 다른 방식으로 동작한다고 생각합시다.
+</p>
+
+<hr>
+</div>
+</div>
+
+<div id="outline-container-org918aa38" class="outline-2">
+<h2 id="org918aa38">관련글</h2>
+<div class="outline-text-2" id="text-org918aa38">
+<ul class="org-ul">
+<li><a href="./swift.html">Swift</a></li>
+<li><a href="./swiftui-macos-components.html">SwiftUI macOS Components</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 19일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

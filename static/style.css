@@ -95,18 +95,20 @@ body {
 #content .org-src-container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #071513;
-    box-shadow: 0px 2px 5px 0px black;
-    border-radius: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 #content pre {
-    width: 100%;
+    max-width: 100%;
     padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+    background-color: #071513;
     color: #e6e6e6;
     font-size: 1rem;
     font-family: Menlo, Monaco, monospace;
     white-space: pre-wrap;
+    box-shadow: 0px 2px 5px 0px black;
+    border-radius: 8px;
 }
 
 #content code {
@@ -180,7 +182,7 @@ body {
 
 #copyright {
     line-height: 1.0rem;
-    padding: 0;
+    padding: 0 0 1rem 0;
     margin: 0;
     font-size: 0.8rem;
     color: #6e6e6e;

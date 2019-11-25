@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: whitesmoke;
+    background-color: #181e26;
+    color: #dfdfdf;
     font-family: sans-serif;
     word-break: keep-all;
     line-height: 1.9rem;
@@ -19,8 +19,9 @@ body {
     width: 100%;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    background-color: #111;
+    background-color: #373c40;
     margin-bottom: 1.2rem;
+    box-shadow: 0px 2px 5px 0px black;
 }
 
 #content header h1 {
@@ -88,17 +89,19 @@ body {
 
 #content a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
-    color: #ff8000;
+    color: #cdb464;
 }
 
 #content .org-src-container {
-    max-width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     background-color: #071513;
+    box-shadow: 0px 2px 5px 0px black;
+    border-radius: 8px;
 }
 
 #content pre {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
     padding: 1.2rem 1.6rem 1.2rem 1.6rem;
     color: #e6e6e6;
     font-size: 1rem;

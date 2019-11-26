@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-25 Mon 00:43 -->
+<!-- 2019-11-25 Mon 23:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Org Publish - Seorenn Static Pages</title>
@@ -146,14 +146,12 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
          <span style="color: #c678dd;">:base-extension</span> <span style="color: #98be65;">"png\\|jpg\\|jpeg\\|gif"</span>
          <span style="color: #c678dd;">:publishing-directory</span> <span style="color: #98be65;">"~/web/img"</span>
          <span style="color: #c678dd;">:recursive</span> t
-         <span style="color: #c678dd;">:publishing-function</span> org-publish-attachment)
-        (<span style="color: #98be65;">"web"</span> <span style="color: #c678dd;">:components</span> (<span style="color: #98be65;">"doc"</span> <span style="color: #98be65;">"static"</span> <span style="color: #98be65;">"img"</span>))))
+         <span style="color: #c678dd;">:publishing-function</span> org-publish-attachment)))
 </pre>
 </div>
 <p>
-위 설정에는 3가지 분류가 있습니다. <code>doc</code>, <code>static</code>, <code>img</code> 세 가지고 이를 하나의
-그룹으로 묶는 <code>web</code> 이 있습니다. 이 이름들은 딱히 정해진 규칙은 없고 그냥 제
-멋대로 지은 것들입니다.
+위 설정에는 <code>doc</code>, <code>static</code>, <code>img</code> 의 세 가지 프로젝트가 정의도어 있습니다.
+이 이름들은 딱히 정해진 규칙은 없고 그냥 제 멋대로 지은 것들입니다.
 </p>
 
 <p>
@@ -174,34 +172,15 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 <h2 id="orgff73e18">Publish 해보기</h2>
 <div class="outline-text-2" id="text-orgff73e18">
 <p>
-편찬(publish)을 하기 위해서는 <code>org-publish</code> 함수를 호출하면 됩니다. 이 함수는
-프로젝트를 편찬하기 위한 목적이라 하위 프로젝트를 묶어놓은 프로젝트를 지정하면
-딱 좋은 그런 함수입니다. 따라서 위의 예제를 기반으로 아래와 같이 실행시키면 모든
-프로젝트의 문서가 익스포트 되어가 복제가 됩니다.
+편찬(publish)을 하기 위해서는 <code>org-publish-all</code> 함수를 호출하면 됩니다.
+이 함수는 등록된 모든 프로젝트의 설정에 맞게 익스포트하거나 필요한 파일을
+복사합니다.
+이 함수는 따로 단축키가 정의되어 있지
+않으므로 별도로 정의하거나 <code>M-x</code> 키를 누른 후 위 함수를 입력하면 실행시킬 수
+있습니다.
+만약 <a href="doom-emacs.html">Doom Emacs</a>라면 <code>M-x</code> 대신 <code>SPC :</code> 키를 사용할 수도
+있습니다.
 </p>
-<div class="org-src-container">
-<pre class="src src-lisp">(org-publish <span style="color: #98be65;">"web"</span>)
-</pre>
-</div>
-<p>
-Doom Emacs 를 사용한다면 <code>SPC ;</code> 를 누른 후 위의 커맨드를 그대로 입력하면
-됩니다.
-</p>
-
-<p>
-하지만 귀찮으면 그냥 <code>org-publish-all</code> 함수를 실행시키는 방법도 있습니다.
-프로젝트를 중복으로 편찬하려 시도하겠지만 어차피 타임스탬프가 저장되어서 다시
-익스포트 하지는 않기 때문에 큰 문제는 없습니다.
-일반 Emacs 라면 <code>M-x</code> <code>org-publish-all</code> 로 실행시키거나, 혹은 Doom Emacs 라면
-<code>SPC :</code> <code>org-publish-all</code> 로 실행시키면 됩니다. Spacemacs 일 경우에는 <code>SPC SPC</code>
-<code>org-publish-all</code> 로 실행시킬 수 있습니다.
-</p>
-<blockquote>
-<p>
-개인적으로 org-publish-all 함수 사용 시 간혹 Emacs 가 멈춰버리는 증상을 겪은
-적이 있습니다. 혹시나 비슷한 증상을 겪는다면 대신 org-publish 를 사용해 봅시다.
-</p>
-</blockquote>
 
 <p>
 별 문제가 없다면 이 명령 만으로 목적대로 원하는 디렉토리에 html과 함께 정적
@@ -209,8 +188,69 @@ Doom Emacs 를 사용한다면 <code>SPC ;</code> 를 누른 후 위의 커맨�
 </p>
 
 <p>
-기타 별 다른 설정이 없었다면 위 명령은 변경된 파일만 익스포트 하고 복사를 수행합니다.
+당연하겠지만 org-publish 함수들은 모두 변경하지 않은 파일은 아무런 조치를 하지 않습니다.
+즉 수정하지 않은 파일은 익스포트가 되지 않습니다.
 </p>
+</div>
+</div>
+<div id="outline-container-org49d9724" class="outline-2">
+<h2 id="org49d9724">프로젝트 그룹화하기</h2>
+<div class="outline-text-2" id="text-org49d9724">
+<p>
+<code>org-publish-all</code> 의 경우 등록된 모든 프로젝트를 대상으로 익스포트 및 복사
+작업을 수행합니다. 하지만 만약 필요에 의해 모든 것이 한번에가 아니라 필요한 것만
+골라서 익스포트 하려면 <code>org-publish</code> 함수를 이용할 수 있습니다. 예를 들어 아래
+커맨드를 실행시키면 doc 라는 프로젝트만 publish 합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(org-publish <span style="color: #98be65;">"doc"</span>)
+</pre>
+</div>
+
+<p>
+다만 이렇게 하나하나 하기는 귀찮습니다. 그래서 그룹화를 하는 방법도 제공합니다.
+방법은 간단합니다. 지금까지 작성한 방식과 동일하게 역시 프로젝트를 만들되
+아래처럼 만들 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(setq org-publish-project-alist
+      '((<span style="color: #98be65;">"doc"</span>
+         <span style="color: #c678dd;">:base-directory</span> <span style="color: #98be65;">"~/org"</span>
+         <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">...</span>
+         )
+        (<span style="color: #98be65;">"static"</span>
+         <span style="color: #c678dd;">:base-directory</span> <span style="color: #98be65;">"~/org/static"</span>
+         <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">...</span>
+         )
+        (<span style="color: #98be65;">"img"</span>
+         <span style="color: #c678dd;">:base-directory</span> <span style="color: #98be65;">"~/org/img"</span>
+         <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">...</span>
+         )
+        (<span style="color: #98be65;">"web"</span> <span style="color: #c678dd;">:components</span> (<span style="color: #98be65;">"doc"</span> <span style="color: #98be65;">"static"</span> <span style="color: #98be65;">"img"</span>))))
+</pre>
+</div>
+<p>
+생략한 코드가 많은데, 그냥 앞서 설정했던 내용에서 마지막 한 줄이 더 추가되었다고 보면 됩니다. web 이라는
+이름의 프로젝트는 dic, static, img 라는 세 가지 컴포넌트로 구성되어 있다고
+정의한 것입니다. 따라서 이 경우 아래 커맨드 한 번이면 doc, static, img 세
+프로젝트 모두 publish가 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(org-publish <span style="color: #98be65;">"web"</span>)
+</pre>
+</div>
+
+<p>
+참고로 <a href="doom-emacs.html">Doom Emacs</a>에서는 <code>SPC ;</code> 를 누르면 위 커맨드를 쉽게
+입력해서 실행시킬 수 있습니다.
+</p>
+
+<blockquote>
+<p>
+개인적으로 컴포넌트를 정의한 프로젝트를 org-publish 함수로 편찬할 때 간혹 Emacs 가 멈춰버리는 증상을 겪은
+적이 있습니다. 혹시나 비슷한 증상을 겪는다면 컴포넌트 설정을 빼고 org-publish-all을 사용해 봅시다.
+</p>
+</blockquote>
 
 <hr>
 </div>

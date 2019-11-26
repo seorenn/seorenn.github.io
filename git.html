@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-23 Sat 16:41 -->
+<!-- 2019-11-26 Tue 00:44 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git - Seorenn Static Pages</title>
@@ -36,6 +36,27 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <h2 id="org3fd5e52">사용법 메모</h2>
 <div class="outline-text-2" id="text-org3fd5e52">
 </div>
+<div id="outline-container-orga6658f5" class="outline-3">
+<h3 id="orga6658f5">설정</h3>
+<div class="outline-text-3" id="text-orga6658f5">
+<p>
+전역(global)
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global user.name <span style="color: #98be65;">"your name"</span>
+<span style="color: #ECBE7B;">git</span> config --global user.email <span style="color: #98be65;">"your email address"</span>
+</pre>
+</div>
+<p>
+현재 프로젝트에만 설정하기(local)
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config user.name <span style="color: #98be65;">"your name"</span>
+<span style="color: #ECBE7B;">git</span> config user.email <span style="color: #98be65;">"your email address"</span>
+</pre>
+</div>
+</div>
+</div>
 <div id="outline-container-orga9cb021" class="outline-3">
 <h3 id="orga9cb021">저장소 만들기</h3>
 <div class="outline-text-3" id="text-orga9cb021">
@@ -61,11 +82,23 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 </div>
 </div>
+<div id="outline-container-org6f16289" class="outline-3">
+<h3 id="org6f16289">상황 보기</h3>
+<div class="outline-text-3" id="text-org6f16289">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> status
+</pre>
+</div>
+<p>
+가장 많이 사용하게 될 커맨드입니다. 현재 저장소의 변경되고 있는 사항을 간략하게 보여줍니다.
+</p>
+</div>
+</div>
 <div id="outline-container-org417aaf3" class="outline-3">
 <h3 id="org417aaf3">파일 스테이지(Stage) 하기</h3>
 <div class="outline-text-3" id="text-org417aaf3">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add filename
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add FILE_PATH
 </pre>
 </div>
 <p>
@@ -76,6 +109,18 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add .
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-orgcf601c0" class="outline-3">
+<h3 id="orgcf601c0">스테이지 취소하기</h3>
+<div class="outline-text-3" id="text-orgcf601c0">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> reset FILE_PATH
+</pre>
+</div>
+<p>
+파일명을 적지 않으면 모두 언스테이지 됩니다.
+</p>
 </div>
 </div>
 <div id="outline-container-orgbd2c3a4" class="outline-3">
@@ -111,6 +156,18 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> commit -m <span style="color: #98be65;">"Update several files"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge0dd472" class="outline-3">
+<h3 id="orge0dd472">커밋 메시지 수정하기</h3>
+<div class="outline-text-3" id="text-orge0dd472">
+<p>
+아래 명령으로 가장 최근의 커밋 메시지를 수정할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> commit --amend
 </pre>
 </div>
 </div>
@@ -273,6 +330,14 @@ switch 커맨드의 용도는 브랜치를 전환한다는 의미에서 checkout
 <p>
 왜 만들 때는 checkout 을 쓰는데 지울 때는 branch 를 쓰는지는 모르겠습니다.
 </p>
+
+<p>
+원격 브랜치를 삭제할 때는 아래 방법을 쓸 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push origin --delete REMOTE_BRANCH_NAME
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org73b9b1d" class="outline-3">
@@ -447,9 +512,115 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있습니�
 행위는 자제합시다. 강제 푸시는 여러분이 작업하기 위해 따로 생성한 브랜치에만
 하는 것이 현명합니다.
 </p>
+</div>
+</div>
+<div id="outline-container-orgf1249c5" class="outline-3">
+<h3 id="orgf1249c5">파일 지우기</h3>
+<div class="outline-text-3" id="text-orgf1249c5">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> <span style="color: #ECBE7B;">rm</span> FILE_PATH
+</pre>
+</div>
+<p>
+로컬과 저장소 양쪽에서 파일이 지워집니다.
+</p>
+
+<p>
+내 컴퓨터의 파일은 놔두고 저장소에서만 파일을 지우고 싶을 때는 아래 커맨드를
+이용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> <span style="color: #ECBE7B;">rm</span> --cached PATH
+</pre>
+</div>
+<p>
+이후 <code>.gitignore</code> 에 등록하지 않으면 untracked file 로 분류가 됩니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb198250" class="outline-3">
+<h3 id="orgb198250">업데이트 무시하기</h3>
+<div class="outline-text-3" id="text-orgb198250">
+<p>
+어떤 이유(?)로 특정 파일이 업데이트되어도 이를 커밋하지 않으려면 아래 커맨드를
+이용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> update-index --assume-unchanged PATH
+</pre>
+</div>
+<p>
+이제 해당 파일은 업데이트 되어도 status 에 나타나지 않습니다. 다만 이 방법은
+영원하지 않습니다. 예를 들어 브랜치를 바꾸거나 pull 상황에 따라 다시 나타날 수 있으므로 주의합시다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1bcdfb7" class="outline-2">
+<h2 id="org1bcdfb7">설정 분리하기</h2>
+<div class="outline-text-2" id="text-org1bcdfb7">
+<p>
+디렉토리별로 Git 설정을 분리하려면 우선 <code>~/.gitconfig</code> 파일에 아래와 같은 식으로
+설정할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[user]
+    email = your primary email address
+    name = your name
+[includeIf "gitdir:~/foo/bar/"]
+    path = ~/.gitconfig-foo-bar
+</pre>
+</div>
+<p>
+위의 설정의 경우 <code>~/foo/bar/</code> 라른 디렉토리 안에서는 <code>~/.gitconfig-foo-bar</code> 라는
+설정 파일을 읽어들이도록 동작합니다. 여기에 필요한 설정을 추가해주면 됩니다.
+아럐는 <code>~/.gitconfig-foo-bar</code> 파일의 예제입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[user]
+    email = your secondary email address
+    name = your name
+[github]
+    user = github user name
+</pre>
+</div>
+<p>
+github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 Git 설정입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org3b5ff3b" class="outline-2">
+<h2 id="org3b5ff3b">페이저 비활성화</h2>
+<div class="outline-text-2" id="text-org3b5ff3b">
+<p>
+페이저(pager)란 less나 more 같은 도구로 터미널에서 로그나 변경사항을 볼 때 긴
+내용을 편하게 볼 수 있게 도와줍니다. 하지만 사람의 눈이 아닌 다른 UNIX
+유틸리티로 파이프로 넘기려고 할 때는 이런 페이저가 방해가 됩니다. 이 경우
+<code>--no-pager</code> 옵션을 줘서 실행시킬 수 있습니다.
+</p>
+
+<p>
+예를 들어 diff를 페이저 없이 쓰려면 아래와 같이 입력하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> --no-pager diff
+</pre>
+</div>
+
+<p>
+이 옵션은 <code>pager.</code> 으로 시작되는 다양한 설정으로 설정도 가능합니다. 예를 들어
+branch 명령에서 페이저를 영원히 비활성화 시키려면 아래의 커맨드를 이용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global pager.branch false
+</pre>
+</div>
+<p>
+이 외에도 <code>pager.diff</code> 등 다양한 설정이 있으므로 직접 필요한 것을 찾아봅시다.
+(물론 별로 설정할 일은 없을 것 같습니다😃)
+</p>
 
 <hr>
-</div>
 </div>
 </div>
 
@@ -461,6 +632,6 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있습니�
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 23일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 26일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

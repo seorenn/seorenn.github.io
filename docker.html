@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-24 Sun 23:06 -->
+<!-- 2019-11-26 Tue 00:45 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Docker - Seorenn Static Pages</title>
@@ -102,14 +102,33 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
+<div id="outline-container-org5ad9123" class="outline-2">
+<h2 id="org5ad9123">공간 비우기</h2>
+<div class="outline-text-2" id="text-org5ad9123">
+<p>
+No space left 에러 혹은 디스크 공간 부족으로 인해 이미지들이나 각종 컨테이너를
+삭제해야 할 경우 아래의 커맨드를 이용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">docker <span style="color: #ECBE7B;">rm</span> $<span style="color: #51afef;">(</span>docker ps -q -f <span style="color: #98be65;">'status=exited'</span><span style="color: #51afef;">)</span>
+docker rmi $<span style="color: #51afef;">(</span>docker images -q -f <span style="color: #98be65;">"dangling=true"</span><span style="color: #51afef;">)</span>
+docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51afef;">(</span>docker volume <span style="color: #ECBE7B;">ls</span> -qf <span style="color: #dcaeea;">dangling</span>=true<span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+위 커맨드는 종료된 컨테이너와 사용되지 않는 이미지와 볼륨을 순차적으로 지우는 명령입니다.
+</p>
+</div>
+</div>
 <div id="outline-container-org62b2a93" class="outline-2">
 <h2 id="org62b2a93">관련글</h2>
 <div class="outline-text-2" id="text-org62b2a93">
 <ul class="org-ul">
 <li><a href="dockerfile.html">Dockerfile</a></li>
+<li><a href="docker-compose.html">Docker Compose</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 24일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 26일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

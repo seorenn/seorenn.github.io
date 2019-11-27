@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-18 Mon 18:10 -->
+<!-- 2019-11-27 Wed 00:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doom Emacs 설정 팁 - Seorenn Static Pages</title>
@@ -40,6 +40,26 @@ gtag('config', 'UA-44534026-1');
 <p>
 이 설정은 고정폭 폰트에만 유효합니다.
 </p>
+</div>
+</div>
+<div id="outline-container-org663875d" class="outline-2">
+<h2 id="org663875d">배경색이 버퍼마다 달라요?!</h2>
+<div class="outline-text-2" id="text-org663875d">
+<p>
+Doom Emacs에 포함된 solaire-mode는 배경색을 임의로 변경하는 확장입니다. 이걸
+비활성화 하면 배경색이 바뀌는 문제는 해결됩니다.
+</p>
+
+<p>
+<code>SPC f p</code> 로 packages.el 파일을 열어서 아래 한 줄을 넣어줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(package! solaire-mode <span style="color: #c678dd;">:disable</span> t)
+</pre>
+</div>
+<p>
+수정 후에는 <code>~/.emacs.d/bin/doom refresh -p</code> 커맨드를 잊지 맙시다.
+</p>
 
 <hr>
 </div>
@@ -55,6 +75,6 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 18일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

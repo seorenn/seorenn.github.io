@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-25 Mon 00:43 -->
+<!-- 2019-11-27 Wed 00:28 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs - Seorenn Static Pages</title>
@@ -83,6 +83,68 @@ OS라고 표현하기도 합니다만 - 설정이 굉장히 난해한 편입니�
 </p>
 </div>
 </div>
+<div id="outline-container-org944b6da" class="outline-3">
+<h3 id="org944b6da">Truecolor in Terminal</h3>
+<div class="outline-text-3" id="text-org944b6da">
+<p>
+iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제대로 지원하기 위해서
+약간의 트윅이 필요합니다. 참고로 이 트윅은 macOS에서만 확인 되었습니다.
+</p>
+
+<p>
+우선 <code>xterm-24bit.terminfo</code> 라는 파일을 만들고 아래 내용을 붙여 넣습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">xterm-24bit|xterm with 24-bit direct color mode,
+   use=xterm-256color,
+   sitm=\E[3m,
+   ritm=\E[23m,
+   setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&amp;%d;%p1%{255}%&amp;%dm,
+   setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&amp;%d;%p1%{255}%&amp;%dm,
+</pre>
+</div>
+<p>
+그 다음 터미널에서 아래 커맨드를 입력합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tic -x -o ~/.terminfo xterm-24bit.terminfo
+</pre>
+</div>
+<p>
+이제 <code>xterm-24bit</code> 라는 터미널 모드를 사용할 수 있습니다. 아래의 커맨드로 현재
+쉘의 터미널 타입을 바꿀 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">TERM</span>=<span style="color: #98be65;">"xterm-24bit"</span>
+</pre>
+</div>
+<p>
+이후 <code>emacs -nw</code> 커맨드로 터미널에서 이맥스를 기동시켜서 확인해 봅시다. 참고로
+<code>-nw</code> 옵션은 GUI용으로 빌드된 이맥스를 터미널에서도 기동시킬 수 있게 해주는 옵션입니다.
+</p>
+
+<p>
+잘 동작한다면
+필요하다면 위 내용을 <code>.zshrc</code> 나 <code>.bashrc</code> 같은 쉘 초기화 스크립트에 넣어놓으면
+편하게 쓸 수 있습니다.
+</p>
+
+<p>
+다만, 특정 터미널 도구에서 24bit 색상 모드는 문제가 발생하는 경우가 있습니다.
+이럴 때는 트루컬러를 사용할 소프트웨어에만 위 터미널 모드를 적용하도록 하는
+방법이 있습니다. 예를 들어 emacs 에 트루컬러 모드를 적용하기 위해 아래 alias 를
+만들 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">alias</span> <span style="color: #dcaeea;">emacs</span>=<span style="color: #98be65;">"TERM=xterm-24bit /usr/local/bin/emacs"</span>
+</pre>
+</div>
+<p>
+이렇게 하면 이 alias가 적용된 쉘에서 emacs 커맨드는 항상 트루컬러모드로 동작하게
+됩니다. 물론 emacs의 경로는 자신의 상황에 맞게 정확하게 입력해야 합니다.
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-org0b9881a" class="outline-2">
 <h2 id="org0b9881a">관련글</h2>
@@ -99,6 +161,6 @@ OS라고 표현하기도 합니다만 - 설정이 굉장히 난해한 편입니�
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 25일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-26 Tue 00:45 -->
+<!-- 2019-11-27 Wed 00:14 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Docker - Seorenn Static Pages</title>
@@ -120,15 +120,37 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </p>
 </div>
 </div>
+<div id="outline-container-org265585c" class="outline-2">
+<h2 id="org265585c">기타 메모</h2>
+<div class="outline-text-2" id="text-org265585c">
+</div>
+<div id="outline-container-org4d471d8" class="outline-3">
+<h3 id="org4d471d8">컨테이너에서 호스트 포트에 접근하기(macOS)</h3>
+<div class="outline-text-3" id="text-org4d471d8">
+<p>
+네트워크 구현 문제로 호스트에 열려있는 포트들 - 특히 도커에 의해 열리지 않은
+포트들 - 에 접근하려면 <code>host.docker.internal</code> 라는 특수한 이름으로 접속하면 됩니다.
+예를 들어 내 컴퓨터에 MongDB 를 27017 포트로 열어놓은 상태에서, 리눅스 도커
+컨테이너에서 이 MongoDB에 접속하려면 아래와 같은 식의 커맨드를 사용할 수
+있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">mongo mongodb://host.docker.internal:27017/dbname
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-org62b2a93" class="outline-2">
 <h2 id="org62b2a93">관련글</h2>
 <div class="outline-text-2" id="text-org62b2a93">
 <ul class="org-ul">
 <li><a href="dockerfile.html">Dockerfile</a></li>
 <li><a href="docker-compose.html">Docker Compose</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/20">Docker에서 macOS 호스트 포트에 접근하기</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 26일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

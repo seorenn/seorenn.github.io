@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-11-27 Wed 23:36 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tmux - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="Tmux 소개 및 사용법, 단축키 등을 정리합니다"
+>
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/tmux.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Tmux</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><p>
+Tmux 는 터미널 멀티플렉서라고 불리우는 도구입니다. 쉽게 말해서 하나의 터미널을
+여러개로 나누어서 쓸 수 있게 만들어줍니다. 현대적인 터미널의 멀티탭이나 멀티Pane
+기능과 비슷한 기능을 구현해줍니다.
+</p>
+
+<p>
+이런거 왜 쓰냐구요? 글쎄요? 키보드만으로 모든 것을 제어할 수 있다는 것은
+편리함을 떠나서 희열이 느껴지진 않나요?😋
+</p>
+
+<p>
+비슷하면서도 원조격인 <code>screen</code> 이라는 도구에 영향을 많이 받은 것으로 보입니다.
+</p>
+
+<div id="outline-container-org75152b5" class="outline-2">
+<h2 id="org75152b5">사용법</h2>
+<div class="outline-text-2" id="text-org75152b5">
+<p>
+그냥 실행시키면 실행은 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tmux
+</pre>
+</div>
+<p>
+실행된 상태에서 detach, 즉 tmux를 백그라운드 상태로 두려면 아래 단축키 항목에서
+백그라운드로 돌리기 항목을 참조하거나, 혹은 tmux 내부의 쉘에서
+아래 커맨드를 입력하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tmux detach
+</pre>
+</div>
+<p>
+백그라운드에 있는 tmux 세션을 그대로 살리려면 아래 커맨드를 입력하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tmux attach
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgefb5ace" class="outline-2">
+<h2 id="orgefb5ace">설정법</h2>
+<div class="outline-text-2" id="text-orgefb5ace">
+<p>
+<code>~/.tmux.conf</code> 파일에 원하는 설정을 기록할 수 있습니다.
+</p>
+</div>
+<div id="outline-container-org6b9696f" class="outline-3">
+<h3 id="org6b9696f">리더키(Prefix) 변경하기</h3>
+<div class="outline-text-3" id="text-org6b9696f">
+<p>
+기본 리더키는 <code>^b</code> (Ctrl-B) 입니다. 이걸 바꾸려면,
+예를 들어 리더키를 <code>^\</code> 로 바꾸려면 아래의 설정을 추가하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">unbind-key C-b
+set-option -g prefix C-'\'
+</pre>
+</div>
+<p>
+<a href="emacs.html">Emacs</a> 등을 쓴느 경우 기본 리더키인 <code>^b</code> 가 중복되기 때문에
+이런 식으로 바꾸는 것을 추천합니다. 물론 필요하거나 원하는 단축키로 설정하면 됩니다.
+</p>
+
+<p>
+리더키는 대안키(alternative, prefix2)도 지원됩니다. 기본 대안키는 <code>^a</code> 입니다. 이것
+역시 비슷하게 바꿀 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">unbind-key C-a
+set-option -g prefix2 C-']'
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org50ff916" class="outline-2">
+<h2 id="org50ff916">단축키</h2>
+<div class="outline-text-2" id="text-org50ff916">
+<p>
+아래에 언급하는 모든 단축키는 리더키(Prefix)를 먼저 누른 후 눌러야 합니다. 참고로 리더키는
+앞서 언급한 대로 사용자가 커스터마이징 할 수 있으며 기본값은 <code>^B</code> (Ctrl-B) 입니다.
+</p>
+<ul class="org-ul">
+<li><code>c</code> 새 창 만들기(New window)</li>
+<li><code>1</code> 1번 윈도우로 전환(Switch to window 1). 이런 식으로 1에서 9번까지 쓸 수 있습니다.</li>
+<li><code>%</code> 창을 좌우로 분할(Horizontal split pane)</li>
+<li><code>"</code> 창을 위아래로 분할(Vertical split pane)</li>
+<li><code>q 1</code> 창의 나눠진 부분에서 1번 pane으로 이동하기(Switch pane number 1). <code>q</code> 를
+누르면 화면에 숫자가 표시되니 원하는 숫자를 누르면 됩니다.</li>
+<li><code>o</code> 다른 창으로 포커스 이동</li>
+<li><code>h</code> 혹은 <code>j</code> 혹은 <code>k</code> 혹은 <code>r</code> 혹은 커서키: 해당 방향의 pane으로 이동합니다.
+<code>hjkl</code> 을 아시는 분은 아시겠지만 <a href="vim.html">Vim</a> 의 커서 이동키와 동일한 배치지요.</li>
+<li><code>[</code> 스크롤 모드: 커서키로 스크롤을 할 수 있습니다. 빠져나올 때는 <code>RET</code> (Enter)
+키를 누릅니다. 참고로 아래 관련글 항목의 설정을 참고하시면 마우스 휠로도 스크롤은 잘 됩니다.</li>
+<li><code>d</code> 백그라운드로 돌리기(detach)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb6eddd9" class="outline-2">
+<h2 id="orgb6eddd9">기타 팁</h2>
+<div class="outline-text-2" id="text-orgb6eddd9">
+</div>
+<div id="outline-container-orgedca68d" class="outline-3">
+<h3 id="orgedca68d">선택영역 복사하기</h3>
+<div class="outline-text-3" id="text-orgedca68d">
+<p>
+마우스로 드래그하소 <code>^C</code> 혹은 Command-C 를 눌렀는데 복사가 안 된다면 <code>^W</code>
+(Ctrl+W)를 눌러보세요. 물론 설정에 따라 터미널에서의 복사가 안 될 수도 있습니다.
+</p>
+
+<p>
+<a href="macos.html">macOS</a> 유저라면
+<a target="_blank" href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard">reattach-to-user-namespace</a>
+라는 도구를 설치해야 설정해야 할 수도 있습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org1d927d0" class="outline-3">
+<h3 id="org1d927d0">종료하지 않고 설정 다시 읽어들이기</h3>
+<div class="outline-text-3" id="text-org1d927d0">
+<p>
+<code>.tmux.conf</code> 파일을 수정했는데 지금 열려있는 창들을 닫기가 너무 아깝다면 tmux를
+종료하기가 싫을 것입니다. tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면 어떻게 해야 할까요?
+</p>
+
+<p>
+이럴 때는 리더키(Prefix)를 누르고 아래 커맨드를 입력해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:source-file ~/.tmux.conf
+</pre>
+</div>
+<p>
+<code>:</code> 키를 누르는 순간 마치 Vim 처럼 하단에 입력 모드가 생기면서 저렇게 입력이
+됩니다. 그리고 엔터를 누르면 tmux가 설정 파일을 다시 읽어들입니다.
+</p>
+
+<p>
+혹은 다른 방법으로 tmux 안에 아무 쉘에서 아래 커맨드를 입력해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tmux source-file ~/.tmux.conf
+</pre>
+</div>
+<p>
+이렇게 해도 tmux를 종료하지 않고 설정파일을 다시 읽어들일 수 있습니다.
+</p>
+
+<hr>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org02cc116" class="outline-2">
+<h2 id="org02cc116">관련글</h2>
+<div class="outline-text-2" id="text-org02cc116">
+<ul class="org-ul">
+<li><a target="_blank" href="https://github.com/gpakosz/.tmux">🇫🇷 Oh My Tmux! Pretty &amp; versatile tmux configuration</a>:
+잘 만들어진 설정을 공유하고 있으며 그대로 쓰기에도 괜찮고
+설정을 참조하기에도 괜찮은 것 같습니다.</li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

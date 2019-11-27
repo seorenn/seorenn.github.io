@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-25 Mon 23:54 -->
+<!-- 2019-11-27 Wed 22:46 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Docker Compose - Seorenn Static Pages</title>
@@ -38,7 +38,7 @@ Docker Compose(도커 컴포즈)는 <a href="docker.html">Docker</a> 컨테이�
 </p>
 
 <p>
-컴포드 명세 파일은 <code>docker-compose.yml</code> 이라는 파일명을 사용합니다. 물론
+컴포즈 명세 파일은 <code>docker-compose.yml</code> 이라는 파일명을 사용합니다. 물론
 마음대로 지어도 상관은 없지만 파일 이름이 다르면 커맨드가 좀 더 길어진다는 단점이 있습니다.
 </p>
 
@@ -52,7 +52,10 @@ Docker Compose(도커 컴포즈)는 <a href="docker.html">Docker</a> 컨테이�
 특정 파일 이름(some-docker-compose-file.yml)의 컴포즈
 파일을 이용해 서비스를 올립니다.</li>
 <li><code>docker-compose down</code> 모든 중지된 서비스를 내립니다.</li>
-<li><code>docker-compose run service_name command</code> 특정 서비스의 커맨드를 실행시킵니다.</li>
+<li><code>docker-compose exec service_name command</code> 특정 실행 중인 컨테이너에서 특정
+커맨드를 실행시킵니다.</li>
+<li><code>docker-compose run service_name command</code> 특정 서비스 컨테이너를 특정 커맨드로
+실행시킵니다. 컨테이너가 새로 생성되는 점이 run 명령어와 다릅니다.</li>
 </ul>
 </div>
 </div>
@@ -137,6 +140,6 @@ app 이라는 서비스는 별도로 작성된 <code>app-dockerfile</code> 이�
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 25일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

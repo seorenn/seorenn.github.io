@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-17 Sun 23:04 -->
+<!-- 2019-11-27 Wed 22:46 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs Lisp 팁 - Seorenn Static Pages</title>
@@ -27,6 +27,148 @@ gtag('config', 'UA-44534026-1');
 <header>
 <h1 class="title">Emacs Lisp 팁</h1>
 <h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-orge5d415b" class="outline-2">
+<h2 id="orge5d415b">개념 메모</h2>
+<div class="outline-text-2" id="text-orge5d415b">
+</div>
+<div id="outline-container-orgb564265" class="outline-3">
+<h3 id="orgb564265">샵(Sharpsign)</h3>
+<div class="outline-text-3" id="text-orgb564265">
+<p>
+우선 <code>#</code> (Sharpsign) 은 s-expressions 특수 문법입니다. 근데 뭔 소린지 하나도
+모르겠습니다. 사실 당연합니다. <code>#</code> 은 그 자체만으론 의미가 없고 뒤에 뭐가
+오느냐에 따라 달라지기 때문입니다.
+</p>
+
+<p>
+에를 들어 <code>#(1 2 3)</code> 은 벡터(Vector)로 취급됩니다. <code>#'function-name</code> 의 경우는
+function abbreviation 으로 불립니다.
+</p>
+
+<p>
+자세한 내용은
+<a target="_blank" href="http://www.lispworks.com/documentation/HyperSpec/Body/02_dh.htm">Sharpsign</a>
+글을 읽어봅시다.
+</p>
+</div>
+</div>
+<div id="outline-container-orge3bc661" class="outline-3">
+<h3 id="orge3bc661">단따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-orge3bc661">
+<p>
+단따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용합니다. 예를 들어 <code>(1 2 3)</code>
+이라는 리스트를 메시지로 출력하고 싶어서 아래 코드를 작성했다고 가정해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(print (<span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span>))
+</pre>
+</div>
+<p>
+그런데 위 코드는 <code>1</code> 이라는 함수를 찾을 수 없다는 오류가 납니다. 즉 <code>(1 2 3)</code> 리스트가
+print 함수 호출 시점에 먼저 실행(evaluation)되어 버리기 때문입니다.
+참고로 <a href="lisp.html">Lisp</a> 의 리스트의 첫 아이템은 보통 함수가 위치합니다.
+</p>
+
+<p>
+하지만 이를 아래처럼 고치면 원하는대로 할 수가 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(print '(<span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span>))
+</pre>
+</div>
+<p>
+단따옴표를 붙인 <code>'(1 2 3)</code> 리스트는 바로 실행되는게 아니라 인용 처리가 되어서
+실행(evaluation)되지 않은 리스트 형태로 넘어가게 됩니다.
+</p>
+
+<p>
+인용처리된 리스트는 <code>eval</code> 함수를 이용하면 원래의 리스트(?)대로 만들 수
+있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(eval '(<span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span>))
+</pre>
+</div>
+<p>
+위 코드는 처음과 같이 <code>1</code> 이라는 함수가 없다는 오류가 납니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org7638d63" class="outline-3">
+<h3 id="org7638d63">샵 단따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org7638d63">
+<p>
+<code>#'function-name</code> 의 의미는
+<code>(function function-name)</code> 를 줄여서 표기한 것입니다.
+다르게 말해서 함수를 심볼 형태로 넘기기 위한 것입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">do-what</span> (f)
+  (funcall f <span style="color: #98be65;">"test"</span>))
+
+(do-what #'message)
+</pre>
+</div>
+<p>
+보통은 이렇게 매크로나 C의 함수 포인터(?)를 넘기는 스타일과 비슷하게 쓸 수
+있습니다. 물론 위의 경우 <code>#'</code> 대신 그냥 <code>'</code> 만 써도 문제 없이 동작합니다.
+다만 <code>#'</code> 의 경우 컴파일러에게 이것은 함수다 라는 것을 알려주는 의미도 있다고
+합니다.
+</p>
+<blockquote>
+<p>
+사실은 정확히 뭔 소린지 모르겠습니다. 일단 알아낸 부분만 정리하고 있습니다.
+어차피 이 부분을 정확하게 이해하려면 스코프 개념도 알아야해요.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org96f6f39" class="outline-3">
+<h3 id="org96f6f39">apply vs funcall</h3>
+<div class="outline-text-3" id="text-org96f6f39">
+<p>
+위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있습니다. 사용 방법도 거의
+동일합니다. 하지만 매개변수를 그대로 받냐 아니면 리스트로 받냐의 차이가
+있습니다.
+</p>
+
+<p>
+<code>funcall</code> 을 사용한 예제를 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(funcall #'+ <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span>)
+</pre>
+</div>
+<p>
+이번에는 <code>apply</code> 를 사용한 아래 예제를 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(apply #'+ '(<span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span>))
+</pre>
+</div>
+<p>
+두 코드 다 6을 리턴합니다. 단지 매개변수를 전달하는 차이가 보입니다.
+</p>
+
+<p>
+함수에서 매개변수를 넘기는 방법도 메모해봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">do-what-apply</span> (what <span style="color: #ECBE7B;">&amp;rest</span> args) (apply what args))
+(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">do-what-funcall</span> (what arg) (funcall what arg))
+
+(do-what-apply #'message <span style="color: #98be65;">"test-apply"</span>)
+(do-what-funcall #'message <span style="color: #98be65;">"test-funcall"</span>)
+</pre>
+</div>
+<blockquote>
+<p>
+맞는지 틀리는지는 모르겠지만 일단 적어놓고 봅니다.😏
+</p>
+</blockquote>
+</div>
+</div>
+</div>
 <div id="outline-container-org13f12c9" class="outline-2">
 <h2 id="org13f12c9">에러나 경고</h2>
 <div class="outline-text-2" id="text-org13f12c9">
@@ -73,6 +215,6 @@ Unused lexical argument 'bar'
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

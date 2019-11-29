@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-27 Wed 00:14 -->
+<!-- 2019-11-28 Thu 23:03 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>macOS - Seorenn Static Pages</title>
@@ -77,12 +77,35 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
+<div id="outline-container-orgdd4f67c" class="outline-3">
+<h3 id="orgdd4f67c">다음으로 열기(Open with) 메뉴 초기화하기</h3>
+<div class="outline-text-3" id="text-orgdd4f67c">
+<p>
+파인더에서 특정 파일을 우클릭해서 나타나는 팝업 메뉴에서 '다음으로 열기'
+혹은 'Open with' 항목이
+비정상적으로 불어나는 등 이상 동작하는 경우 이 목록을 초기화하는 방식으로 해결이 가능합니다.
+</p>
+
+<p>
+아래 커맨드를 복사해서 터미널에서 실행시킵니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister <span style="color: #98be65;">\</span>
+-kill -r -domain local -domain user &amp;&amp; <span style="color: #98be65;">\</span>
+killall Finder
+</pre>
+</div>
+<p>
+현재 글을 쓰는 시점에서 가장 최근의 macOS 카탈리나에서도 동작이 확인 되었습니다.
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-org5257f8b" class="outline-2">
 <h2 id="org5257f8b">관련글</h2>
 <div class="outline-text-2" id="text-org5257f8b">
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 28일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

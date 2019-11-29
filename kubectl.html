@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-28 Thu 23:03 -->
+<!-- 2019-11-29 Fri 21:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kubectl - Seorenn Static Pages</title>
@@ -44,6 +44,15 @@ kubectl 은 Kubernetes 클러스터 컨트롤 도구입니다. 이 문서에서�
 </div>
 </div>
 </div>
+<div id="outline-container-org4e78a59" class="outline-3">
+<h3 id="org4e78a59">포드 정보 보기</h3>
+<div class="outline-text-3" id="text-org4e78a59">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl describe pod POD_NAME
+</pre>
+</div>
+</div>
+</div>
 <div id="outline-container-org9e41371" class="outline-3">
 <h3 id="org9e41371">YAML 파일 적용</h3>
 <div class="outline-text-3" id="text-org9e41371">
@@ -71,7 +80,8 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </pre>
 </div>
 <p>
-아예 포드를 삭제시킬 수도 있습니다.
+아예 포드를 삭제시킬 수도 있습니다. Deployment가 아닌 포드는 이 방법으로
+삭제하는 것이 편하기도 합니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">kubectl delete pod POD_NAME
@@ -150,9 +160,22 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 <p>
 커맨드에 쉘을 넣으면 당연히 쉘도 뜹니다.
 </p>
+
+<p>
+포드가 하나 이상의 멀티 컨테이너일 경우 <code>--container</code> 옵션으로 골라서 접속할 수
+있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl exec -it POD_NAME --container CONTAINER_NAME -- COMMAND
+</pre>
+</div>
+<p>
+물론 <code>--container</code> 옵션은 exec 뿐만 아니라 logs 등등 다양한 곳에서 사용할 수
+있으니 참고합시다.
+</p>
 </div>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 28일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

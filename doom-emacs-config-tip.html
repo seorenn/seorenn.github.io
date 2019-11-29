@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-27 Wed 00:28 -->
+<!-- 2019-11-29 Fri 21:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doom Emacs 설정 팁 - Seorenn Static Pages</title>
@@ -42,6 +42,41 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
+<div id="outline-container-org4cca532" class="outline-2">
+<h2 id="org4cca532">줄 간격 설정</h2>
+<div class="outline-text-2" id="text-org4cca532">
+<p>
+줄 간격(line spacing 혹은 line height) 설정은 아래와 같은 식의 코드를 <code>config.el</code> 에 넣으면
+설정할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(setq-default line-spacing <span style="color: #da8548; font-weight: bold;">2</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1d43608" class="outline-2">
+<h2 id="org1d43608">창 초기 위치 및 크기 설정</h2>
+<div class="outline-text-2" id="text-org1d43608">
+<p>
+예를 들어 위에서 120픽셀, 좌측에서 50픽셀 떨어진 곳에 80x24 크기로 Emacs 창을
+띄우고 싶다면 아래 코드를 <code>config.el</code> 에 넣으면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">when</span> window-system
+  (setq initial-frame-alist
+        '((top . <span style="color: #da8548; font-weight: bold;">120</span>)
+          (left . <span style="color: #da8548; font-weight: bold;">50</span>)
+          (width . <span style="color: #da8548; font-weight: bold;">80</span>)
+          (height . <span style="color: #da8548; font-weight: bold;">24</span>))))
+</pre>
+</div>
+<p>
+참고로 top, left 값은 픽셀인 반면, width와 height 값은 문자 갯수로 표현합니다.
+즉 width 80 height 24 값은 가로 80컬럼 세로 24로우의 의미입니다.
+</p>
+</div>
+</div>
 <div id="outline-container-org663875d" class="outline-2">
 <h2 id="org663875d">배경색이 버퍼마다 달라요?!</h2>
 <div class="outline-text-2" id="text-org663875d">
@@ -60,6 +95,37 @@ Doom Emacs에 포함된 solaire-mode는 배경색을 임의로 변경하는 확�
 <p>
 수정 후에는 <code>~/.emacs.d/bin/doom refresh -p</code> 커맨드를 잊지 맙시다.
 </p>
+</div>
+</div>
+<div id="outline-container-org361082b" class="outline-2">
+<h2 id="org361082b">이모티콘 입력기</h2>
+<div class="outline-text-2" id="text-org361082b">
+<p>
+이모티콘(emoji) 입력은 emojify 라는 확장을 설치해서 할 수 있습니다.
+<code>packages.el</code> 에 아래 내용을 넣어줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(package! emojify)
+</pre>
+</div>
+<p>
+그리고 아래 코드를 <code>config.el</code> 에 넣어줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(add-hook! 'after-init-hook #'global-emojify-mode)
+</pre>
+</div>
+<p>
+저장 후 터미널에서 아래 커맨드를 입력해서 패키지가 설치될 수 있도록 합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">~/.emacs.d/bin/doom refresh
+</pre>
+</div>
+<p>
+이제 Emacs를 재시작하고 <code>SPC :</code> 를 눌러 <code>emojify-insert-emoji</code> 함수를
+찾아봅시다. 이 함수를 실행시키면 이모티콘을 검색할 수 있는 다이얼로그가 뜹니다.
+</p>
 
 <hr>
 </div>
@@ -75,6 +141,6 @@ Doom Emacs에 포함된 solaire-mode는 배경색을 임의로 변경하는 확�
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 11월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

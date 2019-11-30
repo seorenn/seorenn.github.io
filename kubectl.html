@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-29 Fri 21:40 -->
+<!-- 2019-11-29 Fri 22:27 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kubectl - Seorenn Static Pages</title>
@@ -162,20 +162,25 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </p>
 
 <p>
-포드가 하나 이상의 멀티 컨테이너일 경우 <code>--container</code> 옵션으로 골라서 접속할 수
+포드가 하나 이상의 멀티 컨테이너일 경우 <code>--container</code><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 옵션으로 골라서 접속할 수
 있습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">kubectl exec -it POD_NAME --container CONTAINER_NAME -- COMMAND
 </pre>
 </div>
-<p>
-물론 <code>--container</code> 옵션은 exec 뿐만 아니라 logs 등등 다양한 곳에서 사용할 수
-있으니 참고합시다.
-</p>
 </div>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">물론 이 옵션은 모든
+명령어에서 쓸 수 있는 멀티 컨테이너 포드에서 컨테이너를 고를 때 쓰는 옵션입니다</p></div></div>
+
+
+</div>
+</div><div id="footer"><div id="time">2019년 11월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

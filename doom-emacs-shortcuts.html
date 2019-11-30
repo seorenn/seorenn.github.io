@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-27 Wed 22:46 -->
+<!-- 2019-11-30 Sat 19:26 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doom Emacs 단축키 메모 - Seorenn Static Pages</title>
@@ -83,9 +83,22 @@ gtag('config', 'UA-44534026-1');
 <li><code>SPC w s</code> 창을 위아래로 나누기</li>
 <li><code>SPC w v</code> 창을 좌우로 나누기</li>
 <li><code>SPC w c</code> 창 닫기</li>
-<li><code>SPC w j 혹은 k</code> 아래쪽 창 혹은 윗쪽 창으로 이동하기 (j, k는 Vi 키맵으로 연상하자)</li>
-<li><code>SPC w h 혹은 l</code> 왼쪽 창 혹은 오른쪽쪽 창으로 이동하기 (h, l은 Vi 키맵으로 연상하자)</li>
+<li><code>SPC w j 혹은 k</code> 아래쪽 창 혹은 윗쪽 창으로 이동하기<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
+<li><code>SPC w h 혹은 l</code> 왼쪽 창 혹은 오른쪽쪽 창으로 이동하기<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></li>
 </ul>
+</div>
+</div>
+<div id="outline-container-orgac8c652" class="outline-3">
+<h3 id="orgac8c652">폴딩(Folding)</h3>
+<div class="outline-text-3" id="text-orgac8c652">
+<p>
+<code>z f</code> 선택영역 접기(폴딩)
+<code>z a</code> 폴딩 토글하기
+<code>z d</code> 폴딩 제거하기(코드는 당연히 삭제 안됨)
+<code>z E</code> 모든 폴딩 제거
+<code>z j</code> 다음 폴딩으로 이동
+<code>z k</code> 이전 폴딩으로 이동
+</p>
 </div>
 </div>
 <div id="outline-container-org74e41cb" class="outline-3">
@@ -105,6 +118,48 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
+<div id="outline-container-org48b8f5b" class="outline-2">
+<h2 id="org48b8f5b">고급 편집</h2>
+<div class="outline-text-2" id="text-org48b8f5b">
+</div>
+<div id="outline-container-orge43a268" class="outline-3">
+<h3 id="orge43a268">멀티커서(Multiple Cursors) - evil-multiedit</h3>
+<div class="outline-text-3" id="text-orge43a268">
+<ul class="org-ul">
+<li><code>M-d</code> 현재 커서 위치의 단어 혹은 선택영역 선택 혹은 아래 방향으로 같은 단어를 하나 검색해서 선택</li>
+<li><code>M-D</code> 현재 커서 위치의 단어 혹은 선택영역 선택 혹은 윗쪽 방향으로 같은 단어를 하나 검색해서 선택</li>
+<li>영역 선택 후 <code>R</code> 은 해당 단어 모두 선택</li>
+<li><code>R</code> 선택된 단어들을 덮어쓰기(Replace) 모드로 몽땅 편집하기</li>
+<li><code>I</code> 선택된 단어들을 삽입(Insert) 모드로 몽땅 편집하기</li>
+<li><code>D</code> 선택된 단어들을 삭제하기</li>
+<li><code>C-n</code> 혹은 <code>C-p</code> 는 선택중인 다음 혹은 이전 단어들로 점프</li>
+<li><code>RET</code> 선택영역 토글</li>
+<li><code>ESC</code> 탈출(Exit evil-multiedit mode)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org83baeee" class="outline-3">
+<h3 id="org83baeee">멀티커서(Multiple Cursors) - evil-mc</h3>
+<div class="outline-text-3" id="text-org83baeee">
+<ul class="org-ul">
+<li><code>g z z</code> 현재 위치에 커서 만들기</li>
+<li><code>g z j</code> 현재 커서 위치에서 서브커서를 만들고 아래로 이동 (<code>g z k</code> 는 위로)</li>
+<li><code>g z m</code> 현재 커서 위치와 관련이 있는 모든 곳에 서브커서 생성</li>
+<li><code>g z d</code> 현재 커서의 단어 끝이 서브커서를 만들고 비슷한 다음 단어로 커서
+이동(<code>g z D</code> 는 이전으로 이동)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org728ccb0" class="outline-3">
+<h3 id="org728ccb0">텍스트 변환</h3>
+<div class="outline-text-3" id="text-org728ccb0">
+<ul class="org-ul">
+<li><code>!</code> 연관 텍스트로 변환 rotate-text</li>
+</ul>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgad68b59" class="outline-2">
 <h2 id="orgad68b59">특수</h2>
 <div class="outline-text-2" id="text-orgad68b59">
@@ -146,6 +201,18 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">j, k 키는 Vi에서 쓰는
+커서 이동키의 방향과 동일합니다.</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">역시 h, l 키는
+Vi에서 쓰는 커서 이동키의 방향과 동일합니다.</p></div></div>
+
+
+</div>
+</div><div id="footer"><div id="time">2019년 11월 30일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

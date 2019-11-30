@@ -167,6 +167,32 @@ body {
     text-align: center;
 }
 
+#content #footnotes {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 0;
+}
+
+#content #footnotes h2 {
+    padding: 0;
+    padding-top: 1rem;
+    border-top: 1px dotted #333;
+    font-size: 1.4rem;
+}
+
+#footnotes sup {
+    padding-left: 2rem;
+    line-height: 1.0rem;
+}
+
+#footnotes p {
+    margin-top: 0.01rem;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    line-height: 1.0rem;
+}
+
 #footer {
     margin-top: 64px;
     text-align: center;

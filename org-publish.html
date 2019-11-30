@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-11-25 Mon 23:55 -->
+<!-- 2019-12-01 Sun 01:35 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Org Publish - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="Org Publish의 설정방법과 사용법을 설명합니다"
->
+<meta name="description" content="Org Publish의 설정방법과 사용법을 설명합니다">
+<meta property="og:title" content="Org Publish" />
+<meta property="og:description" content="Org Publish의 설정방법과 사용법을 설명합니다" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://k.kakaocdn.net/dn/cnRXKA/btqz6G8Whsb/wIGiF8HsFyxVn5UNmxse10/img.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Org Publish" />
+<meta name="twitter:description" content="Org Publish의 설정방법과 사용법을 설명합니다" />
+<meta name="twitter:image" content="https://k.kakaocdn.net/dn/cnRXKA/btqz6G8Whsb/wIGiF8HsFyxVn5UNmxse10/img.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
 <link rel="stylesheet" type="text/css" href="/static/style.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="canonical" href="https://seorenn.github.io/org-publish.html"/>
+<link property="og:url" href="https://seorenn.github.io/org-publish.html"/>
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
@@ -150,7 +160,7 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 </pre>
 </div>
 <p>
-위 설정에는 <code>doc</code>, <code>static</code>, <code>img</code> 의 세 가지 프로젝트가 정의도어 있습니다.
+위 설정에는 <code>doc</code>, <code>static</code>, <code>img</code> 의 세 가지 프로젝트가 정의되어 있습니다.
 이 이름들은 딱히 정해진 규칙은 없고 그냥 제 멋대로 지은 것들입니다.
 </p>
 
@@ -208,7 +218,10 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 </div>
 
 <p>
-다만 이렇게 하나하나 하기는 귀찮습니다. 그래서 그룹화를 하는 방법도 제공합니다.
+다만 이렇게 하나하나 하기는 귀찮으니 프로젝트를 그룹으로 묶어봅시다.
+</p>
+
+<p>
 방법은 간단합니다. 지금까지 작성한 방식과 동일하게 역시 프로젝트를 만들되
 아래처럼 만들 수 있습니다.
 </p>
@@ -247,8 +260,9 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 
 <blockquote>
 <p>
-개인적으로 컴포넌트를 정의한 프로젝트를 org-publish 함수로 편찬할 때 간혹 Emacs 가 멈춰버리는 증상을 겪은
-적이 있습니다. 혹시나 비슷한 증상을 겪는다면 컴포넌트 설정을 빼고 org-publish-all을 사용해 봅시다.
+개인적으로 컴포넌트를 정의한 프로젝트를 org-publish 혹은 org-publish-all 함수로
+편찬할 때 간혹 Emacs 가 멈춰버리는 증상을 종종 겪고 있습니다.
+이유는 아직 모르겠습니다.
 </p>
 </blockquote>
 
@@ -268,6 +282,6 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 11월 25일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 01일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

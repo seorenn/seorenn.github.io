@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-01 Sun 01:43 -->
+<!-- 2019-12-01 Sun 12:41 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs Lisp 팁 - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="Emacs Lisp 사용 시 도움이 되는 팁 모음">
+<meta name="keywords" content="emacs, lisp, sharp, single, quote, apply, funcall, error">
 <meta property="og:title" content="Emacs Lisp 팁" />
 <meta property="og:description" content="Emacs Lisp 사용 시 도움이 되는 팁 모음" />
 <meta property="og:type" content="website" />
@@ -179,43 +180,6 @@ print 함수 호출 시점에 먼저 실행(evaluation)되어 버리기 때문�
 </div>
 </div>
 </div>
-<div id="outline-container-org13f12c9" class="outline-2">
-<h2 id="org13f12c9">에러나 경고</h2>
-<div class="outline-text-2" id="text-org13f12c9">
-</div>
-<div id="outline-container-org022760c" class="outline-3">
-<h3 id="org022760c">안 쓰는 매개변수</h3>
-<div class="outline-text-3" id="text-org022760c">
-<p>
-예를 들어 아래와 같은 코드에서
-</p>
-<div class="org-src-container">
-<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> (foo bar)
-  ...)
-</pre>
-</div>
-<p>
-<code>bar</code> 라는 매개변수를 사용하지 않으면 아래와 같은 경고를 볼 수 있습니다.
-</p>
-<blockquote>
-<p>
-Unused lexical argument 'bar'
-</p>
-</blockquote>
-<p>
-이런 경고 메세지를 지우고 싶다면 매개변수 이름 앞에 언더스코프(혹은 언더라인)을 붙여줍시다.
-</p>
-<div class="org-src-container">
-<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> (foo _bar)
-  ...)
-</pre>
-</div>
-
-<hr>
-</div>
-</div>
-</div>
-
 <div id="outline-container-org01001b0" class="outline-2">
 <h2 id="org01001b0">관련글</h2>
 <div class="outline-text-2" id="text-org01001b0">

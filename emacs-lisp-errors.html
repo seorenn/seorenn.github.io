@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-01 Sun 01:43 -->
+<!-- 2019-12-01 Sun 12:41 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs Lisp Errors - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="Emacs Lisp 의 여러 에러 유형을 메모하는 글">
+<meta name="keywords" content="emacs, lisp, error, commandp">
 <meta property="og:title" content="Emacs Lisp Errors" />
 <meta property="og:description" content="Emacs Lisp 의 여러 에러 유형을 메모하는 글" />
 <meta property="og:type" content="website" />
@@ -37,9 +38,13 @@ gtag('config', 'UA-44534026-1');
 <header>
 <h1 class="title">Emacs Lisp Errors</h1>
 <h2><a href="/">Seorenn Static Pages</a></h2></header>
-<div id="outline-container-org64b374c" class="outline-2">
-<h2 id="org64b374c">commandp</h2>
-<div class="outline-text-2" id="text-org64b374c">
+<div id="outline-container-org94c202f" class="outline-2">
+<h2 id="org94c202f">Emacs Lisp Errors</h2>
+<div class="outline-text-2" id="text-org94c202f">
+</div>
+<div id="outline-container-org64b374c" class="outline-3">
+<h3 id="org64b374c">commandp</h3>
+<div class="outline-text-3" id="text-org64b374c">
 <blockquote>
 <p>
 Wrong type argument: commandp, your-function
@@ -56,11 +61,38 @@ interactive를 넣어주면 해결될 수도 있습니다.
   ...)
 </pre>
 </div>
-
-<hr>
 </div>
 </div>
-
+<div id="outline-container-org435c947" class="outline-3">
+<h3 id="org435c947">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-org435c947">
+<p>
+예를 들어 아래와 같은 코드에서
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> (foo bar)
+  ...)
+</pre>
+</div>
+<p>
+<code>bar</code> 라는 매개변수를 사용하지 않으면 아래와 같은 경고를 볼 수 있습니다.
+</p>
+<blockquote>
+<p>
+Unused lexical argument 'bar'
+</p>
+</blockquote>
+<p>
+이런 경고 메세지를 지우고 싶다면 매개변수 이름 앞에 언더스코프(혹은 언더라인)을 붙여줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> (foo _bar)
+  ...)
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-org804f2c4" class="outline-2">
 <h2 id="org804f2c4">관련글</h2>
 <div class="outline-text-2" id="text-org804f2c4">

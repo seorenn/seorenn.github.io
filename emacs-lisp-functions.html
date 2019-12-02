@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-01 Sun 01:43 -->
+<!-- 2019-12-01 Sun 12:41 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs Lisp Functions - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글">
+<meta name="keywords" content="emacs, lisp, function, list, string, compare, file, path">
 <meta property="og:title" content="Emacs Lisp Functions" />
 <meta property="og:description" content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글" />
 <meta property="og:type" content="website" />
@@ -43,13 +44,17 @@ gtag('config', 'UA-44534026-1');
 당연하게도 내용이 길어지면 여러 파일로 분리되어 정리될 수도 있습니다.
 </p>
 
-<div id="outline-container-orgcf1c817" class="outline-2">
-<h2 id="orgcf1c817">리스트</h2>
-<div class="outline-text-2" id="text-orgcf1c817">
+<div id="outline-container-org9e8d741" class="outline-2">
+<h2 id="org9e8d741">Emacs Lisp Functions</h2>
+<div class="outline-text-2" id="text-org9e8d741">
 </div>
-<div id="outline-container-orgc56f546" class="outline-3">
-<h3 id="orgc56f546">nth</h3>
-<div class="outline-text-3" id="text-orgc56f546">
+<div id="outline-container-orgcf1c817" class="outline-3">
+<h3 id="orgcf1c817">리스트</h3>
+<div class="outline-text-3" id="text-orgcf1c817">
+</div>
+<div id="outline-container-orgc56f546" class="outline-4">
+<h4 id="orgc56f546">nth</h4>
+<div class="outline-text-4" id="text-orgc56f546">
 <p>
 리스트의 특정 위치의 아이템을 가져옵니다. (0 based index)
 </p>
@@ -61,13 +66,13 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-org0225b10" class="outline-2">
-<h2 id="org0225b10">문자열 생성 및 수정</h2>
-<div class="outline-text-2" id="text-org0225b10">
+<div id="outline-container-org0225b10" class="outline-3">
+<h3 id="org0225b10">문자열 생성 및 수정</h3>
+<div class="outline-text-3" id="text-org0225b10">
 </div>
-<div id="outline-container-orgf6894a5" class="outline-3">
-<h3 id="orgf6894a5">concat</h3>
-<div class="outline-text-3" id="text-orgf6894a5">
+<div id="outline-container-orgf6894a5" class="outline-4">
+<h4 id="orgf6894a5">concat</h4>
+<div class="outline-text-4" id="text-orgf6894a5">
 <p>
 문자열을 이어붙일 때 사용합니다.
 </p>
@@ -75,6 +80,7 @@ gtag('config', 'UA-44534026-1');
 <pre class="src src-lisp">(concat <span style="color: #98be65;">"hello"</span> <span style="color: #98be65;">" "</span> <span style="color: #98be65;">"world!"</span>)
 <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "hello world!"</span>
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -119,14 +125,13 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
+<div id="outline-container-orgf60135f" class="outline-3">
+<h3 id="orgf60135f">문자열 비교</h3>
+<div class="outline-text-3" id="text-orgf60135f">
 </div>
-<div id="outline-container-orgf60135f" class="outline-2">
-<h2 id="orgf60135f">문자열 비교</h2>
-<div class="outline-text-2" id="text-orgf60135f">
-</div>
-<div id="outline-container-orgd4a8f83" class="outline-3">
-<h3 id="orgd4a8f83">string=</h3>
-<div class="outline-text-3" id="text-orgd4a8f83">
+<div id="outline-container-orgd4a8f83" class="outline-4">
+<h4 id="orgd4a8f83">string=</h4>
+<div class="outline-text-4" id="text-orgd4a8f83">
 <p>
 문자열이 동일한지 비교합니다.
 </p>
@@ -134,6 +139,7 @@ gtag('config', 'UA-44534026-1');
 <pre class="src src-lisp">(string= <span style="color: #98be65;">"aaa"</span> <span style="color: #98be65;">"aaa"</span>)
 <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -150,14 +156,13 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
+<div id="outline-container-orgf38a30f" class="outline-3">
+<h3 id="orgf38a30f">파일 경로 관련</h3>
+<div class="outline-text-3" id="text-orgf38a30f">
 </div>
-<div id="outline-container-orgf38a30f" class="outline-2">
-<h2 id="orgf38a30f">파일 경로 관련</h2>
-<div class="outline-text-2" id="text-orgf38a30f">
-</div>
-<div id="outline-container-org479d032" class="outline-3">
-<h3 id="org479d032">file-relative-name</h3>
-<div class="outline-text-3" id="text-org479d032">
+<div id="outline-container-org479d032" class="outline-4">
+<h4 id="org479d032">file-relative-name</h4>
+<div class="outline-text-4" id="text-org479d032">
 <p>
 특정 경로를 기준으로 원하는 파일 경로의 상대 경로를 구합니다.
 </p>
@@ -165,6 +170,7 @@ gtag('config', 'UA-44534026-1');
 <pre class="src src-lisp">(file-relative-name <span style="color: #98be65;">"/foo/bar/name"</span> <span style="color: #98be65;">"./"</span>)
 <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; &#45817;&#50672;&#54616;&#44172;&#46020; &#49324;&#50857;&#51088; &#54872;&#44221;&#50640; &#46384;&#46972; &#44208;&#44284;&#44032; &#45796;&#47493;&#45768;&#45796;</span>
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -184,7 +190,6 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-
 <div id="outline-container-orgf8b5428" class="outline-2">
 <h2 id="orgf8b5428">관련글</h2>
 <div class="outline-text-2" id="text-orgf8b5428">

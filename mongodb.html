@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-01 Sun 12:41 -->
+<!-- 2019-12-03 Tue 00:11 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MongoDB - Seorenn Static Pages</title>
@@ -212,24 +212,94 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데 이렇게 특�
 </div>
 </div>
 </div>
-<div id="outline-container-orga61a77a" class="outline-2">
-<h2 id="orga61a77a">어그리게이트(Aggregate) 예제</h2>
-<div class="outline-text-2" id="text-orga61a77a">
+<div id="outline-container-orgebdfc26" class="outline-2">
+<h2 id="orgebdfc26">어그리게이트(Aggregate)</h2>
+<div class="outline-text-2" id="text-orgebdfc26">
+<p>
+어그리게이트는 도큐먼트를 파이프라인을 통해 여러 차례에 걸쳐서 처리할 수 있도록 하는 특수한
+기능입니다. 마치 UNIX 유틸리티를 파이프로 묶어서 결과물을 처리하고 이걸 결과로
+넘기는 식이 일렬로 처리되는 것과 비슷합니다.
+</p>
 </div>
-<div id="outline-container-orga24170a" class="outline-3">
-<h3 id="orga24170a">여러 컬렉션에서 한번에 쿼리하기</h3>
-<div class="outline-text-3" id="text-orga24170a">
+<div id="outline-container-orgfcb363a" class="outline-3">
+<h3 id="orgfcb363a">기초</h3>
+<div class="outline-text-3" id="text-orgfcb363a">
+<p>
+어그리게이트의 기본 문법은 아래와 같습니다.
+</p>
 <div class="org-src-container">
-<pre class="src src-javascript">db.collection.aggregate([{
-    $lookup: {
-        from: <span style="color: #98be65;">'anotherCollection'</span>,
-        localField: <span style="color: #98be65;">'key'</span>,
-        foreignField: <span style="color: #98be65;">'anotherKey'</span>,
-        as: <span style="color: #98be65;">'anotherKeys'</span>
-    }
-}])
+<pre class="src src-text">db.collection.aggregate([{SYNTAX}, ...])
 </pre>
 </div>
+<p>
+<code>aggregate</code> 의 매개변수가 리스트라는 점에 주의합시다. 리스트 안에 나열되는
+식들은 각각 함수나 유틸리티 형태이고, 이 리스트의 순서대로 데이터가 흐르며 처리됩니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc96c17b" class="outline-3">
+<h3 id="orgc96c17b">예제</h3>
+<div class="outline-text-3" id="text-orgc96c17b">
+<p>
+아래의 예제를 기준으로 몇 가지 세부 기능들을 살펴보겠습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">db.user.aggregate([
+    {$match:
+        {created: {$gte: ISODate("2000-01-01T00:00:00")}}
+    },
+    {$group:
+        {_id: '$address',
+         count: {$sum: 1}
+        },
+    },
+])
+</pre>
+</div>
+<p>
+두 개의 기능을 이용한 어그리게이트 예제로, user라는 컬렉션에서 2000년 이후로
+가입한 사람들만 간추려서 주소가 같은 사용자의 갯수를 센다고 가정한 예제입니다.
+</p>
+
+<p>
+여기서 제일 처음의 <code>$match</code> 는 <code>find</code> 와 비슷하게 컬렉션에서 도큐먼트를
+필터링해서 다음으로 넘깁니다.
+</p>
+
+<p>
+그 다음의 <code>$group</code> 은 앞서 필터링 된 도큐먼트를 받아서 <code>address</code> 라는 필터를 기준으로 도큐먼트의 합을
+계산합니다. <code>$sum</code> 함수는 데이터의 합계를 구하는 함수인데 여기서는 갯수를 세기
+위함이므로 1이라는 숫자로 합합니다.
+</p>
+
+<p>
+바로 이해가 안 될 수도 있지만 순차적인 파이프를 탄다는 것이 이해가 되면
+거의 절반은 이해한 셈입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org92db267" class="outline-3">
+<h3 id="org92db267">몇 가지 유용한 파이프라인 오퍼레이터</h3>
+<div class="outline-text-3" id="text-org92db267">
+<ul class="org-ul">
+<li><code>$match</code> 필터 혹은 쿼리(find와 비슷)</li>
+<li><code>$group</code> 특정한 필드를 기준으로 모으기(grouping)</li>
+<li><code>$project</code> 도큐먼트의 모양을 바꿈</li>
+<li><code>$lookup</code> 다른 컬렉션의 필드 가져오기(join과 비슷)</li>
+<li><code>$sort</code> 정렬</li>
+<li><code>$limit</code> 갯수 제한</li>
+<li><code>$count</code> 도큐먼트 갯수</li>
+</ul>
+
+<p>
+사실상 $match와 $group이 가장 많이 쓰이므로 이 둘을 잘 알아두면 유용하게 쓸 수 있습니다.
+</p>
+
+<p>
+굉장히 많은 기능들 중 몇 가지만 이름으로 정리했기 때문에
+<a target="_blank" href="https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/">🌏 Aggregation
+Pipeline Stages</a> 문서를 참고하는 것도 좋을 것 같습니다.
+</p>
 </div>
 </div>
 </div>
@@ -328,6 +398,6 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데 이렇게 특�
 </div>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 01일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 03일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

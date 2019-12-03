@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-12-02 Mon 16:36 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homebrew - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="Homebrew의 소개 및 간단한 사용법을 정리합니다">
+<meta name="keywords" content="homebrew, brew, macos, install, uninstall, upgrade, update, specific, version">
+<meta property="og:title" content="Homebrew" />
+<meta property="og:description" content="Homebrew의 소개 및 간단한 사용법을 정리합니다" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Homebrew" />
+<meta name="twitter:description" content="Homebrew의 소개 및 간단한 사용법을 정리합니다" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/homebrew.html"/>
+<link property="og:url" href="https://seorenn.github.io/homebrew.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Homebrew</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-org1305b67" class="outline-2">
+<h2 id="org1305b67">Homebrew</h2>
+<div class="outline-text-2" id="text-org1305b67">
+<p>
+Homebrew는 macOS용 패키지 관리자입니다. 기본 유틸리티가 아닌 다양한 소프트웨어를
+내려받아 자동으로 설치할 수 있게 도와줍니다. 또한 root 사용자가 아니어도 사용할
+수도 있도록 구조를 만들어 준다는 점도 특징입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfa60885" class="outline-2">
+<h2 id="orgfa60885">설치</h2>
+<div class="outline-text-2" id="text-orgfa60885">
+<p>
+쉘에서 아래 커맨드를 복사해서 붙여 넣습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">/usr/bin/ruby -e <span style="color: #98be65;">\</span>
+<span style="color: #98be65;">"</span><span style="color: #51afef; font-weight: bold;">$(</span><span style="color: #51afef; font-weight: bold;">curl</span><span style="color: #51afef; font-weight: bold;"> -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span><span style="color: #98be65;">"</span>
+</pre>
+</div>
+<p>
+<code>curl</code> 유틸리티가 없으면 안 될 수도 있습니다. 기타 문제가 있다면
+<a target="_blank" href="https://brew.sh">🌏 공식 홈페이지</a>를 확인해 봅시다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgac6bec5" class="outline-2">
+<h2 id="orgac6bec5">기본 사용법</h2>
+<div class="outline-text-2" id="text-orgac6bec5">
+<p>
+아래 커맨드로 패키지를 검색할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew search KEYWORD
+</pre>
+</div>
+<p>
+각 패키지의 자세한 정보를 보려면 <code>info</code> 커맨드를 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew info PACKAGE_NAME
+</pre>
+</div>
+<p>
+패키지를 설치하려면 <code>install</code> 명령을 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew install PACKAGE_NAME
+</pre>
+</div>
+<p>
+과거에는 <code>update</code> 를 하지 않으면 최신 버전 정보가 없어서 설치에 문제가 있곤
+했는데 요즘은 별로 신경 쓸 필요가 없는 것 같습니다.
+</p>
+
+<p>
+설치된 패키지의 최신 버전이 존재하는지 확인하려면 <code>update</code> 후 <code>outdated</code> 를
+살펴봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew update
+brew outdated
+</pre>
+</div>
+<p>
+패키지를 최신 버전으로 업그레이드하려면 <code>upgrade</code> 명령을 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew upgrade PACKAGE_NAME
+</pre>
+</div>
+<p>
+모든 패키지를 업그레이드하려면 패키지 이름을 생략하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew upgrade
+</pre>
+</div>
+<p>
+설치된 패키지에 따라 굉장히 오랜 시간이 걸릴 수도 있으니 위 커맨드 실행 전에는
+마음의 준비를 합시다.
+</p>
+
+<p>
+패키지를 업그레이드해도 구버전은 그대로 남아 있습니다. 이를 청소하기 위해
+<code>cleanup</code> 커맨드를 사용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew cleanup
+</pre>
+</div>
+<p>
+디스크 공간이 부족할 때 등의 경우에 청소해 주면 됩니다.
+</p>
+
+<p>
+패키지를 삭제하려면 <code>uninstall</code> 커맨드를 이용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew uninstall PACKAGE_NAME
+</pre>
+</div>
+
+<p>
+만약 문제가 있는 것 같다면 의사양반(?)을 호출해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew doctor
+</pre>
+</div>
+<p>
+문제가 보이면 잘 해결해 봅시다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgeaa2ab9" class="outline-2">
+<h2 id="orgeaa2ab9">구 버전 패키지 사용하기</h2>
+<div class="outline-text-2" id="text-orgeaa2ab9">
+<p>
+만약 <code>upgrade</code> 등으로 최신버전이 설치되었다면 해당 패키지의 구 버전도 여전히
+남아있습니다. 이 경우 구 버전을 사용하고 싶자면 <code>switch</code> 커맨드를 사용할 수
+있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew switch PACKAGE_NAME VERSION
+</pre>
+</div>
+<p>
+이 경우 정확한 버전 번호를 입력해야 합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org0b7e0f1" class="outline-2">
+<h2 id="org0b7e0f1">다중 버전을 제공하는 패키지의 경우</h2>
+<div class="outline-text-2" id="text-org0b7e0f1">
+<p>
+다중 버전의 패키지가 필요한 경우 우선 지원되는지 부터 확인해봐야 합니다. 예를
+들어 node.js 의 경우 LTS 버전이 다양하게 제공되고 있습니다.
+<code>search</code> 커맨드로 어떤 버전이 있는지 확인해 볼 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">$ brew search node
+==&gt; Formulae
+node  node@12  node@10  node@8
+...
+</pre>
+</div>
+<p>
+위 내용은 연출한 것으로 실제는 저것보다 훨씬 많은 내용이 검색될 수 있습니다.
+어쨌든 위 예에서는 node의 8, 10, 12, 그리고 최신 버전 등이 제공되고 있음을 확인할 수
+있습니다.
+</p>
+
+<p>
+현재는 최신 버전 node 패키지가 설치된 상태라 가정하고 여기서 추가로 10 버전을 설치해 보겠습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew install node@<span style="color: #da8548; font-weight: bold;">10</span>
+</pre>
+</div>
+<p>
+그냥 설치는 쉽게 됩니다.
+</p>
+
+<p>
+만약 위의 패키지 하나만 설치했다면 실행에는 딱히 문제는 없을 것입니다. 하지만
+최신 버전이 설치된 상태로 구버전을 설치했다면 최신 버전이 여전히 실행 대상이라
+구버전을 실행시킬 수 있는 방법은 없을 것입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">$ node --version
+v13.x.x
+</pre>
+</div>
+<p>
+구버전이든 최신버전이든 같은 파일명을 사용하기 때문에 공존시키기는 힘들
+것입니다. 따라서 만약 10 버전을 쓰고 싶다면 최신 버전을 unlink 시켜야 합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew unlink node
+</pre>
+</div>
+<p>
+그리고 사용하려는 버전을 링크합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew link node@<span style="color: #da8548; font-weight: bold;">10</span> --overwrite
+</pre>
+</div>
+<p>
+<code>--overwrite</code> 옵션을 사용하는 이유는 unlink 후에도 남는 파일들이 새로 link
+하려는 파일들과 중복되기 때문입니다.
+</p>
+
+<p>
+위의 커맨드를 실행시키면 아래 메시지를 볼 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">Warning: node@10 is keg-only and must be linked with --force
+
+If you need to have this software first in your PATH instead consider running:
+  echo 'export PATH="/usr/local/opt/node@10/bin:$PATH"' &gt;&gt; ~/.zshrc
+</pre>
+</div>
+<p>
+위의 메시지는 새로 링크한 node@10의 바이너리가 표준 위치가 아닌 다른 곳에 있기
+때문에 PATH 환경 변수에 이 위치를 추가해줘야 실행시킬 수 있다는 말입니다. 따라서
+아래에 echo로 시작되는 라인을 복사해서 그대로 실행시키면 됩니다.
+</p>
+<blockquote>
+<p>
+메시지의 내용은 어떤 쉘(shell)을 쓰는지 등에 딸라 달라질 수 있습니다. 어쨌든
+메시지 내용에 맞게 대응하면 됩니다.
+</p>
+</blockquote>
+<p>
+이제 버전이 제대로 지정되었는지 확인해봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">$ node --version
+v10.x.x
+</pre>
+</div>
+<p>
+원하는 버전이 나오면 성공입니다.
+</p>
+
+<p>
+최신버전으로 돌리는 경우도 같이 구버전을 unlink한 후 최신버전을 link하면
+됩니다만 이 경우에는 PATH에 뭔가를 등록하는 절차는 필요 없겠지요.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbcaf9b7" class="outline-2">
+<h2 id="orgbcaf9b7">Cask</h2>
+<div class="outline-text-2" id="text-orgbcaf9b7">
+<p>
+cask는 macOS용 응용 소프트웨어나 다양한 리소스를 설치할 수 있게 도와주는 확장
+도구입니다.
+</p>
+
+<p>
+사용법은 비슷합니다. 아래 커맨드로 <a href="macos.html">macOS</a>용 유명한 터미널인
+iTerm 2 의 정보를 찾아봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew cask info iterm2
+</pre>
+</div>
+<p>
+필요한 소프트웨어라면 설치해봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew cask install iterm2
+</pre>
+</div>
+<p>
+설치된 이후에는 소프트웨어에 따라 후속 절차가 필요할 수 있습니다. 메시지에 따라
+적당히 따라주면 됩니다.
+</p>
+
+<p>
+불행히도 search 커맨드는 사용할 수 없지만, outdated나 upgrade, uninstall 등등의
+커맨드는 비슷하게 사용할 수 있습니다.
+</p>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 02일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

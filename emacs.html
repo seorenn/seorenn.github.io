@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-01 Sun 01:49 -->
+<!-- 2019-12-02 Mon 17:04 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs - Seorenn Static Pages</title>
@@ -83,6 +83,19 @@ Emacs <a href="lisp.html">Lisp</a> 코드들로 구성되어 있습니다.
 <p>
 이 경우 커맨드 취소를 위해 <code>C-g</code> 를 누를 때 마다 오류 다이얼로그가 뜨는게 좀
 귀찮아 질 수도 있습니다.
+</p>
+
+<p>
+이것도 안 통하면 대체로 C코드로 작성된 코어 부분의 무한루프일 가능성이 큽니다.
+이럴 때는 그냥 pkill을 시도해봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">pkill</span> Emacs
+</pre>
+</div>
+<p>
+이 경우 정확한 트레이스를 얻기는 힘들지도 모르지만 크래시 상태에서
+빠져나오게 될 지도 모릅니다.
 </p>
 </div>
 </div>
@@ -230,6 +243,6 @@ screen-24bits|screen with 24-bit direct color mode,
 
 
 </div>
-</div><div id="footer"><div id="time">2019년 12월 01일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</div><div id="footer"><div id="time">2019년 12월 02일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

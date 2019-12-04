@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-02 Mon 17:04 -->
+<!-- 2019-12-03 Tue 23:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs - Seorenn Static Pages</title>
@@ -219,6 +219,85 @@ screen-24bits|screen with 24-bit direct color mode,
 </p>
 </div>
 </div>
+<div id="outline-container-org32a3b3b" class="outline-3">
+<h3 id="org32a3b3b">CRLF to LF</h3>
+<div class="outline-text-3" id="text-org32a3b3b">
+<p>
+요즘은 별로 그럴 일은 없겠지만, 개행문자가 DOS 파일 타입(CRLF)과 UNIX 파일
+타입(LF)은 차이가 있기 때문에 이를 변환하는 방법이 정말 간혹 필요합니다.
+</p>
+
+<p>
+이를 변환하려면 file coding system을 바꿔주면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">M-x set-buffer-file-coding-system
+</pre>
+</div>
+<p>
+이러면 타입을 물어오는데 LF를 쓰고 싶다면 <code>utf-8-unix</code> 를, CRLF를 쓰고
+싶다면 <code>utf-8-dos</code> 를 선택해주면 됩니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbac7e49" class="outline-3">
+<h3 id="orgbac7e49">Run from shell</h3>
+<div class="outline-text-3" id="text-orgbac7e49">
+<p>
+특정 함수 하나만 실행하고 싶은 경우
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs -e <span style="color: #98be65;">'function'</span>
+</pre>
+</div>
+<p>
+커맨드로 실행시킬 수 있는데, 쉘에 따라 괄호를 쓰면 이스케이프 되는 경우도 있어서
+인자가 없는 함수 하나를 실행시킬 경우에만 유용했던 경험이 있습니다.
+</p>
+
+<p>
+순수하게 Emacs Lisp 파일만 실행시키고 싶다면
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs --script FILE
+</pre>
+</div>
+<p>
+이런 명령으로 실행시킬 수 있는데, 이 명령의 특징은 모든 site 파일과 설정을
+읽어들이지 않은 매우 순수한 상태<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>에서
+동작한다는 점입니다. 따라서 실행시키려는
+스크립트가 Emacs 설정이 필요하다면 쓰기엔 힘든 커맨드입니다.
+</p>
+
+<p>
+만약 Emacs 설정을 읽어들인 상태로 스크립트를 실행하고 싶다면
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs --load FILE
+</pre>
+</div>
+<p>
+이런 커맨드를 사용할 수 있습니다. 이 커맨드는 실제로 Emacs가 기동되면서 실행되기
+때문에 모든 환경이 갖춰진 상태로 돌아간다는 특징이 있지만 쉘 커맨드로 보기엔
+무리가 있을지도 모릅니다.
+</p>
+
+<p>
+<code>--load</code> 커맨드로 스크립트를 실행시키고 Emacs를 자동으로 종료시키고 싶다면
+<code>kill-emacs</code> 함수를 적절히 이용해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">progn</span>
+  (do-something)
+  (do-blah-blah)
+  (kill-emacs))
+</pre>
+</div>
+<p>
+이러 스크립트를 돌리면 스크립트가 다 실행된 후 Emacs가 종료됩니다.
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-org0b9881a" class="outline-2">
 <h2 id="org0b9881a">관련글</h2>
@@ -241,8 +320,10 @@ screen-24bits|screen with 24-bit direct color mode,
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">흑자는 OS라고 표현하기도 합니다.</p></div></div>
 
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">-q 옵션을 사용한 것과 비슷합니다</p></div></div>
+
 
 </div>
-</div><div id="footer"><div id="time">2019년 12월 02일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</div><div id="footer"><div id="time">2019년 12월 03일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

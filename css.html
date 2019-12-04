@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-03 Tue 01:25 -->
+<!-- 2019-12-03 Tue 22:47 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cascase Style Sheet - Seorenn Static Pages</title>
+<title>Cascading Style Sheets - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="CSS 팁 모음">
 <meta name="keywords" content="css, style">
-<meta property="og:title" content="Cascase Style Sheet" />
+<meta property="og:title" content="Cascading Style Sheets" />
 <meta property="og:description" content="CSS 팁 모음" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Cascase Style Sheet" />
+<meta name="twitter:title" content="Cascading Style Sheets" />
 <meta name="twitter:description" content="CSS 팁 모음" />
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
@@ -36,8 +36,75 @@ gtag('config', 'UA-44534026-1');
 <body>
 <div id="content">
 <header>
-<h1 class="title">Cascase Style Sheet</h1>
+<h1 class="title">Cascading Style Sheets</h1>
 <h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-orga549508" class="outline-2">
+<h2 id="orga549508">CSS를 HTML문서에 사용하기</h2>
+<div class="outline-text-2" id="text-orga549508">
+<p>
+HTML에 스타일을 등록하는 방법은 대략 3가지가 있습니다.
+</p>
+
+<p>
+첫 째로 바로 태그에 스타일을 입히는 방법입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
+</pre>
+</div>
+<p>
+간단하게 한 태그의 스타일만 바꿀 때는 편하지만 여러 곳에서 같이 사용할 스타일을
+일일이 등록하는 것은 여러 면에서 피곤한 일입니다. 따라서 이런 방식은 특정
+태그 하나만 별도로 스타일을 수정하는 경우를 제외하곤 그다지 추천되지는 않습니다.
+</p>
+
+<p>
+다른 방법으로 HTML 코드에 스타일을 블럭으로 추가할 수 있습니다. 일반적으로 head
+태그 안에 아래와 같은 코드를 넣습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
+p {
+  font-size: 2rem;
+}
+
+...
+&lt;/<span style="color: #c678dd;">style</span>&gt;
+</pre>
+</div>
+<p>
+태그 하나에 스타일을 입히는 것 보다는 여러 면에서 유용한 방법이지만 이 역시
+하나의 HTML 파일에 일일이 기록해야 한다는 점에서 비효율적으로 여겨집니다. 이런
+형식은 특정한 한 파일에만 필요한 스타일을 기록하는 용도로써는 추천됩니다.
+</p>
+
+<p>
+마지막으로 가장 많이 사용되는, 별도의 스타일 파일을 작성하는 식입니다. 아래와
+같은 스타일을 <code>style.css</code> 라는 파일로 작성했다고 칩시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #51afef;">p </span><span style="color: #51afef;">{</span>
+  <span style="color: #98be65;">font-size</span>: 2rem;
+<span style="color: #51afef;">}</span>
+
+...
+</pre>
+</div>
+<p>
+이 파일을 HTML 파일에 적용하기 위해서는 아래와 같은 코드를 해당 HTML 파일에
+넣어주면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
+</pre>
+</div>
+<p>
+파일 경로는 상황에 맞게 입력하는 것이니 넘어가고, 하여간 이런 식으로
+스타일 파일을 별도로 작성해 두면 모든 HTML 파일에 일일이 적용하는 것
+보다는 훨신 편리합니다. 단점은 저 코드가 잘 기억나지 않는다는 점입니다.😓
+</p>
+</div>
+</div>
 <div id="outline-container-org7f71189" class="outline-2">
 <h2 id="org7f71189">단어를 자르지 않기</h2>
 <div class="outline-text-2" id="text-org7f71189">

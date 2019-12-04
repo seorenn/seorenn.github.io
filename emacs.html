@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-03 Tue 23:20 -->
+<!-- 2019-12-04 Wed 16:27 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs - Seorenn Static Pages</title>
@@ -240,11 +240,11 @@ screen-24bits|screen with 24-bit direct color mode,
 </p>
 </div>
 </div>
-<div id="outline-container-orgbac7e49" class="outline-3">
-<h3 id="orgbac7e49">Run from shell</h3>
-<div class="outline-text-3" id="text-orgbac7e49">
+<div id="outline-container-org5d126b0" class="outline-3">
+<h3 id="org5d126b0">Run Emacs Lisp Script from Shell</h3>
+<div class="outline-text-3" id="text-org5d126b0">
 <p>
-특정 함수 하나만 실행하고 싶은 경우
+특정 Emacs Lisp의 특정 함수 하나만을 쉘에서 실행하고 싶은 경우
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">emacs -e <span style="color: #98be65;">'function'</span>
@@ -256,7 +256,7 @@ screen-24bits|screen with 24-bit direct color mode,
 </p>
 
 <p>
-순수하게 Emacs Lisp 파일만 실행시키고 싶다면
+순수하게 Emacs Lisp 스크립트 파일만 실행시키고 싶다면
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">emacs --script FILE
@@ -266,11 +266,11 @@ screen-24bits|screen with 24-bit direct color mode,
 이런 명령으로 실행시킬 수 있는데, 이 명령의 특징은 모든 site 파일과 설정을
 읽어들이지 않은 매우 순수한 상태<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>에서
 동작한다는 점입니다. 따라서 실행시키려는
-스크립트가 Emacs 설정이 필요하다면 쓰기엔 힘든 커맨드입니다.
+스크립트가 개인 설정 내용이 필요하다면 쓰기엔 힘든 커맨드입니다.
 </p>
 
 <p>
-만약 Emacs 설정을 읽어들인 상태로 스크립트를 실행하고 싶다면
+만약 개인 설정을 읽어들인 상태로 스크립트를 실행하고 싶다면
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">emacs --load FILE
@@ -278,7 +278,8 @@ screen-24bits|screen with 24-bit direct color mode,
 </div>
 <p>
 이런 커맨드를 사용할 수 있습니다. 이 커맨드는 실제로 Emacs가 기동되면서 실행되기
-때문에 모든 환경이 갖춰진 상태로 돌아간다는 특징이 있지만 쉘 커맨드로 보기엔
+때문에 거의 모든 환경<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>이
+갖춰진 상태로 돌아간다는 특징이 있지만 인터페이스가 뜨기 때문에 쉘 커맨드로 보기엔
 무리가 있을지도 모릅니다.
 </p>
 
@@ -322,8 +323,10 @@ screen-24bits|screen with 24-bit direct color mode,
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">-q 옵션을 사용한 것과 비슷합니다</p></div></div>
 
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">Doom Emacs에서는 컬러 테마는 로딩이 안 된 상태로 동작합니다</p></div></div>
+
 
 </div>
-</div><div id="footer"><div id="time">2019년 12월 03일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</div><div id="footer"><div id="time">2019년 12월 04일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

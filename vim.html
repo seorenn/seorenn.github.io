@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-03 Tue 17:41 -->
+<!-- 2019-12-04 Wed 18:57 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vim - Seorenn Static Pages</title>
@@ -140,6 +140,39 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </ul>
 </div>
 </div>
+<div id="outline-container-orgfe6397b" class="outline-3">
+<h3 id="orgfe6397b">인코딩</h3>
+<div class="outline-text-3" id="text-orgfe6397b">
+<p>
+맥 등 윈도가 아닌 OS에서 만약 텍스트 파일을 열었는데 한글이 깨져 보인다면 아래
+커맨드를 시험해봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:e ++enc=euc-kr
+</pre>
+</div>
+<p>
+잘 보이나요? 만약 안 된다면 <code>.vimrc</code> 파일에서 <code>fencs</code> 설정이 어떤지 확인해
+봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">set fencs=ucs-bom,utf-8,euc-kr,cp949
+</pre>
+</div>
+<p>
+이런 내용이 있다면 아마도 되어야 정상일 것입니다. 없다면 추가해 줍시다. 참고로
+<code>euc-kr</code> 과 <code>cp949</code> 는 사실상 같은 거라 맞는 쪽으로 하나만 써도 됩니다.
+</p>
+
+<p>
+파일을 다시 <code>utf-8</code> 으로 저장하고 싶다면 비슷하게 아래 커맨드를 사용해 볼 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:w ++enc=euc-kr
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-org27ccd03" class="outline-2">
 <h2 id="org27ccd03">관련글</h2>
@@ -150,6 +183,6 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 03일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 04일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

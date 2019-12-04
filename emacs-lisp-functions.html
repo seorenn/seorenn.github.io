@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-04 Wed 00:47 -->
+<!-- 2019-12-05 Thu 00:01 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs Lisp Functions - Seorenn Static Pages</title>
@@ -44,17 +44,13 @@ gtag('config', 'UA-44534026-1');
 당연하게도 내용이 길어지면 여러 파일로 분리되어 정리될 수도 있습니다.
 </p>
 
-<div id="outline-container-org9e8d741" class="outline-2">
-<h2 id="org9e8d741">Emacs Lisp Functions</h2>
-<div class="outline-text-2" id="text-org9e8d741">
+<div id="outline-container-orgfcae0f2" class="outline-2">
+<h2 id="orgfcae0f2">리스트 관련</h2>
+<div class="outline-text-2" id="text-orgfcae0f2">
 </div>
-<div id="outline-container-orgcf1c817" class="outline-3">
-<h3 id="orgcf1c817">리스트</h3>
-<div class="outline-text-3" id="text-orgcf1c817">
-</div>
-<div id="outline-container-orgc56f546" class="outline-4">
-<h4 id="orgc56f546">nth</h4>
-<div class="outline-text-4" id="text-orgc56f546">
+<div id="outline-container-orgc56f546" class="outline-3">
+<h3 id="orgc56f546">nth</h3>
+<div class="outline-text-3" id="text-orgc56f546">
 <p>
 리스트의 특정 위치의 아이템을 가져옵니다. (0 based index)
 </p>
@@ -65,14 +61,51 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
+<div id="outline-container-orgd4b2992" class="outline-3">
+<h3 id="orgd4b2992">mapcar</h3>
+<div class="outline-text-3" id="text-orgd4b2992">
+<p>
+리스트를 각 아이템을 특정 함수로 평가해서 리스트를 작성합니다. 특정 언어에서는 map 이라는 이름으로 연상할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">make-double</span> (x)
+  (+ x x))
+
+(mapcar #'make-double '(<span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span> <span style="color: #da8548; font-weight: bold;">5</span>))
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; (2, 4, 6, 8, 10)</span>
+</pre>
 </div>
-<div id="outline-container-org0225b10" class="outline-3">
-<h3 id="org0225b10">문자열 생성 및 수정</h3>
-<div class="outline-text-3" id="text-org0225b10">
 </div>
-<div id="outline-container-orgf6894a5" class="outline-4">
-<h4 id="orgf6894a5">concat</h4>
-<div class="outline-text-4" id="text-orgf6894a5">
+</div>
+<div id="outline-container-orgedfad72" class="outline-3">
+<h3 id="orgedfad72">mapconcat</h3>
+<div class="outline-text-3" id="text-orgedfad72">
+<p>
+리스트를 하나의 문자열로 합칠 때 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(mapconcat #'identity '(<span style="color: #98be65;">"hello"</span> <span style="color: #98be65;">"world"</span> <span style="color: #98be65;">"!"</span>) <span style="color: #98be65;">" "</span>)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "hello world !"</span>
+</pre>
+</div>
+<p>
+위 예제에서 마지막 매개변수는 각 문자열이 합쳐질 때 사이에 들어가는
+문자열입니다.
+</p>
+
+<p>
+참고로 위 예제에서 <code>identity</code> 는 입력된 값을 그대로 돌려주는 함수입니다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0225b10" class="outline-2">
+<h2 id="org0225b10">문자열 생성 및 수정</h2>
+<div class="outline-text-2" id="text-org0225b10">
+</div>
+<div id="outline-container-orgf6894a5" class="outline-3">
+<h3 id="orgf6894a5">concat</h3>
+<div class="outline-text-3" id="text-orgf6894a5">
 <p>
 문자열을 이어붙일 때 사용합니다.
 </p>
@@ -80,7 +113,6 @@ gtag('config', 'UA-44534026-1');
 <pre class="src src-lisp">(concat <span style="color: #98be65;">"hello"</span> <span style="color: #98be65;">" "</span> <span style="color: #98be65;">"world!"</span>)
 <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "hello world!"</span>
 </pre>
-</div>
 </div>
 </div>
 </div>
@@ -104,8 +136,8 @@ gtag('config', 'UA-44534026-1');
 특정 포맷으로 문자열을 생성합니다.
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(format <span style="color: #98be65;">"I am %d age %s"</span> <span style="color: #da8548; font-weight: bold;">18</span> <span style="color: #98be65;">"old"</span>)
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "I am 18 age old"</span>
+<pre class="src src-lisp">(format <span style="color: #98be65;">"I am %d age %s"</span> <span style="color: #da8548; font-weight: bold;">19</span> <span style="color: #98be65;">"old"</span>)
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "I am 19 age old"</span>
 </pre>
 </div>
 </div>
@@ -125,21 +157,16 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-orgf60135f" class="outline-3">
-<h3 id="orgf60135f">문자열 비교</h3>
-<div class="outline-text-3" id="text-orgf60135f">
-</div>
-<div id="outline-container-orgd4a8f83" class="outline-4">
-<h4 id="orgd4a8f83">string=</h4>
-<div class="outline-text-4" id="text-orgd4a8f83">
+<div id="outline-container-orgd4a8f83" class="outline-3">
+<h3 id="orgd4a8f83">string=</h3>
+<div class="outline-text-3" id="text-orgd4a8f83">
 <p>
 문자열이 동일한지 비교합니다.
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(string= <span style="color: #98be65;">"aaa"</span> <span style="color: #98be65;">"aaa"</span>)
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
+<pre class="src src-lisp">(<span style="color: #51afef;">when</span> (string= <span style="color: #98be65;">"aaa"</span> <span style="color: #98be65;">"aaa"</span>)
+  (message <span style="color: #98be65;">"both are aaa!"</span>)
 </pre>
-</div>
 </div>
 </div>
 </div>
@@ -156,13 +183,74 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-orgf38a30f" class="outline-3">
-<h3 id="orgf38a30f">파일 경로 관련</h3>
-<div class="outline-text-3" id="text-orgf38a30f">
 </div>
-<div id="outline-container-org479d032" class="outline-4">
-<h4 id="org479d032">file-relative-name</h4>
-<div class="outline-text-4" id="text-org479d032">
+<div id="outline-container-orge68f4e5" class="outline-2">
+<h2 id="orge68f4e5">버퍼 관련</h2>
+<div class="outline-text-2" id="text-orge68f4e5">
+</div>
+<div id="outline-container-org10438fc" class="outline-3">
+<h3 id="org10438fc">generate-new-buffer</h3>
+<div class="outline-text-3" id="text-org10438fc">
+<p>
+이름대로 버퍼를 생성합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(generate-new-buffer <span style="color: #98be65;">"buffer-name"</span>)
+</pre>
+</div>
+<p>
+리턴되는 값은 버퍼의 이름인데 꼭 지정된 이름과 반드시 일치하지는 않습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org3967d3d" class="outline-3">
+<h3 id="org3967d3d">switch-to-buffer</h3>
+<div class="outline-text-3" id="text-org3967d3d">
+<p>
+버퍼를 선택합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(switch-to-buffer (generate-new-buffer <span style="color: #98be65;">"some-buffer"</span>))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4d9bc7d" class="outline-3">
+<h3 id="org4d9bc7d">with-current-buffer</h3>
+<div class="outline-text-3" id="text-org4d9bc7d">
+<p>
+현재 선택된 버퍼로 뭔가를 할 때 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(with-current-buffer some-buffer
+  (insert <span style="color: #98be65;">"sample text"</span>))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org27ee06f" class="outline-3">
+<h3 id="org27ee06f">with-temp-buffer</h3>
+<div class="outline-text-3" id="text-org27ee06f">
+<p>
+임시로 빈 버퍼를 만들어 뭔가를 할 때 사용합니다. 파일 내용을 읽어들일 때나
+새로운 파일을 작성할 때 등등 의외로 자주 사용됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(with-temp-buffer
+  (insert <span style="color: #98be65;">"hello world!"</span>)
+  (write-file <span style="color: #98be65;">"helloworld.txt"</span>))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge424a1b" class="outline-2">
+<h2 id="orge424a1b">파일/디렉토리 관련</h2>
+<div class="outline-text-2" id="text-orge424a1b">
+</div>
+<div id="outline-container-org479d032" class="outline-3">
+<h3 id="org479d032">file-relative-name</h3>
+<div class="outline-text-3" id="text-org479d032">
 <p>
 특정 경로를 기준으로 원하는 파일 경로의 상대 경로를 구합니다.
 </p>
@@ -170,7 +258,6 @@ gtag('config', 'UA-44534026-1');
 <pre class="src src-lisp">(file-relative-name <span style="color: #98be65;">"/foo/bar/name"</span> <span style="color: #98be65;">"./"</span>)
 <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; &#45817;&#50672;&#54616;&#44172;&#46020; &#49324;&#50857;&#51088; &#54872;&#44221;&#50640; &#46384;&#46972; &#44208;&#44284;&#44032; &#45796;&#47493;&#45768;&#45796;</span>
 </pre>
-</div>
 </div>
 </div>
 </div>
@@ -187,13 +274,9 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-orgfd22e28" class="outline-3">
-<h3 id="orgfd22e28">파일 목록</h3>
-<div class="outline-text-3" id="text-orgfd22e28">
-</div>
-<div id="outline-container-org92c9527" class="outline-4">
-<h4 id="org92c9527">org-expand-wildcards</h4>
-<div class="outline-text-4" id="text-org92c9527">
+<div id="outline-container-org92c9527" class="outline-3">
+<h3 id="org92c9527">org-expand-wildcards</h3>
+<div class="outline-text-3" id="text-org92c9527">
 <p>
 아래 커맨드는 <code>~/foo/bar</code> 디렉토리 안의 모든 <code>.org</code> 파일 목록을 돌려줍니다.
 </p>
@@ -201,8 +284,18 @@ gtag('config', 'UA-44534026-1');
 <pre class="src src-lisp">(file-expand-wildcards <span style="color: #98be65;">"~/foo/bar/*.org"</span>)
 </pre>
 </div>
-
-<hr>
+</div>
+</div>
+<div id="outline-container-org3125260" class="outline-3">
+<h3 id="org3125260">file-exists-p</h3>
+<div class="outline-text-3" id="text-org3125260">
+<p>
+파일이 존재하면 non-nil을 리턴합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">when</span> (file-exists-p <span style="color: #98be65;">"/foo/bar/file/name"</span>)
+  (message <span style="color: #98be65;">"file exists!"</span>))
+</pre>
 </div>
 </div>
 </div>
@@ -216,6 +309,6 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 04일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

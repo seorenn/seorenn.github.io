@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-05 Thu 00:01 -->
+<!-- 2019-12-07 Sat 23:15 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emacs Lisp Functions - Seorenn Static Pages</title>
@@ -37,7 +37,58 @@ gtag('config', 'UA-44534026-1');
 <div id="content">
 <header>
 <h1 class="title">Emacs Lisp Functions</h1>
-<h2><a href="/">Seorenn Static Pages</a></h2></header><p>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgfcae0f2">리스트 관련</a>
+<ul>
+<li><a href="#orgc56f546">nth</a></li>
+<li><a href="#orgd4b2992">mapcar</a></li>
+<li><a href="#orgedfad72">mapconcat</a></li>
+</ul>
+</li>
+<li><a href="#org0225b10">문자열 생성 및 수정</a>
+<ul>
+<li><a href="#orgf6894a5">concat</a></li>
+<li><a href="#org5622c75">string-trim</a></li>
+<li><a href="#orgcfa871d">format</a></li>
+<li><a href="#orgce6dcc2">string-remove-prefix, string-remove-suffix</a></li>
+<li><a href="#orgd4a8f83">string=</a></li>
+<li><a href="#org25ccb93">string-match</a></li>
+</ul>
+</li>
+<li><a href="#orge68f4e5">버퍼 관련</a>
+<ul>
+<li><a href="#org10438fc">generate-new-buffer</a></li>
+<li><a href="#org3967d3d">switch-to-buffer</a></li>
+<li><a href="#org4d9bc7d">with-current-buffer</a></li>
+<li><a href="#org27ee06f">with-temp-buffer</a></li>
+</ul>
+</li>
+<li><a href="#orgf0082c7">커서 관련</a>
+<ul>
+<li><a href="#org1ddd8ae">goto-char</a></li>
+</ul>
+</li>
+<li><a href="#orge424a1b">파일/디렉토리 관련</a>
+<ul>
+<li><a href="#org479d032">file-relative-name</a></li>
+<li><a href="#orga595fa6">file-name-nondirectory</a></li>
+<li><a href="#org92c9527">org-expand-wildcards</a></li>
+<li><a href="#org3125260">file-exists-p</a></li>
+</ul>
+</li>
+<li><a href="#orgbbf5355">기타</a>
+<ul>
+<li><a href="#org59e5ef7">run-at-time</a></li>
+</ul>
+</li>
+<li><a href="#orgf8b5428">관련글</a></li>
+</ul>
+</div>
+</nav>
+<p>
 그냥 사용해보다 기록해 둘 만한 Emacs Lisp 의 함수들을 정리해보는 글입니다.
 아직은 내용이 별로 없지만 함수가 엄청나게 많기 때문에
 글도 점점 불어날거라 예상되며
@@ -244,6 +295,26 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
+<div id="outline-container-orgf0082c7" class="outline-2">
+<h2 id="orgf0082c7">커서 관련</h2>
+<div class="outline-text-2" id="text-orgf0082c7">
+</div>
+<div id="outline-container-org1ddd8ae" class="outline-3">
+<h3 id="org1ddd8ae">goto-char</h3>
+<div class="outline-text-3" id="text-org1ddd8ae">
+<p>
+특정 위치로 커서를 옮깁니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(goto-char (point-max))
+</pre>
+</div>
+<p>
+위 코드는 현재 버퍼의 제일 끝으로 커서를 옮깁니다.
+</p>
+</div>
+</div>
+</div>
 <div id="outline-container-orge424a1b" class="outline-2">
 <h2 id="orge424a1b">파일/디렉토리 관련</h2>
 <div class="outline-text-2" id="text-orge424a1b">
@@ -300,7 +371,25 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-
+<div id="outline-container-orgbbf5355" class="outline-2">
+<h2 id="orgbbf5355">기타</h2>
+<div class="outline-text-2" id="text-orgbbf5355">
+</div>
+<div id="outline-container-org59e5ef7" class="outline-3">
+<h3 id="org59e5ef7">run-at-time</h3>
+<div class="outline-text-3" id="text-org59e5ef7">
+<p>
+특정 시간 이후에 비동기로 코드를 실행시킬 때 사용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(run-at-time <span style="color: #da8548; font-weight: bold;">1</span> nil
+             (<span style="color: #51afef;">lambda</span> ()
+               (message <span style="color: #98be65;">"after 1 seconds..."</span>)))
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-orgf8b5428" class="outline-2">
 <h2 id="orgf8b5428">관련글</h2>
 <div class="outline-text-2" id="text-orgf8b5428">
@@ -309,6 +398,6 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 07일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

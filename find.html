@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<!-- 2019-12-07 Sat 18:14 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>find - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="find CLI 도구 소개 및 사용법">
+<meta name="keywords" content="find, exec, file, directory">
+<meta property="og:title" content="find" />
+<meta property="og:description" content="find CLI 도구 소개 및 사용법" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="find" />
+<meta name="twitter:description" content="find CLI 도구 소개 및 사용법" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/find.html"/>
+<link property="og:url" href="https://seorenn.github.io/find.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">find</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-org600b3f5" class="outline-2">
+<h2 id="org600b3f5">소개</h2>
+<div class="outline-text-2" id="text-org600b3f5">
+<p>
+<code>find</code> 는 특정 디렉토리에서 파일이나 디렉토리를 검색하기 위한 도구입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org97375b8" class="outline-2">
+<h2 id="org97375b8">기본 사용법</h2>
+<div class="outline-text-2" id="text-org97375b8">
+<p>
+가장 간단하게는 아래처럼 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"somename.ext"</span>
+</pre>
+</div>
+<p>
+위 명령은 현재 디렉토리에서 <code>somename.ext</code> 라는 파일이 어디에 있는지 검색합니다.
+현재 디렉토리 뿐만 아니라 현재 디렉토리 아래의 모든 디렉토리를 재귀적으로
+검색합니다.
+</p>
+
+<p>
+검색하려는 디렉토리를 지정하는 것도 당연히 가능합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">find</span> /foo/bar <span style="color: #98be65;">"somename.ext"</span>
+</pre>
+</div>
+<p>
+위 명령은 <code>/foo/bar</code> 디렉토리 아래에서 <code>somename.ext</code> 파일을 검색합니다.
+</p>
+
+<p>
+찾을 패턴으로 와일드카드를 사용할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"*.py"</span>
+</pre>
+</div>
+<p>
+위 명령은 현재 디렉토리 아래의 모든 확장자가 <code>.py</code> 인 파일들을 검색합니다.
+</p>
+
+<p>
+기본적으로 이 도구는 대소문자를 가립니다. 만약 대소문자를 가리지 않으려면
+<code>iname</code> 옵션을 사용할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -iname <span style="color: #98be65;">"readme"</span>
+</pre>
+</div>
+
+<p>
+기본적으로 검색되는 내용은 파일이든 디렉토리이든 가리지 않습니다. 만약 특정한
+종류만 검색하고 싶다면 <code>type</code> 옵션을 사용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"lib"</span> -type d
+</pre>
+</div>
+<p>
+<code>type</code> 으로 <code>d</code> 옵션을 주면 디렉토리만을 검색합니다. 반대로 <code>f</code> 로 대체하면
+파일만을 검색할 수도 있습니다.
+</p>
+
+<p>
+이 외에도 파일의 시간 정보, 퍼미션, 사이즈 등등 다양한 옵션으로 검색이 가능합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcdce3c0" class="outline-2">
+<h2 id="orgcdce3c0">-exec</h2>
+<div class="outline-text-2" id="text-orgcdce3c0">
+<p>
+수 많은 옵션 중 하필이면 <code>-exec</code> 옵션 만을 별도로 언급한 것은 아무래도 확장성을
+높여주는 기능이기 때문입니다. 다른 옵션들이 대부분 검색 조건을 만들어 준다면 이
+<code>-exec</code> 옵션은 검색된 내용을 이용해 외부 도구를 실행시킬 수 있기 때문입니다.
+</p>
+
+<p>
+예를 들어 확장자가 <code>.tmp</code> 라는 파일을 검색해서 모두 삭제하고 싶다면 아래처럼 할
+수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"*.tmp"</span> -exec <span style="color: #ECBE7B;">rm</span> <span style="color: #51afef;">{}</span> <span style="color: #98be65;">\;</span>
+</pre>
+</div>
+<p>
+<code>-exec</code> 옵션 다음에는 실행시킬 커맨드가 옵니다. 여기서 <code>{}</code> 는 실제로 검색된 각
+파일의 경로가 치환되는 부분입니다.
+</p>
+
+<p>
+<code>-exec</code> 커맨드는 세미콜론 <code>;</code> 을 명시한 부분까지 인식합니다. 그런데 위 커맨드는
+<code>\;</code> 로 세미콜론 앞에 백슬래시를 표시하고 있습니다. 이는 쉘이 세미콜론을 특수한
+구분자로 사용하기 때문에 이를 find 명령의 매개변수로 넘겨주기 위해서는
+세미콜콜을 raw text 로 넘겨줘야 하기 때문입니다. 잘 이해가 안 되시면 그냥
+<code>-exec</code> 옵션의 끝 부분에는 반드시 <code>\;</code> 가 들어가야 한다고 보면 됩니다.
+</p>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 07일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

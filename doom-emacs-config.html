@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-<!-- 2019-12-01 Sun 12:41 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doom Emacs 설정 기본 - Seorenn Static Pages</title>
@@ -37,7 +36,27 @@ gtag('config', 'UA-44534026-1');
 <div id="content">
 <header>
 <h1 class="title">Doom Emacs 설정 기본</h1>
-<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6baf665">설정 파일은 어디에</a></li>
+<li><a href="#org305f0bc">중요</a></li>
+<li><a href="#org25a4bbe">무슨 설정파일이 이렇게 많은가</a></li>
+<li><a href="#orge9440f6">설정 파일 빠르게 열기</a></li>
+<li><a href="#org86399ca">init.el</a></li>
+<li><a href="#org81bf150">config.el</a>
+<ul>
+<li><a href="#org1b38c13">use-package!</a></li>
+<li><a href="#orgf82545a">after!</a></li>
+</ul>
+</li>
+<li><a href="#orgde87d7c">packages.el</a></li>
+<li><a href="#org76a321c">관련글</a></li>
+</ul>
+</div>
+</nav>
+
 <div id="outline-container-org6baf665" class="outline-2">
 <h2 id="org6baf665">설정 파일은 어디에</h2>
 <div class="outline-text-2" id="text-org6baf665">
@@ -155,6 +174,54 @@ Emacs Lisp 코드이기 때문에 이 외의 평범한 Emacs 설정 코드들도
 이 함수들을 이용하면 더 편하게 설정할 수 있습니다.
 </p>
 </div>
+<div id="outline-container-org1b38c13" class="outline-3">
+<h3 id="org1b38c13">use-package!</h3>
+<div class="outline-text-3" id="text-org1b38c13">
+<p>
+<code>use-package!</code> 는 이름 처럼 <code>use-package</code> 의
+<a href="doom-emacs.html">Doom Emacs</a>식 특수한 감싸개(wrapper) 입니다.
+주로 확장 패키지 별 설정을 간략화 하기 위한 용도로 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(use-package! some-extension-mode
+  <span style="color: #c678dd;">:init</span>
+  (setq foo-bar-val some-value)
+  <span style="color: #c678dd;">:config</span>
+  (foo-bar-action))
+</pre>
+</div>
+<ul class="org-ul">
+<li><code>:init</code> 은 패키지 로드 전에 실행될 내용</li>
+<li><code>:config</code> 는 패키지 로드 후에 실행될 내용</li>
+</ul>
+
+<p>
+이 명령은 패키지 설치 용도로는 사용하지 않습니다.
+그리고 <code>package!</code> 명령으로 disable된 패키지는
+자동으로 로드하지 않도록 하는게 특징입니다. 그 외의 큰 차이는
+없으므로 확장에서 <code>use-package</code> 로 사용하는 코드를 그대로 가져와서 사용해도
+됩니다. 그냥 느낌표 하나만 붙여주면 되네요.
+</p>
+<blockquote>
+<p>
+def-package! 는 더이상 사용되지 않습니다. use-package! 를 사용하세요.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgf82545a" class="outline-3">
+<h3 id="orgf82545a">after!</h3>
+<div class="outline-text-3" id="text-orgf82545a">
+<p>
+특정 패키지가 로드된 이후에 실행되도록 할 때 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(after! org
+  (foo bar))
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-orgde87d7c" class="outline-2">
 <h2 id="orgde87d7c">packages.el</h2>
@@ -168,10 +235,19 @@ Doom Emacs 에서 사용하지 않는 확장을 설치하려면 여기에 명시
 </pre>
 </div>
 
-<hr>
+<p>
+반대로 패키지에 포함되어 있는 확장 중 사용하지 않으려는 설정도 여기서 할 수
+있습니다. 아래와 같은 방식입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(package! org-bullets <span style="color: #c678dd;">:disable</span> t)
+</pre>
+</div>
+<p>
+위 코드를 packages.el에 집어 넣으면 .org 문서의 아웃라인 헤더가 그냥 텍스트로 표시됩니다.
+</p>
 </div>
 </div>
-
 <div id="outline-container-org76a321c" class="outline-2">
 <h2 id="org76a321c">관련글</h2>
 <div class="outline-text-2" id="text-org76a321c">
@@ -181,6 +257,6 @@ Doom Emacs 에서 사용하지 않는 확장을 설치하려면 여기에 명시
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 01일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 09일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

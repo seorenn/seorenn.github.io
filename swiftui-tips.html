@@ -55,6 +55,34 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
+<div id="outline-container-org7e6f2b8" class="outline-2">
+<h2 id="org7e6f2b8">기존 컴포넌트 붙이기</h2>
+<div class="outline-text-2" id="text-org7e6f2b8">
+<p>
+SwiftUI가 도입되기 전에 사용하던 컴포넌트를 SwiftUI 뷰에 붙이는 방법입니다.
+아래는 MKMapView를 SwiftUI 형태로 감싸는 예제입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">MapView</span>: UIViewRepresentable {
+    <span style="color: #51afef;">var</span> coordinate: CLLocationCoordinate2D
+
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">makeUIView</span>(context: <span style="color: #c678dd;">Context</span>) -&gt; MKMapView {
+        <span style="color: #c678dd;">MKMapView</span>(frame: .<span style="color: #c678dd;">zero</span>)
+    }
+
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">updateUIView</span>(_ view: MKMapView, context: <span style="color: #c678dd;">Context</span>) {
+        <span style="color: #51afef;">let</span> span = <span style="color: #c678dd;">MKCoordinateSpan</span>(latitudeDelta: <span style="color: #da8548; font-weight: bold;">0.02</span>, longitudeDelta: <span style="color: #da8548; font-weight: bold;">0.02</span>)
+        <span style="color: #51afef;">let</span> region = <span style="color: #c678dd;">MKCoordinateRegion</span>(center: coordinate, span: span)
+        view.<span style="color: #c678dd;">setRegion</span>(region, animated: <span style="color: #a9a1e1;">true</span>)
+    }
+}
+</pre>
+</div>
+<p>
+이런 식으로 코딩해 놓으면 SwiftUI 코드들과 조화를 이룰 수 있습니다.
+</p>
+</div>
+</div>
 <div id="outline-container-orgd55b04e" class="outline-2">
 <h2 id="orgd55b04e">미리보기(Preview) 크기 조절하기</h2>
 <div class="outline-text-2" id="text-orgd55b04e">
@@ -78,6 +106,94 @@ SwiftUI View 파일을 생성할 때 만들어지는 보일러플레이트 코�
 </p>
 </div>
 </div>
+<div id="outline-container-orga4da3e7" class="outline-2">
+<h2 id="orga4da3e7">멀티 미리보기(preview)</h2>
+<div class="outline-text-2" id="text-orga4da3e7">
+<p>
+프리뷰 코드를 조금 고치면 현재 코딩 중인 뷰를 다양하게 살펴볼 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        Group {
+            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">0</span>])
+                .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">300</span>, height: <span style="color: #da8548; font-weight: bold;">100</span>))
+            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">1</span>])
+                .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">300</span>, height: <span style="color: #da8548; font-weight: bold;">100</span>))
+        }
+    }
+}
+</pre>
+</div>
+<p>
+이런 식으로 그룹으로 묶으면 여러 뷰를 동시에 미리보기 할 수 있습니다.
+</p>
+
+<p>
+만약 위 처럼 이런 조각뷰의 사이즈가 동일하다면 아래 처럼 묶을 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        Group {
+            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">0</span>])
+            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">1</span>])
+        }
+        .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">300</span>, height: <span style="color: #da8548; font-weight: bold;">100</span>))
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc553402" class="outline-2">
+<h2 id="orgc553402">디바이스별 미리보기</h2>
+<div class="outline-text-2" id="text-orgc553402">
+<p>
+특정 디바이스 시뮬레이터로 미리보기를 할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        <span style="color: #c678dd;">SomeView</span>()
+            .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: <span style="color: #98be65;">"iPhone SE"</span>))
+    }
+}
+</pre>
+</div>
+<p>
+멀티 디바이스 미리보기도 가능합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        <span style="color: #c678dd;">SomeView</span>()
+            .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: <span style="color: #98be65;">"iPhone SE"</span>))
+        <span style="color: #c678dd;">SomeView</span>()
+            .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: <span style="color: #98be65;">"iPhone XS Max"</span>))
+    }
+}
+</pre>
+</div>
+<p>
+디바이스가 많으면 ForEach로 묶어버릴 수도 있습니다. 기왕 하는거 프리뷰 밑에
+이름도 붙여서 구분이 되도록 해 봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        <span style="color: #c678dd;">ForEach</span>([<span style="color: #98be65;">"iPhone SE"</span>, <span style="color: #98be65;">"iPhone XS"</span>, <span style="color: #98be65;">"iPhone XS Max"</span>], id: \.<span style="color: #51afef;">self</span>) {
+            deviceName <span style="color: #51afef;">in</span>
+            <span style="color: #c678dd;">SomeView</span>()
+                .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: deviceName))
+                .<span style="color: #c678dd;">previewDisplayName</span>(deviceName)
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
 <div id="outline-container-org0e5fc29" class="outline-2">
 <h2 id="org0e5fc29">관련글</h2>
 <div class="outline-text-2" id="text-org0e5fc29">
@@ -86,6 +202,6 @@ SwiftUI View 파일을 생성할 때 만들어지는 보일러플레이트 코�
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 08일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 09일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sh - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="sh, 가장 기본적인 쉘(Shell)에 대한 글 모음">
+<meta name="keywords" content="sh, bash, zsh, bourne, shell, script">
+<meta property="og:title" content="sh" />
+<meta property="og:description" content="sh, 가장 기본적인 쉘(Shell)에 대한 글 모음" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="sh" />
+<meta name="twitter:description" content="sh, 가장 기본적인 쉘(Shell)에 대한 글 모음" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/sh.html"/>
+<link property="og:url" href="https://seorenn.github.io/sh.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">sh</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3a32e66">소개</a></li>
+<li><a href="#orgc7648e2">스크립팅 노트</a>
+<ul>
+<li><a href="#orge8f9f92">실행 가능한 스크립트</a></li>
+<li><a href="#org0930ef6">if</a></li>
+<li><a href="#orge1d7d41">루프</a></li>
+<li><a href="#orgd5a952a">조건식 오퍼레이터</a></li>
+<li><a href="#org44b42ca">디렉토리 존재 유무 체크</a></li>
+<li><a href="#org4368b2c">파일 갯수</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org3a32e66" class="outline-2">
+<h2 id="org3a32e66">소개</h2>
+<div class="outline-text-2" id="text-org3a32e66">
+<p>
+유닉스에서 많이 쓰이던 쉘(Bourne Shell)입니다. 요즘은 쉘 스크립트를 작성할 때를
+제외하고는 잘은 쓰이지 않지만, 그 만큼 쉘 스크립트의 표준의 역할을 하기도 하는
+쉘입니다. 이 글에서도 쉘 본연의 역할 보다는 스크립팅에 초점을 맞춥니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc7648e2" class="outline-2">
+<h2 id="orgc7648e2">스크립팅 노트</h2>
+<div class="outline-text-2" id="text-orgc7648e2">
+<p>
+전반적인 기준 없이 그냥 메모 단위로 기록되는 팁입니다.
+</p>
+</div>
+<div id="outline-container-orge8f9f92" class="outline-3">
+<h3 id="orge8f9f92">실행 가능한 스크립트</h3>
+<div class="outline-text-3" id="text-orge8f9f92">
+<p>
+일반적으로 쉘 스크립트를 만들면 쉘을 통해서 실행하는 것이 보통입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">sh ./somescript.sh
+</pre>
+</div>
+<p>
+하지만 아래처럼 실행하도록 만들 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">./somescript.sh
+</pre>
+</div>
+<p>
+이 경우 해당 스크립트 파일 최상단에 아래와 같은 한 줄을 집어 넣습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #5B6268;">#</span><span style="color: #5B6268;">!/bin/</span><span style="color: #51afef;">sh</span>
+</pre>
+</div>
+<p>
+이 스크립트를 어떤 인터프리터(?)로 실행시킬지를 명시하는 내용입니다.
+반드시 첫 줄에 명시되어야만 동작합니다.
+</p>
+
+<p>
+이렇게 바로 sh가 존재하는 경로를 명시해도 되지만 보통은 아래와 같은 스타일을
+추천합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #5B6268;">#</span><span style="color: #5B6268;">!/usr/bin/</span><span style="color: #51afef;">env</span><span style="color: #5B6268;"> sh</span>
+</pre>
+</div>
+<p>
+<code>env</code> 라는 도구는 매개변수로 넘겨진 도구가 어디에 있는지 찾아서 그 경로를
+치환시키는 도구입니다. 물론 sh가 아닌 <code>bash</code> 같은 쉘을 명시해도 잘 동작해야 정상적입니다.
+</p>
+
+<p>
+물론 이것 만으론 끝은 아니고 실행 퍼미션이 있어야 합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #ECBE7B;">chmod</span> a+x somescript.sh
+</pre>
+</div>
+<p>
+이렇게 하면 모든 유저에 실행(x) 권한이 주어져서 쉘에서 바로 실행시킬 수 있게
+됩니다.
+</p>
+
+<p>
+이후 PATH 환경변수에 등록된 디렉토리로 옮기거나 해서 좀 더 쉽게 실행시킬 수 있게도
+할 수 있습니다. 필요없다면 확장자 <code>.sh</code> 를 빼버려도 유닉스나 리눅스, <a href="macos.html">macOS</a> 등에선
+아무런 문제가 없습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org0930ef6" class="outline-3">
+<h3 id="org0930ef6">if</h3>
+<div class="outline-text-3" id="text-org0930ef6">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> condition <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">then</span>
+    ...
+<span style="color: #51afef;">else</span>
+    ...
+<span style="color: #51afef;">fi</span>
+</pre>
+</div>
+<p>
+한 줄로 쓸 때는 세미콜론을 잘 쓰면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> condition <span style="color: #51afef;">]</span> ; <span style="color: #51afef;">then</span> foo bar; <span style="color: #51afef;">fi</span>;
+</pre>
+</div>
+<p>
+NOT은 <code>!</code> 를 쓰면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> <span style="color: #51afef; font-weight: bold;">!</span> condition <span style="color: #51afef;">]</span>; <span style="color: #51afef;">then</span> foo bar; <span style="color: #51afef;">fi</span>;
+</pre>
+</div>
+<p>
+AND 혹은 OR 조건은 아래처럼 할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">{</span> <span style="color: #c678dd;">[</span> condition1 <span style="color: #c678dd;">]</span> &amp;&amp; <span style="color: #c678dd;">[</span> condition2 <span style="color: #c678dd;">]</span> ;<span style="color: #51afef;">}</span> || <span style="color: #51afef;">[</span> condition3 <span style="color: #51afef;">]</span> ; <span style="color: #51afef;">then</span>
+    ...
+<span style="color: #51afef;">fi</span>
+</pre>
+</div>
+<p>
+위 코드는 AND 체크하는 두 식을 중괄호를 이용해 그룹화 한 형태입니다. 즉
+<code>(c1 &amp;&amp; c2) || c3</code> 이런 식의 표현입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orge1d7d41" class="outline-3">
+<h3 id="orge1d7d41">루프</h3>
+<div class="outline-text-3" id="text-orge1d7d41">
+<p>
+<code>for</code> 문을 이용한 현대적인(?) 루프는 아래처럼 쓸 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #dcaeea;">VALUES</span>=<span style="color: #98be65;">"a\nb\nc"</span>
+<span style="color: #51afef;">for</span> VALUE<span style="color: #51afef;"> in</span> $<span style="color: #dcaeea;">VALUES</span>; <span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">VALUE</span>
+<span style="color: #51afef;">done</span>
+</pre>
+</div>
+<p>
+출력은 a, b, c가 차례대로 각 한 줄 마다 표시됩니다.
+이 결과로 봐서 <code>VALUES</code> 의 각 값은 개행문자로 구분되어 있다고 생각하면 됩니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd5a952a" class="outline-3">
+<h3 id="orgd5a952a">조건식 오퍼레이터</h3>
+<div class="outline-text-3" id="text-orgd5a952a">
+<ul class="org-ul">
+<li><code>=</code>, <code>!=</code> 문자열이 동일한지, 동일하지 않은지</li>
+<li><code>-eq</code>, <code>-ne</code>, <code>-gt</code>, <code>-ge</code>, <code>-lt</code>, <code>-le</code> 차례대로 equal, not equal, greater
+than, greater than or equal, less than, less than or equal</li>
+<li><code>-a</code>, <code>-o</code> AND와 OR</li>
+<li><code>-z</code>, <code>-n</code> 차례대로 문자열의 길이가 0(zero), 반대로 그 이상(not null)</li>
+<li><code>-d</code>, <code>-e</code>, <code>-f</code> 디렉토리가 존재하는지, 파일이 존재하는지, 문자열이 파일인지</li>
+<li><code>-L</code>, <code>-r</code>, <code>-w</code> 링크인지, 읽기 가능한지, 쓰기 가능한지</li>
+<li><code>-s</code> 파일 크기가 0 이상인지</li>
+<li><code>-x</code> 파일이 실행 가능한지</li>
+<li><code>-nt</code>, <code>-ot</code>, <code>-ef</code> 왼쪽 파일이 오른쪽 파일보다 최신인지, 과거인지, 같은 파일인지</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org44b42ca" class="outline-3">
+<h3 id="org44b42ca">디렉토리 존재 유무 체크</h3>
+<div class="outline-text-3" id="text-org44b42ca">
+<p>
+위에서도 정리했지만 <code>-d</code> 플래그를 쓸 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> -d <span style="color: #98be65;">"/foo/bar/"</span> <span style="color: #51afef;">]</span> ; <span style="color: #51afef;">then</span>
+    ...
+<span style="color: #51afef;">fi</span>
+</pre>
+</div>
+<p>
+반대로 파일 여부를 파악하려면 <code>-e</code> 혹은 <code>-f</code> 플래그를 쓰면 되겠지요.
+</p>
+</div>
+</div>
+<div id="outline-container-org4368b2c" class="outline-3">
+<h3 id="org4368b2c">파일 갯수</h3>
+<div class="outline-text-3" id="text-org4368b2c">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #dcaeea;">COUNT</span>=<span style="color: #51afef; font-weight: bold;">`</span><span style="color: #51afef; font-weight: bold;">ls</span><span style="color: #51afef; font-weight: bold;"> /foo/bar | wc -l`</span>
+</pre>
+</div>
+<p>
+백쿼트(back-quote) <code>`</code> 에 주의합시다. 백쿼트는 실행 결과를 변수로 담아올 때 사용할 수 있습니다.
+</p>
+
+<p>
+위 결과를 이용해 파일이 하나 이상 존재하는지 체크하려면
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">COUNT</span><span style="color: #98be65;">"</span> -gt <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #51afef;">]</span> ; <span style="color: #51afef;">then</span>
+    ...
+<span style="color: #51afef;">fi</span>
+</pre>
+</div>
+<p>
+이런 식으로 쓸 수 있습니다.
+</p>
+</div>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 09일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

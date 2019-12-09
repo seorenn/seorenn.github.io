@@ -45,6 +45,8 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#orgf075e23">HStack and VStack</a></li>
 <li><a href="#orgbf62e31">ZStack</a></li>
 <li><a href="#orgcfda191">Spacer</a></li>
+<li><a href="#org6aaf7f3">List</a></li>
+<li><a href="#org3b0089c">NavigationView</a></li>
 </ul>
 </li>
 <li><a href="#org6a44694">레이아웃 속성들</a>
@@ -55,6 +57,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org71f5f7c">layoutPriority</a></li>
 <li><a href="#org3118fa4">alignmentGuide</a></li>
 <li><a href="#orgb92a4a4">aspectRatio</a></li>
+<li><a href="#org38c0987">offset</a></li>
 </ul>
 </li>
 <li><a href="#orgc1e0197">스타일 속성들</a>
@@ -64,6 +67,9 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org7737403">fill</a></li>
 <li><a href="#org0a2dffd">stroke</a></li>
 <li><a href="#org61cae0f">strokeBorder</a></li>
+<li><a href="#org3cabf7e">clipShape</a></li>
+<li><a href="#org8ed8fea">overlay</a></li>
+<li><a href="#org38206c1">shadow</a></li>
 </ul>
 </li>
 <li><a href="#orgb14352d">액션 속성들</a>
@@ -162,6 +168,61 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 </div>
 </div>
 </div>
+<div id="outline-container-org6aaf7f3" class="outline-3">
+<h3 id="org6aaf7f3">List</h3>
+<div class="outline-text-3" id="text-org6aaf7f3">
+<p>
+가장 기본적인 정적 리스트는 아래와 같은 방식입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">List {
+    <span style="color: #c678dd;">SomeRowView</span>()
+    <span style="color: #c678dd;">SomeRowView</span>()
+}
+</pre>
+</div>
+<p>
+데이터 모델을 사용한 동적 리스트는 아래와 같은 식이 되겠네요.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">List</span>(someItemList, id: \.<span style="color: #dcaeea;">id</span>) { item <span style="color: #51afef;">in</span>
+    <span style="color: #c678dd;">SomeRowView</span>(data: item)
+}
+</pre>
+</div>
+<p>
+해당 데이터가 각 아이템 타입이 <code>Identifiable</code> 프로토콜을 따른다면 <code>id</code> 필드를
+생략할 수도 있습니다. 관련 내용은 <a href="swift-5-1.html">Swift 5.1</a> 글에서
+참고해 봅시다.
+</p>
+</div>
+</div>
+<div id="outline-container-org3b0089c" class="outline-3">
+<h3 id="org3b0089c">NavigationView</h3>
+<div class="outline-text-3" id="text-org3b0089c">
+<p>
+기존의 Navigation Controller와 비슷한 역할을 하는 컴포넌트입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">NavigationView {
+    <span style="color: #c678dd;">List</span>(someItemList) {
+        <span style="color: #c678dd;">NavigationLink</span>(destination: <span style="color: #c678dd;">SomeDetailView</span>()) {
+            <span style="color: #c678dd;">SomeRowView</span>()
+        }
+    }
+    .<span style="color: #c678dd;">navigationBarTitle</span>(<span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Foo Bar"</span>))
+}
+</pre>
+</div>
+<p>
+타이틀은 여러 옵션이 있을 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">.<span style="color: #c678dd;">navigationBarTitle</span>(<span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>), displayMode: .<span style="color: #c678dd;">inline</span>)
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-org6a44694" class="outline-2">
 <h2 id="org6a44694">레이아웃 속성들</h2>
@@ -179,16 +240,32 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 <div id="outline-container-org0457935" class="outline-3">
 <h3 id="org0457935">padding</h3>
 <div class="outline-text-3" id="text-org0457935">
+<p>
+기본 패딩 주기로 쓸 수 있습니다.
+</p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>()
 </pre>
 </div>
+<p>
+물론 어떤 방향에 패딩을 줄지 고를 수 있습니다.
+</p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>([.<span style="color: #dcaeea;">leading</span>, .<span style="color: #dcaeea;">trailing</span>])
 </pre>
 </div>
+<p>
+패딩 수치도 당연히 고를 수 있습니다.
+</p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>(<span style="color: #da8548; font-weight: bold;">10</span>)
+</pre>
+</div>
+<p>
+특정 한 방향에 음수로도 줄 수 있는 트릭도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>(.<span style="color: #c678dd;">bottom</span>, -<span style="color: #da8548; font-weight: bold;">130</span>)
 </pre>
 </div>
 </div>
@@ -254,6 +331,18 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 </div>
 </div>
 </div>
+<div id="outline-container-org38c0987" class="outline-3">
+<h3 id="org38c0987">offset</h3>
+<div class="outline-text-3" id="text-org38c0987">
+<p>
+레이아웃 위치에서 임의로 벗어나게 만들 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">offset</span>(y: -<span style="color: #da8548; font-weight: bold;">130</span>)
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-orgc1e0197" class="outline-2">
 <h2 id="orgc1e0197">스타일 속성들</h2>
@@ -298,6 +387,33 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 <div class="outline-text-3" id="text-org61cae0f">
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">strokeBorder</span>(Color.<span style="color: #dcaeea;">red</span>, lineWidth: <span style="color: #da8548; font-weight: bold;">50</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3cabf7e" class="outline-3">
+<h3 id="org3cabf7e">clipShape</h3>
+<div class="outline-text-3" id="text-org3cabf7e">
+<div class="org-src-container">
+<pre class="src src-swift">image.<span style="color: #c678dd;">clipShape</span>(<span style="color: #c678dd;">Circle</span>())
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8ed8fea" class="outline-3">
+<h3 id="org8ed8fea">overlay</h3>
+<div class="outline-text-3" id="text-org8ed8fea">
+<div class="org-src-container">
+<pre class="src src-swift">image.<span style="color: #c678dd;">overlay</span>(<span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">stroke</span>(Color.<span style="color: #dcaeea;">white</span>, lineWidth: <span style="color: #da8548; font-weight: bold;">4</span>))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org38206c1" class="outline-3">
+<h3 id="org38206c1">shadow</h3>
+<div class="outline-text-3" id="text-org38206c1">
+<div class="org-src-container">
+<pre class="src src-swift">image.<span style="color: #c678dd;">shadow</span>(radius: <span style="color: #da8548; font-weight: bold;">10</span>)
 </pre>
 </div>
 </div>
@@ -425,12 +541,14 @@ p.closeSubpath()
 <li><a href="swiftui-tips.html">SwiftUI 팁 모음</a></li>
 <li><a href="swiftui-in-playground.html">SwiftUI in Playground</a></li>
 <li><a href="swiftui-macos-components.html">SwiftUI macOS Components</a></li>
+<li><a href="swift-5-1.html">Swift 5.1</a></li>
 <li><a target="_blank" href="https://developer.apple.com/videos/play/wwdc2019/237">🌏 Building Custom Views
 with SwiftUI</a></li>
 <li><a target="_blank" href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">🌏 Drawing Paths and Shapes</a></li>
+<li><a target="_blank" href="https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation">🌏 Building Lists and Navigation</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 08일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 09일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

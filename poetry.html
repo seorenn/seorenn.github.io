@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poetry - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="poetry라는 파이썬 의존성 및 패키지 관리자 사용법 간략 정리">
+<meta name="keywords" content="python, poetry, pip, easyinstall">
+<meta property="og:title" content="Poetry" />
+<meta property="og:description" content="poetry라는 파이썬 의존성 및 패키지 관리자 사용법 간략 정리" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Poetry" />
+<meta name="twitter:description" content="poetry라는 파이썬 의존성 및 패키지 관리자 사용법 간략 정리" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/poetry.html"/>
+<link property="og:url" href="https://seorenn.github.io/poetry.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Poetry</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7d36e90">Poetry</a></li>
+<li><a href="#org24192ae">설치하기</a></li>
+<li><a href="#orga1db9b3">새 프로젝트 시작하고 패키지 추가해보기</a></li>
+<li><a href="#org79e7b03">프로젝트 실행시키기</a></li>
+<li><a href="#org432ce26">기타 사용법</a></li>
+<li><a href="#org00731af">Docker에서 사용하기</a></li>
+<li><a href="#orgf54fdc2">관련글</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org7d36e90" class="outline-2">
+<h2 id="org7d36e90">Poetry</h2>
+<div class="outline-text-2" id="text-org7d36e90">
+<p>
+Poetry는 파이썬(Python)용 패키징 겸 의존성 관리를 도와주는 도구입니다. pip도
+있고 virtualenv도 있는데 뭐 다른 건가 냐고 묻느냐면 좀 더 통일화된 관리 방식을
+제공해 준다는 점이 차이가 있으려나요?
+</p>
+
+<p>
+실제로 poetry는 완전히 새로운 것이 아니라 기존에 제공되던 pip나 pipx, virtualenv
+등을 그대로 사용하는 관리 방식을 제공합니다. 대신 npm이나 Cocoapods 처럼 하나의
+스펙 파일로 패키지 및 프로젝트 엔트리포인트 등을 관리할 수 있게 해 준다는 점이
+큰 특징이겠네요.
+</p>
+
+<p>
+참고로 이 글은 여러 패키지를 이용해 자체 프로젝트를 하려는 분들을 대상으로
+합니다. 개별 패키지를 개발하시는 분들이라면 공식 사이트의 문서에서 <code>build</code> 와
+<code>publish</code> 항목을 참고해 보시기 바랍니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org24192ae" class="outline-2">
+<h2 id="org24192ae">설치하기</h2>
+<div class="outline-text-2" id="text-org24192ae">
+<p>
+설치는 pip 등을 통해서도 할 수 있습니다만, 이 경우 함께 설치되는 각종 의존성이
+걸린 패키지가 프로젝트에 문제를 일으킬 가능성이 없지는 않으므로 공식
+사이트에서는 추천하지 않고 있습니다.
+</p>
+
+<p>
+대신 커맨드라인에서 아래 커맨드로 설치하는 것을 추천합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">curl</span> -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+</pre>
+</div>
+<p>
+설치는 <code>$HOME/.poetry/bin</code> 이라는 디렉토리에 설치됩니다. 따라서 사용하는 쉘
+환경에서 이 디렉토리를 <code>PATH</code> 환경변수에 등록해 주어야 합니다. <code>.zshrc</code> 이든
+<code>.bashrc</code> 이든 사용하는 쉘 설정을 열어서 아래와 같은 방식으로 경로를 추가해 줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PATH</span>=<span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">PATH</span><span style="color: #98be65;">:</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">HOME</span><span style="color: #98be65;">/.poetry/bin"</span>
+</pre>
+</div>
+<p>
+설정이 끝났다면 위 환경이 적용될 쉘로 아래 커맨드를 이용해서 동작한다면 기본
+설치는 끝입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry --version
+</pre>
+</div>
+<p>
+이후 필요하다면 탭 자동완성 기능도 추가할 수 있습니다. 공식 홈페이지에서 다양한
+쉘용으로 설치 방법을 설명하고 있습니다. 여기서는 맥의 기본 쉘인 zsh용 방법만
+별도로 정리합니다.
+</p>
+
+<p>
+순수 zsh를 사용 중이라면 일단 아래 커맨드를 실행시킵니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry completions zsh &gt; ~/.zfunc/_poetry
+</pre>
+</div>
+<p>
+그리고 .zshrc 파일에 아래 한 줄을 추가합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #dcaeea;">fpath</span>+=~/.zfunc
+</pre>
+</div>
+<p>
+혹시나 oh-my-zsh를 사용 중이라면 위의 방식 말고 아래처럼 수행합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">mkdir</span> $<span style="color: #dcaeea;">ZSH</span>/plugins/poetry
+poetry completions zsh &gt; $<span style="color: #dcaeea;">ZSH</span>/plugins/poetry/_poetry
+</pre>
+</div>
+<p>
+이후 .zshrc 파일을 열어서 plusins 항목에 poetry를 추가해 줍니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #dcaeea;">plugins</span>=<span style="color: #51afef;">(</span>
+    ...
+    poetry
+    ...
+<span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+이후 zsh를 새롭게 기동하면 탭 자동완성이 지원됩니다.
+</p>
+
+<p>
+다른 쉘은 공식 문서에서 찾아봅시다.
+</p>
+</div>
+</div>
+<div id="outline-container-orga1db9b3" class="outline-2">
+<h2 id="orga1db9b3">새 프로젝트 시작하고 패키지 추가해보기</h2>
+<div class="outline-text-2" id="text-orga1db9b3">
+<p>
+아래 커맨드를 입력해면 새로운 파이썬 프로젝트를 시작할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry new PROJECT_NAME
+</pre>
+</div>
+<p>
+이렇게 하면 PROJECT<sub>NAME에</sub> 해당하는 디렉토리가 생성되며 안에 몇 가지
+보일러플레이트 코드가 생성됩니다.
+</p>
+
+<p>
+이 중 가장 중요한 것은 <code>pyproject.toml</code> 이라는 파일입니다. 이 파일에는 각종
+패키지 의존 설정이 기록되어 있습니다.
+</p>
+
+<p>
+일단 이 파일은 나중에 봅시다.
+</p>
+
+<p>
+프로젝트를 시작했으니 필요한 패키지가 있을 것입니다. 이 패키지를 설치하기 위해서
+<code>add</code> 커맨드를 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry add PACKAGE_NAME
+</pre>
+</div>
+<p>
+이렇게 하면 자동으로 패키지가 설치되며 동시에 위 <code>pyproject.toml</code> 파일에
+의존성이 추가됩니다. 이 파일을 열어서 살짝 살펴보면 아래와 같은 형식으로 적힌
+것을 볼 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[tool.poetry.dependencies]
+python = "^3.8"
+somepackage = "^3.10.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+</pre>
+</div>
+<p>
+버전은 사용하는 상황에 따라 달라질 수 있습니다. 위 예제에서 <code>somepackage</code> 라는
+패키지가 방금 <code>add</code> 커맨드로 설치한 것으로 가정합시다.
+</p>
+
+<p>
+오른쪽에 버전이 표시되어 있는데 꺽쇠의 의미는 메이저 업데이트를 제외한 최신
+버전이라는 의미입니다. 즉 <code>^3.10.0</code> 이라는 의미는 <code>3.x.y</code> 버전 중 가장 최신
+버전을 사용한다는 의미입니다. 다르게 표현하면 <code>&gt;=3.10.0</code> 과 <code>&lt;4.0.0</code> 을 만족하는
+버전이라는 의미입니다.
+</p>
+
+<p>
+만약 <code>new</code> 커맨드로 특정 버전을 설치하려면 아래처럼 할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry add <span style="color: #dcaeea;">PACKAGE_NAME</span>==x.y.z
+</pre>
+</div>
+<p>
+마치 pip로 특정 버전 패키지를 설치하는 것과 동일하기 때문에 어색하지는 않은 커맨드입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org79e7b03" class="outline-2">
+<h2 id="org79e7b03">프로젝트 실행시키기</h2>
+<div class="outline-text-2" id="text-org79e7b03">
+<p>
+poetry로 생성된 프로젝트에는 동일한 이름의 디렉토리가 하나 더 들어있는데
+여기에다 구현을 하면 됩니다만 어차피 디렉토리 구성은 마음대로이니 이제 적당히
+구현을 하면 됩니다.
+</p>
+
+<p>
+그리고 구현이 끝났다면 실행을 해 봐야겠지요. 만약 엔트리포인트가 main.py
+파일이라면 아래처럼 실행시킬 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry run python main.py
+</pre>
+</div>
+<p>
+main.py 첫 라인에 실행 환경이 명시되어 있다면 python 인터프리터를 명시하지
+않아도 관계는 없겠지요.
+</p>
+
+<p>
+만약 엔트리포인트를 특정 패키지로 하고 싶다면 pyproject.toml 파일을 열어서
+아래와 같은 항목을 추가합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[too.poetry.scripts]
+my-script = "package_name:main"
+</pre>
+</div>
+<p>
+그리고 난 뒤 아래처럼 실행시킬 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry run my-script
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org432ce26" class="outline-2">
+<h2 id="org432ce26">기타 사용법</h2>
+<div class="outline-text-2" id="text-org432ce26">
+<p>
+이미 존재하는 프로젝트라면 다음 커맨드로 환경을 생성할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry init
+</pre>
+</div>
+<p>
+위 커맨드는 대화형으로 많은 것을 물어오니 참고하세요.
+</p>
+
+<p>
+만약 남이 생성한 프로젝트를 처음 받았다면 아래 커맨드로 패키지를 일괄 설치할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry install
+</pre>
+</div>
+<p>
+기존 같았으면 <code>pip install -r requirements.txt</code> 같은 커맨드를 썼었을텐데
+poetry의 방식이 더 편해 보이기는 합니다.
+</p>
+
+<p>
+패키지를 최신 버전으로 업데이트 하려면 아래 커맨드를 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry update
+</pre>
+</div>
+<p>
+이 커맨드는 아래 축약어도 제공합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry up
+</pre>
+</div>
+<p>
+뭘 쓰든 pyproject.toml에 명시된 조건에 맞는 최신 버전으로 업데이트 됩니다.
+</p>
+
+<p>
+만약 특정 패키지의 의존성을 제거하고 싶다면 아래처럼 삭제하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry remove PACKAGE_NAME
+</pre>
+</div>
+
+<p>
+만약에 해당 프로젝트 환경을 쉘에서 실행시키고 싶다면, 즉 virtualenv 환경을 얻고
+싶다면 아래 커맨드를 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry shell
+</pre>
+</div>
+<p>
+virtualenv를 사용해서 쉘을 띄운 것과 동일한 환경을 사용할 수 있습니다.
+</p>
+
+<p>
+poetry 자체를 업그레이드 하고 싶다면 아래 커맨드를 사용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry self update
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org00731af" class="outline-2">
+<h2 id="org00731af">Docker에서 사용하기</h2>
+<div class="outline-text-2" id="text-org00731af">
+<p>
+Docker 컨테이너는 독립된 환경이므로 딱히 virtualenv 환경을 사용할 이유가
+없습니다.
+따라서 도커 이미지를 만들 때 virtualenv 환경을 만들지 않도록 해야 합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry config virtualenvs.create false
+</pre>
+</div>
+<p>
+위 커맨드는 virtualenv 를 비활성화 시키므로 Dockerfile 등에 <code>poetry install</code> 하기 전에
+미리 동작하도록 넣어두면 될 것 같습니다.
+</p>
+
+<p>
+기타 설정은 아래 커맨드로 확인해봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">poetry config --list
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf54fdc2" class="outline-2">
+<h2 id="orgf54fdc2">관련글</h2>
+<div class="outline-text-2" id="text-orgf54fdc2">
+<ul class="org-ul">
+<li><a href="python.html">Python</a></li>
+<li><a target="_blank" href="https://python-poetry.org">🌏 공식 홈페이지</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 13일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

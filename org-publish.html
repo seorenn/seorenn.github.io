@@ -33,6 +33,7 @@ gtag('config', 'UA-44534026-1');
 </script>
 </head>
 <body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Org Publish</h1>
@@ -46,6 +47,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org8bd53b5">기본 설정</a></li>
 <li><a href="#orgff73e18">Publish 해보기</a></li>
 <li><a href="#org49d9724">프로젝트 그룹화하기</a></li>
+<li><a href="#org1a872d7">전부 새로 퍼블리시 하기</a></li>
 <li><a href="#org3836745">관련글</a></li>
 </ul>
 </div>
@@ -263,7 +265,7 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 </div>
 <p>
 생략한 코드가 많은데, 그냥 앞서 설정했던 내용에서 마지막 한 줄이 더 추가되었다고 보면 됩니다. web 이라는
-이름의 프로젝트는 dic, static, img 라는 세 가지 컴포넌트로 구성되어 있다고
+이름의 프로젝트는 doc, static, img 라는 세 가지 컴포넌트로 구성되어 있다고
 정의한 것입니다. 따라서 이 경우 아래 커맨드 한 번이면 doc, static, img 세
 프로젝트 모두 publish가 됩니다.
 </p>
@@ -286,18 +288,35 @@ org-publish는 다행히도 별도로 설치할 필요가 없는 확장입니다
 </blockquote>
 </div>
 </div>
+<div id="outline-container-org1a872d7" class="outline-2">
+<h2 id="org1a872d7">전부 새로 퍼블리시 하기</h2>
+<div class="outline-text-2" id="text-org1a872d7">
+<p>
+org-publish 는 기본적으로 변경된 파일만 업데이트를 하는데 만약 설정을 바꾸는
+바람에 모든 글을 다시 익스포트해야 한다면 일일이 파일을 touch 해야 하는 등
+번거롭습니다. 이럴 때는 다음 명령어 한 방에 해결이 될 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(org-publish <span style="color: #98be65;">"PROJECT_NAME"</span> t)
+</pre>
+</div>
+<p>
+Doom Emacs 를 사용 중이라면 <code>SPC ;</code> 단축키로 위 명령을 쉽게 입력해서 실행시킬
+수도 있습니다.
+</p>
+</div>
+</div>
 <div id="outline-container-org3836745" class="outline-2">
 <h2 id="org3836745">관련글</h2>
 <div class="outline-text-2" id="text-org3836745">
 <ul class="org-ul">
-<li><a href="./org-publish-tips.html">org-publish 팁 모음</a></li>
 <li><a href="./org-mode.html">Org Mode</a></li>
 <li><a href="./emacs.html">Emacs</a></li>
 <li><a href="./doom-emacs.html">Doom Emacs</a></li>
-<li><a target="_blank" href="https://orgmode.org/manual/Publishing.html">org-publish 공식 매뉴얼</a></li>
+<li><a target="_blank" href="https://orgmode.org/manual/Publishing.html">🌏 org-publish 공식 매뉴얼</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 09일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

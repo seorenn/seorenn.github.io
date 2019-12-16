@@ -7,7 +7,7 @@
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="SwiftUI와 관련된 글 모음">
-<meta name="keywords" content="swiftui, swift">
+<meta name="keywords" content="swiftui, swift, attribute, style, action, viewmodifier, macro">
 <meta property="og:title" content="SwiftUI" />
 <meta property="og:description" content="SwiftUI와 관련된 글 모음" />
 <meta property="og:type" content="website" />
@@ -46,6 +46,8 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#orgf075e23">HStack and VStack</a></li>
 <li><a href="#orgbf62e31">ZStack</a></li>
 <li><a href="#orgcfda191">Spacer</a></li>
+<li><a href="#org81ab0bc">Text</a></li>
+<li><a href="#org8b909b3">Button</a></li>
 <li><a href="#org6aaf7f3">List</a></li>
 <li><a href="#org3b0089c">NavigationView</a></li>
 <li><a href="#orgdb83d43">Shape</a></li>
@@ -65,6 +67,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#orgc1e0197">스타일 속성들</a>
 <ul>
 <li><a href="#org8da0cbd">background</a></li>
+<li><a href="#org669300e">foregroundColor</a></li>
 <li><a href="#org03799a1">font</a></li>
 <li><a href="#org7737403">fill</a></li>
 <li><a href="#org0a2dffd">stroke</a></li>
@@ -77,6 +80,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#orgb14352d">액션 속성들</a>
 <ul>
 <li><a href="#org307f3e7">tapAction</a></li>
+<li><a href="#orgffc2dc6">contextMenu</a></li>
 </ul>
 </li>
 <li><a href="#org3e9ffa7">그리기용 컴포넌트</a>
@@ -88,6 +92,16 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org3fb2636">LinearGradient</a></li>
 <li><a href="#org7200a37">AngularGradient</a></li>
 <li><a href="#orgf4385c3">Path</a></li>
+</ul>
+</li>
+<li><a href="#orgb6d1bb3">애니메이션</a>
+<ul>
+<li><a href="#org3707178">withAnimation</a></li>
+</ul>
+</li>
+<li><a href="#org085d063">기타</a>
+<ul>
+<li><a href="#org5fdeefb">ViewModifier</a></li>
 </ul>
 </li>
 <li><a href="#orga8d6772">관련글</a></li>
@@ -166,6 +180,39 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 </p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">Spacer</span>()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org81ab0bc" class="outline-3">
+<h3 id="org81ab0bc">Text</h3>
+<div class="outline-text-3" id="text-org81ab0bc">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"some text"</span>)
+</pre>
+</div>
+<p>
+<code>+</code> 오퍼레이터를 이용해 Attributed Text 를 만들 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">red</span>)
++ <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"bar"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">blue</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b909b3" class="outline-3">
+<h3 id="org8b909b3">Button</h3>
+<div class="outline-text-3" id="text-org8b909b3">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Button</span>(
+    action: { <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"Button Action"</span>) },
+    label: { <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Button Title"</span>) }
+)
+<span style="color: #c678dd;">Button</span>(action: {}) {
+    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Button with Image"</span>)
+    <span style="color: #c678dd;">Image</span>(systemName: <span style="color: #98be65;">"square.and.arrow.up"</span>)
+}
 </pre>
 </div>
 </div>
@@ -376,6 +423,15 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 </div>
 </div>
 </div>
+<div id="outline-container-org669300e" class="outline-3">
+<h3 id="org669300e">foregroundColor</h3>
+<div class="outline-text-3" id="text-org669300e">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">white</span>)
+</pre>
+</div>
+</div>
+</div>
 <div id="outline-container-org03799a1" class="outline-3">
 <h3 id="org03799a1">font</h3>
 <div class="outline-text-3" id="text-org03799a1">
@@ -454,6 +510,20 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 <p>
 <a href="macos.html">macOS</a> 에서는 클릭 이벤트로 동작하나 봅니다.
 </p>
+</div>
+</div>
+<div id="outline-container-orgffc2dc6" class="outline-3">
+<h3 id="orgffc2dc6">contextMenu</h3>
+<div class="outline-text-3" id="text-orgffc2dc6">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Some Text"</span>)
+    .<span style="color: #dcaeea;">contextMenu</span> {
+        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Wow super good context menu!"</span>)
+        <span style="color: #c678dd;">Button</span>(action: {},
+               label: { <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Menu Button"</span>) })
+    }
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -551,6 +621,65 @@ p.closeSubpath()
     ...
 }
 .<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">black</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb6d1bb3" class="outline-2">
+<h2 id="orgb6d1bb3">애니메이션</h2>
+<div class="outline-text-2" id="text-orgb6d1bb3">
+</div>
+<div id="outline-container-org3707178" class="outline-3">
+<h3 id="org3707178">withAnimation</h3>
+<div class="outline-text-3" id="text-org3707178">
+<p>
+가장 기본적인 뷰 애니메이션 용도입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">withAnimation {
+    someSwitch.<span style="color: #c678dd;">toggle</span>()
+}
+</pre>
+</div>
+<p>
+알고리즘도 바꿀 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">withAnimation</span>(.<span style="color: #c678dd;">spring</span>()) {
+    someSwitch.<span style="color: #c678dd;">toggle</span>()
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org085d063" class="outline-2">
+<h2 id="org085d063">기타</h2>
+<div class="outline-text-2" id="text-org085d063">
+</div>
+<div id="outline-container-org5fdeefb" class="outline-3">
+<h3 id="org5fdeefb">ViewModifier</h3>
+<div class="outline-text-3" id="text-org5fdeefb">
+<p>
+여러 코드의 스타일을 매크로처럼 사용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">TitleStyleModifier</span>: ViewModifier {
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">body</span>(content: Content) -&gt; <span style="color: #51afef;">some</span> View {
+        content
+            .<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">black</span>)
+            .<span style="color: #c678dd;">backgroundColor</span>(Color.<span style="color: #dcaeea;">yellow</span>)
+            .<span style="color: #c678dd;">font</span>(.<span style="color: #dcaeea;">largeTitle</span>)
+    }
+}
+</pre>
+</div>
+<p>
+이제 이 스타일을 특정 뷰에 적용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Title Text"</span>).<span style="color: #c678dd;">modifier</span>(TitleStyleModifier)
 </pre>
 </div>
 </div>

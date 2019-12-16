@@ -84,6 +84,28 @@ SwiftUI가 도입되기 전에 사용하던 컴포넌트를 SwiftUI 뷰에 붙�
 </p>
 </div>
 </div>
+<div id="outline-container-org0cd7598" class="outline-2">
+<h2 id="org0cd7598">다크 테마 미리보기</h2>
+<div class="outline-text-2" id="text-org0cd7598">
+<p>
+어두운 색상(dark color scheme) 기준으로 미리보기를 하고 싶다면 아래처럼 할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        Group {
+            <span style="color: #c678dd;">SampleView</span>()
+                .<span style="color: #c678dd;">environment</span>(\.<span style="color: #dcaeea;">colorScheme</span>, .<span style="color: #dcaeea;">dark</span>)
+        }
+    }
+}
+</pre>
+</div>
+<p>
+다만 이렇게 하면 해당 뷰만 다크모드로 표시되기 때문에 조화롭지는 않을지도 모릅니다.
+</p>
+</div>
+</div>
 <div id="outline-container-orgd55b04e" class="outline-2">
 <h2 id="orgd55b04e">미리보기(Preview) 크기 조절하기</h2>
 <div class="outline-text-2" id="text-orgd55b04e">
@@ -145,6 +167,22 @@ SwiftUI View 파일을 생성할 때 만들어지는 보일러플레이트 코�
 }
 </pre>
 </div>
+<p>
+밝은 모드나 다크 모드 시의 차이를 한 번에 볼 때도 유용합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+        Group {
+            <span style="color: #c678dd;">SampleView</span>()
+                .<span style="color: #c678dd;">environment</span>(\.<span style="color: #dcaeea;">colorScheme</span>, .<span style="color: #dcaeea;">light</span>)
+            <span style="color: #c678dd;">SampleView</span>()
+                .<span style="color: #c678dd;">environment</span>(\.<span style="color: #dcaeea;">colorScheme</span>, .<span style="color: #dcaeea;">dark</span>)
+        }
+    }
+}
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-orgc553402" class="outline-2">
@@ -200,9 +238,10 @@ SwiftUI View 파일을 생성할 때 만들어지는 보일러플레이트 코�
 <div class="outline-text-2" id="text-org0e5fc29">
 <ul class="org-ul">
 <li><a href="./swift.html">Swift</a></li>
+<li><a href="swiftui.html">SwiftUI</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

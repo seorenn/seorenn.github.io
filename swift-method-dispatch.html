@@ -53,7 +53,8 @@ gtag('config', 'UA-44534026-1');
 <li>Direct Dispatch: inline 코드에 해당합니다. C/C++ 등 몇몇 지원하는 언어에서 쓰입니다.</li>
 <li>Static Dispatch: 컴파일 타임에 미리 실행 지점을 파악해두는 방식으로 컴파일러에 의존적입니다.</li>
 <li>Table Dispatch: 각 클래스별로 메소드 테이블을 만들어 이를 통해 메소드를
-검색하는 방식으로 많은 언어에서 사용하는 방식입니다.</li>
+검색하는 방식으로 많은 언어에서 사용하는 방식입니다. 사실상 아래에서 이어지는
+모던한 방식도 테이블 디스패치를 확장한 선으로 볼 수도 있지요.</li>
 <li>Message Dispatch: 테이블 디스패치와 비슷하지만 메시지 이름을 키로 검색하는 방식입니다.
 Objective-C에서 많이 쓰입니다.</li>
 <li>Dynamic Dispatch: 메시지 디스패치와 거의 동일한 것으로 보입니다.</li>
@@ -96,7 +97,7 @@ obj2.<span style="color: #c678dd;">foo</span>()   <span style="color: #5B6268;">
 뭐 그다지 어려울 것도 없고 당연해 보이지만, 만약 <code>obj2</code> 는 P 타입인데 어째서
 C에서 오버라이드가 된 메소드가 실행되는지 궁금하다면 이 메소드 디스패치를 좀 더
 공부해 보시는 편이 좋을지도 모르겠습니다. 쉽게 표현하자면, 참조하는 디스패치
-테이블이 원래 생성된 인스턴스의 테이블을 참조하기 때문에 가능하다고 볼 수 있겠네요.
+테이블이 원래 생성된 인스턴스의 테이블을 우선 참조하기 때문에 가능하다고 볼 수 있겠네요.
 </p>
 </div>
 </div>
@@ -196,6 +197,6 @@ p.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// 
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

@@ -84,11 +84,25 @@ ENTRYPOINT ["/usr/local/bin/app"]
 경우 <code>CMD</code> 로 지정된 명령어는 실행되지 않습니다. 반대로 <code>ENTRYPOINT</code> 의 경우
 사용자 커맨드 여부와 관계 없이 무조건 실행됩니다.
 </p>
-
-<hr>
 </div>
 </div>
-
+<div id="outline-container-orgfbe062a" class="outline-2">
+<h2 id="orgfbe062a">유저</h2>
+<div class="outline-text-2" id="text-orgfbe062a">
+<p>
+특정 유저로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">RUN groupadd -r someuser
+RUN useradd -m -r -g someuser someuser
+USER someuser
+</pre>
+</div>
+<p>
+컨테이너가 root 유저 기반으로 돌아가니 꺼릴 게 없습니다.
+</p>
+</div>
+</div>
 <div id="outline-container-org9e79bb7" class="outline-2">
 <h2 id="org9e79bb7">관련글</h2>
 <div class="outline-text-2" id="text-org9e79bb7">
@@ -98,6 +112,6 @@ ENTRYPOINT ["/usr/local/bin/app"]
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

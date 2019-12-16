@@ -7,7 +7,7 @@
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="Vim 에디터와 관련된 글">
-<meta name="keywords" content="vi, vim, move, cursor, quit">
+<meta name="keywords" content="vi, vim, move, cursor, quit, 빔, 에디터, 종료, 단축키, 인코딩, 커서, 이동">
 <meta property="og:title" content="Vim" />
 <meta property="og:description" content="Vim 에디터와 관련된 글" />
 <meta property="og:type" content="website" />
@@ -49,6 +49,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org2de3d4c">Undo/Redo</a></li>
 <li><a href="#orgf2c1841">점프(Jump)</a></li>
 <li><a href="#orgfe6397b">인코딩</a></li>
+<li><a href="#org10abe3a">클립보드</a></li>
 </ul>
 </li>
 <li><a href="#org27ccd03">관련글</a></li>
@@ -201,6 +202,24 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </div>
 </div>
 </div>
+<div id="outline-container-org10abe3a" class="outline-3">
+<h3 id="org10abe3a">클립보드</h3>
+<div class="outline-text-3" id="text-org10abe3a">
+<p>
+터미널에서 vim으로 특정 텍스트를 복사하거나 혹은 붙여넣기를 할 때 시스템
+클립보드(Pasteboard)에 복사가 안 되는 경우나 혹은 엉뚱한 내용이 붙이기 되는
+경우가 있습니다. 이럴 때는 아래 설정 한 줄을 넣어봅시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">set clipboard=unnamed
+</pre>
+</div>
+<p>
+<a href="macos.html">macOS</a>에서만 시험해 봤습니다.
+neovim 등에서는 안 되는 경우도 있습니다.
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-org27ccd03" class="outline-2">
 <h2 id="org27ccd03">관련글</h2>
@@ -211,6 +230,6 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

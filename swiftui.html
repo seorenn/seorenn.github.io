@@ -48,6 +48,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#orgcfda191">Spacer</a></li>
 <li><a href="#org6aaf7f3">List</a></li>
 <li><a href="#org3b0089c">NavigationView</a></li>
+<li><a href="#orgdb83d43">Shape</a></li>
 </ul>
 </li>
 <li><a href="#org6a44694">레이아웃 속성들</a>
@@ -220,6 +221,23 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 </p>
 <div class="org-src-container">
 <pre class="src src-swift">.<span style="color: #c678dd;">navigationBarTitle</span>(<span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>), displayMode: .<span style="color: #c678dd;">inline</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdb83d43" class="outline-3">
+<h3 id="orgdb83d43">Shape</h3>
+<div class="outline-text-3" id="text-orgdb83d43">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SomeShape</span>: Shape {
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">path</span>(<span style="color: #51afef;">in</span> rect: CGRect) -&gt; Path {
+        <span style="color: #51afef;">var</span> path = <span style="color: #c678dd;">Path</span>()
+        path.<span style="color: #c678dd;">move</span>(to: ...)
+        path.<span style="color: #c678dd;">addLine</span>(to: ..., <span style="color: #51afef;">in</span>: ...)
+        ...
+        <span style="color: #51afef;">return</span> path
+    }
+}
 </pre>
 </div>
 </div>
@@ -449,6 +467,10 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 <p>
 동그라미
 </p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">red</span>).<span style="color: #c678dd;">padding</span>()
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org2e901ff" class="outline-3">
@@ -550,6 +572,6 @@ with SwiftUI</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

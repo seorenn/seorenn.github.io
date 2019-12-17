@@ -87,6 +87,29 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
+<div id="outline-container-orgbcb8fa0" class="outline-2">
+<h2 id="orgbcb8fa0">기타 사용법</h2>
+<div class="outline-text-2" id="text-orgbcb8fa0">
+</div>
+<div id="outline-container-org68d8c40" class="outline-3">
+<h3 id="org68d8c40">모든 컨테이너 중지</h3>
+<div class="outline-text-3" id="text-org68d8c40">
+<div class="org-src-container">
+<pre class="src src-sh">docker <span style="color: #ECBE7B;">kill</span> $<span style="color: #51afef;">(</span>docker ps -q<span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd680690" class="outline-3">
+<h3 id="orgd680690">모든 컨테이너 삭제</h3>
+<div class="outline-text-3" id="text-orgd680690">
+<div class="org-src-container">
+<pre class="src src-sh">docker <span style="color: #ECBE7B;">rm</span> $<span style="color: #51afef;">(</span>docker ps -a -q<span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-org4e6dbf2" class="outline-2">
 <h2 id="org4e6dbf2">활용 예제</h2>
 <div class="outline-text-2" id="text-org4e6dbf2">
@@ -175,6 +198,6 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

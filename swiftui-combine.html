@@ -190,6 +190,32 @@ window.<span style="color: #dcaeea;">rootViewController</span> =
 </p>
 </div>
 </div>
+<div id="outline-container-org0014ecc" class="outline-2">
+<h2 id="org0014ecc">달러 연산자?</h2>
+<div class="outline-text-2" id="text-org0014ecc">
+<p>
+상호작용이 가능한 컴포넌트의 경우 UI의 값이 바뀌면 데이터의 값도 자동으로
+바뀌어야 합니다. MVVM의 ViewModel이 이러한 방식의 개념이지요. 어쨌든 이럴때
+사용하는 것이 바로 <code>$</code> 입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">ContentView</span>: View {
+    <span style="color: #51afef;">@State</span> <span style="color: #51afef;">var</span> show = <span style="color: #a9a1e1;">false</span>
+
+    <span style="color: #51afef;">var</span> body: someView {
+        <span style="color: #c678dd;">Toggle</span>(isOn: $show) {
+            <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"Toggle Title"</span>)
+        }
+    }
+}
+</pre>
+</div>
+<p>
+당연히 <code>@State</code> 뿐만 아니라 <code>@ObservedObject</code> 는 물론 <code>@EnvironmentObject</code>
+에서도 사용할 수 있는 오퍼레이터입니다.
+</p>
+</div>
+</div>
 <div id="outline-container-orgb01bce1" class="outline-2">
 <h2 id="orgb01bce1">관련글</h2>
 <div class="outline-text-2" id="text-orgb01bce1">
@@ -200,6 +226,6 @@ window.<span style="color: #dcaeea;">rootViewController</span> =
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 16일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

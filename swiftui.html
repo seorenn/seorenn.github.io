@@ -76,6 +76,8 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org3cabf7e">clipShape</a></li>
 <li><a href="#org8ed8fea">overlay</a></li>
 <li><a href="#org38206c1">shadow</a></li>
+<li><a href="#orgc83c51d">rotationEffect</a></li>
+<li><a href="#orgb0f14eb">scaleEffect</a></li>
 </ul>
 </li>
 <li><a href="#orgb14352d">액션 속성들</a>
@@ -97,7 +99,9 @@ gtag('config', 'UA-44534026-1');
 </li>
 <li><a href="#orgb6d1bb3">애니메이션</a>
 <ul>
+<li><a href="#org473100b">animation</a></li>
 <li><a href="#org3707178">withAnimation</a></li>
+<li><a href="#org536ffc6">transition</a></li>
 </ul>
 </li>
 <li><a href="#org085d063">기타</a>
@@ -433,6 +437,15 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 <pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">background</span>(Color.<span style="color: #dcaeea;">green</span>)
 </pre>
 </div>
+<p>
+이름에 color가 안 들어가 있는 이유는 색상 외에도 쓸 수 있는 게 있어서일 것 같습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">SomeView</span>()
+    .<span style="color: #c678dd;">background</span>(<span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">stroke</span>())
+    .<span style="color: #c678dd;">background</span>(<span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">white</span>))
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org669300e" class="outline-3">
@@ -501,6 +514,24 @@ ZStack은 UI를 바닥부터 쌓아가는 형태로 만들 수 있게 해 줍니
 <div class="outline-text-3" id="text-org38206c1">
 <div class="org-src-container">
 <pre class="src src-swift">image.<span style="color: #c678dd;">shadow</span>(radius: <span style="color: #da8548; font-weight: bold;">10</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc83c51d" class="outline-3">
+<h3 id="orgc83c51d">rotationEffect</h3>
+<div class="outline-text-3" id="text-orgc83c51d">
+<div class="org-src-container">
+<pre class="src src-swift">SomeView.<span style="color: #c678dd;">rotationEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">90</span>))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb0f14eb" class="outline-3">
+<h3 id="orgb0f14eb">scaleEffect</h3>
+<div class="outline-text-3" id="text-orgb0f14eb">
+<div class="org-src-container">
+<pre class="src src-swift">SomeView.<span style="color: #c678dd;">scaleEffect</span>(<span style="color: #da8548; font-weight: bold;">1.5</span>)
 </pre>
 </div>
 </div>
@@ -642,6 +673,29 @@ p.closeSubpath()
 <h2 id="orgb6d1bb3">애니메이션</h2>
 <div class="outline-text-2" id="text-orgb6d1bb3">
 </div>
+<div id="outline-container-org473100b" class="outline-3">
+<h3 id="org473100b">animation</h3>
+<div class="outline-text-3" id="text-org473100b">
+<div class="org-src-container">
+<pre class="src src-swift">SomeView.<span style="color: #c678dd;">rotationEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">90</span>))
+    .<span style="color: #c678dd;">animation</span>(.<span style="color: #c678dd;">spring</span>())
+</pre>
+</div>
+<p>
+멀티 애니메이션도 가능합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">SomeView.<span style="color: #c678dd;">rotationEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">90</span>))
+    .<span style="color: #c678dd;">animation</span>(<span style="color: #a9a1e1;">nil</span>)
+    .<span style="color: #c678dd;">scaleEffect</span>(<span style="color: #da8548; font-weight: bold;">1.5</span>)
+    .<span style="color: #c678dd;">animation</span>(.<span style="color: #c678dd;">spring</span>())
+</pre>
+</div>
+<p>
+물론 위의 애니메이션은 순차가 아니라 동시에 발동합니다.
+</p>
+</div>
+</div>
 <div id="outline-container-org3707178" class="outline-3">
 <h3 id="org3707178">withAnimation</h3>
 <div class="outline-text-3" id="text-org3707178">
@@ -660,6 +714,47 @@ p.closeSubpath()
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">withAnimation</span>(.<span style="color: #c678dd;">spring</span>()) {
     someSwitch.<span style="color: #c678dd;">toggle</span>()
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org536ffc6" class="outline-3">
+<h3 id="org536ffc6">transition</h3>
+<div class="outline-text-3" id="text-org536ffc6">
+<div class="org-src-container">
+<pre class="src src-swift">SomeView.<span style="color: #c678dd;">transition</span>(.<span style="color: #c678dd;">move</span>(edge: .<span style="color: #c678dd;">top</span>))
+</pre>
+</div>
+<p>
+조합의 경우는 아래와 같은 식으로 할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">SomeView.<span style="color: #c678dd;">transition</span>(
+    AnyTransition
+        .<span style="color: #c678dd;">move</span>(edge: .<span style="color: #c678dd;">top</span>)
+        .<span style="color: #c678dd;">combined</span>(with: .<span style="color: #dcaeea;">opacity</span>)
+)
+</pre>
+</div>
+<p>
+등장과 퇴장 애니메이션 다른 커스텀 트랜지션은 아래와 같은 방식으로 구현할 수
+있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">extension</span> <span style="color: #c678dd;">AnyTransition</span> {
+    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> someTransitionName: AnyTransition {
+        <span style="color: #51afef;">return</span> .<span style="color: #c678dd;">asymmetric</span>(
+            insertion:
+                AnyTransition
+                    .<span style="color: #c678dd;">move</span>(edge: .<span style="color: #c678dd;">top</span>)
+                    .<span style="color: #c678dd;">combined</span>(with: .<span style="color: #dcaeea;">opacity</span>)
+            removal:
+                AnyTransition
+                    .<span style="color: #dcaeea;">scale</span>
+                    .<span style="color: #c678dd;">combined</span>(with: .<span style="color: #dcaeea;">opacity</span>)
+        )
+    }
 }
 </pre>
 </div>
@@ -713,6 +808,6 @@ with SwiftUI</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 20일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

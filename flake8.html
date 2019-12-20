@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>flake8 - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="Flake8 메모">
+<meta name="keywords" content="flake8, setup, config, ignore, error, skip, column, size, 오류, 에러, 경고, 무시, 설정, 파일, 위치">
+<meta property="og:title" content="flake8" />
+<meta property="og:description" content="Flake8 메모" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="flake8" />
+<meta name="twitter:description" content="Flake8 메모" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/flake8.html"/>
+<link property="og:url" href="https://seorenn.github.io/flake8.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div id="content">
+<header>
+<h1 class="title">flake8</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org60aa1f1">flake8</a></li>
+<li><a href="#org25f92ae">설치법</a></li>
+<li><a href="#org47af45d">사용법</a></li>
+<li><a href="#org332ba69">설정 파일</a></li>
+<li><a href="#org9c16aa5">파일 별로 일부 경고 무시하기</a></li>
+<li><a href="#org9d2227f">관련글</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org60aa1f1" class="outline-2">
+<h2 id="org60aa1f1">flake8</h2>
+<div class="outline-text-2" id="text-org60aa1f1">
+<p>
+<code>flake8</code> 은 <a href="python.html">Python</a> 코드를 점검해주는 도구이자 파이썬
+패키지입니다. 일부 오류가 있을 법한 코드나 미사용 import 등등 여러 문제점을
+알려주면서 PEP8 코딩 컨벤션에 맞지 않는 것들을 알려줍니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org25f92ae" class="outline-2">
+<h2 id="org25f92ae">설치법</h2>
+<div class="outline-text-2" id="text-org25f92ae">
+<p>
+파이썬 패키지이기 때문에 pip로 그냥 설치하면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">pip install flake8
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org47af45d" class="outline-2">
+<h2 id="org47af45d">사용법</h2>
+<div class="outline-text-2" id="text-org47af45d">
+<p>
+CLI로 그냥 실행시키면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">flake8 /foo/bar/some/file.py
+</pre>
+</div>
+<p>
+이렇게 하면 체크된 내용을 텍스트로 알려줍니다.
+</p>
+
+<p>
+근데 요즘은 이렇게 단독으로 실행시키기 보다는 에디터나 IDE 등에서 자동으로
+호출해서 체크하는 방식으로 동작하는 경우도 많기 때문에 굳이 손수 실행시킬 일은
+거의 없는 것 같습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org332ba69" class="outline-2">
+<h2 id="org332ba69">설정 파일</h2>
+<div class="outline-text-2" id="text-org332ba69">
+<p>
+전역 설정파일은 <code>~/.config/flake8</code> 파일에, 프로젝트 단위 설정은 프로젝트 루트에
+<code>.flake8</code> 혹은 <code>setup.cfg</code> 파일로 설정 내용을 작성하면 됩니다.
+</p>
+
+<p>
+대충 아래와 같은 식으로 작성합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[flake8]
+max-line-length = 80
+ignore = F123, E456
+exclude = file_to_exclude.py
+</pre>
+</div>
+<p>
+<code>max-line-length</code> 는 컬럼 사이즈입니다. <code>ignore</code> 는 체크하지 않을 에러 코드를
+작성하고, <code>exclude</code> 는 체크하지 않을 파일을 작성할 수 있습니다. 물론 설정 내역은
+이 보다 더 광범위할 수 있으니 공식 매뉴얼을 참조합시다.
+</p>
+</div>
+</div>
+<div id="outline-container-org9c16aa5" class="outline-2">
+<h2 id="org9c16aa5">파일 별로 일부 경고 무시하기</h2>
+<div class="outline-text-2" id="text-org9c16aa5">
+<p>
+커맨드 라인 옵션으로 특정 체크를 무시할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">flake8 --ignore F123,E456 FILEPATH
+</pre>
+</div>
+<p>
+근데 이렇게는 별로 안 쓰일테니 일단 넘어갑시다.
+</p>
+
+<p>
+소스 코드에서 특정 라인 하나만 무시하려면 라인 끝에 아래와 같은 주석으로 표기가
+가능합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">pass</span>  <span style="color: #5B6268;"># </span><span style="color: #5B6268;">noqa: F123,E456</span>
+</pre>
+</div>
+<p>
+코드를 표기하지 않고 <code>noqa</code> 만 명시하면 모든 오류 체크가 무시됩니다.
+</p>
+
+<p>
+위와 비슷하게 아래처럼 아예 해당 파일의 체크를 하지 않게 할 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #5B6268;"># </span><span style="color: #5B6268;">flake8: noqa</span>
+</pre>
+</div>
+<p>
+이런 식으로 쓸 일은 별로 없겠지만요.
+</p>
+</div>
+</div>
+<div id="outline-container-org9d2227f" class="outline-2">
+<h2 id="org9d2227f">관련글</h2>
+<div class="outline-text-2" id="text-org9d2227f">
+<ul class="org-ul">
+<li><a href="python.html">Python</a></li>
+</ul>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 20일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

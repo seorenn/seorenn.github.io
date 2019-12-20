@@ -25,6 +25,7 @@
 <url><loc>https://seorenn.github.io/etc-dev-links.html</loc><lastmod>2019-12-02</lastmod></url>
 <url><loc>https://seorenn.github.io/etc-resource-links.html</loc><lastmod>2019-12-12</lastmod></url>
 <url><loc>https://seorenn.github.io/find.html</loc><lastmod>2019-12-07</lastmod></url>
+<url><loc>https://seorenn.github.io/flake8.html</loc><lastmod>2019-12-20</lastmod></url>
 <url><loc>https://seorenn.github.io/flutter.html</loc><lastmod>2019-12-17</lastmod></url>
 <url><loc>https://seorenn.github.io/git.html</loc><lastmod>2019-12-07</lastmod></url>
 <url><loc>https://seorenn.github.io/homebrew.html</loc><lastmod>2019-12-02</lastmod></url>
@@ -33,6 +34,7 @@
 <url><loc>https://seorenn.github.io/install-emacs.html</loc><lastmod>2019-12-16</lastmod></url>
 <url><loc>https://seorenn.github.io/italian.html</loc><lastmod>2019-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/javascript.html</loc><lastmod>2019-12-14</lastmod></url>
+<url><loc>https://seorenn.github.io/korean.html</loc><lastmod>2019-12-19</lastmod></url>
 <url><loc>https://seorenn.github.io/kubectl.html</loc><lastmod>2019-12-16</lastmod></url>
 <url><loc>https://seorenn.github.io/lisp.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/macos.html</loc><lastmod>2019-12-08</lastmod></url>
@@ -50,11 +52,11 @@
 <url><loc>https://seorenn.github.io/python-3-f-string.html</loc><lastmod>2019-12-12</lastmod></url>
 <url><loc>https://seorenn.github.io/python-3-static-typing.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/python-links.html</loc><lastmod>2019-12-13</lastmod></url>
-<url><loc>https://seorenn.github.io/python.html</loc><lastmod>2019-12-13</lastmod></url>
+<url><loc>https://seorenn.github.io/python.html</loc><lastmod>2019-12-20</lastmod></url>
 <url><loc>https://seorenn.github.io/server-stack-links.html</loc><lastmod>2019-12-16</lastmod></url>
 <url><loc>https://seorenn.github.io/service_links.html</loc><lastmod>2019-11-17</lastmod></url>
 <url><loc>https://seorenn.github.io/sh.html</loc><lastmod>2019-12-10</lastmod></url>
-<url><loc>https://seorenn.github.io/sitemap.html</loc><lastmod>2019-12-17</lastmod></url>
+<url><loc>https://seorenn.github.io/sitemap.html</loc><lastmod>2019-12-18</lastmod></url>
 <url><loc>https://seorenn.github.io/spacemacs.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/swift-5-1.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/swift-method-dispatch.html</loc><lastmod>2019-12-14</lastmod></url>
@@ -65,7 +67,7 @@
 <url><loc>https://seorenn.github.io/swiftui-in-playground.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/swiftui-macos-components.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/swiftui-tips.html</loc><lastmod>2019-12-16</lastmod></url>
-<url><loc>https://seorenn.github.io/swiftui.html</loc><lastmod>2019-12-17</lastmod></url>
+<url><loc>https://seorenn.github.io/swiftui.html</loc><lastmod>2019-12-19</lastmod></url>
 <url><loc>https://seorenn.github.io/tmux.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/vim.html</loc><lastmod>2019-12-15</lastmod></url>
 <url><loc>https://seorenn.github.io/web-dev-links.html</loc><lastmod>2019-12-13</lastmod></url>

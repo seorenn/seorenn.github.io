@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
-<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="stylesheet" type="text/css" href="/static/style.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="canonical" href="https://seorenn.github.io/sh.html"/>
 <link property="og:url" href="https://seorenn.github.io/sh.html"/>
@@ -31,9 +31,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-44534026-1');
 </script>
-</head>
+
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
 <body>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Bourne Shell</h1>
@@ -50,6 +50,8 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#orgd5a952a">조건식 오퍼레이터</a></li>
 <li><a href="#org44b42ca">디렉토리 존재 유무 체크</a></li>
 <li><a href="#org4368b2c">파일 갯수</a></li>
+<li><a href="#org0605963">와일드카드 인자 처리</a></li>
+<li><a href="#org23aa54f">에러가 나면 멈추게하기</a></li>
 </ul>
 </li>
 </ul>
@@ -233,11 +235,11 @@ than, greater than or equal, less than, less than or equal</li>
 <h3 id="org4368b2c">파일 갯수</h3>
 <div class="outline-text-3" id="text-org4368b2c">
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #dcaeea;">COUNT</span>=<span style="color: #51afef; font-weight: bold;">`</span><span style="color: #51afef; font-weight: bold;">ls</span><span style="color: #51afef; font-weight: bold;"> /foo/bar | wc -l`</span>
+<pre class="src src-sh"><span style="color: #dcaeea;">COUNT</span>=$<span style="color: #51afef;">(</span><span style="color: #ECBE7B;">ls</span> /foo/bar | wc -l<span style="color: #51afef;">)</span>
 </pre>
 </div>
 <p>
-백쿼트(back-quote) <code>`</code> 에 주의합시다. 백쿼트는 실행 결과를 변수로 담아올 때 사용할 수 있습니다.
+참고로 위 코드는 백쿼트(back-quote) <code>`</code> 를 사용하는 것과 비슷한 방식의 커맨드입니다. 즉 <code>ls /foo/bar | wc -l</code> 커맨드의 실행 결과가 위 변수에 주입됩니다.
 </p>
 
 <p>
@@ -254,7 +256,38 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
+<div id="outline-container-org0605963" class="outline-3">
+<h3 id="org0605963">와일드카드 인자 처리</h3>
+<div class="outline-text-3" id="text-org0605963">
+<p>
+쉘 스크립트에 <code>*.ext</code> 같은 파일 이름 와일드카드를 넘겼을 때 이를 나열하는 방법을 for 커맨드로 표현하면 이렇습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #51afef;">for</span> arg<span style="color: #51afef;"> in</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">@</span><span style="color: #98be65;">"</span>
+<span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">arg</span>
+    ...
+<span style="color: #51afef;">done</span>
+</pre>
 </div>
-<div id="footer"><div id="time">2019년 12월 14일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<p>
+이 경우 <code>arg</code> 에는 각 파일의 경로가 들어 있습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org23aa54f" class="outline-3">
+<h3 id="org23aa54f">에러가 나면 멈추게하기</h3>
+<div class="outline-text-3" id="text-org23aa54f">
+<p>
+쉘 스크립트 상단에 아래 한 줄을 넣어둡니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #c678dd;">set</span> -e
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 21일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

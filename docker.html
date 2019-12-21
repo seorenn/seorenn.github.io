@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
-<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="stylesheet" type="text/css" href="/static/style.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="canonical" href="https://seorenn.github.io/docker.html"/>
 <link property="og:url" href="https://seorenn.github.io/docker.html"/>
@@ -31,13 +31,45 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-44534026-1');
 </script>
-</head>
+
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
 <body>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Docker</h1>
-<h2><a href="/">Seorenn Static Pages</a></h2></header><p>
+<h2><a href="/">Seorenn Static Pages</a></h2></header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8f66e45">Docker</a></li>
+<li><a href="#org3e86005">기본 사용법</a></li>
+<li><a href="#orgbcb8fa0">기타 사용법</a>
+<ul>
+<li><a href="#org68d8c40">모든 컨테이너 중지</a></li>
+<li><a href="#orgd680690">모든 컨테이너 삭제</a></li>
+</ul>
+</li>
+<li><a href="#org4e6dbf2">활용 예제</a>
+<ul>
+<li><a href="#org1ce8978">구 버전 MongoDB CLI 가 필요할 때</a></li>
+</ul>
+</li>
+<li><a href="#org5ad9123">공간 비우기</a></li>
+<li><a href="#org265585c">기타 메모</a>
+<ul>
+<li><a href="#org4d471d8">컨테이너에서 호스트 포트에 접근하기(macOS)</a></li>
+<li><a href="#orga951448">적당히 시작하기 좋은 이미지들</a></li>
+</ul>
+</li>
+<li><a href="#org62b2a93">관련글</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-org8f66e45" class="outline-2">
+<h2 id="org8f66e45">Docker</h2>
+<div class="outline-text-2" id="text-org8f66e45">
+<p>
 도커는 정석적인 설명으론 컨테이너 기반 가상화 플랫폼이라고 소개하곤 합니다. 물론 이
 말만으론 딱이 와닿는 설명은 아닐거예요. 개인적으론 그저 가상으로 OS 수준까지
 샌드박스를 만들어 주는 것처럼 보이지만 실제로 가상화는 아닌 (&#x2026;) 멋진 도구라고
@@ -48,9 +80,8 @@ gtag('config', 'UA-44534026-1');
 개인적으로 개발단계나 서비스 단계에서 자주 사용하지만, 특정 유틸리티나 서비스를
 사용하기 위해서도 종종 사용합니다.
 </p>
-
-<hr>
-
+</div>
+</div>
 <div id="outline-container-org3e86005" class="outline-2">
 <h2 id="org3e86005">기본 사용법</h2>
 <div class="outline-text-2" id="text-org3e86005">
@@ -61,11 +92,11 @@ gtag('config', 'UA-44534026-1');
 <li><code>docker build -t IMAGE_NAME .</code> 이미지를 특정 이름으로 빌드하기</li>
 <li><code>docker build -t IMAGE_NAME:TAG_NAME .</code> 태그까지 붙여서 이미지
 빌드하기(태그는 옵션)</li>
-<li><code>docker -f /foo/bar/some-dockerfile build -t IMAGE_NAME:TAG_NAME .</code> Dockerfile 이 다른
-경로에 있거나 혹은 Dockerfile 대신 다른 파일 이름을 사용한다면 이런 식으로 -f 옵션을 쓸 수 있습니다.</li>
+<li><code>docker -f /foo/bar/some-dockerfile build -t IMAGE_NAME:TAG_NAME .</code> Dockerfile 이 다른 경로에 있거나 혹은 Dockerfile 대신 다른 파일 이름을 사용한다면 이런 식으로 -f 옵션을 쓸 수 있습니다.</li>
 <li><code>docker run IMAGE_NAME</code> 특정 이미지 컨테이너 띄우기</li>
 <li><code>docker run IMAGE_NAME:TAG_NAME</code> 특정 태그(버전)의 이미지를 띄우기</li>
 <li><code>docker run -d IMAGE_NAME</code> 데몬(백그라운드) 모드로 실행하기</li>
+<li><code>docker run -d -e ENV=VALUE IMAGE_NAME</code> 특정 환경변수를 전달하며 데몬(백그라운드) 모드로 실행하기</li>
 <li><code>docker run --rm -it IMAGE_NAME COMMAND</code> 종료하면 사라지는(&#x2013;rm) 컨테이너로
 터미널(-it) 커맨드 실행하기</li>
 <li><code>docker run -p HOST_PORT:CONTAINER_PORT COMMAND</code> 호스트 포트와 컨테이너 포트를
@@ -198,6 +229,6 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 17일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 21일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

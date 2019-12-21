@@ -63,14 +63,14 @@ body {
 
 #content h2 {
     font-size: 1.8rem;
-    margin-top: 2.3rem;
+    margin-top: 3.6rem;
     margin-bottom: 1rem;
 }
 
 #content h3 {
     font-size: 1.4rem;
-    margin-top: 1.6rem;
-    margin-bottom: 0.9rem;
+    margin-top: 3.0rem;
+    margin-bottom: 0.8rem;
 }
 
 #content h4 {
@@ -101,6 +101,8 @@ body {
 
 #content pre {
     max-width: 100%;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
     padding: 1.2rem 1.6rem 1.2rem 1.6rem;
     background-color: #071513;
     color: #e6e6e6;
@@ -122,6 +124,8 @@ body {
 #content blockquote {
     max-width: 800px;
     margin: 0 auto;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
     border-left: 1px solid #b40404;
 }
 

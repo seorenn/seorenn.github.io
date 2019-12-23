@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/apple-dev-links.html</loc><lastmod>2019-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/apple-dev-links.html</loc><lastmod>2019-12-23</lastmod></url>
 <url><loc>https://seorenn.github.io/caffeinate.html</loc><lastmod>2019-12-07</lastmod></url>
 <url><loc>https://seorenn.github.io/combine-framework.html</loc><lastmod>2019-12-16</lastmod></url>
 <url><loc>https://seorenn.github.io/css.html</loc><lastmod>2019-12-14</lastmod></url>
 <url><loc>https://seorenn.github.io/docker-compose.html</loc><lastmod>2019-12-14</lastmod></url>
-<url><loc>https://seorenn.github.io/docker.html</loc><lastmod>2019-12-20</lastmod></url>
+<url><loc>https://seorenn.github.io/docker.html</loc><lastmod>2019-12-22</lastmod></url>
 <url><loc>https://seorenn.github.io/dockerfile.html</loc><lastmod>2019-12-15</lastmod></url>
 <url><loc>https://seorenn.github.io/doom-emacs-config-tip.html</loc><lastmod>2019-12-17</lastmod></url>
 <url><loc>https://seorenn.github.io/doom-emacs-config.html</loc><lastmod>2019-12-09</lastmod></url>
@@ -18,7 +18,7 @@
 <url><loc>https://seorenn.github.io/doom-emacs.html</loc><lastmod>2019-12-18</lastmod></url>
 <url><loc>https://seorenn.github.io/emacs-links.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/emacs-lisp-errors.html</loc><lastmod>2019-12-01</lastmod></url>
-<url><loc>https://seorenn.github.io/emacs-lisp-functions.html</loc><lastmod>2019-12-07</lastmod></url>
+<url><loc>https://seorenn.github.io/emacs-lisp-functions.html</loc><lastmod>2019-12-22</lastmod></url>
 <url><loc>https://seorenn.github.io/emacs-lisp-tips.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/emacs.html</loc><lastmod>2019-12-17</lastmod></url>
 <url><loc>https://seorenn.github.io/english.html</loc><lastmod>2019-12-15</lastmod></url>
@@ -45,7 +45,7 @@
 <url><loc>https://seorenn.github.io/org-publish-sapzil.html</loc><lastmod>2019-11-10</lastmod></url>
 <url><loc>https://seorenn.github.io/org-publish-tips.html</loc><lastmod>2019-12-14</lastmod></url>
 <url><loc>https://seorenn.github.io/org-publish.html</loc><lastmod>2019-12-14</lastmod></url>
-<url><loc>https://seorenn.github.io/org-spreadsheet.html</loc><lastmod>2019-12-13</lastmod></url>
+<url><loc>https://seorenn.github.io/org-spreadsheet.html</loc><lastmod>2019-12-23</lastmod></url>
 <url><loc>https://seorenn.github.io/org-tip.html</loc><lastmod>2019-12-14</lastmod></url>
 <url><loc>https://seorenn.github.io/poetry.html</loc><lastmod>2019-12-18</lastmod></url>
 <url><loc>https://seorenn.github.io/profile.html</loc><lastmod>2019-12-14</lastmod></url>
@@ -56,7 +56,7 @@
 <url><loc>https://seorenn.github.io/server-stack-links.html</loc><lastmod>2019-12-16</lastmod></url>
 <url><loc>https://seorenn.github.io/service_links.html</loc><lastmod>2019-11-17</lastmod></url>
 <url><loc>https://seorenn.github.io/sh.html</loc><lastmod>2019-12-20</lastmod></url>
-<url><loc>https://seorenn.github.io/sitemap.html</loc><lastmod>2019-12-21</lastmod></url>
+<url><loc>https://seorenn.github.io/sitemap.html</loc><lastmod>2019-12-23</lastmod></url>
 <url><loc>https://seorenn.github.io/spacemacs.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/swift-5-1.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/swift-method-dispatch.html</loc><lastmod>2019-12-14</lastmod></url>
@@ -70,5 +70,5 @@
 <url><loc>https://seorenn.github.io/swiftui.html</loc><lastmod>2019-12-19</lastmod></url>
 <url><loc>https://seorenn.github.io/tmux.html</loc><lastmod>2019-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/vim.html</loc><lastmod>2019-12-15</lastmod></url>
-<url><loc>https://seorenn.github.io/web-dev-links.html</loc><lastmod>2019-12-13</lastmod></url>
+<url><loc>https://seorenn.github.io/web-dev-links.html</loc><lastmod>2019-12-23</lastmod></url>
 </urlset>

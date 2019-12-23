@@ -52,6 +52,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org4368b2c">파일 갯수</a></li>
 <li><a href="#org0605963">와일드카드 인자 처리</a></li>
 <li><a href="#org23aa54f">에러가 나면 멈추게하기</a></li>
+<li><a href="#orgcb462cb">에러 메시지 숨기기</a></li>
 </ul>
 </li>
 </ul>
@@ -287,7 +288,22 @@ than, greater than or equal, less than, less than or equal</li>
 </div>
 </div>
 </div>
+<div id="outline-container-orgcb462cb" class="outline-3">
+<h3 id="orgcb462cb">에러 메시지 숨기기</h3>
+<div class="outline-text-3" id="text-orgcb462cb">
+<p>
+에러 메시지는 <code>stderr</code> (2) 파이프로 전달되니 이것을 지옥의 쓰레기통(?)에 던지면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">some_shell_command <span style="color: #da8548; font-weight: bold;">2</span>&gt; /dev/null
+</pre>
 </div>
-<div id="footer"><div id="time">2019년 12월 23일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<p>
+<code>2&gt; /dev/null</code> 이 바로 에러 메시지를 지옥으로 던지라는 명령입니다.
+</p>
+</div>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 24일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

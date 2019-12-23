@@ -43,6 +43,7 @@ gtag('config', 'UA-44534026-1');
 <ul>
 <li><a href="#org8f66e45">Docker</a></li>
 <li><a href="#org3e86005">기본 사용법</a></li>
+<li><a href="#org4fcf1fe">멀티 컨테이너 커스텀 네트워킹</a></li>
 <li><a href="#orgbcb8fa0">기타 사용법</a>
 <ul>
 <li><a href="#org68d8c40">모든 컨테이너 중지</a></li>
@@ -115,6 +116,16 @@ gtag('config', 'UA-44534026-1');
 <li><code>docker rmi IMAGE_NAME</code> 이미지 삭제하기</li>
 <li><code>docker system prune -a</code> 실행 중이지 않은 모든 컨테이너와 이미지를 삭제 (주로
 시스템 공간 확보를 위해 사용)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4fcf1fe" class="outline-2">
+<h2 id="org4fcf1fe">멀티 컨테이너 커스텀 네트워킹</h2>
+<div class="outline-text-2" id="text-org4fcf1fe">
+<ul class="org-ul">
+<li><code>docker network create NETWORK_NAME</code> 네트워크 생성하기</li>
+<li><code>docker run -d --net NETWORK_NAME --name NAME IMAGE_NAME</code> 특정 네트워크를 사용하는 특정 이름의 이미지를 데몬 모드로 실행시키기</li>
+<li><code>docker network prune</code> 기본 네트워크를 제외하고 다 지우기</li>
 </ul>
 </div>
 </div>
@@ -232,6 +243,6 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 23일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 24일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

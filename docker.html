@@ -42,7 +42,28 @@ gtag('config', 'UA-44534026-1');
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#org8f66e45">Docker</a></li>
-<li><a href="#org3e86005">기본 사용법</a></li>
+<li><a href="#org22afcf5">용어</a>
+<ul>
+<li><a href="#orgb9f0b3f">이미지(image)</a></li>
+<li><a href="#org50e216f">컨테이너(container)</a></li>
+</ul>
+</li>
+<li><a href="#orge26e5e1">자주 사용하는 커맨드들</a>
+<ul>
+<li><a href="#org1805ffb">images</a></li>
+<li><a href="#org44c58bb">pull</a></li>
+<li><a href="#org45be88f">build</a></li>
+<li><a href="#orgafb7724">run</a></li>
+<li><a href="#orgdbf1c8a">exec</a></li>
+<li><a href="#orgdcf11b6">logs</a></li>
+<li><a href="#org3be9d85">ps</a></li>
+<li><a href="#org5e09269">stop</a></li>
+<li><a href="#org0190155">kill</a></li>
+<li><a href="#org74d7fd1">rm</a></li>
+<li><a href="#orgb649f41">network</a></li>
+</ul>
+</li>
+<li><a href="#org9897c25">사용법 예제들</a></li>
 <li><a href="#org4fcf1fe">멀티 컨테이너 커스텀 네트워킹</a></li>
 <li><a href="#orgbcb8fa0">기타 사용법</a>
 <ul>
@@ -83,9 +104,153 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org3e86005" class="outline-2">
-<h2 id="org3e86005">기본 사용법</h2>
-<div class="outline-text-2" id="text-org3e86005">
+<div id="outline-container-org22afcf5" class="outline-2">
+<h2 id="org22afcf5">용어</h2>
+<div class="outline-text-2" id="text-org22afcf5">
+</div>
+<div id="outline-container-orgb9f0b3f" class="outline-3">
+<h3 id="orgb9f0b3f">이미지(image)</h3>
+<div class="outline-text-3" id="text-orgb9f0b3f">
+<p>
+도커에서 실제로 실행시킬 프로그램을 특정한 방식으로 만들어 놓은 것을 의미합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org50e216f" class="outline-3">
+<h3 id="org50e216f">컨테이너(container)</h3>
+<div class="outline-text-3" id="text-org50e216f">
+<p>
+이미지를 실제로 실행시킨 인스턴스를 컨테이너라고 부릅니다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge26e5e1" class="outline-2">
+<h2 id="orge26e5e1">자주 사용하는 커맨드들</h2>
+<div class="outline-text-2" id="text-orge26e5e1">
+<p>
+개인적으로 자주 사용하는 일부 커맨드만 정리합니다.
+</p>
+</div>
+<div id="outline-container-org1805ffb" class="outline-3">
+<h3 id="org1805ffb">images</h3>
+<div class="outline-text-3" id="text-org1805ffb">
+<p>
+이미지 리스트를 볼 수 있습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org44c58bb" class="outline-3">
+<h3 id="org44c58bb">pull</h3>
+<div class="outline-text-3" id="text-org44c58bb">
+<p>
+이미지를 다운로드 받습니다. 하지만 <code>run</code> 으로 실행시키면 없는 이미지를 자동으로 다운로드 받기 때문에 그다지 쓸 일이 없는 커맨드입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org45be88f" class="outline-3">
+<h3 id="org45be88f">build</h3>
+<div class="outline-text-3" id="text-org45be88f">
+<p>
+자신의 이미지를 빌드합니다. 기본 명세 파일 이름은 <code>Dockerfile</code> 입니다.
+</p>
+<ul class="org-ul">
+<li><code>-f</code> 옵션으로 <code>Dockerfile</code> 대신 다른 이름이나 경로를 지정해 줄 수 있습니다.</li>
+<li><code>-t</code> 옵션으로 이미지 이름이나 버전 태그 등을 지정할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgafb7724" class="outline-3">
+<h3 id="orgafb7724">run</h3>
+<div class="outline-text-3" id="text-orgafb7724">
+<p>
+이미지를 실행시킵니다. 컨테이너를 띄운다고 볼 수 있습니다.
+</p>
+<ul class="org-ul">
+<li><code>-d</code> 데몬(백그라운드 프로세스) 모드로 실행합니다.</li>
+<li><code>-it</code> 커맨드를 인터랙티브로 실행시킬 수 있습니다.</li>
+<li><code>--rm</code> 컨테이너가 종료되면 자동으로 삭제되게 합니다.</li>
+<li><code>-p HOST:CONTAINER</code> 호스트 포트와 컨테이너 내부 포트를 연결합니다.</li>
+<li><code>-v HOST_CONTAINER</code> 호스트 파일 시스템과 컨테이너 내부 파일 시스템을 연결합니다.</li>
+<li><code>--name NAME</code> 컨테이너 이름을 지정합니다.</li>
+<li><code>--net NETWORK</code> 특정 네트워크를 사용해서 실행합니다.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdbf1c8a" class="outline-3">
+<h3 id="orgdbf1c8a">exec</h3>
+<div class="outline-text-3" id="text-orgdbf1c8a">
+<p>
+실행 중인 컨테이너에 특정 커맨드를 전달합니다.
+</p>
+<ul class="org-ul">
+<li><code>-it</code> 인터랙티브 커맨드를 전달합니다. 즉 실행 중인 컨테이너에서 쉘 등을 띄울 때 요긴하게 사용합니다.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdcf11b6" class="outline-3">
+<h3 id="orgdcf11b6">logs</h3>
+<div class="outline-text-3" id="text-orgdcf11b6">
+<p>
+컨테이너의 로그를 살펴봅니다.
+<code>-f</code> 지속적으로 로그를 살펴봅니다. <code>tail -f</code> 의 옵션과 비슷합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org3be9d85" class="outline-3">
+<h3 id="org3be9d85">ps</h3>
+<div class="outline-text-3" id="text-org3be9d85">
+<p>
+실행 중인 컨테이너 리스트를 살펴봅니다.
+</p>
+<ul class="org-ul">
+<li><code>-a</code> 실행 중이던 아니던 모든 컨테이너 리스트를 살펴봅니다.</li>
+<li><code>-q</code> 컨테이너 고유번호만을 출력합니다. 다른 커맨드에 인자로 넘길 때 사용할 수 있습니다.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5e09269" class="outline-3">
+<h3 id="org5e09269">stop</h3>
+<div class="outline-text-3" id="text-org5e09269">
+<p>
+특정 컨테이너들을 종료합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org0190155" class="outline-3">
+<h3 id="org0190155">kill</h3>
+<div class="outline-text-3" id="text-org0190155">
+<p>
+특정 컨테이너들을 강제로 종료합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org74d7fd1" class="outline-3">
+<h3 id="org74d7fd1">rm</h3>
+<div class="outline-text-3" id="text-org74d7fd1">
+<p>
+특정 컨테이너들을 삭제합니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb649f41" class="outline-3">
+<h3 id="orgb649f41">network</h3>
+<div class="outline-text-3" id="text-orgb649f41">
+<p>
+도커 네트워크를 다루는 하위 명령을 사용합니다.
+</p>
+<ul class="org-ul">
+<li><code>ls</code> 네트워크 리스트를 출력합니다.</li>
+<li><code>create NAME</code> 네트워크를 생성합니다.</li>
+<li><code>rm NAME</code> 네트워크를 삭제합니다.</li>
+<li><code>prune</code> 기본 네트워크를 제외한 모든 네트워크를 삭제합니다.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9897c25" class="outline-2">
+<h2 id="org9897c25">사용법 예제들</h2>
+<div class="outline-text-2" id="text-org9897c25">
 <ul class="org-ul">
 <li><code>docker images</code> 이미지 리스트 보기</li>
 <li><code>docker pull IMAGE_NAME</code> 이미지 다운로드 받기</li>
@@ -116,6 +281,7 @@ gtag('config', 'UA-44534026-1');
 <li><code>docker rmi IMAGE_NAME</code> 이미지 삭제하기</li>
 <li><code>docker system prune -a</code> 실행 중이지 않은 모든 컨테이너와 이미지를 삭제 (주로
 시스템 공간 확보를 위해 사용)</li>
+<li><code>docker history IMAGE</code> 특정 이미지의 히스토리 조회</li>
 </ul>
 </div>
 </div>
@@ -239,7 +405,8 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 <ul class="org-ul">
 <li><a href="dockerfile.html">Dockerfile</a></li>
 <li><a href="docker-compose.html">Docker Compose</a></li>
-<li><a target="_blank" href="https://seorenn.tistory.com/20">Docker에서 macOS 호스트 포트에 접근하기</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/20">🌏 Docker에서 macOS 호스트 포트에 접근하기</a></li>
+<li><a target="_blank" href="https://www.44bits.io/ko/post/how-docker-image-work">🌏 만들면서 이해하는 도커(Docker) 이미지의 구조</a>: 도커 이미지 빌드 원리와 Overayfs</li>
 </ul>
 </div>
 </div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마인크래프트 - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="마인크래프트와 관련된 메모들">
+<meta property="og:title" content="마인크래프트" />
+<meta property="og:description" content="마인크래프트와 관련된 메모들" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="마인크래프트" />
+<meta name="twitter:description" content="마인크래프트와 관련된 메모들" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/minecraft.html"/>
+<link property="og:url" href="https://seorenn.github.io/minecraft.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div id="content">
+<header>
+<h1 class="title">마인크래프트</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-org395c478" class="outline-2">
+<h2 id="org395c478">레드스톤</h2>
+<div class="outline-text-2" id="text-org395c478">
+</div>
+<div id="outline-container-orgecf6171" class="outline-3">
+<h3 id="orgecf6171">관측기(Observer)</h3>
+<div class="outline-text-3" id="text-orgecf6171">
+<ul class="org-ul">
+<li>얼굴이 있는 방향의 인접 블록의 정보를 캐치할 수 있는 회로</li>
+<li>블록이 깨지거나 설치되는 상태, 혹은 작물의 성장 변화, 리핕터 시그널 감지</li>
+<li>감지될 경우 1 레드스톤 틱 만큼의 레드스톤 시그널 발생</li>
+<li>리피터에 흐르는 시그널도 캐치 가능</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ffeb2b" class="outline-3">
+<h3 id="org6ffeb2b">비교기(Comparator)</h3>
+<div class="outline-text-3" id="text-org6ffeb2b">
+<ul class="org-ul">
+<li>기본 모드 시 스토리지 안의 아이템 갯수 만큼 시그널 발생</li>
+<li>토글(ON) 시 비교기 방향의 시그널은 그대로 통과시키며, 만약 비교기 옆 쪽으로 시그널이 들어올 경우 비교기에서 시그널 송출이 중지됨</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org84e7cb1" class="outline-2">
+<h2 id="org84e7cb1">몹 팜</h2>
+<div class="outline-text-2" id="text-org84e7cb1">
+</div>
+<div id="outline-container-org179bd56" class="outline-3">
+<h3 id="org179bd56">몹 스폰 범위</h3>
+<div class="outline-text-3" id="text-org179bd56">
+<ul class="org-ul">
+<li>플레이어를 중심으로 24블록 떨어진 곳에서 부터 스폰</li>
+<li>플레이어를 중심으로 32블록 떨어진 곳 바깥쪽의 몹은 동작하지 않으며 스폰 및 디스폰을 반복</li>
+<li>플레이어를 중심으로 128블록 바깥쪽의 몬스터는 즉시 사라짐</li>
+<li>최대 몹 갯수는 솔로 기준 70마리</li>
+</ul>
+
+<p>
+결과적으로 몹 팜을 만든다면 플레이어를 중심으로 24~32 블록 이내에 몹이 생성되는 곳을 만들어야 한다는 말이 됩니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org34ce266" class="outline-3">
+<h3 id="org34ce266">몹 스포너 작동 조건</h3>
+<div class="outline-text-3" id="text-org34ce266">
+<ul class="org-ul">
+<li>플레이어를 중심으로 16블록 내에 있는 몹 스포너만 작동</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footer"><div id="time">2019년 12월 26일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

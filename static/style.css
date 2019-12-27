@@ -175,13 +175,15 @@ body {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 3rem;
-    padding: 0;
+    padding: 0 1rem 0 1rem;
     line-height: 1rem;
 }
 
 #content #footnotes h2 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
     padding-top: 1rem;
     border-top: 1px dotted #333;
     font-size: 1.4rem;
@@ -202,8 +204,7 @@ body {
 }
 
 #footnotes p {
-    margin-top: 0.01rem;
-    margin-bottom: 1.5rem;
+    margin: 0.01rem 0 1.5rem 0;
     padding-left: 2rem;
     line-height: 1.4rem;
 }

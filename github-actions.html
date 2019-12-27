@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Github Actions - Seorenn Static Pages</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Heeseung Seo (Seorenn)">
+<meta name="description" content="깃헙 액션에 대한 메모">
+<meta name="keywords" content="git, github, actions, 깃헙, 액션">
+<meta property="og:title" content="Github Actions" />
+<meta property="og:description" content="깃헙 액션에 대한 메모" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Github Actions" />
+<meta name="twitter:description" content="깃헙 액션에 대한 메모" />
+<meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<link rel="stylesheet" type="text/css" href="/static/style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="canonical" href="https://seorenn.github.io/github-actions.html"/>
+<link property="og:url" href="https://seorenn.github.io/github-actions.html"/>
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div id="content">
+<header>
+<h1 class="title">Github Actions</h1>
+<h2><a href="/">Seorenn Static Pages</a></h2></header>
+<div id="outline-container-org2888495" class="outline-2">
+<h2 id="org2888495">Github Actions</h2>
+<div class="outline-text-2" id="text-org2888495">
+<p>
+깃헙 액션은 <a target="_blank" href="https://github.com">🌏 Github</a> 에서 제공하는 CI<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>로, 쉽게 말해서 해당 저장소에 뭔가의 이벤트가 발생하면 어떤 동작을 하도록 만들 수 있는 기능입니다. 예를 들어서 push가 일어나면 이를 빌드해서 배포하는 기능을 자동화 할 수 있지요.
+</p>
+</div>
+</div>
+<div id="outline-container-org38629f0" class="outline-2">
+<h2 id="org38629f0">사용법</h2>
+<div class="outline-text-2" id="text-org38629f0">
+<p>
+프로젝트 저장소에서 아래의 디렉토리가 액션 워크플로우가 위치하는 곳입니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">.github/workflows
+</pre>
+</div>
+<p>
+여기에 워크플로우(workflow) 파일을 YAML로 작성해서 넣으면 되며 파일 이름은 딱히 상관 없으며 확장자 <code>.workflow</code> 를 붙여주면 됩니다.
+</p>
+
+<p>
+깃헙 사이트에서도 생성할 수 있으며 이 경우 GUI의 도움을 받을 수 있기 때문에 그다지 어렵지 않게 생성할 수 있습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org239bae4" class="outline-2">
+<h2 id="org239bae4">워크플로우</h2>
+<div class="outline-text-2" id="text-org239bae4">
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #dcaeea;">name</span>: [WORKFLOW_NAME]
+
+<span style="color: #dcaeea;">on</span>: [EVENT - &#51060; &#50892;&#53356;&#54540;&#47196;&#50864;&#44032; &#50612;&#46500; &#51060;&#48292;&#53944;&#50640; &#46041;&#51089;&#54616;&#45716;&#44032;]
+
+<span style="color: #dcaeea;">jobs</span>:
+  [JOB_NAME]:
+    <span style="color: #dcaeea;">runs-on</span>: [RUNNER - &#50612;&#46500; OS&#50640;&#49436; &#46041;&#51089;&#54616;&#45716;&#44032;]
+    <span style="color: #dcaeea;">env</span>:
+      [ENV KEY]: [VALUE]
+      [ENV KEY]: [VALUE]
+      ...
+    <span style="color: #dcaeea;">steps</span>:
+    - <span style="color: #dcaeea;">name</span>: [ACTION_NAME]
+      <span style="color: #dcaeea;">uses</span>: [ACTION]
+      ...
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org26799de" class="outline-3">
+<h3 id="org26799de">EVENT</h3>
+<div class="outline-text-3" id="text-org26799de">
+<p>
+대표적으로 저장소에 코드가 푸시뒬 경우가 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #dcaeea;">on</span>: push
+</pre>
+</div>
+<p>
+깃헙 자체의 액션 생성 기능에서 풀다운으로 고를 수도 있으므로 굳이 다 알 필요는 없을 것 같습니다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgee054fe" class="outline-3">
+<h3 id="orgee054fe">RUNNER</h3>
+<div class="outline-text-3" id="text-orgee054fe">
+<p>
+아마도 우분투 리눅스를 가장 많이 쓸 것 같습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #dcaeea;">runs-on</span>: ubuntu-latest
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org00e4817" class="outline-3">
+<h3 id="org00e4817">ACTION</h3>
+<div class="outline-text-3" id="text-org00e4817">
+<p>
+액션의 경우는 워낙 다양해서 깃헙 마켓 플레이스에서 검색하시는 것을 추천합니다. 관련된 매개변수도 액션에 따라 바뀌기도 해서 여기서 정리하는 것은 매우 힘든 일입니다.
+</p>
+
+<p>
+물론 이 외에 커스텀으로 가장 많이 사용하게 될 쉘 커맨드의 경우 아래와 같은 식으로 사용됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml">- <span style="color: #dcaeea;">name</span>: run some shell commands
+  <span style="color: #dcaeea;">working-directory</span>: some-directory
+  <span style="color: #dcaeea;">run</span>: |
+    echo <span style="color: #98be65;">"multi"</span>
+    echo <span style="color: #98be65;">"line"</span>
+    echo <span style="color: #98be65;">"shell"</span>
+    echo <span style="color: #98be65;">"commands"</span>
+</pre>
+</div>
+<p>
+<code>working-directory</code> 는 필요할 때만 명시하면 됩니다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgce90c45" class="outline-2">
+<h2 id="orgce90c45">관련글</h2>
+<div class="outline-text-2" id="text-orgce90c45">
+<ul class="org-ul">
+<li><a href="git.html">Git</a></li>
+<li><a target="_blank" href="https://blog.aliencube.org/ko/2019/12/13/publishing-static-website-to-azure-blob-storage-via-github-actions/">🌏 깃헙 액션을 사용해서 애저 블롭 저장소에 정적 웹사이트 배포하기</a></li>
+<li><a target="_blank" href="https://blog.aliencube.org/ko/2019/12/18/building-ci-cd-pipelines-with-github-actions/?utm_source=gaerae.com&amp;utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4&amp;utm_medium=social">🌏 깃헙 액션으로 경계가 명확한 CI/CD 파이프라인 구현하기</a></li>
+<li><a target="_blank" href="https://seonghyeon.dev/python-package-development-with-poetry-and-action">🌏 GitHub Action과 Poetry를 사용한 파이썬 패키지 개발</a></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">Continuous Integration, 자동화 프로세스의 일종이지만, 저장소에 코드가 올라오면 자동으로 에러를 체크하는 등의 보조 수단으로도 자주 활용하는 것 같습니다.</p></div></div>
+
+
+</div>
+</div><div id="footer"><div id="time">2019년 12월 27일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</body>
+</html>

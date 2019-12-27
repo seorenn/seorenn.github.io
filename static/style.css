@@ -176,10 +176,12 @@ body {
     margin: 0 auto;
     margin-top: 3rem;
     padding: 0;
+    line-height: 1rem;
 }
 
 #content #footnotes h2 {
-    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 1rem;
     border-top: 1px dotted #333;
     font-size: 1.4rem;
@@ -203,7 +205,7 @@ body {
     margin-top: 0.01rem;
     margin-bottom: 1.5rem;
     padding-left: 2rem;
-    line-height: 1.0rem;
+    line-height: 1.4rem;
 }
 
 #footer {

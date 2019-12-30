@@ -117,6 +117,19 @@ String Interpolation과 상당히 닮은, 흔하디
 <p>
 어려울 게 없습니다.
 </p>
+
+<p>
+약같 특수한 문법으로 아래처럼 사용하는 방법도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">value</span> = <span style="color: #da8548; font-weight: bold;">100</span>
+&gt;&gt;&gt; f<span style="color: #98be65;">'{value=}'</span>
+<span style="color: #98be65;">'value=100'</span>
+</pre>
+</div>
+<p>
+위 문법은 self-documenting 표현식 이라는 주제로 3.8 부터 도입 되었습니다.
+</p>
 </div>
 </div>
 <div id="outline-container-org82b8696" class="outline-2">
@@ -179,6 +192,19 @@ F-string도 이런 방식의 포매팅을 여전히 지원합니다. 예를 들�
 <p>
 C에 익숙한 아재라면 (&#x2026;) 뭐&#x2026; 익숙하시겠네요. 네 저도 익숙합니다.
 </p>
+
+<p>
+포맷팅 문법도 자기 자신 표현식에서 사용할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">value</span> = <span style="color: #da8548; font-weight: bold;">100</span>
+&gt;&gt;&gt; f<span style="color: #98be65;">'{value=:#10d}'</span>
+<span style="color: #98be65;">'value=       100'</span>
+</pre>
+</div>
+<p>
+뭔가 가독성은 마음에 안 들지만 애초에 이 기능은 로그 메시지 작성을 제외하곤 많이 쓰일 것 같지는 않기도 하네요.
+</p>
 </div>
 </div>
 <div id="outline-container-org7b7a640" class="outline-2">
@@ -215,9 +241,10 @@ F-string의 중괄호 내부에서는 백슬래시를 쓸 수 없습니다.
 <div class="outline-text-2" id="text-org7fc1f20">
 <ul class="org-ul">
 <li><a href="python.html">Python</a></li>
+<li><a href="python-update-log.html">Python 버전별 업데이트 내역</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2019년 12월 30일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

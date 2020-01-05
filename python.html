@@ -7,7 +7,7 @@
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
 <meta name="description" content="Python(파이썬)에 관한 간략한 설명 및 관련글들">
-<meta name="keywords" content="파이썬, python, list, comprehension, map, filter, list, dir, walk, tip, 3.8">
+<meta name="keywords" content="파이썬, python, list, comprehension, map, filter, list, dir, walk, tip, 3.8, path">
 <meta property="og:title" content="Python" />
 <meta property="og:description" content="Python(파이썬)에 관한 간략한 설명 및 관련글들" />
 <meta property="og:type" content="website" />
@@ -42,6 +42,7 @@ gtag('config', 'UA-44534026-1');
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgdb9b9c6">Python</a></li>
+<li><a href="#org9df26a4">설치</a></li>
 <li><a href="#orgfa132e8">관련된 글 목록</a></li>
 <li><a href="#orga5de918">메모</a>
 <ul>
@@ -61,6 +62,25 @@ gtag('config', 'UA-44534026-1');
 프로그래밍 언어입니다. 동적 타이핑을 사용하는 인터프리터 언어라는 점도
 특징이지만, 역시 들여쓰기를 블럭 구분으로 사용하는 것을 문법으로 강제하는
 언어라는 점이 가장 큰 특징입니다.
+</p>
+</div>
+</div>
+<div id="outline-container-org9df26a4" class="outline-2">
+<h2 id="org9df26a4">설치</h2>
+<div class="outline-text-2" id="text-org9df26a4">
+<p>
+<a href="macos.html">macOS</a> 의 경우 <a href="homebrew.html">Homebrew</a> 를 통해 설치하거나 혹은 <a href="pyenv.html">pyenv</a> 로 설치할 수 있습니다.
+</p>
+
+<p>
+다만 최근 <a href="homebrew.html">Homebrew</a> 를 통해 설치하는 경우 3.x 버전이 설치되며 python3 라는 이름으로만 실행시킬 수 있게 설치됩니다. python 커맨드로 실행되는 버전은 시스템의 기본 파이썬 바이너리입니다. 만약 python 커맨드로 새로 설치한 파이썬 3를 실행시키고자 한다면 아래와 같은 경로 설정을 추가해줍시다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PATH</span>=<span style="color: #98be65;">"/usr/local/opt/python/libexec/bin:</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">PATH</span><span style="color: #98be65;">"</span>
+</pre>
+</div>
+<p>
+이렇게 설정한 경우 python을 실행시키면 <a href="homebrew.html">Homebrew</a> 를 통해 설치한 python3가 실행되게 됩니다.
 </p>
 </div>
 </div>

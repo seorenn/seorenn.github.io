@@ -85,7 +85,7 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org70fdb77">while</a></li>
 </ul>
 </li>
-<li><a href="#orgafa10b2">함수</a></li>
+<li><a href="#org084b19f">함수 형식</a></li>
 <li><a href="#orgba0ff44">버퍼 관련</a>
 <ul>
 <li><a href="#org5af6adb">char-after</a></li>
@@ -110,7 +110,8 @@ gtag('config', 'UA-44534026-1');
 <ul>
 <li><a href="#orgb308694">file-relative-name</a></li>
 <li><a href="#orgd9acc93">file-name-nondirectory</a></li>
-<li><a href="#org644b882">org-expand-wildcards</a></li>
+<li><a href="#orgcceae19">expand-file-name</a></li>
+<li><a href="#orgc572c2e">file-expand-wildcards</a></li>
 <li><a href="#org96f3520">file-exists-p</a></li>
 </ul>
 </li>
@@ -509,9 +510,9 @@ else 처리가 필요 없다면 <code>when</code> 이나 <code>unless</code> 를
 </div>
 </div>
 </div>
-<div id="outline-container-orgafa10b2" class="outline-2">
-<h2 id="orgafa10b2">함수</h2>
-<div class="outline-text-2" id="text-orgafa10b2">
+<div id="outline-container-org084b19f" class="outline-2">
+<h2 id="org084b19f">함수 형식</h2>
+<div class="outline-text-2" id="text-org084b19f">
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="color: #51afef;">defun</span> <span style="color: #c678dd;">function-name</span> (param1 param2 ...)
   <span style="color: #83898d;">"documentation"</span>
@@ -673,9 +674,21 @@ else 처리가 필요 없다면 <code>when</code> 이나 <code>unless</code> 를
 </div>
 </div>
 </div>
-<div id="outline-container-org644b882" class="outline-3">
-<h3 id="org644b882">org-expand-wildcards</h3>
-<div class="outline-text-3" id="text-org644b882">
+<div id="outline-container-orgcceae19" class="outline-3">
+<h3 id="orgcceae19">expand-file-name</h3>
+<div class="outline-text-3" id="text-orgcceae19">
+<p>
+축약 경로를 절대 경로로 풀어줍니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(expand-file-name <span style="color: #98be65;">"~/test.txt"</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc572c2e" class="outline-3">
+<h3 id="orgc572c2e">file-expand-wildcards</h3>
+<div class="outline-text-3" id="text-orgc572c2e">
 <p>
 아래 커맨드는 <code>~/foo/bar</code> 디렉토리 안의 모든 <code>.org</code> 파일 목록을 돌려줍니다.
 </p>

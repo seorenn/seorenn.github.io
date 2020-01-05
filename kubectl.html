@@ -41,72 +41,72 @@ gtag('config', 'UA-44534026-1');
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgefec332">kubectl</a></li>
-<li><a href="#org6bc7057">사용법 예제</a>
+<li><a href="#org530acd0">kubectl</a></li>
+<li><a href="#org841fd51">사용법 예제</a>
 <ul>
-<li><a href="#org4be6f4d">포드 리스트</a></li>
-<li><a href="#org4e78a59">포드 정보 보기</a></li>
-<li><a href="#org9e41371">YAML 파일 적용</a></li>
-<li><a href="#orge6a00d1">포드 삭제하기</a></li>
-<li><a href="#orgb5d6027">포드 재시작하기</a></li>
-<li><a href="#orgaa43bc3">로그 보기</a></li>
-<li><a href="#orgccc4a7a">포트 포워딩</a></li>
-<li><a href="#orgeadcbe8">컨테이너의 커맨드 실행시키기</a></li>
+<li><a href="#org5958849">포드 리스트</a></li>
+<li><a href="#org242dde2">포드 정보 보기</a></li>
+<li><a href="#orgb5aacfb">YAML 파일 적용</a></li>
+<li><a href="#org372bd27">포드 삭제하기</a></li>
+<li><a href="#org92fe539">포드 재시작하기</a></li>
+<li><a href="#org8e7664d">로그 보기</a></li>
+<li><a href="#org667eea7">포트 포워딩</a></li>
+<li><a href="#org1db1cfb">컨테이너의 커맨드 실행시키기</a></li>
 </ul>
 </li>
-<li><a href="#orgcb83b75">심화 예제</a>
+<li><a href="#org548b287">심화 예제</a>
 <ul>
-<li><a href="#orgf8d490d">레코드와 롤백</a></li>
+<li><a href="#org9809856">레코드와 롤백</a></li>
 </ul>
 </li>
-<li><a href="#org8bb8925">관련글</a></li>
+<li><a href="#org6ae2beb">관련글</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgefec332" class="outline-2">
-<h2 id="orgefec332">kubectl</h2>
-<div class="outline-text-2" id="text-orgefec332">
+<div id="outline-container-org530acd0" class="outline-2">
+<h2 id="org530acd0">kubectl</h2>
+<div class="outline-text-2" id="text-org530acd0">
 <p>
 kubectl 은 Kubernetes 클러스터 컨트롤 도구입니다. 이 문서에서는 이 kubectl 의
 사용법 예를 몇 가지 정리합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org6bc7057" class="outline-2">
-<h2 id="org6bc7057">사용법 예제</h2>
-<div class="outline-text-2" id="text-org6bc7057">
+<div id="outline-container-org841fd51" class="outline-2">
+<h2 id="org841fd51">사용법 예제</h2>
+<div class="outline-text-2" id="text-org841fd51">
 </div>
-<div id="outline-container-org4be6f4d" class="outline-3">
-<h3 id="org4be6f4d">포드 리스트</h3>
-<div class="outline-text-3" id="text-org4be6f4d">
+<div id="outline-container-org5958849" class="outline-3">
+<h3 id="org5958849">포드 리스트</h3>
+<div class="outline-text-3" id="text-org5958849">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl get pods
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4e78a59" class="outline-3">
-<h3 id="org4e78a59">포드 정보 보기</h3>
-<div class="outline-text-3" id="text-org4e78a59">
+<div id="outline-container-org242dde2" class="outline-3">
+<h3 id="org242dde2">포드 정보 보기</h3>
+<div class="outline-text-3" id="text-org242dde2">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl describe pod POD_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9e41371" class="outline-3">
-<h3 id="org9e41371">YAML 파일 적용</h3>
-<div class="outline-text-3" id="text-org9e41371">
+<div id="outline-container-orgb5aacfb" class="outline-3">
+<h3 id="orgb5aacfb">YAML 파일 적용</h3>
+<div class="outline-text-3" id="text-orgb5aacfb">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl apply -f foo/bar.yaml
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orge6a00d1" class="outline-3">
-<h3 id="orge6a00d1">포드 삭제하기</h3>
-<div class="outline-text-3" id="text-orge6a00d1">
+<div id="outline-container-org372bd27" class="outline-3">
+<h3 id="org372bd27">포드 삭제하기</h3>
+<div class="outline-text-3" id="text-org372bd27">
 <p>
 보통은 리스케일로 0대만 동작하게 설정하는 식으로 포드를 종료시킵니다.
 </p>
@@ -131,9 +131,9 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgb5d6027" class="outline-3">
-<h3 id="orgb5d6027">포드 재시작하기</h3>
-<div class="outline-text-3" id="text-orgb5d6027">
+<div id="outline-container-org92fe539" class="outline-3">
+<h3 id="org92fe539">포드 재시작하기</h3>
+<div class="outline-text-3" id="text-org92fe539">
 <p>
 특별히 커맨드가 있는건 아니고 아래처럼 할 수 있습니다.
 </p>
@@ -147,9 +147,9 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </p>
 </div>
 </div>
-<div id="outline-container-orgaa43bc3" class="outline-3">
-<h3 id="orgaa43bc3">로그 보기</h3>
-<div class="outline-text-3" id="text-orgaa43bc3">
+<div id="outline-container-org8e7664d" class="outline-3">
+<h3 id="org8e7664d">로그 보기</h3>
+<div class="outline-text-3" id="text-org8e7664d">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl logs -f POD_NAME
 </pre>
@@ -171,9 +171,9 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </p>
 </div>
 </div>
-<div id="outline-container-orgccc4a7a" class="outline-3">
-<h3 id="orgccc4a7a">포트 포워딩</h3>
-<div class="outline-text-3" id="text-orgccc4a7a">
+<div id="outline-container-org667eea7" class="outline-3">
+<h3 id="org667eea7">포트 포워딩</h3>
+<div class="outline-text-3" id="text-org667eea7">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl port-forward POD_NAME PORT_NUM
 </pre>
@@ -192,9 +192,9 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgeadcbe8" class="outline-3">
-<h3 id="orgeadcbe8">컨테이너의 커맨드 실행시키기</h3>
-<div class="outline-text-3" id="text-orgeadcbe8">
+<div id="outline-container-org1db1cfb" class="outline-3">
+<h3 id="org1db1cfb">컨테이너의 커맨드 실행시키기</h3>
+<div class="outline-text-3" id="text-org1db1cfb">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl exec -it POD_NAME -- COMMAND
 </pre>
@@ -214,13 +214,13 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgcb83b75" class="outline-2">
-<h2 id="orgcb83b75">심화 예제</h2>
-<div class="outline-text-2" id="text-orgcb83b75">
+<div id="outline-container-org548b287" class="outline-2">
+<h2 id="org548b287">심화 예제</h2>
+<div class="outline-text-2" id="text-org548b287">
 </div>
-<div id="outline-container-orgf8d490d" class="outline-3">
-<h3 id="orgf8d490d">레코드와 롤백</h3>
-<div class="outline-text-3" id="text-orgf8d490d">
+<div id="outline-container-org9809856" class="outline-3">
+<h3 id="org9809856">레코드와 롤백</h3>
+<div class="outline-text-3" id="text-org9809856">
 <p>
 <code>--record</code> 커맨드로 현재 기록을 남겨둘 수 있습니다.
 </p>
@@ -241,9 +241,9 @@ YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 �
 </div>
 </div>
 </div>
-<div id="outline-container-org8bb8925" class="outline-2">
-<h2 id="org8bb8925">관련글</h2>
-<div class="outline-text-2" id="text-org8bb8925">
+<div id="outline-container-org6ae2beb" class="outline-2">
+<h2 id="org6ae2beb">관련글</h2>
+<div class="outline-text-2" id="text-org6ae2beb">
 <ul class="org-ul">
 <li><a target="_blank" href="https://speakerdeck.com/thesandlord/kubernetes-best-practices">🌏 Kubernetes
 Best Practices</a> (Slides)</li>
@@ -259,6 +259,6 @@ Best Practices</a> (Slides)</li>
 
 
 </div>
-</div><div id="footer"><div id="time">2019년 12월 23일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</div><div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

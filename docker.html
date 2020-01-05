@@ -41,56 +41,56 @@ gtag('config', 'UA-44534026-1');
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8f66e45">Docker</a></li>
-<li><a href="#org22afcf5">용어</a>
+<li><a href="#orgb9b5204">Docker</a></li>
+<li><a href="#orge629412">용어</a>
 <ul>
-<li><a href="#orgb9f0b3f">이미지(image)</a></li>
-<li><a href="#org50e216f">컨테이너(container)</a></li>
+<li><a href="#org1dd19d3">이미지(image)</a></li>
+<li><a href="#org808afe5">컨테이너(container)</a></li>
 </ul>
 </li>
-<li><a href="#orge26e5e1">자주 사용하는 커맨드들</a>
+<li><a href="#orge59085e">자주 사용하는 커맨드들</a>
 <ul>
-<li><a href="#org1805ffb">images</a></li>
-<li><a href="#org44c58bb">pull</a></li>
-<li><a href="#org45be88f">build</a></li>
-<li><a href="#orgafb7724">run</a></li>
-<li><a href="#orgdbf1c8a">exec</a></li>
-<li><a href="#orgdcf11b6">logs</a></li>
-<li><a href="#org3be9d85">ps</a></li>
-<li><a href="#org5e09269">stop</a></li>
-<li><a href="#org0190155">kill</a></li>
-<li><a href="#org74d7fd1">rm</a></li>
-<li><a href="#orgb649f41">network</a></li>
+<li><a href="#org8758607">images</a></li>
+<li><a href="#orgc045bda">pull</a></li>
+<li><a href="#orgbe279e0">build</a></li>
+<li><a href="#org4871775">run</a></li>
+<li><a href="#org49c1376">exec</a></li>
+<li><a href="#orgc615b4e">logs</a></li>
+<li><a href="#org0b8ecbb">ps</a></li>
+<li><a href="#org5c88329">stop</a></li>
+<li><a href="#org44f2792">kill</a></li>
+<li><a href="#org4788715">rm</a></li>
+<li><a href="#orgd7f678e">network</a></li>
 </ul>
 </li>
-<li><a href="#org9897c25">사용법 예제들</a></li>
-<li><a href="#org4fcf1fe">멀티 컨테이너 커스텀 네트워킹</a></li>
-<li><a href="#orgbcb8fa0">기타 사용법</a>
+<li><a href="#org004e7a3">사용법 예제들</a></li>
+<li><a href="#org9eaf597">멀티 컨테이너 커스텀 네트워킹</a></li>
+<li><a href="#org3653da8">기타 사용법</a>
 <ul>
-<li><a href="#org68d8c40">모든 컨테이너 중지</a></li>
-<li><a href="#orgd680690">모든 컨테이너 삭제</a></li>
+<li><a href="#org2f726fe">모든 컨테이너 중지</a></li>
+<li><a href="#org98cb0b0">모든 컨테이너 삭제</a></li>
 </ul>
 </li>
-<li><a href="#org4e6dbf2">활용 예제</a>
+<li><a href="#org7d7c481">활용 예제</a>
 <ul>
-<li><a href="#org1ce8978">구 버전 MongoDB CLI 가 필요할 때</a></li>
+<li><a href="#orge1eef85">구 버전 MongoDB CLI 가 필요할 때</a></li>
 </ul>
 </li>
-<li><a href="#org5ad9123">공간 비우기</a></li>
-<li><a href="#org265585c">기타 메모</a>
+<li><a href="#orgf8c10fb">공간 비우기</a></li>
+<li><a href="#org3b31969">기타 메모</a>
 <ul>
-<li><a href="#org4d471d8">컨테이너에서 호스트 포트에 접근하기(macOS)</a></li>
-<li><a href="#orga951448">적당히 시작하기 좋은 이미지들</a></li>
+<li><a href="#org368a6eb">컨테이너에서 호스트 포트에 접근하기(macOS)</a></li>
+<li><a href="#org06f8869">적당히 시작하기 좋은 이미지들</a></li>
 </ul>
 </li>
-<li><a href="#org62b2a93">관련글</a></li>
+<li><a href="#orgac291e3">관련글</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org8f66e45" class="outline-2">
-<h2 id="org8f66e45">Docker</h2>
-<div class="outline-text-2" id="text-org8f66e45">
+<div id="outline-container-orgb9b5204" class="outline-2">
+<h2 id="orgb9b5204">Docker</h2>
+<div class="outline-text-2" id="text-orgb9b5204">
 <p>
 도커는 정석적인 설명으론 컨테이너 기반 가상화 플랫폼이라고 소개하곤 합니다. 물론 이
 말만으론 딱이 와닿는 설명은 아닐거예요. 개인적으론 그저 가상으로 OS 수준까지
@@ -104,53 +104,53 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org22afcf5" class="outline-2">
-<h2 id="org22afcf5">용어</h2>
-<div class="outline-text-2" id="text-org22afcf5">
+<div id="outline-container-orge629412" class="outline-2">
+<h2 id="orge629412">용어</h2>
+<div class="outline-text-2" id="text-orge629412">
 </div>
-<div id="outline-container-orgb9f0b3f" class="outline-3">
-<h3 id="orgb9f0b3f">이미지(image)</h3>
-<div class="outline-text-3" id="text-orgb9f0b3f">
+<div id="outline-container-org1dd19d3" class="outline-3">
+<h3 id="org1dd19d3">이미지(image)</h3>
+<div class="outline-text-3" id="text-org1dd19d3">
 <p>
 도커에서 실제로 실행시킬 프로그램을 특정한 방식으로 만들어 놓은 것을 의미합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org50e216f" class="outline-3">
-<h3 id="org50e216f">컨테이너(container)</h3>
-<div class="outline-text-3" id="text-org50e216f">
+<div id="outline-container-org808afe5" class="outline-3">
+<h3 id="org808afe5">컨테이너(container)</h3>
+<div class="outline-text-3" id="text-org808afe5">
 <p>
 이미지를 실제로 실행시킨 인스턴스를 컨테이너라고 부릅니다.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orge26e5e1" class="outline-2">
-<h2 id="orge26e5e1">자주 사용하는 커맨드들</h2>
-<div class="outline-text-2" id="text-orge26e5e1">
+<div id="outline-container-orge59085e" class="outline-2">
+<h2 id="orge59085e">자주 사용하는 커맨드들</h2>
+<div class="outline-text-2" id="text-orge59085e">
 <p>
 개인적으로 자주 사용하는 일부 커맨드만 정리합니다.
 </p>
 </div>
-<div id="outline-container-org1805ffb" class="outline-3">
-<h3 id="org1805ffb">images</h3>
-<div class="outline-text-3" id="text-org1805ffb">
+<div id="outline-container-org8758607" class="outline-3">
+<h3 id="org8758607">images</h3>
+<div class="outline-text-3" id="text-org8758607">
 <p>
 이미지 리스트를 볼 수 있습니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org44c58bb" class="outline-3">
-<h3 id="org44c58bb">pull</h3>
-<div class="outline-text-3" id="text-org44c58bb">
+<div id="outline-container-orgc045bda" class="outline-3">
+<h3 id="orgc045bda">pull</h3>
+<div class="outline-text-3" id="text-orgc045bda">
 <p>
 이미지를 다운로드 받습니다. 하지만 <code>run</code> 으로 실행시키면 없는 이미지를 자동으로 다운로드 받기 때문에 그다지 쓸 일이 없는 커맨드입니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org45be88f" class="outline-3">
-<h3 id="org45be88f">build</h3>
-<div class="outline-text-3" id="text-org45be88f">
+<div id="outline-container-orgbe279e0" class="outline-3">
+<h3 id="orgbe279e0">build</h3>
+<div class="outline-text-3" id="text-orgbe279e0">
 <p>
 자신의 이미지를 빌드합니다. 기본 명세 파일 이름은 <code>Dockerfile</code> 입니다.
 </p>
@@ -160,9 +160,9 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="outline-container-orgafb7724" class="outline-3">
-<h3 id="orgafb7724">run</h3>
-<div class="outline-text-3" id="text-orgafb7724">
+<div id="outline-container-org4871775" class="outline-3">
+<h3 id="org4871775">run</h3>
+<div class="outline-text-3" id="text-org4871775">
 <p>
 이미지를 실행시킵니다. 컨테이너를 띄운다고 볼 수 있습니다.
 </p>
@@ -177,9 +177,9 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdbf1c8a" class="outline-3">
-<h3 id="orgdbf1c8a">exec</h3>
-<div class="outline-text-3" id="text-orgdbf1c8a">
+<div id="outline-container-org49c1376" class="outline-3">
+<h3 id="org49c1376">exec</h3>
+<div class="outline-text-3" id="text-org49c1376">
 <p>
 실행 중인 컨테이너에 특정 커맨드를 전달합니다.
 </p>
@@ -188,18 +188,18 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdcf11b6" class="outline-3">
-<h3 id="orgdcf11b6">logs</h3>
-<div class="outline-text-3" id="text-orgdcf11b6">
+<div id="outline-container-orgc615b4e" class="outline-3">
+<h3 id="orgc615b4e">logs</h3>
+<div class="outline-text-3" id="text-orgc615b4e">
 <p>
 컨테이너의 로그를 살펴봅니다.
 <code>-f</code> 지속적으로 로그를 살펴봅니다. <code>tail -f</code> 의 옵션과 비슷합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org3be9d85" class="outline-3">
-<h3 id="org3be9d85">ps</h3>
-<div class="outline-text-3" id="text-org3be9d85">
+<div id="outline-container-org0b8ecbb" class="outline-3">
+<h3 id="org0b8ecbb">ps</h3>
+<div class="outline-text-3" id="text-org0b8ecbb">
 <p>
 실행 중인 컨테이너 리스트를 살펴봅니다.
 </p>
@@ -209,33 +209,33 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="outline-container-org5e09269" class="outline-3">
-<h3 id="org5e09269">stop</h3>
-<div class="outline-text-3" id="text-org5e09269">
+<div id="outline-container-org5c88329" class="outline-3">
+<h3 id="org5c88329">stop</h3>
+<div class="outline-text-3" id="text-org5c88329">
 <p>
 특정 컨테이너들을 종료합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org0190155" class="outline-3">
-<h3 id="org0190155">kill</h3>
-<div class="outline-text-3" id="text-org0190155">
+<div id="outline-container-org44f2792" class="outline-3">
+<h3 id="org44f2792">kill</h3>
+<div class="outline-text-3" id="text-org44f2792">
 <p>
 특정 컨테이너들을 강제로 종료합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org74d7fd1" class="outline-3">
-<h3 id="org74d7fd1">rm</h3>
-<div class="outline-text-3" id="text-org74d7fd1">
+<div id="outline-container-org4788715" class="outline-3">
+<h3 id="org4788715">rm</h3>
+<div class="outline-text-3" id="text-org4788715">
 <p>
 특정 컨테이너들을 삭제합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb649f41" class="outline-3">
-<h3 id="orgb649f41">network</h3>
-<div class="outline-text-3" id="text-orgb649f41">
+<div id="outline-container-orgd7f678e" class="outline-3">
+<h3 id="orgd7f678e">network</h3>
+<div class="outline-text-3" id="text-orgd7f678e">
 <p>
 도커 네트워크를 다루는 하위 명령을 사용합니다.
 </p>
@@ -248,9 +248,9 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-org9897c25" class="outline-2">
-<h2 id="org9897c25">사용법 예제들</h2>
-<div class="outline-text-2" id="text-org9897c25">
+<div id="outline-container-org004e7a3" class="outline-2">
+<h2 id="org004e7a3">사용법 예제들</h2>
+<div class="outline-text-2" id="text-org004e7a3">
 <ul class="org-ul">
 <li><code>docker images</code> 이미지 리스트 보기</li>
 <li><code>docker pull IMAGE_NAME</code> 이미지 다운로드 받기</li>
@@ -285,9 +285,9 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="outline-container-org4fcf1fe" class="outline-2">
-<h2 id="org4fcf1fe">멀티 컨테이너 커스텀 네트워킹</h2>
-<div class="outline-text-2" id="text-org4fcf1fe">
+<div id="outline-container-org9eaf597" class="outline-2">
+<h2 id="org9eaf597">멀티 컨테이너 커스텀 네트워킹</h2>
+<div class="outline-text-2" id="text-org9eaf597">
 <ul class="org-ul">
 <li><code>docker network create NETWORK_NAME</code> 네트워크 생성하기</li>
 <li><code>docker run -d --net NETWORK_NAME --name NAME IMAGE_NAME</code> 특정 네트워크를 사용하는 특정 이름의 이미지를 데몬 모드로 실행시키기</li>
@@ -295,22 +295,22 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbcb8fa0" class="outline-2">
-<h2 id="orgbcb8fa0">기타 사용법</h2>
-<div class="outline-text-2" id="text-orgbcb8fa0">
+<div id="outline-container-org3653da8" class="outline-2">
+<h2 id="org3653da8">기타 사용법</h2>
+<div class="outline-text-2" id="text-org3653da8">
 </div>
-<div id="outline-container-org68d8c40" class="outline-3">
-<h3 id="org68d8c40">모든 컨테이너 중지</h3>
-<div class="outline-text-3" id="text-org68d8c40">
+<div id="outline-container-org2f726fe" class="outline-3">
+<h3 id="org2f726fe">모든 컨테이너 중지</h3>
+<div class="outline-text-3" id="text-org2f726fe">
 <div class="org-src-container">
 <pre class="src src-sh">docker <span style="color: #ECBE7B;">kill</span> $<span style="color: #51afef;">(</span>docker ps -q<span style="color: #51afef;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd680690" class="outline-3">
-<h3 id="orgd680690">모든 컨테이너 삭제</h3>
-<div class="outline-text-3" id="text-orgd680690">
+<div id="outline-container-org98cb0b0" class="outline-3">
+<h3 id="org98cb0b0">모든 컨테이너 삭제</h3>
+<div class="outline-text-3" id="text-org98cb0b0">
 <div class="org-src-container">
 <pre class="src src-sh">docker <span style="color: #ECBE7B;">rm</span> $<span style="color: #51afef;">(</span>docker ps -a -q<span style="color: #51afef;">)</span>
 </pre>
@@ -318,13 +318,13 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-org4e6dbf2" class="outline-2">
-<h2 id="org4e6dbf2">활용 예제</h2>
-<div class="outline-text-2" id="text-org4e6dbf2">
+<div id="outline-container-org7d7c481" class="outline-2">
+<h2 id="org7d7c481">활용 예제</h2>
+<div class="outline-text-2" id="text-org7d7c481">
 </div>
-<div id="outline-container-org1ce8978" class="outline-3">
-<h3 id="org1ce8978">구 버전 MongoDB CLI 가 필요할 때</h3>
-<div class="outline-text-3" id="text-org1ce8978">
+<div id="outline-container-orge1eef85" class="outline-3">
+<h3 id="orge1eef85">구 버전 MongoDB CLI 가 필요할 때</h3>
+<div class="outline-text-3" id="text-orge1eef85">
 <div class="org-src-container">
 <pre class="src src-bash">docker run --rm -it mongo:2 /bin/bash
 </pre>
@@ -344,9 +344,9 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-org5ad9123" class="outline-2">
-<h2 id="org5ad9123">공간 비우기</h2>
-<div class="outline-text-2" id="text-org5ad9123">
+<div id="outline-container-orgf8c10fb" class="outline-2">
+<h2 id="orgf8c10fb">공간 비우기</h2>
+<div class="outline-text-2" id="text-orgf8c10fb">
 <p>
 No space left 에러 혹은 디스크 공간 부족으로 인해 이미지들이나 각종 컨테이너를
 삭제해야 할 경우 아래의 커맨드를 이용할 수 있습니다.
@@ -362,13 +362,13 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </p>
 </div>
 </div>
-<div id="outline-container-org265585c" class="outline-2">
-<h2 id="org265585c">기타 메모</h2>
-<div class="outline-text-2" id="text-org265585c">
+<div id="outline-container-org3b31969" class="outline-2">
+<h2 id="org3b31969">기타 메모</h2>
+<div class="outline-text-2" id="text-org3b31969">
 </div>
-<div id="outline-container-org4d471d8" class="outline-3">
-<h3 id="org4d471d8">컨테이너에서 호스트 포트에 접근하기(macOS)</h3>
-<div class="outline-text-3" id="text-org4d471d8">
+<div id="outline-container-org368a6eb" class="outline-3">
+<h3 id="org368a6eb">컨테이너에서 호스트 포트에 접근하기(macOS)</h3>
+<div class="outline-text-3" id="text-org368a6eb">
 <p>
 네트워크 구현 문제로 호스트에 열려있는 포트들 - 특히 도커에 의해 열리지 않은
 포트들 - 에 접근하려면 <code>host.docker.internal</code> 라는 특수한 이름으로 접속하면 됩니다.
@@ -385,9 +385,9 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </p>
 </div>
 </div>
-<div id="outline-container-orga951448" class="outline-3">
-<h3 id="orga951448">적당히 시작하기 좋은 이미지들</h3>
-<div class="outline-text-3" id="text-orga951448">
+<div id="outline-container-org06f8869" class="outline-3">
+<h3 id="org06f8869">적당히 시작하기 좋은 이미지들</h3>
+<div class="outline-text-3" id="text-org06f8869">
 <ul class="org-ul">
 <li><code>debian:buster</code> 일단 이 글을 쓰는 시점에서 가장 최신의 LTS 데비안
 이미지&#x2026;인지는 잘 모르겠지만 하여간 그나마 패키지가 최신입니다.</li>
@@ -399,9 +399,9 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </div>
 </div>
 </div>
-<div id="outline-container-org62b2a93" class="outline-2">
-<h2 id="org62b2a93">관련글</h2>
-<div class="outline-text-2" id="text-org62b2a93">
+<div id="outline-container-orgac291e3" class="outline-2">
+<h2 id="orgac291e3">관련글</h2>
+<div class="outline-text-2" id="text-orgac291e3">
 <ul class="org-ul">
 <li><a href="dockerfile.html">Dockerfile</a></li>
 <li><a href="docker-compose.html">Docker Compose</a></li>
@@ -410,6 +410,6 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

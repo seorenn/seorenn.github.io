@@ -41,25 +41,25 @@ gtag('config', 'UA-44534026-1');
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org241433f">소개</a></li>
-<li><a href="#org7faeccc">Vim에 관한 몇 가지 팁</a>
+<li><a href="#orgf6dc3d9">소개</a></li>
+<li><a href="#org39a7777">Vim에 관한 몇 가지 팁</a>
 <ul>
-<li><a href="#orgb35b252">커서키</a></li>
-<li><a href="#org542e9c5">종료 방법</a></li>
-<li><a href="#org2de3d4c">Undo/Redo</a></li>
-<li><a href="#orgf2c1841">점프(Jump)</a></li>
-<li><a href="#orgfe6397b">인코딩</a></li>
-<li><a href="#org10abe3a">클립보드</a></li>
+<li><a href="#orgeaf2fd4">커서키</a></li>
+<li><a href="#orgff8af25">종료 방법</a></li>
+<li><a href="#org2ef3e65">Undo/Redo</a></li>
+<li><a href="#orgfdf9f7c">점프(Jump)</a></li>
+<li><a href="#org9ee389e">인코딩</a></li>
+<li><a href="#org91f1bc3">클립보드</a></li>
 </ul>
 </li>
-<li><a href="#org27ccd03">관련글</a></li>
+<li><a href="#org0942691">관련글</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org241433f" class="outline-2">
-<h2 id="org241433f">소개</h2>
-<div class="outline-text-2" id="text-org241433f">
+<div id="outline-container-orgf6dc3d9" class="outline-2">
+<h2 id="orgf6dc3d9">소개</h2>
+<div class="outline-text-2" id="text-orgf6dc3d9">
 <p>
 vi 에디터는 아주 오래전 UNIX용 편집기로 탄생한 텍스트 에디터입니다. 그리고
 Vim(Vi Improved)은 vi 에디터의 개선판으로 일단은 vi 와 Vim은 같지 않다라고
@@ -71,13 +71,13 @@ Vim(Vi Improved)은 vi 에디터의 개선판으로 일단은 vi 와 Vim은 같�
 </p>
 </div>
 </div>
-<div id="outline-container-org7faeccc" class="outline-2">
-<h2 id="org7faeccc">Vim에 관한 몇 가지 팁</h2>
-<div class="outline-text-2" id="text-org7faeccc">
+<div id="outline-container-org39a7777" class="outline-2">
+<h2 id="org39a7777">Vim에 관한 몇 가지 팁</h2>
+<div class="outline-text-2" id="text-org39a7777">
 </div>
-<div id="outline-container-orgb35b252" class="outline-3">
-<h3 id="orgb35b252">커서키</h3>
-<div class="outline-text-3" id="text-orgb35b252">
+<div id="outline-container-orgeaf2fd4" class="outline-3">
+<h3 id="orgeaf2fd4">커서키</h3>
+<div class="outline-text-3" id="text-orgeaf2fd4">
 <p>
 일반적인 커서 이동키를 사용할 수도 있겠지만, vi나 Vim은 h, j, k, l 의 특수한 커서
 이동키를 주로 사용합니다. 이 키는 아래와 같은 커서 이동키 배치로 생각할 수 있습니다.
@@ -95,9 +95,9 @@ h   l
 </p>
 </div>
 </div>
-<div id="outline-container-org542e9c5" class="outline-3">
-<h3 id="org542e9c5">종료 방법</h3>
-<div class="outline-text-3" id="text-org542e9c5">
+<div id="outline-container-orgff8af25" class="outline-3">
+<h3 id="orgff8af25">종료 방법</h3>
+<div class="outline-text-3" id="text-orgff8af25">
 <p>
 뜬금없지만 vi 혹은 Vim 과 관련된 글에서 빠지지 않는 주제가 바로 이 종료
 방법입니다. 실수로 vi를 열었을 때 종료하지 못 해서 우왕자왕하는 사태가
@@ -150,9 +150,9 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org2de3d4c" class="outline-3">
-<h3 id="org2de3d4c">Undo/Redo</h3>
-<div class="outline-text-3" id="text-org2de3d4c">
+<div id="outline-container-org2ef3e65" class="outline-3">
+<h3 id="org2ef3e65">Undo/Redo</h3>
+<div class="outline-text-3" id="text-org2ef3e65">
 <ul class="org-ul">
 <li><code>u</code> Undo (소문자 u 주의)</li>
 <li><code>U</code> Undo current line (현재 라인의 Undo, 대문자 U 주의)</li>
@@ -160,18 +160,18 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2c1841" class="outline-3">
-<h3 id="orgf2c1841">점프(Jump)</h3>
-<div class="outline-text-3" id="text-orgf2c1841">
+<div id="outline-container-orgfdf9f7c" class="outline-3">
+<h3 id="orgfdf9f7c">점프(Jump)</h3>
+<div class="outline-text-3" id="text-orgfdf9f7c">
 <ul class="org-ul">
 <li><code>f [character]</code> 현재 라인에서 해당 문자로 점프</li>
 <li><code>F [character]</code> 현재 라인에서 해당 문자로 역방향 점프</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfe6397b" class="outline-3">
-<h3 id="orgfe6397b">인코딩</h3>
-<div class="outline-text-3" id="text-orgfe6397b">
+<div id="outline-container-org9ee389e" class="outline-3">
+<h3 id="org9ee389e">인코딩</h3>
+<div class="outline-text-3" id="text-org9ee389e">
 <p>
 맥 등 윈도가 아닌 OS에서 만약 텍스트 파일을 열었는데 한글이 깨져 보인다면 아래
 커맨드를 시험해봅시다.
@@ -202,9 +202,9 @@ vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명합니다.
 </div>
 </div>
 </div>
-<div id="outline-container-org10abe3a" class="outline-3">
-<h3 id="org10abe3a">클립보드</h3>
-<div class="outline-text-3" id="text-org10abe3a">
+<div id="outline-container-org91f1bc3" class="outline-3">
+<h3 id="org91f1bc3">클립보드</h3>
+<div class="outline-text-3" id="text-org91f1bc3">
 <p>
 터미널에서 vim으로 특정 텍스트를 복사하거나 혹은 붙여넣기를 할 때 시스템
 클립보드(Pasteboard)에 복사가 안 되는 경우나 혹은 엉뚱한 내용이 붙이기 되는
@@ -221,15 +221,15 @@ neovim 등에서는 안 되는 경우도 있습니다.
 </div>
 </div>
 </div>
-<div id="outline-container-org27ccd03" class="outline-2">
-<h2 id="org27ccd03">관련글</h2>
-<div class="outline-text-2" id="text-org27ccd03">
+<div id="outline-container-org0942691" class="outline-2">
+<h2 id="org0942691">관련글</h2>
+<div class="outline-text-2" id="text-org0942691">
 <ul class="org-ul">
 <li><a href="doom-emacs.html">Doom Emacs</a></li>
 <li><a href="spacemacs.html">Spacemacs</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 23일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

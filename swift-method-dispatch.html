@@ -38,9 +38,9 @@ gtag('config', 'UA-44534026-1');
 <header>
 <h1 class="title">Swift Method Dispatch</h1>
 <h2><a href="/">Seorenn Static Pages</a></h2></header>
-<div id="outline-container-orge299b94" class="outline-2">
-<h2 id="orge299b94">메소드 디스패치?</h2>
-<div class="outline-text-2" id="text-orge299b94">
+<div id="outline-container-org3abd948" class="outline-2">
+<h2 id="org3abd948">메소드 디스패치?</h2>
+<div class="outline-text-2" id="text-org3abd948">
 <p>
 메소드 디스패치(method dispatch)란 쉽게 말해서, 특정 인스턴스의 메소드를
 호출했을 때 이것을 어떻게 찾아서 점프하는지의 메커니즘을 의미합니다.
@@ -71,9 +71,9 @@ Objective-C에서 많이 쓰입니다.</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org724b25c" class="outline-2">
-<h2 id="org724b25c">상속 관계 클래스의 메소드 디스패치</h2>
-<div class="outline-text-2" id="text-org724b25c">
+<div id="outline-container-org609f6e9" class="outline-2">
+<h2 id="org609f6e9">상속 관계 클래스의 메소드 디스패치</h2>
+<div class="outline-text-2" id="text-org609f6e9">
 <p>
 상속으로 오버라이드 한 메소드의 경우 디스패치가 어떻게 진행되는지에 관한 예입니다.
 </p>
@@ -101,9 +101,9 @@ C에서 오버라이드가 된 메소드가 실행되는지 궁금하다면 이 
 </p>
 </div>
 </div>
-<div id="outline-container-orga740eb0" class="outline-2">
-<h2 id="orga740eb0">프로토콜의 메소드 디스패치</h2>
-<div class="outline-text-2" id="text-orga740eb0">
+<div id="outline-container-orgd5dfc1a" class="outline-2">
+<h2 id="orgd5dfc1a">프로토콜의 메소드 디스패치</h2>
+<div class="outline-text-2" id="text-orgd5dfc1a">
 <p>
 프로토콜의 경우는 상속과는 좀 다른 면이 있습니다.
 </p>
@@ -140,13 +140,13 @@ p.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// 
 </p>
 </div>
 </div>
-<div id="outline-container-orgc1a3b22" class="outline-2">
-<h2 id="orgc1a3b22">지시어</h2>
-<div class="outline-text-2" id="text-orgc1a3b22">
+<div id="outline-container-org42aced3" class="outline-2">
+<h2 id="org42aced3">지시어</h2>
+<div class="outline-text-2" id="text-org42aced3">
 </div>
-<div id="outline-container-org947739b" class="outline-3">
-<h3 id="org947739b">final</h3>
-<div class="outline-text-3" id="text-org947739b">
+<div id="outline-container-org7b6eae2" class="outline-3">
+<h3 id="org7b6eae2">final</h3>
+<div class="outline-text-3" id="text-org7b6eae2">
 <p>
 클래스의 경우 이 <code>final</code> 이 붙게 되면 더이상 상속이 되지 않습니다. 이 말은
 메소드 디스패치에도 영향을 주게 되어서 여러 이점이 있을 수 있습니다. 예를 들어
@@ -159,9 +159,9 @@ p.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// 
 </p>
 </div>
 </div>
-<div id="outline-container-org038c957" class="outline-3">
-<h3 id="org038c957">dynamic</h3>
-<div class="outline-text-3" id="text-org038c957">
+<div id="outline-container-orgaf6adeb" class="outline-3">
+<h3 id="orgaf6adeb">dynamic</h3>
+<div class="outline-text-3" id="text-orgaf6adeb">
 <p>
 <code>final</code> 과 반대되는 것 같은 <code>dynamic</code> 은 정말 반대되는 의미입니다. 다이나믹이
 되면 순수 <a href="swift.html">Swift</a> 인스턴스가 아니게 됩니다. <code>NSObject</code> 를
@@ -170,18 +170,18 @@ p.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// 
 </p>
 </div>
 </div>
-<div id="outline-container-orgde602e9" class="outline-3">
-<h3 id="orgde602e9"><code>@objc</code></h3>
-<div class="outline-text-3" id="text-orgde602e9">
+<div id="outline-container-org9d0f451" class="outline-3">
+<h3 id="org9d0f451"><code>@objc</code></h3>
+<div class="outline-text-3" id="text-org9d0f451">
 <p>
 <code>@objc</code> 지시어는 Objective-C 네임스페이스에 등록시켜서 메시지 디스패치가
 가능하게 해 줍니다. 반대로 <code>@noobjc</code> 는 메시지 디스패치를 못 하게 막아버리지요.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb7fe593" class="outline-3">
-<h3 id="orgb7fe593"><code>@inline</code></h3>
-<div class="outline-text-3" id="text-orgb7fe593">
+<div id="outline-container-org0ca7cec" class="outline-3">
+<h3 id="org0ca7cec"><code>@inline</code></h3>
+<div class="outline-text-3" id="text-org0ca7cec">
 <p>
 인라인(inline)은 말 그대로 호출을 하지 않고 컴파일 타임에 아예 구현체를 그대로
 넣어버리는 무시무시한(?) 다이렉트 디스패치와 비슷한 것을 적용합니다.
@@ -189,14 +189,14 @@ p.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// 
 </div>
 </div>
 </div>
-<div id="outline-container-org3ee250e" class="outline-2">
-<h2 id="org3ee250e">관련글</h2>
-<div class="outline-text-2" id="text-org3ee250e">
+<div id="outline-container-org906e0bb" class="outline-2">
+<h2 id="org906e0bb">관련글</h2>
+<div class="outline-text-2" id="text-org906e0bb">
 <ul class="org-ul">
 <li><a href="swift.html">Swift</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 23일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

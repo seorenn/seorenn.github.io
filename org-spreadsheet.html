@@ -41,22 +41,22 @@ gtag('config', 'UA-44534026-1');
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgce661e1">소개</a></li>
-<li><a href="#org2045260">테이블</a></li>
-<li><a href="#org16cf6f5">셀 정보 확인하기</a></li>
-<li><a href="#orgac4f130">Lisp 함수 실행시켜보기</a></li>
-<li><a href="#org95b88da">사칙연산 사용해보기</a></li>
-<li><a href="#org6335f9b">합계 구하기</a></li>
-<li><a href="#org6f23faf">계산 영역 제한하기</a></li>
-<li><a href="#orga1befa7">calc 함수 목록</a></li>
-<li><a href="#orgb495b0e">관련글</a></li>
+<li><a href="#orgc8af239">소개</a></li>
+<li><a href="#orgb7d172c">테이블</a></li>
+<li><a href="#orgc157cb0">셀 정보 확인하기</a></li>
+<li><a href="#org66003ca">Lisp 함수 실행시켜보기</a></li>
+<li><a href="#org61bfab0">사칙연산 사용해보기</a></li>
+<li><a href="#orgc07dc13">합계 구하기</a></li>
+<li><a href="#orgbcca37c">계산 영역 제한하기</a></li>
+<li><a href="#org2ede44e">calc 함수 목록</a></li>
+<li><a href="#orgbcaddbb">관련글</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orgce661e1" class="outline-2">
-<h2 id="orgce661e1">소개</h2>
-<div class="outline-text-2" id="text-orgce661e1">
+<div id="outline-container-orgc8af239" class="outline-2">
+<h2 id="orgc8af239">소개</h2>
+<div class="outline-text-2" id="text-orgc8af239">
 <p>
 <a href="org-mode.html">Org Mode</a> 의 테이블은 다양한 기능을 제공합니다. 그 중
 하나가 테이블 셀을 이용해 계산을 하는 것입니다. 이 글은 이 기능에 관한
@@ -68,9 +68,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org2045260" class="outline-2">
-<h2 id="org2045260">테이블</h2>
-<div class="outline-text-2" id="text-org2045260">
+<div id="outline-container-orgb7d172c" class="outline-2">
+<h2 id="orgb7d172c">테이블</h2>
+<div class="outline-text-2" id="text-orgb7d172c">
 <p>
 일단 아래와 같은 테이블을 만들었다고 가정해봅시다.
 </p>
@@ -93,9 +93,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org16cf6f5" class="outline-2">
-<h2 id="org16cf6f5">셀 정보 확인하기</h2>
-<div class="outline-text-2" id="text-org16cf6f5">
+<div id="outline-container-orgc157cb0" class="outline-2">
+<h2 id="orgc157cb0">셀 정보 확인하기</h2>
+<div class="outline-text-2" id="text-orgc157cb0">
 <p>
 우선 커서를 아래 <code>[]</code> 위치에 놨다고 생각합시다.
 </p>
@@ -143,9 +143,9 @@ I*2 |$1-----+$2-----+$3-----+$4-------|
 </p>
 </div>
 </div>
-<div id="outline-container-orgac4f130" class="outline-2">
-<h2 id="orgac4f130">Lisp 함수 실행시켜보기</h2>
-<div class="outline-text-2" id="text-orgac4f130">
+<div id="outline-container-org66003ca" class="outline-2">
+<h2 id="org66003ca">Lisp 함수 실행시켜보기</h2>
+<div class="outline-text-2" id="text-org66003ca">
 <p>
 이제 한가지 특수한 짓(?)을 해봅시다. 2번 로우의 2, 3번 컬럼의 값의 차이가
 얼마인지를 구해서 그 오른쪽의 Earning 컬럼에 붙여봅시다.
@@ -235,9 +235,9 @@ I*2 |$1-----+$2-----+$3-----+$4-------|
 </p>
 </div>
 </div>
-<div id="outline-container-org95b88da" class="outline-2">
-<h2 id="org95b88da">사칙연산 사용해보기</h2>
-<div class="outline-text-2" id="text-org95b88da">
+<div id="outline-container-org61bfab0" class="outline-2">
+<h2 id="org61bfab0">사칙연산 사용해보기</h2>
+<div class="outline-text-2" id="text-org61bfab0">
 <p>
 이제 <a href="lisp.html">Lisp</a> 코드 말고 <code>calc</code> 를 통해 제공되는
 계산기 기능을 써 봅시다.
@@ -304,9 +304,9 @@ I*2 |$1-----+$2-----+$3-----+$4-------|
 </p>
 </div>
 </div>
-<div id="outline-container-org6335f9b" class="outline-2">
-<h2 id="org6335f9b">합계 구하기</h2>
-<div class="outline-text-2" id="text-org6335f9b">
+<div id="outline-container-orgc07dc13" class="outline-2">
+<h2 id="orgc07dc13">합계 구하기</h2>
+<div class="outline-text-2" id="text-orgc07dc13">
 <p>
 이제 Price와 Ideal 수치 합계를 한번 계산해 봅시다.
 제일 아래의 빈 로우에 값을 채워넣을 예정입니다.
@@ -389,9 +389,9 @@ I*2 |$1-----+$2-----+$3-----+$4-------|
 </p>
 </div>
 </div>
-<div id="outline-container-org6f23faf" class="outline-2">
-<h2 id="org6f23faf">계산 영역 제한하기</h2>
-<div class="outline-text-2" id="text-org6f23faf">
+<div id="outline-container-orgbcca37c" class="outline-2">
+<h2 id="orgbcca37c">계산 영역 제한하기</h2>
+<div class="outline-text-2" id="text-orgbcca37c">
 <p>
 위 결과에서 좌측 하단의 이상한(?) 것을 지워봅시다.
 일단 제일 아래 로우 각 셀의 내용을 다 지운 다음
@@ -431,9 +431,9 @@ TBLFM의 가장 마지막 항목을 아래처럼 고쳐봤습니다.
 </p>
 </div>
 </div>
-<div id="outline-container-orga1befa7" class="outline-2">
-<h2 id="orga1befa7">calc 함수 목록</h2>
-<div class="outline-text-2" id="text-orga1befa7">
+<div id="outline-container-org2ede44e" class="outline-2">
+<h2 id="org2ede44e">calc 함수 목록</h2>
+<div class="outline-text-2" id="text-org2ede44e">
 <p>
 일단 정보를 구한 것만 정리합니다. 더 많은 함수가 있을 수 있습니다.
 </p>
@@ -457,9 +457,9 @@ TBLFM의 가장 마지막 항목을 아래처럼 고쳐봤습니다.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb495b0e" class="outline-2">
-<h2 id="orgb495b0e">관련글</h2>
-<div class="outline-text-2" id="text-orgb495b0e">
+<div id="outline-container-orgbcaddbb" class="outline-2">
+<h2 id="orgbcaddbb">관련글</h2>
+<div class="outline-text-2" id="text-orgbcaddbb">
 <ul class="org-ul">
 <li><a href="org-mode.html">Org Mode</a></li>
 <li><a href="doom-emacs.html">Doom Emacs</a></li>
@@ -468,6 +468,6 @@ TBLFM의 가장 마지막 항목을 아래처럼 고쳐봤습니다.
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

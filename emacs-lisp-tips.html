@@ -38,13 +38,13 @@ gtag('config', 'UA-44534026-1');
 <header>
 <h1 class="title">Emacs Lisp 팁</h1>
 <h2><a href="/">Seorenn Static Pages</a></h2></header>
-<div id="outline-container-orge5d415b" class="outline-2">
-<h2 id="orge5d415b">개념 메모</h2>
-<div class="outline-text-2" id="text-orge5d415b">
+<div id="outline-container-org2b29c27" class="outline-2">
+<h2 id="org2b29c27">개념 메모</h2>
+<div class="outline-text-2" id="text-org2b29c27">
 </div>
-<div id="outline-container-orgb564265" class="outline-3">
-<h3 id="orgb564265">샵(Sharpsign)</h3>
-<div class="outline-text-3" id="text-orgb564265">
+<div id="outline-container-orgaac94fa" class="outline-3">
+<h3 id="orgaac94fa">샵(Sharpsign)</h3>
+<div class="outline-text-3" id="text-orgaac94fa">
 <p>
 우선 <code>#</code> (Sharpsign) 은 s-expressions 특수 문법입니다. 근데 뭔 소린지 하나도
 모르겠습니다. 사실 당연합니다. <code>#</code> 은 그 자체만으론 의미가 없고 뒤에 뭐가
@@ -63,9 +63,9 @@ function abbreviation 으로 불립니다.
 </p>
 </div>
 </div>
-<div id="outline-container-orge3bc661" class="outline-3">
-<h3 id="orge3bc661">단따옴표(Single Quote)</h3>
-<div class="outline-text-3" id="text-orge3bc661">
+<div id="outline-container-org09a40f6" class="outline-3">
+<h3 id="org09a40f6">단따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-org09a40f6">
 <p>
 단따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용합니다. 예를 들어 <code>(1 2 3)</code>
 이라는 리스트를 메시지로 출력하고 싶어서 아래 코드를 작성했다고 가정해 봅시다.
@@ -105,9 +105,9 @@ print 함수 호출 시점에 먼저 실행(evaluation)되어 버리기 때문�
 </p>
 </div>
 </div>
-<div id="outline-container-org7638d63" class="outline-3">
-<h3 id="org7638d63">샵 단따옴표(Sharpsign Single Quote)</h3>
-<div class="outline-text-3" id="text-org7638d63">
+<div id="outline-container-org238cdd5" class="outline-3">
+<h3 id="org238cdd5">샵 단따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org238cdd5">
 <p>
 <code>#'function-name</code> 의 의미는
 <code>(function function-name)</code> 를 줄여서 표기한 것입니다.
@@ -134,9 +134,9 @@ print 함수 호출 시점에 먼저 실행(evaluation)되어 버리기 때문�
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org96f6f39" class="outline-3">
-<h3 id="org96f6f39">apply vs funcall</h3>
-<div class="outline-text-3" id="text-org96f6f39">
+<div id="outline-container-org2d13692" class="outline-3">
+<h3 id="org2d13692">apply vs funcall</h3>
+<div class="outline-text-3" id="text-org2d13692">
 <p>
 위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있습니다. 사용 방법도 거의
 동일합니다. 하지만 매개변수를 그대로 받냐 아니면 리스트로 받냐의 차이가
@@ -179,16 +179,32 @@ print 함수 호출 시점에 먼저 실행(evaluation)되어 버리기 때문�
 </blockquote>
 </div>
 </div>
+<div id="outline-container-org084d28d" class="outline-3">
+<h3 id="org084d28d">Character</h3>
+<div class="outline-text-3" id="text-org084d28d">
+<p>
+<a href="emacs.html">Emacs</a> 에서 문자는 ASCII 번호로 표현됩니다. 즉 숫자입니다. 만약 특정 ASCII 코드가 기억나지 않는다면 <code>?</code> 를 붙여서 표현할 수 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(eq ?A <span style="color: #da8548; font-weight: bold;">65</span>)
+</pre>
 </div>
-<div id="outline-container-org01001b0" class="outline-2">
-<h2 id="org01001b0">관련글</h2>
-<div class="outline-text-2" id="text-org01001b0">
+<p>
+A는 65이기 때문에 위 코드는 참을 리턴합니다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4602746" class="outline-2">
+<h2 id="org4602746">관련글</h2>
+<div class="outline-text-2" id="text-org4602746">
 <ul class="org-ul">
 <li><a href="./lisp.html">Lisp</a></li>
 <li><a href="./emacs.html">Emacs</a></li>
+<li><a href="emacs-lisp-functions.html">Emacs Lisp Functions</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

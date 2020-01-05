@@ -41,22 +41,22 @@ gtag('config', 'UA-44534026-1');
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org014c909">파이썬과 정적 타이핑</a></li>
-<li><a href="#org658c5a5">Type Annotation</a></li>
-<li><a href="#org6ddbae1">어떻게 체크하나?</a></li>
-<li><a href="#org5f2cfee">복잡한 타입의 힌트</a></li>
-<li><a href="#orgea05611">좀 더 복잡한 타입?</a></li>
-<li><a href="#orga258242">Optional?</a></li>
-<li><a href="#org6ee90ed">기타</a></li>
-<li><a href="#orga83ad1a">결론</a></li>
-<li><a href="#org4fa8964">관련글</a></li>
+<li><a href="#org1e441f1">파이썬과 정적 타이핑</a></li>
+<li><a href="#org9d3c7bf">Type Annotation</a></li>
+<li><a href="#orgc32c2da">어떻게 체크하나?</a></li>
+<li><a href="#org85fb520">복잡한 타입의 힌트</a></li>
+<li><a href="#org68e373f">좀 더 복잡한 타입?</a></li>
+<li><a href="#orgec38176">Optional?</a></li>
+<li><a href="#org8a0ca42">기타</a></li>
+<li><a href="#org070cead">결론</a></li>
+<li><a href="#org272e6b4">관련글</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org014c909" class="outline-2">
-<h2 id="org014c909">파이썬과 정적 타이핑</h2>
-<div class="outline-text-2" id="text-org014c909">
+<div id="outline-container-org1e441f1" class="outline-2">
+<h2 id="org1e441f1">파이썬과 정적 타이핑</h2>
+<div class="outline-text-2" id="text-org1e441f1">
 <p>
 파이썬은 동적 타이핑 언어입니다. 쉽게 말해서, 하나의 변수가 타입에 구애받지 않는
 데이터를 가리킬 수 있습니다. 그래서 동적 타이핑은 쉽고 간결한 코드를 만들 수
@@ -98,9 +98,9 @@ name = <span style="color: #da8548; font-weight: bold;">100</span>    <span styl
 </p>
 </div>
 </div>
-<div id="outline-container-org658c5a5" class="outline-2">
-<h2 id="org658c5a5">Type Annotation</h2>
-<div class="outline-text-2" id="text-org658c5a5">
+<div id="outline-container-org9d3c7bf" class="outline-2">
+<h2 id="org9d3c7bf">Type Annotation</h2>
+<div class="outline-text-2" id="text-org9d3c7bf">
 <p>
 Python의 정적 타이핑은 아직 없습니다.
 대신 비슷한 기능이 3.0 부터 시작되어서 Function Annotation(3.0+),
@@ -145,9 +145,9 @@ Type Annotation(3.5+), Variable Annotation(3.6+)로 추가되어 왔습니다.
 </p>
 </div>
 </div>
-<div id="outline-container-org6ddbae1" class="outline-2">
-<h2 id="org6ddbae1">어떻게 체크하나?</h2>
-<div class="outline-text-2" id="text-org6ddbae1">
+<div id="outline-container-orgc32c2da" class="outline-2">
+<h2 id="orgc32c2da">어떻게 체크하나?</h2>
+<div class="outline-text-2" id="text-orgc32c2da">
 <p>
 그런데 앞서 정적 타이핑이 아니라 Type Annotation 혹은 타입 힌팅이라고 칭한
 이유가 있습니다. Python 은 컴파일이 필요한 언어가 아니기 때문에 미연에 타입을
@@ -203,9 +203,9 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 </div>
 </div>
-<div id="outline-container-org5f2cfee" class="outline-2">
-<h2 id="org5f2cfee">복잡한 타입의 힌트</h2>
-<div class="outline-text-2" id="text-org5f2cfee">
+<div id="outline-container-org85fb520" class="outline-2">
+<h2 id="org85fb520">복잡한 타입의 힌트</h2>
+<div class="outline-text-2" id="text-org85fb520">
 <p>
 기본적인 타입은 앞서 살펴본 것처럼 정말 단순하게 타입 이름만 적어주면 됩니다.
 하지만 리스트(list)나 사전형(dictionary) 같은 복잡한 타입은 그냥은 안 되고 <code>typing</code> 모듈의 힘을
@@ -258,9 +258,9 @@ somefile.py:1: error: Incompatible types in assignment (expression has type "str
 </p>
 </div>
 </div>
-<div id="outline-container-orgea05611" class="outline-2">
-<h2 id="orgea05611">좀 더 복잡한 타입?</h2>
-<div class="outline-text-2" id="text-orgea05611">
+<div id="outline-container-org68e373f" class="outline-2">
+<h2 id="org68e373f">좀 더 복잡한 타입?</h2>
+<div class="outline-text-2" id="text-org68e373f">
 <p>
 리스트나 튜플, 사전형의 경우 값의 타입이 다채로울 수 있습니다. 만약 키는
 문자열이지만 값은 아무 타입을 가질 수 있는 사전형 타입 힌트를 정의하려 한다면
@@ -302,9 +302,9 @@ Swift에서 쓰이는 Any와 의미가 비슷하기도 하네요.
 </p>
 </div>
 </div>
-<div id="outline-container-orga258242" class="outline-2">
-<h2 id="orga258242">Optional?</h2>
-<div class="outline-text-2" id="text-orga258242">
+<div id="outline-container-orgec38176" class="outline-2">
+<h2 id="orgec38176">Optional?</h2>
+<div class="outline-text-2" id="text-orgec38176">
 <p>
 앞서 본 예제들은 NULL 과 비슷한 <code>None</code> 값을 가질 수가 없다는 특징이 있는데
 이 값을 가지려면 어떻게 해야할까요?
@@ -337,9 +337,9 @@ some_value: <span style="color: #dcaeea;">Optional</span>[<span style="color: #c
 </p>
 </div>
 </div>
-<div id="outline-container-org6ee90ed" class="outline-2">
-<h2 id="org6ee90ed">기타</h2>
-<div class="outline-text-2" id="text-org6ee90ed">
+<div id="outline-container-org8a0ca42" class="outline-2">
+<h2 id="org8a0ca42">기타</h2>
+<div class="outline-text-2" id="text-org8a0ca42">
 <p>
 글이 너무 길어질 것 같아서 참고할 수 있을만한 내용을 간단히 언급하겠습니다.
 </p>
@@ -353,9 +353,9 @@ some_value: <span style="color: #dcaeea;">Optional</span>[<span style="color: #c
 </p>
 </div>
 </div>
-<div id="outline-container-orga83ad1a" class="outline-2">
-<h2 id="orga83ad1a">결론</h2>
-<div class="outline-text-2" id="text-orga83ad1a">
+<div id="outline-container-org070cead" class="outline-2">
+<h2 id="org070cead">결론</h2>
+<div class="outline-text-2" id="text-org070cead">
 <p>
 안타깝게도 파이썬은 아직 정적 타이핑이 제공된다고 보기에는 힘듭니다.
 </p>
@@ -389,9 +389,9 @@ PEP-484 "No type checking happens at runtime"
 </p>
 </div>
 </div>
-<div id="outline-container-org4fa8964" class="outline-2">
-<h2 id="org4fa8964">관련글</h2>
-<div class="outline-text-2" id="text-org4fa8964">
+<div id="outline-container-org272e6b4" class="outline-2">
+<h2 id="org272e6b4">관련글</h2>
+<div class="outline-text-2" id="text-org272e6b4">
 <ul class="org-ul">
 <li><a href="./python.html">Python</a></li>
 <li><a href="./swift.html">Swift</a></li>
@@ -400,6 +400,6 @@ Python Typing</a></li>
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2019년 12월 29일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

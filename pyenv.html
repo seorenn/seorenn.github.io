@@ -6,15 +6,15 @@
 <title>pyenv - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="pyenv 소개 및 사용법 정리">
+<meta name="description" content="파이썬 버전 및 virtualenv 환경을 별도로 관리할 수 있게 해주는 pyenv의 소개 및 사용법을 정리하는 글입니다.">
 <meta name="keywords" content="pyenv, python, version, install, management, 파이썬, 버전, 설치, 관리, virtualenv">
 <meta property="og:title" content="pyenv" />
-<meta property="og:description" content="pyenv 소개 및 사용법 정리" />
+<meta property="og:description" content="파이썬 버전 및 virtualenv 환경을 별도로 관리할 수 있게 해주는 pyenv의 소개 및 사용법을 정리하는 글입니다." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="pyenv" />
-<meta name="twitter:description" content="pyenv 소개 및 사용법 정리" />
+<meta name="twitter:description" content="파이썬 버전 및 virtualenv 환경을 별도로 관리할 수 있게 해주는 pyenv의 소개 및 사용법을 정리하는 글입니다." />
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
@@ -33,6 +33,7 @@ gtag('config', 'UA-44534026-1');
 </script>
 </head>
 <body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">pyenv</h1>
@@ -87,7 +88,7 @@ pyenv는 파이썬 버전을 관리하고 virtualenv 환경을 통합해서 관�
 </p>
 
 <p>
-이제 쉘 환경변수를 몇 가지 설저해야 합니다. 공식 사이트에서는 아래 커맨드를 이용하라고 합니다.
+이제 셸 환경변수를 몇 가지 설저해야 합니다. 공식 사이트에서는 아래 커맨드를 이용하라고 합니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">'export PYENV_ROOT="$HOME/.pyenv"'</span> &gt;&gt; ~/.bash_profile
@@ -96,7 +97,7 @@ pyenv는 파이썬 버전을 관리하고 virtualenv 환경을 통합해서 관�
 </pre>
 </div>
 <p>
-물론 사용하는 쉘에 따라서 대상 파일 이름이 달라진다는 점에 주의하기 바랍니다. 전 zsh을 쓰기 때문에 <code>~/.zshrc</code> 파일에 아래와 같은 내용을 넣었습니다.
+물론 사용하는 셸에 따라서 대상 파일 이름이 달라진다는 점에 주의하기 바랍니다. 전 zsh을 쓰기 때문에 <code>~/.zshrc</code> 파일에 아래와 같은 내용을 넣었습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PYENV_ROOT</span>=<span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">HOME</span><span style="color: #98be65;">/.pyenv"</span>
@@ -110,7 +111,7 @@ pyenv는 파이썬 버전을 관리하고 virtualenv 환경을 통합해서 관�
 </p>
 
 <p>
-이후 쉘을 새로 기동합니다. 터미널을 껐다 켜도 되고 <code>source</code> 등의 커맨드로 다시 스크립트를 로딩해도 관계는 없습니다.
+이후 셸을 새로 기동합니다. 터미널을 껐다 켜도 되고 <code>source</code> 등의 커맨드로 다시 스크립트를 로딩해도 관계는 없습니다.
 </p>
 </div>
 </div>
@@ -211,14 +212,14 @@ virtualenv 환경을 만들기 위해서는 아래와 같은 식의 커맨드를
 </p>
 
 <p>
-이제 이 환경을 쉘로 가져오기 위해서 아래 커맨드를 이용할 수 있습니다.
+이제 이 환경을 셸로 가져오기 위해서 아래 커맨드를 이용할 수 있습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">pyenv shell my_project_env
 </pre>
 </div>
 <p>
-이렇게 하면 해당 환경으로 쉘이 뜨며 여기서 pip 등으로 필요한 패키지를 설치하고 실행시켜 볼 수 있습니다.
+이렇게 하면 해당 환경으로 셸이 뜨며 여기서 pip 등으로 필요한 패키지를 설치하고 실행시켜 볼 수 있습니다.
 </p>
 </div>
 </div>
@@ -266,6 +267,6 @@ virtualenv 환경을 만들기 위해서는 아래와 같은 식의 커맨드를
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 06일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

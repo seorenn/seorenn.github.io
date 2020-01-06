@@ -6,15 +6,15 @@
 <title>Emacs - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="Emacs(이맥스)에 관한 대략적인 설명 및 관련글들">
+<meta name="description" content="Emacs(이맥스)에 관한 대략적인 설명과 관련된 글들, 그리고 몇 가지 트러블슈팅 메모를 정리합니다.">
 <meta name="keywords" content="이맥스, 리습, 컬러, 색상, 터미널, 문제, 인코딩, emacs, lisp, debug, freeze, true color, terminal, 24bit, tmux">
 <meta property="og:title" content="Emacs" />
-<meta property="og:description" content="Emacs(이맥스)에 관한 대략적인 설명 및 관련글들" />
+<meta property="og:description" content="Emacs(이맥스)에 관한 대략적인 설명과 관련된 글들, 그리고 몇 가지 트러블슈팅 메모를 정리합니다." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Emacs" />
-<meta name="twitter:description" content="Emacs(이맥스)에 관한 대략적인 설명 및 관련글들" />
+<meta name="twitter:description" content="Emacs(이맥스)에 관한 대략적인 설명과 관련된 글들, 그리고 몇 가지 트러블슈팅 메모를 정리합니다." />
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
@@ -33,6 +33,7 @@ gtag('config', 'UA-44534026-1');
 </script>
 </head>
 <body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Emacs</h1>
@@ -143,8 +144,7 @@ iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제�
 </pre>
 </div>
 <p>
-이제 <code>xterm-24bit</code> 라는 터미널 모드를 사용할 수 있습니다. 아래의 커맨드로 현재
-쉘의 터미널 타입을 바꿀 수 있습니다.
+이제 <code>xterm-24bit</code> 라는 터미널 모드를 사용할 수 있습니다. 아래의 커맨드로 현재 셸의 터미널 타입을 바꿀 수 있습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">TERM</span>=<span style="color: #98be65;">"xterm-24bit"</span>
@@ -157,7 +157,7 @@ iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제�
 
 <p>
 잘 동작한다면
-필요하다면 위 내용을 <code>.zshrc</code> 나 <code>.bashrc</code> 같은 쉘 초기화 스크립트에 넣어놓으면
+필요하다면 위 내용을 <code>.zshrc</code> 나 <code>.bashrc</code> 같은 셸 초기화 스크립트에 넣어놓으면
 편하게 쓸 수 있습니다.
 </p>
 
@@ -172,7 +172,7 @@ iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제�
 </pre>
 </div>
 <p>
-이렇게 하면 이 alias가 적용된 쉘에서 emacs 커맨드는 항상 트루컬러모드로 동작하게
+이렇게 하면 이 alias가 적용된 셸에서 emacs 커맨드는 항상 트루컬러모드로 동작하게
 됩니다. 물론 emacs의 경로는 자신의 상황에 맞게 정확하게 입력해야 합니다.
 </p>
 </div>
@@ -260,14 +260,14 @@ screen-24bits|screen with 24-bit direct color mode,
 <h3 id="org5aba0ef">Run Emacs Lisp Script from Shell</h3>
 <div class="outline-text-3" id="text-org5aba0ef">
 <p>
-특정 Emacs Lisp의 특정 함수 하나만을 쉘에서 실행하고 싶은 경우
+특정 Emacs Lisp의 특정 함수 하나만을 셸에서 실행하고 싶은 경우
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">emacs -e <span style="color: #98be65;">'function'</span>
 </pre>
 </div>
 <p>
-커맨드로 실행시킬 수 있는데, 쉘에 따라 괄호를 쓰면 이스케이프 되는 경우도 있어서
+커맨드로 실행시킬 수 있는데, 셸에 따라 괄호를 쓰면 이스케이프 되는 경우도 있어서
 인자가 없는 함수 하나를 실행시킬 경우에만 유용했던 경험이 있습니다.
 </p>
 
@@ -295,7 +295,7 @@ screen-24bits|screen with 24-bit direct color mode,
 <p>
 이런 커맨드를 사용할 수 있습니다. 이 커맨드는 실제로 Emacs가 기동되면서 실행되기
 때문에 거의 모든 환경<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>이
-갖춰진 상태로 돌아간다는 특징이 있지만 인터페이스가 뜨기 때문에 쉘 커맨드로 보기엔
+갖춰진 상태로 돌아간다는 특징이 있지만 인터페이스가 뜨기 때문에 셸 커맨드로 보기엔
 무리가 있을지도 모릅니다.
 </p>
 
@@ -344,6 +344,6 @@ screen-24bits|screen with 24-bit direct color mode,
 
 
 </div>
-</div><div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+</div><div id="footer"><div id="time">2020년 01월 06일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

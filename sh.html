@@ -6,15 +6,15 @@
 <title>Bourne Shell(sh) - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="sh, 가장 기본적인 쉘(Shell)에 대한 글 모음">
+<meta name="description" content="본 셸, sh, 가장 기본적인 셸(Shell)에 대한 팁을 정리해 보는 글입니다.">
 <meta name="keywords" content="쉘, 셸, 스크립트, sh, bash, zsh, bourne, shell, script">
 <meta property="og:title" content="Bourne Shell(sh)" />
-<meta property="og:description" content="sh, 가장 기본적인 쉘(Shell)에 대한 글 모음" />
+<meta property="og:description" content="본 셸, sh, 가장 기본적인 셸(Shell)에 대한 팁을 정리해 보는 글입니다." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Bourne Shell(sh)" />
-<meta name="twitter:description" content="sh, 가장 기본적인 쉘(Shell)에 대한 글 모음" />
+<meta name="twitter:description" content="본 셸, sh, 가장 기본적인 셸(Shell)에 대한 팁을 정리해 보는 글입니다." />
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
@@ -33,6 +33,7 @@ gtag('config', 'UA-44534026-1');
 </script>
 </head>
 <body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Bourne Shell(sh)</h1>
@@ -62,10 +63,10 @@ gtag('config', 'UA-44534026-1');
 <h2 id="org4ef4844">소개</h2>
 <div class="outline-text-2" id="text-org4ef4844">
 <p>
-<code>sh</code> 는 유닉스에서 가장 기본적으로 쓰이던 쉘(Bourne Shell)입니다.
-요즘은 쉘 스크립트를 작성할 때를 제외하고는 잘은 쓰이지 않지만,
-그 만큼 쉘 스크립트의 표준의 역할을 하기도 하는 쉘입니다.
-이 글에서도 쉘 본연의 역할 보다는 스크립팅에 초점을 맞춥니다.
+<code>sh</code> 는 유닉스에서 가장 기본적으로 쓰이던 셸(Bourne Shell)입니다.
+요즘은 셸 스크립트를 작성할 때를 제외하고는 잘은 쓰이지 않지만,
+그 만큼 셸 스크립트의 표준의 역할을 하기도 하는 셸입니다.
+이 글에서도 셸 본연의 역할 보다는 스크립팅에 초점을 맞춥니다.
 </p>
 </div>
 </div>
@@ -80,7 +81,7 @@ gtag('config', 'UA-44534026-1');
 <h3 id="orgb8e71a1">실행 가능한 스크립트</h3>
 <div class="outline-text-3" id="text-orgb8e71a1">
 <p>
-일반적으로 쉘 스크립트를 만들면 쉘을 통해서 실행하는 것이 보통입니다.
+일반적으로 셸 스크립트를 만들면 셸을 통해서 실행하는 것이 보통입니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">sh ./somescript.sh
@@ -115,7 +116,7 @@ gtag('config', 'UA-44534026-1');
 </div>
 <p>
 <code>env</code> 라는 도구는 매개변수로 넘겨진 도구가 어디에 있는지 찾아서 그 경로를
-치환시키는 도구입니다. 물론 sh가 아닌 <code>bash</code> 같은 쉘을 명시해도 잘 동작해야 정상적입니다.
+치환시키는 도구입니다. 물론 sh가 아닌 <code>bash</code> 같은 셸을 명시해도 잘 동작해야 정상적입니다.
 </p>
 
 <p>
@@ -126,7 +127,7 @@ gtag('config', 'UA-44534026-1');
 </pre>
 </div>
 <p>
-이렇게 하면 모든 유저에 실행(x) 권한이 주어져서 쉘에서 바로 실행시킬 수 있게
+이렇게 하면 모든 유저에 실행(x) 권한이 주어져서 셸에서 바로 실행시킬 수 있게
 됩니다.
 </p>
 
@@ -260,7 +261,7 @@ than, greater than or equal, less than, less than or equal</li>
 <h3 id="org839965c">와일드카드 인자 처리</h3>
 <div class="outline-text-3" id="text-org839965c">
 <p>
-쉘 스크립트에 <code>*.ext</code> 같은 파일 이름 와일드카드를 넘겼을 때 이를 나열하는 방법을 for 커맨드로 표현하면 이렇습니다.
+셸 스크립트에 <code>*.ext</code> 같은 파일 이름 와일드카드를 넘겼을 때 이를 나열하는 방법을 for 커맨드로 표현하면 이렇습니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #51afef;">for</span> arg<span style="color: #51afef;"> in</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">@</span><span style="color: #98be65;">"</span>
@@ -279,7 +280,7 @@ than, greater than or equal, less than, less than or equal</li>
 <h3 id="orgc77fae3">에러가 나면 멈추게하기</h3>
 <div class="outline-text-3" id="text-orgc77fae3">
 <p>
-쉘 스크립트 상단에 아래 한 줄을 넣어둡니다.
+셸 스크립트 상단에 아래 한 줄을 넣어둡니다.
 </p>
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #c678dd;">set</span> -e
@@ -303,6 +304,6 @@ than, greater than or equal, less than, less than or equal</li>
 </div>
 </div>
 </div>
-<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 06일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

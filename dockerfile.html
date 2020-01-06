@@ -6,14 +6,14 @@
 <title>Dockerfile - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="Dockerfile(도커 설정파일) 예제">
+<meta name="description" content="Dockerfile(도커 설정파일) 예제 몇 가지를 정리하는 글입니다.">
 <meta property="og:title" content="Dockerfile" />
-<meta property="og:description" content="Dockerfile(도커 설정파일) 예제" />
+<meta property="og:description" content="Dockerfile(도커 설정파일) 예제 몇 가지를 정리하는 글입니다." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Dockerfile" />
-<meta name="twitter:description" content="Dockerfile(도커 설정파일) 예제" />
+<meta name="twitter:description" content="Dockerfile(도커 설정파일) 예제 몇 가지를 정리하는 글입니다." />
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
@@ -32,6 +32,7 @@ gtag('config', 'UA-44534026-1');
 </script>
 </head>
 <body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Dockerfile</h1>
@@ -78,7 +79,7 @@ ENTRYPOINT ["/usr/local/bin/app"]
 </p>
 
 <p>
-<code>ENTRYPOINT</code> 는 실제로 이미지가 기동되면 실행되는 쉘 커맨드를 기입하는 곳입니다.
+<code>ENTRYPOINT</code> 는 실제로 이미지가 기동되면 실행되는 셸 커맨드를 기입하는 곳입니다.
 이것 대신 <code>CMD</code> 로 기입할 수도 있는데, 이 경우 사용자 커맨드로 컨테이너를 띄울
 경우 <code>CMD</code> 로 지정된 명령어는 실행되지 않습니다. 반대로 <code>ENTRYPOINT</code> 의 경우
 사용자 커맨드 여부와 관계 없이 무조건 실행됩니다.
@@ -111,6 +112,6 @@ USER someuser
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 06일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

@@ -6,15 +6,15 @@
 <title>Poetry - Seorenn Static Pages</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Heeseung Seo (Seorenn)">
-<meta name="description" content="poetry라는 파이썬 의존성 및 패키지 관리자 사용법 간략 정리">
+<meta name="description" content="poetry라는 새로운 파이썬 의존성 및 패키지 관리자의 사용법을 정리하는 글입니다.">
 <meta name="keywords" content="python, poetry, pip, easyinstall, 패키지, 관리">
 <meta property="og:title" content="Poetry" />
-<meta property="og:description" content="poetry라는 파이썬 의존성 및 패키지 관리자 사용법 간략 정리" />
+<meta property="og:description" content="poetry라는 새로운 파이썬 의존성 및 패키지 관리자의 사용법을 정리하는 글입니다." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Poetry" />
-<meta name="twitter:description" content="poetry라는 파이썬 의존성 및 패키지 관리자 사용법 간략 정리" />
+<meta name="twitter:description" content="poetry라는 새로운 파이썬 의존성 및 패키지 관리자의 사용법을 정리하는 글입니다." />
 <meta name="twitter:image" content="https://seorenn.github.io/img/seorenn-logo.png" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
@@ -33,6 +33,7 @@ gtag('config', 'UA-44534026-1');
 </script>
 </head>
 <body>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <div id="content">
 <header>
 <h1 class="title">Poetry</h1>
@@ -91,16 +92,16 @@ Poetry는 파이썬(Python)용 패키징 겸 의존성 관리를 도와주는 �
 </pre>
 </div>
 <p>
-설치는 <code>$HOME/.poetry/bin</code> 이라는 디렉토리에 설치됩니다. 따라서 사용하는 쉘
+설치는 <code>$HOME/.poetry/bin</code> 이라는 디렉토리에 설치됩니다. 따라서 사용하는 셸
 환경에서 이 디렉토리를 <code>PATH</code> 환경변수에 등록해 주어야 합니다. <code>.zshrc</code> 이든
-<code>.bashrc</code> 이든 사용하는 쉘 설정을 열어서 아래와 같은 방식으로 경로를 추가해 줍시다.
+<code>.bashrc</code> 이든 사용하는 셸 설정을 열어서 아래와 같은 방식으로 경로를 추가해 줍시다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PATH</span>=<span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">PATH</span><span style="color: #98be65;">:</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">HOME</span><span style="color: #98be65;">/.poetry/bin"</span>
 </pre>
 </div>
 <p>
-설정이 끝났다면 위 환경이 적용될 쉘로 아래 커맨드를 이용해서 동작한다면 기본
+설정이 끝났다면 위 환경이 적용될 셸로 아래 커맨드를 이용해서 동작한다면 기본
 설치는 끝입니다.
 </p>
 <div class="org-src-container">
@@ -109,7 +110,7 @@ Poetry는 파이썬(Python)용 패키징 겸 의존성 관리를 도와주는 �
 </div>
 <p>
 이후 필요하다면 탭 자동완성 기능도 추가할 수 있습니다. 공식 홈페이지에서 다양한
-쉘용으로 설치 방법을 설명하고 있습니다. 여기서는 맥의 기본 쉘인 zsh용 방법만
+셸용으로 설치 방법을 설명하고 있습니다. 여기서는 맥의 기본 셸인 zsh용 방법만
 별도로 정리합니다.
 </p>
 
@@ -151,7 +152,7 @@ poetry completions zsh &gt; $<span style="color: #dcaeea;">ZSH</span>/plugins/po
 </p>
 
 <p>
-다른 쉘은 공식 문서에서 찾아봅시다.
+다른 셸은 공식 문서에서 찾아봅시다.
 </p>
 </div>
 </div>
@@ -326,7 +327,7 @@ poetry의 방식이 더 편해 보이기는 합니다.
 </div>
 
 <p>
-만약에 해당 프로젝트 환경을 쉘에서 실행시키고 싶다면, 즉 virtualenv 환경을 얻고
+만약에 해당 프로젝트 환경을 셸에서 실행시키고 싶다면, 즉 virtualenv 환경을 얻고
 싶다면 아래 커맨드를 사용합니다.
 </p>
 <div class="org-src-container">
@@ -334,7 +335,7 @@ poetry의 방식이 더 편해 보이기는 합니다.
 </pre>
 </div>
 <p>
-virtualenv를 사용해서 쉘을 띄운 것과 동일한 환경을 사용할 수 있습니다.
+virtualenv를 사용해서 셸을 띄운 것과 동일한 환경을 사용할 수 있습니다.
 </p>
 
 <p>
@@ -381,6 +382,6 @@ Docker 컨테이너는 독립된 환경이므로 딱히 virtualenv 환경을 사
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2020년 01월 05일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 06일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

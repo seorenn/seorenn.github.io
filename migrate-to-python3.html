@@ -45,6 +45,8 @@ gtag('config', 'UA-44534026-1');
 <li><a href="#org2fea0aa">Long?</a></li>
 <li><a href="#org0c0f896">except 문법 변경</a></li>
 <li><a href="#orgf1bf83d">이름이나 구조가 바뀐 모듈들</a></li>
+<li><a href="#orgc53507f">유니코드?</a></li>
+<li><a href="#org1aa13d4">사라진 xrange</a></li>
 <li><a href="#org2b9a3bb">관련글</a></li>
 </ul>
 </div>
@@ -117,6 +119,10 @@ gtag('config', 'UA-44534026-1');
 <div id="outline-container-orgf1bf83d" class="outline-2">
 <h2 id="orgf1bf83d">이름이나 구조가 바뀐 모듈들</h2>
 <div class="outline-text-2" id="text-orgf1bf83d">
+<p>
+예를 들자면 이런 것들이 있습니다.
+</p>
+
 <ul class="org-ul">
 <li><code>Queue</code> 는 <code>queue.Queue</code> 로 소속이 바뀌었습니다.</li>
 <li><code>urlparse</code> 는 <code>urllib.parse</code> 로 이름과 소속이 바뀌었습니다.</li>
@@ -124,6 +130,47 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
+<div id="outline-container-orgc53507f" class="outline-2">
+<h2 id="orgc53507f">유니코드?</h2>
+<div class="outline-text-2" id="text-orgc53507f">
+<blockquote>
+<p>
+TypeError: Unicode-objects must be encoded before hashing
+</p>
+</blockquote>
+<p>
+위 오류는 아래 코드에서 발생했습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">md5(<span style="color: #98be65;">'some string'</span>).hexdigest()
+</pre>
+</div>
+<p>
+이 경우 인코딩을 명시하면 해결됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">md5(<span style="color: #98be65;">'some string'</span>.encode(<span style="color: #98be65;">'utf-8'</span>)).hexdigest()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1aa13d4" class="outline-2">
+<h2 id="org1aa13d4">사라진 xrange</h2>
+<div class="outline-text-2" id="text-org1aa13d4">
+<p>
+성능 때문에 사용하던 <code>xrange</code> 가 사라졌습니다. 이제 그냥 <code>range</code> 만 쓰면 됩니다.
+</p>
+
+<p>
+리스트 형태로 받고 싶다면 당연히 리스트로 변환해서 쓰면 됩니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c678dd;">list</span>(<span style="color: #c678dd;">range</span>(...))
+</pre>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org2b9a3bb" class="outline-2">
 <h2 id="org2b9a3bb">관련글</h2>
 <div class="outline-text-2" id="text-org2b9a3bb">
@@ -132,6 +179,6 @@ gtag('config', 'UA-44534026-1');
 </ul>
 </div>
 </div>
-<div id="footer"><div id="time">2020년 01월 06일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
+<div id="footer"><div id="time">2020년 01월 15일 마지막으로 수정됨</div><div id="copyright">Copyright 2019 Heeseung Seo (Seorenn)</div></div></div>
 </body>
 </html>

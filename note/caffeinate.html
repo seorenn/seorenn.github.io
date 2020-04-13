@@ -1,0 +1,112 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>caffeinate - Seorenn</title>
+<meta name="twitter:title" content="caffeinate" />
+<meta name="og:title" content="caffeinate" />
+<meta name="description" content="맥 전용 잠자기 방지 도구인 caffeinate 소개 및 사용법을 정리합니다." />
+<meta name="twitter:description" content="맥 전용 잠자기 방지 도구인 caffeinate 소개 및 사용법을 정리합니다." />
+<meta name="og:description" content="맥 전용 잠자기 방지 도구인 caffeinate 소개 및 사용법을 정리합니다." />
+<link rel="canonical" href="https://seorenn.github.io/note/caffeinate.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/caffeinate.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="/img/seorenn-logo.png" />
+<meta property="og:image" content="/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<img class="site-logo" src="/static/seorenn-logo.png" />
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>caffeinate</h1>
+<div class="title-date">2020년 4월 13일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org1c5bffa">사용법</a>
+<ul>
+<li><a href="#org57e46b3">무제한 잠자기 방지</a></li>
+<li><a href="#org41e2fd9">지정된 시간 동안 잠자기 방지</a></li>
+<li><a href="#org535dd24">특정 프로세스 구동 동안 잠자기 방지</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+caffeinate는 맥이 잠자기 모드에 빠지지 않도록 해주는
+<a href="macos.html">macOS</a> 전용 <a href="cli.html">CLI</a> 도구다.
+</p>
+
+<div id="outline-container-org1c5bffa" class="outline-2">
+<h2 id="org1c5bffa">사용법</h2>
+<div class="outline-text-2" id="text-org1c5bffa">
+</div>
+<div id="outline-container-org57e46b3" class="outline-3">
+<h3 id="org57e46b3">무제한 잠자기 방지</h3>
+<div class="outline-text-3" id="text-org57e46b3">
+<div class="org-src-container">
+<pre class="src src-bash">caffeinate
+</pre>
+</div>
+<p>
+종료 시킬 때는 <code>^C</code> (Ctrl+C) 키를 눌러서 빠져나오면 된다.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org41e2fd9" class="outline-3">
+<h3 id="org41e2fd9">지정된 시간 동안 잠자기 방지</h3>
+<div class="outline-text-3" id="text-org41e2fd9">
+<div class="org-src-container">
+<pre class="src src-bash">caffeinate -t <span style="color: #da8548; font-weight: bold;">3600</span>
+</pre>
+</div>
+<p>
+<code>3600</code> 은 초 단위다. 즉 3600초는 1시간이다.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org535dd24" class="outline-3">
+<h3 id="org535dd24">특정 프로세스 구동 동안 잠자기 방지</h3>
+<div class="outline-text-3" id="text-org535dd24">
+<div class="org-src-container">
+<pre class="src src-bash">caffeinate -i <span style="color: #ECBE7B;">make</span>
+</pre>
+</div>
+<p>
+위 명령은 <code>make</code> 라는 도구의 동작이 끝날 때 까지는 맥이 잠자기에 빠지지 않게 방지한다.
+</p>
+</div>
+</div>
+</div>
+</section>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

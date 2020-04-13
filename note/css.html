@@ -1,0 +1,189 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>CSS - Seorenn</title>
+<meta name="twitter:title" content="CSS" />
+<meta name="og:title" content="CSS" />
+<meta name="description" content="CSS 팁 모음" />
+<meta name="twitter:description" content="CSS 팁 모음" />
+<meta name="og:description" content="CSS 팁 모음" />
+<link rel="canonical" href="https://seorenn.github.io/note/css.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/css.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="/img/seorenn-logo.png" />
+<meta property="og:image" content="/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<img class="site-logo" src="/static/seorenn-logo.png" />
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>CSS</h1>
+<div class="title-date">2020년 4월 13일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org4d7c936">CSS를 HTML문서에 사용하기</a>
+<ul>
+<li><a href="#org3946cfc">태그에 바로 스타일 입히기</a></li>
+<li><a href="#orgdefec31">스타일 블록</a></li>
+<li><a href="#org3e8319e">스타일 파일 로딩 시키기</a></li>
+</ul>
+</li>
+<li><a href="#org4845d56">단어를 자르지 않기</a></li>
+<li><a href="#org34a71e2">둥근 모서리</a></li>
+<li><a href="#org4ba007f">div 블록 가운데 정렬</a></li>
+<li><a href="#orge87b757">소수점 자리로 정렬</a></li>
+<li><a href="#org06a5f8d">기타 CSS 관련 외부 링크</a></li>
+</ul>
+</div>
+</div>
+<p>
+CSS는 Cascade Style Sheet의 약자로
+HTML 문서의 스타일을 구성할 때 사용하는 일종의 언어이다.
+</p>
+
+<p>
+나머지 내용은 CSS와 관련된 팁이다.
+</p>
+
+<div id="outline-container-org4d7c936" class="outline-2">
+<h2 id="org4d7c936">CSS를 HTML문서에 사용하기</h2>
+<div class="outline-text-2" id="text-org4d7c936">
+</div>
+<div id="outline-container-org3946cfc" class="outline-3">
+<h3 id="org3946cfc">태그에 바로 스타일 입히기</h3>
+<div class="outline-text-3" id="text-org3946cfc">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdefec31" class="outline-3">
+<h3 id="orgdefec31">스타일 블록</h3>
+<div class="outline-text-3" id="text-orgdefec31">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
+p {
+  font-size: 2rem;
+}
+...
+&lt;/<span style="color: #c678dd;">style</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3e8319e" class="outline-3">
+<h3 id="org3e8319e">스타일 파일 로딩 시키기</h3>
+<div class="outline-text-3" id="text-org3e8319e">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4845d56" class="outline-2">
+<h2 id="org4845d56">단어를 자르지 않기</h2>
+<div class="outline-text-2" id="text-org4845d56">
+<p>
+문장이 길어져서 다음 줄로 넘어갈 때
+단어를 중간에 자르면 가독성에 문제가 있을 수 있다.
+이럴 때는 아래와 같은 스타일을 넣을 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">word-break</span>: keep-all;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org34a71e2" class="outline-2">
+<h2 id="org34a71e2">둥근 모서리</h2>
+<div class="outline-text-2" id="text-org34a71e2">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">border-radius</span>: 8px;
+</pre>
+</div>
+<p>
+저기엔 숨겨진 많은 옵션이 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-org4ba007f" class="outline-2">
+<h2 id="org4ba007f">div 블록 가운데 정렬</h2>
+<div class="outline-text-2" id="text-org4ba007f">
+<p>
+큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #51afef;">.some_block </span>{
+  <span style="color: #98be65;">max-width</span>: 640px;
+  <span style="color: #98be65;">margin</span>: <span style="color: #da8548; font-weight: bold;">0</span> auto;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge87b757" class="outline-2">
+<h2 id="orge87b757">소수점 자리로 정렬</h2>
+<div class="outline-text-2" id="text-orge87b757">
+<p>
+테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면
+아래와 같은 스타일을 추가할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #51afef;">.table </span>{
+  <span style="color: #98be65;">font-variant-numeric</span>: tabular-nums;
+}
+</pre>
+</div>
+<p>
+달러나 유로 단위의 경우 소수점 아래도 표기하는데 이럴 때 유용할 것 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-org06a5f8d" class="outline-2">
+<h2 id="org06a5f8d">기타 CSS 관련 외부 링크</h2>
+<div class="outline-text-2" id="text-org06a5f8d">
+<ul class="org-ul">
+<li><a target="_blank" href="https://cssgrid-generator.netlify.com">CSS Grid Generator</a></li>
+</ul>
+
+<p>
+아래 내용도 읽어보자:
+</p>
+<ul class="org-ul">
+<li><a href="css-tip.html">CSS 팁 모음</a></li>
+</ul>
+</div>
+</div>
+</section>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

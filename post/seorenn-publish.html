@@ -1,0 +1,277 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>정적 사이트 생성을 위한 개인적인 욕망의 분출(?) - Seorenn</title>
+<meta name="twitter:title" content="정적 사이트 생성을 위한 개인적인 욕망의 분출(?)" />
+<meta name="og:title" content="정적 사이트 생성을 위한 개인적인 욕망의 분출(?)" />
+<meta name="description" content="org-publish를 대신하기 위해 만든 seorenn-publish에 대한 이야기" />
+<meta name="twitter:description" content="org-publish를 대신하기 위해 만든 seorenn-publish에 대한 이야기" />
+<meta name="og:description" content="org-publish를 대신하기 위해 만든 seorenn-publish에 대한 이야기" />
+<link rel="canonical" href="https://seorenn.github.io/post/seorenn-publish.html" />
+<meta property="og:url" content="https://seorenn.github.io/post/seorenn-publish.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="/img/seorenn-logo.png" />
+<meta property="og:image" content="/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<img class="site-logo" src="/static/seorenn-logo.png" />
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>정적 사이트 생성을 위한 개인적인 욕망의 분출(?)</h1>
+<div class="title-date">2020년 4월 13일 작성</div>
+</header>
+<div id="table-of-contents">
+<h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org6542069">org-publish와의 만남</a></li>
+<li><a href="#orgb23f4d3">단점의 속출</a></li>
+<li><a href="#org3150155">그래서 무작정 시작했다</a></li>
+<li><a href="#org49e68f0">결론</a></li>
+</ul>
+</div>
+</div>
+<p>
+나는 취미형 블로거로써 상당히 많은 글을 다수의 블로그에 게재해왔다. 물론 전부
+개인 블로그이고 내 소유이다. 그 덕분인지 많은 블로깅 엔진이나 사이트들에 대해
+이런 저런 생각을 가지게 된다. 물론 주로 장점이나 단점에 대한 것이다. 하지만 이
+글을 일반적인 블로깅 서비스의 장점을 나열하려는 것은 아니니 넘어가자.
+</p>
+
+<p>
+하지만 단점은 생략할 수가 없다. 내가 서버를 소유하고 운영하는 것은 비용과 관리의 귀찮음
+문제로 피할 수 밖에 없다. 그러면 남는 선택지는 블로그 서비스 사이트인데
+역시 내 마음대로 커스터마이징 하는 것은 굉장히 어려운 일이다.
+물론 요즘 블로그 사이트의 스킨 엔진은 정말
+대단한 기능들을 제공하지만 그걸 제대로 설명해 주는 곳은 한 군데도 없는 것 같다.
+</p>
+
+<p>
+그런데 최근에는 Github이나 Netlify 같은 거의 무료로 정적 사이트 서빙이 가능한
+서비스들이 생기고 있다. 그리고 많은 사람들이 정적 사이트로 블로그를 운영하는
+것을 종종 접하게 되었다. 그러면서 나도 정적 블로그를 운영해볼까 하는 생각을
+가지게 되었다. 블로그에 굳이 동적인 데이터 제공이 필요한 경우는 별로 없다.
+</p>
+
+<p>
+이 생각은 조금씩 바뀌어서 아예 블로그가 아니라 위키 같은 형태의 사이트가 어떨까
+하는 생각까지 번지게 되었다.
+</p>
+
+<div id="outline-container-org6542069" class="outline-2">
+<h2 id="org6542069">org-publish와의 만남</h2>
+<div class="outline-text-2" id="text-org6542069">
+<p>
+Org Mode는 이맥스(Emacs)의 대표적인 킬러 소프트웨어다. Outline 기반의 문서
+시스템과 동시에 할 일(TODO)과 스케줄 관리, Agenda 등등 너무나 다채로운 기능을
+제공하는 도구다. 거기다 다양한 출력(export) 기능까지 제공되는데 그 중에는 당연하게도
+HTML로 출력하는 것도 제공한다.
+</p>
+
+<p>
+하지만 이것 만으로는 불편함이 있다.
+정적 사이트를 org 문서로 만들려면 자동화가 필수다.
+일일이 모든 글을 찾아가서 손수 명령어를 입력해 출력할 수는 없다.
+</p>
+
+<p>
+그러다 발견한 것이 org-publish라는 확장이다.
+이미 <a target="_blank" href="https://seorenn.tistory.com/63">Org Publish로 익스포트 자동화하기</a>
+글에서 나는 org-publish를 사용해 봤다고 알린 적이 있다. org-publish는
+Org Mode 문서를 활용해 정적 사이트 생성을 자동으로 해주는 몹시
+편리한 도구다.
+</p>
+
+<p>
+org-publish 자체는 다양한 기능을 제공하는데
+주로 HTML 출력을 자동화하고 관련된 파일을 원하는 위치에 복사해 주는 기능 위주다.
+다만 인덱스 같은 페이지를 만들어 주지는 않기 때문에
+거의 모든 것을 수동으로 정리해야 할 필요는 있다.
+</p>
+
+<p>
+그런데 그 수동성(?) 덕분에 위키 스타일 운영도 가능했다. 이 점은 내가 원하는
+것이기도 했다.
+</p>
+
+<p>
+그리고 커스터마이징에 있어서 상당히 고급 기능도 제공된다. 물론 Org Mode 자체가
+오픈소스로 개발되는 거대한 소프트웨어이고 여기의 기능을 일부 이용하는 것
+뿐이지만 어쨌든 가능한 것은 가능한 것이었다.
+</p>
+
+<p>
+그래서 한동안 org-publish를 이용해 사이트를 운영해봤다.
+</p>
+
+<p>
+그런데 Org Mode 자체가 역사적으로 오래되었다 보니 org-publish도 좀 구시대적인
+스타일에 머물러 있다는 느낌을 종종 받게 되었다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb23f4d3" class="outline-2">
+<h2 id="orgb23f4d3">단점의 속출</h2>
+<div class="outline-text-2" id="text-orgb23f4d3">
+<p>
+결론 부터 이야기 하자면,
+가장 큰 문제는 Emacs Lisp을 이용해야 한다는 점이 제일 곤욕이었다.
+즉 설정이 상당히 어려운 편이다.
+</p>
+
+<p>
+커스터마이징이 가능한 부분은 충분히 많지만,
+문제는 이를 거의 자력으로 해결하지 못 하는 경우가 대부분이다. 왜냐하면 내가 너무
+모르기 때문이다. 그런데 이건 내 탓이 아니라 그냥 매뉴얼의 부재 문제로 봐야 할 것
+같다.
+</p>
+
+<p>
+커스터마이징의 예를 들자면 이미지를 표시하는 것 등이다.
+기본적으로 이미지를 표시하는 방법이 있지만
+좀 더 편한 방법을 사용하려면 약간의 트릭이 필요하다.
+하지만 너무 어렵다 보니 일단 구글에서 검색해서 발견되면 다행이었고,
+방법을 찾지 못 하면 대부분 해결이 안 되었다.
+</p>
+
+<p>
+이렇게 커스터마이징이 힘드니 사이트 자체를 꾸미는 것도 쉽지 않았다.
+나는 아직도 왜 custom header 기능이 동작하지 않는지 의문이다.
+그래서 수동 편집 방법으로 - 다르게 말해서 무식하게 -
+헤더에서 특정 텍스트를 검색해서 이를 치환하는 코드를 넣어가며
+org-publish 자체를 엉망진창으로 만들어갔다.
+</p>
+
+<p>
+org-publish에는 태그나 카테고리 기능 같은 것도 당연히 없다.
+특히 태그는 Org Mode에도 존재하는 기능이지만 org-publish에서 이를 현대적인 태그
+시스템으로 만들어 주지는 않는다. 그냥 내 컴퓨터에만 저장되는 정보일 뿐이었다.
+</p>
+
+<p>
+자동화된 인덱스가 없다는 문제도 좀 컸다.
+이것도 수동으로 작성하기엔 귀찮고
+코드로 무식하게 자동화 시키기엔 뭔가 할 게 많았다.
+</p>
+
+<p>
+그리고 이 모든 설정을 Emacs Lisp으로 해야만 했다.
+Lisp은 긴 시간을 다뤄봐야 코드가 눈에 들어올 정도로
+스코프와 블록의 구분이 난해한 편이다.
+</p>
+
+<p>
+결과적으로 고치거나 추가하기엔 불가능해 보이는 요소가 너무나 많이 필요했다.
+시간이 가면 갈 수록 이런 요구 사항은 점점 더 많아져 가고
+결국 org-publish의 한계가 계속 느껴졌다.
+</p>
+</div>
+</div>
+<div id="outline-container-org3150155" class="outline-2">
+<h2 id="org3150155">그래서 무작정 시작했다</h2>
+<div class="outline-text-2" id="text-org3150155">
+<p>
+org-publish를 대체하기 위한 개인적인 배치 출력기를 만들기로 결심했다.
+</p>
+
+<p>
+사실 약간의 불안함은 있었다.
+빌어먹을 Emacs Lisp의 악몽 같은 문법을 잘 해결해 갈 수 있을까 하는 것 말이다.
+그래도 안 하는 것 보다는 나을 거라는 생각으로 말이다.
+</p>
+
+<p>
+당연하게 엄청난 삽질을 하였다.
+괄호 하나 잘못 빼먹었다가 하루 종일 디버깅을 할 때도 있었다.
+리스트라는 구조를 깜빡하고 기성 언어(?)의 함수 호출 규격이
+여기저기 쓰여졌다 지워지기를 반복했다.
+</p>
+
+<p>
+하지만 의외로 다양한 함수들이 제공되었기에
+난감할 거라 생각했던 몇 가지 기능이 너무 수월하게 구현되어서 놀랐던 것이 몇 번
+있었다.
+</p>
+
+<p>
+그리고 리스트 문법이 주는 장점도 몇 가지 알게 되기도 했다. 예를 들자면 <code>concat</code>
+을 이용해 문자열을 조합하는 중간에 <code>when</code> 나 <code>cond</code> 등으로
+조건에 따른 문자열 배치하기 등등 말이다.
+물론 이런 것들이 모두 기성 언어에 비해 좋다고 하기에는 약간 미묘하긴 하다.
+다들 비슷비슷한 편의 기능 정도는 가지고 있다.
+</p>
+
+<p>
+Lisp 최대의 난관인 괄호 읽기는 여전히 어렵다.
+하지만 몇 가지 자신만의 편집 트릭이 만들어지기도 하는 등 다양한 변화가 생겼다.
+많은 함수들을 알게 되기도 했고 많은 문법을 알게 되기도 했다.
+</p>
+
+<p>
+그래도 여전히 오픈소스 프로젝트들의 소스 코드는 읽기 힘들지만&#x2026;
+</p>
+
+<p>
+어쨌든 결과적으로 이 글이 탄생할 수 있게 되었다.
+</p>
+</div>
+</div>
+<div id="outline-container-org49e68f0" class="outline-2">
+<h2 id="org49e68f0">결론</h2>
+<div class="outline-text-2" id="text-org49e68f0">
+<p>
+시작은 장대하지만 난잡한 서사로 구성되어 있던 반면
+결과는 매우 단순하게 끝내야 할 것 같다.
+왜냐하면 간결한 결론은 정말 좋은 결론이니까.
+</p>
+
+<p>
+그래서 뭐냐고?
+</p>
+
+<blockquote>
+<p>
+조금씩 이라도 잊지 않는 것이 더 중요하다.
+</p>
+</blockquote>
+
+
+<p>
+힘든 일을 할 때면 언제나 벽이 높게 느껴진다.
+하지만 그럴 수록 한 번에 벽을 넘겠다는 생각은 포기하는 게 좋다.
+넘어가다 실패하면 좌절감만 느낄 게 분명하다.
+오히려 조금씩 조금씩 벽을 쉽게 오늘 수 있게 발판을 단다는 느낌으로
+하루에 조금씩 이라도 해보자.
+아무 것도 안 하고 하루를 넘기는 것 보다는 많은 것을 이룰 수 있고
+내가 하려 하던 일의 흐름을 잊지 않을 수 있다.
+</p>
+</div>
+</div>
+</section>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

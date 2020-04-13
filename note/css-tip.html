@@ -1,0 +1,184 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>CSS 팁 모음 - Seorenn</title>
+<meta name="twitter:title" content="CSS 팁 모음" />
+<meta name="og:title" content="CSS 팁 모음" />
+<meta name="description" content="CSS와 관련된 팁을 모은 페이지" />
+<meta name="twitter:description" content="CSS와 관련된 팁을 모은 페이지" />
+<meta name="og:description" content="CSS와 관련된 팁을 모은 페이지" />
+<link rel="canonical" href="https://seorenn.github.io/note/css-tip.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/css-tip.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="/img/seorenn-logo.png" />
+<meta property="og:image" content="/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<img class="site-logo" src="/static/seorenn-logo.png" />
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>CSS 팁 모음</h1>
+<div class="title-date">2020년 4월 13일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org5f7f598">CSS를 HTML문서에 사용하기</a>
+<ul>
+<li><a href="#orgf2f8130">태그에 바로 스타일 입히기</a></li>
+<li><a href="#org62aeef4">스타일 블록</a></li>
+<li><a href="#orgf879025">스타일 파일 로딩 시키기</a></li>
+</ul>
+</li>
+<li><a href="#org10ab2c6">단어를 자르지 않기</a></li>
+<li><a href="#org3e2f883">둥근 모서리</a></li>
+<li><a href="#orgfbcd77a">div 블록 가운데 정렬</a></li>
+<li><a href="#org7f7140a">소수점 자리로 정렬</a></li>
+<li><a href="#org0ec0531">기타 CSS 관련 외부 링크</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5f7f598" class="outline-2">
+<h2 id="org5f7f598">CSS를 HTML문서에 사용하기</h2>
+<div class="outline-text-2" id="text-org5f7f598">
+</div>
+<div id="outline-container-orgf2f8130" class="outline-3">
+<h3 id="orgf2f8130">태그에 바로 스타일 입히기</h3>
+<div class="outline-text-3" id="text-orgf2f8130">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org62aeef4" class="outline-3">
+<h3 id="org62aeef4">스타일 블록</h3>
+<div class="outline-text-3" id="text-org62aeef4">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
+p {
+  font-size: 2rem;
+}
+...
+&lt;/<span style="color: #c678dd;">style</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf879025" class="outline-3">
+<h3 id="orgf879025">스타일 파일 로딩 시키기</h3>
+<div class="outline-text-3" id="text-orgf879025">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org10ab2c6" class="outline-2">
+<h2 id="org10ab2c6">단어를 자르지 않기</h2>
+<div class="outline-text-2" id="text-org10ab2c6">
+<p>
+문장이 길어져서 다음 줄로 넘어갈 때
+단어를 중간에 자르면 가독성에 문제가 있을 수 있다.
+이럴 때는 아래와 같은 스타일을 넣을 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">word-break</span>: keep-all;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3e2f883" class="outline-2">
+<h2 id="org3e2f883">둥근 모서리</h2>
+<div class="outline-text-2" id="text-org3e2f883">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">border-radius</span>: 8px;
+</pre>
+</div>
+<p>
+저기엔 숨겨진 많은 옵션이 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfbcd77a" class="outline-2">
+<h2 id="orgfbcd77a">div 블록 가운데 정렬</h2>
+<div class="outline-text-2" id="text-orgfbcd77a">
+<p>
+큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #51afef;">.some_block </span>{
+  <span style="color: #98be65;">max-width</span>: 640px;
+  <span style="color: #98be65;">margin</span>: <span style="color: #da8548; font-weight: bold;">0</span> auto;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f7140a" class="outline-2">
+<h2 id="org7f7140a">소수점 자리로 정렬</h2>
+<div class="outline-text-2" id="text-org7f7140a">
+<p>
+테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면
+아래와 같은 스타일을 추가할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #51afef;">.table </span>{
+  <span style="color: #98be65;">font-variant-numeric</span>: tabular-nums;
+}
+</pre>
+</div>
+<p>
+달러나 유로 단위의 경우 소수점 아래도 표기하는데 이럴 때 유용할 것 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-org0ec0531" class="outline-2">
+<h2 id="org0ec0531">기타 CSS 관련 외부 링크</h2>
+<div class="outline-text-2" id="text-org0ec0531">
+<ul class="org-ul">
+<li><a target="_blank" href="https://cssgrid-generator.netlify.com">CSS Grid Generator</a></li>
+</ul>
+</div>
+</div>
+</section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/css.html">CSS</a></h2>
+<div class="article-link-date">
+2020년 4월 13일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

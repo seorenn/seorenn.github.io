@@ -7,8 +7,8 @@ body {
   color: #bcc2ce;
   font-family: sans-serif;
   word-break: keep-all;
-  line-height: 1.9rem;
-  font-size: 17px;
+  line-height: 2.1rem;
+  font-size: 18px;
 }
 
 /* header */
@@ -90,12 +90,12 @@ body {
 #table-of-contents {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 4px;
+  padding: 0.8rem 1rem 0.8rem 1rem;
   border: 1px dashed #bcc2ce;
 }
 
 #table-of-contents h2 {
-  margin: 1rem;
+  margin: 0;
   font-size: 1.2rem;
 }
 
@@ -114,8 +114,8 @@ body {
 }
 
 #text-table-of-contents ul {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .menu-item {
@@ -257,6 +257,7 @@ hr {
   font-size: 0.9rem;
   font-family: Menlo, Monaco, monospace;
   overflow-x: scroll;
+  line-height: 1.2rem;
   /*white-space: pre-wrap;*/
 }
 
@@ -264,7 +265,7 @@ hr {
   padding: 2px 4px 2px 4px;
   font-family: Menlo, Monaco, monospace;
   background: #21232a;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
 }
 
 .content blockquote {
@@ -311,7 +312,7 @@ hr {
 #footnotes {
   margin-top: 4rem;
   margin-bottom: 1rem;
-  padding: 4px;
+  padding: 0.8rem 1rem 0.8rem 1rem;
   border: 1px dashed #bcc2ce;
 }
 
@@ -321,7 +322,7 @@ hr {
 }
 
 #footnotes p {
-  margin: 0.01rem 0 1.5rem 0;
+  margin: 0 0 0.4rem 0;
   padding-left: 2rem;
   line-height: 1.4rem;
 }
@@ -335,7 +336,7 @@ hr {
 }
 
 #footnotes h2 {
-  margin: 1rem;
+  margin: 0 0 0.4rem 0;
   font-size: 1.2rem;
 }
 

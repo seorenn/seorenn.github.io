@@ -45,24 +45,24 @@
 <div id="table-of-contents">
 <h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org5cc0754">사용법 예제</a>
+<li><a href="#org7f1feb2">사용법 예제</a>
 <ul>
-<li><a href="#orga9870dc">포드 리스트</a></li>
-<li><a href="#orgc54b451">포드 정보 보기</a></li>
-<li><a href="#orgd028230">YAML 파일 적용</a></li>
-<li><a href="#org454c542">포드 삭제하기</a></li>
-<li><a href="#orgc376300">포드 재시작 하기</a></li>
-<li><a href="#org93cd63c">로그 보기</a></li>
-<li><a href="#orgd93faa9">포트 포워딩</a></li>
-<li><a href="#org6e24955">컨테이너의 커맨드 실행시키기</a></li>
+<li><a href="#org974512c">포드 리스트</a></li>
+<li><a href="#org8f7e48c">포드 정보 보기</a></li>
+<li><a href="#orga6d4a93">YAML 파일 적용</a></li>
+<li><a href="#orgeb0de10">포드 삭제하기</a></li>
+<li><a href="#org737d577">포드 재시작 하기</a></li>
+<li><a href="#orgb75a581">로그 보기</a></li>
+<li><a href="#orgd823a63">포트 포워딩</a></li>
+<li><a href="#org92e9477">컨테이너의 커맨드 실행시키기</a></li>
 </ul>
 </li>
-<li><a href="#org4a4a69e">심화 예제</a>
+<li><a href="#org45975eb">심화 예제</a>
 <ul>
-<li><a href="#org6cfc932">레코드와 롤백</a></li>
+<li><a href="#org7b3b56b">레코드와 롤백</a></li>
 </ul>
 </li>
-<li><a href="#orgb6e89a7">기타 외부 링크</a></li>
+<li><a href="#org0c0ddf5">기타 외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -71,40 +71,40 @@ kubectl 은 Kubernetes 클러스터 컨트롤 <a href="cli.html">CLI</a> 도구�
 이 문서에서는 이 kubectl 의 사용법 예를 몇 가지 정리한다.
 </p>
 
-<div id="outline-container-org5cc0754" class="outline-2">
-<h2 id="org5cc0754">사용법 예제</h2>
-<div class="outline-text-2" id="text-org5cc0754">
+<div id="outline-container-org7f1feb2" class="outline-2">
+<h2 id="org7f1feb2">사용법 예제</h2>
+<div class="outline-text-2" id="text-org7f1feb2">
 </div>
-<div id="outline-container-orga9870dc" class="outline-3">
-<h3 id="orga9870dc">포드 리스트</h3>
-<div class="outline-text-3" id="text-orga9870dc">
+<div id="outline-container-org974512c" class="outline-3">
+<h3 id="org974512c">포드 리스트</h3>
+<div class="outline-text-3" id="text-org974512c">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl get pods
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc54b451" class="outline-3">
-<h3 id="orgc54b451">포드 정보 보기</h3>
-<div class="outline-text-3" id="text-orgc54b451">
+<div id="outline-container-org8f7e48c" class="outline-3">
+<h3 id="org8f7e48c">포드 정보 보기</h3>
+<div class="outline-text-3" id="text-org8f7e48c">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl describe pod POD_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd028230" class="outline-3">
-<h3 id="orgd028230">YAML 파일 적용</h3>
-<div class="outline-text-3" id="text-orgd028230">
+<div id="outline-container-orga6d4a93" class="outline-3">
+<h3 id="orga6d4a93">YAML 파일 적용</h3>
+<div class="outline-text-3" id="text-orga6d4a93">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl apply -f foo/bar.yaml
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org454c542" class="outline-3">
-<h3 id="org454c542">포드 삭제하기</h3>
-<div class="outline-text-3" id="text-org454c542">
+<div id="outline-container-orgeb0de10" class="outline-3">
+<h3 id="orgeb0de10">포드 삭제하기</h3>
+<div class="outline-text-3" id="text-orgeb0de10">
 <p>
 보통은 rescale로 0대만 동작하게 설정하는 식으로 포드를 종료 시킨다.
 </p>
@@ -129,9 +129,9 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgc376300" class="outline-3">
-<h3 id="orgc376300">포드 재시작 하기</h3>
-<div class="outline-text-3" id="text-orgc376300">
+<div id="outline-container-org737d577" class="outline-3">
+<h3 id="org737d577">포드 재시작 하기</h3>
+<div class="outline-text-3" id="text-org737d577">
 <p>
 특별히 커맨드가 있는 건 아니고 아래처럼 할 수 있다.
 </p>
@@ -145,9 +145,9 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 </p>
 </div>
 </div>
-<div id="outline-container-org93cd63c" class="outline-3">
-<h3 id="org93cd63c">로그 보기</h3>
-<div class="outline-text-3" id="text-org93cd63c">
+<div id="outline-container-orgb75a581" class="outline-3">
+<h3 id="orgb75a581">로그 보기</h3>
+<div class="outline-text-3" id="text-orgb75a581">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl logs -f POD_NAME
 </pre>
@@ -169,9 +169,9 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 </p>
 </div>
 </div>
-<div id="outline-container-orgd93faa9" class="outline-3">
-<h3 id="orgd93faa9">포트 포워딩</h3>
-<div class="outline-text-3" id="text-orgd93faa9">
+<div id="outline-container-orgd823a63" class="outline-3">
+<h3 id="orgd823a63">포트 포워딩</h3>
+<div class="outline-text-3" id="text-orgd823a63">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl port-forward POD_NAME PORT_NUM
 </pre>
@@ -190,9 +190,9 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 </div>
 </div>
 </div>
-<div id="outline-container-org6e24955" class="outline-3">
-<h3 id="org6e24955">컨테이너의 커맨드 실행시키기</h3>
-<div class="outline-text-3" id="text-org6e24955">
+<div id="outline-container-org92e9477" class="outline-3">
+<h3 id="org92e9477">컨테이너의 커맨드 실행시키기</h3>
+<div class="outline-text-3" id="text-org92e9477">
 <div class="org-src-container">
 <pre class="src src-bash">kubectl exec -it POD_NAME -- COMMAND
 </pre>
@@ -213,13 +213,13 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 </div>
 </div>
 </div>
-<div id="outline-container-org4a4a69e" class="outline-2">
-<h2 id="org4a4a69e">심화 예제</h2>
-<div class="outline-text-2" id="text-org4a4a69e">
+<div id="outline-container-org45975eb" class="outline-2">
+<h2 id="org45975eb">심화 예제</h2>
+<div class="outline-text-2" id="text-org45975eb">
 </div>
-<div id="outline-container-org6cfc932" class="outline-3">
-<h3 id="org6cfc932">레코드와 롤백</h3>
-<div class="outline-text-3" id="text-org6cfc932">
+<div id="outline-container-org7b3b56b" class="outline-3">
+<h3 id="org7b3b56b">레코드와 롤백</h3>
+<div class="outline-text-3" id="text-org7b3b56b">
 <p>
 <code>--record</code> 커맨드로 현재 기록을 남겨둘 수 있다.
 </p>
@@ -240,9 +240,9 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgb6e89a7" class="outline-2">
-<h2 id="orgb6e89a7">기타 외부 링크</h2>
-<div class="outline-text-2" id="text-orgb6e89a7">
+<div id="outline-container-org0c0ddf5" class="outline-2">
+<h2 id="org0c0ddf5">기타 외부 링크</h2>
+<div class="outline-text-2" id="text-org0c0ddf5">
 <ul class="org-ul">
 <li><a target="_blank" href="https://speakerdeck.com/thesandlord/kubernetes-best-practices">🌏 Kubernetes
 Best Practices</a> (Slides)</li>

@@ -13,8 +13,8 @@
 <meta property="og:url" content="https://seorenn.github.io/note/css.html" />
 <link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-logo.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-logo.png" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
@@ -54,18 +54,18 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org2b2400a">CSS를 HTML문서에 사용하기</a>
+<li><a href="#org1a7616f">CSS를 HTML문서에 사용하기</a>
 <ul>
-<li><a href="#orge56d60c">태그에 바로 스타일 입히기</a></li>
-<li><a href="#org1327721">스타일 블록</a></li>
-<li><a href="#org87c484e">스타일 파일 로딩 시키기</a></li>
+<li><a href="#org72c5364">태그에 바로 스타일 입히기</a></li>
+<li><a href="#orgefab59f">스타일 블록</a></li>
+<li><a href="#orgcc6a015">스타일 파일 로딩 시키기</a></li>
 </ul>
 </li>
-<li><a href="#org93564d1">단어를 자르지 않기</a></li>
-<li><a href="#org3fcb1ed">둥근 모서리</a></li>
-<li><a href="#org91c74f6">div 블록 가운데 정렬</a></li>
-<li><a href="#org5a4ecc8">소수점 자리로 정렬</a></li>
-<li><a href="#org54da315">기타 CSS 관련 외부 링크</a></li>
+<li><a href="#orgd32b8d3">단어를 자르지 않기</a></li>
+<li><a href="#org7a4e02b">둥근 모서리</a></li>
+<li><a href="#org691f310">div 블록 가운데 정렬</a></li>
+<li><a href="#orgbae46b4">소수점 자리로 정렬</a></li>
+<li><a href="#org007fcd9">기타 CSS 관련 외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -78,22 +78,22 @@ HTML 문서의 스타일을 구성할 때 사용하는 일종의 언어이다.
 나머지 내용은 CSS와 관련된 팁이다.
 </p>
 
-<div id="outline-container-org2b2400a" class="outline-2">
-<h2 id="org2b2400a">CSS를 HTML문서에 사용하기</h2>
-<div class="outline-text-2" id="text-org2b2400a">
+<div id="outline-container-org1a7616f" class="outline-2">
+<h2 id="org1a7616f">CSS를 HTML문서에 사용하기</h2>
+<div class="outline-text-2" id="text-org1a7616f">
 </div>
-<div id="outline-container-orge56d60c" class="outline-3">
-<h3 id="orge56d60c">태그에 바로 스타일 입히기</h3>
-<div class="outline-text-3" id="text-orge56d60c">
+<div id="outline-container-org72c5364" class="outline-3">
+<h3 id="org72c5364">태그에 바로 스타일 입히기</h3>
+<div class="outline-text-3" id="text-org72c5364">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1327721" class="outline-3">
-<h3 id="org1327721">스타일 블록</h3>
-<div class="outline-text-3" id="text-org1327721">
+<div id="outline-container-orgefab59f" class="outline-3">
+<h3 id="orgefab59f">스타일 블록</h3>
+<div class="outline-text-3" id="text-orgefab59f">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
 p {
@@ -105,9 +105,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org87c484e" class="outline-3">
-<h3 id="org87c484e">스타일 파일 로딩 시키기</h3>
-<div class="outline-text-3" id="text-org87c484e">
+<div id="outline-container-orgcc6a015" class="outline-3">
+<h3 id="orgcc6a015">스타일 파일 로딩 시키기</h3>
+<div class="outline-text-3" id="text-orgcc6a015">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
 </pre>
@@ -115,9 +115,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org93564d1" class="outline-2">
-<h2 id="org93564d1">단어를 자르지 않기</h2>
-<div class="outline-text-2" id="text-org93564d1">
+<div id="outline-container-orgd32b8d3" class="outline-2">
+<h2 id="orgd32b8d3">단어를 자르지 않기</h2>
+<div class="outline-text-2" id="text-orgd32b8d3">
 <p>
 문장이 길어져서 다음 줄로 넘어갈 때
 단어를 중간에 자르면 가독성에 문제가 있을 수 있다.
@@ -129,9 +129,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org3fcb1ed" class="outline-2">
-<h2 id="org3fcb1ed">둥근 모서리</h2>
-<div class="outline-text-2" id="text-org3fcb1ed">
+<div id="outline-container-org7a4e02b" class="outline-2">
+<h2 id="org7a4e02b">둥근 모서리</h2>
+<div class="outline-text-2" id="text-org7a4e02b">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #98be65;">border-radius</span>: 8px;
 </pre>
@@ -141,9 +141,9 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-org91c74f6" class="outline-2">
-<h2 id="org91c74f6">div 블록 가운데 정렬</h2>
-<div class="outline-text-2" id="text-org91c74f6">
+<div id="outline-container-org691f310" class="outline-2">
+<h2 id="org691f310">div 블록 가운데 정렬</h2>
+<div class="outline-text-2" id="text-org691f310">
 <p>
 큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.
 </p>
@@ -156,9 +156,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org5a4ecc8" class="outline-2">
-<h2 id="org5a4ecc8">소수점 자리로 정렬</h2>
-<div class="outline-text-2" id="text-org5a4ecc8">
+<div id="outline-container-orgbae46b4" class="outline-2">
+<h2 id="orgbae46b4">소수점 자리로 정렬</h2>
+<div class="outline-text-2" id="text-orgbae46b4">
 <p>
 테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면
 아래와 같은 스타일을 추가할 수 있다.
@@ -174,9 +174,9 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-org54da315" class="outline-2">
-<h2 id="org54da315">기타 CSS 관련 외부 링크</h2>
-<div class="outline-text-2" id="text-org54da315">
+<div id="outline-container-org007fcd9" class="outline-2">
+<h2 id="org007fcd9">기타 CSS 관련 외부 링크</h2>
+<div class="outline-text-2" id="text-org007fcd9">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/hsh2001/apple-dark-mode">🌙 다크모드 웹 페이지 디자인</a></li>
 <li><a target="_blank" href="https://chasem.co/2019/09/mvp-dark-mode">Minimum viable dark mode</a></li>

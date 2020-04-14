@@ -37,7 +37,7 @@ gtag('config', 'UA-44534026-1');
 <body>
 <header class="top-header">
 <div class="logo-container">
-<img class="site-logo" src="/static/seorenn-logo.png" />
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
 <nav>
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
@@ -52,12 +52,12 @@ gtag('config', 'UA-44534026-1');
 <div class="title-date">2020년 4월 14일 작성</div>
 </header>
 <div id="table-of-contents">
-<h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org933c839">문제의 등장</a></li>
-<li><a href="#orge5a9b0f">삽질의 시작</a></li>
-<li><a href="#orgf4895df">해결</a></li>
-<li><a href="#org0a4cdc9">결론</a></li>
+<li><a href="#org126ceb7">문제의 등장</a></li>
+<li><a href="#orgeb6d791">삽질의 시작</a></li>
+<li><a href="#org64138c5">해결</a></li>
+<li><a href="#org45283f6">결론</a></li>
 </ul>
 </div>
 </div>
@@ -69,9 +69,9 @@ seorenn-publish를 개발하며 테스트 하던 도중의 사건이다.
 곧 파일을 웹 브라우저로 볼 수 있었다.
 </p>
 
-<div id="outline-container-org933c839" class="outline-2">
-<h2 id="org933c839">문제의 등장</h2>
-<div class="outline-text-2" id="text-org933c839">
+<div id="outline-container-org126ceb7" class="outline-2">
+<h2 id="org126ceb7">문제의 등장</h2>
+<div class="outline-text-2" id="text-org126ceb7">
 <p>
 별 생각 없이 지내다가 이상한 증상을 만났다.
 note 링크를 누르면 최근 수정한 순서대로 글 목록이 보여야 한다.
@@ -95,9 +95,9 @@ note 링크를 누르면 최근 수정한 순서대로 글 목록이 보여야 �
 </div>
 </div>
 
-<div id="outline-container-orge5a9b0f" class="outline-2">
-<h2 id="orge5a9b0f">삽질의 시작</h2>
-<div class="outline-text-2" id="text-orge5a9b0f">
+<div id="outline-container-orgeb6d791" class="outline-2">
+<h2 id="orgeb6d791">삽질의 시작</h2>
+<div class="outline-text-2" id="text-orgeb6d791">
 <p>
 note의 내용이 전부 보이지 않는 것은 심각한 증상이다.
 하지만 이상한 점은 일부 디렉터리의 내용만 제대로 보이지 않는다는 점이었다.
@@ -106,7 +106,7 @@ note의 내용이 전부 보이지 않는 것은 심각한 증상이다.
 
 <p>
 구글링을 해봐도 별 다른 힌트를 찾을 수 없었다.
-전부 GitHub Status를 보거나 혹은 공짜로 개인 저장소로 올린 거 아니냐는
+전부 GitHub Status를 보거나 혹은 무료 플랜으로 개인 저장소에 올린 거 아니냐는
 지극히 당연한 듯한 답변만 찾을 수 있었다.
 </p>
 
@@ -124,9 +124,9 @@ note의 내용이 전부 보이지 않는 것은 심각한 증상이다.
 </div>
 </div>
 
-<div id="outline-container-orgf4895df" class="outline-2">
-<h2 id="orgf4895df">해결</h2>
-<div class="outline-text-2" id="text-orgf4895df">
+<div id="outline-container-org64138c5" class="outline-2">
+<h2 id="org64138c5">해결</h2>
+<div class="outline-text-2" id="text-org64138c5">
 <p>
 그러다 구글링 도중에 발견했던 단어 하나가 떠올랐다.
 </p>
@@ -140,7 +140,8 @@ gh-pages
 <p>
 <code>gh-pages</code> 라는 브랜치는 각 저장소에서 GitHub 페이지에 홈페이지를 만들 수 있게
 지원하는 특수한 브랜치다. 여기다 웹 페이지 파일을 올리기만 하면
-user.github.io/projectname 이런 주소로 접속할 수 있는 웹 페이지를 서비스해 준다.
+user.github.io/projectname 이런 주소로 접속할 수 있는 웹 페이지를 서비스해
+준다. <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
 
 <p>
@@ -154,6 +155,11 @@ user.github.io/projectname 이런 주소로 접속할 수 있는 웹 페이지�
 
 <p>
 정말로 있었다.
+</p>
+
+<p>
+언제 만들었는지 기억도 안 나지만 note라는 이름의 저장소가 있었고 여기의
+<code>gh-pages</code> 라는 브랜치에 test라고 적어놓은 index.html 파일이 올려져 있었다.
 </p>
 
 <p>
@@ -172,21 +178,30 @@ user.github.io/projectname 이런 주소로 접속할 수 있는 웹 페이지�
 </p>
 
 <p>
-잘 나온다. 문제가 해결되었다.
+잘 나온다. 문제가 해결되었다. 하루라는 시간이 날아가 버렸지만 뭐 어떠하리.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0a4cdc9" class="outline-2">
-<h2 id="org0a4cdc9">결론</h2>
-<div class="outline-text-2" id="text-org0a4cdc9">
+<div id="outline-container-org45283f6" class="outline-2">
+<h2 id="org45283f6">결론</h2>
+<div class="outline-text-2" id="text-org45283f6">
 <p>
 GitHub Pages의 특정 디렉터리가 이상하게 보인다면 혹시 자신이 올린 다른 프로젝트
 저장소의 <code>gh-pages</code> 브랜치가 있는지 점검해보자.
 </p>
 </div>
 </div>
-</section>
+<div id="footnotes">
+<h2 class="footnotes">🀱 각주 (Footnotes)</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">물론 이 기능은 user.github.io 라는 도메인으로 접근할 수 있는 GitHub
+Pages와는 약간 다르게 프로젝트 저장소 별로 사이트를 만들 수 있게 지원하는 기능이다.</p></div></div>
+
+
+</div>
+</div></section>
 <hr/>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.

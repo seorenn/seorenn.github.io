@@ -308,6 +308,13 @@ hr {
 
 /* footnotes */
 
+#footnotes {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  padding: 4px;
+  border: 1px dashed #bcc2ce;
+}
+
 #footnotes sup {
   padding-left: 2rem;
   line-height: 1rem;
@@ -327,14 +334,9 @@ hr {
   line-height: 1rem;
 }
 
-#content #footnotes h2 {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 1rem;
-  border-top: 1px dotted #333;
-  font-size: 1.4rem;
+#footnotes h2 {
+  margin: 1rem;
+  font-size: 1.2rem;
 }
 
 /* backlinks */

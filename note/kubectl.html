@@ -1,0 +1,267 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>kubectl - Seorenn</title>
+<meta name="twitter:title" content="kubectl" />
+<meta name="og:title" content="kubectl" />
+<meta name="description" content="kubectl 사용법 정리" />
+<meta name="twitter:description" content="kubectl 사용법 정리" />
+<meta name="og:description" content="kubectl 사용법 정리" />
+<link rel="canonical" href="https://seorenn.github.io/note/kubectl.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/kubectl.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="/img/seorenn-logo.png" />
+<meta property="og:image" content="/img/seorenn-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" /><meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" /></head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<img class="site-logo" src="/static/seorenn-logo.png" />
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>kubectl</h1>
+<div class="title-date">2020년 4월 14일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org5cc0754">사용법 예제</a>
+<ul>
+<li><a href="#orga9870dc">포드 리스트</a></li>
+<li><a href="#orgc54b451">포드 정보 보기</a></li>
+<li><a href="#orgd028230">YAML 파일 적용</a></li>
+<li><a href="#org454c542">포드 삭제하기</a></li>
+<li><a href="#orgc376300">포드 재시작 하기</a></li>
+<li><a href="#org93cd63c">로그 보기</a></li>
+<li><a href="#orgd93faa9">포트 포워딩</a></li>
+<li><a href="#org6e24955">컨테이너의 커맨드 실행시키기</a></li>
+</ul>
+</li>
+<li><a href="#org4a4a69e">심화 예제</a>
+<ul>
+<li><a href="#org6cfc932">레코드와 롤백</a></li>
+</ul>
+</li>
+<li><a href="#orgb6e89a7">기타 외부 링크</a></li>
+</ul>
+</div>
+</div>
+<p>
+kubectl 은 Kubernetes 클러스터 컨트롤 <a href="cli.html">CLI</a> 도구다.
+이 문서에서는 이 kubectl 의 사용법 예를 몇 가지 정리한다.
+</p>
+
+<div id="outline-container-org5cc0754" class="outline-2">
+<h2 id="org5cc0754">사용법 예제</h2>
+<div class="outline-text-2" id="text-org5cc0754">
+</div>
+<div id="outline-container-orga9870dc" class="outline-3">
+<h3 id="orga9870dc">포드 리스트</h3>
+<div class="outline-text-3" id="text-orga9870dc">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl get pods
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc54b451" class="outline-3">
+<h3 id="orgc54b451">포드 정보 보기</h3>
+<div class="outline-text-3" id="text-orgc54b451">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl describe pod POD_NAME
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd028230" class="outline-3">
+<h3 id="orgd028230">YAML 파일 적용</h3>
+<div class="outline-text-3" id="text-orgd028230">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl apply -f foo/bar.yaml
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org454c542" class="outline-3">
+<h3 id="org454c542">포드 삭제하기</h3>
+<div class="outline-text-3" id="text-org454c542">
+<p>
+보통은 rescale로 0대만 동작하게 설정하는 식으로 포드를 종료 시킨다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl scale --replicas=<span style="color: #da8548; font-weight: bold;">0</span> deployment/POD_NAME
+</pre>
+</div>
+<p>
+YAML 파일이 있으면 포드 이름을 찾을 필요 없이 좀 더 쉽게 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl scale --replicas=<span style="color: #da8548; font-weight: bold;">0</span> -f foo/bar.yaml
+</pre>
+</div>
+<p>
+아예 포드를 삭제 시킬 수도 있다.
+Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl delete pod POD_NAME
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc376300" class="outline-3">
+<h3 id="orgc376300">포드 재시작 하기</h3>
+<div class="outline-text-3" id="text-orgc376300">
+<p>
+특별히 커맨드가 있는 건 아니고 아래처럼 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl edit deployment/POD_NAME
+</pre>
+</div>
+<p>
+이렇게 입력하면 에디터가 뜨는데 그냥 저장하고 종료하면 재시작 된다고 한다.
+(아직 시험 안 해봄😛)
+</p>
+</div>
+</div>
+<div id="outline-container-org93cd63c" class="outline-3">
+<h3 id="org93cd63c">로그 보기</h3>
+<div class="outline-text-3" id="text-org93cd63c">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl logs -f POD_NAME
+</pre>
+</div>
+<p>
+보통 사용하는 <code>tail -f</code> 와 비슷한 커맨드다.
+</p>
+
+<p>
+포드가 여럿인 특정 앱의 모든 로그를 보려면 아래처럼 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl logs -f -l <span style="color: #dcaeea;">app</span>=APP_NAME
+</pre>
+</div>
+<p>
+기본적으로 5개의 포드 까지만 볼 수 있게 되어있는데 에러 메시지에
+옵션(<code>--max-log-requests</code>) 정보가 나오니까 이것도 참고하자.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd93faa9" class="outline-3">
+<h3 id="orgd93faa9">포트 포워딩</h3>
+<div class="outline-text-3" id="text-orgd93faa9">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl port-forward POD_NAME PORT_NUM
+</pre>
+</div>
+<p>
+<code>PORT_NUM</code> 으로 표기한 부분은 포트 번호인데
+<code>HOST_PORT:CONTAINER_PORT</code> 와 같은 식으로 다르게 지정하는 것도 가능하다.
+</p>
+
+<p>
+포드가 아닌 서비스도 포트 포워딩이 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl port-forward svc/SERVICE_NAME PORT_NUM
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6e24955" class="outline-3">
+<h3 id="org6e24955">컨테이너의 커맨드 실행시키기</h3>
+<div class="outline-text-3" id="text-org6e24955">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl exec -it POD_NAME -- COMMAND
+</pre>
+</div>
+<p>
+<code>-it</code> 옵션을 넣었기 때문에 커맨드에 <a href="shell.html">셸</a>을
+넣으면 당연히 <a href="shell.html">셸</a>도 뜬다.
+</p>
+
+<p>
+포드가 하나 이상의 멀티 컨테이너일 경우
+<code>--container</code><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 옵션으로 골라서 접속할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">kubectl exec -it POD_NAME --container CONTAINER_NAME -- COMMAND
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4a4a69e" class="outline-2">
+<h2 id="org4a4a69e">심화 예제</h2>
+<div class="outline-text-2" id="text-org4a4a69e">
+</div>
+<div id="outline-container-org6cfc932" class="outline-3">
+<h3 id="org6cfc932">레코드와 롤백</h3>
+<div class="outline-text-3" id="text-org6cfc932">
+<p>
+<code>--record</code> 커맨드로 현재 기록을 남겨둘 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">kubectl apply -f somedeploy.yaml --record
+</pre>
+</div>
+<p>
+그리고 롤백도 쉽게 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">kubectl rollout history deploymenys some-deployment
+</pre>
+</div>
+<p>
+(다만 이것도 아직 시험 안 해봄😏)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb6e89a7" class="outline-2">
+<h2 id="orgb6e89a7">기타 외부 링크</h2>
+<div class="outline-text-2" id="text-orgb6e89a7">
+<ul class="org-ul">
+<li><a target="_blank" href="https://speakerdeck.com/thesandlord/kubernetes-best-practices">🌏 Kubernetes
+Best Practices</a> (Slides)</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">모든 명령어에서 쓸 수 있는 멀티 컨테이너 포드에서 컨테이너를
+고를 때 쓰는 옵션</p></div></div>
+
+
+</div>
+</div></section>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

@@ -45,27 +45,27 @@
 <div id="table-of-contents">
 <h2><img src="/static/icon-toc.svg" />목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org7d8426e">소개</a></li>
-<li><a href="#org23ad30d">스크립팅 노트</a>
+<li><a href="#orgc942cd2">소개</a></li>
+<li><a href="#org8566ea1">스크립팅 노트</a>
 <ul>
-<li><a href="#org80ce048">실행 가능한 스크립트</a></li>
-<li><a href="#orgad6d87c">if</a></li>
-<li><a href="#org040a64c">루프</a></li>
-<li><a href="#org8f1e18c">조건식 오퍼레이터</a></li>
-<li><a href="#org01bd06f">디렉토리 존재 유무 체크</a></li>
-<li><a href="#org1b423f2">파일 개수</a></li>
-<li><a href="#orgab4937c">와일드카드 인자 처리</a></li>
-<li><a href="#org1c80e99">에러가 나면 멈추게 하기</a></li>
-<li><a href="#org15c6568">에러 메시지 숨기기</a></li>
+<li><a href="#org26395e3">실행 가능한 스크립트</a></li>
+<li><a href="#orgcece1b0">if</a></li>
+<li><a href="#org28a5d7c">루프</a></li>
+<li><a href="#org11e597f">조건식 오퍼레이터</a></li>
+<li><a href="#org15ea49a">디렉토리 존재 유무 체크</a></li>
+<li><a href="#org0085bd2">파일 개수</a></li>
+<li><a href="#org5f24b6c">와일드카드 인자 처리</a></li>
+<li><a href="#org12a622a">에러가 나면 멈추게 하기</a></li>
+<li><a href="#orge201d16">에러 메시지 숨기기</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7d8426e" class="outline-2">
-<h2 id="org7d8426e">소개</h2>
-<div class="outline-text-2" id="text-org7d8426e">
+<div id="outline-container-orgc942cd2" class="outline-2">
+<h2 id="orgc942cd2">소개</h2>
+<div class="outline-text-2" id="text-orgc942cd2">
 <p>
 <code>sh</code> 는 Bourne Shell의 축약된 이름으로
 유닉스에서 가장 기본적으로 쓰이던 <a href="shell.html">셸</a> 이다.
@@ -74,16 +74,16 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org23ad30d" class="outline-2">
-<h2 id="org23ad30d">스크립팅 노트</h2>
-<div class="outline-text-2" id="text-org23ad30d">
+<div id="outline-container-org8566ea1" class="outline-2">
+<h2 id="org8566ea1">스크립팅 노트</h2>
+<div class="outline-text-2" id="text-org8566ea1">
 <p>
 전반적인 기준 없이 그냥 메모 단위로 기록되는 팁이다.
 </p>
 </div>
-<div id="outline-container-org80ce048" class="outline-3">
-<h3 id="org80ce048">실행 가능한 스크립트</h3>
-<div class="outline-text-3" id="text-org80ce048">
+<div id="outline-container-org26395e3" class="outline-3">
+<h3 id="org26395e3">실행 가능한 스크립트</h3>
+<div class="outline-text-3" id="text-org26395e3">
 <p>
 일반적으로 셸 스크립트를 만들면 셸을 통해서 실행하는 것이 보통이다.
 </p>
@@ -144,9 +144,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgad6d87c" class="outline-3">
-<h3 id="orgad6d87c">if</h3>
-<div class="outline-text-3" id="text-orgad6d87c">
+<div id="outline-container-orgcece1b0" class="outline-3">
+<h3 id="orgcece1b0">if</h3>
+<div class="outline-text-3" id="text-orgcece1b0">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> condition <span style="color: #51afef;">]</span>
 <span style="color: #51afef;">then</span>
@@ -185,9 +185,9 @@ AND 혹은 OR 조건은 아래처럼 할 수도 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org040a64c" class="outline-3">
-<h3 id="org040a64c">루프</h3>
-<div class="outline-text-3" id="text-org040a64c">
+<div id="outline-container-org28a5d7c" class="outline-3">
+<h3 id="org28a5d7c">루프</h3>
+<div class="outline-text-3" id="text-org28a5d7c">
 <p>
 <code>for</code> 문을 이용한 현대적인(?) 루프는 아래처럼 쓸 수 있다.
 </p>
@@ -204,9 +204,9 @@ AND 혹은 OR 조건은 아래처럼 할 수도 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org8f1e18c" class="outline-3">
-<h3 id="org8f1e18c">조건식 오퍼레이터</h3>
-<div class="outline-text-3" id="text-org8f1e18c">
+<div id="outline-container-org11e597f" class="outline-3">
+<h3 id="org11e597f">조건식 오퍼레이터</h3>
+<div class="outline-text-3" id="text-org11e597f">
 <ul class="org-ul">
 <li><code>=</code>, <code>!=</code> 문자열이 동일한지, 동일하지 않은지</li>
 <li><code>-eq</code>, <code>-ne</code>, <code>-gt</code>, <code>-ge</code>, <code>-lt</code>, <code>-le</code> 차례대로 equal, not equal, greater
@@ -221,9 +221,9 @@ than, greater than or equal, less than, less than or equal</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org01bd06f" class="outline-3">
-<h3 id="org01bd06f">디렉토리 존재 유무 체크</h3>
-<div class="outline-text-3" id="text-org01bd06f">
+<div id="outline-container-org15ea49a" class="outline-3">
+<h3 id="org15ea49a">디렉토리 존재 유무 체크</h3>
+<div class="outline-text-3" id="text-org15ea49a">
 <p>
 위에서도 정리했지만 <code>-d</code> 플래그를 쓸 수 있다.
 </p>
@@ -238,9 +238,9 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org1b423f2" class="outline-3">
-<h3 id="org1b423f2">파일 개수</h3>
-<div class="outline-text-3" id="text-org1b423f2">
+<div id="outline-container-org0085bd2" class="outline-3">
+<h3 id="org0085bd2">파일 개수</h3>
+<div class="outline-text-3" id="text-org0085bd2">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #dcaeea;">COUNT</span>=$<span style="color: #51afef;">(</span><span style="color: #ECBE7B;">ls</span> /foo/bar | wc -l<span style="color: #51afef;">)</span>
 </pre>
@@ -264,9 +264,9 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
-<div id="outline-container-orgab4937c" class="outline-3">
-<h3 id="orgab4937c">와일드카드 인자 처리</h3>
-<div class="outline-text-3" id="text-orgab4937c">
+<div id="outline-container-org5f24b6c" class="outline-3">
+<h3 id="org5f24b6c">와일드카드 인자 처리</h3>
+<div class="outline-text-3" id="text-org5f24b6c">
 <p>
 셸 스크립트에 <code>*.ext</code> 같은 파일 이름 와일드카드를 넘겼을 때
 이를 나열하는 방법을 for 커맨드로 표현하면 이렇다.
@@ -284,9 +284,9 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org1c80e99" class="outline-3">
-<h3 id="org1c80e99">에러가 나면 멈추게 하기</h3>
-<div class="outline-text-3" id="text-org1c80e99">
+<div id="outline-container-org12a622a" class="outline-3">
+<h3 id="org12a622a">에러가 나면 멈추게 하기</h3>
+<div class="outline-text-3" id="text-org12a622a">
 <p>
 셸 스크립트 상단에 아래 한 줄을 넣어두면 에러가 났을 때 스크립트가 멈춘다.
 </p>
@@ -296,9 +296,9 @@ than, greater than or equal, less than, less than or equal</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org15c6568" class="outline-3">
-<h3 id="org15c6568">에러 메시지 숨기기</h3>
-<div class="outline-text-3" id="text-org15c6568">
+<div id="outline-container-orge201d16" class="outline-3">
+<h3 id="orge201d16">에러 메시지 숨기기</h3>
+<div class="outline-text-3" id="text-orge201d16">
 <p>
 에러 메시지는 <code>stderr</code> (2) 파이프로 전달되니 이것을 지옥의 쓰레기통(?)에 던지면 된다.
 </p>

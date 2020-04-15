@@ -1,0 +1,166 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Dockerfile - Seorenn</title>
+<meta name="twitter:title" content="Dockerfile" />
+<meta name="og:title" content="Dockerfile" />
+<meta name="description" content="Dockerfile(도커 설정파일) 예제 몇 가지를 정리하는 글" />
+<meta name="twitter:description" content="Dockerfile(도커 설정파일) 예제 몇 가지를 정리하는 글" />
+<meta name="og:description" content="Dockerfile(도커 설정파일) 예제 몇 가지를 정리하는 글" />
+<link rel="canonical" href="https://seorenn.github.io/note/dockerfile.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/dockerfile.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>Dockerfile</h1>
+<div class="title-date">2020년 4월 15일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf810a27">평범한 스펙 예제</a></li>
+<li><a href="#orgb6d210f">사용자 지정</a></li>
+<li><a href="#org1890905">관련된 글들</a></li>
+</ul>
+</div>
+</div>
+<p>
+Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위한
+특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
+</p>
+
+<div id="outline-container-orgf810a27" class="outline-2">
+<h2 id="orgf810a27">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-orgf810a27">
+<div class="org-src-container">
+<pre class="src src-text">FROM debian:buster
+
+RUN apt-get update &amp;&amp; \
+    apt-get install -y build-essential python-dev python-pip
+
+ADD . /app
+
+RUN cd /app &amp;&amp; \
+    make &amp;&amp; \
+    make install &amp;&amp; \
+    pip install -r requirements.txt
+
+ENV APP_NAME "sample"
+ENV APP_VERSION "1.0"
+
+ENTRYPOINT ["/usr/local/bin/app"]
+</pre>
+</div>
+<p>
+이 이미지는 <code>debian:buster</code> 라는 리눅스 컨테이너에서
+몇 가지 빌드에 필요한 도구들과 파이썬 도구들을 설치한 후
+실제 앱을 빌드하고 실행시키는 내용을 포함하고 있다.
+</p>
+
+<p>
+<code>RUN</code> 커맨드를 여러 줄에 나누어서 적어도 관계 없지만,
+길이에 한계가 있기 때문에 이런 식으로 한 줄에 몰아서 적는 형태를 많이들 사용한다.
+</p>
+
+<p>
+<code>ADD</code> 는 현재 빌드가 진행되고 있는 디렉터리의 내용물을 이미지에 몽땅 복사한다.
+어쩌면 가장 중요한 명령이다.
+</p>
+
+<p>
+<code>ENTRYPOINT</code> 는 실제로 이미지가 기동 되면 실행되는 셸 커맨드를 기입하는 곳이다.
+이것 대신 <code>CMD</code> 로 기입할 수도 있다.
+다만 <code>CMD</code> 는 <code>ENTRYPOINT</code> 와 비교해서 한 가지 특이점이 있는데,
+만약 사용자 커맨드가 지정되면 <code>CMD</code> 로 명시한 명령어는 실행되지 않는다.
+반면 <code>ENTRYPOINT</code> 는 사용자의 커맨드를 무시하고 실행된다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb6d210f" class="outline-2">
+<h2 id="orgb6d210f">사용자 지정</h2>
+<div class="outline-text-2" id="text-orgb6d210f">
+<p>
+특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">RUN groupadd -r someuser
+RUN useradd -m -r -g someuser someuser
+USER someuser
+</pre>
+</div>
+<p>
+컨테이너가 root 유저 기반으로 돌아가니 꺼릴 게 없다.
+</p>
+</div>
+</div>
+<div id="outline-container-org1890905" class="outline-2">
+<h2 id="org1890905">관련된 글들</h2>
+<div class="outline-text-2" id="text-org1890905">
+<ul class="org-ul">
+<li><a href="docker.html">Docker</a></li>
+<li><a href="docker-compose.html">Docker Compose</a></li>
+</ul>
+</div>
+</div>
+</section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/docker-compose.html">Docker Compose</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

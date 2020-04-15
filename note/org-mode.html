@@ -1,0 +1,183 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Org Mode - Seorenn</title>
+<meta name="twitter:title" content="Org Mode" />
+<meta name="og:title" content="Org Mode" />
+<meta name="description" content="Org Mode 에 대한 소개와 문법, 관련된 글들을 정리합니다." />
+<meta name="twitter:description" content="Org Mode 에 대한 소개와 문법, 관련된 글들을 정리합니다." />
+<meta name="og:description" content="Org Mode 에 대한 소개와 문법, 관련된 글들을 정리합니다." />
+<link rel="canonical" href="https://seorenn.github.io/note/org-mode.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/org-mode.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>Org Mode</h1>
+<div class="title-date">2020년 4월 15일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org8f2701a">헤더</a></li>
+<li><a href="#orgcc65f77">기본 문법들</a></li>
+<li><a href="#org769ddbd">블럭 문법들</a></li>
+<li><a href="#org614a54b">테이블</a></li>
+<li><a href="#orgdfe253c">기타</a></li>
+<li><a href="#orgdf6a3b3">관련된 글들</a></li>
+</ul>
+</div>
+</div>
+<p>
+Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기능을 지원하는
+텍스트 기반 시스템이자 <a href="emacs.html">Emacs</a> 확장이다.
+기본적으로 아웃라인 기반의 문서를 작성할 수 있는 Outline Mode 와 함께
+다양한 기능의 마이너 모드들이 합쳐져서 만들어 진
+거대한 <a href="emacs.html">Emacs</a> 킬러 소프트웨어입니다.
+</p>
+<div id="outline-container-org8f2701a" class="outline-2">
+<h2 id="org8f2701a">헤더</h2>
+<div class="outline-text-2" id="text-org8f2701a">
+<dl class="org-dl">
+<dt><code>#+TITLE: Title Text</code></dt><dd>문서의 제목</dd>
+<dt><code>#+DESCRIPTION: Description Text</code></dt><dd>문서의 핵심을 정리하는 내용. 익스포트
+시 Meta 태그의 description 항목으로도 출력 된다.</dd>
+<dt><code>#+KEYWORDS: foo, bar, ...</code></dt><dd>문서의 핵심 단어를 정리한다.
+익스포트 시 Meta 태그의 keywords 항목으로 출력 된다.</dd>
+<dt><code>#+OPTIONS: ...</code></dt><dd>문서의 다양한 옵션을 줄 수 있다.
+예를 들어 <code>toc:2</code> 라는 옵션을 주게 될 경우
+익스포트 시 목차를 2레벨 헤더까지만 정리한다.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgcc65f77" class="outline-2">
+<h2 id="orgcc65f77">기본 문법들</h2>
+<div class="outline-text-2" id="text-orgcc65f77">
+<ul class="org-ul">
+<li><code>* Heading 1</code></li>
+<li><code>** Heading 2</code></li>
+<li><code>*** Heading 3</code></li>
+<li><code>=code=</code></li>
+<li id="<code>[[URL]]</code>">단순한 하이퍼 링크</li>
+<li id="<code>[[URL][Name]]</code>">특정 이름으로 표시되는 하이퍼 링크</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org769ddbd" class="outline-2">
+<h2 id="org769ddbd">블럭 문법들</h2>
+<div class="outline-text-2" id="text-org769ddbd">
+<ul class="org-ul">
+<li><code>#+BEGIN_SRC</code> pre 내용 <code>#+END_SRC</code></li>
+<li id="<code>#+BEGIN_SRC python</code> Python 코드의 pre 블록 <code>#+END_SRC</code>">지원되는 언어는 매우
+많다. 예를 들어 c, python, swift, lisp, bash 등등</li>
+<li><code>#+BEGIN_QUOTE</code> blockquote 내용 <code>#+END_QUOTE</code></li>
+<li id="<code>#+BEGIN_COMMENT</code> comment 내용 <code>#+END_COMMENT</code>">프로그래밍 언어의 주석과
+비슷하게 이 블럭 안의 내용은 익스포트가 되지 않는다.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org614a54b" class="outline-2">
+<h2 id="org614a54b">테이블</h2>
+<div class="outline-text-2" id="text-org614a54b">
+<p>
+아래와 같은 식으로 헤더를 쓰고
+</p>
+<div class="org-src-container">
+<pre class="src src-text">| Foo | Bar | Column |
+</pre>
+</div>
+<p>
+그 아래에 <code>|-</code> 을 쓰고 <code>TAB</code> 키를 누르면 아래처럼 테이블 형태로 바뀐다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">| Foo | Bar | Column |
+|-----+-----+--------+
+</pre>
+</div>
+<p>
+이후 엔터나 탭키를 누르는 상황에 맞게 자동으로 테이블이 만들어 진다.
+</p>
+
+<p>
+잘 활용하면 스프레드쉬트를 흉내낼 수도 있습니다.
+<a href="org-spreadsheet.html">Org 스프레드쉬트</a> 글을 참고해 보자.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdfe253c" class="outline-2">
+<h2 id="orgdfe253c">기타</h2>
+<div class="outline-text-2" id="text-orgdfe253c">
+<dl class="org-dl">
+<dt><code>-----</code></dt><dd>줄 긋기(hr 태그로 익스포트)</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgdf6a3b3" class="outline-2">
+<h2 id="orgdf6a3b3">관련된 글들</h2>
+<div class="outline-text-2" id="text-orgdf6a3b3">
+<ul class="org-ul">
+<li><a target="_blank" href="https://orgmode.org">Org Mode 공식 홈페이지</a></li>
+</ul>
+</div>
+</div>
+</section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/org-spreadsheet.html">Org 스프레드시트</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/org-publish.html">Org Publish</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

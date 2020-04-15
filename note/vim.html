@@ -1,0 +1,263 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Vim - Seorenn</title>
+<meta name="twitter:title" content="Vim" />
+<meta name="og:title" content="Vim" />
+<meta name="description" content="Vim 에디터와 관련된 글" />
+<meta name="twitter:description" content="Vim 에디터와 관련된 글" />
+<meta name="og:description" content="Vim 에디터와 관련된 글" />
+<link rel="canonical" href="https://seorenn.github.io/note/vim.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/vim.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>Vim</h1>
+<div class="title-date">2020년 4월 15일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org0322755">Vim에 관한 몇 가지 팁</a>
+<ul>
+<li><a href="#org543b066">커서키</a></li>
+<li><a href="#orgae3a88a">종료 방법</a></li>
+<li><a href="#org9025fcb">Undo/Redo</a></li>
+<li><a href="#orgac4aa1f">점프(Jump)</a></li>
+<li><a href="#org93cfd4a">인코딩</a></li>
+<li><a href="#org99cfe49">클립보드</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+vi 에디터는 아주 오래전 UNIX 용 편집기로 탄생한 텍스트 에디터다.
+그리고 Vim(Vi Improved)은 vi 에디터의 발전된 버전으로
+일단은 vi 와 Vim은 같지 않다 라고 보는 게 정석이다.
+</p>
+
+<div id="outline-container-org0322755" class="outline-2">
+<h2 id="org0322755">Vim에 관한 몇 가지 팁</h2>
+<div class="outline-text-2" id="text-org0322755">
+</div>
+<div id="outline-container-org543b066" class="outline-3">
+<h3 id="org543b066">커서키</h3>
+<div class="outline-text-3" id="text-org543b066">
+<p>
+일반적인 커서 이동키를 사용할 수도 있겠지만,
+vi나 Vim은 h, j, k, l 의 특수한 커서 이동키를 주로 사용한다.
+이 키는 아래와 같은 커서 이동키 배치로 생각할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">  k
+h   l
+  j
+</pre>
+</div>
+<p>
+한번 익숙해지면 헤어나오기 힘든 악명 높은(?) 키다.
+심지어 여기저기에서 차용하고 있는 커서 대안 이동키 이기도 합니다.
+특히 <code>j</code> 키와 <code>k</code> 키는 페이스북이나 트위터 등
+다양한 서비스에서 비슷한 용도로 사용할 수 있기도 하다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgae3a88a" class="outline-3">
+<h3 id="orgae3a88a">종료 방법</h3>
+<div class="outline-text-3" id="text-orgae3a88a">
+<p>
+뜬금없지만 vi 혹은 Vim 과 관련된 글에서 빠지지 않는 주제가 바로 이 종료
+방법이다. 실수로 vi를 열었을 때 종료하지 못 해서 우왕좌왕하는 사태가
+발생했다는 이야기는 유명하다.
+</p>
+
+<p>
+vi 혹은 Vim의 종료 방법은 보통 아래처럼 설명한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:q
+</pre>
+</div>
+<p>
+이를 풀어서 해설하자면:
+</p>
+<ul class="org-ul">
+<li><code>ESC</code> 키를 누른 후</li>
+<li><code>:</code> 를 누르고</li>
+<li><code>q</code> 를 누르고</li>
+<li>엔터를 누르면</li>
+</ul>
+<p>
+종료가 된다.
+</p>
+
+<p>
+참고로 ESC 키가 없는 특정 맥북 등에서는
+ESC 대신 <code>^[</code> 키 혹은 <code>Ctrl+[</code> 키를 눌러도 된다.
+</p>
+
+<p>
+실수로 운 좋게(?) 편집을 했다면 강제 종료의 의미로
+느낌표를 붙이면 저장 없이 그대로 종료가 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:q!
+</pre>
+</div>
+<p>
+즉 풀어서 설명하자면:
+</p>
+<ul class="org-ul">
+<li><code>ESC</code> 를 누르고</li>
+<li><code>:</code> <code>q</code> <code>!</code> 를 차례대로 누른 후</li>
+<li>엔터를 누르면</li>
+</ul>
+<p>
+강제종료가 된다.
+</p>
+</div>
+</div>
+<div id="outline-container-org9025fcb" class="outline-3">
+<h3 id="org9025fcb">Undo/Redo</h3>
+<div class="outline-text-3" id="text-org9025fcb">
+<ul class="org-ul">
+<li><code>u</code> Undo (소문자 u 주의)</li>
+<li><code>U</code> Undo current line (현재 라인의 Undo, 대문자 U 주의)</li>
+<li><code>^R</code> Redo (Ctrl+R)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac4aa1f" class="outline-3">
+<h3 id="orgac4aa1f">점프(Jump)</h3>
+<div class="outline-text-3" id="text-orgac4aa1f">
+<ul class="org-ul">
+<li><code>f [character]</code> 현재 라인에서 해당 문자로 점프</li>
+<li><code>F [character]</code> 현재 라인에서 해당 문자로 역방향 점프</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93cfd4a" class="outline-3">
+<h3 id="org93cfd4a">인코딩</h3>
+<div class="outline-text-3" id="text-org93cfd4a">
+<p>
+맥 등 윈도가 아닌 OS에서 만약 텍스트 파일을 열었는데
+한글이 깨져 보인다면 아래 커맨드를 시험해보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:e ++enc=euc-kr
+</pre>
+</div>
+<p>
+만약 이걸로 안 된다면 <code>.vimrc</code> 파일에서 <code>fencs</code> 설정이 어떤지 확인해 보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">set fencs=ucs-bom,utf-8,euc-kr,cp949
+</pre>
+</div>
+<p>
+이런 내용이 있다면 아마도 되어야 정상이다.
+없다면 추가하자.
+참고로 <code>euc-kr</code> 과 <code>cp949</code> 는 사실상 같은 거라 맞는 쪽으로 하나만 써도 된다.
+</p>
+
+<p>
+파일을 다시 <code>utf-8</code> 으로 저장하고 싶다면
+비슷하게 아래 커맨드를 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">:w ++enc=euc-kr
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org99cfe49" class="outline-3">
+<h3 id="org99cfe49">클립보드</h3>
+<div class="outline-text-3" id="text-org99cfe49">
+<p>
+터미널에서 vim으로 특정 텍스트를 복사하거나
+혹은 붙여넣기를 할 때
+시스템 클립보드(혹은 Pasteboard)에 복사가 안 되는 경우나
+혹은 엉뚱한 내용이 붙이기 되는 경우가 있다.
+이럴 때는 아래 설정 한 줄을 넣어보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">set clipboard=unnamed
+</pre>
+</div>
+<p>
+이후 <a href="macos.html">macOS</a>에서는 복사 및 붙이기가 잘 된다.
+neovim 등에서는 안 되는 경우도 있으니 주의하자.
+</p>
+</div>
+</div>
+</div>
+</section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/tmux.html">Tmux</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/spacemacs.html">Spacemacs</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Emacs - Seorenn</title>
+<meta name="twitter:title" content="Emacs" />
+<meta name="og:title" content="Emacs" />
+<meta name="description" content="Emacs(이맥스)에 관한 대략적인 설명과 관련된 글들, 그리고 몇 가지 트러블슈팅 메모를 정리합니다." />
+<meta name="twitter:description" content="Emacs(이맥스)에 관한 대략적인 설명과 관련된 글들, 그리고 몇 가지 트러블슈팅 메모를 정리합니다." />
+<meta name="og:description" content="Emacs(이맥스)에 관한 대략적인 설명과 관련된 글들, 그리고 몇 가지 트러블슈팅 메모를 정리합니다." />
+<link rel="canonical" href="https://seorenn.github.io/note/emacs.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/emacs.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>Emacs</h1>
+<div class="title-date">2020년 4월 15일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org75e9185">메모</a>
+<ul>
+<li><a href="#org2bb7723">멈추는 현상(freezing) 디버깅 하기</a></li>
+<li><a href="#org4eb42cd">터미널에서 트루컬러 이맥스 사용하기</a></li>
+<li><a href="#org95f4454">Tmux 안의 이맥스에서 트루컬러 사용하기</a></li>
+<li><a href="#orgd8176c1">CRLF to LF</a></li>
+<li><a href="#orge2fcd44">셸에서 이맥스 스크립트 실행시키기</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+이맥스(Emacs)는 커스터마이징이 가능한 유명한 에디터 중 하나다.
+이름의 유래는 <code>Editor MACroS</code> 의 약자로 에디터 매크로 모음이라고 해석할 수 있다.
+실제로 이맥스 자체는 C로 구현된 Emacs Core 엔진과
+이를 이용해 작성된 수 많은 <a href="emacs-lisp.html">Emacs Lisp</a> 코드들로 구성되어 있다.
+</p>
+
+<p>
+그런데 편집기 라기 보다는 플랫폼<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+혹은 환경에 가까운 도구이기 때문에 설정이 굉장히 난해한 편이다.
+처음 시도한다면 누군가 공개한 설정을 따라하거나 혹은
+Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
+</p>
+
+<div id="outline-container-org75e9185" class="outline-2">
+<h2 id="org75e9185">메모</h2>
+<div class="outline-text-2" id="text-org75e9185">
+</div>
+<div id="outline-container-org2bb7723" class="outline-3">
+<h3 id="org2bb7723">멈추는 현상(freezing) 디버깅 하기</h3>
+<div class="outline-text-3" id="text-org2bb7723">
+<p>
+모종의 사유로 인해 Emacs 가 멈췄을 경우 <code>SIGUSR2</code> 신호를 주면
+back-trace를 얻을 수도 있다.
+</p>
+
+<p>
+<a href="macos.html">macOS</a>에서는 터미널에서 아래 커맨드를 입력하면 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">pkill</span> -SIGUSR2 Emacs
+</pre>
+</div>
+<p>
+리눅스에서는 대소문자 정도만 좀 다를 것 같다.
+</p>
+
+<p>
+위의 방법 외에도 <code>debug-on-quit</code> 값을 non-nil 로 세팅해둔 상태에서는
+<code>C-g</code> (Exit) 키가 눌릴 때 마다 현재 동작 중인 코드가 break 걸린다.
+이렇게 해서 back-trace를 얻을 수 있기도 하다.
+</p>
+
+<p>
+이것도 안 통하면 대체로 C 코드로 작성된 코어 부분의 무한 루프 가능성이 크다.
+이럴 때는 그냥 pkill로 프로세스를 죽여버리는 것이 나은 결과를 보일 때도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">pkill</span> Emacs
+</pre>
+</div>
+<p>
+이 경우 정확한 트레이스를 얻기는 힘들지도 모르지만
+크래시 상태에서 빠져나올 수도 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-org4eb42cd" class="outline-3">
+<h3 id="org4eb42cd">터미널에서 트루컬러 이맥스 사용하기</h3>
+<div class="outline-text-3" id="text-org4eb42cd">
+<p>
+iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제대로 지원하기 위해서
+약간의 트윅이 필요하다. 참고로 이 트윅은 <a href="macos.html">macOS</a>에서 확인 되었습니다.
+</p>
+
+<p>
+우선 <code>xterm-24bit.terminfo</code> 라는 파일을 만들고 아래 내용을 붙여 넣는다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">xterm-24bit|xterm with 24-bit direct color mode,
+   use=xterm-256color,
+   sitm=\E[3m,
+   ritm=\E[23m,
+   setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&amp;%d;%p1%{255}%&amp;%dm,
+   setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&amp;%d;%p1%{255}%&amp;%dm,
+</pre>
+</div>
+<p>
+그 다음 터미널에서 아래 커맨드를 입력한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tic -x -o ~/.terminfo xterm-24bit.terminfo
+</pre>
+</div>
+<p>
+이제 <code>xterm-24bit</code> 라는 터미널 모드를 사용할 수 있다.
+아래의 커맨드로 현재 <a href="shell.html">셸</a>의 터미널 타입을 바꿀 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">TERM</span>=<span style="color: #98be65;">"xterm-24bit"</span>
+</pre>
+</div>
+<p>
+이후 <code>emacs -nw</code> 커맨드로 터미널에서 이맥스를 실행시켜서 확인해보자.
+참고로 <code>-nw</code> 옵션은 이맥스를 터미널에서 돌릴 수 있게 해주는 옵션이다.
+</p>
+
+<p>
+잘 동작한다면 위 내용을 <code>.zshrc</code> 나 <code>.bashrc</code> 같은 <a href="shell.html">셸</a>
+초기화 스크립트에 넣는 식으로 적절히 설정해보자.
+</p>
+
+<p>
+다만, 특정 터미널 도구에서 24bit 색상 모드는 문제가 발생하는 경우가 있다.
+이럴 때는 트루컬러를 사용할 소프트웨어에만 위 터미널 모드를 적용하도록 하는
+방법이 있습니다. 예를 들어 emacs 에 트루컬러 모드를 적용하기 위해 아래 alias 를
+만들 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #c678dd;">alias</span> <span style="color: #dcaeea;">emacs</span>=<span style="color: #98be65;">"TERM=xterm-24bit /usr/local/bin/emacs"</span>
+</pre>
+</div>
+<p>
+이렇게 하면 이 alias가 적용된 셸에서 emacs 커맨드는 항상 트루컬러 모드로 동작하게
+된다. 물론 emacs의 경로는 자신의 상황에 맞게 정확하게 입력해야 한다.
+</p>
+</div>
+</div>
+<div id="outline-container-org95f4454" class="outline-3">
+<h3 id="org95f4454">Tmux 안의 이맥스에서 트루컬러 사용하기</h3>
+<div class="outline-text-3" id="text-org95f4454">
+<p>
+<a href="tmux.html">Tmux</a> 안에서 기동시킬 경우 색상이 이상하게 표시될 수 있다.
+이 경우 아마도 <a href="tmux.html">Tmux</a>가 사용하는
+screen-256 이라는 터미널 타입의 문제로 추측된다.
+이 경우도 위와 비슷한 방법으로 해결할 수도 있다.
+</p>
+
+<p>
+우선 tmux 설정에 아래 내용을 추가합니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">set -ga terminal-overrides ",st-256color:Tc"
+</pre>
+</div>
+<p>
+이후 tmux 를 재시작 하거나 위 설정을 따로 불러들이도록 한다.
+</p>
+
+<p>
+다음으로 아래 내용을 <code>screen-24bit.terminfo</code> 라는 파일로 작성한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text"># From [[info:efaq#Colors%20on%20a%20TTY][Colors on a TTY]]
+# Use colon separators.
+screen-24bit|screen with 24-bit direct color mode,
+  use=screen-256color,
+  setb24=\E[48:2:%p1%{65536}%/%d:%p1%{256}%/%{255}%&amp;%d:%p1%{255}%&amp;%dm,
+  setf24=\E[38:2:%p1%{65536}%/%d:%p1%{256}%/%{255}%&amp;%d:%p1%{255}%&amp;%dm,
+# Use semicolon separators.
+screen-24bits|screen with 24-bit direct color mode,
+  use=screen-256color,
+  setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&amp;%d;%p1%{255}%&amp;%dm,
+  setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&amp;%d;%p1%{255}%&amp;%dm,
+</pre>
+</div>
+<p>
+그리고 위에서 작성한 파일이 있는 디렉토리에서 아래 커맨드를 실행한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">tic -x screen-24bit.terminfo
+</pre>
+</div>
+<p>
+이제 <code>screen-24bit</code> 라는 터미널 타입이 생겼다.
+emacs 를 아래 커맨드로 실행시켜 보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #dcaeea;">TERM</span>=screen-24bit emacs -nw
+</pre>
+</div>
+<p>
+잘 된다면 이제 나머지는 원하는 대로 설정하는 것 뿐이다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8176c1" class="outline-3">
+<h3 id="orgd8176c1">CRLF to LF</h3>
+<div class="outline-text-3" id="text-orgd8176c1">
+<p>
+요즘은 별로 그럴 일은 없겠지만,
+개행문자가 DOS 파일 타입(CRLF)과
+UNIX 파일 타입(LF)은 차이가 있기 때문에
+이를 변환하는 방법이 정말 간혹 필요하다.
+</p>
+
+<p>
+이를 변환하려면 file coding system을 바꿔주면 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">M-x set-buffer-file-coding-system
+</pre>
+</div>
+<p>
+이러면 타입을 물어오는데
+LF를 쓰고 싶다면 <code>utf-8-unix</code> 를,
+CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
+</p>
+</div>
+</div>
+<div id="outline-container-orge2fcd44" class="outline-3">
+<h3 id="orge2fcd44">셸에서 이맥스 스크립트 실행시키기</h3>
+<div class="outline-text-3" id="text-orge2fcd44">
+<p>
+특정 <a href="emacs-lisp.html">Emacs Lisp</a>의 특정 함수 하나를 <a href="shell.html">셸</a>에서 실행하고 싶은 경우
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs -e <span style="color: #98be65;">'function'</span>
+</pre>
+</div>
+<p>
+커맨드로 실행시킬 수 있는데,
+<a href="shell.html">셸</a>에 따라 괄호를 쓰면 이스케이프 되는 경우도 있어서
+인자가 없는 함수 하나를 실행시킬 경우에만 유용했다.
+</p>
+
+<p>
+순수하게 <a href="emacs-lisp.html">Emacs Lisp</a> 스크립트 파일만 실행시키고 싶다면
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs --script FILE
+</pre>
+</div>
+<p>
+이런 명령으로 실행시킬 수 있는데,
+이 명령의 특징은 모든 site 파일과 설정을
+읽어 들이지 않은 매우 순수한 상태<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>에서
+동작한다는 점이다.
+따라서 실행시키려는 스크립트에서 개인 설정 내용이 필요하다면 쓰기엔 힘든 커맨드다.
+</p>
+
+<p>
+만약 개인 설정을 읽어들인 상태로 스크립트를 실행하고 싶다면
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs --load FILE
+</pre>
+</div>
+<p>
+이런 커맨드를 사용할 수 있다.
+이 커맨드는 Emacs가 시작하면서 실행되기 때문에
+거의 모든 환경<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>이
+갖춰진 상태로 돌아간다는 특징이 있지만, 인터페이스가 뜨기 때문에 <a href="shell.html">셸</a> 커맨드로 보기엔
+무리가 있는 것 같다.
+</p>
+
+<p>
+<code>--load</code> 커맨드로 스크립트를 실행시키고 Emacs를 자동으로 종료시키고 싶다면
+<code>kill-emacs</code> 함수를 적절히 이용하는 방법이 있긴 하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #51afef;">progn</span>
+  (do-something)
+  (do-blah-blah)
+  (kill-emacs))
+</pre>
+</div>
+<p>
+이런 식의 스크립트를 돌리면 스크립트가 다 실행된 후 Emacs가 종료된다.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">🀱 각주 (Footnotes)</h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">흑자는 OS라고 표현하기도 한다.</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">-q 옵션을 사용한 것과 비슷하다</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">Doom Emacs에서는 컬러 테마는 로딩이 안 된 상태로 동작합니다</p></div></div>
+
+
+</div>
+</div></section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/magit.html">Magit</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/org-publish.html">Org Publish</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/tmux.html">Tmux</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/spacemacs.html">Spacemacs</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

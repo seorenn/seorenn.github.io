@@ -51,29 +51,259 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Emacs Lisp</h1>
-<div class="title-date">2020년 4월 15일 수정</div>
+<div class="title-date">2020년 4월 16일 수정</div>
 </header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org1d46fc4">개념 메모</a>
+<ul>
+<li><a href="#org6e7fee6">샤프(Sharpsign)</a></li>
+<li><a href="#orgd12bbbd">단 따옴표(Single Quote)</a></li>
+<li><a href="#org4bd4d2d">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
+<li><a href="#orga8036f2">apply vs funcall</a></li>
+<li><a href="#orgc4b0a9e">Character</a></li>
+</ul>
+</li>
+<li><a href="#org58003ad">에러 노트</a>
+<ul>
+<li><a href="#orgff14de1">commandp</a></li>
+<li><a href="#org7d521ff">안 쓰는 매개변수</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <p>
 Emacs Lisp은 이름 처럼 <a href="emacs.html">Emacs</a>에서 사용할 수 있는
 Lisp 언어를 의미한다.
 물론 표준 Common Lisp에 <a href="emacs.html">Emacs</a>의 다양한 함수가 지원되는
 형태라서 Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
+
+<div id="outline-container-org1d46fc4" class="outline-2">
+<h2 id="org1d46fc4">개념 메모</h2>
+<div class="outline-text-2" id="text-org1d46fc4">
+</div>
+<div id="outline-container-org6e7fee6" class="outline-3">
+<h3 id="org6e7fee6">샤프(Sharpsign)</h3>
+<div class="outline-text-3" id="text-org6e7fee6">
+<p>
+<code>#</code> (Sharpsign) 은 s-expressions 특수 문법이다.
+근데 뭔 소린지 하나도 모르겠다.
+사실 당연하다.
+<code>#</code> 은 그 자체만으론 의미가 없고 뒤에 뭐가 오는지에 따라 달라지기 때문이다.
+</p>
+
+<p>
+에를 들어 <code>#(1 2 3)</code> 은 벡터(Vector),
+<code>#'function-name</code> 의 경우는 function abbreviation 으로 불린다.
+</p>
+
+<p>
+자세한 내용은
+<a target="_blank" href="http://www.lispworks.com/documentation/HyperSpec/Body/02_dh.htm">Sharpsign</a>
+글을 참고하자.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd12bbbd" class="outline-3">
+<h3 id="orgd12bbbd">단 따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-orgd12bbbd">
+<p>
+단 따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용한다.
+예를 들어 <code>(1 2 3)</code> 이라는 리스트를 메시지로 출력하고 싶어서
+아래 코드를 작성했다고 가정해 보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">print</span> <span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+그런데 위 코드는 <code>1</code> 이라는 함수를 찾을 수 없다는 오류가 난다.
+이는 <code>(1 2 3)</code> 리스트가 print 함수 호출 시점에 먼저 실행(evaluation)되어 버리기 때문이다.
+참고로 Lisp의 리스트의 첫 아이템은 함수가 위치한다.
+</p>
+
+<p>
+하지만 이를 아래처럼 고치면 원하는대로 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">print</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+단 따옴표를 붙인 <code>'(1 2 3)</code> 리스트는 바로 실행되는 게 아니라
+인용 처리가 되어서 실행(evaluation)되지 않은 리스트 형태로 넘어가게 된다.
+</p>
+
+<p>
+참고로 인용 처리된 리스트는
+<code>eval</code> 함수를 이용하면 원래의 리스트(?)대로 만들 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">eval</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+위 코드는 처음과 같이 <code>1</code> 이라는 함수가 없다는 오류가 난다.
+</p>
+</div>
+</div>
+<div id="outline-container-org4bd4d2d" class="outline-3">
+<h3 id="org4bd4d2d">샤프 단 따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org4bd4d2d">
+<p>
+<code>#'function-name</code> 의 의미는
+<code>(function function-name)</code> 을 줄여서 표기한 것이다.
+다르게 말해서 함수를 심볼 형태로 넘기기 위한 것이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">do-what</span> <span style="color: #c678dd;">(</span>f<span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">funcall</span> f <span style="color: #98be65;">"test"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">(</span>do-what <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">message</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+보통은 이렇게 매크로나 C의 함수 포인터(?)를 넘기는 스타일과 비슷하게 쓸 수
+있다.
+물론 위의 경우 <code>#'</code> 대신 그냥 <code>'</code> 만 써도 문제 없이 동작한다.
+다만 <code>#'</code> 의 경우 컴파일러에게
+이것은 함수다 라는 것을 명시적으로 알려 주는 의미도 있다고 한다.
+</p>
+</div>
+</div>
+<div id="outline-container-orga8036f2" class="outline-3">
+<h3 id="orga8036f2">apply vs funcall</h3>
+<div class="outline-text-3" id="text-orga8036f2">
+<p>
+위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있다.
+사용 방법도 거의 동일하다.
+하지만 매개변수를 그대로 받냐 아니면 리스트로 받냐의 차이가 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">funcall</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">+</span> <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+위의 것을 <code>apply</code> 를 이용해 구현하면 아래와 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">apply</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">+</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+두 코드 다 6을 반환 한다.
+</p>
+
+<p>
+이를 이용해 함수에서 매개변수를 넘기는 방법도 조금 다르다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">do-what-apply</span> <span style="color: #c678dd;">(</span>what <span style="color: #ECBE7B;">&amp;rest</span> args<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">apply</span> what args<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">do-what-funcall</span> <span style="color: #c678dd;">(</span>what arg<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">funcall</span> what arg<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">(</span>do-what-apply <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">message</span> <span style="color: #98be65;">"test-apply"</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">(</span>do-what-funcall <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">message</span> <span style="color: #98be65;">"test-funcall"</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4b0a9e" class="outline-3">
+<h3 id="orgc4b0a9e">Character</h3>
+<div class="outline-text-3" id="text-orgc4b0a9e">
+<p>
+<a href="emacs.html">Emacs</a>에서 문자는 ASCII 번호로 표현된다.
+즉 숫자다.
+만약 특정 ASCII 코드가 기억나지 않는다면
+<code>?</code> 를 붙여서 표현할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">eq</span> ?A <span style="color: #da8548; font-weight: bold;">65</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+A는 65이기 때문에 위 코드는 참을 반환한다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org58003ad" class="outline-2">
+<h2 id="org58003ad">에러 노트</h2>
+<div class="outline-text-2" id="text-org58003ad">
+</div>
+<div id="outline-container-orgff14de1" class="outline-3">
+<h3 id="orgff14de1">commandp</h3>
+<div class="outline-text-3" id="text-orgff14de1">
+<blockquote>
+<p>
+Wrong type argument: commandp, your-function
+</p>
+</blockquote>
+<p>
+<code>commandp</code> 에 대한 문서를 보면 알 수 있지만
+이 경우 your-function이라는 함수가 interactive 하지 않아서
+발생한 문제일 가능성이 높다.
+이 경우 interactive를 넣어주면 해결될 수도 있습니다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">your-function</span> <span style="color: #c678dd;">(</span>...<span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #51afef;">interactive</span><span style="color: #c678dd;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&lt;- THIS</span>
+  ...<span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7d521ff" class="outline-3">
+<h3 id="org7d521ff">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-org7d521ff">
+<p>
+예를 들어 아래와 같은 코드에서
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> <span style="color: #c678dd;">(</span>foo bar<span style="color: #c678dd;">)</span>
+  ...<span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+<code>bar</code> 라는 매개변수를 사용하지 않으면 아래와 같은 경고를 볼 수 있다.
+</p>
+<blockquote>
+<p>
+Unused lexical argument 'bar'
+</p>
+</blockquote>
+<p>
+이런 경고 메세지를 귀찮다면 매개변수 이름 앞에 밑줄(underscope 혹은 under-line)을
+붙이면 경고가 사라진다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">somefunc</span> <span style="color: #c678dd;">(</span>foo _bar<span style="color: #c678dd;">)</span>
+  ...<span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+위 처럼 <code>bar</code> 대신 <code>_bar</code> 라고 적으면 안 쓰든 말든 상관하지 않는다.
+</p>
+</div>
+</div>
+</div>
 </section>
 <hr /><div class="backlinks-container">
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
 <div class="article-link-date">
 2020년 4월 16일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
 <div class="article-link-date">
-2020년 4월 15일 수정</div>
+2020년 4월 16일 수정</div>
 </div>
 </div>
 </div>

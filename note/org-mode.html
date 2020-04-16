@@ -51,17 +51,26 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Org Mode</h1>
-<div class="title-date">2020년 4월 15일 수정</div>
+<div class="title-date">2020년 4월 16일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org956ee54">헤더</a></li>
-<li><a href="#orgab35ce3">기본 문법들</a></li>
-<li><a href="#org384f214">블럭 문법들</a></li>
-<li><a href="#org72b022c">테이블</a></li>
-<li><a href="#orgd774a2d">기타</a></li>
-<li><a href="#orge3e7f1e">관련된 글들</a></li>
+<li><a href="#orgf71d80b">설정 팁</a>
+<ul>
+<li><a href="#orgd111e3c">링크 렌더링 하지 않기</a></li>
+</ul>
+</li>
+<li><a href="#org44eae03">문법</a>
+<ul>
+<li><a href="#org3e88716">헤더</a></li>
+<li><a href="#org90245cf">기본 문법들</a></li>
+<li><a href="#orgf1e1bc3">블록 문법들</a></li>
+<li><a href="#org18aa7a7">테이블</a></li>
+<li><a href="#orgace7a90">기타</a></li>
+</ul>
+</li>
+<li><a href="#org35761a0">관련된 글들</a></li>
 </ul>
 </div>
 </div>
@@ -72,9 +81,39 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 다양한 기능의 마이너 모드들이 합쳐져서 만들어 진
 거대한 <a href="emacs.html">Emacs</a> 킬러 소프트웨어입니다.
 </p>
-<div id="outline-container-org956ee54" class="outline-2">
-<h2 id="org956ee54">헤더</h2>
-<div class="outline-text-2" id="text-org956ee54">
+
+<div id="outline-container-orgf71d80b" class="outline-2">
+<h2 id="orgf71d80b">설정 팁</h2>
+<div class="outline-text-2" id="text-orgf71d80b">
+</div>
+<div id="outline-container-orgd111e3c" class="outline-3">
+<h3 id="orgd111e3c">링크 렌더링 하지 않기</h3>
+<div class="outline-text-3" id="text-orgd111e3c">
+<p>
+<a href="doom-emacs.html">Doom Emacs</a>나 <a href="spacemacs.html">Spacemacs</a>의
+기본 설정 상태에서는 링크가 자동으로 렌더링 되어서 보기
+편하게 바뀐다. 예를 들어 <code>[[https://foo.bar][link name]]</code> 같은 코드는
+<code>link name</code> 으로만 표시된다.
+하지만 읽기는 편한데 이걸 수정해야 할 때는 좀 귀찮다.
+이럴 때는 아래 설정으로 렌더링 되지 않게 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-link-descriptive</span> nil<span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+이러면 링크 텍스트가 그대로 표시되기 때문에 수정 하기에는 좀 더 편하다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org44eae03" class="outline-2">
+<h2 id="org44eae03">문법</h2>
+<div class="outline-text-2" id="text-org44eae03">
+</div>
+<div id="outline-container-org3e88716" class="outline-3">
+<h3 id="org3e88716">헤더</h3>
+<div class="outline-text-3" id="text-org3e88716">
 <dl class="org-dl">
 <dt><code>#+TITLE: Title Text</code></dt><dd>문서의 제목</dd>
 <dt><code>#+DESCRIPTION: Description Text</code></dt><dd>문서의 핵심을 정리하는 내용. 익스포트
@@ -87,9 +126,9 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </dl>
 </div>
 </div>
-<div id="outline-container-orgab35ce3" class="outline-2">
-<h2 id="orgab35ce3">기본 문법들</h2>
-<div class="outline-text-2" id="text-orgab35ce3">
+<div id="outline-container-org90245cf" class="outline-3">
+<h3 id="org90245cf">기본 문법들</h3>
+<div class="outline-text-3" id="text-org90245cf">
 <ul class="org-ul">
 <li><code>* Heading 1</code></li>
 <li><code>** Heading 2</code></li>
@@ -100,22 +139,20 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </ul>
 </div>
 </div>
-<div id="outline-container-org384f214" class="outline-2">
-<h2 id="org384f214">블럭 문법들</h2>
-<div class="outline-text-2" id="text-org384f214">
-<ul class="org-ul">
-<li><code>#+BEGIN_SRC</code> pre 내용 <code>#+END_SRC</code></li>
-<li id="<code>#+BEGIN_SRC python</code> Python 코드의 pre 블록 <code>#+END_SRC</code>">지원되는 언어는 매우
-많다. 예를 들어 c, python, swift, lisp, bash 등등</li>
-<li><code>#+BEGIN_QUOTE</code> blockquote 내용 <code>#+END_QUOTE</code></li>
-<li id="<code>#+BEGIN_COMMENT</code> comment 내용 <code>#+END_COMMENT</code>">프로그래밍 언어의 주석과
-비슷하게 이 블럭 안의 내용은 익스포트가 되지 않는다.</li>
-</ul>
+<div id="outline-container-orgf1e1bc3" class="outline-3">
+<h3 id="orgf1e1bc3">블록 문법들</h3>
+<div class="outline-text-3" id="text-orgf1e1bc3">
+<dl class="org-dl">
+<dt><code>#+BEGIN_SRC</code> pre 내용 <code>#+END_SRC</code></dt><dd>코드 블록</dd>
+<dt><code>#+BEGIN_SRC python</code> Python 코드의 pre 블록 <code>#+END_SRC</code></dt><dd>지원되는 언어는 매우 많다. 예를 들어 c, python, swift, lisp, bash 등등</dd>
+<dt><code>#+BEGIN_QUOTE</code> blockquote 내용 <code>#+END_QUOTE</code></dt><dd>인용 블록</dd>
+<dt><code>#+BEGIN_COMMENT</code> comment 내용 <code>#+END_COMMENT</code></dt><dd>프로그래밍 언어의 주석과 비슷하게 이 블럭 안의 내용은 익스포트가 되지 않는다.</dd>
+</dl>
 </div>
 </div>
-<div id="outline-container-org72b022c" class="outline-2">
-<h2 id="org72b022c">테이블</h2>
-<div class="outline-text-2" id="text-org72b022c">
+<div id="outline-container-org18aa7a7" class="outline-3">
+<h3 id="org18aa7a7">테이블</h3>
+<div class="outline-text-3" id="text-org18aa7a7">
 <p>
 아래와 같은 식으로 헤더를 쓰고
 </p>
@@ -141,17 +178,18 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </p>
 </div>
 </div>
-<div id="outline-container-orgd774a2d" class="outline-2">
-<h2 id="orgd774a2d">기타</h2>
-<div class="outline-text-2" id="text-orgd774a2d">
+<div id="outline-container-orgace7a90" class="outline-3">
+<h3 id="orgace7a90">기타</h3>
+<div class="outline-text-3" id="text-orgace7a90">
 <dl class="org-dl">
 <dt><code>-----</code></dt><dd>줄 긋기(hr 태그로 익스포트)</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-orge3e7f1e" class="outline-2">
-<h2 id="orge3e7f1e">관련된 글들</h2>
-<div class="outline-text-2" id="text-orge3e7f1e">
+</div>
+<div id="outline-container-org35761a0" class="outline-2">
+<h2 id="org35761a0">관련된 글들</h2>
+<div class="outline-text-2" id="text-org35761a0">
 <ul class="org-ul">
 <li><a target="_blank" href="https://orgmode.org">Org Mode 공식 홈페이지</a></li>
 </ul>

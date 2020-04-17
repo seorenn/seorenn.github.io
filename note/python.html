@@ -1,0 +1,236 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Python - Seorenn</title>
+<meta name="twitter:title" content="Python" />
+<meta name="og:title" content="Python" />
+<meta name="description" content="Python(파이썬)에 관한 간략한 설명 및 자료 정리" />
+<meta name="twitter:description" content="Python(파이썬)에 관한 간략한 설명 및 자료 정리" />
+<meta name="og:description" content="Python(파이썬)에 관한 간략한 설명 및 자료 정리" />
+<link rel="canonical" href="https://seorenn.github.io/note/python.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/python.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>Python</h1>
+<div class="title-date">2020년 4월 17일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbfe2f28">설치</a></li>
+<li><a href="#org682bb9e">버전 별 정리</a>
+<ul>
+<li><a href="#org2f8684e">3.8</a></li>
+</ul>
+</li>
+<li><a href="#org9b050f8">메모</a>
+<ul>
+<li><a href="#orgfabf8df">List Comprehension</a></li>
+<li><a href="#org4ba97a9">파일 혹은 디렉토리(폴더) 관련</a></li>
+</ul>
+</li>
+<li><a href="#org0cc0243">외부 링크</a></li>
+</ul>
+</div>
+</div>
+<p>
+파이썬(Python)은 네덜란드 출신의 귀도 반 로썸(Guide van Rossum)에 의해 탄생한
+프로그래밍 언어다.
+동적 타이핑을 사용하는 인터프리터 언어라는 점도 특징이지만,
+역시 들여쓰기를 블록 구분으로 사용하는 것을 문법으로 강제하는
+언어라는 점이 가장 큰 특징이다.
+</p>
+
+<div id="outline-container-orgbfe2f28" class="outline-2">
+<h2 id="orgbfe2f28">설치</h2>
+<div class="outline-text-2" id="text-orgbfe2f28">
+<p>
+<a href="macos.html">macOS</a> 의 경우
+<a href="homebrew.html">Homebrew</a> 를 통해 설치하거나
+혹은 <a href="pyenv.html">pyenv</a> 로 쉽게 설치할 수 있다.
+</p>
+
+<p>
+다만 최근 <a href="homebrew.html">Homebrew</a> 를 통해 설치하는 경우
+3.x 버전이 설치되며 python3 라는 이름으로만 실행시킬 수 있게 설치된다.
+즉 python 커맨드로 실행되는 버전은 시스템의 기본 파이썬 바이너리다.
+만약 python 커맨드로 새로 설치한 파이썬 3를 실행시키고자
+한다면 아래와 같은 경로 설정을 추가해야 한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PATH</span>=<span style="color: #98be65;">"/usr/local/opt/python/libexec/bin:</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">PATH</span><span style="color: #98be65;">"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org682bb9e" class="outline-2">
+<h2 id="org682bb9e">버전 별 정리</h2>
+<div class="outline-text-2" id="text-org682bb9e">
+</div>
+<div id="outline-container-org2f8684e" class="outline-3">
+<h3 id="org2f8684e">3.8</h3>
+<div class="outline-text-3" id="text-org2f8684e">
+<dl class="org-dl">
+<dt><code>:=</code> (Walrus) 오페레이터</dt><dd>좁은(?) 지역 변수.
+<a href="swift.html">Swift</a> 의 <code>if let</code> 과 용도가 비슷하다.
+조건문 뿐만 아니라 List Comprehension 등에서도 활용이 가능하다.</dd>
+<dt>f-string 추가 표현식</dt><dd><code>f'name={value}'</code> 대신 <code>f'{name</code>}'= 문법을 사용할 수
+있다.
+관련된 내용은 <a target="_blank" href="https://seorenn.tistory.com/76">Python에 F-string 이라는 게 있었다?</a> 글을 참고해보자.</dd>
+<dt><code>/</code> 오퍼레이터</dt><dd>함수 매개변수 리스트 구분자.
+<code>f(a, b, /, c, d, *, e, f)</code> 매개변수를 나열할 때
+<code>/</code> 앞쪽은 위치로만 표기 가능하며,
+<code>/</code> 와 <code>*</code> 사이는 위치와 키워드 관계 없이 사용 가능,
+<code>*</code> 이후는 키워드 표기법만 사용 가능하다.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org9b050f8" class="outline-2">
+<h2 id="org9b050f8">메모</h2>
+<div class="outline-text-2" id="text-org9b050f8">
+</div>
+<div id="outline-container-orgfabf8df" class="outline-3">
+<h3 id="orgfabf8df">List Comprehension</h3>
+<div class="outline-text-3" id="text-orgfabf8df">
+</div>
+<ul class="org-ul">
+<li><a id="org5111b29"></a>Map<br />
+<div class="outline-text-4" id="text-org5111b29">
+<div class="org-src-container">
+<pre class="src src-python">[x * x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist]
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org8102a63"></a>Filter<br />
+<div class="outline-text-4" id="text-org8102a63">
+<div class="org-src-container">
+<pre class="src src-python">[x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist <span style="color: #51afef;">if</span> iswhat(x)]
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org4ba97a9" class="outline-3">
+<h3 id="org4ba97a9">파일 혹은 디렉토리(폴더) 관련</h3>
+<div class="outline-text-3" id="text-org4ba97a9">
+</div>
+<ul class="org-ul">
+<li><a id="orgc04c954"></a>경로에서 파일명만 얻기<br />
+<div class="outline-text-4" id="text-orgc04c954">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
+&gt;&gt;&gt; os.path.basename(<span style="color: #98be65;">'/foo/bar/test.txt'</span>)
+<span style="color: #98be65;">'test.txt'</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgb018580"></a>파일명에서 확장자 분리하기<br />
+<div class="outline-text-4" id="text-orgb018580">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
+&gt;&gt;&gt; os.path.splitext(<span style="color: #98be65;">'test.txt'</span>)
+(<span style="color: #98be65;">'test'</span>, <span style="color: #98be65;">'.txt'</span>)
+</pre>
+</div>
+<p>
+<code>splitext</code> 는 파일명 뿐만이 아니라 경로(path)에서도 동작한다.
+예를 들어
+<code>/foo/bar/text.txt</code> 를 입력할 경우 <code>/foo/bar/text</code> 와 <code>.txt</code> 로 분리됩니다.
+</p>
+</div>
+</li>
+<li><a id="orgabd575d"></a>파일 혹은 디렉토리 구분하기<br />
+<div class="outline-text-4" id="text-orgabd575d">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
+&gt;&gt;&gt; os.path.isfile(<span style="color: #98be65;">'/foo/bar/some/file.txt'</span>)
+<span style="color: #a9a1e1;">True</span>
+&gt;&gt;&gt; os.path.isdir(<span style="color: #98be65;">'/foo/bar/some/file.txt'</span>)
+<span style="color: #a9a1e1;">False</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga845691"></a>디렉토리 안의 파일 목록 얻기<br />
+<div class="outline-text-4" id="text-orga845691">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
+&gt;&gt;&gt; os.listdir(<span style="color: #98be65;">'.'</span>)
+[<span style="color: #98be65;">'foo.a'</span>, <span style="color: #98be65;">'bar.b'</span>, <span style="color: #98be65;">'somedir'</span>, ...]
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0cc0243" class="outline-2">
+<h2 id="org0cc0243">외부 링크</h2>
+<div class="outline-text-2" id="text-org0cc0243">
+<ul class="org-ul">
+<li><a target="_blank" href="https://seorenn.tistory.com/76">Python에 F-string 이라는 게 있었다?</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/77">Python 3 정적 타이핑 소개 및 소감(?)</a></li>
+</ul>
+</div>
+</div>
+</section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/pyenv.html">pyenv</a></h2>
+<div class="article-link-date">
+2020년 4월 17일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

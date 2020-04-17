@@ -1,0 +1,164 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Swift - Seorenn</title>
+<meta name="twitter:title" content="Swift" />
+<meta name="og:title" content="Swift" />
+<meta name="description" content="Swift(스위프트) 언어에 대한 간략한 소개 및 관련된 내용들" />
+<meta name="twitter:description" content="Swift(스위프트) 언어에 대한 간략한 소개 및 관련된 내용들" />
+<meta name="og:description" content="Swift(스위프트) 언어에 대한 간략한 소개 및 관련된 내용들" />
+<link rel="canonical" href="https://seorenn.github.io/note/swift.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/swift.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<hr/>
+<section class="content">
+<header>
+<h1>Swift</h1>
+<div class="title-date">2020년 4월 17일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#orge7db187">버전 정리</a>
+<ul>
+<li><a href="#org2bb74ef">5.1</a></li>
+<li><a href="#org02a02b0">5.2</a></li>
+</ul>
+</li>
+<li><a href="#org659ef8b">기타 외부 링크</a></li>
+</ul>
+</div>
+</div>
+<p>
+Swift(스위프트)는 애플 주도로 개발된 프로그래밍 언어로
+정적 타이핑(Static Typing)을 특징으로 하는
+바이너리 컴파일이 가능한 언어다.
+이를 돌려서 타입 안전성(Type Safety)을 고려하는 언어 라고도 하는데,
+빌드 타임에 타입이 확정되지 않으면 무조건 에러로 간주하는
+단순하면서도 문제를 미연에 방지하기에 합리적인 시스템이기도 하다.
+</p>
+
+<p>
+그 밖에 스위프트의 가장 큰 특징으로는
+값 타입(Value Type)을 지원한다는 점이 있다.
+값 타입의 지원은 완벽한 Immutable 변수를 지원하기 때문에
+레퍼런스 공유로 발생하게 되는 다양한 부작용을 해소하면서도
+동시에 성능 또한 잡아낸 설계이기도 하다.
+</p>
+
+<blockquote>
+<p>
+Swift는 macOS, iOS, watchOS, tvOS를 위한 강력하고 직관적인 프로그래밍
+언어입니다. Swift 코드 작성은 대화식으로 재미있고, 구문은 간결하면서도
+표현력이 풍부하며, Swift에는 개발자들이 좋아하는 첨단 기능이
+포함되어 있습니다. Swift 코드는 안전하게 설계되었으며
+빛의 속도로 빠르게 실행되는 소프트웨어도 제작할 수 있습니다.
+</p>
+</blockquote>
+
+<p>
+애플 공식 스위프트 홈페이지에서는 위와 같이 설명하고 있긴 한데,
+오픈소스라서 굳이 플랫폼이나 앱 타입에 구애는 받지 않는 언어라고 봐도 될 것 같다.
+그리고 빛의 속도는 좀 오버고,
+네이티브 바이너리로 빌드가 되기 때문에 빠르긴 빠르지만
+아무래도 최적화된 C 코드에 비하기는 힘들 것이다.
+</p>
+
+<p>
+대신 Objective-C 와 같이 쓰기에 상당히 편한 언어이기에
+C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
+따라서 최적화도 굉장히 손쉬운 편에 속한다.
+</p>
+
+<div id="outline-container-orge7db187" class="outline-2">
+<h2 id="orge7db187">버전 정리</h2>
+<div class="outline-text-2" id="text-orge7db187">
+</div>
+<div id="outline-container-org2bb74ef" class="outline-3">
+<h3 id="org2bb74ef">5.1</h3>
+<div class="outline-text-3" id="text-org2bb74ef">
+<ul class="org-ul">
+<li><a target="_blank" href="https://seorenn.tistory.com/27">Self 키워드의 기능 추가 (SE-0068)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/28">순서가 있는 콜렉션끼리 차이점 비교하기 (SE-0240)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/29">구조체 생성자에 기본값 지원 (SE-0242)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/30">Opaque Result Types 그리고 some (SE-0244)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/32">초기화 없는 배열 생성하기 (SE-0245)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/33">키 패스를 이용한 동적 멤버 찾아보기 (SE-0252)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/35">Static Subscript (SE-0254)</a></li>
+<li><a target="_blank" href="https://seorenn.tistory.com/37">Identifiable (SE-0261)</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org02a02b0" class="outline-3">
+<h3 id="org02a02b0">5.2</h3>
+<div class="outline-text-3" id="text-org02a02b0">
+<ul class="org-ul">
+<li><a target="_blank" href="https://seorenn.tistory.com/108">Swift 5.2 업데이트 내역 살펴보기</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org659ef8b" class="outline-2">
+<h2 id="org659ef8b">기타 외부 링크</h2>
+<div class="outline-text-2" id="text-org659ef8b">
+<ul class="org-ul">
+<li><a target="_blank" href="http://seorenn.blogspot.kr/2014/06/swift_16.html">스위프트(Swift) 가이드</a>:
+오래전에 정리했던 글이지만 기본 가이드는 어느 정도 참고할 수 있을지도 모르겠다.</li>
+</ul>
+</div>
+</div>
+</section>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
+<div class="article-link-date">
+2020년 4월 17일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

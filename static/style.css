@@ -281,7 +281,7 @@ hr {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-style: italic;
 }
 
@@ -291,6 +291,13 @@ hr {
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
   font-size: 1rem;
+}
+
+.content img {
+  max-width: 800px;
+  margin: 0 auto;
+  height: auto;
+  max-height: 800px;
 }
 
 /* post info */

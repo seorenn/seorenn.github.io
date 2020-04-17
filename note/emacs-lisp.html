@@ -68,19 +68,19 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgac30557">개념 메모</a>
+<li><a href="#org9d7f942">개념 메모</a>
 <ul>
-<li><a href="#org3e27e28">샤프(Sharpsign)</a></li>
-<li><a href="#org69f7997">단 따옴표(Single Quote)</a></li>
-<li><a href="#org90a4fca">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
-<li><a href="#orge66c1ef">apply vs funcall</a></li>
-<li><a href="#org13b8125">Character</a></li>
+<li><a href="#org358615e">샤프(Sharpsign)</a></li>
+<li><a href="#orgfe4239e">단 따옴표(Single Quote)</a></li>
+<li><a href="#org57b0c5d">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
+<li><a href="#org31a3528">apply vs funcall</a></li>
+<li><a href="#org15c3da2">Character</a></li>
 </ul>
 </li>
-<li><a href="#org53a4ef1">에러 노트</a>
+<li><a href="#org0306aa8">에러 노트</a>
 <ul>
-<li><a href="#org872a186">commandp</a></li>
-<li><a href="#org742cc76">안 쓰는 매개변수</a></li>
+<li><a href="#orgc0687dd">commandp</a></li>
+<li><a href="#orgdf174d9">안 쓰는 매개변수</a></li>
 </ul>
 </li>
 </ul>
@@ -93,13 +93,13 @@ Lisp 언어를 의미한다.
 형태라서 Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 
-<div id="outline-container-orgac30557" class="outline-2">
-<h2 id="orgac30557">개념 메모</h2>
-<div class="outline-text-2" id="text-orgac30557">
+<div id="outline-container-org9d7f942" class="outline-2">
+<h2 id="org9d7f942">개념 메모</h2>
+<div class="outline-text-2" id="text-org9d7f942">
 </div>
-<div id="outline-container-org3e27e28" class="outline-3">
-<h3 id="org3e27e28">샤프(Sharpsign)</h3>
-<div class="outline-text-3" id="text-org3e27e28">
+<div id="outline-container-org358615e" class="outline-3">
+<h3 id="org358615e">샤프(Sharpsign)</h3>
+<div class="outline-text-3" id="text-org358615e">
 <p>
 <code>#</code> (Sharpsign) 은 s-expressions 특수 문법이다.
 근데 뭔 소린지 하나도 모르겠다.
@@ -114,14 +114,14 @@ Lisp 언어를 의미한다.
 
 <p>
 자세한 내용은
-<a target="_blank" href="http://www.lispworks.com/documentation/HyperSpec/Body/02_dh.htm">Sharpsign</a>
+<a target="_blank" href="http://www.lispworks.com/documentation/HyperSpec/Body/02_dh.htm">🌏Sharpsign</a>
 글을 참고하자.
 </p>
 </div>
 </div>
-<div id="outline-container-org69f7997" class="outline-3">
-<h3 id="org69f7997">단 따옴표(Single Quote)</h3>
-<div class="outline-text-3" id="text-org69f7997">
+<div id="outline-container-orgfe4239e" class="outline-3">
+<h3 id="orgfe4239e">단 따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-orgfe4239e">
 <p>
 단 따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용한다.
 예를 들어 <code>(1 2 3)</code> 이라는 리스트를 메시지로 출력하고 싶어서
@@ -162,9 +162,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org90a4fca" class="outline-3">
-<h3 id="org90a4fca">샤프 단 따옴표(Sharpsign Single Quote)</h3>
-<div class="outline-text-3" id="text-org90a4fca">
+<div id="outline-container-org57b0c5d" class="outline-3">
+<h3 id="org57b0c5d">샤프 단 따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org57b0c5d">
 <p>
 <code>#'function-name</code> 의 의미는
 <code>(function function-name)</code> 을 줄여서 표기한 것이다.
@@ -186,9 +186,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-orge66c1ef" class="outline-3">
-<h3 id="orge66c1ef">apply vs funcall</h3>
-<div class="outline-text-3" id="text-orge66c1ef">
+<div id="outline-container-org31a3528" class="outline-3">
+<h3 id="org31a3528">apply vs funcall</h3>
+<div class="outline-text-3" id="text-org31a3528">
 <p>
 위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있다.
 사용 방법도 거의 동일하다.
@@ -222,9 +222,9 @@ Lisp 언어를 의미한다.
 </div>
 </div>
 </div>
-<div id="outline-container-org13b8125" class="outline-3">
-<h3 id="org13b8125">Character</h3>
-<div class="outline-text-3" id="text-org13b8125">
+<div id="outline-container-org15c3da2" class="outline-3">
+<h3 id="org15c3da2">Character</h3>
+<div class="outline-text-3" id="text-org15c3da2">
 <p>
 <a href="emacs.html">Emacs</a>에서 문자는 ASCII 번호로 표현된다.
 즉 숫자다.
@@ -241,13 +241,13 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </div>
 </div>
 </div>
-<div id="outline-container-org53a4ef1" class="outline-2">
-<h2 id="org53a4ef1">에러 노트</h2>
-<div class="outline-text-2" id="text-org53a4ef1">
+<div id="outline-container-org0306aa8" class="outline-2">
+<h2 id="org0306aa8">에러 노트</h2>
+<div class="outline-text-2" id="text-org0306aa8">
 </div>
-<div id="outline-container-org872a186" class="outline-3">
-<h3 id="org872a186">commandp</h3>
-<div class="outline-text-3" id="text-org872a186">
+<div id="outline-container-orgc0687dd" class="outline-3">
+<h3 id="orgc0687dd">commandp</h3>
+<div class="outline-text-3" id="text-orgc0687dd">
 <blockquote>
 <p>
 Wrong type argument: commandp, your-function
@@ -267,9 +267,9 @@ Wrong type argument: commandp, your-function
 </div>
 </div>
 </div>
-<div id="outline-container-org742cc76" class="outline-3">
-<h3 id="org742cc76">안 쓰는 매개변수</h3>
-<div class="outline-text-3" id="text-org742cc76">
+<div id="outline-container-orgdf174d9" class="outline-3">
+<h3 id="orgdf174d9">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-orgdf174d9">
 <p>
 예를 들어 아래와 같은 코드에서
 </p>

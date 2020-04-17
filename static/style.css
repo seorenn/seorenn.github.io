@@ -264,10 +264,10 @@ hr {
   margin: 0 auto;
 }
 
-pre ::-webkit-scrollbar {
-  height: 0px;
-  background: transparent;
-}
+/* .content pre -webkit-scrollbar { */
+/*   height: 0px; */
+/*   background: transparent; */
+/* } */
 
 .content pre {
   max-width: 100%;
@@ -277,7 +277,7 @@ pre ::-webkit-scrollbar {
   background-color: #21232a;
   font-size: 0.9rem;
   font-family: Menlo, Monaco, monospace;
-  overflow-x: scroll;
+  overflow-x: auto;
   line-height: 1.2rem;
   /*white-space: pre-wrap;*/
 }

@@ -186,13 +186,13 @@ hr {
 }
 
 .top-ad {
-  max-width: 800px;
+  max-width: 1280px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
   margin-top: 48px;
   margin-bottom: 48px;
-
+  border: 1px solid red;
 }
 /* content */
 
@@ -209,8 +209,6 @@ hr {
   padding-bottom: 0;
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
 }
 
 .content header {
@@ -266,7 +264,7 @@ hr {
   margin: 0 auto;
 }
 
-::-webkit-scrollbar {
+pre ::-webkit-scrollbar {
   height: 0px;
   background: transparent;
 }

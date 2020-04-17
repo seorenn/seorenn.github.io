@@ -204,6 +204,15 @@ hr {
   padding-right: 16px;
 }
 
+.content .ad {
+  padding-top: 0;
+  padding-bottom: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
 .content header {
   position: relative;
 }

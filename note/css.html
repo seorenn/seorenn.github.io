@@ -63,23 +63,24 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>CSS</h1>
-<div class="title-date">2020년 4월 14일 수정</div>
+<div class="title-date">2020년 4월 18일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgce6027e">CSS를 HTML문서에 사용하기</a>
+<li><a href="#org54acca6">CSS를 HTML문서에 사용하기</a>
 <ul>
-<li><a href="#org8d56517">태그에 바로 스타일 입히기</a></li>
-<li><a href="#org43a7939">스타일 블록</a></li>
-<li><a href="#orgc115129">스타일 파일 로딩 시키기</a></li>
+<li><a href="#org6147d5f">태그에 바로 스타일 입히기</a></li>
+<li><a href="#orgccb4378">스타일 블록</a></li>
+<li><a href="#org24395b0">스타일 파일 로딩 시키기</a></li>
 </ul>
 </li>
-<li><a href="#org35f0346">단어를 자르지 않기</a></li>
-<li><a href="#org92b6c62">둥근 모서리</a></li>
-<li><a href="#orga00b58f">div 블록 가운데 정렬</a></li>
-<li><a href="#org0c4bdab">소수점 자리로 정렬</a></li>
-<li><a href="#org55ff328">기타 CSS 관련 외부 링크</a></li>
+<li><a href="#org97023f9">단어를 자르지 않기</a></li>
+<li><a href="#org368944c">둥근 모서리</a></li>
+<li><a href="#org044c7ea">div 블록 가운데 정렬</a></li>
+<li><a href="#org105105d">소수점 자리로 정렬</a></li>
+<li><a href="#orgebe8684">스타일 그룹(셀렉터 그룹)</a></li>
+<li><a href="#org7b5d2ef">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -92,22 +93,22 @@ HTML 문서의 스타일을 구성할 때 사용하는 일종의 언어이다.
 나머지 내용은 CSS와 관련된 팁이다.
 </p>
 
-<div id="outline-container-orgce6027e" class="outline-2">
-<h2 id="orgce6027e">CSS를 HTML문서에 사용하기</h2>
-<div class="outline-text-2" id="text-orgce6027e">
+<div id="outline-container-org54acca6" class="outline-2">
+<h2 id="org54acca6">CSS를 HTML문서에 사용하기</h2>
+<div class="outline-text-2" id="text-org54acca6">
 </div>
-<div id="outline-container-org8d56517" class="outline-3">
-<h3 id="org8d56517">태그에 바로 스타일 입히기</h3>
-<div class="outline-text-3" id="text-org8d56517">
+<div id="outline-container-org6147d5f" class="outline-3">
+<h3 id="org6147d5f">태그에 바로 스타일 입히기</h3>
+<div class="outline-text-3" id="text-org6147d5f">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org43a7939" class="outline-3">
-<h3 id="org43a7939">스타일 블록</h3>
-<div class="outline-text-3" id="text-org43a7939">
+<div id="outline-container-orgccb4378" class="outline-3">
+<h3 id="orgccb4378">스타일 블록</h3>
+<div class="outline-text-3" id="text-orgccb4378">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
 p {
@@ -119,9 +120,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-orgc115129" class="outline-3">
-<h3 id="orgc115129">스타일 파일 로딩 시키기</h3>
-<div class="outline-text-3" id="text-orgc115129">
+<div id="outline-container-org24395b0" class="outline-3">
+<h3 id="org24395b0">스타일 파일 로딩 시키기</h3>
+<div class="outline-text-3" id="text-org24395b0">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
 </pre>
@@ -129,9 +130,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org35f0346" class="outline-2">
-<h2 id="org35f0346">단어를 자르지 않기</h2>
-<div class="outline-text-2" id="text-org35f0346">
+<div id="outline-container-org97023f9" class="outline-2">
+<h2 id="org97023f9">단어를 자르지 않기</h2>
+<div class="outline-text-2" id="text-org97023f9">
 <p>
 문장이 길어져서 다음 줄로 넘어갈 때
 단어를 중간에 자르면 가독성에 문제가 있을 수 있다.
@@ -143,9 +144,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org92b6c62" class="outline-2">
-<h2 id="org92b6c62">둥근 모서리</h2>
-<div class="outline-text-2" id="text-org92b6c62">
+<div id="outline-container-org368944c" class="outline-2">
+<h2 id="org368944c">둥근 모서리</h2>
+<div class="outline-text-2" id="text-org368944c">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #98be65;">border-radius</span>: 8px;
 </pre>
@@ -155,9 +156,9 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-orga00b58f" class="outline-2">
-<h2 id="orga00b58f">div 블록 가운데 정렬</h2>
-<div class="outline-text-2" id="text-orga00b58f">
+<div id="outline-container-org044c7ea" class="outline-2">
+<h2 id="org044c7ea">div 블록 가운데 정렬</h2>
+<div class="outline-text-2" id="text-org044c7ea">
 <p>
 큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.
 </p>
@@ -170,9 +171,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org0c4bdab" class="outline-2">
-<h2 id="org0c4bdab">소수점 자리로 정렬</h2>
-<div class="outline-text-2" id="text-org0c4bdab">
+<div id="outline-container-org105105d" class="outline-2">
+<h2 id="org105105d">소수점 자리로 정렬</h2>
+<div class="outline-text-2" id="text-org105105d">
 <p>
 테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면
 아래와 같은 스타일을 추가할 수 있다.
@@ -188,9 +189,35 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-org55ff328" class="outline-2">
-<h2 id="org55ff328">기타 CSS 관련 외부 링크</h2>
-<div class="outline-text-2" id="text-org55ff328">
+<div id="outline-container-orgebe8684" class="outline-2">
+<h2 id="orgebe8684">스타일 그룹(셀렉터 그룹)</h2>
+<div class="outline-text-2" id="text-orgebe8684">
+<p>
+여러 스타일에서 공통된 부분을 만들 때 콤마를 이용해 셀렉터 그룹을 만들 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #51afef;">.foo_style,</span>
+<span style="color: #51afef;">.bar_style,</span>
+<span style="color: #51afef;">.foo_container .foobar_style,</span>
+<span style="color: #51afef;">.bar_container .foobar_style </span>{
+  <span style="color: #98be65;">font-size</span>: 12px;
+  ...
+}
+<span style="color: #51afef;">.foo_style </span>{
+  <span style="color: #98be65;">font-color</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+  ...
+}
+</pre>
+</div>
+<p>
+이런 식으로 공통된 스타일을 하나로 모으고, 별도의 스타일은 별도로 나눠서 코딩
+양을 줄일 수 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-org7b5d2ef" class="outline-2">
+<h2 id="org7b5d2ef">외부 링크</h2>
+<div class="outline-text-2" id="text-org7b5d2ef">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/hsh2001/apple-dark-mode">🌏🌙 다크모드 웹 페이지 디자인</a></li>
 <li><a target="_blank" href="https://chasem.co/2019/09/mvp-dark-mode">🌏Minimum viable dark mode</a></li>

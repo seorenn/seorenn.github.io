@@ -1,0 +1,169 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Xcode - Seorenn</title>
+<meta name="twitter:title" content="Xcode" />
+<meta name="og:title" content="Xcode" />
+<meta name="description" content="Xcode와 관련된 정보 모음" />
+<meta name="twitter:description" content="Xcode와 관련된 정보 모음" />
+<meta name="og:description" content="Xcode와 관련된 정보 모음" />
+<link rel="canonical" href="https://seorenn.github.io/note/xcode.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/xcode.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<div class="top-ad">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<section class="content">
+<header>
+<h1>Xcode</h1>
+<div class="title-date">2020년 4월 19일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org2b913f1">팁</a>
+<ul>
+<li><a href="#orgea0808e">터미널에서 쉽게 열기</a></li>
+<li><a href="#org86b32ac">정규표현식으로 검색하기</a></li>
+<li><a href="#orgd12fa73">빠르게 파일 열기</a></li>
+<li><a href="#org48a1f68">이 파일은 어디에 있나?</a></li>
+<li><a href="#orgaa7bc61">디버깅 시 문자열 보기</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Xcode는 애플 플랫폼 용 소프트웨어를 개발할 때 사용하는 개발 도구 겸 IDE다.
+무겁고 잘 죽는 연약한 도구지만 어쩔 수 없이 써야만 한다.
+그래도 이런 만능 도구가 무료라는 게 어디인가.
+</p>
+
+<div id="outline-container-org2b913f1" class="outline-2">
+<h2 id="org2b913f1">팁</h2>
+<div class="outline-text-2" id="text-org2b913f1">
+</div>
+<div id="outline-container-orgea0808e" class="outline-3">
+<h3 id="orgea0808e">터미널에서 쉽게 열기</h3>
+<div class="outline-text-3" id="text-orgea0808e">
+<p>
+터미널에서 <a href="shell.html">셸</a> 등을 통해
+현재 디렉터리의 프로젝트를 Xcode로 열 때는
+아래 커맨드가 제일 편하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">xed .
+</pre>
+</div>
+<p>
+프로젝트만 있으면 프로젝트가 열리고
+워크스페이스가 있으면 워크스페이스가 열린다.
+</p>
+</div>
+</div>
+<div id="outline-container-org86b32ac" class="outline-3">
+<h3 id="org86b32ac">정규표현식으로 검색하기</h3>
+<div class="outline-text-3" id="text-org86b32ac">
+<p>
+검색 시 <code>Find &gt; Text &gt; Containig</code> 이런 식으로 표시되는 곳에서
+<code>Text</code> 를 클릭해보면 여러가지 선택할 수 있는게 뜬다.
+여기서 정규표현식을 선택하면 정규표현식으로 검색할 수 있게 된다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd12fa73" class="outline-3">
+<h3 id="orgd12fa73">빠르게 파일 열기</h3>
+<div class="outline-text-3" id="text-orgd12fa73">
+<p>
+Command+Shift+Space를 누르면 Quickly Box라는 파일 빠르게 열기 창이 뜬다.
+여기서 파일명을 입력해서 열 수 있다.
+그리고 <code>FILENAME:line</code> 같은 방식으로
+파일을 열면서 해당 라인으로 바로 이동할 수도 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-org48a1f68" class="outline-3">
+<h3 id="org48a1f68">이 파일은 어디에 있나?</h3>
+<div class="outline-text-3" id="text-org48a1f68">
+<p>
+파일을 열어놓고 Command+Shift+J 를 누르면
+프로젝트 네비게이터에서 해당 파일이 선택된다.
+가끔 파일이 프로젝트의 어디에 있는지 찾을 때 써먹기 편하다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa7bc61" class="outline-3">
+<h3 id="orgaa7bc61">디버깅 시 문자열 보기</h3>
+<div class="outline-text-3" id="text-orgaa7bc61">
+<p>
+만약 <code>po json</code> 같이 찍었을 때 문자열 내용이 그대로 보여서 불편하다면
+<code>po print(json)</code> 이나 <code>po NSString(string: json)</code> 으로 찍어보자.
+</p>
+</div>
+</div>
+</div>
+</section>
+<div class="top-ad">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

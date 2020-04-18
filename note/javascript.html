@@ -63,15 +63,23 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Javascript</h1>
-<div class="title-date">2020년 4월 18일 수정</div>
+<div class="title-date">2020년 4월 19일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org41ca5ae">노트</a>
+<li><a href="#orgeccdb25">노트</a>
 <ul>
-<li><a href="#orgcec0b0e">모듈(Module)</a></li>
-<li><a href="#org2954acf">스프레드(Spreads) 연산자</a></li>
+<li><a href="#orge66d598">모듈(Module)</a></li>
+<li><a href="#org4f55676">스프레드(Spreads) 연산자</a></li>
+<li><a href="#org2025947">튜플 비슷한 문법</a></li>
+</ul>
+</li>
+<li><a href="#orga7e13f9">실전(?) 메모</a>
+<ul>
+<li><a href="#org0aede64">특정 블록에 HTML 넣기</a></li>
+<li><a href="#orgc4b4f54">콘텐츠 높이 구하기</a></li>
+<li><a href="#org62b3872">특정 태그 앞에 요소 넣기</a></li>
 </ul>
 </li>
 </ul>
@@ -90,17 +98,17 @@ gtag('config', 'UA-44534026-1');
 현재로써 이 둘을 별도로 생각하는 것도 좀 이상한 것 같기도 하다.
 버전은 ES6를 기준으로 한다.
 </p>
-<div id="outline-container-org41ca5ae" class="outline-2">
-<h2 id="org41ca5ae">노트</h2>
-<div class="outline-text-2" id="text-org41ca5ae">
+<div id="outline-container-orgeccdb25" class="outline-2">
+<h2 id="orgeccdb25">노트</h2>
+<div class="outline-text-2" id="text-orgeccdb25">
 <p>
 여기에 붙는 글들은 정해진 주제 없이 필요할 때 마다 붙는 메모 형식으로
 작성됩니다. 후에 글이 모이면 별도의 글로 분리될 수도 있습니다.
 </p>
 </div>
-<div id="outline-container-orgcec0b0e" class="outline-3">
-<h3 id="orgcec0b0e">모듈(Module)</h3>
-<div class="outline-text-3" id="text-orgcec0b0e">
+<div id="outline-container-orge66d598" class="outline-3">
+<h3 id="orge66d598">모듈(Module)</h3>
+<div class="outline-text-3" id="text-orge66d598">
 <p>
 일반적으로 모듈은 아래와 같은 형식으로 쓰인다.
 </p>
@@ -152,9 +160,9 @@ console.log(someValues.value2);
 </div>
 </div>
 </div>
-<div id="outline-container-org2954acf" class="outline-3">
-<h3 id="org2954acf">스프레드(Spreads) 연산자</h3>
-<div class="outline-text-3" id="text-org2954acf">
+<div id="outline-container-org4f55676" class="outline-3">
+<h3 id="org4f55676">스프레드(Spreads) 연산자</h3>
+<div class="outline-text-3" id="text-org4f55676">
 <p>
 스프레드 연산자는 <code>...</code> 으로 표기되며
 이름처럼 펼치거나 확산한다라는 의미로 동작한다.
@@ -212,6 +220,86 @@ sixArgs(...arr);
 위 함수를 <code>someFunc(1, 2, 3, 4, 5)</code> 로 호출한 경우
 <code>value</code> 에는 <code>1</code> 이,
 rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
+</p>
+</div>
+</div>
+<div id="outline-container-org2025947" class="outline-3">
+<h3 id="org2025947">튜플 비슷한 문법</h3>
+<div class="outline-text-3" id="text-org2025947">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #51afef;">let</span> [<span style="color: #dcaeea;">foo</span>, <span style="color: #dcaeea;">bar</span>] = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>]
+[foo, bar] = [bar, foo]
+</pre>
+</div>
+<p>
+무슨 문법인지 아직 이름은 모르겠다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7e13f9" class="outline-2">
+<h2 id="orga7e13f9">실전(?) 메모</h2>
+<div class="outline-text-2" id="text-orga7e13f9">
+</div>
+<div id="outline-container-org0aede64" class="outline-3">
+<h3 id="org0aede64">특정 블록에 HTML 넣기</h3>
+<div class="outline-text-3" id="text-org0aede64">
+<p>
+아래는 some-id라는 아이디의 div 블록 내부 내용을 지정하는 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">document.getElementById(<span style="color: #98be65;">'some-id'</span>).innerHTML = <span style="color: #98be65;">'&lt;some-html&gt;...&lt;/some-html&gt;'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4b4f54" class="outline-3">
+<h3 id="orgc4b4f54">콘텐츠 높이 구하기</h3>
+<div class="outline-text-3" id="text-orgc4b4f54">
+<p>
+웹 브라우저에 표시되는 내용의 높이(height)를 구하는 방법이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">document.getElementsByTagName(<span style="color: #98be65;">'body'</span>)[<span style="color: #da8548; font-weight: bold;">0</span>].clientHeight
+</pre>
+</div>
+<p>
+물론 특정 element를 선택해서 할 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">document.getElementById(<span style="color: #98be65;">'some-block'</span>).clientHeight
+</pre>
+</div>
+<p>
+<code>clientHeight</code> 말고 <code>offsetHeight</code> 도 비슷한 용도로 사용 가능한 듯 하다.
+</p>
+</div>
+</div>
+<div id="outline-container-org62b3872" class="outline-3">
+<h3 id="org62b3872">특정 태그 앞에 요소 넣기</h3>
+<div class="outline-text-3" id="text-org62b3872">
+<p>
+수동으로 노드를 만들어서 특정 태그 노드 앞에 붙이는 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">targetElement</span> = document.getElementById(<span style="color: #98be65;">'target'</span>)
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">newElement</span> = document.createElement(<span style="color: #98be65;">'div'</span>)
+newElement.innerHTML = <span style="color: #98be65;">'HTML CONTENT'</span>
+newElement.className = <span style="color: #98be65;">'some-class'</span>
+
+targetElement.parentNode.insertBefore(newElement, targetElement)
+</pre>
+</div>
+<p>
+좀 더 쉬운 방법도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">document.getElementById(<span style="color: #98be65;">'target'</span>).insertAdjacentHTML(<span style="color: #98be65;">'beforebegin'</span>, <span style="color: #98be65;">'HTML CONTENT'</span>)
+</pre>
+</div>
+<p>
+<code>beforebegin</code> 이 위치를 가리키는 의미인데 별도의 상수 정의는 없는 것 같다.
+참고로 <code>afterbegin</code>, <code>beforeend</code>, <code>afterend</code> 등 다양한 위치를 지정할 수 있다.
 </p>
 </div>
 </div>

@@ -68,21 +68,28 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf3ce7f4">메모</a>
+<li><a href="#org442317d">메소드 디스패치(Method Dispatch)</a>
 <ul>
-<li><a href="#org84398c3">메소드 디스패치(Method Dispatch)</a></li>
+<li><a href="#org13c94a9">상속 관계 클래스의 메소드 디스패치</a></li>
+<li><a href="#org5129b8b">프로토콜의 메소드 디스패치</a></li>
+<li><a href="#orgfb07be9">메소드 디스패치 관련 지시어</a></li>
 </ul>
 </li>
-<li><a href="#org80d76fc">버전 정리</a>
+<li><a href="#orgcce0d49">버전 정리</a>
 <ul>
-<li><a href="#orge04a619">5.1</a></li>
-<li><a href="#orge0ecee6">5.2</a></li>
+<li><a href="#orgcde41f4">5.1</a></li>
+<li><a href="#org3939852">5.2</a></li>
 </ul>
 </li>
-<li><a href="#org39ae821">외부 링크</a>
+<li><a href="#orgca1cd99">그 외의 팁</a>
 <ul>
-<li><a href="#orga4ddcb1">종합 가이드</a></li>
-<li><a href="#org0983dd0">Combine Framework</a></li>
+<li><a href="#org71dae27">일부만 Import 하기=import= 문을 사용할 때 아래처럼 사용할 수도 있습니다.</a></li>
+</ul>
+</li>
+<li><a href="#org62058a0">외부 링크</a>
+<ul>
+<li><a href="#org66bb7e0">종합 가이드</a></li>
+<li><a href="#org8e94763">Combine Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -129,17 +136,13 @@ C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
 따라서 최적화도 굉장히 손쉬운 편에 속한다.
 </p>
 
-<div id="outline-container-orgf3ce7f4" class="outline-2">
-<h2 id="orgf3ce7f4">메모</h2>
-<div class="outline-text-2" id="text-orgf3ce7f4">
+<div id="outline-container-org442317d" class="outline-2">
+<h2 id="org442317d">메소드 디스패치(Method Dispatch)</h2>
+<div class="outline-text-2" id="text-org442317d">
 </div>
-<div id="outline-container-org84398c3" class="outline-3">
-<h3 id="org84398c3">메소드 디스패치(Method Dispatch)</h3>
-<div class="outline-text-3" id="text-org84398c3">
-</div>
-<ul class="org-ul">
-<li><a id="org57ca631"></a>상속 관계 클래스의 메소드 디스패치<br />
-<div class="outline-text-4" id="text-org57ca631">
+<div id="outline-container-org13c94a9" class="outline-3">
+<h3 id="org13c94a9">상속 관계 클래스의 메소드 디스패치</h3>
+<div class="outline-text-3" id="text-org13c94a9">
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">class</span> <span style="color: #c678dd;">P</span> {
     <span style="color: #51afef;">func</span> <span style="color: #c678dd;">foo</span>() { ... }
@@ -160,9 +163,10 @@ obj2.<span style="color: #c678dd;">foo</span>()   <span style="color: #5B6268;">
 뭐 그다지 어려울 것도 없고 OOP에 익숙하다면 당연한 결과다.
 </p>
 </div>
-</li>
-<li><a id="org222f1e7"></a>프로토콜의 메소드 디스패치<br />
-<div class="outline-text-4" id="text-org222f1e7">
+</div>
+<div id="outline-container-org5129b8b" class="outline-3">
+<h3 id="org5129b8b">프로토콜의 메소드 디스패치</h3>
+<div class="outline-text-3" id="text-org5129b8b">
 <p>
 프로토콜의 경우는 상속과는 좀 다른 면이 있다.
 </p>
@@ -199,9 +203,10 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 이 부분은 아무래도 클래스 상속과는 다르기 때문에 주의가 필요할 것 같다.
 </p>
 </div>
-</li>
-<li><a id="orgdcf76b2"></a>메소드 디스패치 관련 지시어<br />
-<div class="outline-text-4" id="text-orgdcf76b2">
+</div>
+<div id="outline-container-orgfb07be9" class="outline-3">
+<h3 id="orgfb07be9">메소드 디스패치 관련 지시어</h3>
+<div class="outline-text-3" id="text-orgfb07be9">
 <dl class="org-dl">
 <dt><code>final</code></dt><dd>클래스의 경우 이 <code>final</code> 이 붙게 되면 더 이상 상속이 되지 않는다.
 다르게 말해서 final class는 동적 디스패치 기능을 없애버린 것과 비슷하다.</dd>
@@ -217,17 +222,15 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 다이렉트 디스패치와 비슷한 것이다.</dd>
 </dl>
 </div>
-</li>
-</ul>
 </div>
 </div>
-<div id="outline-container-org80d76fc" class="outline-2">
-<h2 id="org80d76fc">버전 정리</h2>
-<div class="outline-text-2" id="text-org80d76fc">
+<div id="outline-container-orgcce0d49" class="outline-2">
+<h2 id="orgcce0d49">버전 정리</h2>
+<div class="outline-text-2" id="text-orgcce0d49">
 </div>
-<div id="outline-container-orge04a619" class="outline-3">
-<h3 id="orge04a619">5.1</h3>
-<div class="outline-text-3" id="text-orge04a619">
+<div id="outline-container-orgcde41f4" class="outline-3">
+<h3 id="orgcde41f4">5.1</h3>
+<div class="outline-text-3" id="text-orgcde41f4">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/27">🌏Self 키워드의 기능 추가 (SE-0068)</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/28">🌏순서가 있는 콜렉션끼리 차이점 비교하기 (SE-0240)</a></li>
@@ -240,31 +243,50 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 </ul>
 </div>
 </div>
-<div id="outline-container-orge0ecee6" class="outline-3">
-<h3 id="orge0ecee6">5.2</h3>
-<div class="outline-text-3" id="text-orge0ecee6">
+<div id="outline-container-org3939852" class="outline-3">
+<h3 id="org3939852">5.2</h3>
+<div class="outline-text-3" id="text-org3939852">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/108">🌏Swift 5.2 업데이트 내역 살펴보기</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org39ae821" class="outline-2">
-<h2 id="org39ae821">외부 링크</h2>
-<div class="outline-text-2" id="text-org39ae821">
+<div id="outline-container-orgca1cd99" class="outline-2">
+<h2 id="orgca1cd99">그 외의 팁</h2>
+<div class="outline-text-2" id="text-orgca1cd99">
 </div>
-<div id="outline-container-orga4ddcb1" class="outline-3">
-<h3 id="orga4ddcb1">종합 가이드</h3>
-<div class="outline-text-3" id="text-orga4ddcb1">
+<div id="outline-container-org71dae27" class="outline-3">
+<h3 id="org71dae27">일부만 Import 하기=import= 문을 사용할 때 아래처럼 사용할 수도 있습니다.</h3>
+<div class="outline-text-3" id="text-org71dae27">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">import</span> <span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SwiftUI</span>.<span style="color: #dcaeea;">Image</span>
+<span style="color: #51afef;">import</span> <span style="color: #51afef;">class</span> <span style="color: #c678dd;">UIKit</span>.<span style="color: #dcaeea;">UIImage</span>
+<span style="color: #51afef;">import</span> <span style="color: #51afef;">class</span> <span style="color: #c678dd;">AppKit</span>.<span style="color: #dcaeea;">NSImage</span>
+</pre>
+</div>
+<p>
+그냥 할 수도 있다는 거지 굳이 이렇게 쓸 필요는 없을지도 모른다.😏
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org62058a0" class="outline-2">
+<h2 id="org62058a0">외부 링크</h2>
+<div class="outline-text-2" id="text-org62058a0">
+</div>
+<div id="outline-container-org66bb7e0" class="outline-3">
+<h3 id="org66bb7e0">종합 가이드</h3>
+<div class="outline-text-3" id="text-org66bb7e0">
 <ul class="org-ul">
 <li><a target="_blank" href="http://seorenn.blogspot.kr/2014/06/swift_16.html">🌏스위프트(Swift) 가이드</a>:
 오래전에 정리했던 글이지만 기본 가이드는 어느 정도 참고할 수 있을지도 모르겠다.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0983dd0" class="outline-3">
-<h3 id="org0983dd0">Combine Framework</h3>
-<div class="outline-text-3" id="text-org0983dd0">
+<div id="outline-container-org8e94763" class="outline-3">
+<h3 id="org8e94763">Combine Framework</h3>
+<div class="outline-text-3" id="text-org8e94763">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/66">🌏Combine Framework는 어떤 녀석일까요?</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/80">🌏Combine 이벤트 체인이 왜 필요할까?</a></li>

@@ -3,14 +3,14 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
-<title>Spacemacs - Seorenn</title>
-<meta name="twitter:title" content="Spacemacs" />
-<meta name="og:title" content="Spacemacs" />
-<meta name="description" content="Spacemacs(스페이스맥스)에 관한 간략한 설명 및 관련글들" />
-<meta name="twitter:description" content="Spacemacs(스페이스맥스)에 관한 간략한 설명 및 관련글들" />
-<meta name="og:description" content="Spacemacs(스페이스맥스)에 관한 간략한 설명 및 관련글들" />
-<link rel="canonical" href="https://seorenn.github.io/note/spacemacs.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/spacemacs.html" />
+<title>Flutter - Seorenn</title>
+<meta name="twitter:title" content="Flutter" />
+<meta name="og:title" content="Flutter" />
+<meta name="description" content="Flutter와 관련된 메모" />
+<meta name="twitter:description" content="Flutter와 관련된 메모" />
+<meta name="og:description" content="Flutter와 관련된 메모" />
+<link rel="canonical" href="https://seorenn.github.io/note/flutter.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/flutter.html" />
 <link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -62,77 +62,71 @@ gtag('config', 'UA-44534026-1');
 </div>
 <section class="content">
 <header>
-<h1>Spacemacs</h1>
-<div class="title-date">2020년 4월 17일 수정</div>
+<h1>Flutter</h1>
+<div class="title-date">2020년 4월 18일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc2697e9">외부 링크</a></li>
+<li><a href="#orga3bc151">문제 해결</a>
+<ul>
+<li><a href="#orgf447385">macOS에서 개발자 인증 문제</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <p>
-스페이스맥스(Spacemacs)는 Community Driven Emacs Configuration 으로
-거대한 설정 파일 묶음 프로젝트다.
-<a href="vim.html">Vim</a> 키맵을 구현하는 evil 확장을 기반으로
-많은 확장들을 여기에 맞게 설정하고 있다.
-또한 이름에 맞게 스페이스키를 커맨드 트리거로 사용하는 등
-원래의 <a href="emacs.html">Emacs</a>에 비해 편리하면서도
-통일된 단축키 설정을 제공하는 것이 특징이다.
+Flutter(플러터)는 Dart라는 한 가지 언어로 iOS, Android 등
+다양한 플랫폼 용 앱을 만들기 위한 UI 툴킷 겸 프레임워크다.
 </p>
 
 <p>
-개인적으로 1년 넘게 사용해오다 최근에는
-<a href="doom-emacs.html">Doom Emacs</a>로 갈아타긴 했지만
-편리한 설정 환경과 <a href="emacs.html">Emacs</a>를 벗어나지 않고도
-다양한 확장을 자동으로 설치해 주는 등
-여전히 좋은 설정 패키지라고 생각한다.
+이 글은 일단은 Flutter 메모 용도로 만들어졌기 때문에
+더 이상의 자세한 소개는 생략한다.
 </p>
 
-<div id="outline-container-orgc2697e9" class="outline-2">
-<h2 id="orgc2697e9">외부 링크</h2>
-<div class="outline-text-2" id="text-orgc2697e9">
-<ul class="org-ul">
-<li><a target="_blank" href="https://www.spacemacs.org/">🌏스페이맥스 공식 홈페이지</a></li>
-<li><a target="_blank" href="https://www.youtube.com/playlist?list=PLPNohcoOBa5GejCpa5-Mw79bXnyynM1Nn">🌏The (Subjective) Spacemacs Howto</a>:
-개인적으로 운영하는 유튜브 채널의 스페이스맥스 플레이 리스트.
-현재 둠으로 잠시 이주한 탓에 업데이트가 안 되고 있기는 하다.</li>
-</ul>
+<div id="outline-container-orga3bc151" class="outline-2">
+<h2 id="orga3bc151">문제 해결</h2>
+<div class="outline-text-2" id="text-orga3bc151">
+</div>
+<div id="outline-container-orgf447385" class="outline-3">
+<h3 id="orgf447385">macOS에서 개발자 인증 문제</h3>
+<div class="outline-text-3" id="text-orgf447385">
+<p>
+Catalina 등 최신 <a href="macos.html">macOS</a>에서 flutter <a href="cli.html">CLI</a>
+도구를 사용하는 중 이런 오류가 나면서 커맨드가 동작하지 않는 경우가 있다.
+</p>
+<blockquote>
+<p>
+Flutter "idevice<sub>id</sub>" cannot be opened because the developer cannot be verified
+</p>
+</blockquote>
+<p>
+위의 예는 <code>idevice_id</code> 를 실행시켜서 발생한 메시지고, 이 외에 여러 커맨드에서
+이런 오류가 발생할 수 있다.
+</p>
+
+<p>
+이 오류는 아래와 같은 커맨드로 해결할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">sudo</span> xaddr -d /flutter_path/bin/cache/artifacts/libimobiledevice/idevice_id
+</pre>
+</div>
+<p>
+이런 식으로 문제되는 커맨드의 개발자 사인 체크를 해제할 수 있다.
+문제가 되는 커맨드 전부 이 명령을 실행시켜 주면 문제를 해결할 수 있다.
+물론 보안 장치를 해제하는 명령이기 때문에 믿을 수 있는 커맨드에만 사용하자.
+</p>
+
+<p>
+가장 좋은 해결 방법은 구글 Flutter 개발팀이 애플의 인증을 받는 건데 왜 안 할까?
+</p>
+</div>
 </div>
 </div>
 </section>
-<hr /><div class="backlinks-container">
-<h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
-<div class="article-link-date">
-2020년 4월 18일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/seorenn.html">Seorenn</a></h2>
-<div class="article-link-date">
-2020년 4월 18일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/magit.html">Magit</a></h2>
-<div class="article-link-date">
-2020년 4월 17일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
-<div class="article-link-date">
-2020년 4월 16일 수정</div>
-</div>
-</div>
-</div>
 <div class="top-ad">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"

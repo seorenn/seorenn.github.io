@@ -68,16 +68,21 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc4f9c74">버전 정리</a>
+<li><a href="#orgf3ce7f4">메모</a>
 <ul>
-<li><a href="#orga99b979">5.1</a></li>
-<li><a href="#org826492d">5.2</a></li>
+<li><a href="#org84398c3">메소드 디스패치(Method Dispatch)</a></li>
 </ul>
 </li>
-<li><a href="#org34b571e">외부 링크</a>
+<li><a href="#org80d76fc">버전 정리</a>
 <ul>
-<li><a href="#orgcd11552">종합 가이드</a></li>
-<li><a href="#org8415b6f">Combine Framework</a></li>
+<li><a href="#orge04a619">5.1</a></li>
+<li><a href="#orge0ecee6">5.2</a></li>
+</ul>
+</li>
+<li><a href="#org39ae821">외부 링크</a>
+<ul>
+<li><a href="#orga4ddcb1">종합 가이드</a></li>
+<li><a href="#org0983dd0">Combine Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -124,13 +129,105 @@ C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
 따라서 최적화도 굉장히 손쉬운 편에 속한다.
 </p>
 
-<div id="outline-container-orgc4f9c74" class="outline-2">
-<h2 id="orgc4f9c74">버전 정리</h2>
-<div class="outline-text-2" id="text-orgc4f9c74">
+<div id="outline-container-orgf3ce7f4" class="outline-2">
+<h2 id="orgf3ce7f4">메모</h2>
+<div class="outline-text-2" id="text-orgf3ce7f4">
 </div>
-<div id="outline-container-orga99b979" class="outline-3">
-<h3 id="orga99b979">5.1</h3>
-<div class="outline-text-3" id="text-orga99b979">
+<div id="outline-container-org84398c3" class="outline-3">
+<h3 id="org84398c3">메소드 디스패치(Method Dispatch)</h3>
+<div class="outline-text-3" id="text-org84398c3">
+</div>
+<ul class="org-ul">
+<li><a id="org57ca631"></a>상속 관계 클래스의 메소드 디스패치<br />
+<div class="outline-text-4" id="text-org57ca631">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">class</span> <span style="color: #c678dd;">P</span> {
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">foo</span>() { ... }
+}
+
+<span style="color: #51afef;">class</span> <span style="color: #c678dd;">C</span>: P {
+    <span style="color: #51afef;">override</span> <span style="color: #51afef;">func</span> <span style="color: #c678dd;">foo</span>() { ... }
+}
+
+<span style="color: #51afef;">let</span> obj1 = <span style="color: #c678dd;">C</span>()
+obj1.<span style="color: #c678dd;">foo</span>()   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">C.foo()</span>
+
+<span style="color: #51afef;">let</span> obj2: P = <span style="color: #c678dd;">C</span>()
+obj2.<span style="color: #c678dd;">foo</span>()   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">C.foo()</span>
+</pre>
+</div>
+<p>
+뭐 그다지 어려울 것도 없고 OOP에 익숙하다면 당연한 결과다.
+</p>
+</div>
+</li>
+<li><a id="org222f1e7"></a>프로토콜의 메소드 디스패치<br />
+<div class="outline-text-4" id="text-org222f1e7">
+<p>
+프로토콜의 경우는 상속과는 좀 다른 면이 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">protocol</span> <span style="color: #c678dd;">P</span> {
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">foo</span>()
+}
+
+<span style="color: #51afef;">extension</span> <span style="color: #c678dd;">P</span> {
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">foo</span>() { ... }
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">bar</span>() { ... }
+}
+
+<span style="color: #51afef;">struct</span> <span style="color: #c678dd;">A</span>: P {
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">foo</span>() { ... }
+    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">bar</span>() { ... }
+}
+
+<span style="color: #51afef;">let</span> a = <span style="color: #c678dd;">A</span>()
+a.<span style="color: #c678dd;">foo</span>()   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">A.foo()</span>
+a.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">A.bar()</span>
+
+<span style="color: #51afef;">let</span> p: P = <span style="color: #c678dd;">A</span>()
+p.<span style="color: #c678dd;">foo</span>()   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">A.foo()</span>
+p.<span style="color: #c678dd;">bar</span>()   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">P.bar()</span>
+</pre>
+</div>
+<p>
+여기서는 프로토콜의 extension으로 정의된 기본 구현체가
+이 프로토콜을 따르는 구조체의 동일한 이름의 구현체보다
+높은 우선순위를 가지고 있다는 것을 알 수 있다.
+다르게 말하자면 extension의 디스패치 테이블이
+A 구조체의 테이블보다 우선 검색된다는 말이 된다.
+이 부분은 아무래도 클래스 상속과는 다르기 때문에 주의가 필요할 것 같다.
+</p>
+</div>
+</li>
+<li><a id="orgdcf76b2"></a>메소드 디스패치 관련 지시어<br />
+<div class="outline-text-4" id="text-orgdcf76b2">
+<dl class="org-dl">
+<dt><code>final</code></dt><dd>클래스의 경우 이 <code>final</code> 이 붙게 되면 더 이상 상속이 되지 않는다.
+다르게 말해서 final class는 동적 디스패치 기능을 없애버린 것과 비슷하다.</dd>
+<dt><code>dynamic</code></dt><dd><code>final</code> 과 반대되는 것 같은 <code>dynamic</code> 은 정말 반대되는 의미다.
+다이내믹인 경우 <a href="swift.html">Swift</a> 인스턴스가 아니게 된다.
+<code>NSObject</code> 를 상속 받은 것과 비슷한 상태가 되기 때문이다. 덕분에 무거워진다.
+하지만 메시지 디스패치를 사용할 수 있어서 KVO(Key-Value Observing)가 가능해지게 된다.</dd>
+<dt><code>@objc</code></dt><dd><code>@objc</code> 는 Objective-C 네임스페이스에 등록 시켜서
+메시지 디스패치가 가능하게 해 준다.
+반대로 <code>@noobjc</code> 는 메시지 디스패치를 못 하게 막아버린다.</dd>
+<dt><code>@inline</code></dt><dd>인라인(inline)은 말 그대로 호출을 하지 않고
+컴파일 타임에 아예 구현체를 그대로 넣어버리는 무시무시한(?)
+다이렉트 디스패치와 비슷한 것이다.</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org80d76fc" class="outline-2">
+<h2 id="org80d76fc">버전 정리</h2>
+<div class="outline-text-2" id="text-org80d76fc">
+</div>
+<div id="outline-container-orge04a619" class="outline-3">
+<h3 id="orge04a619">5.1</h3>
+<div class="outline-text-3" id="text-orge04a619">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/27">🌏Self 키워드의 기능 추가 (SE-0068)</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/28">🌏순서가 있는 콜렉션끼리 차이점 비교하기 (SE-0240)</a></li>
@@ -143,31 +240,31 @@ C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
 </ul>
 </div>
 </div>
-<div id="outline-container-org826492d" class="outline-3">
-<h3 id="org826492d">5.2</h3>
-<div class="outline-text-3" id="text-org826492d">
+<div id="outline-container-orge0ecee6" class="outline-3">
+<h3 id="orge0ecee6">5.2</h3>
+<div class="outline-text-3" id="text-orge0ecee6">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/108">🌏Swift 5.2 업데이트 내역 살펴보기</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org34b571e" class="outline-2">
-<h2 id="org34b571e">외부 링크</h2>
-<div class="outline-text-2" id="text-org34b571e">
+<div id="outline-container-org39ae821" class="outline-2">
+<h2 id="org39ae821">외부 링크</h2>
+<div class="outline-text-2" id="text-org39ae821">
 </div>
-<div id="outline-container-orgcd11552" class="outline-3">
-<h3 id="orgcd11552">종합 가이드</h3>
-<div class="outline-text-3" id="text-orgcd11552">
+<div id="outline-container-orga4ddcb1" class="outline-3">
+<h3 id="orga4ddcb1">종합 가이드</h3>
+<div class="outline-text-3" id="text-orga4ddcb1">
 <ul class="org-ul">
 <li><a target="_blank" href="http://seorenn.blogspot.kr/2014/06/swift_16.html">🌏스위프트(Swift) 가이드</a>:
 오래전에 정리했던 글이지만 기본 가이드는 어느 정도 참고할 수 있을지도 모르겠다.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8415b6f" class="outline-3">
-<h3 id="org8415b6f">Combine Framework</h3>
-<div class="outline-text-3" id="text-org8415b6f">
+<div id="outline-container-org0983dd0" class="outline-3">
+<h3 id="org0983dd0">Combine Framework</h3>
+<div class="outline-text-3" id="text-org0983dd0">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/66">🌏Combine Framework는 어떤 녀석일까요?</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/80">🌏Combine 이벤트 체인이 왜 필요할까?</a></li>

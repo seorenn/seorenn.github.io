@@ -63,30 +63,32 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Emacs Lisp</h1>
-<div class="title-date">2020년 4월 18일 수정</div>
+<div class="title-date">2020년 4월 19일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org4eaecf7">개념 메모</a>
+<li><a href="#orgfa2e683">개념 메모</a>
 <ul>
-<li><a href="#org4cfadbf">샤프(Sharpsign)</a></li>
-<li><a href="#org058e026">단 따옴표(Single Quote)</a></li>
-<li><a href="#org0d417b3">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
-<li><a href="#org2b26a76">apply vs funcall</a></li>
-<li><a href="#org5c485de">Character</a></li>
+<li><a href="#orgb5c59f6">샤프(Sharpsign)</a></li>
+<li><a href="#orge350885">단 따옴표(Single Quote)</a></li>
+<li><a href="#org526e2ca">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
+<li><a href="#org07b1a4a">apply vs funcall</a></li>
+<li><a href="#orgc79210b">Character</a></li>
+<li><a href="#orgef1efa3">setq vs setq-default</a></li>
+<li><a href="#orgc7f8831">Comma and Back-Quote</a></li>
 </ul>
 </li>
-<li><a href="#org1217010">코드 예제</a>
+<li><a href="#org7765034">코드 예제</a>
 <ul>
-<li><a href="#org45be7df">타입 변환</a></li>
-<li><a href="#orgb729cd2">셸 커맨드</a></li>
+<li><a href="#orgbab4024">타입 변환</a></li>
+<li><a href="#org20f2332">셸 커맨드</a></li>
 </ul>
 </li>
-<li><a href="#org42ef48c">에러 노트</a>
+<li><a href="#orgc8783e8">에러 노트</a>
 <ul>
-<li><a href="#org635c67f">commandp</a></li>
-<li><a href="#org5029cb8">안 쓰는 매개변수</a></li>
+<li><a href="#org809efe5">commandp</a></li>
+<li><a href="#org53466a3">안 쓰는 매개변수</a></li>
 </ul>
 </li>
 </ul>
@@ -99,13 +101,13 @@ Lisp 언어를 의미한다.
 형태라서 Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 
-<div id="outline-container-org4eaecf7" class="outline-2">
-<h2 id="org4eaecf7">개념 메모</h2>
-<div class="outline-text-2" id="text-org4eaecf7">
+<div id="outline-container-orgfa2e683" class="outline-2">
+<h2 id="orgfa2e683">개념 메모</h2>
+<div class="outline-text-2" id="text-orgfa2e683">
 </div>
-<div id="outline-container-org4cfadbf" class="outline-3">
-<h3 id="org4cfadbf">샤프(Sharpsign)</h3>
-<div class="outline-text-3" id="text-org4cfadbf">
+<div id="outline-container-orgb5c59f6" class="outline-3">
+<h3 id="orgb5c59f6">샤프(Sharpsign)</h3>
+<div class="outline-text-3" id="text-orgb5c59f6">
 <p>
 <code>#</code> (Sharpsign) 은 s-expressions 특수 문법이다.
 근데 뭔 소린지 하나도 모르겠다.
@@ -125,9 +127,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org058e026" class="outline-3">
-<h3 id="org058e026">단 따옴표(Single Quote)</h3>
-<div class="outline-text-3" id="text-org058e026">
+<div id="outline-container-orge350885" class="outline-3">
+<h3 id="orge350885">단 따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-orge350885">
 <p>
 단 따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용한다.
 예를 들어 <code>(1 2 3)</code> 이라는 리스트를 메시지로 출력하고 싶어서
@@ -168,9 +170,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org0d417b3" class="outline-3">
-<h3 id="org0d417b3">샤프 단 따옴표(Sharpsign Single Quote)</h3>
-<div class="outline-text-3" id="text-org0d417b3">
+<div id="outline-container-org526e2ca" class="outline-3">
+<h3 id="org526e2ca">샤프 단 따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org526e2ca">
 <p>
 <code>#'function-name</code> 의 의미는
 <code>(function function-name)</code> 을 줄여서 표기한 것이다.
@@ -192,9 +194,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org2b26a76" class="outline-3">
-<h3 id="org2b26a76">apply vs funcall</h3>
-<div class="outline-text-3" id="text-org2b26a76">
+<div id="outline-container-org07b1a4a" class="outline-3">
+<h3 id="org07b1a4a">apply vs funcall</h3>
+<div class="outline-text-3" id="text-org07b1a4a">
 <p>
 위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있다.
 사용 방법도 거의 동일하다.
@@ -228,9 +230,9 @@ Lisp 언어를 의미한다.
 </div>
 </div>
 </div>
-<div id="outline-container-org5c485de" class="outline-3">
-<h3 id="org5c485de">Character</h3>
-<div class="outline-text-3" id="text-org5c485de">
+<div id="outline-container-orgc79210b" class="outline-3">
+<h3 id="orgc79210b">Character</h3>
+<div class="outline-text-3" id="text-orgc79210b">
 <p>
 <a href="emacs.html">Emacs</a>에서 문자는 ASCII 번호로 표현된다.
 즉 숫자다.
@@ -246,14 +248,50 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </p>
 </div>
 </div>
+<div id="outline-container-orgef1efa3" class="outline-3">
+<h3 id="orgef1efa3">setq vs setq-default</h3>
+<div class="outline-text-3" id="text-orgef1efa3">
+<p>
+<a href="emacs.html">Emacs</a>에는 버퍼 로컬 변수라는 개념이 있다. 예를 들자면
+<code>tab-width</code> 가 대표적인데, 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수
+있다. 버퍼에 속한 로컬 변수이기 때문이다.
+</p>
+
+<p>
+<code>setq</code> 명령어는 만약 로컬 변수가 있다면 해당 변수의 값을 지정하고, 로컬 변수가
+없다면 전역 변수에 지정하는 방식으로 동작한다.
+</p>
+
+<p>
+<code>setq-default</code> 는 버퍼 로컬 변수를 생략하고 무조건 전역 변수의 값을 지정하는
+용도로 사용된다.
+</p>
 </div>
-<div id="outline-container-org1217010" class="outline-2">
-<h2 id="org1217010">코드 예제</h2>
-<div class="outline-text-2" id="text-org1217010">
 </div>
-<div id="outline-container-org45be7df" class="outline-3">
-<h3 id="org45be7df">타입 변환</h3>
-<div class="outline-text-3" id="text-org45be7df">
+<div id="outline-container-orgc7f8831" class="outline-3">
+<h3 id="orgc7f8831">Comma and Back-Quote</h3>
+<div class="outline-text-3" id="text-orgc7f8831">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> a <span style="color: #98be65;">"a's value"</span> b <span style="color: #98be65;">"b's value"</span> c <span style="color: #98be65;">"c's value"</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">'</span><span style="color: #51afef;">(</span>a  b  c<span style="color: #51afef;">)</span>      <span style="color: #5B6268;">; </span><span style="color: #5B6268;">=&gt; (a b c)</span>
+<span style="color: #51afef;">`</span><span style="color: #51afef;">(</span>,a b ,c<span style="color: #51afef;">)</span>      <span style="color: #5B6268;">; </span><span style="color: #5B6268;">=&gt; ("a's value" b "c's value")</span>
+</pre>
+</div>
+<p>
+backquote는 quote랑 비슷한데, 인용된 리스트 내부에서 <code>,</code> 가 붙은 요소는
+evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 quote로 인용 시킬 때
+요소들이 이름이 아닌 값 자체로 들어가길 원할 때가 있는데 이럴 때 쓰면 좋을 것 같다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7765034" class="outline-2">
+<h2 id="org7765034">코드 예제</h2>
+<div class="outline-text-2" id="text-org7765034">
+</div>
+<div id="outline-container-orgbab4024" class="outline-3">
+<h3 id="orgbab4024">타입 변환</h3>
+<div class="outline-text-3" id="text-orgbab4024">
 <p>
 숫자(정수 및 실수)와 문자열 간의 전환 두 가지 예제다.
 </p>
@@ -271,9 +309,9 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb729cd2" class="outline-3">
-<h3 id="orgb729cd2"><a href="shell.html">셸</a> 커맨드</h3>
-<div class="outline-text-3" id="text-orgb729cd2">
+<div id="outline-container-org20f2332" class="outline-3">
+<h3 id="org20f2332"><a href="shell.html">셸</a> 커맨드</h3>
+<div class="outline-text-3" id="text-org20f2332">
 <p>
 <a href="shell.html">셸</a> 커맨드를 실행시키기 위해 대충 두 가지 함수가 있다.
 </p>
@@ -301,13 +339,13 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </div>
 </div>
 </div>
-<div id="outline-container-org42ef48c" class="outline-2">
-<h2 id="org42ef48c">에러 노트</h2>
-<div class="outline-text-2" id="text-org42ef48c">
+<div id="outline-container-orgc8783e8" class="outline-2">
+<h2 id="orgc8783e8">에러 노트</h2>
+<div class="outline-text-2" id="text-orgc8783e8">
 </div>
-<div id="outline-container-org635c67f" class="outline-3">
-<h3 id="org635c67f">commandp</h3>
-<div class="outline-text-3" id="text-org635c67f">
+<div id="outline-container-org809efe5" class="outline-3">
+<h3 id="org809efe5">commandp</h3>
+<div class="outline-text-3" id="text-org809efe5">
 <blockquote>
 <p>
 Wrong type argument: commandp, your-function
@@ -327,9 +365,9 @@ Wrong type argument: commandp, your-function
 </div>
 </div>
 </div>
-<div id="outline-container-org5029cb8" class="outline-3">
-<h3 id="org5029cb8">안 쓰는 매개변수</h3>
-<div class="outline-text-3" id="text-org5029cb8">
+<div id="outline-container-org53466a3" class="outline-3">
+<h3 id="org53466a3">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-org53466a3">
 <p>
 예를 들어 아래와 같은 코드에서
 </p>
@@ -366,16 +404,16 @@ Unused lexical argument 'bar'
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
 <div class="article-link-date">
-2020년 4월 18일 수정</div>
+2020년 4월 19일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
 <div class="article-link-date">
-2020년 4월 16일 수정</div>
+2020년 4월 18일 수정</div>
 </div>
 </div>
 </div>

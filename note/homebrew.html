@@ -68,22 +68,22 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org17b3754">기본 사용법</a>
+<li><a href="#orgebd753a">기본 사용법</a>
 <ul>
-<li><a href="#org487a7c9">패키지 검색</a></li>
-<li><a href="#org4bac471">패키지 정보</a></li>
-<li><a href="#orgad43181">패키지 설치</a></li>
-<li><a href="#org71abcdc">만료된 버전 확인</a></li>
-<li><a href="#orga0bc085">패키지 업그레이드</a></li>
-<li><a href="#org40cc0a5">구 버전 삭제하기</a></li>
-<li><a href="#orgb8be338">패키지 삭제(uninstall)</a></li>
-<li><a href="#org62d1624">의사 양반(?)</a></li>
+<li><a href="#org64d7ab8">패키지 검색</a></li>
+<li><a href="#orgaa8c9a9">패키지 정보</a></li>
+<li><a href="#orga6d0186">패키지 설치</a></li>
+<li><a href="#org619a8cf">만료된 버전 확인</a></li>
+<li><a href="#orgfb1638e">패키지 업그레이드</a></li>
+<li><a href="#org4c18231">구 버전 삭제하기</a></li>
+<li><a href="#orgda53934">패키지 삭제(uninstall)</a></li>
+<li><a href="#org4994b44">의사 양반(?)</a></li>
 </ul>
 </li>
-<li><a href="#org03d7d04">구 버전 패키지 사용하기</a></li>
-<li><a href="#org402f70a">다중 버전을 제공하는 패키지의 경우</a></li>
-<li><a href="#orgf908b03">Cask</a></li>
-<li><a href="#org7e7c160">외부 링크</a></li>
+<li><a href="#orgb0e8824">구 버전 패키지 사용하기</a></li>
+<li><a href="#org8fa82d8">다중 버전을 제공하는 패키지의 경우</a></li>
+<li><a href="#org79ad372">Cask</a></li>
+<li><a href="#org2a44708">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -94,31 +94,31 @@ Homebrew는 <a href="macos.html">macOS</a> 전용 패키지 관리자다.
 또한 root 사용자가 아니어도 사용할 수도 있도록 구조를 만들어 준다는 점도 특징이다.
 </p>
 
-<div id="outline-container-org17b3754" class="outline-2">
-<h2 id="org17b3754">기본 사용법</h2>
-<div class="outline-text-2" id="text-org17b3754">
+<div id="outline-container-orgebd753a" class="outline-2">
+<h2 id="orgebd753a">기본 사용법</h2>
+<div class="outline-text-2" id="text-orgebd753a">
 </div>
-<div id="outline-container-org487a7c9" class="outline-3">
-<h3 id="org487a7c9">패키지 검색</h3>
-<div class="outline-text-3" id="text-org487a7c9">
+<div id="outline-container-org64d7ab8" class="outline-3">
+<h3 id="org64d7ab8">패키지 검색</h3>
+<div class="outline-text-3" id="text-org64d7ab8">
 <div class="org-src-container">
 <pre class="src src-bash">brew search KEYWORD
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4bac471" class="outline-3">
-<h3 id="org4bac471">패키지 정보</h3>
-<div class="outline-text-3" id="text-org4bac471">
+<div id="outline-container-orgaa8c9a9" class="outline-3">
+<h3 id="orgaa8c9a9">패키지 정보</h3>
+<div class="outline-text-3" id="text-orgaa8c9a9">
 <div class="org-src-container">
 <pre class="src src-bash">brew info PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgad43181" class="outline-3">
-<h3 id="orgad43181">패키지 설치</h3>
-<div class="outline-text-3" id="text-orgad43181">
+<div id="outline-container-orga6d0186" class="outline-3">
+<h3 id="orga6d0186">패키지 설치</h3>
+<div class="outline-text-3" id="text-orga6d0186">
 <div class="org-src-container">
 <pre class="src src-bash">brew install PACKAGE_NAME
 </pre>
@@ -129,9 +129,9 @@ Homebrew는 <a href="macos.html">macOS</a> 전용 패키지 관리자다.
 </p>
 </div>
 </div>
-<div id="outline-container-org71abcdc" class="outline-3">
-<h3 id="org71abcdc">만료된 버전 확인</h3>
-<div class="outline-text-3" id="text-org71abcdc">
+<div id="outline-container-org619a8cf" class="outline-3">
+<h3 id="org619a8cf">만료된 버전 확인</h3>
+<div class="outline-text-3" id="text-org619a8cf">
 <p>
 설치된 패키지의 최신 버전이 존재하는지 확인하려면 <code>update</code> 후
 <code>outdated</code> 를 살펴보자.
@@ -143,9 +143,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-orga0bc085" class="outline-3">
-<h3 id="orga0bc085">패키지 업그레이드</h3>
-<div class="outline-text-3" id="text-orga0bc085">
+<div id="outline-container-orgfb1638e" class="outline-3">
+<h3 id="orgfb1638e">패키지 업그레이드</h3>
+<div class="outline-text-3" id="text-orgfb1638e">
 <div class="org-src-container">
 <pre class="src src-bash">brew upgrade PACKAGE_NAME
 </pre>
@@ -159,9 +159,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-org40cc0a5" class="outline-3">
-<h3 id="org40cc0a5">구 버전 삭제하기</h3>
-<div class="outline-text-3" id="text-org40cc0a5">
+<div id="outline-container-org4c18231" class="outline-3">
+<h3 id="org4c18231">구 버전 삭제하기</h3>
+<div class="outline-text-3" id="text-org4c18231">
 <p>
 패키지를 업그레이드해도 구 버전은 그대로 남아 파일 시스템에 잔존한다.
 이를 청소하기 위해 <code>cleanup</code> 커맨드를 사용할 수 있다.
@@ -175,18 +175,18 @@ brew outdated
 </p>
 </div>
 </div>
-<div id="outline-container-orgb8be338" class="outline-3">
-<h3 id="orgb8be338">패키지 삭제(uninstall)</h3>
-<div class="outline-text-3" id="text-orgb8be338">
+<div id="outline-container-orgda53934" class="outline-3">
+<h3 id="orgda53934">패키지 삭제(uninstall)</h3>
+<div class="outline-text-3" id="text-orgda53934">
 <div class="org-src-container">
 <pre class="src src-bash">brew uninstall PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org62d1624" class="outline-3">
-<h3 id="org62d1624">의사 양반(?)</h3>
-<div class="outline-text-3" id="text-org62d1624">
+<div id="outline-container-org4994b44" class="outline-3">
+<h3 id="org4994b44">의사 양반(?)</h3>
+<div class="outline-text-3" id="text-org4994b44">
 <div class="org-src-container">
 <pre class="src src-bash">brew doctor
 </pre>
@@ -197,9 +197,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-org03d7d04" class="outline-2">
-<h2 id="org03d7d04">구 버전 패키지 사용하기</h2>
-<div class="outline-text-2" id="text-org03d7d04">
+<div id="outline-container-orgb0e8824" class="outline-2">
+<h2 id="orgb0e8824">구 버전 패키지 사용하기</h2>
+<div class="outline-text-2" id="text-orgb0e8824">
 <p>
 만약 <code>upgrade</code> 등으로 최신버전이 설치되었다면
 해당 패키지의 구 버전도 여전히 파일 시스템에 남아있다.
@@ -214,9 +214,9 @@ brew outdated
 </p>
 </div>
 </div>
-<div id="outline-container-org402f70a" class="outline-2">
-<h2 id="org402f70a">다중 버전을 제공하는 패키지의 경우</h2>
-<div class="outline-text-2" id="text-org402f70a">
+<div id="outline-container-org8fa82d8" class="outline-2">
+<h2 id="org8fa82d8">다중 버전을 제공하는 패키지의 경우</h2>
+<div class="outline-text-2" id="text-org8fa82d8">
 <p>
 다중 버전의 패키지가 필요한 경우 우선 지원되는지 부터 확인해봐야 한다.
 예를 들어 node.js 의 경우 LTS 버전이 다양하게 제공되고 있다.
@@ -319,9 +319,9 @@ v10.x.x
 </p>
 </div>
 </div>
-<div id="outline-container-orgf908b03" class="outline-2">
-<h2 id="orgf908b03">Cask</h2>
-<div class="outline-text-2" id="text-orgf908b03">
+<div id="outline-container-org79ad372" class="outline-2">
+<h2 id="org79ad372">Cask</h2>
+<div class="outline-text-2" id="text-org79ad372">
 <p>
 cask는 <a href="macos.html">macOS</a> 응용 소프트웨어나
 다양한 리소스를 설치할 수 있게 도와주는 확장 도구다.
@@ -355,9 +355,9 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 </p>
 </div>
 </div>
-<div id="outline-container-org7e7c160" class="outline-2">
-<h2 id="org7e7c160">외부 링크</h2>
-<div class="outline-text-2" id="text-org7e7c160">
+<div id="outline-container-org2a44708" class="outline-2">
+<h2 id="org2a44708">외부 링크</h2>
+<div class="outline-text-2" id="text-org2a44708">
 <ul class="org-ul">
 <li><a target="_blank" href="https://brew.sh">🌏Homebrew 공식 홈페이지</a></li>
 </ul>
@@ -368,16 +368,16 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
+<h2><a class="article-link-title" href="/note/pyenv.html">pyenv</a></h2>
 <div class="article-link-date">
-2020년 4월 17일 수정</div>
+2020년 4월 19일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/pyenv.html">pyenv</a></h2>
+<h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
 <div class="article-link-date">
-2020년 4월 17일 수정</div>
+2020년 4월 19일 수정</div>
 </div>
 </div>
 </div>

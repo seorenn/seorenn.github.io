@@ -63,14 +63,15 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Dockerfile</h1>
-<div class="title-date">2020년 4월 15일 수정</div>
+<div class="title-date">2020년 4월 19일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org727a824">평범한 스펙 예제</a></li>
-<li><a href="#orgda33b25">사용자 지정</a></li>
-<li><a href="#orgdf96599">관련된 글들</a></li>
+<li><a href="#org3a1c974">평범한 스펙 예제</a></li>
+<li><a href="#orga486b93">사용자 지정</a></li>
+<li><a href="#orgafa34b2">Health Checking</a></li>
+<li><a href="#org6c1b2f3">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -79,9 +80,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-org727a824" class="outline-2">
-<h2 id="org727a824">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-org727a824">
+<div id="outline-container-org3a1c974" class="outline-2">
+<h2 id="org3a1c974">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-org3a1c974">
 <div class="org-src-container">
 <pre class="src src-text">FROM debian:buster
 
@@ -126,9 +127,9 @@ ENTRYPOINT ["/usr/local/bin/app"]
 </p>
 </div>
 </div>
-<div id="outline-container-orgda33b25" class="outline-2">
-<h2 id="orgda33b25">사용자 지정</h2>
-<div class="outline-text-2" id="text-orgda33b25">
+<div id="outline-container-orga486b93" class="outline-2">
+<h2 id="orga486b93">사용자 지정</h2>
+<div class="outline-text-2" id="text-orga486b93">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
@@ -143,13 +144,33 @@ USER someuser
 </p>
 </div>
 </div>
-<div id="outline-container-orgdf96599" class="outline-2">
-<h2 id="orgdf96599">관련된 글들</h2>
-<div class="outline-text-2" id="text-orgdf96599">
-<ul class="org-ul">
-<li><a href="docker.html">Docker</a></li>
-<li><a href="docker-compose.html">Docker Compose</a></li>
-</ul>
+<div id="outline-container-orgafa34b2" class="outline-2">
+<h2 id="orgafa34b2">Health Checking</h2>
+<div class="outline-text-2" id="text-orgafa34b2">
+<div class="org-src-container">
+<pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
+            --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
+            --<span style="color: #dcaeea;">retries</span>=<span style="color: #da8548; font-weight: bold;">6</span> <span style="color: #98be65;">\</span>
+            CMD curl -fs http://localhost:1234/ || <span style="color: #51afef;">exit</span> <span style="color: #da8548; font-weight: bold;">1</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6c1b2f3" class="outline-2">
+<h2 id="org6c1b2f3">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-org6c1b2f3">
+<div class="org-src-container">
+<pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
+...
+
+<span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">stage1</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage2</span>
+...
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">last stage</span>
+<span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">stage2</span>
+...
+</pre>
+</div>
 </div>
 </div>
 </section>

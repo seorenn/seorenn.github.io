@@ -322,6 +322,21 @@ hr {
   max-height: 800px;
 }
 
+.content table {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+th.org-left {
+  padding: 0.8rem 1rem 0.8rem 1rem;
+}
+
+td.org-left {
+  padding: 0.8rem 1rem 0.8rem 1rem;
+}
+
 /* post info */
 
 .post-info-container img {

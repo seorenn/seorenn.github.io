@@ -63,26 +63,27 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Javascript</h1>
-<div class="title-date">2020년 4월 19일 수정</div>
+<div class="title-date">2020년 4월 21일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgecab6f1">노트</a>
+<li><a href="#orge13b7e4">노트</a>
 <ul>
-<li><a href="#org071f1e3">모듈(Module)</a></li>
-<li><a href="#org2618bc9">스프레드(Spreads) 연산자</a></li>
-<li><a href="#org14f13ef">튜플 비슷한 문법</a></li>
+<li><a href="#orgfcbb484">모듈(Module)</a></li>
+<li><a href="#orgb5598eb">스프레드(Spreads) 연산자</a></li>
+<li><a href="#org0c20522">튜플 비슷한 문법</a></li>
 </ul>
 </li>
-<li><a href="#org69db176">실전(?) 메모</a>
+<li><a href="#orgdadc17d">실전(?) 메모</a>
 <ul>
-<li><a href="#org5ac2db0">특정 블록에 HTML 넣기</a></li>
-<li><a href="#org709af99">콘텐츠 높이 구하기</a></li>
-<li><a href="#org506d665">특정 태그 앞에 요소 넣기</a></li>
+<li><a href="#org1e239bb">요소 얻기</a></li>
+<li><a href="#org0e14325">특정 블록에 HTML 넣기</a></li>
+<li><a href="#org04fa7ae">콘텐츠 높이 구하기</a></li>
+<li><a href="#org8d70ee1">특정 태그 앞에 요소 넣기</a></li>
 </ul>
 </li>
-<li><a href="#org9b9a867">외부 링크</a></li>
+<li><a href="#org7497beb">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -100,17 +101,17 @@ gtag('config', 'UA-44534026-1');
 버전은 ES6를 기준으로 한다.
 </p>
 
-<div id="outline-container-orgecab6f1" class="outline-2">
-<h2 id="orgecab6f1">노트</h2>
-<div class="outline-text-2" id="text-orgecab6f1">
+<div id="outline-container-orge13b7e4" class="outline-2">
+<h2 id="orge13b7e4">노트</h2>
+<div class="outline-text-2" id="text-orge13b7e4">
 <p>
 여기에 붙는 글들은 정해진 주제 없이 필요할 때 마다 붙는 메모 형식으로
 작성됩니다. 후에 글이 모이면 별도의 글로 분리될 수도 있습니다.
 </p>
 </div>
-<div id="outline-container-org071f1e3" class="outline-3">
-<h3 id="org071f1e3">모듈(Module)</h3>
-<div class="outline-text-3" id="text-org071f1e3">
+<div id="outline-container-orgfcbb484" class="outline-3">
+<h3 id="orgfcbb484">모듈(Module)</h3>
+<div class="outline-text-3" id="text-orgfcbb484">
 <p>
 일반적으로 모듈은 아래와 같은 형식으로 쓰인다.
 </p>
@@ -162,9 +163,9 @@ console.log(someValues.value2);
 </div>
 </div>
 </div>
-<div id="outline-container-org2618bc9" class="outline-3">
-<h3 id="org2618bc9">스프레드(Spreads) 연산자</h3>
-<div class="outline-text-3" id="text-org2618bc9">
+<div id="outline-container-orgb5598eb" class="outline-3">
+<h3 id="orgb5598eb">스프레드(Spreads) 연산자</h3>
+<div class="outline-text-3" id="text-orgb5598eb">
 <p>
 스프레드 연산자는 <code>...</code> 으로 표기되며
 이름처럼 펼치거나 확산한다라는 의미로 동작한다.
@@ -225,9 +226,9 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </p>
 </div>
 </div>
-<div id="outline-container-org14f13ef" class="outline-3">
-<h3 id="org14f13ef">튜플 비슷한 문법</h3>
-<div class="outline-text-3" id="text-org14f13ef">
+<div id="outline-container-org0c20522" class="outline-3">
+<h3 id="org0c20522">튜플 비슷한 문법</h3>
+<div class="outline-text-3" id="text-org0c20522">
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">let</span> [<span style="color: #dcaeea;">foo</span>, <span style="color: #dcaeea;">bar</span>] = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>]
 [foo, bar] = [bar, foo]
@@ -239,13 +240,27 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </div>
 </div>
 </div>
-<div id="outline-container-org69db176" class="outline-2">
-<h2 id="org69db176">실전(?) 메모</h2>
-<div class="outline-text-2" id="text-org69db176">
+<div id="outline-container-orgdadc17d" class="outline-2">
+<h2 id="orgdadc17d">실전(?) 메모</h2>
+<div class="outline-text-2" id="text-orgdadc17d">
 </div>
-<div id="outline-container-org5ac2db0" class="outline-3">
-<h3 id="org5ac2db0">특정 블록에 HTML 넣기</h3>
-<div class="outline-text-3" id="text-org5ac2db0">
+<div id="outline-container-org1e239bb" class="outline-3">
+<h3 id="org1e239bb">요소 얻기</h3>
+<div class="outline-text-3" id="text-org1e239bb">
+<div class="org-src-container">
+<pre class="src src-javascript">document.getElementById(<span style="color: #98be65;">'some-id'</span>)
+document.getElementsByClassName(<span style="color: #98be65;">'some-class'</span>)[<span style="color: #da8548; font-weight: bold;">0</span>]
+document.getElementsByTagName(<span style="color: #98be65;">'tag-name'</span>)[<span style="color: #da8548; font-weight: bold;">0</span>]
+</pre>
+</div>
+<p>
+메서드 이름에서 elements와 element의 차이, 즉 복수와 단수의 차이를 잘 구분하자.
+</p>
+</div>
+</div>
+<div id="outline-container-org0e14325" class="outline-3">
+<h3 id="org0e14325">특정 블록에 HTML 넣기</h3>
+<div class="outline-text-3" id="text-org0e14325">
 <p>
 아래는 some-id라는 아이디의 div 블록 내부 내용을 지정하는 예제다.
 </p>
@@ -255,9 +270,9 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </div>
 </div>
 </div>
-<div id="outline-container-org709af99" class="outline-3">
-<h3 id="org709af99">콘텐츠 높이 구하기</h3>
-<div class="outline-text-3" id="text-org709af99">
+<div id="outline-container-org04fa7ae" class="outline-3">
+<h3 id="org04fa7ae">콘텐츠 높이 구하기</h3>
+<div class="outline-text-3" id="text-org04fa7ae">
 <p>
 웹 브라우저에 표시되는 내용의 높이(height)를 구하는 방법이다.
 </p>
@@ -277,9 +292,9 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </p>
 </div>
 </div>
-<div id="outline-container-org506d665" class="outline-3">
-<h3 id="org506d665">특정 태그 앞에 요소 넣기</h3>
-<div class="outline-text-3" id="text-org506d665">
+<div id="outline-container-org8d70ee1" class="outline-3">
+<h3 id="org8d70ee1">특정 태그 앞에 요소 넣기</h3>
+<div class="outline-text-3" id="text-org8d70ee1">
 <p>
 수동으로 노드를 만들어서 특정 태그 노드 앞에 붙이는 예제다.
 </p>
@@ -306,9 +321,9 @@ targetElement.parentNode.insertBefore(newElement, targetElement)
 </div>
 </div>
 </div>
-<div id="outline-container-org9b9a867" class="outline-2">
-<h2 id="org9b9a867">외부 링크</h2>
-<div class="outline-text-2" id="text-org9b9a867">
+<div id="outline-container-org7497beb" class="outline-2">
+<h2 id="org7497beb">외부 링크</h2>
+<div class="outline-text-2" id="text-org7497beb">
 <ul class="org-ul">
 <li><a target="_blank" href="https://ko.javascript.info/">🌏모던 JavaScript 튜토리얼</a></li>
 <li><a target="_blank" href="https://junhobaik.github.io/es2016-es2020/">🌏ECMAScript ES2016~ES2020 정리</a></li>

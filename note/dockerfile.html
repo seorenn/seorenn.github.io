@@ -63,15 +63,15 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Dockerfile</h1>
-<div class="title-date">2020년 4월 19일 수정</div>
+<div class="title-date">2020년 4월 21일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org3a1c974">평범한 스펙 예제</a></li>
-<li><a href="#orga486b93">사용자 지정</a></li>
-<li><a href="#orgafa34b2">Health Checking</a></li>
-<li><a href="#org6c1b2f3">Multi Stage Building</a></li>
+<li><a href="#org4deca57">평범한 스펙 예제</a></li>
+<li><a href="#org2fb1e38">사용자 지정</a></li>
+<li><a href="#org8b897c1">Health Checking</a></li>
+<li><a href="#orga70a772">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -80,26 +80,26 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-org3a1c974" class="outline-2">
-<h2 id="org3a1c974">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-org3a1c974">
+<div id="outline-container-org4deca57" class="outline-2">
+<h2 id="org4deca57">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-org4deca57">
 <div class="org-src-container">
-<pre class="src src-text">FROM debian:buster
+<pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">debian:buster</span>
 
-RUN apt-get update &amp;&amp; \
+<span style="color: #51afef;">RUN</span> apt-get update &amp;&amp; <span style="color: #98be65;">\</span>
     apt-get install -y build-essential python-dev python-pip
 
-ADD . /app
+<span style="color: #51afef;">ADD</span> . /app
 
-RUN cd /app &amp;&amp; \
-    make &amp;&amp; \
-    make install &amp;&amp; \
+<span style="color: #51afef;">RUN</span> cd /app &amp;&amp; <span style="color: #98be65;">\</span>
+    make &amp;&amp; <span style="color: #98be65;">\</span>
+    make install &amp;&amp; <span style="color: #98be65;">\</span>
     pip install -r requirements.txt
 
-ENV APP_NAME "sample"
-ENV APP_VERSION "1.0"
+<span style="color: #51afef;">ENV</span> APP_NAME <span style="color: #98be65;">"sample"</span>
+<span style="color: #51afef;">ENV</span> APP_VERSION <span style="color: #98be65;">"1.0"</span>
 
-ENTRYPOINT ["/usr/local/bin/app"]
+<span style="color: #51afef;">ENTRYPOINT</span> [<span style="color: #98be65;">"/usr/local/bin/app"</span>]
 </pre>
 </div>
 <p>
@@ -127,16 +127,16 @@ ENTRYPOINT ["/usr/local/bin/app"]
 </p>
 </div>
 </div>
-<div id="outline-container-orga486b93" class="outline-2">
-<h2 id="orga486b93">사용자 지정</h2>
-<div class="outline-text-2" id="text-orga486b93">
+<div id="outline-container-org2fb1e38" class="outline-2">
+<h2 id="org2fb1e38">사용자 지정</h2>
+<div class="outline-text-2" id="text-org2fb1e38">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
 <div class="org-src-container">
-<pre class="src src-text">RUN groupadd -r someuser
-RUN useradd -m -r -g someuser someuser
-USER someuser
+<pre class="src src-dockerfile"><span style="color: #51afef;">RUN</span> groupadd -r someuser
+<span style="color: #51afef;">RUN</span> useradd -m -r -g someuser someuser
+<span style="color: #51afef;">USER</span> someuser
 </pre>
 </div>
 <p>
@@ -144,9 +144,9 @@ USER someuser
 </p>
 </div>
 </div>
-<div id="outline-container-orgafa34b2" class="outline-2">
-<h2 id="orgafa34b2">Health Checking</h2>
-<div class="outline-text-2" id="text-orgafa34b2">
+<div id="outline-container-org8b897c1" class="outline-2">
+<h2 id="org8b897c1">Health Checking</h2>
+<div class="outline-text-2" id="text-org8b897c1">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -156,9 +156,9 @@ USER someuser
 </div>
 </div>
 </div>
-<div id="outline-container-org6c1b2f3" class="outline-2">
-<h2 id="org6c1b2f3">Multi Stage Building</h2>
-<div class="outline-text-2" id="text-org6c1b2f3">
+<div id="outline-container-orga70a772" class="outline-2">
+<h2 id="orga70a772">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-orga70a772">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...

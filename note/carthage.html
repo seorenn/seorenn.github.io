@@ -63,26 +63,26 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>Carthage</h1>
-<div class="title-date">2020년 4월 20일 수정</div>
+<div class="title-date">2020년 4월 22일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc0c3c9d">Cartfile</a></li>
-<li><a href="#org781d9a7">사용법 정리</a>
+<li><a href="#orga5a5508">Cartfile</a></li>
+<li><a href="#orgd4917ba">사용법 정리</a>
 <ul>
-<li><a href="#org5161b31">Carthage 설치</a></li>
-<li><a href="#orgc9e310d">의존성 설치하기</a></li>
-<li><a href="#orga86e3b8">플랫폼 전용 빌드</a></li>
-<li><a href="#org61e8694">빌드 된 프레임워크 위치</a></li>
+<li><a href="#org755acfc">Carthage 설치</a></li>
+<li><a href="#org3cbb664">의존성 설치하기</a></li>
+<li><a href="#orgce0d9f6">플랫폼 전용 빌드</a></li>
+<li><a href="#orgd50a121">빌드 된 프레임워크 위치</a></li>
 </ul>
 </li>
-<li><a href="#org804c828">외부 링크</a></li>
+<li><a href="#org05b014a">외부 링크</a></li>
 </ul>
 </div>
 </div>
 <p>
-Carthage<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>는 iOS 혹은 <a href="macos.html">macOS</a> 용
+Carthage(카르타고)는 iOS 혹은 <a href="macos.html">macOS</a> 용
 외부 오픈소스 프레임워크나 라이브러리 프로젝트 의존성을 관리해 주는 도구다.
 비슷한 도구로 SwiftPM 혹은 Cocoapods가 있다.
 </p>
@@ -99,9 +99,9 @@ Cocoapods와 차이점이 있다면, 중앙 집중적으로 패키지를 관리�
 한다.
 </p>
 
-<div id="outline-container-orgc0c3c9d" class="outline-2">
-<h2 id="orgc0c3c9d">Cartfile</h2>
-<div class="outline-text-2" id="text-orgc0c3c9d">
+<div id="outline-container-orga5a5508" class="outline-2">
+<h2 id="orga5a5508">Cartfile</h2>
+<div class="outline-text-2" id="text-orga5a5508">
 <p>
 <code>Cartfile</code> 은 Carthage 의존성을 명시하는 파일이다.
 대충 아래와 같은 식으로 적는다.
@@ -145,13 +145,13 @@ github "user/projectname" == 1.0
 </p>
 </div>
 </div>
-<div id="outline-container-org781d9a7" class="outline-2">
-<h2 id="org781d9a7">사용법 정리</h2>
-<div class="outline-text-2" id="text-org781d9a7">
+<div id="outline-container-orgd4917ba" class="outline-2">
+<h2 id="orgd4917ba">사용법 정리</h2>
+<div class="outline-text-2" id="text-orgd4917ba">
 </div>
-<div id="outline-container-org5161b31" class="outline-3">
-<h3 id="org5161b31">Carthage 설치</h3>
-<div class="outline-text-3" id="text-org5161b31">
+<div id="outline-container-org755acfc" class="outline-3">
+<h3 id="org755acfc">Carthage 설치</h3>
+<div class="outline-text-3" id="text-org755acfc">
 <p>
 <a href="homebrew.html">Homebrew</a>로 쉽게 설치할 수 있다.
 </p>
@@ -164,9 +164,9 @@ github "user/projectname" == 1.0
 </p>
 </div>
 </div>
-<div id="outline-container-orgc9e310d" class="outline-3">
-<h3 id="orgc9e310d">의존성 설치하기</h3>
-<div class="outline-text-3" id="text-orgc9e310d">
+<div id="outline-container-org3cbb664" class="outline-3">
+<h3 id="org3cbb664">의존성 설치하기</h3>
+<div class="outline-text-3" id="text-org3cbb664">
 <div class="org-src-container">
 <pre class="src src-bash">carthage update
 </pre>
@@ -176,9 +176,9 @@ github "user/projectname" == 1.0
 </p>
 </div>
 </div>
-<div id="outline-container-orga86e3b8" class="outline-3">
-<h3 id="orga86e3b8">플랫폼 전용 빌드</h3>
-<div class="outline-text-3" id="text-orga86e3b8">
+<div id="outline-container-orgce0d9f6" class="outline-3">
+<h3 id="orgce0d9f6">플랫폼 전용 빌드</h3>
+<div class="outline-text-3" id="text-orgce0d9f6">
 <div class="org-src-container">
 <pre class="src src-bash">carthage update --platform iOS
 </pre>
@@ -193,9 +193,9 @@ github "user/projectname" == 1.0
 </div>
 </div>
 </div>
-<div id="outline-container-org61e8694" class="outline-3">
-<h3 id="org61e8694">빌드 된 프레임워크 위치</h3>
-<div class="outline-text-3" id="text-org61e8694">
+<div id="outline-container-orgd50a121" class="outline-3">
+<h3 id="orgd50a121">빌드 된 프레임워크 위치</h3>
+<div class="outline-text-3" id="text-orgd50a121">
 <p>
 빌드가 완료되면 <code>Carthage/Build/[Platform]</code> 디렉터리에서
 빌드 된 프레임워크를 찾을 수 있다.
@@ -204,23 +204,15 @@ github "user/projectname" == 1.0
 </div>
 </div>
 </div>
-<div id="outline-container-org804c828" class="outline-2">
-<h2 id="org804c828">외부 링크</h2>
-<div class="outline-text-2" id="text-org804c828">
+<div id="outline-container-org05b014a" class="outline-2">
+<h2 id="org05b014a">외부 링크</h2>
+<div class="outline-text-2" id="text-org05b014a">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/Carthage/Carthage">🌏Carthage 공식 프로젝트 저장소</a></li>
 </ul>
 </div>
 </div>
-<div id="footnotes">
-<h2 class="footnotes">🀱 각주 (Footnotes)</h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">"카르타고"라고 읽는다.</p></div></div>
-
-
-</div>
-</div></section>
+</section>
 <div class="top-ad">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"

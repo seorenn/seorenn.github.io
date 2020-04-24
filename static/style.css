@@ -186,7 +186,8 @@ hr {
 }
 
 .top-ad-container {
-  max-width: 800px;
+  max-width: 1024px;
+  padding: 0;
   margin: 0 auto;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -198,7 +199,8 @@ hr {
 }
 
 .mid-ad-container {
-  max-width: 800px;
+  max-width: 1024px;
+  padding: 0;
   margin: 0 auto;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -210,7 +212,8 @@ hr {
 }
 
 .bottom-ad-container {
-  max-width: 800px;
+  max-width: 1024px;
+  padding: 0;
   margin: 0 auto;
   margin-top: 48px;
   margin-bottom: 48px;

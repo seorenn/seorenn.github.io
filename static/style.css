@@ -74,6 +74,18 @@ body {
     grid-column: 2;
   }
 
+  .top-ad-container {
+    width: 0 !important;
+    height: 0 !important;
+    display: hidden !important;
+  }
+
+  .top-ad {
+    height: 0 !important;
+    width: 0 !important;
+    display: hidden !important;
+  }
+
   .side-ad-container {
     grid-column: 3;
     padding-top: 32px;
@@ -131,6 +143,21 @@ body {
     padding-right: 16px;
   }
 
+  .top-ad-container {
+    max-width: 800px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .top-ad {
+    width: 100%;
+    height: auto;
+  }
+
   .side-ad-container {
     width: 0;
     height: 0;
@@ -174,6 +201,21 @@ body {
     margin: 0 auto;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .top-ad-container {
+    max-width: 800px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .top-ad {
+    width: 100%;
+    height: auto;
   }
 
   .side-ad-container {
@@ -278,19 +320,6 @@ hr {
 .article-link-date {
   font-size: 0.9rem;
   color: #5c6267;
-}
-
-.top-ad-container {
-  max-width: 1024px;
-  padding: 0;
-  margin: 0 auto;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  text-align: center;
-}
-
-.top-ad {
-  width: 100%;
 }
 
 .mid-ad-container {

@@ -1,0 +1,285 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Grep - Seorenn</title>
+<meta name="twitter:title" content="Grep" />
+<meta name="og:title" content="Grep" />
+<meta name="description" content="Grep에 관한 토막 글들" />
+<meta name="twitter:description" content="Grep에 관한 토막 글들" />
+<meta name="og:description" content="Grep에 관한 토막 글들" />
+<link rel="canonical" href="https://seorenn.github.io/note/grep.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/grep.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<div class="top-ad">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<section class="content">
+<header>
+<h1>Grep</h1>
+<div class="title-date">2020년 4월 24일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#org09b59b1">기본 사용법</a></li>
+<li><a href="#org51986a3">대소문자 무시</a></li>
+<li><a href="#org5ad29e6">바이너리(Binary) 파일 무시하기</a></li>
+<li><a href="#org07df591">재귀(Recursive) 검색</a></li>
+<li><a href="#org28209f1">검색된 파일 이름만 보기</a></li>
+<li><a href="#orgee0cefd">단어만 검색하기</a></li>
+<li><a href="#org0a5f78e">줄 번호(Line Number) 보기</a></li>
+<li><a href="#orgdaf6221">발견 개수 보기</a></li>
+<li><a href="#org2274c7e">검색되지 않는 것만 보기</a></li>
+<li><a href="#orge835b4b">정규표현식</a></li>
+</ul>
+</div>
+</div>
+<p>
+Grep은 파일이나 텍스트에서 특정 텍스트를 검색하는 데 사용되는 *NIX <a href="cli.html">CLI</a> 도구다.
+</p>
+
+<div id="outline-container-org09b59b1" class="outline-2">
+<h2 id="org09b59b1">기본 사용법</h2>
+<div class="outline-text-2" id="text-org09b59b1">
+<p>
+기본적으로는 텍스트 파일에서 문자열을 검색하는 것을 생각할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> <span style="color: #98be65;">'text'</span> some-file.txt
+</pre>
+</div>
+<p>
+혹은 파일이 아니라 파이프로 전달된 텍스트에서 검색할 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">'this is sample'</span> | <span style="color: #ECBE7B;">grep</span> sam
+this is sample
+        ^^^
+</pre>
+</div>
+<p>
+위의 경우 글에서는 표현할 수 없는 컬러 등으로 표시되기 때문에
+실제로는 <code>^^^</code> 가 표시되지 않는다.
+</p>
+
+<p>
+뭐 하여간 이어지는 다양한 옵션이 있으니 적당히 섞어서 사용하면 된다.
+</p>
+</div>
+</div>
+<div id="outline-container-org51986a3" class="outline-2">
+<h2 id="org51986a3">대소문자 무시</h2>
+<div class="outline-text-2" id="text-org51986a3">
+<p>
+<code>-i</code> 옵션을 사용하면 대소문자를 가리지 않고 검색한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -i KEYWORD PATH
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ad29e6" class="outline-2">
+<h2 id="org5ad29e6">바이너리(Binary) 파일 무시하기</h2>
+<div class="outline-text-2" id="text-org5ad29e6">
+<p>
+가끔 이진 파일에서 검색하느라 느려지거나 이상한 것을 검색하기도 하는데, 이를 때는 <code>-I</code> 옵션을 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -I KEYWORD PATH
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org07df591" class="outline-2">
+<h2 id="org07df591">재귀(Recursive) 검색</h2>
+<div class="outline-text-2" id="text-org07df591">
+<p>
+재귀 검색이란 하위 디렉터리를 모두 다 뒤져본다는 의미다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -r KEYWORD *
+</pre>
+</div>
+<p>
+위 명령은 현재 디렉터리 및 하위 디렉터리의 모든 파일에서 키워드를 검색한다.
+</p>
+
+<p>
+만약 대상 경로에 특별한 이름을 넣으면 원하지 않는 결과가 나올 수 있다. 예를 들어
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -r text *.py
+</pre>
+</div>
+<p>
+위와 같이 검색을 하게 되면 하위 디렉터리가 제대로 검색되지 않을 가능성이 높다.
+왜냐하면 <code>*.py</code> 라는 패턴의 이름에 해당하는 디렉터리 만을 뒤져보기 때문이다.
+즉 저 패턴은 파일 이름 뿐만 아니라 디렉터리 이름도 해당된다는 말이다.
+</p>
+</div>
+</div>
+<div id="outline-container-org28209f1" class="outline-2">
+<h2 id="org28209f1">검색된 파일 이름만 보기</h2>
+<div class="outline-text-2" id="text-org28209f1">
+<p>
+<code>-l</code> 옵션은 발견된 패턴을 화면에 표시하지 않게 한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -l KEYWORD PATH
+</pre>
+</div>
+<p>
+이 경우 검색된 내용은 아예 출력하지 않고 파일 이름 만을 출력하는 데
+파이프를 통해 여러 작업을 하기 유용한 커맨드다.
+예를 들어 검색된 파일만 삭제하거나 등등 말이다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgee0cefd" class="outline-2">
+<h2 id="orgee0cefd">단어만 검색하기</h2>
+<div class="outline-text-2" id="text-orgee0cefd">
+<p>
+단어 단위 검색을 하기 위해서 <code>-w</code> 옵션을 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -w WORD PATH
+</pre>
+</div>
+<p>
+예를 들어 정확한 함수 이름을 검색하고 싶을 때 유용하다.
+</p>
+</div>
+</div>
+<div id="outline-container-org0a5f78e" class="outline-2">
+<h2 id="org0a5f78e">줄 번호(Line Number) 보기</h2>
+<div class="outline-text-2" id="text-org0a5f78e">
+<p>
+<code>-n</code> 옵션을 이용해 줄 번호를 표시할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -n KEYWORD PATH
+</pre>
+</div>
+<p>
+줄 번호를 알면 예를 들어 에디터를 통해 바로 해당 위치에서 편집하는 데 활용이 가능하다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdaf6221" class="outline-2">
+<h2 id="orgdaf6221">발견 개수 보기</h2>
+<div class="outline-text-2" id="text-orgdaf6221">
+<p>
+<code>-c</code> 옵션을 주면 발견된 개수(count)를 구할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -c KEYWORD PATH
+</pre>
+</div>
+<p>
+패턴을 만족하는 검색 결과가 몇 개인지 숫자로 표시되는데, 여러 <a href="shell.html">셸</a> 스크립트를 작성하는 데 유용할 것 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-org2274c7e" class="outline-2">
+<h2 id="org2274c7e">검색되지 않는 것만 보기</h2>
+<div class="outline-text-2" id="text-org2274c7e">
+<p>
+<code>-v</code> 옵션을 주면 검색되지 않는 라인을 화면에 표시한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -v KEYWORD PATH
+</pre>
+</div>
+<p>
+일반적인 검색에선 써먹기 힘들겠지만, 텍스트의 대부분이 비슷한 내용으로 뒤덮여 있을 때 다른 텍스트를 검색하기 쉽다.
+</p>
+</div>
+</div>
+<div id="outline-container-orge835b4b" class="outline-2">
+<h2 id="orge835b4b">정규표현식</h2>
+<div class="outline-text-2" id="text-orge835b4b">
+<p>
+원래 정규표현식이 지원되지 때문에 그냥 써도 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> <span style="color: #98be65;">'word1\|word2\|word3'</span> *
+</pre>
+</div>
+<p>
+하지만 저런 이스케이프가 귀찮다면 아래 처럼 <code>-E</code> 옵션을 줄 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">grep</span> -E <span style="color: #98be65;">'word1|word2|word3'</span> *
+</pre>
+</div>
+<p>
+<code>-E</code> 옵션을 주면 일부 이스케이프가 필요 없이 순수한 정규표현식 문법을 적을 수 있다.
+</p>
+</div>
+</div>
+</section>
+<div class="top-ad">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

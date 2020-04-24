@@ -60,33 +60,33 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd05c165">문자열 관련 팁 메모</a>
+<li><a href="#org887c764">문자열 관련 팁 메모</a>
 <ul>
-<li><a href="#orge1ce81c">문자열 내에서 검색하기</a></li>
-<li><a href="#org542f6d7">문자열 일부만 얻기(Substring)</a></li>
+<li><a href="#orgdf847c6">문자열 내에서 검색하기</a></li>
+<li><a href="#orgfa80bdc">문자열 일부만 얻기(Substring)</a></li>
 </ul>
 </li>
-<li><a href="#org28ecfdb">개념 메모</a>
+<li><a href="#org8f01d28">개념 메모</a>
 <ul>
-<li><a href="#orge2444b3">메서드 디스패치(Method Dispatch)</a></li>
+<li><a href="#org43e4d23">메서드 디스패치(Method Dispatch)</a></li>
 </ul>
 </li>
-<li><a href="#org1205f86">버전 정리</a>
+<li><a href="#orgb4925a5">버전 정리</a>
 <ul>
-<li><a href="#org57ef573">5.1</a></li>
-<li><a href="#orgec63072">5.2</a></li>
+<li><a href="#org695857f">5.1</a></li>
+<li><a href="#org07ef12c">5.2</a></li>
 </ul>
 </li>
-<li><a href="#org1a5d9d8">그 외의 사소한 팁</a>
+<li><a href="#org6402abc">그 외의 사소한 팁</a>
 <ul>
-<li><a href="#orgf36c83d">일부만 Import 하기</a></li>
+<li><a href="#orgdedb375">일부만 Import 하기</a></li>
 </ul>
 </li>
-<li><a href="#org436a6ee">외부 링크</a>
+<li><a href="#org67f9933">외부 링크</a>
 <ul>
-<li><a href="#org8b37359">종합 가이드</a></li>
-<li><a href="#orgbbe7029">Combine Framework</a></li>
-<li><a href="#org27ce031">기타</a></li>
+<li><a href="#orgad66818">종합 가이드</a></li>
+<li><a href="#orge39263a">Combine Framework</a></li>
+<li><a href="#org6653a72">기타</a></li>
 </ul>
 </li>
 </ul>
@@ -133,13 +133,13 @@ C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
 따라서 최적화도 굉장히 손쉬운 편에 속한다.
 </p>
 
-<div id="outline-container-orgd05c165" class="outline-2">
-<h2 id="orgd05c165">문자열 관련 팁 메모</h2>
-<div class="outline-text-2" id="text-orgd05c165">
+<div id="outline-container-org887c764" class="outline-2">
+<h2 id="org887c764">문자열 관련 팁 메모</h2>
+<div class="outline-text-2" id="text-org887c764">
 </div>
-<div id="outline-container-orge1ce81c" class="outline-3">
-<h3 id="orge1ce81c">문자열 내에서 검색하기</h3>
-<div class="outline-text-3" id="text-orge1ce81c">
+<div id="outline-container-orgdf847c6" class="outline-3">
+<h3 id="orgdf847c6">문자열 내에서 검색하기</h3>
+<div class="outline-text-3" id="text-orgdf847c6">
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #98be65;">"Hello World!"</span>.<span style="color: #c678dd;">range</span>(of: <span style="color: #98be65;">"llo"</span>)
 </pre>
@@ -149,9 +149,9 @@ C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
 </p>
 </div>
 </div>
-<div id="outline-container-org542f6d7" class="outline-3">
-<h3 id="org542f6d7">문자열 일부만 얻기(Substring)</h3>
-<div class="outline-text-3" id="text-org542f6d7">
+<div id="outline-container-orgfa80bdc" class="outline-3">
+<h3 id="orgfa80bdc">문자열 일부만 얻기(Substring)</h3>
+<div class="outline-text-3" id="text-orgfa80bdc">
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">if</span> <span style="color: #51afef;">let</span> s = someString.<span style="color: #c678dd;">range</span>(of: <span style="color: #98be65;">"start&gt;"</span>),
    <span style="color: #51afef;">let</span> e = someString.<span style="color: #c678dd;">range</span>(of: <span style="color: #98be65;">"&lt;end"</span>) {
@@ -165,13 +165,13 @@ C 나 C++ 코드를 함께 쓰기도 어렵지 않다.
 </div>
 </div>
 </div>
-<div id="outline-container-org28ecfdb" class="outline-2">
-<h2 id="org28ecfdb">개념 메모</h2>
-<div class="outline-text-2" id="text-org28ecfdb">
+<div id="outline-container-org8f01d28" class="outline-2">
+<h2 id="org8f01d28">개념 메모</h2>
+<div class="outline-text-2" id="text-org8f01d28">
 </div>
-<div id="outline-container-orge2444b3" class="outline-3">
-<h3 id="orge2444b3">메서드 디스패치(Method Dispatch)</h3>
-<div class="outline-text-3" id="text-orge2444b3">
+<div id="outline-container-org43e4d23" class="outline-3">
+<h3 id="org43e4d23">메서드 디스패치(Method Dispatch)</h3>
+<div class="outline-text-3" id="text-org43e4d23">
 <p>
 상속 관계의 메서드 디스패치는 OOP에 상식적이다.
 </p>
@@ -251,13 +251,13 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 </div>
 </div>
 </div>
-<div id="outline-container-org1205f86" class="outline-2">
-<h2 id="org1205f86">버전 정리</h2>
-<div class="outline-text-2" id="text-org1205f86">
+<div id="outline-container-orgb4925a5" class="outline-2">
+<h2 id="orgb4925a5">버전 정리</h2>
+<div class="outline-text-2" id="text-orgb4925a5">
 </div>
-<div id="outline-container-org57ef573" class="outline-3">
-<h3 id="org57ef573">5.1</h3>
-<div class="outline-text-3" id="text-org57ef573">
+<div id="outline-container-org695857f" class="outline-3">
+<h3 id="org695857f">5.1</h3>
+<div class="outline-text-3" id="text-org695857f">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/27">🌏Self 키워드의 기능 추가 (SE-0068)</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/28">🌏순서가 있는 콜렉션끼리 차이점 비교하기 (SE-0240)</a></li>
@@ -270,22 +270,22 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec63072" class="outline-3">
-<h3 id="orgec63072">5.2</h3>
-<div class="outline-text-3" id="text-orgec63072">
+<div id="outline-container-org07ef12c" class="outline-3">
+<h3 id="org07ef12c">5.2</h3>
+<div class="outline-text-3" id="text-org07ef12c">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/108">🌏Swift 5.2 업데이트 내역 살펴보기</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org1a5d9d8" class="outline-2">
-<h2 id="org1a5d9d8">그 외의 사소한 팁</h2>
-<div class="outline-text-2" id="text-org1a5d9d8">
+<div id="outline-container-org6402abc" class="outline-2">
+<h2 id="org6402abc">그 외의 사소한 팁</h2>
+<div class="outline-text-2" id="text-org6402abc">
 </div>
-<div id="outline-container-orgf36c83d" class="outline-3">
-<h3 id="orgf36c83d">일부만 Import 하기</h3>
-<div class="outline-text-3" id="text-orgf36c83d">
+<div id="outline-container-orgdedb375" class="outline-3">
+<h3 id="orgdedb375">일부만 Import 하기</h3>
+<div class="outline-text-3" id="text-orgdedb375">
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">import</span> <span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SwiftUI</span>.<span style="color: #dcaeea;">Image</span>
 <span style="color: #51afef;">import</span> <span style="color: #51afef;">class</span> <span style="color: #c678dd;">UIKit</span>.<span style="color: #dcaeea;">UIImage</span>
@@ -298,22 +298,22 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 </div>
 </div>
 </div>
-<div id="outline-container-org436a6ee" class="outline-2">
-<h2 id="org436a6ee">외부 링크</h2>
-<div class="outline-text-2" id="text-org436a6ee">
+<div id="outline-container-org67f9933" class="outline-2">
+<h2 id="org67f9933">외부 링크</h2>
+<div class="outline-text-2" id="text-org67f9933">
 </div>
-<div id="outline-container-org8b37359" class="outline-3">
-<h3 id="org8b37359">종합 가이드</h3>
-<div class="outline-text-3" id="text-org8b37359">
+<div id="outline-container-orgad66818" class="outline-3">
+<h3 id="orgad66818">종합 가이드</h3>
+<div class="outline-text-3" id="text-orgad66818">
 <ul class="org-ul">
 <li><a target="_blank" href="http://seorenn.blogspot.kr/2014/06/swift_16.html">🌏스위프트(Swift) 가이드</a>:
 오래전에 정리했던 글이지만 기본 가이드는 어느 정도 참고할 수 있을지도 모르겠다.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbbe7029" class="outline-3">
-<h3 id="orgbbe7029">Combine Framework</h3>
-<div class="outline-text-3" id="text-orgbbe7029">
+<div id="outline-container-orge39263a" class="outline-3">
+<h3 id="orge39263a">Combine Framework</h3>
+<div class="outline-text-3" id="text-orge39263a">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/66">🌏Combine Framework는 어떤 녀석일까요?</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/80">🌏Combine 이벤트 체인이 왜 필요할까?</a></li>
@@ -324,19 +324,31 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 </ul>
 </div>
 </div>
-<div id="outline-container-org27ce031" class="outline-3">
-<h3 id="org27ce031">기타</h3>
-<div class="outline-text-3" id="text-org27ce031">
+<div id="outline-container-org6653a72" class="outline-3">
+<h3 id="org6653a72">기타</h3>
+<div class="outline-text-3" id="text-org6653a72">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/85">🌏Swift와 ObjC에서 Deprecated 처리하기</a></li>
 </ul>
 </div>
 </div>
 </div>
-</section>
 <div class="mid-ad-container">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</section>
+<div class="side-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle side-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
      data-ad-slot="4306465772"

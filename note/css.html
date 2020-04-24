@@ -60,44 +60,44 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org39849c0">CSS를 HTML문서에 사용하기</a>
+<li><a href="#org4499691">CSS를 HTML문서에 사용하기</a>
 <ul>
-<li><a href="#org2a60912">태그에 바로 스타일 입히기</a></li>
-<li><a href="#org8b742e0">스타일 블록</a></li>
-<li><a href="#org0b3231b">스타일 파일 로딩 시키기</a></li>
+<li><a href="#orga896cde">태그에 바로 스타일 입히기</a></li>
+<li><a href="#orgfc57b69">스타일 블록</a></li>
+<li><a href="#org555dfae">스타일 파일 로딩 시키기</a></li>
 </ul>
 </li>
-<li><a href="#orgf02ddc2">Grid Layout</a>
+<li><a href="#org21aae95">Grid Layout</a>
 <ul>
-<li><a href="#orgfb3a8a3">기본</a></li>
-<li><a href="#orgbf552aa">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</a></li>
-<li><a href="#org98cca51">Grid 내부 가운데 정렬</a></li>
+<li><a href="#orgd295e68">기본</a></li>
+<li><a href="#orgfd39caa">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</a></li>
+<li><a href="#org033733d">Grid 내부 가운데 정렬</a></li>
 </ul>
 </li>
-<li><a href="#org4b55672">공통 팁</a>
+<li><a href="#org1e52496">공통 팁</a>
 <ul>
-<li><a href="#org988d5c9">단어를 자르지 않기</a></li>
-<li><a href="#orgdfbb80c">둥근 모서리</a></li>
-<li><a href="#org2a89214">div 블록의 위치 결정하기</a></li>
-<li><a href="#orgf45b4ff">소수점 자리로 정렬</a></li>
-<li><a href="#orgf2a23d9">스타일 그룹(셀렉터 그룹)</a></li>
-<li><a href="#org950e894">Floating</a></li>
-<li><a href="#org6db4d68">해상도 혹은 브라우저 크기 별로 스타일 대응하기</a></li>
+<li><a href="#org94356e5">단어를 자르지 않기</a></li>
+<li><a href="#orgfe3a3e4">둥근 모서리</a></li>
+<li><a href="#org0430aeb">div 블록의 위치 결정하기</a></li>
+<li><a href="#org7786f02">소수점 자리로 정렬</a></li>
+<li><a href="#orge9292c1">스타일 그룹(셀렉터 그룹)</a></li>
+<li><a href="#org0a599b1">Floating</a></li>
+<li><a href="#orgacc00ad">해상도 혹은 브라우저 크기 별로 스타일 대응하기</a></li>
 </ul>
 </li>
-<li><a href="#org10ab207">약간 특이한 팁</a>
+<li><a href="#orgb7856fc">약간 특이한 팁</a>
 <ul>
-<li><a href="#orgbb5718d">이미지(img)에 alt 설명이 없을 때 경고하기</a></li>
-<li><a href="#org550dffe">스크롤 할 때 딱 맞추기(?)</a></li>
+<li><a href="#orgd7a0fb8">이미지(img)에 alt 설명이 없을 때 경고하기</a></li>
+<li><a href="#org56c8af9">스크롤 할 때 딱 맞추기(?)</a></li>
 </ul>
 </li>
-<li><a href="#org7281752">외부 링크</a>
+<li><a href="#org3ae7242">외부 링크</a>
 <ul>
-<li><a href="#org80bdb17">Grid</a></li>
-<li><a href="#org707f494">Flex</a></li>
-<li><a href="#orgc0cd688">다크 모드</a></li>
-<li><a href="#org6b54a9f">템플릿</a></li>
-<li><a href="#org0f089f5">기타</a></li>
+<li><a href="#org1fe7b02">Grid</a></li>
+<li><a href="#org543e214">Flex</a></li>
+<li><a href="#org04d037c">다크 모드</a></li>
+<li><a href="#orgff46e65">템플릿</a></li>
+<li><a href="#orgae8a693">기타</a></li>
 </ul>
 </li>
 </ul>
@@ -112,22 +112,22 @@ HTML 문서의 스타일을 구성할 때 사용하는 일종의 언어이다.
 나머지 내용은 CSS와 관련된 팁이다.
 </p>
 
-<div id="outline-container-org39849c0" class="outline-2">
-<h2 id="org39849c0">CSS를 HTML문서에 사용하기</h2>
-<div class="outline-text-2" id="text-org39849c0">
+<div id="outline-container-org4499691" class="outline-2">
+<h2 id="org4499691">CSS를 HTML문서에 사용하기</h2>
+<div class="outline-text-2" id="text-org4499691">
 </div>
-<div id="outline-container-org2a60912" class="outline-3">
-<h3 id="org2a60912">태그에 바로 스타일 입히기</h3>
-<div class="outline-text-3" id="text-org2a60912">
+<div id="outline-container-orga896cde" class="outline-3">
+<h3 id="orga896cde">태그에 바로 스타일 입히기</h3>
+<div class="outline-text-3" id="text-orga896cde">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org8b742e0" class="outline-3">
-<h3 id="org8b742e0">스타일 블록</h3>
-<div class="outline-text-3" id="text-org8b742e0">
+<div id="outline-container-orgfc57b69" class="outline-3">
+<h3 id="orgfc57b69">스타일 블록</h3>
+<div class="outline-text-3" id="text-orgfc57b69">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
 p {
@@ -139,9 +139,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org0b3231b" class="outline-3">
-<h3 id="org0b3231b">스타일 파일 로딩 시키기</h3>
-<div class="outline-text-3" id="text-org0b3231b">
+<div id="outline-container-org555dfae" class="outline-3">
+<h3 id="org555dfae">스타일 파일 로딩 시키기</h3>
+<div class="outline-text-3" id="text-org555dfae">
 <div class="org-src-container">
 <pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
 </pre>
@@ -149,13 +149,13 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-orgf02ddc2" class="outline-2">
-<h2 id="orgf02ddc2">Grid Layout</h2>
-<div class="outline-text-2" id="text-orgf02ddc2">
+<div id="outline-container-org21aae95" class="outline-2">
+<h2 id="org21aae95">Grid Layout</h2>
+<div class="outline-text-2" id="text-org21aae95">
 </div>
-<div id="outline-container-orgfb3a8a3" class="outline-3">
-<h3 id="orgfb3a8a3">기본</h3>
-<div class="outline-text-3" id="text-orgfb3a8a3">
+<div id="outline-container-orgd295e68" class="outline-3">
+<h3 id="orgd295e68">기본</h3>
+<div class="outline-text-3" id="text-orgd295e68">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #51afef;">.container </span>{
     <span style="color: #98be65;">display</span>: grid;
@@ -164,9 +164,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf552aa" class="outline-3">
-<h3 id="orgbf552aa">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</h3>
-<div class="outline-text-3" id="text-orgbf552aa">
+<div id="outline-container-orgfd39caa" class="outline-3">
+<h3 id="orgfd39caa">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</h3>
+<div class="outline-text-3" id="text-orgfd39caa">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #51afef;">.container </span>{
     <span style="color: #98be65;">display</span>: grid;
@@ -189,9 +189,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org98cca51" class="outline-3">
-<h3 id="org98cca51">Grid 내부 가운데 정렬</h3>
-<div class="outline-text-3" id="text-org98cca51">
+<div id="outline-container-org033733d" class="outline-3">
+<h3 id="org033733d">Grid 내부 가운데 정렬</h3>
+<div class="outline-text-3" id="text-org033733d">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #51afef;">.container </span>{
     ...
@@ -202,13 +202,13 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org4b55672" class="outline-2">
-<h2 id="org4b55672">공통 팁</h2>
-<div class="outline-text-2" id="text-org4b55672">
+<div id="outline-container-org1e52496" class="outline-2">
+<h2 id="org1e52496">공통 팁</h2>
+<div class="outline-text-2" id="text-org1e52496">
 </div>
-<div id="outline-container-org988d5c9" class="outline-3">
-<h3 id="org988d5c9">단어를 자르지 않기</h3>
-<div class="outline-text-3" id="text-org988d5c9">
+<div id="outline-container-org94356e5" class="outline-3">
+<h3 id="org94356e5">단어를 자르지 않기</h3>
+<div class="outline-text-3" id="text-org94356e5">
 <p>
 문장이 길어져서 다음 줄로 넘어갈 때
 단어를 중간에 자르면 가독성에 문제가 있을 수 있다.
@@ -220,9 +220,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-orgdfbb80c" class="outline-3">
-<h3 id="orgdfbb80c">둥근 모서리</h3>
-<div class="outline-text-3" id="text-orgdfbb80c">
+<div id="outline-container-orgfe3a3e4" class="outline-3">
+<h3 id="orgfe3a3e4">둥근 모서리</h3>
+<div class="outline-text-3" id="text-orgfe3a3e4">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #98be65;">border-radius</span>: 8px;
 </pre>
@@ -232,13 +232,13 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-org2a89214" class="outline-3">
-<h3 id="org2a89214">div 블록의 위치 결정하기</h3>
-<div class="outline-text-3" id="text-org2a89214">
+<div id="outline-container-org0430aeb" class="outline-3">
+<h3 id="org0430aeb">div 블록의 위치 결정하기</h3>
+<div class="outline-text-3" id="text-org0430aeb">
 </div>
 <ul class="org-ul">
-<li><a id="org3468912"></a>div 블록 가운데 정렬<br />
-<div class="outline-text-4" id="text-org3468912">
+<li><a id="org4e7cd68"></a>div 블록 가운데 정렬<br />
+<div class="outline-text-4" id="text-org4e7cd68">
 <p>
 큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.
 </p>
@@ -251,8 +251,8 @@ p {
 </div>
 </div>
 </li>
-<li><a id="orgaa77ead"></a>오른쪽 아래에 붙이기(align to bottom right)<br />
-<div class="outline-text-4" id="text-orgaa77ead">
+<li><a id="org6ae53ad"></a>오른쪽 아래에 붙이기(align to bottom right)<br />
+<div class="outline-text-4" id="text-org6ae53ad">
 <p>
 바로는 안 되는 것 같고 바깥 쪽 블록이 outer-div 라는 클래스라고 가정하면 이렇게
 할 수 있는 것 같다.
@@ -272,9 +272,9 @@ p {
 </li>
 </ul>
 </div>
-<div id="outline-container-orgf45b4ff" class="outline-3">
-<h3 id="orgf45b4ff">소수점 자리로 정렬</h3>
-<div class="outline-text-3" id="text-orgf45b4ff">
+<div id="outline-container-org7786f02" class="outline-3">
+<h3 id="org7786f02">소수점 자리로 정렬</h3>
+<div class="outline-text-3" id="text-org7786f02">
 <p>
 테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면
 아래와 같은 스타일을 추가할 수 있다.
@@ -290,9 +290,9 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-orgf2a23d9" class="outline-3">
-<h3 id="orgf2a23d9">스타일 그룹(셀렉터 그룹)</h3>
-<div class="outline-text-3" id="text-orgf2a23d9">
+<div id="outline-container-orge9292c1" class="outline-3">
+<h3 id="orge9292c1">스타일 그룹(셀렉터 그룹)</h3>
+<div class="outline-text-3" id="text-orge9292c1">
 <p>
 여러 스타일에서 공통된 부분을 만들 때 콤마를 이용해 셀렉터 그룹을 만들 수 있다.
 </p>
@@ -316,9 +316,9 @@ p {
 </p>
 </div>
 </div>
-<div id="outline-container-org950e894" class="outline-3">
-<h3 id="org950e894">Floating</h3>
-<div class="outline-text-3" id="text-org950e894">
+<div id="outline-container-org0a599b1" class="outline-3">
+<h3 id="org0a599b1">Floating</h3>
+<div class="outline-text-3" id="text-org0a599b1">
 <p>
 콘텐츠를 좌 혹은 우측에 끼워 넣기 위해서 자주 사용하는 그 Float다.
 </p>
@@ -358,9 +358,9 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org6db4d68" class="outline-3">
-<h3 id="org6db4d68">해상도 혹은 브라우저 크기 별로 스타일 대응하기</h3>
-<div class="outline-text-3" id="text-org6db4d68">
+<div id="outline-container-orgacc00ad" class="outline-3">
+<h3 id="orgacc00ad">해상도 혹은 브라우저 크기 별로 스타일 대응하기</h3>
+<div class="outline-text-3" id="text-orgacc00ad">
 <p>
 미디어 쿼리를 이용하면 브라우저 크기 별로 대응할 수 있다.
 </p>
@@ -381,13 +381,13 @@ p {
 </div>
 </div>
 </div>
-<div id="outline-container-org10ab207" class="outline-2">
-<h2 id="org10ab207">약간 특이한 팁</h2>
-<div class="outline-text-2" id="text-org10ab207">
+<div id="outline-container-orgb7856fc" class="outline-2">
+<h2 id="orgb7856fc">약간 특이한 팁</h2>
+<div class="outline-text-2" id="text-orgb7856fc">
 </div>
-<div id="outline-container-orgbb5718d" class="outline-3">
-<h3 id="orgbb5718d">이미지(img)에 alt 설명이 없을 때 경고하기</h3>
-<div class="outline-text-3" id="text-orgbb5718d">
+<div id="outline-container-orgd7a0fb8" class="outline-3">
+<h3 id="orgd7a0fb8">이미지(img)에 alt 설명이 없을 때 경고하기</h3>
+<div class="outline-text-3" id="text-orgd7a0fb8">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #51afef;">img:not([alt]) </span>{
     <span style="color: #98be65;">border</span>: 5px solid <span style="color: #ffffff; background-color: #ff0000;">red</span>;
@@ -406,9 +406,9 @@ alt는 접근성을 보완하기 위해 중요한 설명이다. 예를 들어
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org550dffe" class="outline-3">
-<h3 id="org550dffe">스크롤 할 때 딱 맞추기(?)</h3>
-<div class="outline-text-3" id="text-org550dffe">
+<div id="outline-container-org56c8af9" class="outline-3">
+<h3 id="org56c8af9">스크롤 할 때 딱 맞추기(?)</h3>
+<div class="outline-text-3" id="text-org56c8af9">
 <p>
 아래 옵션이 붙은 블록은 스크롤 할 때 강제로 딱 맞춰 준다.
 </p>
@@ -422,57 +422,69 @@ alt는 접근성을 보완하기 위해 중요한 설명이다. 예를 들어
 </div>
 </div>
 </div>
-<div id="outline-container-org7281752" class="outline-2">
-<h2 id="org7281752">외부 링크</h2>
-<div class="outline-text-2" id="text-org7281752">
+<div id="outline-container-org3ae7242" class="outline-2">
+<h2 id="org3ae7242">외부 링크</h2>
+<div class="outline-text-2" id="text-org3ae7242">
 </div>
-<div id="outline-container-org80bdb17" class="outline-3">
-<h3 id="org80bdb17">Grid</h3>
-<div class="outline-text-3" id="text-org80bdb17">
+<div id="outline-container-org1fe7b02" class="outline-3">
+<h3 id="org1fe7b02">Grid</h3>
+<div class="outline-text-3" id="text-org1fe7b02">
 <ul class="org-ul">
 <li><a target="_blank" href="https://studiomeal.com/archives/533">🌏이번에야말로 CSS Grid를 익혀보자</a></li>
 <li><a target="_blank" href="https://cssgrid-generator.netlify.com">🌏CSS Grid Generator</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org707f494" class="outline-3">
-<h3 id="org707f494">Flex</h3>
-<div class="outline-text-3" id="text-org707f494">
+<div id="outline-container-org543e214" class="outline-3">
+<h3 id="org543e214">Flex</h3>
+<div class="outline-text-3" id="text-org543e214">
 <ul class="org-ul">
 <li><a target="_blank" href="https://studiomeal.com/archives/197">🌏이번에야말로 CSS Flex를 익혀보자</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc0cd688" class="outline-3">
-<h3 id="orgc0cd688">다크 모드</h3>
-<div class="outline-text-3" id="text-orgc0cd688">
+<div id="outline-container-org04d037c" class="outline-3">
+<h3 id="org04d037c">다크 모드</h3>
+<div class="outline-text-3" id="text-org04d037c">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/hsh2001/apple-dark-mode">🌏🌙 다크모드 웹 페이지 디자인</a></li>
 <li><a target="_blank" href="https://chasem.co/2019/09/mvp-dark-mode">🌏Minimum viable dark mode</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6b54a9f" class="outline-3">
-<h3 id="org6b54a9f">템플릿</h3>
-<div class="outline-text-3" id="text-org6b54a9f">
+<div id="outline-container-orgff46e65" class="outline-3">
+<h3 id="orgff46e65">템플릿</h3>
+<div class="outline-text-3" id="text-orgff46e65">
 <ul class="org-ul">
 <li><a target="_blank" href="https://stitches.hyperyolo.com/">🌏Stitches: Layout Template Generator</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0f089f5" class="outline-3">
-<h3 id="org0f089f5">기타</h3>
-<div class="outline-text-3" id="text-org0f089f5">
+<div id="outline-container-orgae8a693" class="outline-3">
+<h3 id="orgae8a693">기타</h3>
+<div class="outline-text-3" id="text-orgae8a693">
 <ul class="org-ul">
 <li><a target="_blank" href="https://www.sitepoint.com/hide-elements-in-css/">🌏10 Ways to Hide Elements in CSS</a></li>
 </ul>
 </div>
 </div>
 </div>
-</section>
 <div class="mid-ad-container">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</section>
+<div class="side-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle side-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
      data-ad-slot="4306465772"

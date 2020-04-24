@@ -60,22 +60,22 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org51eab2d">노트</a>
+<li><a href="#orgb95a1f4">노트</a>
 <ul>
-<li><a href="#org38510ba">모듈(Module)</a></li>
-<li><a href="#orgf041a5d">스프레드(Spreads) 연산자</a></li>
-<li><a href="#org6e45647">튜플 비슷한 문법</a></li>
+<li><a href="#org2db1049">모듈(Module)</a></li>
+<li><a href="#org949e555">스프레드(Spreads) 연산자</a></li>
+<li><a href="#orge3ad661">튜플 비슷한 문법</a></li>
 </ul>
 </li>
-<li><a href="#org361a756">실전(?) 메모</a>
+<li><a href="#orgc5545ed">실전(?) 메모</a>
 <ul>
-<li><a href="#org672acbb">요소 얻기</a></li>
-<li><a href="#org9b41776">특정 블록에 HTML 넣기</a></li>
-<li><a href="#org877d919">콘텐츠 높이 구하기</a></li>
-<li><a href="#org9d0a193">특정 태그 앞에 요소 넣기</a></li>
+<li><a href="#org34cf135">요소 얻기</a></li>
+<li><a href="#org6e39374">특정 블록에 HTML 넣기</a></li>
+<li><a href="#org233f751">콘텐츠 높이 구하기</a></li>
+<li><a href="#orge19081b">특정 태그 앞에 요소 넣기</a></li>
 </ul>
 </li>
-<li><a href="#org3a6081a">외부 링크</a></li>
+<li><a href="#org055e1bf">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -93,13 +93,13 @@ gtag('config', 'UA-44534026-1');
 버전은 ES6를 기준으로 한다.
 </p>
 
-<div id="outline-container-org51eab2d" class="outline-2">
-<h2 id="org51eab2d">노트</h2>
-<div class="outline-text-2" id="text-org51eab2d">
+<div id="outline-container-orgb95a1f4" class="outline-2">
+<h2 id="orgb95a1f4">노트</h2>
+<div class="outline-text-2" id="text-orgb95a1f4">
 </div>
-<div id="outline-container-org38510ba" class="outline-3">
-<h3 id="org38510ba">모듈(Module)</h3>
-<div class="outline-text-3" id="text-org38510ba">
+<div id="outline-container-org2db1049" class="outline-3">
+<h3 id="org2db1049">모듈(Module)</h3>
+<div class="outline-text-3" id="text-org2db1049">
 <p>
 일반적으로 모듈은 아래와 같은 형식으로 쓰인다.
 </p>
@@ -151,9 +151,9 @@ console.log(someValues.value2);
 </div>
 </div>
 </div>
-<div id="outline-container-orgf041a5d" class="outline-3">
-<h3 id="orgf041a5d">스프레드(Spreads) 연산자</h3>
-<div class="outline-text-3" id="text-orgf041a5d">
+<div id="outline-container-org949e555" class="outline-3">
+<h3 id="org949e555">스프레드(Spreads) 연산자</h3>
+<div class="outline-text-3" id="text-org949e555">
 <p>
 스프레드 연산자는 <code>...</code> 으로 표기되며
 이름처럼 펼치거나 확산한다라는 의미로 동작한다.
@@ -216,9 +216,9 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </p>
 </div>
 </div>
-<div id="outline-container-org6e45647" class="outline-3">
-<h3 id="org6e45647">튜플 비슷한 문법</h3>
-<div class="outline-text-3" id="text-org6e45647">
+<div id="outline-container-orge3ad661" class="outline-3">
+<h3 id="orge3ad661">튜플 비슷한 문법</h3>
+<div class="outline-text-3" id="text-orge3ad661">
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">let</span> [<span style="color: #dcaeea;">foo</span>, <span style="color: #dcaeea;">bar</span>] = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>]
 [foo, bar] = [bar, foo]
@@ -230,13 +230,13 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </div>
 </div>
 </div>
-<div id="outline-container-org361a756" class="outline-2">
-<h2 id="org361a756">실전(?) 메모</h2>
-<div class="outline-text-2" id="text-org361a756">
+<div id="outline-container-orgc5545ed" class="outline-2">
+<h2 id="orgc5545ed">실전(?) 메모</h2>
+<div class="outline-text-2" id="text-orgc5545ed">
 </div>
-<div id="outline-container-org672acbb" class="outline-3">
-<h3 id="org672acbb">요소 얻기</h3>
-<div class="outline-text-3" id="text-org672acbb">
+<div id="outline-container-org34cf135" class="outline-3">
+<h3 id="org34cf135">요소 얻기</h3>
+<div class="outline-text-3" id="text-org34cf135">
 <div class="org-src-container">
 <pre class="src src-javascript">document.getElementById(<span style="color: #98be65;">'some-id'</span>)
 document.getElementsByClassName(<span style="color: #98be65;">'some-class'</span>)[<span style="color: #da8548; font-weight: bold;">0</span>]
@@ -248,9 +248,9 @@ document.getElementsByTagName(<span style="color: #98be65;">'tag-name'</span>)[<
 </p>
 </div>
 </div>
-<div id="outline-container-org9b41776" class="outline-3">
-<h3 id="org9b41776">특정 블록에 HTML 넣기</h3>
-<div class="outline-text-3" id="text-org9b41776">
+<div id="outline-container-org6e39374" class="outline-3">
+<h3 id="org6e39374">특정 블록에 HTML 넣기</h3>
+<div class="outline-text-3" id="text-org6e39374">
 <p>
 아래는 some-id라는 아이디의 div 블록 내부 내용을 지정하는 예제다.
 </p>
@@ -260,9 +260,9 @@ document.getElementsByTagName(<span style="color: #98be65;">'tag-name'</span>)[<
 </div>
 </div>
 </div>
-<div id="outline-container-org877d919" class="outline-3">
-<h3 id="org877d919">콘텐츠 높이 구하기</h3>
-<div class="outline-text-3" id="text-org877d919">
+<div id="outline-container-org233f751" class="outline-3">
+<h3 id="org233f751">콘텐츠 높이 구하기</h3>
+<div class="outline-text-3" id="text-org233f751">
 <p>
 웹 브라우저에 표시되는 내용의 높이(height)를 구하는 방법이다.
 </p>
@@ -282,9 +282,9 @@ document.getElementsByTagName(<span style="color: #98be65;">'tag-name'</span>)[<
 </p>
 </div>
 </div>
-<div id="outline-container-org9d0a193" class="outline-3">
-<h3 id="org9d0a193">특정 태그 앞에 요소 넣기</h3>
-<div class="outline-text-3" id="text-org9d0a193">
+<div id="outline-container-orge19081b" class="outline-3">
+<h3 id="orge19081b">특정 태그 앞에 요소 넣기</h3>
+<div class="outline-text-3" id="text-orge19081b">
 <p>
 수동으로 노드를 만들어서 특정 태그 노드 앞에 붙이는 예제다.
 </p>
@@ -311,19 +311,31 @@ targetElement.parentNode.insertBefore(newElement, targetElement)
 </div>
 </div>
 </div>
-<div id="outline-container-org3a6081a" class="outline-2">
-<h2 id="org3a6081a">외부 링크</h2>
-<div class="outline-text-2" id="text-org3a6081a">
+<div id="outline-container-org055e1bf" class="outline-2">
+<h2 id="org055e1bf">외부 링크</h2>
+<div class="outline-text-2" id="text-org055e1bf">
 <ul class="org-ul">
 <li><a target="_blank" href="https://ko.javascript.info/">🌏모던 JavaScript 튜토리얼</a></li>
 <li><a target="_blank" href="https://junhobaik.github.io/es2016-es2020/">🌏ECMAScript ES2016~ES2020 정리</a></li>
 </ul>
 </div>
 </div>
-</section>
 <div class="mid-ad-container">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</section>
+<div class="side-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle side-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
      data-ad-slot="4306465772"

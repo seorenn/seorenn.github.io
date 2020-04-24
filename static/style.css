@@ -74,12 +74,12 @@ body {
     grid-column: 2;
   }
 
-  .mid-ad-container {
+  .side-ad-container {
     grid-column: 3;
     padding-top: 32px;
   }
 
-  .mid-ad {
+  .side-ad {
     padding-top: 16px;
     width: 160px;
     position: -webket-sticky;
@@ -131,21 +131,17 @@ body {
     padding-right: 16px;
   }
 
-  .mid-ad-container {
-    width: 100%;
-    height: 96px;
-    padding: 0;
-    margin: 0 auto;
-    margin-top: 48px;
-    margin-bottom: 48px;
-    text-align: center;
+  .side-ad-container {
+    width: 0;
+    height: 0;
+    display: none !important;
   }
 
-  .mid-ad {
-    width: 100%;
+  .side-ad {
+    width: 0;
+    height: 0;
+    display: none !important;
   }
-
-
 }
 
 /* Small */
@@ -180,20 +176,17 @@ body {
     padding-right: 16px;
   }
 
-  .mid-ad-container {
-    width: 100%;
-    height: 96px;
-    padding: 0;
-    margin: 0 auto;
-    margin-top: 48px;
-    margin-bottom: 48px;
-    text-align: center;
+  .side-ad-container {
+    width: 0;
+    height: 0;
+    display: none !important;
   }
 
-  .mid-ad {
-    width: 100%;
+  .side-ad {
+    width: 0;
+    height: 0;
+    display: none !important;
   }
-
 
 }
 
@@ -300,6 +293,18 @@ hr {
   width: 100%;
 }
 
+.mid-ad-container {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.mid-ad {
+  width: 100%;
+}
 
 .bottom-ad-container {
   max-width: 1024px;
@@ -325,8 +330,7 @@ hr {
 .content .ad {
   padding-top: 0;
   padding-bottom: 0;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .content header {

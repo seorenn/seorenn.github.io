@@ -22,7 +22,8 @@ body {
   padding-right: 16px;
 }
 
-@media screen and (min-width: 800px) {
+/* Big */
+@media screen and (min-width: 1280px) {
   .logo-container {
     width: 100%;
     overflow: hidden;
@@ -50,13 +51,104 @@ body {
     right: 0;
     bottom: 0;
   }
+
+  .article-link-date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .content-container {
+    display: grid;
+    grid-template-columns: 160px 800px 160px;
+    grid-template-rows: auto;
+    grid-column-gap: 16px;
+    justify-content: center;
+  }
+
+  .left-empty {
+    grid-column: 1;
+  }
+
+  .content {
+    grid-column: 2;
+  }
+
+  .mid-ad-container {
+    grid-column: 3;
+    padding-top: 32px;
+  }
+
+  .mid-ad {
+    padding-top: 16px;
+    width: 160px;
+    position: -webket-sticky;
+    position: sticky;
+    top: 0;
+  }
 }
 
-.title-date {
-  font-size: 0.8rem;
-  color: #5c6267;
+/* Mid */
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+  .logo-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .site-logo {
+    display: block;
+    float: left;
+    max-height: 42px;
+    width: auto;
+  }
+
+  nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+  }
+
+  .title-date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .article-link-date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mid-ad-container {
+    width: 100%;
+    height: 96px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .mid-ad {
+    width: 100%;
+  }
+
+
 }
 
+/* Small */
 @media screen and (max-width: 799px) {
   .logo-container {
     width: 100%;
@@ -76,16 +168,40 @@ body {
     padding: 8px 0 0 0;
     line-height: 100%;
   }
+
+  .article-link-date {
+    text-align: left;
+  }
+
+  .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mid-ad-container {
+    width: 100%;
+    height: 96px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .mid-ad {
+    width: 100%;
+  }
+
+
 }
 
-/*
-@media screen and (min-width: 1300px) {
-  #table-of-contents {
-    position: absolute;
-    left: 0;
-  }
+
+.title-date {
+  font-size: 0.8rem;
+  color: #5c6267;
 }
-*/
 
 #table-of-contents {
   margin-top: 1rem;
@@ -166,20 +282,6 @@ hr {
 
 }
 
-@media screen and (min-width: 800px) {
-  .article-link-date {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-}
-
-@media screen and (max-width: 799px) {
-  .article-link-date {
-    text-align: left;
-  }
-}
-
 .article-link-date {
   font-size: 0.9rem;
   color: #5c6267;
@@ -198,18 +300,6 @@ hr {
   width: 100%;
 }
 
-.mid-ad-container {
-  max-width: 1024px;
-  padding: 0;
-  margin: 0 auto;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  text-align: center;
-}
-
-.mid-ad {
-  width: 100%;
-}
 
 .bottom-ad-container {
   max-width: 1024px;
@@ -226,12 +316,10 @@ hr {
 
 /* content */
 
+
 .content {
   clear: both;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 100%;
 }
 
 .content .ad {
@@ -259,7 +347,6 @@ hr {
   padding-top: 0;
   padding-bottom: 0;
   font-weight: 350;
-  max-width: 800px;
   margin: 0 auto;
   color: #e6e6e6;
 }
@@ -283,15 +370,12 @@ hr {
 }
 
 .content p {
-  max-width: 800px;
   margin: 0 auto;
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
 }
 
 .content .org-src-container {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 /* .content pre -webkit-scrollbar { */
@@ -320,8 +404,6 @@ hr {
 }
 
 .content blockquote {
-  max-width: 800px;
-  margin: 0 auto;
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
   padding-left: 24px;
@@ -337,24 +419,18 @@ hr {
 }
 
 .content ul, ol {
-  max-width: 800px;
-  margin: 0 auto;
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
   font-size: 1rem;
 }
 
 .content img {
-  max-width: 800px;
-  margin: 0 auto;
   width: 100%;
   height: auto;
   max-height: 800px;
 }
 
 .content table {
-  max-width: 800px;
-  margin: 0 auto;
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
 }

@@ -48,17 +48,9 @@ gtag('config', 'UA-44534026-1');
 </nav>
 </div>
 </header>
-<div class="top-ad-container">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle top-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<hr/>
+<div class="content-container">
+<div class="left-empty">
 </div>
 <section class="content">
 <header>
@@ -68,14 +60,14 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org7a4752d">Vim에 관한 몇 가지 팁</a>
+<li><a href="#orga6fc680">Vim에 관한 몇 가지 팁</a>
 <ul>
-<li><a href="#org12eb5f3">커서키</a></li>
-<li><a href="#orgc9e74e8">종료 방법</a></li>
-<li><a href="#org158baa5">Undo/Redo</a></li>
-<li><a href="#org0cc25f5">점프(Jump)</a></li>
-<li><a href="#org513409e">인코딩</a></li>
-<li><a href="#org808a26d">클립보드</a></li>
+<li><a href="#org9026e34">커서키</a></li>
+<li><a href="#org13a7b17">종료 방법</a></li>
+<li><a href="#org224b4d2">Undo/Redo</a></li>
+<li><a href="#orga37cce7">점프(Jump)</a></li>
+<li><a href="#orge0bfb97">인코딩</a></li>
+<li><a href="#org7e1abda">클립보드</a></li>
 </ul>
 </li>
 </ul>
@@ -87,13 +79,13 @@ vi 에디터는 아주 오래전 UNIX 용 편집기로 탄생한 텍스트 에�
 일단은 vi 와 Vim은 같지 않다 라고 보는 게 정석이다.
 </p>
 
-<div id="outline-container-org7a4752d" class="outline-2">
-<h2 id="org7a4752d">Vim에 관한 몇 가지 팁</h2>
-<div class="outline-text-2" id="text-org7a4752d">
+<div id="outline-container-orga6fc680" class="outline-2">
+<h2 id="orga6fc680">Vim에 관한 몇 가지 팁</h2>
+<div class="outline-text-2" id="text-orga6fc680">
 </div>
-<div id="outline-container-org12eb5f3" class="outline-3">
-<h3 id="org12eb5f3">커서키</h3>
-<div class="outline-text-3" id="text-org12eb5f3">
+<div id="outline-container-org9026e34" class="outline-3">
+<h3 id="org9026e34">커서키</h3>
+<div class="outline-text-3" id="text-org9026e34">
 <p>
 일반적인 커서 이동키를 사용할 수도 있겠지만,
 vi나 Vim은 h, j, k, l 의 특수한 커서 이동키를 주로 사용한다.
@@ -113,9 +105,9 @@ h   l
 </p>
 </div>
 </div>
-<div id="outline-container-orgc9e74e8" class="outline-3">
-<h3 id="orgc9e74e8">종료 방법</h3>
-<div class="outline-text-3" id="text-orgc9e74e8">
+<div id="outline-container-org13a7b17" class="outline-3">
+<h3 id="org13a7b17">종료 방법</h3>
+<div class="outline-text-3" id="text-org13a7b17">
 <p>
 뜬금없지만 vi 혹은 Vim 과 관련된 글에서 빠지지 않는 주제가 바로 이 종료
 방법이다. 실수로 vi를 열었을 때 종료하지 못 해서 우왕좌왕하는 사태가
@@ -168,9 +160,9 @@ ESC 대신 <code>^[</code> 키 혹은 <code>Ctrl+[</code> 키를 눌러도 된�
 </p>
 </div>
 </div>
-<div id="outline-container-org158baa5" class="outline-3">
-<h3 id="org158baa5">Undo/Redo</h3>
-<div class="outline-text-3" id="text-org158baa5">
+<div id="outline-container-org224b4d2" class="outline-3">
+<h3 id="org224b4d2">Undo/Redo</h3>
+<div class="outline-text-3" id="text-org224b4d2">
 <ul class="org-ul">
 <li><code>u</code> Undo (소문자 u 주의)</li>
 <li><code>U</code> Undo current line (현재 라인의 Undo, 대문자 U 주의)</li>
@@ -178,18 +170,18 @@ ESC 대신 <code>^[</code> 키 혹은 <code>Ctrl+[</code> 키를 눌러도 된�
 </ul>
 </div>
 </div>
-<div id="outline-container-org0cc25f5" class="outline-3">
-<h3 id="org0cc25f5">점프(Jump)</h3>
-<div class="outline-text-3" id="text-org0cc25f5">
+<div id="outline-container-orga37cce7" class="outline-3">
+<h3 id="orga37cce7">점프(Jump)</h3>
+<div class="outline-text-3" id="text-orga37cce7">
 <ul class="org-ul">
 <li><code>f [character]</code> 현재 라인에서 해당 문자로 점프</li>
 <li><code>F [character]</code> 현재 라인에서 해당 문자로 역방향 점프</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org513409e" class="outline-3">
-<h3 id="org513409e">인코딩</h3>
-<div class="outline-text-3" id="text-org513409e">
+<div id="outline-container-orge0bfb97" class="outline-3">
+<h3 id="orge0bfb97">인코딩</h3>
+<div class="outline-text-3" id="text-orge0bfb97">
 <p>
 맥 등 윈도가 아닌 OS에서 만약 텍스트 파일을 열었는데
 한글이 깨져 보인다면 아래 커맨드를 시험해보자.
@@ -221,9 +213,9 @@ ESC 대신 <code>^[</code> 키 혹은 <code>Ctrl+[</code> 키를 눌러도 된�
 </div>
 </div>
 </div>
-<div id="outline-container-org808a26d" class="outline-3">
-<h3 id="org808a26d">클립보드</h3>
-<div class="outline-text-3" id="text-org808a26d">
+<div id="outline-container-org7e1abda" class="outline-3">
+<h3 id="org7e1abda">클립보드</h3>
+<div class="outline-text-3" id="text-org7e1abda">
 <p>
 터미널에서 vim으로 특정 텍스트를 복사하거나
 혹은 붙여넣기를 할 때
@@ -255,7 +247,8 @@ neovim 등에서는 안 되는 경우도 있으니 주의하자.
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<div class="backlinks-container">
+</div>
+<hr /><div class="backlinks-container">
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
@@ -279,18 +272,7 @@ neovim 등에서는 안 되는 경우도 있으니 주의하자.
 </div>
 </div>
 </div>
-<div class="bottom-ad-container">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle bottom-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+<hr/>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>

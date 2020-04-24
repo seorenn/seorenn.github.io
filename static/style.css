@@ -185,8 +185,8 @@ hr {
   color: #5c6267;
 }
 
-.top-ad {
-  max-width: 1280px;
+.top-ad-container {
+  max-width: 800px;
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
@@ -194,6 +194,39 @@ hr {
   margin-bottom: 48px;
   text-align: center;
 }
+
+.top-ad {
+  width: 100%;
+}
+
+.mid-ad-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.mid-ad {
+  width: 100%;
+}
+
+.bottom-ad-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.bottom-ad {
+  width: 100%;
+}
+
 /* content */
 
 .content {

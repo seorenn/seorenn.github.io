@@ -48,9 +48,9 @@ gtag('config', 'UA-44534026-1');
 </nav>
 </div>
 </header>
-<div class="top-ad">
+<div class="top-ad-container">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
+<ins class="adsbygoogle top-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
      data-ad-slot="4306465772"
@@ -68,22 +68,22 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbe12ff7">기본 사용법</a>
+<li><a href="#org8f744db">기본 사용법</a>
 <ul>
-<li><a href="#org3e9ab53">패키지 검색</a></li>
-<li><a href="#orgb49fbeb">패키지 정보</a></li>
-<li><a href="#org392bdb7">패키지 설치</a></li>
-<li><a href="#org05bcfae">만료된 버전 확인</a></li>
-<li><a href="#org451e3d3">패키지 업그레이드</a></li>
-<li><a href="#org5c6fd13">구 버전 삭제하기</a></li>
-<li><a href="#orgb5c71e5">패키지 삭제(uninstall)</a></li>
-<li><a href="#org3eddb7b">의사 양반(?)</a></li>
+<li><a href="#orgd45f059">패키지 검색</a></li>
+<li><a href="#org0632dc7">패키지 정보</a></li>
+<li><a href="#org6670ecc">패키지 설치</a></li>
+<li><a href="#org4b07669">만료된 버전 확인</a></li>
+<li><a href="#org1af7c38">패키지 업그레이드</a></li>
+<li><a href="#orgbf63148">구 버전 삭제하기</a></li>
+<li><a href="#orgdc5b40f">패키지 삭제(uninstall)</a></li>
+<li><a href="#org492f85d">의사 양반(?)</a></li>
 </ul>
 </li>
-<li><a href="#orgd445b77">구 버전 패키지 사용하기</a></li>
-<li><a href="#orgde89949">다중 버전을 제공하는 패키지의 경우</a></li>
-<li><a href="#org05fe63c">Cask</a></li>
-<li><a href="#orgcdd9b4e">외부 링크</a></li>
+<li><a href="#orgb4d7467">구 버전 패키지 사용하기</a></li>
+<li><a href="#org0b939dc">다중 버전을 제공하는 패키지의 경우</a></li>
+<li><a href="#org084953e">Cask</a></li>
+<li><a href="#orgfb06c39">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -94,31 +94,31 @@ Homebrew는 <a href="macos.html">macOS</a> 전용 패키지 관리자다.
 또한 root 사용자가 아니어도 사용할 수도 있도록 구조를 만들어 준다는 점도 특징이다.
 </p>
 
-<div id="outline-container-orgbe12ff7" class="outline-2">
-<h2 id="orgbe12ff7">기본 사용법</h2>
-<div class="outline-text-2" id="text-orgbe12ff7">
+<div id="outline-container-org8f744db" class="outline-2">
+<h2 id="org8f744db">기본 사용법</h2>
+<div class="outline-text-2" id="text-org8f744db">
 </div>
-<div id="outline-container-org3e9ab53" class="outline-3">
-<h3 id="org3e9ab53">패키지 검색</h3>
-<div class="outline-text-3" id="text-org3e9ab53">
+<div id="outline-container-orgd45f059" class="outline-3">
+<h3 id="orgd45f059">패키지 검색</h3>
+<div class="outline-text-3" id="text-orgd45f059">
 <div class="org-src-container">
 <pre class="src src-bash">brew search KEYWORD
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb49fbeb" class="outline-3">
-<h3 id="orgb49fbeb">패키지 정보</h3>
-<div class="outline-text-3" id="text-orgb49fbeb">
+<div id="outline-container-org0632dc7" class="outline-3">
+<h3 id="org0632dc7">패키지 정보</h3>
+<div class="outline-text-3" id="text-org0632dc7">
 <div class="org-src-container">
 <pre class="src src-bash">brew info PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org392bdb7" class="outline-3">
-<h3 id="org392bdb7">패키지 설치</h3>
-<div class="outline-text-3" id="text-org392bdb7">
+<div id="outline-container-org6670ecc" class="outline-3">
+<h3 id="org6670ecc">패키지 설치</h3>
+<div class="outline-text-3" id="text-org6670ecc">
 <div class="org-src-container">
 <pre class="src src-bash">brew install PACKAGE_NAME
 </pre>
@@ -129,9 +129,9 @@ Homebrew는 <a href="macos.html">macOS</a> 전용 패키지 관리자다.
 </p>
 </div>
 </div>
-<div id="outline-container-org05bcfae" class="outline-3">
-<h3 id="org05bcfae">만료된 버전 확인</h3>
-<div class="outline-text-3" id="text-org05bcfae">
+<div id="outline-container-org4b07669" class="outline-3">
+<h3 id="org4b07669">만료된 버전 확인</h3>
+<div class="outline-text-3" id="text-org4b07669">
 <p>
 설치된 패키지의 최신 버전이 존재하는지 확인하려면 <code>update</code> 후
 <code>outdated</code> 를 살펴보자.
@@ -143,9 +143,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-org451e3d3" class="outline-3">
-<h3 id="org451e3d3">패키지 업그레이드</h3>
-<div class="outline-text-3" id="text-org451e3d3">
+<div id="outline-container-org1af7c38" class="outline-3">
+<h3 id="org1af7c38">패키지 업그레이드</h3>
+<div class="outline-text-3" id="text-org1af7c38">
 <div class="org-src-container">
 <pre class="src src-bash">brew upgrade PACKAGE_NAME
 </pre>
@@ -159,9 +159,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-org5c6fd13" class="outline-3">
-<h3 id="org5c6fd13">구 버전 삭제하기</h3>
-<div class="outline-text-3" id="text-org5c6fd13">
+<div id="outline-container-orgbf63148" class="outline-3">
+<h3 id="orgbf63148">구 버전 삭제하기</h3>
+<div class="outline-text-3" id="text-orgbf63148">
 <p>
 패키지를 업그레이드해도 구 버전은 그대로 남아 파일 시스템에 잔존한다.
 이를 청소하기 위해 <code>cleanup</code> 커맨드를 사용할 수 있다.
@@ -175,18 +175,18 @@ brew outdated
 </p>
 </div>
 </div>
-<div id="outline-container-orgb5c71e5" class="outline-3">
-<h3 id="orgb5c71e5">패키지 삭제(uninstall)</h3>
-<div class="outline-text-3" id="text-orgb5c71e5">
+<div id="outline-container-orgdc5b40f" class="outline-3">
+<h3 id="orgdc5b40f">패키지 삭제(uninstall)</h3>
+<div class="outline-text-3" id="text-orgdc5b40f">
 <div class="org-src-container">
 <pre class="src src-bash">brew uninstall PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3eddb7b" class="outline-3">
-<h3 id="org3eddb7b">의사 양반(?)</h3>
-<div class="outline-text-3" id="text-org3eddb7b">
+<div id="outline-container-org492f85d" class="outline-3">
+<h3 id="org492f85d">의사 양반(?)</h3>
+<div class="outline-text-3" id="text-org492f85d">
 <div class="org-src-container">
 <pre class="src src-bash">brew doctor
 </pre>
@@ -197,9 +197,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-orgd445b77" class="outline-2">
-<h2 id="orgd445b77">구 버전 패키지 사용하기</h2>
-<div class="outline-text-2" id="text-orgd445b77">
+<div id="outline-container-orgb4d7467" class="outline-2">
+<h2 id="orgb4d7467">구 버전 패키지 사용하기</h2>
+<div class="outline-text-2" id="text-orgb4d7467">
 <p>
 만약 <code>upgrade</code> 등으로 최신버전이 설치되었다면
 해당 패키지의 구 버전도 여전히 파일 시스템에 남아있다.
@@ -214,9 +214,9 @@ brew outdated
 </p>
 </div>
 </div>
-<div id="outline-container-orgde89949" class="outline-2">
-<h2 id="orgde89949">다중 버전을 제공하는 패키지의 경우</h2>
-<div class="outline-text-2" id="text-orgde89949">
+<div id="outline-container-org0b939dc" class="outline-2">
+<h2 id="org0b939dc">다중 버전을 제공하는 패키지의 경우</h2>
+<div class="outline-text-2" id="text-org0b939dc">
 <p>
 다중 버전의 패키지가 필요한 경우 우선 지원되는지 부터 확인해봐야 한다.
 예를 들어 node.js 의 경우 LTS 버전이 다양하게 제공되고 있다.
@@ -319,9 +319,9 @@ v10.x.x
 </p>
 </div>
 </div>
-<div id="outline-container-org05fe63c" class="outline-2">
-<h2 id="org05fe63c">Cask</h2>
-<div class="outline-text-2" id="text-org05fe63c">
+<div id="outline-container-org084953e" class="outline-2">
+<h2 id="org084953e">Cask</h2>
+<div class="outline-text-2" id="text-org084953e">
 <p>
 cask는 <a href="macos.html">macOS</a> 응용 소프트웨어나
 다양한 리소스를 설치할 수 있게 도와주는 확장 도구다.
@@ -355,16 +355,28 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 </p>
 </div>
 </div>
-<div id="outline-container-orgcdd9b4e" class="outline-2">
-<h2 id="orgcdd9b4e">외부 링크</h2>
-<div class="outline-text-2" id="text-orgcdd9b4e">
+<div id="outline-container-orgfb06c39" class="outline-2">
+<h2 id="orgfb06c39">외부 링크</h2>
+<div class="outline-text-2" id="text-orgfb06c39">
 <ul class="org-ul">
 <li><a target="_blank" href="https://brew.sh">🌏Homebrew 공식 홈페이지</a></li>
 </ul>
 </div>
 </div>
+<div class="mid-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 </section>
-<hr /><div class="backlinks-container">
+<div class="backlinks-container">
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
@@ -401,18 +413,6 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 2020년 4월 21일 수정</div>
 </div>
 </div>
-</div>
-<div class="top-ad">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </div>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.

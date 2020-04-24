@@ -68,22 +68,22 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org1e1c81e">사용법 메모</a>
+<li><a href="#org4377644">사용법 메모</a>
 <ul>
-<li><a href="#org31ff164">프로젝트 시작하기</a></li>
-<li><a href="#org86f3b48">이미 존재하는 프로젝트에 환경 만들기</a></li>
-<li><a href="#org98ffb79">프로젝트에 의존성 추가</a></li>
-<li><a href="#orgbb6a25e">패키지 버전 조건</a></li>
-<li><a href="#org26262f0">의존 패키지 일괄 설치</a></li>
-<li><a href="#org38cd35f">패키지 버전 일괄 업데이트</a></li>
-<li><a href="#org688dfc5">의존성 삭제하기</a></li>
-<li><a href="#org629a52d">프로젝트 실행하기</a></li>
-<li><a href="#org400d199">virtualenv 셸 얻기</a></li>
-<li><a href="#org91df2d7">poetry 업그레이드 하기</a></li>
+<li><a href="#org9339399">프로젝트 시작하기</a></li>
+<li><a href="#orgb034956">이미 존재하는 프로젝트에 환경 만들기</a></li>
+<li><a href="#orgfd9f5c7">프로젝트에 의존성 추가</a></li>
+<li><a href="#org19e6c71">패키지 버전 조건</a></li>
+<li><a href="#orgd8dff9e">의존 패키지 일괄 설치</a></li>
+<li><a href="#orgc10ac03">패키지 버전 일괄 업데이트</a></li>
+<li><a href="#orga3d5ef1">의존성 삭제하기</a></li>
+<li><a href="#org1a39aef">프로젝트 실행하기</a></li>
+<li><a href="#orgb23c359">virtualenv 셸 얻기</a></li>
+<li><a href="#orga69e27f">poetry 업그레이드 하기</a></li>
 </ul>
 </li>
-<li><a href="#orgc27079c">Docker에서 사용하기</a></li>
-<li><a href="#org136718d">외부 링크</a></li>
+<li><a href="#org80ff898">Docker에서 사용하기</a></li>
+<li><a href="#org36a6e74">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -102,31 +102,31 @@ Poetry는 파이썬(Python)용 패키징 겸 의존성 관리를 도와주는 �
 점이 큰 특징이다.
 </p>
 
-<div id="outline-container-org1e1c81e" class="outline-2">
-<h2 id="org1e1c81e">사용법 메모</h2>
-<div class="outline-text-2" id="text-org1e1c81e">
+<div id="outline-container-org4377644" class="outline-2">
+<h2 id="org4377644">사용법 메모</h2>
+<div class="outline-text-2" id="text-org4377644">
 </div>
-<div id="outline-container-org31ff164" class="outline-3">
-<h3 id="org31ff164">프로젝트 시작하기</h3>
-<div class="outline-text-3" id="text-org31ff164">
+<div id="outline-container-org9339399" class="outline-3">
+<h3 id="org9339399">프로젝트 시작하기</h3>
+<div class="outline-text-3" id="text-org9339399">
 <div class="org-src-container">
 <pre class="src src-bash">poetry new PROJECT_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org86f3b48" class="outline-3">
-<h3 id="org86f3b48">이미 존재하는 프로젝트에 환경 만들기</h3>
-<div class="outline-text-3" id="text-org86f3b48">
+<div id="outline-container-orgb034956" class="outline-3">
+<h3 id="orgb034956">이미 존재하는 프로젝트에 환경 만들기</h3>
+<div class="outline-text-3" id="text-orgb034956">
 <div class="org-src-container">
 <pre class="src src-bash">poetry init
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org98ffb79" class="outline-3">
-<h3 id="org98ffb79">프로젝트에 의존성 추가</h3>
-<div class="outline-text-3" id="text-org98ffb79">
+<div id="outline-container-orgfd9f5c7" class="outline-3">
+<h3 id="orgfd9f5c7">프로젝트에 의존성 추가</h3>
+<div class="outline-text-3" id="text-orgfd9f5c7">
 <div class="org-src-container">
 <pre class="src src-bash">poetry add PACKAGE_NAME
 </pre>
@@ -153,9 +153,9 @@ Poetry는 파이썬(Python)용 패키징 겸 의존성 관리를 도와주는 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgbb6a25e" class="outline-3">
-<h3 id="orgbb6a25e">패키지 버전 조건</h3>
-<div class="outline-text-3" id="text-orgbb6a25e">
+<div id="outline-container-org19e6c71" class="outline-3">
+<h3 id="org19e6c71">패키지 버전 조건</h3>
+<div class="outline-text-3" id="text-org19e6c71">
 <p>
 설치한 패키지들은 <code>pyproject.toml</code> 파일에서 찾을 수 있다.
 대충 아래와 같은 식이다.
@@ -178,9 +178,9 @@ pytest = "^5.2"
 </p>
 </div>
 </div>
-<div id="outline-container-org26262f0" class="outline-3">
-<h3 id="org26262f0">의존 패키지 일괄 설치</h3>
-<div class="outline-text-3" id="text-org26262f0">
+<div id="outline-container-orgd8dff9e" class="outline-3">
+<h3 id="orgd8dff9e">의존 패키지 일괄 설치</h3>
+<div class="outline-text-3" id="text-orgd8dff9e">
 <div class="org-src-container">
 <pre class="src src-bash">poetry install
 </pre>
@@ -190,9 +190,9 @@ pytest = "^5.2"
 </p>
 </div>
 </div>
-<div id="outline-container-org38cd35f" class="outline-3">
-<h3 id="org38cd35f">패키지 버전 일괄 업데이트</h3>
-<div class="outline-text-3" id="text-org38cd35f">
+<div id="outline-container-orgc10ac03" class="outline-3">
+<h3 id="orgc10ac03">패키지 버전 일괄 업데이트</h3>
+<div class="outline-text-3" id="text-orgc10ac03">
 <div class="org-src-container">
 <pre class="src src-bash">poetry update
 </pre>
@@ -202,18 +202,18 @@ pytest = "^5.2"
 </p>
 </div>
 </div>
-<div id="outline-container-org688dfc5" class="outline-3">
-<h3 id="org688dfc5">의존성 삭제하기</h3>
-<div class="outline-text-3" id="text-org688dfc5">
+<div id="outline-container-orga3d5ef1" class="outline-3">
+<h3 id="orga3d5ef1">의존성 삭제하기</h3>
+<div class="outline-text-3" id="text-orga3d5ef1">
 <div class="org-src-container">
 <pre class="src src-bash">poetry remove PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org629a52d" class="outline-3">
-<h3 id="org629a52d">프로젝트 실행하기</h3>
-<div class="outline-text-3" id="text-org629a52d">
+<div id="outline-container-org1a39aef" class="outline-3">
+<h3 id="org1a39aef">프로젝트 실행하기</h3>
+<div class="outline-text-3" id="text-org1a39aef">
 <div class="org-src-container">
 <pre class="src src-bash">poetry run python main.py
 </pre>
@@ -224,18 +224,18 @@ pytest = "^5.2"
 </p>
 </div>
 </div>
-<div id="outline-container-org400d199" class="outline-3">
-<h3 id="org400d199">virtualenv <a href="shell.html">셸</a> 얻기</h3>
-<div class="outline-text-3" id="text-org400d199">
+<div id="outline-container-orgb23c359" class="outline-3">
+<h3 id="orgb23c359">virtualenv <a href="shell.html">셸</a> 얻기</h3>
+<div class="outline-text-3" id="text-orgb23c359">
 <div class="org-src-container">
 <pre class="src src-bash">poetry shell
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org91df2d7" class="outline-3">
-<h3 id="org91df2d7">poetry 업그레이드 하기</h3>
-<div class="outline-text-3" id="text-org91df2d7">
+<div id="outline-container-orga69e27f" class="outline-3">
+<h3 id="orga69e27f">poetry 업그레이드 하기</h3>
+<div class="outline-text-3" id="text-orga69e27f">
 <div class="org-src-container">
 <pre class="src src-bash">poetry self update
 </pre>
@@ -246,9 +246,9 @@ poetry 자체를 업그레이드 하는 명령이니 오해하지 말자.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc27079c" class="outline-2">
-<h2 id="orgc27079c">Docker에서 사용하기</h2>
-<div class="outline-text-2" id="text-orgc27079c">
+<div id="outline-container-org80ff898" class="outline-2">
+<h2 id="org80ff898">Docker에서 사용하기</h2>
+<div class="outline-text-2" id="text-org80ff898">
 <p>
 Docker 컨테이너는 독립된 환경이므로
 딱히 virtualenv 환경을 사용할 이유가 없다.
@@ -264,18 +264,19 @@ Dockerfile 등에 <code>poetry install</code> 하기 전에
 </p>
 </div>
 </div>
-<div id="outline-container-org136718d" class="outline-2">
-<h2 id="org136718d">외부 링크</h2>
-<div class="outline-text-2" id="text-org136718d">
+<div id="outline-container-org36a6e74" class="outline-2">
+<h2 id="org36a6e74">외부 링크</h2>
+<div class="outline-text-2" id="text-org36a6e74">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/62">🌏파이썬의 새로운 의존성 관리자 Poetry</a></li>
 <li><a target="_blank" href="https://python-poetry.org">🌏Poetry 공식 홈페이지</a></li>
 </ul>
 </div>
 </div>
-<div class="mid-ad-container">
+</section>
+<div class="bottom-ad-container">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle mid-ad"
+<ins class="adsbygoogle bottom-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
      data-ad-slot="4306465772"
@@ -285,7 +286,6 @@ Dockerfile 등에 <code>poetry install</code> 하기 전에
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-</section>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>

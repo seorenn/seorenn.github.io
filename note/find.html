@@ -68,14 +68,14 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org4ce75f8">기본 사용법</a>
+<li><a href="#orgcd985a4">기본 사용법</a>
 <ul>
-<li><a href="#org0c31427">현재 디렉터리에서 특정 파일 검색하기</a></li>
-<li><a href="#orgca8af61">특정 디렉터리에서 특정 파일 검색하기</a></li>
-<li><a href="#orgfaa8635">검색 패턴</a></li>
-<li><a href="#orgc13cc91">대소문자 무시하기</a></li>
-<li><a href="#org3894ab1">검색 종류 지정하기</a></li>
-<li><a href="#org88a07c0">검색 내용으로 특정 처리하기(exec)</a></li>
+<li><a href="#orgd4f84b5">현재 디렉터리에서 특정 파일 검색하기</a></li>
+<li><a href="#orgc2f2677">특정 디렉터리에서 특정 파일 검색하기</a></li>
+<li><a href="#org86bc75e">검색 패턴</a></li>
+<li><a href="#org07e3ceb">대소문자 무시하기</a></li>
+<li><a href="#org01934e8">검색 종류 지정하기</a></li>
+<li><a href="#org27ad5af">검색 내용으로 특정 처리하기(exec)</a></li>
 </ul>
 </li>
 </ul>
@@ -86,13 +86,13 @@ gtag('config', 'UA-44534026-1');
 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-org4ce75f8" class="outline-2">
-<h2 id="org4ce75f8">기본 사용법</h2>
-<div class="outline-text-2" id="text-org4ce75f8">
+<div id="outline-container-orgcd985a4" class="outline-2">
+<h2 id="orgcd985a4">기본 사용법</h2>
+<div class="outline-text-2" id="text-orgcd985a4">
 </div>
-<div id="outline-container-org0c31427" class="outline-3">
-<h3 id="org0c31427">현재 디렉터리에서 특정 파일 검색하기</h3>
-<div class="outline-text-3" id="text-org0c31427">
+<div id="outline-container-orgd4f84b5" class="outline-3">
+<h3 id="orgd4f84b5">현재 디렉터리에서 특정 파일 검색하기</h3>
+<div class="outline-text-3" id="text-orgd4f84b5">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"somename.ext"</span>
 </pre>
@@ -104,9 +104,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-orgca8af61" class="outline-3">
-<h3 id="orgca8af61">특정 디렉터리에서 특정 파일 검색하기</h3>
-<div class="outline-text-3" id="text-orgca8af61">
+<div id="outline-container-orgc2f2677" class="outline-3">
+<h3 id="orgc2f2677">특정 디렉터리에서 특정 파일 검색하기</h3>
+<div class="outline-text-3" id="text-orgc2f2677">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">find</span> /foo/bar <span style="color: #98be65;">"somename.ext"</span>
 </pre>
@@ -116,9 +116,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-orgfaa8635" class="outline-3">
-<h3 id="orgfaa8635">검색 패턴</h3>
-<div class="outline-text-3" id="text-orgfaa8635">
+<div id="outline-container-org86bc75e" class="outline-3">
+<h3 id="org86bc75e">검색 패턴</h3>
+<div class="outline-text-3" id="text-org86bc75e">
 <p>
 찾을 패턴으로 와일드카드를 사용할 수도 있다.
 </p>
@@ -131,9 +131,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-orgc13cc91" class="outline-3">
-<h3 id="orgc13cc91">대소문자 무시하기</h3>
-<div class="outline-text-3" id="text-orgc13cc91">
+<div id="outline-container-org07e3ceb" class="outline-3">
+<h3 id="org07e3ceb">대소문자 무시하기</h3>
+<div class="outline-text-3" id="text-org07e3ceb">
 <p>
 기본적으로 이 도구는 대소문자를 가린다.
 만약 대소문자를 가리지 않으려면 <code>iname</code> 옵션을 사용할 수 있다.
@@ -144,9 +144,9 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-org3894ab1" class="outline-3">
-<h3 id="org3894ab1">검색 종류 지정하기</h3>
-<div class="outline-text-3" id="text-org3894ab1">
+<div id="outline-container-org01934e8" class="outline-3">
+<h3 id="org01934e8">검색 종류 지정하기</h3>
+<div class="outline-text-3" id="text-org01934e8">
 <p>
 만약 특정한 종류만 검색하고 싶다면 <code>type</code> 옵션을 사용할 수 있다.
 </p>
@@ -164,9 +164,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org88a07c0" class="outline-3">
-<h3 id="org88a07c0">검색 내용으로 특정 처리하기(exec)</h3>
-<div class="outline-text-3" id="text-org88a07c0">
+<div id="outline-container-org27ad5af" class="outline-3">
+<h3 id="org27ad5af">검색 내용으로 특정 처리하기(exec)</h3>
+<div class="outline-text-3" id="text-org27ad5af">
 <p>
 <code>-exec</code> 옵션은 검색된 내용을 이용해 외부 도구를 실행시킬 수 있게 할 수 있다.
 </p>
@@ -194,9 +194,10 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div class="mid-ad-container">
+</section>
+<div class="bottom-ad-container">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle mid-ad"
+<ins class="adsbygoogle bottom-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
      data-ad-slot="4306465772"
@@ -206,7 +207,6 @@ gtag('config', 'UA-44534026-1');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-</section>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>

@@ -436,8 +436,7 @@ hr {
 }
 
 .content blockquote {
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
+  margin: 1.8rem 0 1.8rem 0;
   padding-left: 24px;
   border-left: 2px solid #ee746f;
 }

@@ -71,21 +71,22 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb6ddfe1">설정 팁</a>
+<li><a href="#orgaecd716">설정 팁</a>
 <ul>
-<li><a href="#orga08b5c3">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</a></li>
-<li><a href="#org816ee48">시작 시 풀스크린 모드로 만들기</a></li>
+<li><a href="#orgb6065fa">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</a></li>
+<li><a href="#org689d040">시작 시 풀스크린 모드로 만들기</a></li>
 </ul>
 </li>
-<li><a href="#orgefea441">메모</a>
+<li><a href="#org9a96df3">메모</a>
 <ul>
-<li><a href="#org221a52f">멈추는 현상(freezing) 디버깅 하기</a></li>
-<li><a href="#org39fa123">터미널에서 트루컬러 이맥스 사용하기</a></li>
-<li><a href="#org2357478">Tmux 안의 이맥스에서 트루컬러 사용하기</a></li>
-<li><a href="#org0d4bc56">CRLF to LF</a></li>
-<li><a href="#orgd80570e">셸에서 이맥스 스크립트 실행시키기</a></li>
+<li><a href="#org062b256">멈추는 현상(freezing) 디버깅 하기</a></li>
+<li><a href="#org97d58e6">터미널에서 트루컬러 이맥스 사용하기</a></li>
+<li><a href="#org0b17982">Tmux 안의 이맥스에서 트루컬러 사용하기</a></li>
+<li><a href="#org6281123">CRLF to LF</a></li>
+<li><a href="#orgb62e818">셸에서 이맥스 스크립트 실행시키기</a></li>
 </ul>
 </li>
+<li><a href="#org8fe0823">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -103,13 +104,13 @@ gtag('config', 'UA-44534026-1');
 Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </p>
 
-<div id="outline-container-orgb6ddfe1" class="outline-2">
-<h2 id="orgb6ddfe1">설정 팁</h2>
-<div class="outline-text-2" id="text-orgb6ddfe1">
+<div id="outline-container-orgaecd716" class="outline-2">
+<h2 id="orgaecd716">설정 팁</h2>
+<div class="outline-text-2" id="text-orgaecd716">
 </div>
-<div id="outline-container-orga08b5c3" class="outline-3">
-<h3 id="orga08b5c3">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</h3>
-<div class="outline-text-3" id="text-orga08b5c3">
+<div id="outline-container-orgb6065fa" class="outline-3">
+<h3 id="orgb6065fa">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</h3>
+<div class="outline-text-3" id="text-orgb6065fa">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #dcaeea;">auto-revert-mode</span><span style="color: #51afef;">)</span>
 </pre>
@@ -119,9 +120,9 @@ Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </p>
 </div>
 </div>
-<div id="outline-container-org816ee48" class="outline-3">
-<h3 id="org816ee48">시작 시 풀스크린 모드로 만들기</h3>
-<div class="outline-text-3" id="text-org816ee48">
+<div id="outline-container-org689d040" class="outline-3">
+<h3 id="org689d040">시작 시 풀스크린 모드로 만들기</h3>
+<div class="outline-text-3" id="text-org689d040">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">add-hook</span> <span style="color: #51afef;">'</span><span style="color: #dcaeea;">window-setup-hook</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">toggle-frame-fullscreen</span><span style="color: #51afef;">)</span>
 </pre>
@@ -132,13 +133,13 @@ Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgefea441" class="outline-2">
-<h2 id="orgefea441">메모</h2>
-<div class="outline-text-2" id="text-orgefea441">
+<div id="outline-container-org9a96df3" class="outline-2">
+<h2 id="org9a96df3">메모</h2>
+<div class="outline-text-2" id="text-org9a96df3">
 </div>
-<div id="outline-container-org221a52f" class="outline-3">
-<h3 id="org221a52f">멈추는 현상(freezing) 디버깅 하기</h3>
-<div class="outline-text-3" id="text-org221a52f">
+<div id="outline-container-org062b256" class="outline-3">
+<h3 id="org062b256">멈추는 현상(freezing) 디버깅 하기</h3>
+<div class="outline-text-3" id="text-org062b256">
 <p>
 모종의 사유로 인해 Emacs 가 멈췄을 경우 <code>SIGUSR2</code> 신호를 주면
 back-trace를 얻을 수도 있다.
@@ -175,9 +176,9 @@ back-trace를 얻을 수도 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org39fa123" class="outline-3">
-<h3 id="org39fa123">터미널에서 트루컬러 이맥스 사용하기</h3>
-<div class="outline-text-3" id="text-org39fa123">
+<div id="outline-container-org97d58e6" class="outline-3">
+<h3 id="org97d58e6">터미널에서 트루컬러 이맥스 사용하기</h3>
+<div class="outline-text-3" id="text-org97d58e6">
 <p>
 iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제대로 지원하기 위해서
 약간의 트윅이 필요하다. 참고로 이 트윅은 <a href="macos.html">macOS</a>에서 확인해봤다.
@@ -236,9 +237,9 @@ iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제�
 </p>
 </div>
 </div>
-<div id="outline-container-org2357478" class="outline-3">
-<h3 id="org2357478">Tmux 안의 이맥스에서 트루컬러 사용하기</h3>
-<div class="outline-text-3" id="text-org2357478">
+<div id="outline-container-org0b17982" class="outline-3">
+<h3 id="org0b17982">Tmux 안의 이맥스에서 트루컬러 사용하기</h3>
+<div class="outline-text-3" id="text-org0b17982">
 <p>
 <a href="tmux.html">Tmux</a> 안에서 기동시킬 경우 색상이 이상하게 표시될 수 있다.
 이 경우 아마도 <a href="tmux.html">Tmux</a>가 사용하는
@@ -294,9 +295,9 @@ emacs 를 아래 커맨드로 실행시켜 보자.
 </p>
 </div>
 </div>
-<div id="outline-container-org0d4bc56" class="outline-3">
-<h3 id="org0d4bc56">CRLF to LF</h3>
-<div class="outline-text-3" id="text-org0d4bc56">
+<div id="outline-container-org6281123" class="outline-3">
+<h3 id="org6281123">CRLF to LF</h3>
+<div class="outline-text-3" id="text-org6281123">
 <p>
 요즘은 별로 그럴 일은 없겠지만,
 개행문자가 DOS 파일 타입(CRLF)과
@@ -318,9 +319,9 @@ CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd80570e" class="outline-3">
-<h3 id="orgd80570e">셸에서 이맥스 스크립트 실행시키기</h3>
-<div class="outline-text-3" id="text-orgd80570e">
+<div id="outline-container-orgb62e818" class="outline-3">
+<h3 id="orgb62e818">셸에서 이맥스 스크립트 실행시키기</h3>
+<div class="outline-text-3" id="text-orgb62e818">
 <p>
 특정 <a href="emacs-lisp.html">Emacs Lisp</a>의 특정 함수 하나를 <a href="shell.html">셸</a>에서 실행하고 싶은 경우
 </p>
@@ -381,6 +382,15 @@ CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
 </div>
 </div>
 </div>
+<div id="outline-container-org8fe0823" class="outline-2">
+<h2 id="org8fe0823">외부 링크</h2>
+<div class="outline-text-2" id="text-org8fe0823">
+<ul class="org-ul">
+<li><a target="_blank" href="https://beepb00p.xyz/pkm-search.html">🌏Building personal search infrastructure for your knowledge and code</a>:
+Overview of search tools for desktop and mobile; using Emacs and Ripgrep as desktop search engine.</li>
+</ul>
+</div>
+</div>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"
      style="display:block"
@@ -409,14 +419,14 @@ CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs-lisp-functions.html">Emacs Lisp Functions</a></h2>
+<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
 <div class="article-link-date">
 2020년 4월 25일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
+<h2><a class="article-link-title" href="/note/emacs-lisp-functions.html">Emacs Lisp Functions</a></h2>
 <div class="article-link-date">
 2020년 4월 25일 수정</div>
 </div>

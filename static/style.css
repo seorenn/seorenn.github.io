@@ -545,6 +545,12 @@ td.org-left {
   padding-right: 16px;
 }
 
+.refss-container h1 {
+  font-size: 1.4rem;
+  font-weight: 350;
+  color: #e6e6e6;
+}
+
 /* footer */
 
 footer {

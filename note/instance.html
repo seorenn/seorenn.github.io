@@ -4,14 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
-<title>셸 - Seorenn</title>
-<meta name="twitter:title" content="셸" />
-<meta name="og:title" content="셸" />
-<meta name="description" content="셸(Shell)" />
-<meta name="twitter:description" content="셸(Shell)" />
-<meta name="og:description" content="셸(Shell)" />
-<link rel="canonical" href="https://seorenn.github.io/note/shell.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/shell.html" />
+<title>인스턴스 - Seorenn</title>
+<meta name="twitter:title" content="인스턴스" />
+<meta name="og:title" content="인스턴스" />
+<meta name="description" content="인스턴스(Instance)에 대하여" />
+<meta name="twitter:description" content="인스턴스(Instance)에 대하여" />
+<meta name="og:description" content="인스턴스(Instance)에 대하여" />
+<link rel="canonical" href="https://seorenn.github.io/note/instance.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/instance.html" />
 <link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -65,21 +65,79 @@ gtag('config', 'UA-44534026-1');
 </div>
 <section class="content">
 <header>
-<h1>셸</h1>
-<div class="title-date">2020년 4월 13일 수정</div>
+<h1>인스턴스</h1>
+<div class="title-date">2020년 4월 26일 수정</div>
 </header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbef228d">프로세스 개념</a></li>
+<li><a href="#org17e96d4">특정 서비스의 용어</a></li>
+<li><a href="#org4c518d0">컴퓨터 프로그래밍 개념</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbef228d" class="outline-2">
+<h2 id="orgbef228d">프로세스 개념</h2>
+<div class="outline-text-2" id="text-orgbef228d">
 <p>
-셸(Shell)은 텍스트 커맨드를 입력 받아 분석하고 명령을 전달하는 시스템
-소프트웨어다.
+실행 중인 임의의 프로세스를 인스턴스라고 부르기도 한다.
+</p>
+</div>
+</div>
+<div id="outline-container-org17e96d4" class="outline-2">
+<h2 id="org17e96d4">특정 서비스의 용어</h2>
+<div class="outline-text-2" id="text-org17e96d4">
+<p>
+예를 들어 AWS의 EC2 서비스의 경우 각각의 가상 서버를 EC2 인스턴스라고 부른다.
+</p>
+</div>
+</div>
+<div id="outline-container-org4c518d0" class="outline-2">
+<h2 id="org4c518d0">컴퓨터 프로그래밍 개념</h2>
+<div class="outline-text-2" id="text-org4c518d0">
+<p>
+<a href="definition.html">정의</a>를 실체화(?) 시킨 것을 인스턴스라고 부른다.
 </p>
 
 <p>
-대표적으로 <a href="sh.html">Bourne Shell</a>이 유명하다.
+예를 들어 아래 <a href="swift.html">Swift</a> 코드를 보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">Human</span> {
+  <span style="color: #51afef;">let</span> name: <span style="color: #c678dd;">String</span>
+  <span style="color: #51afef;">var</span> age = <span style="color: #da8548; font-weight: bold;">0</span>
+
+  <span style="color: #51afef;">func</span> <span style="color: #c678dd;">birthdayParty</span>() {
+    age += <span style="color: #da8548; font-weight: bold;">1</span>
+  }
+}
+</pre>
+</div>
+<p>
+위 코드는 Human이라는 구조체를 <a href="definition.html">정의</a>하고 있다.
+따라서 위 코드 만으로는 아무런 동작을 하지 않는다.
 </p>
 
 <p>
-주로 <a href="cli.html">CLI</a>와 큰 관계가 있다.
+하지만 아래 코드가 나오는 순간부터 약간 달라진다.
 </p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">var</span> james = <span style="color: #c678dd;">Human</span>(name: <span style="color: #98be65;">"James"</span>, age: <span style="color: #da8548; font-weight: bold;">23</span>)
+</pre>
+</div>
+<p>
+위 코드는 Human 구조체의 인스턴스를 생성한다. 즉 메모리가 할당되고 여기에 초기값으로 이름과 나이가 들어가게 된다.
+</p>
+
+<p>
+이렇게 인스턴스는 <a href="definition.html">정의</a>를 실체화 시킨 것을 의미한다.
+그래서 위의 james 라는 변수는 'Human의 인스턴스'라고도 부른다.
+물론 명확하게 하자면 인스턴스는 james가 가리키고 있는 메모리가 맞겠지만 뭐&#x2026; 어렵게 생각하지는 말자.
+</p>
+</div>
+</div>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"
      style="display:block"
@@ -108,6 +166,20 @@ gtag('config', 'UA-44534026-1');
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/definition.html">정의</a></h2>
+<div class="article-link-date">
+2020년 4월 26일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/swiftui.html">SwiftUI</a></h2>
+<div class="article-link-date">
+2020년 4월 26일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>
 <div class="article-link-date">
 2020년 4월 26일 수정</div>
@@ -115,79 +187,9 @@ gtag('config', 'UA-44534026-1');
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/object.html">오브젝트</a></h2>
 <div class="article-link-date">
 2020년 4월 25일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
-<div class="article-link-date">
-2020년 4월 25일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/grep.html">Grep</a></h2>
-<div class="article-link-date">
-2020년 4월 24일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/xcode.html">Xcode</a></h2>
-<div class="article-link-date">
-2020년 4월 23일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/pyenv.html">pyenv</a></h2>
-<div class="article-link-date">
-2020년 4월 22일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/kubectl.html">kubectl</a></h2>
-<div class="article-link-date">
-2020년 4월 22일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/poetry.html">Poetry</a></h2>
-<div class="article-link-date">
-2020년 4월 19일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/tmux.html">Tmux</a></h2>
-<div class="article-link-date">
-2020년 4월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/find.html">find</a></h2>
-<div class="article-link-date">
-2020년 4월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/cli.html">CLI</a></h2>
-<div class="article-link-date">
-2020년 4월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/sh.html">Bourne Shell</a></h2>
-<div class="article-link-date">
-2020년 4월 13일 수정</div>
 </div>
 </div>
 </div>

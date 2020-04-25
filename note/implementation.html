@@ -66,130 +66,146 @@ gtag('config', 'UA-44534026-1');
 <section class="content">
 <header>
 <h1>구현</h1>
-<div class="title-date">2020년 4월 25일 수정</div>
+<div class="title-date">2020년 4월 26일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org6c77d4e">대충 사용하는 의미</a></li>
-<li><a href="#orgba81a0e">사전적 의미</a></li>
-<li><a href="#org91bfda4">구세대(?)의 정의</a></li>
-<li><a href="#org094ff41">현 세대(?)의 정의</a></li>
-<li><a href="#orgafd097a">결론</a></li>
+<li><a href="#org8c80425">대충 사용하는 의미</a></li>
+<li><a href="#orge77bc10">구세대 언어에서의 의미</a></li>
+<li><a href="#orgddd2d7f">현대적인 언어에서의 의미</a></li>
+<li><a href="#orgc9ac110">결론</a></li>
 </ul>
 </div>
 </div>
 <p>
 IT, 특히 소프트웨어 개발 직종에서 '구현' 이라는 용어는 굉장히 자주 쓰인다.
-대충 이해할 때는 '코딩' 이라는 말로 대체가 가능할 것 처럼 보이나
-실제로는 좀 더 깊은 이야기일 수도 있기 때문에 정리해본다.
 </p>
-
-<div id="outline-container-org6c77d4e" class="outline-2">
-<h2 id="org6c77d4e">대충 사용하는 의미</h2>
-<div class="outline-text-2" id="text-org6c77d4e">
-<p>
-앞서 이야기 했다시피, IT 개발 직종에서 '구현'의 의미는 이렇다.
-</p>
-<blockquote>
-<p>
-구현하다 = 개발하다, 코딩하다
-</p>
-</blockquote>
-<p>
-그렇다면 사전적 의미는 뭘까?
-</p>
-</div>
-</div>
-<div id="outline-container-orgba81a0e" class="outline-2">
-<h2 id="orgba81a0e">사전적 의미</h2>
-<div class="outline-text-2" id="text-orgba81a0e">
 <blockquote>
 <p>
 구현(具現/具顯) (명사) 어떤 내용이 구체적인 사실로 나타나게 함.
 </p>
 </blockquote>
 <p>
-하지만 이 글에서 사전적 의미는 크게 의미가 없다. 우리가 이해할 의미는 관용적인 의미다.
+'구현'의 사전적 의미는 위와 같다.
+하지만 이 글에서 사전적 의미는 크게 의미가 없다.
+</p>
+
+<div id="outline-container-org8c80425" class="outline-2">
+<h2 id="org8c80425">대충 사용하는 의미</h2>
+<div class="outline-text-2" id="text-org8c80425">
+<blockquote>
+<p>
+구현하다 = 개발하다, 코딩하다
+</p>
+</blockquote>
+<p>
+IT 개발 직종에서 '구현'의 의미는 보통 위와 같이 이해되는 경우가 많다.
+'개발하다' 라는 의미는 약간 애매모호한 것 같지만,
+'코딩하다' 라는 의미는 약간은 직설적인 의미를 포함한 것 같다.
+</p>
+
+<p>
+하지만 이건 그냥 대충 사용하는 의미일 뿐이다.
+</p>
+
+<p>
+'구현'의 의미를 제대로 이해하려면 '<a href="definition.html">정의</a>'와 구분이 필요하다.
 </p>
 </div>
 </div>
-<div id="outline-container-org91bfda4" class="outline-2">
-<h2 id="org91bfda4">구세대(?)의 정의</h2>
-<div class="outline-text-2" id="text-org91bfda4">
+<div id="outline-container-orge77bc10" class="outline-2">
+<h2 id="orge77bc10">구세대 언어에서의 의미</h2>
+<div class="outline-text-2" id="text-orge77bc10">
 <p>
-굳이 구세대라고 표기한 것이 큰 의미를 가지는 것이 아니다.
-특히 비하의 의미도 절대로 아니다.
-그냥 시간적으로 과거의 시점을 다룬다고 생각하자.
+예를 들어 C 언어의 경우 <a href="definition.html">정의</a>는 아래와 같은 식이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-c++"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">do_what</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">param_a</span>, <span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">param_b</span>);
+</pre>
+</div>
+<p>
+위와 같이 <a href="definition.html">정의</a>에는 실제로 어떤 식으로 동작하는지에 대한 기술이 없다.
+이 부분은 구현이 담당하는 부분이기 때문이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-c++"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">do_what</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">param_a</span>, <span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">param_b</span>) {
+    ...
+}
+</pre>
+</div>
+<p>
+여기서 실제 코드를 넣을 수 있는 중괄호가 등장한다.
 </p>
 
 <p>
-과거에 주류로 쓰이던 언어들, 예를 들어 C나 C++ 같은 언어들은 헤더(Header)라 불리는 파일이 존재한다.
-주로 <code>.h</code>, <code>.hh</code>, <code>.hpp</code>, <code>.h++</code> 등의 확장자를 가지고 있던 파일인데,
-이 헤더에는 주로 공공에서 쓰일 각종 상수나 함수 혹은 변수의 인터페이스(interface) 등을 정의하는 목적의 파일이다.
+즉 구현은 특정 기능을 구현하는 것이고,
+<a href="definition.html">정의</a>는 이 특정 코드의 인터페이스 혹은 사용 방법 등을 알려주기 위한 용도다.
 </p>
 
 <p>
-이와의 상대적인 파일로 <code>.c</code> 혹은 <code>.cc</code>, <code>.cpp</code>, <code>.c++</code> 등의 확장자로 끝나는 파일이 있는데
-이를 통틀어서 구현 파일이라고 부르기도 한다.
+따라서 과거에는 헤더에 <a href="definition.html">정의</a>가 빠져 있으면 private 와 비슷한 느낌으로 사용되곤 했다.
 </p>
 
 <p>
-즉 이 둘을 나눠보면 헤더는 정의(definition)를 만들고 나머지 파일은 구현(implementation)을 만들다.
-정의에는 말 그대로 구현체의 모습을 정의해서 어떻게 쓰는지 방법과 모양을 기술하는 반면
-구현체는 정말 어떻게 동작하는 지를 실제로 만들어 놓은 것이다.
+조금 헷갈리는 주제로 전처리기(Preprocessor)를 이용한 매크로가 있다.
 </p>
-
+<div class="org-src-container">
+<pre class="src src-c++"><span style="color: #51afef; font-weight: bold;">#define</span> <span style="color: #c678dd;">do_what</span>(<span style="color: #dcaeea;">a</span>, <span style="color: #dcaeea;">b</span>) { ... }
+</pre>
+</div>
 <p>
-여기서 '구현' 이라는 의미가 정해진다.
-정의 혹은 인터페이스는 실체가 없기 때문에 이것 만으론 아무 동작을 하지 않는다.
-'구현'은 실제 동작을 만들어 내는 것이다.
-</p>
-
-<p>
-반대로 '정의'가 없는 구현도 존재할 수 있는데, 현대적인 용어로 private 구현이라고 볼 수 있다.
-'정의'가 없다면 어떻게 사용하는지 어떤 이름으로 부르는 지 알 수가 없기 때문이다.
-이런 식으로 '정의'를 알려 주느냐 마느냐 의 차이로
-구세대(?) 언어 용 라이브러리의 사용 방법을 간접적으로 알려 줄 수도 있었다.
+마치 <a href="definition.html">정의</a>와 구현이 한 번에 이루어지는 것 처럼 착각될 수도 있는데,
+매크로 전처리기는 컴파일 전에 미리 치환되는 부분이기 때문에
+컴파일러 입장에서는 매크로 자체는 존재하지 않는 것과 마찬가지다.
+따라서 구현이나 <a href="definition.html">정의</a>의 의미와는 다르게 생각하자.
 </p>
 </div>
 </div>
-<div id="outline-container-org094ff41" class="outline-2">
-<h2 id="org094ff41">현 세대(?)의 정의</h2>
-<div class="outline-text-2" id="text-org094ff41">
+<div id="outline-container-orgddd2d7f" class="outline-2">
+<h2 id="orgddd2d7f">현대적인 언어에서의 의미</h2>
+<div class="outline-text-2" id="text-orgddd2d7f">
 <p>
-현대적인 언어, 예를 들자면 <a href="swift.html">Swift</a>나 <a href="python.html">Python</a>
-같은 언어의 관점에서 보자면 '정의'와 '구현'이 하나의 파일에서 하나의 설계로 이뤄진다.
-따라서 굳이 '구현'과 '정의'를 분리하지 않아도 되는 경우가 있다.
+예를 들어 <a href="swift.html">Swift</a>로 구조체를 <a href="definition.html">정의</a>하는 방법을 보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SomeStruct</span> {
+  <span style="color: #51afef;">var</span> someValue = <span style="color: #da8548; font-weight: bold;">0</span>
+  <span style="color: #51afef;">func</span> <span style="color: #c678dd;">doWhat</span>() {
+    ...
+  }
+}
+</pre>
+</div>
+<p>
+<a href="swift.html">Swift</a>에는 헤더 개념이 없다.
+대부분의 현대적인 언어, 예를 들자면 <a href="python.html">Python</a>도 이런 식으로 헤더 파일 개념이 없다.
+그래서 <a href="definition.html">정의</a>와 구현이 하나의 같은 개념으로 합쳐 진 것과 비슷하다.
 </p>
 
 <p>
-하지만 변수의 개념에서는 여전히 '정의'라는 개념이 쓰인다.
+물론 근본적으로는 <a href="definition.html">정의</a>와 구현이 한 번에 이루어진다 라는 것으로 이해하는 게 좋을 것 같다.
+특히 최근의 추세는 구현은 정말 코딩하다는 의미가 되고
+'정의'는 구현된 코드 그 자체가 <a href="definition.html">정의</a>되었다는 의미에서 사용된다.
 </p>
 
 <p>
-그리고 클로저(closure)와 같이 호출 시 별도의 구현부를 넘겨야 하는 경우가 있는 것 처럼
-'구현'이라는 개념은 여전히 존재하면서도 이전과는 색다르게 사용되고 있다.
-</p>
-
-<p>
-<a href="swift.html">Swift</a>의 프로토콜(protocol) 개념도 정의와 구현을 분리 시키는 중요한 요소다.
-프로토콜은 정의만 존재하며 구현을 별도로 해 주어야 하는 개념이기 때문이다.
-물론 구세대 적인 의미와는 좀 다른 의미의 구현인 점은 여전하다.
+현대적인 언어에서는 헤더에 인터페이스를 기재하지 않는 방식과는 다르게
+접근 제어(Access Control)라는 방식으로 숨길 것을 코드로 마음껏 숨길 수 있다.
+그래서 굳이 <a href="definition.html">정의</a>를 묘사할 헤더를 쓸 이유가 없기도 하다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgafd097a" class="outline-2">
-<h2 id="orgafd097a">결론</h2>
-<div class="outline-text-2" id="text-orgafd097a">
+<div id="outline-container-orgc9ac110" class="outline-2">
+<h2 id="orgc9ac110">결론</h2>
+<div class="outline-text-2" id="text-orgc9ac110">
+<blockquote>
 <p>
-그래서 사실 처음에 적은 대충 사용하는 의미가 틀린 게 아니다.
-그저 '정의'와 만나게 되면 구분되는 것이 '구현'일 뿐이다.
+정의와 구현은 일단은 다르다.
 </p>
-
+</blockquote>
 <p>
-즉 정의와 구현이 다르다는 것이 핵심이다.
-이를 제대로 구분할 수만 있다면 어떻게 이해해도 틀린 말은 아닐지도 모른다.
+그냥 이거 한 줄이면 될 것 같다.
 </p>
 </div>
 </div>
@@ -221,14 +237,21 @@ IT, 특히 소프트웨어 개발 직종에서 '구현' 이라는 용어는 굉�
 <h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/definition.html">정의</a></h2>
 <div class="article-link-date">
-2020년 4월 25일 수정</div>
+2020년 4월 26일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/swiftui.html">SwiftUI</a></h2>
+<div class="article-link-date">
+2020년 4월 26일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
 <div class="article-link-date">
 2020년 4월 25일 수정</div>
 </div>

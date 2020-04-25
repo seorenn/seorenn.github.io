@@ -35,7 +35,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-44534026-1');
 </script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <header class="top-header">
@@ -49,7 +49,6 @@ gtag('config', 'UA-44534026-1');
 </div>
 </header>
 <div class="top-ad-container">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle top-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
@@ -72,16 +71,16 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org0d6e13e">Cartfile</a></li>
-<li><a href="#org1bcb406">사용법 정리</a>
+<li><a href="#org63a6eec">Cartfile</a></li>
+<li><a href="#orga135cd7">사용법 정리</a>
 <ul>
-<li><a href="#orgf53b562">Carthage 설치</a></li>
-<li><a href="#org3936597">의존성 설치하기</a></li>
-<li><a href="#orge214665">플랫폼 전용 빌드</a></li>
-<li><a href="#org989b7ec">빌드 된 프레임워크 위치</a></li>
+<li><a href="#orga946d96">Carthage 설치</a></li>
+<li><a href="#org03b04a5">의존성 설치하기</a></li>
+<li><a href="#orgae8567b">플랫폼 전용 빌드</a></li>
+<li><a href="#org5a9d8d4">빌드 된 프레임워크 위치</a></li>
 </ul>
 </li>
-<li><a href="#orgaed65ba">외부 링크</a></li>
+<li><a href="#org1322246">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -103,9 +102,9 @@ Cocoapods와 차이점이 있다면, 중앙 집중적으로 패키지를 관리�
 한다.
 </p>
 
-<div id="outline-container-org0d6e13e" class="outline-2">
-<h2 id="org0d6e13e">Cartfile</h2>
-<div class="outline-text-2" id="text-org0d6e13e">
+<div id="outline-container-org63a6eec" class="outline-2">
+<h2 id="org63a6eec">Cartfile</h2>
+<div class="outline-text-2" id="text-org63a6eec">
 <p>
 <code>Cartfile</code> 은 Carthage 의존성을 명시하는 파일이다.
 대충 아래와 같은 식으로 적는다.
@@ -149,13 +148,13 @@ github "user/projectname" == 1.0
 </p>
 </div>
 </div>
-<div id="outline-container-org1bcb406" class="outline-2">
-<h2 id="org1bcb406">사용법 정리</h2>
-<div class="outline-text-2" id="text-org1bcb406">
+<div id="outline-container-orga135cd7" class="outline-2">
+<h2 id="orga135cd7">사용법 정리</h2>
+<div class="outline-text-2" id="text-orga135cd7">
 </div>
-<div id="outline-container-orgf53b562" class="outline-3">
-<h3 id="orgf53b562">Carthage 설치</h3>
-<div class="outline-text-3" id="text-orgf53b562">
+<div id="outline-container-orga946d96" class="outline-3">
+<h3 id="orga946d96">Carthage 설치</h3>
+<div class="outline-text-3" id="text-orga946d96">
 <p>
 <a href="homebrew.html">Homebrew</a>로 쉽게 설치할 수 있다.
 </p>
@@ -168,9 +167,9 @@ github "user/projectname" == 1.0
 </p>
 </div>
 </div>
-<div id="outline-container-org3936597" class="outline-3">
-<h3 id="org3936597">의존성 설치하기</h3>
-<div class="outline-text-3" id="text-org3936597">
+<div id="outline-container-org03b04a5" class="outline-3">
+<h3 id="org03b04a5">의존성 설치하기</h3>
+<div class="outline-text-3" id="text-org03b04a5">
 <div class="org-src-container">
 <pre class="src src-bash">carthage update
 </pre>
@@ -180,9 +179,9 @@ github "user/projectname" == 1.0
 </p>
 </div>
 </div>
-<div id="outline-container-orge214665" class="outline-3">
-<h3 id="orge214665">플랫폼 전용 빌드</h3>
-<div class="outline-text-3" id="text-orge214665">
+<div id="outline-container-orgae8567b" class="outline-3">
+<h3 id="orgae8567b">플랫폼 전용 빌드</h3>
+<div class="outline-text-3" id="text-orgae8567b">
 <div class="org-src-container">
 <pre class="src src-bash">carthage update --platform iOS
 </pre>
@@ -197,9 +196,9 @@ github "user/projectname" == 1.0
 </div>
 </div>
 </div>
-<div id="outline-container-org989b7ec" class="outline-3">
-<h3 id="org989b7ec">빌드 된 프레임워크 위치</h3>
-<div class="outline-text-3" id="text-org989b7ec">
+<div id="outline-container-org5a9d8d4" class="outline-3">
+<h3 id="org5a9d8d4">빌드 된 프레임워크 위치</h3>
+<div class="outline-text-3" id="text-org5a9d8d4">
 <p>
 빌드가 완료되면 <code>Carthage/Build/[Platform]</code> 디렉터리에서
 빌드 된 프레임워크를 찾을 수 있다.
@@ -208,16 +207,15 @@ github "user/projectname" == 1.0
 </div>
 </div>
 </div>
-<div id="outline-container-orgaed65ba" class="outline-2">
-<h2 id="orgaed65ba">외부 링크</h2>
-<div class="outline-text-2" id="text-orgaed65ba">
+<div id="outline-container-org1322246" class="outline-2">
+<h2 id="org1322246">외부 링크</h2>
+<div class="outline-text-2" id="text-org1322246">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/Carthage/Carthage">🌏Carthage 공식 프로젝트 저장소</a></li>
 </ul>
 </div>
 </div>
 <div class="mid-ad-container">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle mid-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"
@@ -230,7 +228,6 @@ github "user/projectname" == 1.0
 </div>
 </section>
 <div class="side-ad-container">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle side-ad"
      style="display:block"
      data-ad-client="ca-pub-1071465863344332"

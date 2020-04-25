@@ -71,27 +71,29 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org4665ddb">개념 메모</a>
+<li><a href="#orga8da600">개념 메모</a>
 <ul>
-<li><a href="#org83d9954">샤프(Sharpsign)</a></li>
-<li><a href="#org593df32">단 따옴표(Single Quote)</a></li>
-<li><a href="#org41ad03f">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
-<li><a href="#org9101848">apply vs funcall</a></li>
-<li><a href="#orgcedb7d6">Character</a></li>
-<li><a href="#org9b0294b">setq vs setq-default</a></li>
-<li><a href="#orga8b4757">Comma and Back-Quote</a></li>
+<li><a href="#orga96583f">샤프(Sharpsign)</a></li>
+<li><a href="#org47b8f16">단 따옴표(Single Quote)</a></li>
+<li><a href="#org2552ee2">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
+<li><a href="#org2dfa2b2">apply vs funcall</a></li>
+<li><a href="#orgdef79be">Character</a></li>
+<li><a href="#orgdd297c6">setq vs setq-default</a></li>
+<li><a href="#org3303531">Comma and Back-Quote</a></li>
+<li><a href="#org0b4c026">Property List (plist)</a></li>
 </ul>
 </li>
-<li><a href="#org233283e">코드 예제</a>
+<li><a href="#orgf1ec1f9">코드 예제</a>
 <ul>
-<li><a href="#org03af13a">타입 변환</a></li>
-<li><a href="#org0afed51">셸 커맨드</a></li>
+<li><a href="#org6c70627">파일 읽고 저장하기</a></li>
+<li><a href="#orgc91d365">타입 변환</a></li>
+<li><a href="#org623db5e">셸 커맨드</a></li>
 </ul>
 </li>
-<li><a href="#org494237d">에러 노트</a>
+<li><a href="#orgf0e49d9">에러 노트</a>
 <ul>
-<li><a href="#org03facb5">commandp</a></li>
-<li><a href="#orgd6dcb1b">안 쓰는 매개변수</a></li>
+<li><a href="#org8d59eb1">commandp</a></li>
+<li><a href="#orgbed37c3">안 쓰는 매개변수</a></li>
 </ul>
 </li>
 </ul>
@@ -104,13 +106,13 @@ Lisp 언어를 의미한다.
 형태라서 Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 
-<div id="outline-container-org4665ddb" class="outline-2">
-<h2 id="org4665ddb">개념 메모</h2>
-<div class="outline-text-2" id="text-org4665ddb">
+<div id="outline-container-orga8da600" class="outline-2">
+<h2 id="orga8da600">개념 메모</h2>
+<div class="outline-text-2" id="text-orga8da600">
 </div>
-<div id="outline-container-org83d9954" class="outline-3">
-<h3 id="org83d9954">샤프(Sharpsign)</h3>
-<div class="outline-text-3" id="text-org83d9954">
+<div id="outline-container-orga96583f" class="outline-3">
+<h3 id="orga96583f">샤프(Sharpsign)</h3>
+<div class="outline-text-3" id="text-orga96583f">
 <p>
 <code>#</code> (Sharpsign) 은 s-expressions 특수 문법이다.
 근데 뭔 소린지 하나도 모르겠다.
@@ -130,9 +132,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org593df32" class="outline-3">
-<h3 id="org593df32">단 따옴표(Single Quote)</h3>
-<div class="outline-text-3" id="text-org593df32">
+<div id="outline-container-org47b8f16" class="outline-3">
+<h3 id="org47b8f16">단 따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-org47b8f16">
 <p>
 단 따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용한다.
 예를 들어 <code>(1 2 3)</code> 이라는 리스트를 메시지로 출력하고 싶어서
@@ -173,9 +175,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org41ad03f" class="outline-3">
-<h3 id="org41ad03f">샤프 단 따옴표(Sharpsign Single Quote)</h3>
-<div class="outline-text-3" id="text-org41ad03f">
+<div id="outline-container-org2552ee2" class="outline-3">
+<h3 id="org2552ee2">샤프 단 따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org2552ee2">
 <p>
 <code>#'function-name</code> 의 의미는
 <code>(function function-name)</code> 을 줄여서 표기한 것이다.
@@ -197,9 +199,9 @@ Lisp 언어를 의미한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org9101848" class="outline-3">
-<h3 id="org9101848">apply vs funcall</h3>
-<div class="outline-text-3" id="text-org9101848">
+<div id="outline-container-org2dfa2b2" class="outline-3">
+<h3 id="org2dfa2b2">apply vs funcall</h3>
+<div class="outline-text-3" id="text-org2dfa2b2">
 <p>
 위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있다.
 사용 방법도 거의 동일하다.
@@ -233,9 +235,9 @@ Lisp 언어를 의미한다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcedb7d6" class="outline-3">
-<h3 id="orgcedb7d6">Character</h3>
-<div class="outline-text-3" id="text-orgcedb7d6">
+<div id="outline-container-orgdef79be" class="outline-3">
+<h3 id="orgdef79be">Character</h3>
+<div class="outline-text-3" id="text-orgdef79be">
 <p>
 <a href="emacs.html">Emacs</a>에서 문자는 ASCII 번호로 표현된다.
 즉 숫자다.
@@ -251,9 +253,9 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org9b0294b" class="outline-3">
-<h3 id="org9b0294b">setq vs setq-default</h3>
-<div class="outline-text-3" id="text-org9b0294b">
+<div id="outline-container-orgdd297c6" class="outline-3">
+<h3 id="orgdd297c6">setq vs setq-default</h3>
+<div class="outline-text-3" id="text-orgdd297c6">
 <p>
 <a href="emacs.html">Emacs</a>에는 버퍼 로컬 변수라는 개념이 있다. 예를 들자면
 <code>tab-width</code> 가 대표적인데, 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수
@@ -271,9 +273,9 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </p>
 </div>
 </div>
-<div id="outline-container-orga8b4757" class="outline-3">
-<h3 id="orga8b4757">Comma and Back-Quote</h3>
-<div class="outline-text-3" id="text-orga8b4757">
+<div id="outline-container-org3303531" class="outline-3">
+<h3 id="org3303531">Comma and Back-Quote</h3>
+<div class="outline-text-3" id="text-org3303531">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> a <span style="color: #98be65;">"a's value"</span> b <span style="color: #98be65;">"b's value"</span> c <span style="color: #98be65;">"c's value"</span><span style="color: #51afef;">)</span>
 <span style="color: #51afef;">'</span><span style="color: #51afef;">(</span>a  b  c<span style="color: #51afef;">)</span>      <span style="color: #5B6268;">; </span><span style="color: #5B6268;">=&gt; (a b c)</span>
@@ -287,14 +289,60 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </p>
 </div>
 </div>
+<div id="outline-container-org0b4c026" class="outline-3">
+<h3 id="org0b4c026">Property List (plist)</h3>
+<div class="outline-text-3" id="text-org0b4c026">
+<p>
+프로퍼티 리스트는 사전(Dictionary) 타입과 비슷한 자료 구조다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">'</span><span style="color: #51afef;">(</span>name <span style="color: #98be65;">"Conrad"</span>
+  age <span style="color: #da8548; font-weight: bold;">20</span>
+  phone <span style="color: #98be65;">"82-10-1234-5678"</span>
+  address <span style="color: #98be65;">"Earth, Milkyway, Laniakea Supercluster"</span><span style="color: #51afef;">)</span>
+</pre>
 </div>
-<div id="outline-container-org233283e" class="outline-2">
-<h2 id="org233283e">코드 예제</h2>
-<div class="outline-text-2" id="text-org233283e">
+<p>
+키와 값이 차례로 들어가는 리스트로, 키는 다양한 방식으로도 표현할 수 있는데 예를 들어 <code>:name</code> 처럼 심볼로 넣을 수도 있다.
+</p>
+
+<p>
+값을 읽을 때는 <code>plist-get</code> 을 사용한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">plist-get</span> plist <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">name</span><span style="color: #51afef;">)</span>
+<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "Conrad"</span>
+</pre>
 </div>
-<div id="outline-container-org03af13a" class="outline-3">
-<h3 id="org03af13a">타입 변환</h3>
-<div class="outline-text-3" id="text-org03af13a">
+<p>
+값을 쓸 때는 <code>plist-put</code> 을 사용한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">plist-put</span> plist <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">gender</span> <span style="color: #98be65;">"etc"</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf1ec1f9" class="outline-2">
+<h2 id="orgf1ec1f9">코드 예제</h2>
+<div class="outline-text-2" id="text-orgf1ec1f9">
+</div>
+<div id="outline-container-org6c70627" class="outline-3">
+<h3 id="org6c70627">파일 읽고 저장하기</h3>
+<div class="outline-text-3" id="text-org6c70627">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">with-temp-buffer</span>
+  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">insert-file-contents</span> <span style="color: #98be65;">"/foo/bar/file.md"</span><span style="color: #c678dd;">)</span>
+  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">do what...</span>
+  <span style="color: #c678dd;">(</span><span style="color: #c678dd;">write-file</span> <span style="color: #98be65;">"/foo/bar/file-updated.md"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc91d365" class="outline-3">
+<h3 id="orgc91d365">타입 변환</h3>
+<div class="outline-text-3" id="text-orgc91d365">
 <p>
 숫자(정수 및 실수)와 문자열 간의 전환 두 가지 예제다.
 </p>
@@ -312,9 +360,9 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </p>
 </div>
 </div>
-<div id="outline-container-org0afed51" class="outline-3">
-<h3 id="org0afed51"><a href="shell.html">셸</a> 커맨드</h3>
-<div class="outline-text-3" id="text-org0afed51">
+<div id="outline-container-org623db5e" class="outline-3">
+<h3 id="org623db5e"><a href="shell.html">셸</a> 커맨드</h3>
+<div class="outline-text-3" id="text-org623db5e">
 <p>
 <a href="shell.html">셸</a> 커맨드를 실행시키기 위해 대충 두 가지 함수가 있다.
 </p>
@@ -342,13 +390,13 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </div>
 </div>
 </div>
-<div id="outline-container-org494237d" class="outline-2">
-<h2 id="org494237d">에러 노트</h2>
-<div class="outline-text-2" id="text-org494237d">
+<div id="outline-container-orgf0e49d9" class="outline-2">
+<h2 id="orgf0e49d9">에러 노트</h2>
+<div class="outline-text-2" id="text-orgf0e49d9">
 </div>
-<div id="outline-container-org03facb5" class="outline-3">
-<h3 id="org03facb5">commandp</h3>
-<div class="outline-text-3" id="text-org03facb5">
+<div id="outline-container-org8d59eb1" class="outline-3">
+<h3 id="org8d59eb1">commandp</h3>
+<div class="outline-text-3" id="text-org8d59eb1">
 <blockquote>
 <p>
 Wrong type argument: commandp, your-function
@@ -368,9 +416,9 @@ Wrong type argument: commandp, your-function
 </div>
 </div>
 </div>
-<div id="outline-container-orgd6dcb1b" class="outline-3">
-<h3 id="orgd6dcb1b">안 쓰는 매개변수</h3>
-<div class="outline-text-3" id="text-orgd6dcb1b">
+<div id="outline-container-orgbed37c3" class="outline-3">
+<h3 id="orgbed37c3">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-orgbed37c3">
 <p>
 예를 들어 아래와 같은 코드에서
 </p>

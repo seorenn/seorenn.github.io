@@ -1,6 +1,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <title>Tmux - Seorenn</title>
@@ -25,7 +26,6 @@
 <meta property="og:locale" content="ko_KR" />
 <meta name="referrer" content="unsafe-url" />
 <meta name="robots" content="follow,index" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
@@ -72,20 +72,20 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc8bd7b3">사용법</a></li>
-<li><a href="#org8f2e59f">설정 방법</a>
+<li><a href="#org09c0f91">사용법</a></li>
+<li><a href="#org5c6369c">설정 방법</a>
 <ul>
-<li><a href="#orga7d6621">리더 키(Prefix) 변경하기</a></li>
+<li><a href="#orgc768c11">리더 키(Prefix) 변경하기</a></li>
 </ul>
 </li>
-<li><a href="#org19903b3">단축키</a></li>
-<li><a href="#orgd8fb218">기타 팁</a>
+<li><a href="#orgda0b567">단축키</a></li>
+<li><a href="#orgbfe9db0">기타 팁</a>
 <ul>
-<li><a href="#orgcd71b0a">선택 영역 복사하기</a></li>
-<li><a href="#org5f56b21">종료하지 않고 설정 다시 읽어 들이기</a></li>
+<li><a href="#orgd070dc9">선택 영역 복사하기</a></li>
+<li><a href="#org80a1f3a">종료하지 않고 설정 다시 읽어 들이기</a></li>
 </ul>
 </li>
-<li><a href="#orga37a61b">관련된 글들</a></li>
+<li><a href="#orge058ff2">관련된 글들</a></li>
 </ul>
 </div>
 </div>
@@ -99,9 +99,9 @@ Tmux 는 터미널 멀티플렉서라고 불리는 도구다.
 비슷하면서도 원조 격인 <code>screen</code> 이라는 도구에 영향을 많이 받은 것으로 보인다.
 </p>
 
-<div id="outline-container-orgc8bd7b3" class="outline-2">
-<h2 id="orgc8bd7b3">사용법</h2>
-<div class="outline-text-2" id="text-orgc8bd7b3">
+<div id="outline-container-org09c0f91" class="outline-2">
+<h2 id="org09c0f91">사용법</h2>
+<div class="outline-text-2" id="text-org09c0f91">
 <p>
 그냥 실행시키면 실행은 된다.
 </p>
@@ -127,16 +127,16 @@ Tmux 는 터미널 멀티플렉서라고 불리는 도구다.
 </div>
 </div>
 </div>
-<div id="outline-container-org8f2e59f" class="outline-2">
-<h2 id="org8f2e59f">설정 방법</h2>
-<div class="outline-text-2" id="text-org8f2e59f">
+<div id="outline-container-org5c6369c" class="outline-2">
+<h2 id="org5c6369c">설정 방법</h2>
+<div class="outline-text-2" id="text-org5c6369c">
 <p>
 <code>~/.tmux.conf</code> 파일에 원하는 설정을 기록할 수 있다.
 </p>
 </div>
-<div id="outline-container-orga7d6621" class="outline-3">
-<h3 id="orga7d6621">리더 키(Prefix) 변경하기</h3>
-<div class="outline-text-3" id="text-orga7d6621">
+<div id="outline-container-orgc768c11" class="outline-3">
+<h3 id="orgc768c11">리더 키(Prefix) 변경하기</h3>
+<div class="outline-text-3" id="text-orgc768c11">
 <p>
 기본 리더키는 <code>^b</code> (Ctrl-B)로 설정되어 있다.
 이걸 바꾸려면, 예를 들어 리더 키를 <code>^\</code> 로 바꾸려면
@@ -166,9 +166,9 @@ set-option -g prefix2 C-']'
 </div>
 </div>
 </div>
-<div id="outline-container-org19903b3" class="outline-2">
-<h2 id="org19903b3">단축키</h2>
-<div class="outline-text-2" id="text-org19903b3">
+<div id="outline-container-orgda0b567" class="outline-2">
+<h2 id="orgda0b567">단축키</h2>
+<div class="outline-text-2" id="text-orgda0b567">
 <p>
 아래에 언급하는 모든 단축키는 리더 키(Prefix)를 먼저 누른 후 눌러야 한다.
 참고로 리더 키는 앞서 언급한 대로
@@ -191,13 +191,13 @@ set-option -g prefix2 C-']'
 </dl>
 </div>
 </div>
-<div id="outline-container-orgd8fb218" class="outline-2">
-<h2 id="orgd8fb218">기타 팁</h2>
-<div class="outline-text-2" id="text-orgd8fb218">
+<div id="outline-container-orgbfe9db0" class="outline-2">
+<h2 id="orgbfe9db0">기타 팁</h2>
+<div class="outline-text-2" id="text-orgbfe9db0">
 </div>
-<div id="outline-container-orgcd71b0a" class="outline-3">
-<h3 id="orgcd71b0a">선택 영역 복사하기</h3>
-<div class="outline-text-3" id="text-orgcd71b0a">
+<div id="outline-container-orgd070dc9" class="outline-3">
+<h3 id="orgd070dc9">선택 영역 복사하기</h3>
+<div class="outline-text-3" id="text-orgd070dc9">
 <p>
 마우스로 드래그 해서 <code>^C</code> 혹은 Command-C 를 눌렀는데 복사가 안 된다면
 <code>^W</code> (Ctrl+W)를 눌러보자.
@@ -211,9 +211,9 @@ set-option -g prefix2 C-']'
 </p>
 </div>
 </div>
-<div id="outline-container-org5f56b21" class="outline-3">
-<h3 id="org5f56b21">종료하지 않고 설정 다시 읽어 들이기</h3>
-<div class="outline-text-3" id="text-org5f56b21">
+<div id="outline-container-org80a1f3a" class="outline-3">
+<h3 id="org80a1f3a">종료하지 않고 설정 다시 읽어 들이기</h3>
+<div class="outline-text-3" id="text-org80a1f3a">
 <p>
 tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 리더 키(Prefix)를 누르고 아래 커맨드를 입력해 보자.
@@ -241,9 +241,9 @@ tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 </div>
 </div>
 </div>
-<div id="outline-container-orga37a61b" class="outline-2">
-<h2 id="orga37a61b">관련된 글들</h2>
-<div class="outline-text-2" id="text-orga37a61b">
+<div id="outline-container-orge058ff2" class="outline-2">
+<h2 id="orge058ff2">관련된 글들</h2>
+<div class="outline-text-2" id="text-orge058ff2">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/gpakosz/.tmux">🌏🇫🇷 Oh My Tmux! Pretty &amp; versatile tmux configuration</a>:
 잘 만들어진 설정을 공유하고 있으며 그대로 쓰기에도 괜찮고
@@ -283,7 +283,7 @@ tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
 <div class="article-link-date">
-2020년 4월 22일 수정</div>
+2020년 4월 25일 수정</div>
 </div>
 </div>
 </div>

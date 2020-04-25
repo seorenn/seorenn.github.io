@@ -1,6 +1,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <title>Git - Seorenn</title>
@@ -25,7 +26,6 @@
 <meta property="og:locale" content="ko_KR" />
 <meta name="referrer" content="unsafe-url" />
 <meta name="robots" content="follow,index" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
@@ -72,43 +72,43 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org89491a4">사용법 메모</a>
+<li><a href="#org6a4dd13">사용법 메모</a>
 <ul>
-<li><a href="#orge113b4a">설정</a></li>
-<li><a href="#org0e41b60">저장소 만들기</a></li>
-<li><a href="#orgf658995">보관용 저장소 만들기</a></li>
-<li><a href="#org8215934">상황 보기</a></li>
-<li><a href="#orgab8b3cf">파일 스테이지(Stage) 하기</a></li>
-<li><a href="#org2b4c946">스테이지 취소하기</a></li>
-<li><a href="#org407209d">변경점만 스테이지 하기(Stage Patch)</a></li>
-<li><a href="#orgd3ed5b5">커밋(Commit)</a></li>
-<li><a href="#org9f85d9e">커밋 메시지 수정하기</a></li>
-<li><a href="#org7905c78">커밋 내역</a></li>
-<li><a href="#org4b16ad7">원격과 연결하기</a></li>
-<li><a href="#org07ad720">푸시(Push)</a></li>
-<li><a href="#orgba86ee9">풀(Pull)</a></li>
-<li><a href="#orgbbffafb">비교(diff)</a></li>
-<li><a href="#org74a8c91">브랜치 간 파일 비교하기</a></li>
-<li><a href="#orgfc6e992">브랜치 만들기</a></li>
-<li><a href="#org090b0fb">작업 브랜치 변경하기</a></li>
-<li><a href="#orgc2a7013">브랜치 조회하기</a></li>
-<li><a href="#orgbf57d2b">브랜치 삭제하기</a></li>
-<li><a href="#orgb3f7e64">다른 브랜치에서 파일 복사해오기</a></li>
-<li><a href="#orgb1e6d8e">원격 브랜치 가져오기</a></li>
-<li><a href="#org1071a71">다른 브랜치의 내용 패치 하기</a></li>
-<li><a href="#org8a068f2">임시 저장(stash)</a></li>
-<li><a href="#org916fc95">임시 저장(stash)과 비교(diff)해보기</a></li>
-<li><a href="#org3653306">작업 내역 취소하기</a></li>
-<li><a href="#org64e6ddc">커밋 합치기</a></li>
-<li><a href="#org3c379e5">강제로 푸시 하기</a></li>
-<li><a href="#org3aeb004">파일 지우기</a></li>
-<li><a href="#org3a3d6cc">업데이트 무시하기</a></li>
-<li><a href="#org8d58a9b">원격 브랜치 동기화 하기</a></li>
+<li><a href="#orgb8ad14f">설정</a></li>
+<li><a href="#orgf0f2333">저장소 만들기</a></li>
+<li><a href="#org11aa727">보관용 저장소 만들기</a></li>
+<li><a href="#orgc4af779">상황 보기</a></li>
+<li><a href="#orgf8c929c">파일 스테이지(Stage) 하기</a></li>
+<li><a href="#orgf19da37">스테이지 취소하기</a></li>
+<li><a href="#orgd06f9e2">변경점만 스테이지 하기(Stage Patch)</a></li>
+<li><a href="#org4ff127c">커밋(Commit)</a></li>
+<li><a href="#orga571bfd">커밋 메시지 수정하기</a></li>
+<li><a href="#org09b826e">커밋 내역</a></li>
+<li><a href="#org9a64eac">원격과 연결하기</a></li>
+<li><a href="#orgb1401b6">푸시(Push)</a></li>
+<li><a href="#org998acec">풀(Pull)</a></li>
+<li><a href="#org7bd1e44">비교(diff)</a></li>
+<li><a href="#org94023a8">브랜치 간 파일 비교하기</a></li>
+<li><a href="#org43529cb">브랜치 만들기</a></li>
+<li><a href="#org6b6bfc4">작업 브랜치 변경하기</a></li>
+<li><a href="#org9ebc2d5">브랜치 조회하기</a></li>
+<li><a href="#orgff57e3f">브랜치 삭제하기</a></li>
+<li><a href="#org708d5ef">다른 브랜치에서 파일 복사해오기</a></li>
+<li><a href="#org795d581">원격 브랜치 가져오기</a></li>
+<li><a href="#org8b7f642">다른 브랜치의 내용 패치 하기</a></li>
+<li><a href="#org8fe5d2c">임시 저장(stash)</a></li>
+<li><a href="#org4b06747">임시 저장(stash)과 비교(diff)해보기</a></li>
+<li><a href="#org71f04b1">작업 내역 취소하기</a></li>
+<li><a href="#org657a629">커밋 합치기</a></li>
+<li><a href="#orgdbc423b">강제로 푸시 하기</a></li>
+<li><a href="#org4abfa26">파일 지우기</a></li>
+<li><a href="#orgce50a09">업데이트 무시하기</a></li>
+<li><a href="#orgdd7a43d">원격 브랜치 동기화 하기</a></li>
 </ul>
 </li>
-<li><a href="#orgc218e5b">설정 분리하기</a></li>
-<li><a href="#org8241f47">페이저 비활성화</a></li>
-<li><a href="#org940fb9c">외부 링크</a></li>
+<li><a href="#org262bc27">설정 분리하기</a></li>
+<li><a href="#orgaabea19">페이저 비활성화</a></li>
+<li><a href="#org3e5b9a1">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -118,13 +118,13 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 파일의 변경 내역을 추적 및 관리하는데 사용하는 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-org89491a4" class="outline-2">
-<h2 id="org89491a4">사용법 메모</h2>
-<div class="outline-text-2" id="text-org89491a4">
+<div id="outline-container-org6a4dd13" class="outline-2">
+<h2 id="org6a4dd13">사용법 메모</h2>
+<div class="outline-text-2" id="text-org6a4dd13">
 </div>
-<div id="outline-container-orge113b4a" class="outline-3">
-<h3 id="orge113b4a">설정</h3>
-<div class="outline-text-3" id="text-orge113b4a">
+<div id="outline-container-orgb8ad14f" class="outline-3">
+<h3 id="orgb8ad14f">설정</h3>
+<div class="outline-text-3" id="text-orgb8ad14f">
 <p>
 전역(global)
 </p>
@@ -143,9 +143,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </div>
 </div>
 </div>
-<div id="outline-container-org0e41b60" class="outline-3">
-<h3 id="org0e41b60">저장소 만들기</h3>
-<div class="outline-text-3" id="text-org0e41b60">
+<div id="outline-container-orgf0f2333" class="outline-3">
+<h3 id="orgf0f2333">저장소 만들기</h3>
+<div class="outline-text-3" id="text-orgf0f2333">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> init
 </pre>
@@ -155,9 +155,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 </div>
 </div>
-<div id="outline-container-orgf658995" class="outline-3">
-<h3 id="orgf658995">보관용 저장소 만들기</h3>
-<div class="outline-text-3" id="text-orgf658995">
+<div id="outline-container-org11aa727" class="outline-3">
+<h3 id="org11aa727">보관용 저장소 만들기</h3>
+<div class="outline-text-3" id="text-org11aa727">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> init --bare
 </pre>
@@ -168,9 +168,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 </div>
 </div>
-<div id="outline-container-org8215934" class="outline-3">
-<h3 id="org8215934">상황 보기</h3>
-<div class="outline-text-3" id="text-org8215934">
+<div id="outline-container-orgc4af779" class="outline-3">
+<h3 id="orgc4af779">상황 보기</h3>
+<div class="outline-text-3" id="text-orgc4af779">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> status
 </pre>
@@ -201,9 +201,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 </div>
 </div>
-<div id="outline-container-orgab8b3cf" class="outline-3">
-<h3 id="orgab8b3cf">파일 스테이지(Stage) 하기</h3>
-<div class="outline-text-3" id="text-orgab8b3cf">
+<div id="outline-container-orgf8c929c" class="outline-3">
+<h3 id="orgf8c929c">파일 스테이지(Stage) 하기</h3>
+<div class="outline-text-3" id="text-orgf8c929c">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add FILE_PATH
 </pre>
@@ -218,9 +218,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </div>
 </div>
 </div>
-<div id="outline-container-org2b4c946" class="outline-3">
-<h3 id="org2b4c946">스테이지 취소하기</h3>
-<div class="outline-text-3" id="text-org2b4c946">
+<div id="outline-container-orgf19da37" class="outline-3">
+<h3 id="orgf19da37">스테이지 취소하기</h3>
+<div class="outline-text-3" id="text-orgf19da37">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> reset FILE_PATH
 </pre>
@@ -230,9 +230,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 </div>
 </div>
-<div id="outline-container-org407209d" class="outline-3">
-<h3 id="org407209d">변경점만 스테이지 하기(Stage Patch)</h3>
-<div class="outline-text-3" id="text-org407209d">
+<div id="outline-container-orgd06f9e2" class="outline-3">
+<h3 id="orgd06f9e2">변경점만 스테이지 하기(Stage Patch)</h3>
+<div class="outline-text-3" id="text-orgd06f9e2">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add -p
 </pre>
@@ -242,9 +242,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </p>
 </div>
 </div>
-<div id="outline-container-orgd3ed5b5" class="outline-3">
-<h3 id="orgd3ed5b5">커밋(Commit)</h3>
-<div class="outline-text-3" id="text-orgd3ed5b5">
+<div id="outline-container-org4ff127c" class="outline-3">
+<h3 id="org4ff127c">커밋(Commit)</h3>
+<div class="outline-text-3" id="text-org4ff127c">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> commit
 </pre>
@@ -266,9 +266,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </div>
 </div>
 </div>
-<div id="outline-container-org9f85d9e" class="outline-3">
-<h3 id="org9f85d9e">커밋 메시지 수정하기</h3>
-<div class="outline-text-3" id="text-org9f85d9e">
+<div id="outline-container-orga571bfd" class="outline-3">
+<h3 id="orga571bfd">커밋 메시지 수정하기</h3>
+<div class="outline-text-3" id="text-orga571bfd">
 <p>
 아래 명령으로 가장 최근의 커밋 메시지를 수정할 수 있다.
 </p>
@@ -278,9 +278,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </div>
 </div>
 </div>
-<div id="outline-container-org7905c78" class="outline-3">
-<h3 id="org7905c78">커밋 내역</h3>
-<div class="outline-text-3" id="text-org7905c78">
+<div id="outline-container-org09b826e" class="outline-3">
+<h3 id="org09b826e">커밋 내역</h3>
+<div class="outline-text-3" id="text-org09b826e">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> log
 </pre>
@@ -301,9 +301,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </div>
 </div>
 </div>
-<div id="outline-container-org4b16ad7" class="outline-3">
-<h3 id="org4b16ad7">원격과 연결하기</h3>
-<div class="outline-text-3" id="text-org4b16ad7">
+<div id="outline-container-org9a64eac" class="outline-3">
+<h3 id="org9a64eac">원격과 연결하기</h3>
+<div class="outline-text-3" id="text-org9a64eac">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> remote add origin somegit://foo.bar/address
 </pre>
@@ -315,9 +315,9 @@ origin 이라는 원격 저장소를 현재 저장소에 알려 주는 커맨드
 </p>
 </div>
 </div>
-<div id="outline-container-org07ad720" class="outline-3">
-<h3 id="org07ad720">푸시(Push)</h3>
-<div class="outline-text-3" id="text-org07ad720">
+<div id="outline-container-orgb1401b6" class="outline-3">
+<h3 id="orgb1401b6">푸시(Push)</h3>
+<div class="outline-text-3" id="text-orgb1401b6">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push origin master
 </pre>
@@ -339,9 +339,9 @@ origin 이라는 이름의 원격 저장소에 master 라는 브랜치 이름으
 </div>
 </div>
 </div>
-<div id="outline-container-orgba86ee9" class="outline-3">
-<h3 id="orgba86ee9">풀(Pull)</h3>
-<div class="outline-text-3" id="text-orgba86ee9">
+<div id="outline-container-org998acec" class="outline-3">
+<h3 id="org998acec">풀(Pull)</h3>
+<div class="outline-text-3" id="text-org998acec">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> pull origin master
 </pre>
@@ -358,9 +358,9 @@ origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용
 </div>
 </div>
 </div>
-<div id="outline-container-orgbbffafb" class="outline-3">
-<h3 id="orgbbffafb">비교(diff)</h3>
-<div class="outline-text-3" id="text-orgbbffafb">
+<div id="outline-container-org7bd1e44" class="outline-3">
+<h3 id="org7bd1e44">비교(diff)</h3>
+<div class="outline-text-3" id="text-org7bd1e44">
 <p>
 커밋 하기 전 수정된 내역을 보려면 <code>diff</code> 커맨드를 사용한다.
 </p>
@@ -377,9 +377,9 @@ origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용
 </div>
 </div>
 </div>
-<div id="outline-container-org74a8c91" class="outline-3">
-<h3 id="org74a8c91">브랜치 간 파일 비교하기</h3>
-<div class="outline-text-3" id="text-org74a8c91">
+<div id="outline-container-org94023a8" class="outline-3">
+<h3 id="org94023a8">브랜치 간 파일 비교하기</h3>
+<div class="outline-text-3" id="text-org94023a8">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> diff branch-a branch-b -- path/to/file
 </pre>
@@ -393,9 +393,9 @@ origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc6e992" class="outline-3">
-<h3 id="orgfc6e992">브랜치 만들기</h3>
-<div class="outline-text-3" id="text-orgfc6e992">
+<div id="outline-container-org43529cb" class="outline-3">
+<h3 id="org43529cb">브랜치 만들기</h3>
+<div class="outline-text-3" id="text-org43529cb">
 <p>
 현재 브랜치에서 가지를 쳐서 다른 브랜치를 자유롭게 만들 수 있다.
 </p>
@@ -417,9 +417,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </p>
 </div>
 </div>
-<div id="outline-container-org090b0fb" class="outline-3">
-<h3 id="org090b0fb">작업 브랜치 변경하기</h3>
-<div class="outline-text-3" id="text-org090b0fb">
+<div id="outline-container-org6b6bfc4" class="outline-3">
+<h3 id="org6b6bfc4">작업 브랜치 변경하기</h3>
+<div class="outline-text-3" id="text-org6b6bfc4">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> switch branch_name
 </pre>
@@ -434,9 +434,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgc2a7013" class="outline-3">
-<h3 id="orgc2a7013">브랜치 조회하기</h3>
-<div class="outline-text-3" id="text-orgc2a7013">
+<div id="outline-container-org9ebc2d5" class="outline-3">
+<h3 id="org9ebc2d5">브랜치 조회하기</h3>
+<div class="outline-text-3" id="text-org9ebc2d5">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> branch
 </pre>
@@ -451,9 +451,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf57d2b" class="outline-3">
-<h3 id="orgbf57d2b">브랜치 삭제하기</h3>
-<div class="outline-text-3" id="text-orgbf57d2b">
+<div id="outline-container-orgff57e3f" class="outline-3">
+<h3 id="orgff57e3f">브랜치 삭제하기</h3>
+<div class="outline-text-3" id="text-orgff57e3f">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> branch -D branch_name
 </pre>
@@ -467,18 +467,18 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgb3f7e64" class="outline-3">
-<h3 id="orgb3f7e64">다른 브랜치에서 파일 복사해오기</h3>
-<div class="outline-text-3" id="text-orgb3f7e64">
+<div id="outline-container-org708d5ef" class="outline-3">
+<h3 id="org708d5ef">다른 브랜치에서 파일 복사해오기</h3>
+<div class="outline-text-3" id="text-org708d5ef">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> checkout branch_name path/to/file
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb1e6d8e" class="outline-3">
-<h3 id="orgb1e6d8e">원격 브랜치 가져오기</h3>
-<div class="outline-text-3" id="text-orgb1e6d8e">
+<div id="outline-container-org795d581" class="outline-3">
+<h3 id="org795d581">원격 브랜치 가져오기</h3>
+<div class="outline-text-3" id="text-org795d581">
 <p>
 원격에만 있는 특정 브랜치를 로컬에도 그대로 가져오기 위해서는 아래 커맨드를 이용한다.
 </p>
@@ -492,9 +492,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </p>
 </div>
 </div>
-<div id="outline-container-org1071a71" class="outline-3">
-<h3 id="org1071a71">다른 브랜치의 내용 패치 하기</h3>
-<div class="outline-text-3" id="text-org1071a71">
+<div id="outline-container-org8b7f642" class="outline-3">
+<h3 id="org8b7f642">다른 브랜치의 내용 패치 하기</h3>
+<div class="outline-text-3" id="text-org8b7f642">
 <p>
 다른 브랜치의 내용을 현재 브랜치로 몽땅 머지하려면 아래와 같이 할 수 있다.
 </p>
@@ -518,9 +518,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </div>
 </div>
 </div>
-<div id="outline-container-org8a068f2" class="outline-3">
-<h3 id="org8a068f2">임시 저장(stash)</h3>
-<div class="outline-text-3" id="text-org8a068f2">
+<div id="outline-container-org8fe5d2c" class="outline-3">
+<h3 id="org8fe5d2c">임시 저장(stash)</h3>
+<div class="outline-text-3" id="text-org8fe5d2c">
 <p>
 편집 중이던 내용을 임시로 저장해놓고 수정 전 상태로 돌리고 싶다면
 <code>stash</code> 명령을 사용할 수 있다.
@@ -560,18 +560,18 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </div>
 </div>
 </div>
-<div id="outline-container-org916fc95" class="outline-3">
-<h3 id="org916fc95">임시 저장(stash)과 비교(diff)해보기</h3>
-<div class="outline-text-3" id="text-org916fc95">
+<div id="outline-container-org4b06747" class="outline-3">
+<h3 id="org4b06747">임시 저장(stash)과 비교(diff)해보기</h3>
+<div class="outline-text-3" id="text-org4b06747">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> stash show -p
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3653306" class="outline-3">
-<h3 id="org3653306">작업 내역 취소하기</h3>
-<div class="outline-text-3" id="text-org3653306">
+<div id="outline-container-org71f04b1" class="outline-3">
+<h3 id="org71f04b1">작업 내역 취소하기</h3>
+<div class="outline-text-3" id="text-org71f04b1">
 <p>
 특정 파일의 작업 중인 내역을 취소하기 위해서도 checkout 커맨드를 사용할 수 있다.
 </p>
@@ -616,9 +616,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </p>
 </div>
 </div>
-<div id="outline-container-org64e6ddc" class="outline-3">
-<h3 id="org64e6ddc">커밋 합치기</h3>
-<div class="outline-text-3" id="text-org64e6ddc">
+<div id="outline-container-org657a629" class="outline-3">
+<h3 id="org657a629">커밋 합치기</h3>
+<div class="outline-text-3" id="text-org657a629">
 <p>
 예를 들어 가장 최근의 4개 커밋을 하나로 합치고 싶다면
 <code>rebase</code> 커맨드를 이용할 수 있다.
@@ -640,9 +640,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </p>
 </div>
 </div>
-<div id="outline-container-org3c379e5" class="outline-3">
-<h3 id="org3c379e5">강제로 푸시 하기</h3>
-<div class="outline-text-3" id="text-org3c379e5">
+<div id="outline-container-orgdbc423b" class="outline-3">
+<h3 id="orgdbc423b">강제로 푸시 하기</h3>
+<div class="outline-text-3" id="text-orgdbc423b">
 <p>
 rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
 이럴 때는 강제로 푸시할 수 있다.
@@ -658,9 +658,9 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org3aeb004" class="outline-3">
-<h3 id="org3aeb004">파일 지우기</h3>
-<div class="outline-text-3" id="text-org3aeb004">
+<div id="outline-container-org4abfa26" class="outline-3">
+<h3 id="org4abfa26">파일 지우기</h3>
+<div class="outline-text-3" id="text-org4abfa26">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> <span style="color: #ECBE7B;">rm</span> FILE_PATH
 </pre>
@@ -682,9 +682,9 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org3a3d6cc" class="outline-3">
-<h3 id="org3a3d6cc">업데이트 무시하기</h3>
-<div class="outline-text-3" id="text-org3a3d6cc">
+<div id="outline-container-orgce50a09" class="outline-3">
+<h3 id="orgce50a09">업데이트 무시하기</h3>
+<div class="outline-text-3" id="text-orgce50a09">
 <p>
 어떤 이유(?)로 특정 파일이 업데이트되어도 이를 커밋하지 않으려면 아래 커맨드를
 이용할 수 있다.
@@ -700,9 +700,9 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org8d58a9b" class="outline-3">
-<h3 id="org8d58a9b">원격 브랜치 동기화 하기</h3>
-<div class="outline-text-3" id="text-org8d58a9b">
+<div id="outline-container-orgdd7a43d" class="outline-3">
+<h3 id="orgdd7a43d">원격 브랜치 동기화 하기</h3>
+<div class="outline-text-3" id="text-orgdd7a43d">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> fetch --prune
 </pre>
@@ -713,9 +713,9 @@ fetch 시 <code>--prune</code> 혹은 <code>-p</code> 옵션은 원격에 없는
 </div>
 </div>
 </div>
-<div id="outline-container-orgc218e5b" class="outline-2">
-<h2 id="orgc218e5b">설정 분리하기</h2>
-<div class="outline-text-2" id="text-orgc218e5b">
+<div id="outline-container-org262bc27" class="outline-2">
+<h2 id="org262bc27">설정 분리하기</h2>
+<div class="outline-text-2" id="text-org262bc27">
 <p>
 디렉토리별로 Git 설정을 분리하려면
 <code>~/.gitconfig</code> 파일에 아래와 같은 식으로 설정할 수 있다.
@@ -748,9 +748,9 @@ github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 
 </p>
 </div>
 </div>
-<div id="outline-container-org8241f47" class="outline-2">
-<h2 id="org8241f47">페이저 비활성화</h2>
-<div class="outline-text-2" id="text-org8241f47">
+<div id="outline-container-orgaabea19" class="outline-2">
+<h2 id="orgaabea19">페이저 비활성화</h2>
+<div class="outline-text-2" id="text-orgaabea19">
 <p>
 페이저(pager)란 less나 more 같은 도구로
 터미널에서 로그나 변경사항을 볼 때 긴 내용을 편하게 볼 수 있게 도와준다.
@@ -781,9 +781,9 @@ github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 
 </p>
 </div>
 </div>
-<div id="outline-container-org940fb9c" class="outline-2">
-<h2 id="org940fb9c">외부 링크</h2>
-<div class="outline-text-2" id="text-org940fb9c">
+<div id="outline-container-org3e5b9a1" class="outline-2">
+<h2 id="org3e5b9a1">외부 링크</h2>
+<div class="outline-text-2" id="text-org3e5b9a1">
 <ul class="org-ul">
 <li><a target="_blank" href="https://ohshitgit.com/">🌏Oh Shit, Git!?!</a></li>
 <li><a target="_blank" href="https://git-rebase.io/">🌏git rebase in depth</a></li>

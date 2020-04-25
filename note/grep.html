@@ -1,6 +1,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <title>Grep - Seorenn</title>
@@ -25,7 +26,6 @@
 <meta property="og:locale" content="ko_KR" />
 <meta name="referrer" content="unsafe-url" />
 <meta name="robots" content="follow,index" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
@@ -72,16 +72,16 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org0f03cd1">기본 사용법</a></li>
-<li><a href="#orge280006">대소문자 무시</a></li>
-<li><a href="#orgc8b7e6b">바이너리(Binary) 파일 무시하기</a></li>
-<li><a href="#orgd698bd4">재귀(Recursive) 검색</a></li>
-<li><a href="#orgacfb85b">검색된 파일 이름만 보기</a></li>
-<li><a href="#orgc59bc7f">단어만 검색하기</a></li>
-<li><a href="#orged2b0a0">줄 번호(Line Number) 보기</a></li>
-<li><a href="#orga0a3898">발견 개수 보기</a></li>
-<li><a href="#org81f548b">검색되지 않는 것만 보기</a></li>
-<li><a href="#orgd2ee91a">정규표현식</a></li>
+<li><a href="#orga91dbf7">기본 사용법</a></li>
+<li><a href="#orga73b5f8">대소문자 무시</a></li>
+<li><a href="#org5384ea0">바이너리(Binary) 파일 무시하기</a></li>
+<li><a href="#org8da39dc">재귀(Recursive) 검색</a></li>
+<li><a href="#org19e5f33">검색된 파일 이름만 보기</a></li>
+<li><a href="#org969c398">단어만 검색하기</a></li>
+<li><a href="#orgb7d0e70">줄 번호(Line Number) 보기</a></li>
+<li><a href="#orge21f399">발견 개수 보기</a></li>
+<li><a href="#org0a0b684">검색되지 않는 것만 보기</a></li>
+<li><a href="#org3c08a4e">정규표현식</a></li>
 </ul>
 </div>
 </div>
@@ -89,9 +89,9 @@ gtag('config', 'UA-44534026-1');
 Grep은 파일이나 텍스트에서 특정 텍스트를 검색하는 데 사용되는 *NIX <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-org0f03cd1" class="outline-2">
-<h2 id="org0f03cd1">기본 사용법</h2>
-<div class="outline-text-2" id="text-org0f03cd1">
+<div id="outline-container-orga91dbf7" class="outline-2">
+<h2 id="orga91dbf7">기본 사용법</h2>
+<div class="outline-text-2" id="text-orga91dbf7">
 <p>
 기본적으로는 텍스트 파일에서 문자열을 검색하는 것을 생각할 수 있다.
 </p>
@@ -118,9 +118,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orge280006" class="outline-2">
-<h2 id="orge280006">대소문자 무시</h2>
-<div class="outline-text-2" id="text-orge280006">
+<div id="outline-container-orga73b5f8" class="outline-2">
+<h2 id="orga73b5f8">대소문자 무시</h2>
+<div class="outline-text-2" id="text-orga73b5f8">
 <p>
 <code>-i</code> 옵션을 사용하면 대소문자를 가리지 않고 검색한다.
 </p>
@@ -130,9 +130,9 @@ this is sample
 </div>
 </div>
 </div>
-<div id="outline-container-orgc8b7e6b" class="outline-2">
-<h2 id="orgc8b7e6b">바이너리(Binary) 파일 무시하기</h2>
-<div class="outline-text-2" id="text-orgc8b7e6b">
+<div id="outline-container-org5384ea0" class="outline-2">
+<h2 id="org5384ea0">바이너리(Binary) 파일 무시하기</h2>
+<div class="outline-text-2" id="text-org5384ea0">
 <p>
 가끔 이진 파일에서 검색하느라 느려지거나 이상한 것을 검색하기도 하는데, 이를 때는 <code>-I</code> 옵션을 사용할 수 있다.
 </p>
@@ -142,9 +142,9 @@ this is sample
 </div>
 </div>
 </div>
-<div id="outline-container-orgd698bd4" class="outline-2">
-<h2 id="orgd698bd4">재귀(Recursive) 검색</h2>
-<div class="outline-text-2" id="text-orgd698bd4">
+<div id="outline-container-org8da39dc" class="outline-2">
+<h2 id="org8da39dc">재귀(Recursive) 검색</h2>
+<div class="outline-text-2" id="text-org8da39dc">
 <p>
 재귀 검색이란 하위 디렉터리를 모두 다 뒤져본다는 의미다.
 </p>
@@ -170,9 +170,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orgacfb85b" class="outline-2">
-<h2 id="orgacfb85b">검색된 파일 이름만 보기</h2>
-<div class="outline-text-2" id="text-orgacfb85b">
+<div id="outline-container-org19e5f33" class="outline-2">
+<h2 id="org19e5f33">검색된 파일 이름만 보기</h2>
+<div class="outline-text-2" id="text-org19e5f33">
 <p>
 <code>-l</code> 옵션은 발견된 패턴을 화면에 표시하지 않게 한다.
 </p>
@@ -187,9 +187,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orgc59bc7f" class="outline-2">
-<h2 id="orgc59bc7f">단어만 검색하기</h2>
-<div class="outline-text-2" id="text-orgc59bc7f">
+<div id="outline-container-org969c398" class="outline-2">
+<h2 id="org969c398">단어만 검색하기</h2>
+<div class="outline-text-2" id="text-org969c398">
 <p>
 단어 단위 검색을 하기 위해서 <code>-w</code> 옵션을 사용할 수 있다.
 </p>
@@ -202,9 +202,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orged2b0a0" class="outline-2">
-<h2 id="orged2b0a0">줄 번호(Line Number) 보기</h2>
-<div class="outline-text-2" id="text-orged2b0a0">
+<div id="outline-container-orgb7d0e70" class="outline-2">
+<h2 id="orgb7d0e70">줄 번호(Line Number) 보기</h2>
+<div class="outline-text-2" id="text-orgb7d0e70">
 <p>
 <code>-n</code> 옵션을 이용해 줄 번호를 표시할 수 있다.
 </p>
@@ -217,9 +217,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orga0a3898" class="outline-2">
-<h2 id="orga0a3898">발견 개수 보기</h2>
-<div class="outline-text-2" id="text-orga0a3898">
+<div id="outline-container-orge21f399" class="outline-2">
+<h2 id="orge21f399">발견 개수 보기</h2>
+<div class="outline-text-2" id="text-orge21f399">
 <p>
 <code>-c</code> 옵션을 주면 발견된 개수(count)를 구할 수 있다.
 </p>
@@ -232,9 +232,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-org81f548b" class="outline-2">
-<h2 id="org81f548b">검색되지 않는 것만 보기</h2>
-<div class="outline-text-2" id="text-org81f548b">
+<div id="outline-container-org0a0b684" class="outline-2">
+<h2 id="org0a0b684">검색되지 않는 것만 보기</h2>
+<div class="outline-text-2" id="text-org0a0b684">
 <p>
 <code>-v</code> 옵션을 주면 검색되지 않는 라인을 화면에 표시한다.
 </p>
@@ -247,9 +247,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orgd2ee91a" class="outline-2">
-<h2 id="orgd2ee91a">정규표현식</h2>
-<div class="outline-text-2" id="text-orgd2ee91a">
+<div id="outline-container-org3c08a4e" class="outline-2">
+<h2 id="org3c08a4e">정규표현식</h2>
+<div class="outline-text-2" id="text-org3c08a4e">
 <p>
 원래 정규표현식이 지원되지 때문에 그냥 써도 된다.
 </p>

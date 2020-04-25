@@ -1,6 +1,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <title>Magit - Seorenn</title>
@@ -25,7 +26,6 @@
 <meta property="og:locale" content="ko_KR" />
 <meta name="referrer" content="unsafe-url" />
 <meta name="robots" content="follow,index" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
@@ -72,16 +72,16 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf68b254">magit-status</a></li>
-<li><a href="#org0c6e888">Stage</a></li>
-<li><a href="#org07e4ed2">Commit</a></li>
-<li><a href="#org561bf06">Log</a></li>
-<li><a href="#orgeb2ac58">Push</a></li>
-<li><a href="#org5ed8e33">Pull</a></li>
-<li><a href="#orgb326715">Branch</a></li>
-<li><a href="#orgec671c6">Reset or Revert</a></li>
-<li><a href="#orgbf09d83">기타</a></li>
-<li><a href="#org3999f8b">외부 링크</a></li>
+<li><a href="#org8967fd9">magit-status</a></li>
+<li><a href="#orgc99eb54">Stage</a></li>
+<li><a href="#orgc0de4b0">Commit</a></li>
+<li><a href="#org9866fe1">Log</a></li>
+<li><a href="#org161a43e">Push</a></li>
+<li><a href="#orgd279938">Pull</a></li>
+<li><a href="#org57427d5">Branch</a></li>
+<li><a href="#org55827a3">Reset or Revert</a></li>
+<li><a href="#orgf3165cc">기타</a></li>
+<li><a href="#org4beefac">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -102,9 +102,9 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a>
 <a href="spacemacs.html">Spacemacs</a>용으로 커스터마이징 된
 단축키를 위주로 정리한다.
 </p>
-<div id="outline-container-orgf68b254" class="outline-2">
-<h2 id="orgf68b254">magit-status</h2>
-<div class="outline-text-2" id="text-orgf68b254">
+<div id="outline-container-org8967fd9" class="outline-2">
+<h2 id="org8967fd9">magit-status</h2>
+<div class="outline-text-2" id="text-org8967fd9">
 <p>
 현재 상태를 표시하는 UI를 띄운다.
 개인적으로 magit 을 시작하는 가장 좋은 방법으로 사용한다.
@@ -126,9 +126,9 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org0c6e888" class="outline-2">
-<h2 id="org0c6e888">Stage</h2>
-<div class="outline-text-2" id="text-org0c6e888">
+<div id="outline-container-orgc99eb54" class="outline-2">
+<h2 id="orgc99eb54">Stage</h2>
+<div class="outline-text-2" id="text-orgc99eb54">
 <p>
 수정된 파일을 선택하고 <code>s</code> 를 누르면 스테이지가 된다.
 각 수정 내역에서 <code>TAB</code> 을 누르면 간단한 diff를 볼 수 있는데
@@ -141,9 +141,9 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org07e4ed2" class="outline-2">
-<h2 id="org07e4ed2">Commit</h2>
-<div class="outline-text-2" id="text-org07e4ed2">
+<div id="outline-container-orgc0de4b0" class="outline-2">
+<h2 id="orgc0de4b0">Commit</h2>
+<div class="outline-text-2" id="text-orgc0de4b0">
 <p>
 <code>c c</code> 를 누르면 커밋 모드로 바뀐다.
 스테이지 된 파일들의 간략한 변경점을 볼 수 있으며
@@ -159,9 +159,9 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org561bf06" class="outline-2">
-<h2 id="org561bf06">Log</h2>
-<div class="outline-text-2" id="text-org561bf06">
+<div id="outline-container-org9866fe1" class="outline-2">
+<h2 id="org9866fe1">Log</h2>
+<div class="outline-text-2" id="text-org9866fe1">
 <p>
 <code>l l</code> 을 이용하면 로그를 볼 수 있다.
 </p>
@@ -171,25 +171,25 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgeb2ac58" class="outline-2">
-<h2 id="orgeb2ac58">Push</h2>
-<div class="outline-text-2" id="text-orgeb2ac58">
+<div id="outline-container-org161a43e" class="outline-2">
+<h2 id="org161a43e">Push</h2>
+<div class="outline-text-2" id="text-org161a43e">
 <p>
 <code>p p</code> 를 이용하면 원격에 현재 브랜치 이름으로 푸시(push) 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-org5ed8e33" class="outline-2">
-<h2 id="org5ed8e33">Pull</h2>
-<div class="outline-text-2" id="text-org5ed8e33">
+<div id="outline-container-orgd279938" class="outline-2">
+<h2 id="orgd279938">Pull</h2>
+<div class="outline-text-2" id="text-orgd279938">
 <p>
 <code>F u</code> 를 이용하면 origin 에서 현재 브랜치로 풀(pull)이 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb326715" class="outline-2">
-<h2 id="orgb326715">Branch</h2>
-<div class="outline-text-2" id="text-orgb326715">
+<div id="outline-container-org57427d5" class="outline-2">
+<h2 id="org57427d5">Branch</h2>
+<div class="outline-text-2" id="text-org57427d5">
 <dl class="org-dl">
 <dt><code>b c</code></dt><dd>브랜치 생성</dd>
 <dt><code>b b</code></dt><dd>브랜치 전환</dd>
@@ -197,26 +197,26 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a>
 </dl>
 </div>
 </div>
-<div id="outline-container-orgec671c6" class="outline-2">
-<h2 id="orgec671c6">Reset or Revert</h2>
-<div class="outline-text-2" id="text-orgec671c6">
+<div id="outline-container-org55827a3" class="outline-2">
+<h2 id="org55827a3">Reset or Revert</h2>
+<div class="outline-text-2" id="text-org55827a3">
 <p>
 <code>x</code> :: 변경 사항을 날리고 원래대로(HEAD) 돌린다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgbf09d83" class="outline-2">
-<h2 id="orgbf09d83">기타</h2>
-<div class="outline-text-2" id="text-orgbf09d83">
+<div id="outline-container-orgf3165cc" class="outline-2">
+<h2 id="orgf3165cc">기타</h2>
+<div class="outline-text-2" id="text-orgf3165cc">
 <ul class="org-ul">
 <li><code>magit-status</code> 에서 <code>$</code> 키를 누르면
 실제로 사용되는 커맨드 및 응답 등의 로그를 볼 수 있다.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3999f8b" class="outline-2">
-<h2 id="org3999f8b">외부 링크</h2>
-<div class="outline-text-2" id="text-org3999f8b">
+<div id="outline-container-org4beefac" class="outline-2">
+<h2 id="org4beefac">외부 링크</h2>
+<div class="outline-text-2" id="text-org4beefac">
 <ul class="org-ul">
 <li><a target="_blank" href="https://www.youtube.com/watch?v=qntVkQyacPY">🌏Spacemacs #7 Magit Basics | 기본적인 가이드</a></li>
 <li><a target="_blank" href="https://www.youtube.com/watch?v=ZITDJZAB68w">🌏Spacemacs #8 Magit: Remote REPO / Squash Commits | 원격저장소, 커밋합치기</a></li>

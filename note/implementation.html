@@ -1,0 +1,252 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>구현 - Seorenn</title>
+<meta name="twitter:title" content="구현" />
+<meta name="og:title" content="구현" />
+<meta name="description" content="구현(Implementation)에 대한 이야기" />
+<meta name="twitter:description" content="구현(Implementation)에 대한 이야기" />
+<meta name="og:description" content="구현(Implementation)에 대한 이야기" />
+<link rel="canonical" href="https://seorenn.github.io/note/implementation.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/implementation.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<div class="top-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle top-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<hr/>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>구현</h1>
+<div class="title-date">2020년 4월 25일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd170d93">대충 사용하는 의미</a></li>
+<li><a href="#orgbc6df52">사전적 의미</a></li>
+<li><a href="#orgac8d2cc">구세대(?)의 정의</a></li>
+<li><a href="#org62fbcc2">현 세대(?)의 정의</a></li>
+<li><a href="#org3fb6840">결론</a></li>
+</ul>
+</div>
+</div>
+<p>
+IT, 특히 소프트웨어 개발 직종에서 '구현' 이라는 용어는 굉장히 자주 쓰인다.
+대충 이해할 때는 '코딩' 이라는 말로 대체가 가능할 것 처럼 보이나
+실제로는 좀 더 깊은 이야기일 수도 있기 때문에 정리해본다.
+</p>
+
+<div id="outline-container-orgd170d93" class="outline-2">
+<h2 id="orgd170d93">대충 사용하는 의미</h2>
+<div class="outline-text-2" id="text-orgd170d93">
+<p>
+앞서 이야기 했다시피, IT 개발 직종에서 '구현'의 의미는 이렇다.
+</p>
+<blockquote>
+<p>
+구현하다 = 개발하다, 코딩하다
+</p>
+</blockquote>
+<p>
+그렇다면 사전적 의미는 뭘까?
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc6df52" class="outline-2">
+<h2 id="orgbc6df52">사전적 의미</h2>
+<div class="outline-text-2" id="text-orgbc6df52">
+<blockquote>
+<p>
+구현(具現/具顯) (명사) 어떤 내용이 구체적인 사실로 나타나게 함.
+</p>
+</blockquote>
+<p>
+하지만 이 글에서 사전적 의미는 크게 의미가 없다. 우리가 이해할 의미는 관용적인 의미다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgac8d2cc" class="outline-2">
+<h2 id="orgac8d2cc">구세대(?)의 정의</h2>
+<div class="outline-text-2" id="text-orgac8d2cc">
+<p>
+굳이 구세대라고 표기한 것이 큰 의미를 가지는 것이 아니다.
+특히 비하의 의미도 절대로 아니다.
+그냥 시간적으로 과거의 시점을 다룬다고 생각하자.
+</p>
+
+<p>
+과거에 주류로 쓰이던 언어들, 예를 들어 C나 C++ 같은 언어들은 헤더(Header)라 불리는 파일이 존재한다.
+주로 <code>.h</code>, <code>.hh</code>, <code>.hpp</code>, <code>.h++</code> 등의 확장자를 가지고 있던 파일인데,
+이 헤더에는 주로 공공에서 쓰일 각종 상수나 함수 혹은 변수의 인터페이스(interface) 등을 정의하는 목적의 파일이다.
+</p>
+
+<p>
+이와의 상대적인 파일로 <code>.c</code> 혹은 <code>.cc</code>, <code>.cpp</code>, <code>.c++</code> 등의 확장자로 끝나는 파일이 있는데
+이를 통틀어서 구현 파일이라고 부르기도 한다.
+</p>
+
+<p>
+즉 이 둘을 나눠보면 헤더는 정의(definition)를 만들고 나머지 파일은 구현(implementation)을 만들다.
+정의에는 말 그대로 구현체의 모습을 정의해서 어떻게 쓰는지 방법과 모양을 기술하는 반면
+구현체는 정말 어떻게 동작하는 지를 실제로 만들어 놓은 것이다.
+</p>
+
+<p>
+여기서 '구현' 이라는 의미가 정해진다.
+정의 혹은 인터페이스는 실체가 없기 때문에 이것 만으론 아무 동작을 하지 않는다.
+'구현'은 실제 동작을 만들어 내는 것이다.
+</p>
+
+<p>
+반대로 '정의'가 없는 구현도 존재할 수 있는데, 현대적인 용어로 private 구현이라고 볼 수 있다.
+'정의'가 없다면 어떻게 사용하는지 어떤 이름으로 부르는 지 알 수가 없기 때문이다.
+이런 식으로 '정의'를 알려 주느냐 마느냐 의 차이로
+구세대(?) 언어 용 라이브러리의 사용 방법을 간접적으로 알려 줄 수도 있었다.
+</p>
+</div>
+</div>
+<div id="outline-container-org62fbcc2" class="outline-2">
+<h2 id="org62fbcc2">현 세대(?)의 정의</h2>
+<div class="outline-text-2" id="text-org62fbcc2">
+<p>
+현대적인 언어, 예를 들자면 <a href="swift.html">Swift</a>나 <a href="python.html">Python</a>
+같은 언어의 관점에서 보자면 '정의'와 '구현'이 하나의 파일에서 하나의 설계로 이뤄진다.
+따라서 굳이 '구현'과 '정의'를 분리하지 않아도 되는 경우가 있다.
+</p>
+
+<p>
+하지만 변수의 개념에서는 여전히 '정의'라는 개념이 쓰인다.
+</p>
+
+<p>
+그리고 클로저(closure)와 같이 호출 시 별도의 구현부를 넘겨야 하는 경우가 있는 것 처럼
+'구현'이라는 개념은 여전히 존재하면서도 이전과는 색다르게 사용되고 있다.
+</p>
+
+<p>
+<a href="swift.html">Swift</a>의 프로토콜(protocol) 개념도 정의와 구현을 분리 시키는 중요한 요소다.
+프로토콜은 정의만 존재하며 구현을 별도로 해 주어야 하는 개념이기 때문이다.
+물론 구세대 적인 의미와는 좀 다른 의미의 구현인 점은 여전하다.
+</p>
+</div>
+</div>
+<div id="outline-container-org3fb6840" class="outline-2">
+<h2 id="org3fb6840">결론</h2>
+<div class="outline-text-2" id="text-org3fb6840">
+<p>
+그래서 사실 처음에 적은 대충 사용하는 의미가 틀린 게 아니다.
+그저 '정의'와 만나게 되면 구분되는 것이 '구현'일 뿐이다.
+</p>
+
+<p>
+즉 정의와 구현이 다르다는 것이 핵심이다.
+이를 제대로 구분할 수만 있다면 어떻게 이해해도 틀린 말은 아닐지도 모른다.
+</p>
+</div>
+</div>
+<div class="mid-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</section>
+<div class="side-ad-container">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/swiftui.html">SwiftUI</a></h2>
+<div class="article-link-date">
+2020년 4월 25일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
+<div class="article-link-date">
+2020년 4월 25일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
+<div class="article-link-date">
+2020년 4월 25일 수정</div>
+</div>
+</div>
+</div>
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</body>
+</html>

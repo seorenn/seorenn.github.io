@@ -520,10 +520,7 @@ td.org-left {
 /* backlinks */
 
 .backlinks-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 100%;
 }
 
 .backlinks-container h1 {

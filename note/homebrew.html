@@ -38,6 +38,9 @@ gtag('config', 'UA-44534026-1');
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <header class="top-header">
 <div class="logo-container">
 <a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
@@ -59,7 +62,9 @@ gtag('config', 'UA-44534026-1');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
 <div class="content-container">
 <div class="left-empty">
 </div>
@@ -71,22 +76,22 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org331a061">기본 사용법</a>
+<li><a href="#org93a4424">기본 사용법</a>
 <ul>
-<li><a href="#org410967f">패키지 검색</a></li>
-<li><a href="#org65fa870">패키지 정보</a></li>
-<li><a href="#org04f4247">패키지 설치</a></li>
-<li><a href="#orga7662ba">만료된 버전 확인</a></li>
-<li><a href="#orgf8d0dd4">패키지 업그레이드</a></li>
-<li><a href="#org469cf37">구 버전 삭제하기</a></li>
-<li><a href="#orgc8c2fec">패키지 삭제(uninstall)</a></li>
-<li><a href="#org6400175">의사 양반(?)</a></li>
+<li><a href="#orgb000dd2">패키지 검색</a></li>
+<li><a href="#org67f51e2">패키지 정보</a></li>
+<li><a href="#orgad46058">패키지 설치</a></li>
+<li><a href="#orgf877d7b">만료된 버전 확인</a></li>
+<li><a href="#orgc6c2656">패키지 업그레이드</a></li>
+<li><a href="#orgc17ea7e">구 버전 삭제하기</a></li>
+<li><a href="#orgcc46da9">패키지 삭제(uninstall)</a></li>
+<li><a href="#orgcebe911">의사 양반(?)</a></li>
 </ul>
 </li>
-<li><a href="#orgf280ca9">구 버전 패키지 사용하기</a></li>
-<li><a href="#org16fedaf">다중 버전을 제공하는 패키지의 경우</a></li>
-<li><a href="#org79ff2b5">Cask</a></li>
-<li><a href="#orgedca8e1">외부 링크</a></li>
+<li><a href="#orgf3e716c">구 버전 패키지 사용하기</a></li>
+<li><a href="#org96c9906">다중 버전을 제공하는 패키지의 경우</a></li>
+<li><a href="#orgf38bb20">Cask</a></li>
+<li><a href="#orgab1c5e1">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -97,31 +102,31 @@ Homebrew는 <a href="macos.html">macOS</a> 전용 패키지 관리자다.
 또한 root 사용자가 아니어도 사용할 수도 있도록 구조를 만들어 준다는 점도 특징이다.
 </p>
 
-<div id="outline-container-org331a061" class="outline-2">
-<h2 id="org331a061">기본 사용법</h2>
-<div class="outline-text-2" id="text-org331a061">
+<div id="outline-container-org93a4424" class="outline-2">
+<h2 id="org93a4424">기본 사용법</h2>
+<div class="outline-text-2" id="text-org93a4424">
 </div>
-<div id="outline-container-org410967f" class="outline-3">
-<h3 id="org410967f">패키지 검색</h3>
-<div class="outline-text-3" id="text-org410967f">
+<div id="outline-container-orgb000dd2" class="outline-3">
+<h3 id="orgb000dd2">패키지 검색</h3>
+<div class="outline-text-3" id="text-orgb000dd2">
 <div class="org-src-container">
 <pre class="src src-bash">brew search KEYWORD
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org65fa870" class="outline-3">
-<h3 id="org65fa870">패키지 정보</h3>
-<div class="outline-text-3" id="text-org65fa870">
+<div id="outline-container-org67f51e2" class="outline-3">
+<h3 id="org67f51e2">패키지 정보</h3>
+<div class="outline-text-3" id="text-org67f51e2">
 <div class="org-src-container">
 <pre class="src src-bash">brew info PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org04f4247" class="outline-3">
-<h3 id="org04f4247">패키지 설치</h3>
-<div class="outline-text-3" id="text-org04f4247">
+<div id="outline-container-orgad46058" class="outline-3">
+<h3 id="orgad46058">패키지 설치</h3>
+<div class="outline-text-3" id="text-orgad46058">
 <div class="org-src-container">
 <pre class="src src-bash">brew install PACKAGE_NAME
 </pre>
@@ -132,9 +137,9 @@ Homebrew는 <a href="macos.html">macOS</a> 전용 패키지 관리자다.
 </p>
 </div>
 </div>
-<div id="outline-container-orga7662ba" class="outline-3">
-<h3 id="orga7662ba">만료된 버전 확인</h3>
-<div class="outline-text-3" id="text-orga7662ba">
+<div id="outline-container-orgf877d7b" class="outline-3">
+<h3 id="orgf877d7b">만료된 버전 확인</h3>
+<div class="outline-text-3" id="text-orgf877d7b">
 <p>
 설치된 패키지의 최신 버전이 존재하는지 확인하려면 <code>update</code> 후
 <code>outdated</code> 를 살펴보자.
@@ -146,9 +151,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8d0dd4" class="outline-3">
-<h3 id="orgf8d0dd4">패키지 업그레이드</h3>
-<div class="outline-text-3" id="text-orgf8d0dd4">
+<div id="outline-container-orgc6c2656" class="outline-3">
+<h3 id="orgc6c2656">패키지 업그레이드</h3>
+<div class="outline-text-3" id="text-orgc6c2656">
 <div class="org-src-container">
 <pre class="src src-bash">brew upgrade PACKAGE_NAME
 </pre>
@@ -162,9 +167,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-org469cf37" class="outline-3">
-<h3 id="org469cf37">구 버전 삭제하기</h3>
-<div class="outline-text-3" id="text-org469cf37">
+<div id="outline-container-orgc17ea7e" class="outline-3">
+<h3 id="orgc17ea7e">구 버전 삭제하기</h3>
+<div class="outline-text-3" id="text-orgc17ea7e">
 <p>
 패키지를 업그레이드해도 구 버전은 그대로 남아 파일 시스템에 잔존한다.
 이를 청소하기 위해 <code>cleanup</code> 커맨드를 사용할 수 있다.
@@ -178,18 +183,18 @@ brew outdated
 </p>
 </div>
 </div>
-<div id="outline-container-orgc8c2fec" class="outline-3">
-<h3 id="orgc8c2fec">패키지 삭제(uninstall)</h3>
-<div class="outline-text-3" id="text-orgc8c2fec">
+<div id="outline-container-orgcc46da9" class="outline-3">
+<h3 id="orgcc46da9">패키지 삭제(uninstall)</h3>
+<div class="outline-text-3" id="text-orgcc46da9">
 <div class="org-src-container">
 <pre class="src src-bash">brew uninstall PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6400175" class="outline-3">
-<h3 id="org6400175">의사 양반(?)</h3>
-<div class="outline-text-3" id="text-org6400175">
+<div id="outline-container-orgcebe911" class="outline-3">
+<h3 id="orgcebe911">의사 양반(?)</h3>
+<div class="outline-text-3" id="text-orgcebe911">
 <div class="org-src-container">
 <pre class="src src-bash">brew doctor
 </pre>
@@ -200,9 +205,9 @@ brew outdated
 </div>
 </div>
 </div>
-<div id="outline-container-orgf280ca9" class="outline-2">
-<h2 id="orgf280ca9">구 버전 패키지 사용하기</h2>
-<div class="outline-text-2" id="text-orgf280ca9">
+<div id="outline-container-orgf3e716c" class="outline-2">
+<h2 id="orgf3e716c">구 버전 패키지 사용하기</h2>
+<div class="outline-text-2" id="text-orgf3e716c">
 <p>
 만약 <code>upgrade</code> 등으로 최신버전이 설치되었다면
 해당 패키지의 구 버전도 여전히 파일 시스템에 남아있다.
@@ -217,9 +222,9 @@ brew outdated
 </p>
 </div>
 </div>
-<div id="outline-container-org16fedaf" class="outline-2">
-<h2 id="org16fedaf">다중 버전을 제공하는 패키지의 경우</h2>
-<div class="outline-text-2" id="text-org16fedaf">
+<div id="outline-container-org96c9906" class="outline-2">
+<h2 id="org96c9906">다중 버전을 제공하는 패키지의 경우</h2>
+<div class="outline-text-2" id="text-org96c9906">
 <p>
 다중 버전의 패키지가 필요한 경우 우선 지원되는지 부터 확인해봐야 한다.
 예를 들어 node.js 의 경우 LTS 버전이 다양하게 제공되고 있다.
@@ -322,9 +327,9 @@ v10.x.x
 </p>
 </div>
 </div>
-<div id="outline-container-org79ff2b5" class="outline-2">
-<h2 id="org79ff2b5">Cask</h2>
-<div class="outline-text-2" id="text-org79ff2b5">
+<div id="outline-container-orgf38bb20" class="outline-2">
+<h2 id="orgf38bb20">Cask</h2>
+<div class="outline-text-2" id="text-orgf38bb20">
 <p>
 cask는 <a href="macos.html">macOS</a> 응용 소프트웨어나
 다양한 리소스를 설치할 수 있게 도와주는 확장 도구다.
@@ -358,9 +363,9 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 </p>
 </div>
 </div>
-<div id="outline-container-orgedca8e1" class="outline-2">
-<h2 id="orgedca8e1">외부 링크</h2>
-<div class="outline-text-2" id="text-orgedca8e1">
+<div id="outline-container-orgab1c5e1" class="outline-2">
+<h2 id="orgab1c5e1">외부 링크</h2>
+<div class="outline-text-2" id="text-orgab1c5e1">
 <ul class="org-ul">
 <li><a target="_blank" href="https://brew.sh">🌏Homebrew 공식 홈페이지</a></li>
 </ul>
@@ -376,19 +381,6 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
-</section>
-<div class="side-ad-container">
-<ins class="adsbygoogle side-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
 </div>
 <hr /><div class="backlinks-container">
 <h1>이 글을 링크하는 글들</h1>
@@ -428,9 +420,26 @@ outdated나 upgrade, uninstall 등등의 커맨드는 비슷하게 사용할 수
 </div>
 </div>
 </div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <hr/>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
-</body>
+</div><div class="side-ad-container"></div>
+</div></body>
 </html>

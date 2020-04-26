@@ -38,6 +38,9 @@ gtag('config', 'UA-44534026-1');
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <header class="top-header">
 <div class="logo-container">
 <a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
@@ -59,7 +62,9 @@ gtag('config', 'UA-44534026-1');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
 <div class="content-container">
 <div class="left-empty">
 </div>
@@ -71,14 +76,14 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf1a8d06">기본 사용법</a>
+<li><a href="#orgfda62e6">기본 사용법</a>
 <ul>
-<li><a href="#orgef1ad2d">현재 디렉터리에서 특정 파일 검색하기</a></li>
-<li><a href="#org6c85fe8">특정 디렉터리에서 특정 파일 검색하기</a></li>
-<li><a href="#orgfd64406">검색 패턴</a></li>
-<li><a href="#org0d30cfb">대소문자 무시하기</a></li>
-<li><a href="#orgeb901fa">검색 종류 지정하기</a></li>
-<li><a href="#org61eefdd">검색 내용으로 특정 처리하기(exec)</a></li>
+<li><a href="#org83421f5">현재 디렉터리에서 특정 파일 검색하기</a></li>
+<li><a href="#orgf5b7e71">특정 디렉터리에서 특정 파일 검색하기</a></li>
+<li><a href="#org647c593">검색 패턴</a></li>
+<li><a href="#orga7254ab">대소문자 무시하기</a></li>
+<li><a href="#orgaeb7bf0">검색 종류 지정하기</a></li>
+<li><a href="#orgb3deba8">검색 내용으로 특정 처리하기(exec)</a></li>
 </ul>
 </li>
 </ul>
@@ -89,13 +94,13 @@ gtag('config', 'UA-44534026-1');
 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-orgf1a8d06" class="outline-2">
-<h2 id="orgf1a8d06">기본 사용법</h2>
-<div class="outline-text-2" id="text-orgf1a8d06">
+<div id="outline-container-orgfda62e6" class="outline-2">
+<h2 id="orgfda62e6">기본 사용법</h2>
+<div class="outline-text-2" id="text-orgfda62e6">
 </div>
-<div id="outline-container-orgef1ad2d" class="outline-3">
-<h3 id="orgef1ad2d">현재 디렉터리에서 특정 파일 검색하기</h3>
-<div class="outline-text-3" id="text-orgef1ad2d">
+<div id="outline-container-org83421f5" class="outline-3">
+<h3 id="org83421f5">현재 디렉터리에서 특정 파일 검색하기</h3>
+<div class="outline-text-3" id="text-org83421f5">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"somename.ext"</span>
 </pre>
@@ -107,9 +112,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org6c85fe8" class="outline-3">
-<h3 id="org6c85fe8">특정 디렉터리에서 특정 파일 검색하기</h3>
-<div class="outline-text-3" id="text-org6c85fe8">
+<div id="outline-container-orgf5b7e71" class="outline-3">
+<h3 id="orgf5b7e71">특정 디렉터리에서 특정 파일 검색하기</h3>
+<div class="outline-text-3" id="text-orgf5b7e71">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">find</span> /foo/bar <span style="color: #98be65;">"somename.ext"</span>
 </pre>
@@ -119,9 +124,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd64406" class="outline-3">
-<h3 id="orgfd64406">검색 패턴</h3>
-<div class="outline-text-3" id="text-orgfd64406">
+<div id="outline-container-org647c593" class="outline-3">
+<h3 id="org647c593">검색 패턴</h3>
+<div class="outline-text-3" id="text-org647c593">
 <p>
 찾을 패턴으로 와일드카드를 사용할 수도 있다.
 </p>
@@ -134,9 +139,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org0d30cfb" class="outline-3">
-<h3 id="org0d30cfb">대소문자 무시하기</h3>
-<div class="outline-text-3" id="text-org0d30cfb">
+<div id="outline-container-orga7254ab" class="outline-3">
+<h3 id="orga7254ab">대소문자 무시하기</h3>
+<div class="outline-text-3" id="text-orga7254ab">
 <p>
 기본적으로 이 도구는 대소문자를 가린다.
 만약 대소문자를 가리지 않으려면 <code>iname</code> 옵션을 사용할 수 있다.
@@ -147,9 +152,9 @@ gtag('config', 'UA-44534026-1');
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb901fa" class="outline-3">
-<h3 id="orgeb901fa">검색 종류 지정하기</h3>
-<div class="outline-text-3" id="text-orgeb901fa">
+<div id="outline-container-orgaeb7bf0" class="outline-3">
+<h3 id="orgaeb7bf0">검색 종류 지정하기</h3>
+<div class="outline-text-3" id="text-orgaeb7bf0">
 <p>
 만약 특정한 종류만 검색하고 싶다면 <code>type</code> 옵션을 사용할 수 있다.
 </p>
@@ -167,9 +172,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-org61eefdd" class="outline-3">
-<h3 id="org61eefdd">검색 내용으로 특정 처리하기(exec)</h3>
-<div class="outline-text-3" id="text-org61eefdd">
+<div id="outline-container-orgb3deba8" class="outline-3">
+<h3 id="orgb3deba8">검색 내용으로 특정 처리하기(exec)</h3>
+<div class="outline-text-3" id="text-orgb3deba8">
 <p>
 <code>-exec</code> 옵션은 검색된 내용을 이용해 외부 도구를 실행시킬 수 있게 할 수 있다.
 </p>
@@ -221,9 +226,13 @@ gtag('config', 'UA-44534026-1');
 </script>
 </div>
 </div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <hr/>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
-</body>
+</div><div class="side-ad-container"></div>
+</div></body>
 </html>

@@ -11,19 +11,13 @@ body {
   font-size: 18px;
 }
 
-/* header */
-
-.top-header {
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 64px;
-  margin-bottom: 48px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
 /* Big */
 @media screen and (min-width: 1280px) {
+  .top-header {
+    width: 100%;
+    margin: 64px 0px 48px 0px;
+  }
+
   .logo-container {
     width: 100%;
     overflow: hidden;
@@ -60,7 +54,7 @@ body {
 
   .content-container {
     display: grid;
-    grid-template-columns: 160px 800px 160px;
+    grid-template-columns: 80px 800px 160px;
     grid-template-rows: auto;
     grid-column-gap: 24px;
     justify-content: center;
@@ -73,17 +67,15 @@ body {
   .content {
     grid-column: 2;
   }
+  .header-content {
+    grid-column: 2;
+  }
 
   .top-ad-container {
-    width: 0 !important;
-    height: 0 !important;
-    display: hidden !important;
+    width: 100%;
   }
 
   .top-ad {
-    height: 0 !important;
-    width: 0 !important;
-    display: hidden !important;
   }
 
   .side-ad-container {
@@ -102,6 +94,15 @@ body {
 
 /* Mid */
 @media screen and (min-width: 800px) and (max-width: 1279px) {
+  .top-header {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 64px;
+    margin-bottom: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .logo-container {
     width: 100%;
     overflow: hidden;
@@ -173,6 +174,15 @@ body {
 
 /* Small */
 @media screen and (max-width: 799px) {
+  .top-header {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 64px;
+    margin-bottom: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .logo-container {
     width: 100%;
     overflow: hidden;
@@ -281,16 +291,11 @@ body {
 }
 
 hr {
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
   border: 0.5px solid #bcc2ce;
   margin-top: 48px;
   margin-bottom: 48px;
   clear: both;
-}
-
-.content hr {
-  width: 100%;
 }
 
 /* summary */
@@ -539,10 +544,7 @@ td.org-left {
 /* refs */
 
 .refs-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 100%;
 }
 
 .refs-container h1 {

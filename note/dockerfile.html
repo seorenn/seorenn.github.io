@@ -38,6 +38,9 @@ gtag('config', 'UA-44534026-1');
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <header class="top-header">
 <div class="logo-container">
 <a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
@@ -59,7 +62,9 @@ gtag('config', 'UA-44534026-1');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
 <div class="content-container">
 <div class="left-empty">
 </div>
@@ -71,10 +76,10 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org34030ed">평범한 스펙 예제</a></li>
-<li><a href="#org5d03cc8">사용자 지정</a></li>
-<li><a href="#org4723aaf">Health Checking</a></li>
-<li><a href="#orgbd8d439">Multi Stage Building</a></li>
+<li><a href="#orgeb5b36e">평범한 스펙 예제</a></li>
+<li><a href="#org65a4d4c">사용자 지정</a></li>
+<li><a href="#org316c03e">Health Checking</a></li>
+<li><a href="#org5292d00">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -83,9 +88,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-org34030ed" class="outline-2">
-<h2 id="org34030ed">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-org34030ed">
+<div id="outline-container-orgeb5b36e" class="outline-2">
+<h2 id="orgeb5b36e">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-orgeb5b36e">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">debian:buster</span>
 
@@ -130,9 +135,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org5d03cc8" class="outline-2">
-<h2 id="org5d03cc8">사용자 지정</h2>
-<div class="outline-text-2" id="text-org5d03cc8">
+<div id="outline-container-org65a4d4c" class="outline-2">
+<h2 id="org65a4d4c">사용자 지정</h2>
+<div class="outline-text-2" id="text-org65a4d4c">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
@@ -147,9 +152,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org4723aaf" class="outline-2">
-<h2 id="org4723aaf">Health Checking</h2>
-<div class="outline-text-2" id="text-org4723aaf">
+<div id="outline-container-org316c03e" class="outline-2">
+<h2 id="org316c03e">Health Checking</h2>
+<div class="outline-text-2" id="text-org316c03e">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -159,9 +164,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd8d439" class="outline-2">
-<h2 id="orgbd8d439">Multi Stage Building</h2>
-<div class="outline-text-2" id="text-orgbd8d439">
+<div id="outline-container-org5292d00" class="outline-2">
+<h2 id="org5292d00">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-org5292d00">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...
@@ -187,6 +192,23 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>
+<div class="article-link-date">
+2020년 4월 26일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/docker-compose.html">Docker Compose</a></h2>
+<div class="article-link-date">
+2020년 4월 15일 수정</div>
+</div>
+</div>
+</div>
 </section>
 <div class="side-ad-container">
 <ins class="adsbygoogle side-ad"
@@ -200,26 +222,13 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </script>
 </div>
 </div>
-<hr /><div class="backlinks-container">
-<h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>
-<div class="article-link-date">
-2020년 4월 18일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/docker-compose.html">Docker Compose</a></h2>
-<div class="article-link-date">
-2020년 4월 15일 수정</div>
-</div>
-</div>
-</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <hr/>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
-</body>
+</div><div class="side-ad-container"></div>
+</div></body>
 </html>

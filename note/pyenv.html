@@ -38,6 +38,9 @@ gtag('config', 'UA-44534026-1');
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <header class="top-header">
 <div class="logo-container">
 <a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
@@ -59,7 +62,9 @@ gtag('config', 'UA-44534026-1');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
 <div class="content-container">
 <div class="left-empty">
 </div>
@@ -71,13 +76,13 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaef529f">설치</a></li>
-<li><a href="#org22df17a">버전 목록</a></li>
-<li><a href="#orgbac9404">파이썬 설치하기</a></li>
-<li><a href="#org4571db9">기본 실행 버전 설정</a></li>
-<li><a href="#org4ef3e26">virtualenv 지원</a></li>
-<li><a href="#org8b571d5">설치 목록 업데이트</a></li>
-<li><a href="#orgd837202">외부 링크</a></li>
+<li><a href="#org7b4b290">설치</a></li>
+<li><a href="#orgc78ab70">버전 목록</a></li>
+<li><a href="#org50cc9fa">파이썬 설치하기</a></li>
+<li><a href="#orgc69a000">기본 실행 버전 설정</a></li>
+<li><a href="#org42858d2">virtualenv 지원</a></li>
+<li><a href="#org6da58ca">설치 목록 업데이트</a></li>
+<li><a href="#orgd35bb8b">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -86,9 +91,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 시스템에 원하는 <a href="python.html">Python</a> 버전을 설치하고 특히 다중 버전을 동시에 설치하고 실행시키기 좋은 환경을 제공해 준다.
 </p>
 
-<div id="outline-container-orgaef529f" class="outline-2">
-<h2 id="orgaef529f">설치</h2>
-<div class="outline-text-2" id="text-orgaef529f">
+<div id="outline-container-org7b4b290" class="outline-2">
+<h2 id="org7b4b290">설치</h2>
+<div class="outline-text-2" id="text-org7b4b290">
 <p>
 <a href="macos.html">macOS</a> 에서는
 <a href="homebrew.html">Homebrew</a> 로 설치하는 것이 편하다.
@@ -149,9 +154,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 </p>
 </div>
 </div>
-<div id="outline-container-org22df17a" class="outline-2">
-<h2 id="org22df17a">버전 목록</h2>
-<div class="outline-text-2" id="text-org22df17a">
+<div id="outline-container-orgc78ab70" class="outline-2">
+<h2 id="orgc78ab70">버전 목록</h2>
+<div class="outline-text-2" id="text-orgc78ab70">
 <p>
 아래 커맨드를 이용해 설치할 수 있는 버전 목록을 얻을 수 있다.
 </p>
@@ -166,9 +171,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 </p>
 </div>
 </div>
-<div id="outline-container-orgbac9404" class="outline-2">
-<h2 id="orgbac9404">파이썬 설치하기</h2>
-<div class="outline-text-2" id="text-orgbac9404">
+<div id="outline-container-org50cc9fa" class="outline-2">
+<h2 id="org50cc9fa">파이썬 설치하기</h2>
+<div class="outline-text-2" id="text-org50cc9fa">
 <p>
 원하는 버전을 설치하려면,
 예를 들어 3.8.1 버전을 설치하려면 아래와 같은 커맨드를 사용하자.
@@ -201,9 +206,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 </div>
 </div>
 </div>
-<div id="outline-container-org4571db9" class="outline-2">
-<h2 id="org4571db9">기본 실행 버전 설정</h2>
-<div class="outline-text-2" id="text-org4571db9">
+<div id="outline-container-orgc69a000" class="outline-2">
+<h2 id="orgc69a000">기본 실행 버전 설정</h2>
+<div class="outline-text-2" id="text-orgc69a000">
 <p>
 일단 pyenv로 파이썬을 설치 했더라도 바로 사용할 수는 없다.
 pyenv root 디렉터리에 설치가 되었기 때문이다.
@@ -232,9 +237,9 @@ pyenv root 디렉터리에 설치가 되었기 때문이다.
 </p>
 </div>
 </div>
-<div id="outline-container-org4ef3e26" class="outline-2">
-<h2 id="org4ef3e26">virtualenv 지원</h2>
-<div class="outline-text-2" id="text-org4ef3e26">
+<div id="outline-container-org42858d2" class="outline-2">
+<h2 id="org42858d2">virtualenv 지원</h2>
+<div class="outline-text-2" id="text-org42858d2">
 <p>
 파이썬을 새로 설치했다면 <code>virtualenv</code> 가 없을 테니 별도로 설치하자.
 </p>
@@ -268,9 +273,9 @@ my<sub>project</sub> 라는 virtualenv 환경을 생성하는 명령이다.
 </p>
 </div>
 </div>
-<div id="outline-container-org8b571d5" class="outline-2">
-<h2 id="org8b571d5">설치 목록 업데이트</h2>
-<div class="outline-text-2" id="text-org8b571d5">
+<div id="outline-container-org6da58ca" class="outline-2">
+<h2 id="org6da58ca">설치 목록 업데이트</h2>
+<div class="outline-text-2" id="text-org6da58ca">
 <p>
 가끔 새 버전 파이썬이 나왔는데
 pyenv의 설치 목록에는 아직 구 버전만 보인다면
@@ -293,9 +298,9 @@ pyenv의 설치 목록에는 아직 구 버전만 보인다면
 </p>
 </div>
 </div>
-<div id="outline-container-orgd837202" class="outline-2">
-<h2 id="orgd837202">외부 링크</h2>
-<div class="outline-text-2" id="text-orgd837202">
+<div id="outline-container-orgd35bb8b" class="outline-2">
+<h2 id="orgd35bb8b">외부 링크</h2>
+<div class="outline-text-2" id="text-orgd35bb8b">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/pyenv/pyenv">🌏pyenv 공식 저장소 사이트</a></li>
 </ul>
@@ -312,6 +317,16 @@ pyenv의 설치 목록에는 아직 구 버전만 보인다면
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
+<div class="article-link-date">
+2020년 4월 22일 수정</div>
+</div>
+</div>
+</div>
 </section>
 <div class="side-ad-container">
 <ins class="adsbygoogle side-ad"
@@ -325,19 +340,13 @@ pyenv의 설치 목록에는 아직 구 버전만 보인다면
 </script>
 </div>
 </div>
-<hr /><div class="backlinks-container">
-<h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
-<div class="article-link-date">
-2020년 4월 22일 수정</div>
-</div>
-</div>
-</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
 <hr/>
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
-</body>
+</div><div class="side-ad-container"></div>
+</div></body>
 </html>

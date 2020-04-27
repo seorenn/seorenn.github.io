@@ -28,14 +28,6 @@
 <meta name="robots" content="follow,index" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <div class="content-container">
@@ -76,20 +68,20 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeb74843">간단한 사용법</a>
+<li><a href="#org626d67b">간단한 사용법</a>
 <ul>
-<li><a href="#org0575875">패키지 검색</a></li>
-<li><a href="#org9a81a98">패키지 설치</a></li>
-<li><a href="#orgbd612f3">특정 버전 패키지 설치</a></li>
-<li><a href="#org8dbc6c4">패키지 설치 및 업그레이드 하기</a></li>
-<li><a href="#org50da91b">패키지 제거</a></li>
-<li><a href="#org19d45d9">패키지 리스트 얻기</a></li>
-<li><a href="#org304e38e">패키지 일괄 설치하기</a></li>
+<li><a href="#orgc6b6017">패키지 검색</a></li>
+<li><a href="#orgf52152a">패키지 설치</a></li>
+<li><a href="#org569e7f7">특정 버전 패키지 설치</a></li>
+<li><a href="#org5973be1">패키지 설치 및 업그레이드 하기</a></li>
+<li><a href="#org3d4b4dd">패키지 제거</a></li>
+<li><a href="#orgcd77827">패키지 리스트 얻기</a></li>
+<li><a href="#orgd3baa48">패키지 일괄 설치하기</a></li>
 </ul>
 </li>
-<li><a href="#orga569eef">특수한 사용법</a>
+<li><a href="#orgc172bc8">특수한 사용법</a>
 <ul>
-<li><a href="#org0e02527">패키지의 버전 정보 얻기</a></li>
+<li><a href="#orgefb942a">패키지의 버전 정보 얻기</a></li>
 </ul>
 </li>
 </ul>
@@ -100,58 +92,58 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-orgeb74843" class="outline-2">
-<h2 id="orgeb74843">간단한 사용법</h2>
-<div class="outline-text-2" id="text-orgeb74843">
+<div id="outline-container-org626d67b" class="outline-2">
+<h2 id="org626d67b">간단한 사용법</h2>
+<div class="outline-text-2" id="text-org626d67b">
 </div>
-<div id="outline-container-org0575875" class="outline-3">
-<h3 id="org0575875">패키지 검색</h3>
-<div class="outline-text-3" id="text-org0575875">
+<div id="outline-container-orgc6b6017" class="outline-3">
+<h3 id="orgc6b6017">패키지 검색</h3>
+<div class="outline-text-3" id="text-orgc6b6017">
 <div class="org-src-container">
 <pre class="src src-bash">pip search PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9a81a98" class="outline-3">
-<h3 id="org9a81a98">패키지 설치</h3>
-<div class="outline-text-3" id="text-org9a81a98">
+<div id="outline-container-orgf52152a" class="outline-3">
+<h3 id="orgf52152a">패키지 설치</h3>
+<div class="outline-text-3" id="text-orgf52152a">
 <div class="org-src-container">
 <pre class="src src-bash">pip install PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd612f3" class="outline-3">
-<h3 id="orgbd612f3">특정 버전 패키지 설치</h3>
-<div class="outline-text-3" id="text-orgbd612f3">
+<div id="outline-container-org569e7f7" class="outline-3">
+<h3 id="org569e7f7">특정 버전 패키지 설치</h3>
+<div class="outline-text-3" id="text-org569e7f7">
 <div class="org-src-container">
 <pre class="src src-bash">pip install <span style="color: #dcaeea;">PACKAGE_NAME</span>==VERSION
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org8dbc6c4" class="outline-3">
-<h3 id="org8dbc6c4">패키지 설치 및 업그레이드 하기</h3>
-<div class="outline-text-3" id="text-org8dbc6c4">
+<div id="outline-container-org5973be1" class="outline-3">
+<h3 id="org5973be1">패키지 설치 및 업그레이드 하기</h3>
+<div class="outline-text-3" id="text-org5973be1">
 <div class="org-src-container">
 <pre class="src src-bash">pip install --upgrade PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org50da91b" class="outline-3">
-<h3 id="org50da91b">패키지 제거</h3>
-<div class="outline-text-3" id="text-org50da91b">
+<div id="outline-container-org3d4b4dd" class="outline-3">
+<h3 id="org3d4b4dd">패키지 제거</h3>
+<div class="outline-text-3" id="text-org3d4b4dd">
 <div class="org-src-container">
 <pre class="src src-bash">pip uninstall PACKAGE_nAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org19d45d9" class="outline-3">
-<h3 id="org19d45d9">패키지 리스트 얻기</h3>
-<div class="outline-text-3" id="text-org19d45d9">
+<div id="outline-container-orgcd77827" class="outline-3">
+<h3 id="orgcd77827">패키지 리스트 얻기</h3>
+<div class="outline-text-3" id="text-orgcd77827">
 <div class="org-src-container">
 <pre class="src src-bash">pip freeze
 </pre>
@@ -171,9 +163,9 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 </p>
 </div>
 </div>
-<div id="outline-container-org304e38e" class="outline-3">
-<h3 id="org304e38e">패키지 일괄 설치하기</h3>
-<div class="outline-text-3" id="text-org304e38e">
+<div id="outline-container-orgd3baa48" class="outline-3">
+<h3 id="orgd3baa48">패키지 일괄 설치하기</h3>
+<div class="outline-text-3" id="text-orgd3baa48">
 <p>
 아래는 앞서 구한 목록인 <code>requirements.txt</code> 파일을 이용해 패키지를 일괄 설치하는 커맨드다.
 </p>
@@ -184,13 +176,13 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 </div>
 </div>
 </div>
-<div id="outline-container-orga569eef" class="outline-2">
-<h2 id="orga569eef">특수한 사용법</h2>
-<div class="outline-text-2" id="text-orga569eef">
+<div id="outline-container-orgc172bc8" class="outline-2">
+<h2 id="orgc172bc8">특수한 사용법</h2>
+<div class="outline-text-2" id="text-orgc172bc8">
 </div>
-<div id="outline-container-org0e02527" class="outline-3">
-<h3 id="org0e02527">패키지의 버전 정보 얻기</h3>
-<div class="outline-text-3" id="text-org0e02527">
+<div id="outline-container-orgefb942a" class="outline-3">
+<h3 id="orgefb942a">패키지의 버전 정보 얻기</h3>
+<div class="outline-text-3" id="text-orgefb942a">
 <p>
 패키지 버전 리스트를 얻기 위한 별도의 커맨드는 없고, 대신 아래 트릭으로 구할 수
 있다.
@@ -262,5 +254,14 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
 </div><div class="side-ad-container"></div>
-</div></body>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</body>
 </html>

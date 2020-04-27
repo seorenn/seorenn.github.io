@@ -28,14 +28,6 @@
 <meta name="robots" content="follow,index" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <div class="content-container">
@@ -76,10 +68,10 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeb5b36e">평범한 스펙 예제</a></li>
-<li><a href="#org65a4d4c">사용자 지정</a></li>
-<li><a href="#org316c03e">Health Checking</a></li>
-<li><a href="#org5292d00">Multi Stage Building</a></li>
+<li><a href="#org345b1d6">평범한 스펙 예제</a></li>
+<li><a href="#org80aab55">사용자 지정</a></li>
+<li><a href="#org6cf2273">Health Checking</a></li>
+<li><a href="#org8e76e5e">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -88,9 +80,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-orgeb5b36e" class="outline-2">
-<h2 id="orgeb5b36e">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-orgeb5b36e">
+<div id="outline-container-org345b1d6" class="outline-2">
+<h2 id="org345b1d6">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-org345b1d6">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">debian:buster</span>
 
@@ -135,9 +127,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org65a4d4c" class="outline-2">
-<h2 id="org65a4d4c">사용자 지정</h2>
-<div class="outline-text-2" id="text-org65a4d4c">
+<div id="outline-container-org80aab55" class="outline-2">
+<h2 id="org80aab55">사용자 지정</h2>
+<div class="outline-text-2" id="text-org80aab55">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
@@ -152,9 +144,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org316c03e" class="outline-2">
-<h2 id="org316c03e">Health Checking</h2>
-<div class="outline-text-2" id="text-org316c03e">
+<div id="outline-container-org6cf2273" class="outline-2">
+<h2 id="org6cf2273">Health Checking</h2>
+<div class="outline-text-2" id="text-org6cf2273">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -164,9 +156,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </div>
 </div>
 </div>
-<div id="outline-container-org5292d00" class="outline-2">
-<h2 id="org5292d00">Multi Stage Building</h2>
-<div class="outline-text-2" id="text-org5292d00">
+<div id="outline-container-org8e76e5e" class="outline-2">
+<h2 id="org8e76e5e">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-org8e76e5e">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...
@@ -230,5 +222,14 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
 </div><div class="side-ad-container"></div>
-</div></body>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</body>
 </html>

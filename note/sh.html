@@ -28,14 +28,6 @@
 <meta name="robots" content="follow,index" />
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <div class="content-container">
@@ -76,27 +68,27 @@ gtag('config', 'UA-44534026-1');
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org9e52da2">소개</a></li>
-<li><a href="#orgded3f07">스크립팅 노트</a>
+<li><a href="#orga587446">소개</a></li>
+<li><a href="#org5315178">스크립팅 노트</a>
 <ul>
-<li><a href="#orgc582ed4">실행 가능한 스크립트</a></li>
-<li><a href="#orgb3cc929">if</a></li>
-<li><a href="#org1a94628">루프</a></li>
-<li><a href="#orge82810c">조건식 오퍼레이터</a></li>
-<li><a href="#org27950d3">디렉토리 존재 유무 체크</a></li>
-<li><a href="#orgcffc007">파일 개수</a></li>
-<li><a href="#orgbaf7aab">와일드카드 인자 처리</a></li>
-<li><a href="#org7341481">에러가 나면 멈추게 하기</a></li>
-<li><a href="#org1ab97f9">에러 메시지 숨기기</a></li>
+<li><a href="#org9383f9a">실행 가능한 스크립트</a></li>
+<li><a href="#org3f3cd6c">if</a></li>
+<li><a href="#orgf3abb64">루프</a></li>
+<li><a href="#org670ce08">조건식 오퍼레이터</a></li>
+<li><a href="#org5db46ba">디렉토리 존재 유무 체크</a></li>
+<li><a href="#orgbcddb50">파일 개수</a></li>
+<li><a href="#orgba3c591">와일드카드 인자 처리</a></li>
+<li><a href="#org2bd0233">에러가 나면 멈추게 하기</a></li>
+<li><a href="#orga95b7d0">에러 메시지 숨기기</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9e52da2" class="outline-2">
-<h2 id="org9e52da2">소개</h2>
-<div class="outline-text-2" id="text-org9e52da2">
+<div id="outline-container-orga587446" class="outline-2">
+<h2 id="orga587446">소개</h2>
+<div class="outline-text-2" id="text-orga587446">
 <p>
 <code>sh</code> 는 Bourne Shell의 축약된 이름으로
 유닉스에서 가장 기본적으로 쓰이던 <a href="shell.html">셸</a> 이다.
@@ -105,16 +97,16 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-orgded3f07" class="outline-2">
-<h2 id="orgded3f07">스크립팅 노트</h2>
-<div class="outline-text-2" id="text-orgded3f07">
+<div id="outline-container-org5315178" class="outline-2">
+<h2 id="org5315178">스크립팅 노트</h2>
+<div class="outline-text-2" id="text-org5315178">
 <p>
 전반적인 기준 없이 그냥 메모 단위로 기록되는 팁이다.
 </p>
 </div>
-<div id="outline-container-orgc582ed4" class="outline-3">
-<h3 id="orgc582ed4">실행 가능한 스크립트</h3>
-<div class="outline-text-3" id="text-orgc582ed4">
+<div id="outline-container-org9383f9a" class="outline-3">
+<h3 id="org9383f9a">실행 가능한 스크립트</h3>
+<div class="outline-text-3" id="text-org9383f9a">
 <p>
 일반적으로 셸 스크립트를 만들면 셸을 통해서 실행하는 것이 보통이다.
 </p>
@@ -175,9 +167,9 @@ gtag('config', 'UA-44534026-1');
 </p>
 </div>
 </div>
-<div id="outline-container-orgb3cc929" class="outline-3">
-<h3 id="orgb3cc929">if</h3>
-<div class="outline-text-3" id="text-orgb3cc929">
+<div id="outline-container-org3f3cd6c" class="outline-3">
+<h3 id="org3f3cd6c">if</h3>
+<div class="outline-text-3" id="text-org3f3cd6c">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> condition <span style="color: #51afef;">]</span>
 <span style="color: #51afef;">then</span>
@@ -216,9 +208,9 @@ AND 혹은 OR 조건은 아래처럼 할 수도 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org1a94628" class="outline-3">
-<h3 id="org1a94628">루프</h3>
-<div class="outline-text-3" id="text-org1a94628">
+<div id="outline-container-orgf3abb64" class="outline-3">
+<h3 id="orgf3abb64">루프</h3>
+<div class="outline-text-3" id="text-orgf3abb64">
 <p>
 <code>for</code> 문을 이용한 현대적인(?) 루프는 아래처럼 쓸 수 있다.
 </p>
@@ -235,9 +227,9 @@ AND 혹은 OR 조건은 아래처럼 할 수도 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-orge82810c" class="outline-3">
-<h3 id="orge82810c">조건식 오퍼레이터</h3>
-<div class="outline-text-3" id="text-orge82810c">
+<div id="outline-container-org670ce08" class="outline-3">
+<h3 id="org670ce08">조건식 오퍼레이터</h3>
+<div class="outline-text-3" id="text-org670ce08">
 <ul class="org-ul">
 <li><code>=</code>, <code>!=</code> 문자열이 동일한지, 동일하지 않은지</li>
 <li><code>-eq</code>, <code>-ne</code>, <code>-gt</code>, <code>-ge</code>, <code>-lt</code>, <code>-le</code> 차례대로 equal, not equal, greater
@@ -252,9 +244,9 @@ than, greater than or equal, less than, less than or equal</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org27950d3" class="outline-3">
-<h3 id="org27950d3">디렉토리 존재 유무 체크</h3>
-<div class="outline-text-3" id="text-org27950d3">
+<div id="outline-container-org5db46ba" class="outline-3">
+<h3 id="org5db46ba">디렉토리 존재 유무 체크</h3>
+<div class="outline-text-3" id="text-org5db46ba">
 <p>
 위에서도 정리했지만 <code>-d</code> 플래그를 쓸 수 있다.
 </p>
@@ -269,9 +261,9 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
-<div id="outline-container-orgcffc007" class="outline-3">
-<h3 id="orgcffc007">파일 개수</h3>
-<div class="outline-text-3" id="text-orgcffc007">
+<div id="outline-container-orgbcddb50" class="outline-3">
+<h3 id="orgbcddb50">파일 개수</h3>
+<div class="outline-text-3" id="text-orgbcddb50">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #dcaeea;">COUNT</span>=$<span style="color: #51afef;">(</span><span style="color: #ECBE7B;">ls</span> /foo/bar | wc -l<span style="color: #51afef;">)</span>
 </pre>
@@ -295,9 +287,9 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
-<div id="outline-container-orgbaf7aab" class="outline-3">
-<h3 id="orgbaf7aab">와일드카드 인자 처리</h3>
-<div class="outline-text-3" id="text-orgbaf7aab">
+<div id="outline-container-orgba3c591" class="outline-3">
+<h3 id="orgba3c591">와일드카드 인자 처리</h3>
+<div class="outline-text-3" id="text-orgba3c591">
 <p>
 셸 스크립트에 <code>*.ext</code> 같은 파일 이름 와일드카드를 넘겼을 때
 이를 나열하는 방법을 for 커맨드로 표현하면 이렇다.
@@ -315,9 +307,9 @@ than, greater than or equal, less than, less than or equal</li>
 </p>
 </div>
 </div>
-<div id="outline-container-org7341481" class="outline-3">
-<h3 id="org7341481">에러가 나면 멈추게 하기</h3>
-<div class="outline-text-3" id="text-org7341481">
+<div id="outline-container-org2bd0233" class="outline-3">
+<h3 id="org2bd0233">에러가 나면 멈추게 하기</h3>
+<div class="outline-text-3" id="text-org2bd0233">
 <p>
 셸 스크립트 상단에 아래 한 줄을 넣어두면 에러가 났을 때 스크립트가 멈춘다.
 </p>
@@ -327,9 +319,9 @@ than, greater than or equal, less than, less than or equal</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org1ab97f9" class="outline-3">
-<h3 id="org1ab97f9">에러 메시지 숨기기</h3>
-<div class="outline-text-3" id="text-org1ab97f9">
+<div id="outline-container-orga95b7d0" class="outline-3">
+<h3 id="orga95b7d0">에러 메시지 숨기기</h3>
+<div class="outline-text-3" id="text-orga95b7d0">
 <p>
 에러 메시지는 <code>stderr</code> (2) 파이프로 전달되니 이것을 지옥의 쓰레기통(?)에 던지면 된다.
 </p>
@@ -382,5 +374,14 @@ than, greater than or equal, less than, less than or equal</li>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
 </div><div class="side-ad-container"></div>
-</div></body>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</body>
 </html>

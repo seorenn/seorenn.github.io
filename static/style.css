@@ -289,6 +289,14 @@ hr {
   clear: both;
 }
 
+hr.spliter {
+  width: 20%;
+  border: 0.5px solid #5c6267;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  clear: both;
+}
+
 /* summary */
 
 .summary-container {

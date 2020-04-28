@@ -50,9 +50,6 @@
      data-ad-slot="4306465772"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </div>
 </div>
 <div class="side-ad-container"></div>
@@ -68,29 +65,29 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcdc9095">개념 메모</a>
+<li><a href="#org273d954">개념 메모</a>
 <ul>
-<li><a href="#org99b3192">샤프(Sharpsign)</a></li>
-<li><a href="#orgb9d71af">단 따옴표(Single Quote)</a></li>
-<li><a href="#orgf9fc92b">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
-<li><a href="#orgce1953c">apply vs funcall</a></li>
-<li><a href="#org888e48f">Character</a></li>
-<li><a href="#orgf0d24ed">setq vs setq-default</a></li>
-<li><a href="#orgc65b654">Comma and Back-Quote</a></li>
-<li><a href="#org287ccfe">Property List (plist)</a></li>
+<li><a href="#org0646bcf">샤프(Sharpsign)</a></li>
+<li><a href="#org37f433c">단 따옴표(Single Quote)</a></li>
+<li><a href="#org089e80c">샤프 단 따옴표(Sharpsign Single Quote)</a></li>
+<li><a href="#org93b3c13">apply vs funcall</a></li>
+<li><a href="#org11c50a7">Character</a></li>
+<li><a href="#org7f026ee">setq vs setq-default</a></li>
+<li><a href="#org6c8f110">Comma and Back-Quote</a></li>
+<li><a href="#orga08076e">Property List (plist)</a></li>
 </ul>
 </li>
-<li><a href="#org20f506a">코드 예제</a>
+<li><a href="#org672b939">코드 예제</a>
 <ul>
-<li><a href="#orgdf1e236">파일 읽고 편집하고 저장하기</a></li>
-<li><a href="#orge070070">타입 변환</a></li>
-<li><a href="#orgd83f318">셸 커맨드</a></li>
+<li><a href="#org3e139b7">파일 읽고 편집하고 저장하기</a></li>
+<li><a href="#org61ef6ee">타입 변환</a></li>
+<li><a href="#org7143f00">셸 커맨드</a></li>
 </ul>
 </li>
-<li><a href="#org9baec5a">에러 노트</a>
+<li><a href="#orga66eacf">에러 노트</a>
 <ul>
-<li><a href="#org8f60fce">commandp</a></li>
-<li><a href="#org0eb437c">안 쓰는 매개변수</a></li>
+<li><a href="#org9773cfb">commandp</a></li>
+<li><a href="#orgc33f11d">안 쓰는 매개변수</a></li>
 </ul>
 </li>
 </ul>
@@ -102,13 +99,13 @@ Emacs Lisp은 이름 처럼 <a href="emacs.html">Emacs</a>에서 사용할 수 �
 Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 
-<div id="outline-container-orgcdc9095" class="outline-2">
-<h2 id="orgcdc9095">개념 메모</h2>
-<div class="outline-text-2" id="text-orgcdc9095">
+<div id="outline-container-org273d954" class="outline-2">
+<h2 id="org273d954">개념 메모</h2>
+<div class="outline-text-2" id="text-org273d954">
 </div>
-<div id="outline-container-org99b3192" class="outline-3">
-<h3 id="org99b3192">샤프(Sharpsign)</h3>
-<div class="outline-text-3" id="text-org99b3192">
+<div id="outline-container-org0646bcf" class="outline-3">
+<h3 id="org0646bcf">샤프(Sharpsign)</h3>
+<div class="outline-text-3" id="text-org0646bcf">
 <p>
 <code>#</code> (Sharpsign) 은 s-expressions 특수 문법이다.
 근데 뭔 소린지 하나도 모르겠다.
@@ -128,9 +125,9 @@ Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb9d71af" class="outline-3">
-<h3 id="orgb9d71af">단 따옴표(Single Quote)</h3>
-<div class="outline-text-3" id="text-orgb9d71af">
+<div id="outline-container-org37f433c" class="outline-3">
+<h3 id="org37f433c">단 따옴표(Single Quote)</h3>
+<div class="outline-text-3" id="text-org37f433c">
 <p>
 단 따옴표 <code>'</code> (혹은 quote 함수)는 식을 그대로 표현할 때 사용한다.
 예를 들어 <code>(1 2 3)</code> 이라는 리스트를 메시지로 출력하고 싶어서
@@ -171,9 +168,9 @@ Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf9fc92b" class="outline-3">
-<h3 id="orgf9fc92b">샤프 단 따옴표(Sharpsign Single Quote)</h3>
-<div class="outline-text-3" id="text-orgf9fc92b">
+<div id="outline-container-org089e80c" class="outline-3">
+<h3 id="org089e80c">샤프 단 따옴표(Sharpsign Single Quote)</h3>
+<div class="outline-text-3" id="text-org089e80c">
 <p>
 <code>#'function-name</code> 의 의미는
 <code>(function function-name)</code> 을 줄여서 표기한 것이다.
@@ -195,9 +192,9 @@ Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgce1953c" class="outline-3">
-<h3 id="orgce1953c">apply vs funcall</h3>
-<div class="outline-text-3" id="text-orgce1953c">
+<div id="outline-container-org93b3c13" class="outline-3">
+<h3 id="org93b3c13">apply vs funcall</h3>
+<div class="outline-text-3" id="text-org93b3c13">
 <p>
 위에서 본 <code>funcall</code> 과 비슷하게 <code>apply</code> 라는 것도 있다.
 사용 방법도 거의 동일하다.
@@ -231,9 +228,9 @@ Lisp이 아니라고 하기에도 좀 미묘하긴 하다.
 </div>
 </div>
 </div>
-<div id="outline-container-org888e48f" class="outline-3">
-<h3 id="org888e48f">Character</h3>
-<div class="outline-text-3" id="text-org888e48f">
+<div id="outline-container-org11c50a7" class="outline-3">
+<h3 id="org11c50a7">Character</h3>
+<div class="outline-text-3" id="text-org11c50a7">
 <p>
 <a href="emacs.html">Emacs</a>에서 문자는 ASCII 번호로 표현된다.
 즉 숫자다.
@@ -249,9 +246,9 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf0d24ed" class="outline-3">
-<h3 id="orgf0d24ed">setq vs setq-default</h3>
-<div class="outline-text-3" id="text-orgf0d24ed">
+<div id="outline-container-org7f026ee" class="outline-3">
+<h3 id="org7f026ee">setq vs setq-default</h3>
+<div class="outline-text-3" id="text-org7f026ee">
 <p>
 <a href="emacs.html">Emacs</a>에는 버퍼 로컬 변수라는 개념이 있다. 예를 들자면
 <code>tab-width</code> 가 대표적인데, 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수
@@ -269,9 +266,9 @@ A는 65이기 때문에 위 코드는 참을 반환한다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc65b654" class="outline-3">
-<h3 id="orgc65b654">Comma and Back-Quote</h3>
-<div class="outline-text-3" id="text-orgc65b654">
+<div id="outline-container-org6c8f110" class="outline-3">
+<h3 id="org6c8f110">Comma and Back-Quote</h3>
+<div class="outline-text-3" id="text-org6c8f110">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> a <span style="color: #98be65;">"a's value"</span> b <span style="color: #98be65;">"b's value"</span> c <span style="color: #98be65;">"c's value"</span><span style="color: #51afef;">)</span>
 <span style="color: #51afef;">'</span><span style="color: #51afef;">(</span>a  b  c<span style="color: #51afef;">)</span>      <span style="color: #5B6268;">; </span><span style="color: #5B6268;">=&gt; (a b c)</span>
@@ -285,9 +282,9 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </p>
 </div>
 </div>
-<div id="outline-container-org287ccfe" class="outline-3">
-<h3 id="org287ccfe">Property List (plist)</h3>
-<div class="outline-text-3" id="text-org287ccfe">
+<div id="outline-container-orga08076e" class="outline-3">
+<h3 id="orga08076e">Property List (plist)</h3>
+<div class="outline-text-3" id="text-orga08076e">
 <p>
 프로퍼티 리스트는 사전(Dictionary) 타입과 비슷한 자료 구조다.
 </p>
@@ -320,16 +317,16 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </div>
 </div>
 </div>
-<div id="outline-container-org20f506a" class="outline-2">
-<h2 id="org20f506a">코드 예제</h2>
-<div class="outline-text-2" id="text-org20f506a">
+<div id="outline-container-org672b939" class="outline-2">
+<h2 id="org672b939">코드 예제</h2>
+<div class="outline-text-2" id="text-org672b939">
 <p>
 각 함수의 설명은 <a href="emacs-lisp-functions.html">Emacs Lisp Functions</a> 글을 참고하자.
 </p>
 </div>
-<div id="outline-container-orgdf1e236" class="outline-3">
-<h3 id="orgdf1e236">파일 읽고 편집하고 저장하기</h3>
-<div class="outline-text-3" id="text-orgdf1e236">
+<div id="outline-container-org3e139b7" class="outline-3">
+<h3 id="org3e139b7">파일 읽고 편집하고 저장하기</h3>
+<div class="outline-text-3" id="text-org3e139b7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">with-temp-buffer</span>
   <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">insert-file-contents</span> <span style="color: #98be65;">"/foo/bar/file.md"</span><span style="color: #c678dd;">)</span>
@@ -339,9 +336,9 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </div>
 </div>
 </div>
-<div id="outline-container-orge070070" class="outline-3">
-<h3 id="orge070070">타입 변환</h3>
-<div class="outline-text-3" id="text-orge070070">
+<div id="outline-container-org61ef6ee" class="outline-3">
+<h3 id="org61ef6ee">타입 변환</h3>
+<div class="outline-text-3" id="text-org61ef6ee">
 <p>
 숫자(정수 및 실수)와 문자열 간의 전환 두 가지 예제다.
 </p>
@@ -359,9 +356,9 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </p>
 </div>
 </div>
-<div id="outline-container-orgd83f318" class="outline-3">
-<h3 id="orgd83f318"><a href="shell.html">셸</a> 커맨드</h3>
-<div class="outline-text-3" id="text-orgd83f318">
+<div id="outline-container-org7143f00" class="outline-3">
+<h3 id="org7143f00"><a href="shell.html">셸</a> 커맨드</h3>
+<div class="outline-text-3" id="text-org7143f00">
 <p>
 <a href="shell.html">셸</a> 커맨드를 실행시키기 위해 대충 두 가지 함수가 있다.
 </p>
@@ -389,13 +386,13 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 </div>
 </div>
 </div>
-<div id="outline-container-org9baec5a" class="outline-2">
-<h2 id="org9baec5a">에러 노트</h2>
-<div class="outline-text-2" id="text-org9baec5a">
+<div id="outline-container-orga66eacf" class="outline-2">
+<h2 id="orga66eacf">에러 노트</h2>
+<div class="outline-text-2" id="text-orga66eacf">
 </div>
-<div id="outline-container-org8f60fce" class="outline-3">
-<h3 id="org8f60fce">commandp</h3>
-<div class="outline-text-3" id="text-org8f60fce">
+<div id="outline-container-org9773cfb" class="outline-3">
+<h3 id="org9773cfb">commandp</h3>
+<div class="outline-text-3" id="text-org9773cfb">
 <blockquote>
 <p>
 Wrong type argument: commandp, your-function
@@ -415,9 +412,9 @@ Wrong type argument: commandp, your-function
 </div>
 </div>
 </div>
-<div id="outline-container-org0eb437c" class="outline-3">
-<h3 id="org0eb437c">안 쓰는 매개변수</h3>
-<div class="outline-text-3" id="text-org0eb437c">
+<div id="outline-container-orgc33f11d" class="outline-3">
+<h3 id="orgc33f11d">안 쓰는 매개변수</h3>
+<div class="outline-text-3" id="text-orgc33f11d">
 <p>
 예를 들어 아래와 같은 코드에서
 </p>
@@ -456,9 +453,6 @@ Unused lexical argument 'bar'
      data-ad-slot="4306465772"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </div>
 <hr /><div class="backlinks-container">
 <h1>이 글을 링크하는 글들</h1>
@@ -492,9 +486,6 @@ Unused lexical argument 'bar'
      data-ad-slot="4306465772"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </div>
 </div>
 <div class="content-container">
@@ -514,5 +505,10 @@ gtag('js', new Date());
 gtag('config', 'UA-44534026-1');
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  var elements = document.getElementsByClassName('adsbygoogle');
+  Array.prototype.forEach.call(elements, function(e) {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  })</script>
 </body>
 </html>

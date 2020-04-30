@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -64,26 +65,31 @@
 <section class="content">
 <header>
 <h1>Org Mode</h1>
-<div class="title-date">2020년 4월 16일 수정</div>
+<div class="title-date">2020년 4월 30일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf6a7ae6">설정 팁</a>
+<li><a href="#orgbc62a2d">설정 팁</a>
 <ul>
-<li><a href="#org196e7c0">링크 렌더링 하지 않기</a></li>
+<li><a href="#orgd7fe398">링크 렌더링 하지 않기</a></li>
 </ul>
 </li>
-<li><a href="#orgf8eff63">문법</a>
+<li><a href="#orgb0e01cd">문법</a>
 <ul>
-<li><a href="#org351f07d">헤더</a></li>
-<li><a href="#orgf6a3eb7">기본 문법들</a></li>
-<li><a href="#org01b12e9">블록 문법들</a></li>
-<li><a href="#org8d2013c">테이블</a></li>
-<li><a href="#org08436ce">기타</a></li>
+<li><a href="#org44bdae8">헤더</a></li>
+<li><a href="#orgef66b9f">기본 문법들</a></li>
+<li><a href="#org1de09e9">블록 문법들</a></li>
+<li><a href="#org5cd5013">테이블</a></li>
+<li><a href="#org0d5945d">기타</a></li>
 </ul>
 </li>
-<li><a href="#org29aa31a">관련된 글들</a></li>
+<li><a href="#org13e6035">팁</a>
+<ul>
+<li><a href="#org67e1a1b">매크로(Macro)</a></li>
+</ul>
+</li>
+<li><a href="#org23ba781">관련된 글들</a></li>
 </ul>
 </div>
 </div>
@@ -95,13 +101,13 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 거대한 <a href="emacs.html">Emacs</a> 킬러 소프트웨어입니다.
 </p>
 
-<div id="outline-container-orgf6a7ae6" class="outline-2">
-<h2 id="orgf6a7ae6">설정 팁</h2>
-<div class="outline-text-2" id="text-orgf6a7ae6">
+<div id="outline-container-orgbc62a2d" class="outline-2">
+<h2 id="orgbc62a2d">설정 팁</h2>
+<div class="outline-text-2" id="text-orgbc62a2d">
 </div>
-<div id="outline-container-org196e7c0" class="outline-3">
-<h3 id="org196e7c0">링크 렌더링 하지 않기</h3>
-<div class="outline-text-3" id="text-org196e7c0">
+<div id="outline-container-orgd7fe398" class="outline-3">
+<h3 id="orgd7fe398">링크 렌더링 하지 않기</h3>
+<div class="outline-text-3" id="text-orgd7fe398">
 <p>
 <a href="doom-emacs.html">Doom Emacs</a>나 <a href="spacemacs.html">Spacemacs</a>의
 기본 설정 상태에서는 링크가 자동으로 렌더링 되어서 보기
@@ -120,13 +126,13 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8eff63" class="outline-2">
-<h2 id="orgf8eff63">문법</h2>
-<div class="outline-text-2" id="text-orgf8eff63">
+<div id="outline-container-orgb0e01cd" class="outline-2">
+<h2 id="orgb0e01cd">문법</h2>
+<div class="outline-text-2" id="text-orgb0e01cd">
 </div>
-<div id="outline-container-org351f07d" class="outline-3">
-<h3 id="org351f07d">헤더</h3>
-<div class="outline-text-3" id="text-org351f07d">
+<div id="outline-container-org44bdae8" class="outline-3">
+<h3 id="org44bdae8">헤더</h3>
+<div class="outline-text-3" id="text-org44bdae8">
 <dl class="org-dl">
 <dt><code>#+TITLE: Title Text</code></dt><dd>문서의 제목</dd>
 <dt><code>#+DESCRIPTION: Description Text</code></dt><dd>문서의 핵심을 정리하는 내용. 익스포트
@@ -139,9 +145,9 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </dl>
 </div>
 </div>
-<div id="outline-container-orgf6a3eb7" class="outline-3">
-<h3 id="orgf6a3eb7">기본 문법들</h3>
-<div class="outline-text-3" id="text-orgf6a3eb7">
+<div id="outline-container-orgef66b9f" class="outline-3">
+<h3 id="orgef66b9f">기본 문법들</h3>
+<div class="outline-text-3" id="text-orgef66b9f">
 <ul class="org-ul">
 <li><code>* Heading 1</code></li>
 <li><code>** Heading 2</code></li>
@@ -152,9 +158,9 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </ul>
 </div>
 </div>
-<div id="outline-container-org01b12e9" class="outline-3">
-<h3 id="org01b12e9">블록 문법들</h3>
-<div class="outline-text-3" id="text-org01b12e9">
+<div id="outline-container-org1de09e9" class="outline-3">
+<h3 id="org1de09e9">블록 문법들</h3>
+<div class="outline-text-3" id="text-org1de09e9">
 <dl class="org-dl">
 <dt><code>#+BEGIN_SRC</code> pre 내용 <code>#+END_SRC</code></dt><dd>코드 블록</dd>
 <dt><code>#+BEGIN_SRC python</code> Python 코드의 pre 블록 <code>#+END_SRC</code></dt><dd>지원되는 언어는 매우 많다. 예를 들어 c, python, swift, lisp, bash 등등</dd>
@@ -163,9 +169,9 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </dl>
 </div>
 </div>
-<div id="outline-container-org8d2013c" class="outline-3">
-<h3 id="org8d2013c">테이블</h3>
-<div class="outline-text-3" id="text-org8d2013c">
+<div id="outline-container-org5cd5013" class="outline-3">
+<h3 id="org5cd5013">테이블</h3>
+<div class="outline-text-3" id="text-org5cd5013">
 <p>
 아래와 같은 식으로 헤더를 쓰고
 </p>
@@ -191,18 +197,53 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 </p>
 </div>
 </div>
-<div id="outline-container-org08436ce" class="outline-3">
-<h3 id="org08436ce">기타</h3>
-<div class="outline-text-3" id="text-org08436ce">
+<div id="outline-container-org0d5945d" class="outline-3">
+<h3 id="org0d5945d">기타</h3>
+<div class="outline-text-3" id="text-org0d5945d">
 <dl class="org-dl">
 <dt><code>-----</code></dt><dd>줄 긋기(hr 태그로 익스포트)</dd>
 </dl>
 </div>
 </div>
 </div>
-<div id="outline-container-org29aa31a" class="outline-2">
-<h2 id="org29aa31a">관련된 글들</h2>
-<div class="outline-text-2" id="text-org29aa31a">
+<div id="outline-container-org13e6035" class="outline-2">
+<h2 id="org13e6035">팁</h2>
+<div class="outline-text-2" id="text-org13e6035">
+</div>
+<div id="outline-container-org67e1a1b" class="outline-3">
+<h3 id="org67e1a1b">매크로(Macro)</h3>
+<div class="outline-text-3" id="text-org67e1a1b">
+<p>
+자주 사용하는 내용은 특정 키워드로 매크로(macro)를 만들어서 사용할 수 있다.
+매크로는 <code>org-export-global-macros</code> 리스트를 세팅해서 만들 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-export-global-macros</span>
+      <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">(</span><span style="color: #98be65;">"copyright"</span> . <span style="color: #98be65;">"* Copyright 1900 Fossil"</span><span style="color: #98be65;">)</span>
+        <span style="color: #98be65;">(</span><span style="color: #98be65;">"oops"</span> . <span style="color: #98be65;">"@@html:&lt;b&gt;&lt;i&gt;OOPS!&lt;/i&gt;&lt;/b&gt;@@"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+위는 두 가지 매크로를 선언한 예이다. 이 매크로는 <code>{{{name}}}</code> 의 문법으로 사용이 가능하다.
+</p>
+
+<p>
+예를 들어 org 문서에 <code>{{{copyright}}}</code> 라고 쓰게 되면
+익스포트 시 해당 내용이 뒤에 선언한 내용으로 치환되어서 익스포트 된다.
+따라서 1단계 제목(heading)이 해당 위치에 표시된다.
+</p>
+
+<p>
+그 아래의 매크로는 <code>{{{oops}}}</code> 라고 쓰게 되면 역시 뒤의 내용으로 치환된 후 익스포트가 되는데,
+<code>@@html:...@@</code> 문법은 HTML 태그를 쓸 때 사용하는 org 문법이다.
+즉 위 매크로가 HTML로 익스포트 되면 굵고 기울어진 "OOPS!" 를 볼 수 있다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org23ba781" class="outline-2">
+<h2 id="org23ba781">관련된 글들</h2>
+<div class="outline-text-2" id="text-org23ba781">
 <ul class="org-ul">
 <li><a target="_blank" href="https://orgmode.org">🌏Org Mode 공식 홈페이지</a></li>
 </ul>

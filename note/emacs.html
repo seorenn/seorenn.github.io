@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -69,22 +70,22 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd896605">설정 팁</a>
+<li><a href="#org1c90205">설정 팁</a>
 <ul>
-<li><a href="#org077b232">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</a></li>
-<li><a href="#orgf2092dd">시작 시 풀스크린 모드로 만들기</a></li>
+<li><a href="#org764a7fd">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</a></li>
+<li><a href="#org5b0f556">시작 시 풀스크린 모드로 만들기</a></li>
 </ul>
 </li>
-<li><a href="#orge25c1e4">메모</a>
+<li><a href="#orgb8d6eba">메모</a>
 <ul>
-<li><a href="#org3809dab">멈추는 현상(freezing) 디버깅 하기</a></li>
-<li><a href="#org6395a72">터미널에서 트루컬러 이맥스 사용하기</a></li>
-<li><a href="#org7f7d65f">Tmux 안의 이맥스에서 트루컬러 사용하기</a></li>
-<li><a href="#org186f38c">CRLF to LF</a></li>
-<li><a href="#org701a94c">셸에서 이맥스 스크립트 실행시키기</a></li>
+<li><a href="#org7d91828">멈추는 현상(freezing) 디버깅 하기</a></li>
+<li><a href="#orgf7c8bac">터미널에서 트루컬러 이맥스 사용하기</a></li>
+<li><a href="#org5f7731a">Tmux 안의 이맥스에서 트루컬러 사용하기</a></li>
+<li><a href="#org3d2ee7d">CRLF to LF</a></li>
+<li><a href="#org0d19712">셸에서 이맥스 스크립트 실행시키기</a></li>
 </ul>
 </li>
-<li><a href="#orgd21599a">외부 링크</a></li>
+<li><a href="#org9718715">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -102,13 +103,13 @@
 Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </p>
 
-<div id="outline-container-orgd896605" class="outline-2">
-<h2 id="orgd896605">설정 팁</h2>
-<div class="outline-text-2" id="text-orgd896605">
+<div id="outline-container-org1c90205" class="outline-2">
+<h2 id="org1c90205">설정 팁</h2>
+<div class="outline-text-2" id="text-org1c90205">
 </div>
-<div id="outline-container-org077b232" class="outline-3">
-<h3 id="org077b232">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</h3>
-<div class="outline-text-3" id="text-org077b232">
+<div id="outline-container-org764a7fd" class="outline-3">
+<h3 id="org764a7fd">열어둔 파일이 외부에서 변경되면 내용 자동으로 갱신하기</h3>
+<div class="outline-text-3" id="text-org764a7fd">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #dcaeea;">auto-revert-mode</span><span style="color: #51afef;">)</span>
 </pre>
@@ -118,9 +119,9 @@ Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf2092dd" class="outline-3">
-<h3 id="orgf2092dd">시작 시 풀스크린 모드로 만들기</h3>
-<div class="outline-text-3" id="text-orgf2092dd">
+<div id="outline-container-org5b0f556" class="outline-3">
+<h3 id="org5b0f556">시작 시 풀스크린 모드로 만들기</h3>
+<div class="outline-text-3" id="text-org5b0f556">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">add-hook</span> <span style="color: #51afef;">'</span><span style="color: #dcaeea;">window-setup-hook</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">toggle-frame-fullscreen</span><span style="color: #51afef;">)</span>
 </pre>
@@ -131,13 +132,13 @@ Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </div>
 </div>
 </div>
-<div id="outline-container-orge25c1e4" class="outline-2">
-<h2 id="orge25c1e4">메모</h2>
-<div class="outline-text-2" id="text-orge25c1e4">
+<div id="outline-container-orgb8d6eba" class="outline-2">
+<h2 id="orgb8d6eba">메모</h2>
+<div class="outline-text-2" id="text-orgb8d6eba">
 </div>
-<div id="outline-container-org3809dab" class="outline-3">
-<h3 id="org3809dab">멈추는 현상(freezing) 디버깅 하기</h3>
-<div class="outline-text-3" id="text-org3809dab">
+<div id="outline-container-org7d91828" class="outline-3">
+<h3 id="org7d91828">멈추는 현상(freezing) 디버깅 하기</h3>
+<div class="outline-text-3" id="text-org7d91828">
 <p>
 모종의 사유로 인해 Emacs 가 멈췄을 경우 <code>SIGUSR2</code> 신호를 주면
 back-trace를 얻을 수도 있다.
@@ -174,9 +175,9 @@ back-trace를 얻을 수도 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org6395a72" class="outline-3">
-<h3 id="org6395a72">터미널에서 트루컬러 이맥스 사용하기</h3>
-<div class="outline-text-3" id="text-org6395a72">
+<div id="outline-container-orgf7c8bac" class="outline-3">
+<h3 id="orgf7c8bac">터미널에서 트루컬러 이맥스 사용하기</h3>
+<div class="outline-text-3" id="text-orgf7c8bac">
 <p>
 iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제대로 지원하기 위해서
 약간의 트윅이 필요하다. 참고로 이 트윅은 <a href="macos.html">macOS</a>에서 확인해봤다.
@@ -235,9 +236,9 @@ iTerm2 같은 트루컬러를 지원하는 터미널에서 테마 색상을 제�
 </p>
 </div>
 </div>
-<div id="outline-container-org7f7d65f" class="outline-3">
-<h3 id="org7f7d65f">Tmux 안의 이맥스에서 트루컬러 사용하기</h3>
-<div class="outline-text-3" id="text-org7f7d65f">
+<div id="outline-container-org5f7731a" class="outline-3">
+<h3 id="org5f7731a">Tmux 안의 이맥스에서 트루컬러 사용하기</h3>
+<div class="outline-text-3" id="text-org5f7731a">
 <p>
 <a href="tmux.html">Tmux</a> 안에서 기동시킬 경우 색상이 이상하게 표시될 수 있다.
 이 경우 아마도 <a href="tmux.html">Tmux</a>가 사용하는
@@ -293,9 +294,9 @@ emacs 를 아래 커맨드로 실행시켜 보자.
 </p>
 </div>
 </div>
-<div id="outline-container-org186f38c" class="outline-3">
-<h3 id="org186f38c">CRLF to LF</h3>
-<div class="outline-text-3" id="text-org186f38c">
+<div id="outline-container-org3d2ee7d" class="outline-3">
+<h3 id="org3d2ee7d">CRLF to LF</h3>
+<div class="outline-text-3" id="text-org3d2ee7d">
 <p>
 요즘은 별로 그럴 일은 없겠지만,
 개행문자가 DOS 파일 타입(CRLF)과
@@ -317,9 +318,9 @@ CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-org701a94c" class="outline-3">
-<h3 id="org701a94c">셸에서 이맥스 스크립트 실행시키기</h3>
-<div class="outline-text-3" id="text-org701a94c">
+<div id="outline-container-org0d19712" class="outline-3">
+<h3 id="org0d19712">셸에서 이맥스 스크립트 실행시키기</h3>
+<div class="outline-text-3" id="text-org0d19712">
 <p>
 특정 <a href="emacs-lisp.html">Emacs Lisp</a>의 특정 함수 하나를 <a href="shell.html">셸</a>에서 실행하고 싶은 경우
 </p>
@@ -380,9 +381,9 @@ CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd21599a" class="outline-2">
-<h2 id="orgd21599a">외부 링크</h2>
-<div class="outline-text-2" id="text-orgd21599a">
+<div id="outline-container-org9718715" class="outline-2">
+<h2 id="org9718715">외부 링크</h2>
+<div class="outline-text-2" id="text-org9718715">
 <ul class="org-ul">
 <li><a target="_blank" href="https://beepb00p.xyz/pkm-search.html">🌏Building personal search infrastructure for your knowledge and code</a>:
 Overview of search tools for desktop and mobile; using Emacs and Ripgrep as desktop search engine.</li>
@@ -402,6 +403,13 @@ Overview of search tools for desktop and mobile; using Emacs and Ripgrep as desk
 </div>
 <hr /><div class="backlinks-container">
 <h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
+<div class="article-link-date">
+2020년 4월 30일 수정</div>
+</div>
+</div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
@@ -449,13 +457,6 @@ Overview of search tools for desktop and mobile; using Emacs and Ripgrep as desk
 <h2><a class="article-link-title" href="/note/spacemacs.html">Spacemacs</a></h2>
 <div class="article-link-date">
 2020년 4월 17일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
-<div class="article-link-date">
-2020년 4월 16일 수정</div>
 </div>
 </div>
 <div class="article-link">

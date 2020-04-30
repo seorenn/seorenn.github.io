@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -64,15 +65,15 @@
 <section class="content">
 <header>
 <h1>Flutter</h1>
-<div class="title-date">2020년 4월 19일 수정</div>
+<div class="title-date">2020년 4월 30일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc843d9d">문제 해결</a>
+<li><a href="#org27656bd">문제 해결</a>
 <ul>
-<li><a href="#org2183aaa">macOS에서 개발자 인증 문제</a></li>
-<li><a href="#org91913d3">프레임워크 iOS 아키텍처 오류</a></li>
+<li><a href="#org722a689">macOS에서 개발자 인증 문제</a></li>
+<li><a href="#org37cb011">프레임워크 iOS 아키텍처 오류</a></li>
 </ul>
 </li>
 </ul>
@@ -88,13 +89,13 @@ Flutter(플러터)는 Dart라는 한 가지 언어로 iOS, Android 등
 더 이상의 자세한 소개는 생략한다.
 </p>
 
-<div id="outline-container-orgc843d9d" class="outline-2">
-<h2 id="orgc843d9d">문제 해결</h2>
-<div class="outline-text-2" id="text-orgc843d9d">
+<div id="outline-container-org27656bd" class="outline-2">
+<h2 id="org27656bd">문제 해결</h2>
+<div class="outline-text-2" id="text-org27656bd">
 </div>
-<div id="outline-container-org2183aaa" class="outline-3">
-<h3 id="org2183aaa">macOS에서 개발자 인증 문제</h3>
-<div class="outline-text-3" id="text-org2183aaa">
+<div id="outline-container-org722a689" class="outline-3">
+<h3 id="org722a689">macOS에서 개발자 인증 문제</h3>
+<div class="outline-text-3" id="text-org722a689">
 <p>
 Catalina 등 최신 <a href="macos.html">macOS</a>에서 flutter <a href="cli.html">CLI</a>
 도구를 사용하는 중 이런 오류가 나면서 커맨드가 동작하지 않는 경우가 있다.
@@ -123,13 +124,13 @@ Flutter "<code>idevice_id</code>" cannot be opened because the developer cannot 
 </p>
 
 <p>
-가장 좋은 해결 방법은 구글 Flutter 개발팀이 애플의 인증을 받는 건데 왜 안 할까?
+가장 좋은 해결 방법은 구글 Flutter 개발팀이 <a href="apple.html">애플</a>의 인증을 받는 건데 왜 안 할까?
 </p>
 </div>
 </div>
-<div id="outline-container-org91913d3" class="outline-3">
-<h3 id="org91913d3">프레임워크 iOS 아키텍처 오류</h3>
-<div class="outline-text-3" id="text-org91913d3">
+<div id="outline-container-org37cb011" class="outline-3">
+<h3 id="org37cb011">프레임워크 iOS 아키텍처 오류</h3>
+<div class="outline-text-3" id="text-org37cb011">
 <p>
 <code>run</code> 커맨드로 실행 시 여러 iOS 플랫폼 용으로 빌드를 하다 보면
 이상하게 아래와 같은 오류가 나면서 빌드가 실패하는 케이스를 수 차례 겪었다.

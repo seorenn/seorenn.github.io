@@ -249,6 +249,8 @@ body {
 #table-of-contents h2 {
   margin: 0;
   font-size: 1.2rem;
+  border-top: none;
+  padding-top: 4px;
 }
 
 #table-of-contents h2 img {
@@ -319,6 +321,8 @@ hr.spliter {
 .article-link-title-block h2 {
   margin-top: 1.2rem !important;
   margin-bottom: 0 !important;
+  border-top: none !important;
+  padding: 0 !important;
 }
 
 .article-link-title {
@@ -396,6 +400,9 @@ hr.spliter {
   font-size: 1.4rem;
   margin-top: 3.6rem;
   margin-bottom: 1rem;
+  padding-top: 16px;
+  padding-bottom: 0;
+  border-top: 0.5px #5c6267 dashed;
 }
 
 .content h3 {

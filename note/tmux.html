@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -69,20 +70,20 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdbec731">사용법</a></li>
-<li><a href="#org414bddb">설정 방법</a>
+<li><a href="#orgf0fdc88">사용법</a></li>
+<li><a href="#org655a948">설정 방법</a>
 <ul>
-<li><a href="#orga3b54f6">리더 키(Prefix) 변경하기</a></li>
+<li><a href="#org88c84b9">리더 키(Prefix) 변경하기</a></li>
 </ul>
 </li>
-<li><a href="#orgc6359c3">단축키</a></li>
-<li><a href="#org3b600fa">기타 팁</a>
+<li><a href="#orgeeee50b">단축키</a></li>
+<li><a href="#orgbc93601">기타 팁</a>
 <ul>
-<li><a href="#org43fdf1a">선택 영역 복사하기</a></li>
-<li><a href="#org6dd1c34">종료하지 않고 설정 다시 읽어 들이기</a></li>
+<li><a href="#org897d401">선택 영역 복사하기</a></li>
+<li><a href="#orgbb00198">종료하지 않고 설정 다시 읽어 들이기</a></li>
 </ul>
 </li>
-<li><a href="#orgffda585">관련된 글들</a></li>
+<li><a href="#org0fc4d51">관련된 글들</a></li>
 </ul>
 </div>
 </div>
@@ -96,9 +97,9 @@ Tmux 는 터미널 멀티플렉서라고 불리는 도구다.
 비슷하면서도 원조 격인 <code>screen</code> 이라는 도구에 영향을 많이 받은 것으로 보인다.
 </p>
 
-<div id="outline-container-orgdbec731" class="outline-2">
-<h2 id="orgdbec731">사용법</h2>
-<div class="outline-text-2" id="text-orgdbec731">
+<div id="outline-container-orgf0fdc88" class="outline-2">
+<h2 id="orgf0fdc88">사용법</h2>
+<div class="outline-text-2" id="text-orgf0fdc88">
 <p>
 그냥 실행시키면 실행은 된다.
 </p>
@@ -124,16 +125,16 @@ Tmux 는 터미널 멀티플렉서라고 불리는 도구다.
 </div>
 </div>
 </div>
-<div id="outline-container-org414bddb" class="outline-2">
-<h2 id="org414bddb">설정 방법</h2>
-<div class="outline-text-2" id="text-org414bddb">
+<div id="outline-container-org655a948" class="outline-2">
+<h2 id="org655a948">설정 방법</h2>
+<div class="outline-text-2" id="text-org655a948">
 <p>
 <code>~/.tmux.conf</code> 파일에 원하는 설정을 기록할 수 있다.
 </p>
 </div>
-<div id="outline-container-orga3b54f6" class="outline-3">
-<h3 id="orga3b54f6">리더 키(Prefix) 변경하기</h3>
-<div class="outline-text-3" id="text-orga3b54f6">
+<div id="outline-container-org88c84b9" class="outline-3">
+<h3 id="org88c84b9">리더 키(Prefix) 변경하기</h3>
+<div class="outline-text-3" id="text-org88c84b9">
 <p>
 기본 리더키는 <code>^b</code> (Ctrl-B)로 설정되어 있다.
 이걸 바꾸려면, 예를 들어 리더 키를 <code>^\</code> 로 바꾸려면
@@ -163,9 +164,9 @@ set-option -g prefix2 C-']'
 </div>
 </div>
 </div>
-<div id="outline-container-orgc6359c3" class="outline-2">
-<h2 id="orgc6359c3">단축키</h2>
-<div class="outline-text-2" id="text-orgc6359c3">
+<div id="outline-container-orgeeee50b" class="outline-2">
+<h2 id="orgeeee50b">단축키</h2>
+<div class="outline-text-2" id="text-orgeeee50b">
 <p>
 아래에 언급하는 모든 단축키는 리더 키(Prefix)를 먼저 누른 후 눌러야 한다.
 참고로 리더 키는 앞서 언급한 대로
@@ -188,13 +189,13 @@ set-option -g prefix2 C-']'
 </dl>
 </div>
 </div>
-<div id="outline-container-org3b600fa" class="outline-2">
-<h2 id="org3b600fa">기타 팁</h2>
-<div class="outline-text-2" id="text-org3b600fa">
+<div id="outline-container-orgbc93601" class="outline-2">
+<h2 id="orgbc93601">기타 팁</h2>
+<div class="outline-text-2" id="text-orgbc93601">
 </div>
-<div id="outline-container-org43fdf1a" class="outline-3">
-<h3 id="org43fdf1a">선택 영역 복사하기</h3>
-<div class="outline-text-3" id="text-org43fdf1a">
+<div id="outline-container-org897d401" class="outline-3">
+<h3 id="org897d401">선택 영역 복사하기</h3>
+<div class="outline-text-3" id="text-org897d401">
 <p>
 마우스로 드래그 해서 <code>^C</code> 혹은 Command-C 를 눌렀는데 복사가 안 된다면
 <code>^W</code> (Ctrl+W)를 눌러보자.
@@ -208,9 +209,9 @@ set-option -g prefix2 C-']'
 </p>
 </div>
 </div>
-<div id="outline-container-org6dd1c34" class="outline-3">
-<h3 id="org6dd1c34">종료하지 않고 설정 다시 읽어 들이기</h3>
-<div class="outline-text-3" id="text-org6dd1c34">
+<div id="outline-container-orgbb00198" class="outline-3">
+<h3 id="orgbb00198">종료하지 않고 설정 다시 읽어 들이기</h3>
+<div class="outline-text-3" id="text-orgbb00198">
 <p>
 tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 리더 키(Prefix)를 누르고 아래 커맨드를 입력해 보자.
@@ -238,9 +239,9 @@ tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 </div>
 </div>
 </div>
-<div id="outline-container-orgffda585" class="outline-2">
-<h2 id="orgffda585">관련된 글들</h2>
-<div class="outline-text-2" id="text-orgffda585">
+<div id="outline-container-org0fc4d51" class="outline-2">
+<h2 id="org0fc4d51">관련된 글들</h2>
+<div class="outline-text-2" id="text-org0fc4d51">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/gpakosz/.tmux">🌏🇫🇷 Oh My Tmux! Pretty &amp; versatile tmux configuration</a>:
 잘 만들어진 설정을 공유하고 있으며 그대로 쓰기에도 괜찮고

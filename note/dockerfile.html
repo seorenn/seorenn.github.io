@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -69,10 +70,10 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org049360d">평범한 스펙 예제</a></li>
-<li><a href="#orgc4edec2">사용자 지정</a></li>
-<li><a href="#org4fc8706">Health Checking</a></li>
-<li><a href="#org75d9fec">Multi Stage Building</a></li>
+<li><a href="#org1f75921">평범한 스펙 예제</a></li>
+<li><a href="#org90df230">사용자 지정</a></li>
+<li><a href="#org52bbe07">Health Checking</a></li>
+<li><a href="#orgbe5f0f0">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -81,9 +82,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-org049360d" class="outline-2">
-<h2 id="org049360d">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-org049360d">
+<div id="outline-container-org1f75921" class="outline-2">
+<h2 id="org1f75921">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-org1f75921">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">debian:buster</span>
 
@@ -128,9 +129,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-orgc4edec2" class="outline-2">
-<h2 id="orgc4edec2">사용자 지정</h2>
-<div class="outline-text-2" id="text-orgc4edec2">
+<div id="outline-container-org90df230" class="outline-2">
+<h2 id="org90df230">사용자 지정</h2>
+<div class="outline-text-2" id="text-org90df230">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
@@ -145,9 +146,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org4fc8706" class="outline-2">
-<h2 id="org4fc8706">Health Checking</h2>
-<div class="outline-text-2" id="text-org4fc8706">
+<div id="outline-container-org52bbe07" class="outline-2">
+<h2 id="org52bbe07">Health Checking</h2>
+<div class="outline-text-2" id="text-org52bbe07">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -157,9 +158,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </div>
 </div>
 </div>
-<div id="outline-container-org75d9fec" class="outline-2">
-<h2 id="org75d9fec">Multi Stage Building</h2>
-<div class="outline-text-2" id="text-org75d9fec">
+<div id="outline-container-orgbe5f0f0" class="outline-2">
+<h2 id="orgbe5f0f0">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-orgbe5f0f0">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...

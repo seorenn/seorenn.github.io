@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -69,14 +70,14 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org943e89b">기본 사용법</a>
+<li><a href="#org814bc7e">기본 사용법</a>
 <ul>
-<li><a href="#orgdc1f297">현재 디렉터리에서 특정 파일 검색하기</a></li>
-<li><a href="#org588f7c1">특정 디렉터리에서 특정 파일 검색하기</a></li>
-<li><a href="#org83af791">검색 패턴</a></li>
-<li><a href="#org5355456">대소문자 무시하기</a></li>
-<li><a href="#orgde4ba66">검색 종류 지정하기</a></li>
-<li><a href="#org7b04496">검색 내용으로 특정 처리하기(exec)</a></li>
+<li><a href="#orgce1c3f7">현재 디렉터리에서 특정 파일 검색하기</a></li>
+<li><a href="#org60a518e">특정 디렉터리에서 특정 파일 검색하기</a></li>
+<li><a href="#org766b212">검색 패턴</a></li>
+<li><a href="#org9bc4e7b">대소문자 무시하기</a></li>
+<li><a href="#org4900725">검색 종류 지정하기</a></li>
+<li><a href="#orgd103c68">검색 내용으로 특정 처리하기(exec)</a></li>
 </ul>
 </li>
 </ul>
@@ -87,13 +88,13 @@
 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-org943e89b" class="outline-2">
-<h2 id="org943e89b">기본 사용법</h2>
-<div class="outline-text-2" id="text-org943e89b">
+<div id="outline-container-org814bc7e" class="outline-2">
+<h2 id="org814bc7e">기본 사용법</h2>
+<div class="outline-text-2" id="text-org814bc7e">
 </div>
-<div id="outline-container-orgdc1f297" class="outline-3">
-<h3 id="orgdc1f297">현재 디렉터리에서 특정 파일 검색하기</h3>
-<div class="outline-text-3" id="text-orgdc1f297">
+<div id="outline-container-orgce1c3f7" class="outline-3">
+<h3 id="orgce1c3f7">현재 디렉터리에서 특정 파일 검색하기</h3>
+<div class="outline-text-3" id="text-orgce1c3f7">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">find</span> . -name <span style="color: #98be65;">"somename.ext"</span>
 </pre>
@@ -105,9 +106,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org588f7c1" class="outline-3">
-<h3 id="org588f7c1">특정 디렉터리에서 특정 파일 검색하기</h3>
-<div class="outline-text-3" id="text-org588f7c1">
+<div id="outline-container-org60a518e" class="outline-3">
+<h3 id="org60a518e">특정 디렉터리에서 특정 파일 검색하기</h3>
+<div class="outline-text-3" id="text-org60a518e">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">find</span> /foo/bar <span style="color: #98be65;">"somename.ext"</span>
 </pre>
@@ -117,9 +118,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org83af791" class="outline-3">
-<h3 id="org83af791">검색 패턴</h3>
-<div class="outline-text-3" id="text-org83af791">
+<div id="outline-container-org766b212" class="outline-3">
+<h3 id="org766b212">검색 패턴</h3>
+<div class="outline-text-3" id="text-org766b212">
 <p>
 찾을 패턴으로 와일드카드를 사용할 수도 있다.
 </p>
@@ -132,9 +133,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org5355456" class="outline-3">
-<h3 id="org5355456">대소문자 무시하기</h3>
-<div class="outline-text-3" id="text-org5355456">
+<div id="outline-container-org9bc4e7b" class="outline-3">
+<h3 id="org9bc4e7b">대소문자 무시하기</h3>
+<div class="outline-text-3" id="text-org9bc4e7b">
 <p>
 기본적으로 이 도구는 대소문자를 가린다.
 만약 대소문자를 가리지 않으려면 <code>iname</code> 옵션을 사용할 수 있다.
@@ -145,9 +146,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgde4ba66" class="outline-3">
-<h3 id="orgde4ba66">검색 종류 지정하기</h3>
-<div class="outline-text-3" id="text-orgde4ba66">
+<div id="outline-container-org4900725" class="outline-3">
+<h3 id="org4900725">검색 종류 지정하기</h3>
+<div class="outline-text-3" id="text-org4900725">
 <p>
 만약 특정한 종류만 검색하고 싶다면 <code>type</code> 옵션을 사용할 수 있다.
 </p>
@@ -165,9 +166,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org7b04496" class="outline-3">
-<h3 id="org7b04496">검색 내용으로 특정 처리하기(exec)</h3>
-<div class="outline-text-3" id="text-org7b04496">
+<div id="outline-container-orgd103c68" class="outline-3">
+<h3 id="orgd103c68">검색 내용으로 특정 처리하기(exec)</h3>
+<div class="outline-text-3" id="text-orgd103c68">
 <p>
 <code>-exec</code> 옵션은 검색된 내용을 이용해 외부 도구를 실행시킬 수 있게 할 수 있다.
 </p>

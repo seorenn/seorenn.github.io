@@ -41,6 +41,7 @@
 <a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
 <a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
  <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
 </nav>
 </div>
 </header>
@@ -69,13 +70,13 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org03e5c29">설치</a></li>
-<li><a href="#org0e9960b">버전 목록</a></li>
-<li><a href="#orge6d2e8f">파이썬 설치하기</a></li>
-<li><a href="#org0c7e49a">기본 실행 버전 설정</a></li>
-<li><a href="#orge373f6a">virtualenv 지원</a></li>
-<li><a href="#orgd560812">설치 목록 업데이트</a></li>
-<li><a href="#org655e2f6">외부 링크</a></li>
+<li><a href="#org74ab7b8">설치</a></li>
+<li><a href="#orgb373ccb">버전 목록</a></li>
+<li><a href="#org51ed323">파이썬 설치하기</a></li>
+<li><a href="#orgce9ff04">기본 실행 버전 설정</a></li>
+<li><a href="#orgb418d73">virtualenv 지원</a></li>
+<li><a href="#orgc4587a9">설치 목록 업데이트</a></li>
+<li><a href="#orgb7d3ded">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -84,9 +85,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 시스템에 원하는 <a href="python.html">Python</a> 버전을 설치하고 특히 다중 버전을 동시에 설치하고 실행시키기 좋은 환경을 제공해 준다.
 </p>
 
-<div id="outline-container-org03e5c29" class="outline-2">
-<h2 id="org03e5c29">설치</h2>
-<div class="outline-text-2" id="text-org03e5c29">
+<div id="outline-container-org74ab7b8" class="outline-2">
+<h2 id="org74ab7b8">설치</h2>
+<div class="outline-text-2" id="text-org74ab7b8">
 <p>
 <a href="macos.html">macOS</a> 에서는
 <a href="homebrew.html">Homebrew</a> 로 설치하는 것이 편하다.
@@ -147,9 +148,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 </p>
 </div>
 </div>
-<div id="outline-container-org0e9960b" class="outline-2">
-<h2 id="org0e9960b">버전 목록</h2>
-<div class="outline-text-2" id="text-org0e9960b">
+<div id="outline-container-orgb373ccb" class="outline-2">
+<h2 id="orgb373ccb">버전 목록</h2>
+<div class="outline-text-2" id="text-orgb373ccb">
 <p>
 아래 커맨드를 이용해 설치할 수 있는 버전 목록을 얻을 수 있다.
 </p>
@@ -164,9 +165,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 </p>
 </div>
 </div>
-<div id="outline-container-orge6d2e8f" class="outline-2">
-<h2 id="orge6d2e8f">파이썬 설치하기</h2>
-<div class="outline-text-2" id="text-orge6d2e8f">
+<div id="outline-container-org51ed323" class="outline-2">
+<h2 id="org51ed323">파이썬 설치하기</h2>
+<div class="outline-text-2" id="text-org51ed323">
 <p>
 원하는 버전을 설치하려면,
 예를 들어 3.8.1 버전을 설치하려면 아래와 같은 커맨드를 사용하자.
@@ -199,9 +200,9 @@ pyenv는 <a href="python.html">Python</a> 버전을 관리하고 virtualenv 환�
 </div>
 </div>
 </div>
-<div id="outline-container-org0c7e49a" class="outline-2">
-<h2 id="org0c7e49a">기본 실행 버전 설정</h2>
-<div class="outline-text-2" id="text-org0c7e49a">
+<div id="outline-container-orgce9ff04" class="outline-2">
+<h2 id="orgce9ff04">기본 실행 버전 설정</h2>
+<div class="outline-text-2" id="text-orgce9ff04">
 <p>
 일단 pyenv로 파이썬을 설치 했더라도 바로 사용할 수는 없다.
 pyenv root 디렉터리에 설치가 되었기 때문이다.
@@ -230,9 +231,9 @@ pyenv root 디렉터리에 설치가 되었기 때문이다.
 </p>
 </div>
 </div>
-<div id="outline-container-orge373f6a" class="outline-2">
-<h2 id="orge373f6a">virtualenv 지원</h2>
-<div class="outline-text-2" id="text-orge373f6a">
+<div id="outline-container-orgb418d73" class="outline-2">
+<h2 id="orgb418d73">virtualenv 지원</h2>
+<div class="outline-text-2" id="text-orgb418d73">
 <p>
 파이썬을 새로 설치했다면 <code>virtualenv</code> 가 없을 테니 별도로 설치하자.
 </p>
@@ -266,9 +267,9 @@ my<sub>project</sub> 라는 virtualenv 환경을 생성하는 명령이다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd560812" class="outline-2">
-<h2 id="orgd560812">설치 목록 업데이트</h2>
-<div class="outline-text-2" id="text-orgd560812">
+<div id="outline-container-orgc4587a9" class="outline-2">
+<h2 id="orgc4587a9">설치 목록 업데이트</h2>
+<div class="outline-text-2" id="text-orgc4587a9">
 <p>
 가끔 새 버전 파이썬이 나왔는데
 pyenv의 설치 목록에는 아직 구 버전만 보인다면
@@ -291,9 +292,9 @@ pyenv의 설치 목록에는 아직 구 버전만 보인다면
 </p>
 </div>
 </div>
-<div id="outline-container-org655e2f6" class="outline-2">
-<h2 id="org655e2f6">외부 링크</h2>
-<div class="outline-text-2" id="text-org655e2f6">
+<div id="outline-container-orgb7d3ded" class="outline-2">
+<h2 id="orgb7d3ded">외부 링크</h2>
+<div class="outline-text-2" id="text-orgb7d3ded">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/pyenv/pyenv">🌏pyenv 공식 저장소 사이트</a></li>
 </ul>

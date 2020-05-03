@@ -70,15 +70,15 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc52ac8f">엔트리 포인트(Entry Point)</a></li>
-<li><a href="#org2500ca5">문자열 조합(String Interpolation)</a></li>
-<li><a href="#org0f7030b">함수(Function)</a></li>
-<li><a href="#org74600b4">루프(Loop)</a></li>
-<li><a href="#orgda06982">Map과 Filter</a></li>
-<li><a href="#orgd13fa7f">클래스(Class)</a>
+<li><a href="#org8d7dbf4">엔트리 포인트(Entry Point)</a></li>
+<li><a href="#orgf3c1d15">문자열 조합(String Interpolation)</a></li>
+<li><a href="#orgc755d5a">함수(Function)</a></li>
+<li><a href="#org2d68e50">루프(Loop)</a></li>
+<li><a href="#orge238898">Map과 Filter</a></li>
+<li><a href="#orgd59bd3c">클래스(Class)</a>
 <ul>
-<li><a href="#orgced5230">기본 형태</a></li>
-<li><a href="#orga30d739">Setter 그리고 Getter</a></li>
+<li><a href="#org1454fbe">기본 형태</a></li>
+<li><a href="#org1a3d886">Setter 그리고 Getter</a></li>
 </ul>
 </li>
 </ul>
@@ -106,9 +106,9 @@
 싫어하는 언어이지만 써야 하기 때문에 억지로 남기는 메모가 이어진다.
 </p>
 
-<div id="outline-container-orgc52ac8f" class="outline-2">
-<h2 id="orgc52ac8f">엔트리 포인트(Entry Point)</h2>
-<div class="outline-text-2" id="text-orgc52ac8f">
+<div id="outline-container-org8d7dbf4" class="outline-2">
+<h2 id="org8d7dbf4">엔트리 포인트(Entry Point)</h2>
+<div class="outline-text-2" id="text-org8d7dbf4">
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">main</span>() {
   print(<span style="color: #98be65;">'Hello World!'</span>);
@@ -125,9 +125,9 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </p>
 </div>
 </div>
-<div id="outline-container-org2500ca5" class="outline-2">
-<h2 id="org2500ca5">문자열 조합(String Interpolation)</h2>
-<div class="outline-text-2" id="text-org2500ca5">
+<div id="outline-container-orgf3c1d15" class="outline-2">
+<h2 id="orgf3c1d15">문자열 조합(String Interpolation)</h2>
+<div class="outline-text-2" id="text-orgf3c1d15">
 <div class="org-src-container">
 <pre class="src src-dart">print(<span style="color: #98be65;">'foo is </span><span style="color: #dcaeea;">$foo</span><span style="color: #98be65;">'</span>);
 </pre>
@@ -141,9 +141,9 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </div>
 </div>
 </div>
-<div id="outline-container-org0f7030b" class="outline-2">
-<h2 id="org0f7030b">함수(Function)</h2>
-<div class="outline-text-2" id="text-org0f7030b">
+<div id="outline-container-orgc755d5a" class="outline-2">
+<h2 id="orgc755d5a">함수(Function)</h2>
+<div class="outline-text-2" id="text-orgc755d5a">
 <p>
 그냥 함수를 정의하는 몇 가지 예를 보자.
 </p>
@@ -183,9 +183,9 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 </p>
 </div>
 </div>
-<div id="outline-container-org74600b4" class="outline-2">
-<h2 id="org74600b4">루프(Loop)</h2>
-<div class="outline-text-2" id="text-org74600b4">
+<div id="outline-container-org2d68e50" class="outline-2">
+<h2 id="org2d68e50">루프(Loop)</h2>
+<div class="outline-text-2" id="text-org2d68e50">
 <p>
 기본적은 for-loop 모양은 C 식과 거의 동일하다.
 </p>
@@ -207,9 +207,9 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 </div>
 </div>
 </div>
-<div id="outline-container-orgda06982" class="outline-2">
-<h2 id="orgda06982">Map과 Filter</h2>
-<div class="outline-text-2" id="text-orgda06982">
+<div id="outline-container-orge238898" class="outline-2">
+<h2 id="orge238898">Map과 Filter</h2>
+<div class="outline-text-2" id="text-orge238898">
 <p>
 Map은 리스트에 그냥 쓰면 된다.
 </p>
@@ -225,17 +225,21 @@ Map은 리스트에 그냥 쓰면 된다.
 </pre>
 </div>
 <p>
-아 왜지? 병신 같다.
+<code>where()</code> 의 결과를 바로 iteration 해도 상관은 없는데 바로 일반 리스트로 구하려면 <code>toList()</code> 로 변환해 줘야 한다는 점을 주의하자.
+</p>
+
+<p>
+뭐 하여간 구글은 필터를 싫어하는 걸까? 이유를 모르겠다. 그냥 병신 같다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd13fa7f" class="outline-2">
-<h2 id="orgd13fa7f">클래스(Class)</h2>
-<div class="outline-text-2" id="text-orgd13fa7f">
+<div id="outline-container-orgd59bd3c" class="outline-2">
+<h2 id="orgd59bd3c">클래스(Class)</h2>
+<div class="outline-text-2" id="text-orgd59bd3c">
 </div>
-<div id="outline-container-orgced5230" class="outline-3">
-<h3 id="orgced5230">기본 형태</h3>
-<div class="outline-text-3" id="text-orgced5230">
+<div id="outline-container-org1454fbe" class="outline-3">
+<h3 id="org1454fbe">기본 형태</h3>
+<div class="outline-text-3" id="text-org1454fbe">
 <p>
 기본적인 모양은 이런 식이다.
 </p>
@@ -278,9 +282,9 @@ Map은 리스트에 그냥 쓰면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-orga30d739" class="outline-3">
-<h3 id="orga30d739">Setter 그리고 Getter</h3>
-<div class="outline-text-3" id="text-orga30d739">
+<div id="outline-container-org1a3d886" class="outline-3">
+<h3 id="org1a3d886">Setter 그리고 Getter</h3>
+<div class="outline-text-3" id="text-org1a3d886">
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">SomeClass</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">SomeParentClass</span> {
   <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">age</span> = <span style="color: #da8548; font-weight: bold;">0</span>;

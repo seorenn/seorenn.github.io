@@ -70,15 +70,15 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org8d7dbf4">엔트리 포인트(Entry Point)</a></li>
-<li><a href="#orgf3c1d15">문자열 조합(String Interpolation)</a></li>
-<li><a href="#orgc755d5a">함수(Function)</a></li>
-<li><a href="#org2d68e50">루프(Loop)</a></li>
-<li><a href="#orge238898">Map과 Filter</a></li>
-<li><a href="#orgd59bd3c">클래스(Class)</a>
+<li><a href="#org645c98a">엔트리 포인트(Entry Point)</a></li>
+<li><a href="#org747a5f8">문자열 조합(String Interpolation)</a></li>
+<li><a href="#org892462d">함수(Function)</a></li>
+<li><a href="#org4911e31">루프(Loop)</a></li>
+<li><a href="#org96f5c3f">Map과 Filter</a></li>
+<li><a href="#org5b0286f">클래스(Class)</a>
 <ul>
-<li><a href="#org1454fbe">기본 형태</a></li>
-<li><a href="#org1a3d886">Setter 그리고 Getter</a></li>
+<li><a href="#org4251bb9">기본 형태</a></li>
+<li><a href="#orgcf299e6">Setter 그리고 Getter</a></li>
 </ul>
 </li>
 </ul>
@@ -106,9 +106,9 @@
 싫어하는 언어이지만 써야 하기 때문에 억지로 남기는 메모가 이어진다.
 </p>
 
-<div id="outline-container-org8d7dbf4" class="outline-2">
-<h2 id="org8d7dbf4">엔트리 포인트(Entry Point)</h2>
-<div class="outline-text-2" id="text-org8d7dbf4">
+<div id="outline-container-org645c98a" class="outline-2">
+<h2 id="org645c98a">엔트리 포인트(Entry Point)</h2>
+<div class="outline-text-2" id="text-org645c98a">
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">main</span>() {
   print(<span style="color: #98be65;">'Hello World!'</span>);
@@ -125,9 +125,9 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </p>
 </div>
 </div>
-<div id="outline-container-orgf3c1d15" class="outline-2">
-<h2 id="orgf3c1d15">문자열 조합(String Interpolation)</h2>
-<div class="outline-text-2" id="text-orgf3c1d15">
+<div id="outline-container-org747a5f8" class="outline-2">
+<h2 id="org747a5f8">문자열 조합(String Interpolation)</h2>
+<div class="outline-text-2" id="text-org747a5f8">
 <div class="org-src-container">
 <pre class="src src-dart">print(<span style="color: #98be65;">'foo is </span><span style="color: #dcaeea;">$foo</span><span style="color: #98be65;">'</span>);
 </pre>
@@ -141,15 +141,15 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </div>
 </div>
 </div>
-<div id="outline-container-orgc755d5a" class="outline-2">
-<h2 id="orgc755d5a">함수(Function)</h2>
-<div class="outline-text-2" id="text-orgc755d5a">
+<div id="outline-container-org892462d" class="outline-2">
+<h2 id="org892462d">함수(Function)</h2>
+<div class="outline-text-2" id="text-org892462d">
 <p>
 그냥 함수를 정의하는 몇 가지 예를 보자.
 </p>
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #c678dd;">someProcedure</span>() {
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+  <span style="color: #5B6268;">// ...</span>
 }
 
 <span style="color: #c678dd;">anotherProcedure</span>(<span style="color: #dcaeea;">value</span>) {
@@ -183,9 +183,9 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 </p>
 </div>
 </div>
-<div id="outline-container-org2d68e50" class="outline-2">
-<h2 id="org2d68e50">루프(Loop)</h2>
-<div class="outline-text-2" id="text-org2d68e50">
+<div id="outline-container-org4911e31" class="outline-2">
+<h2 id="org4911e31">루프(Loop)</h2>
+<div class="outline-text-2" id="text-org4911e31">
 <p>
 기본적은 for-loop 모양은 C 식과 거의 동일하다.
 </p>
@@ -199,7 +199,7 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 <code>forEach</code> 는 아래와 같이 리스트와 섞어서 쓰면 편하다.
 </p>
 <div class="org-src-container">
-<pre class="src src-dart"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">['alpha', 'beta', 'gamma'].forEach((e) =&gt; print(e));</span>
+<pre class="src src-dart"><span style="color: #5B6268;">// ['alpha', 'beta', 'gamma'].forEach((e) =&gt; print(e));</span>
 [<span style="color: #98be65;">'alpha'</span>, <span style="color: #98be65;">'beta'</span>, <span style="color: #98be65;">'gamma'</span>].forEach((<span style="color: #dcaeea;">e</span>) {
     print(e);
 });
@@ -207,9 +207,9 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 </div>
 </div>
 </div>
-<div id="outline-container-orge238898" class="outline-2">
-<h2 id="orge238898">Map과 Filter</h2>
-<div class="outline-text-2" id="text-orge238898">
+<div id="outline-container-org96f5c3f" class="outline-2">
+<h2 id="org96f5c3f">Map과 Filter</h2>
+<div class="outline-text-2" id="text-org96f5c3f">
 <p>
 Map은 리스트에 그냥 쓰면 된다.
 </p>
@@ -233,32 +233,32 @@ Map은 리스트에 그냥 쓰면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd59bd3c" class="outline-2">
-<h2 id="orgd59bd3c">클래스(Class)</h2>
-<div class="outline-text-2" id="text-orgd59bd3c">
+<div id="outline-container-org5b0286f" class="outline-2">
+<h2 id="org5b0286f">클래스(Class)</h2>
+<div class="outline-text-2" id="text-org5b0286f">
 </div>
-<div id="outline-container-org1454fbe" class="outline-3">
-<h3 id="org1454fbe">기본 형태</h3>
-<div class="outline-text-3" id="text-org1454fbe">
+<div id="outline-container-org4251bb9" class="outline-3">
+<h3 id="org4251bb9">기본 형태</h3>
+<div class="outline-text-3" id="text-org4251bb9">
 <p>
 기본적인 모양은 이런 식이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">SomeClass</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">SomeParentClass</span> {
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Property and Default Value</span>
+  <span style="color: #5B6268;">// Property and Default Value</span>
   <span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">name</span> = <span style="color: #98be65;">'Conrad'</span>;
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Constructor</span>
+  <span style="color: #5B6268;">// Constructor</span>
   <span style="color: #ECBE7B;">SomeClass</span>(<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">anotherName</span>) {
     name = anotherName;
   }
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Named Constructor</span>
+  <span style="color: #5B6268;">// Named Constructor</span>
   <span style="color: #ECBE7B;">SomeClass</span>.<span style="color: #c678dd;">anonymous</span>() {
     name = <span style="color: #98be65;">'Nonamed Who'</span>;
   }
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method</span>
+  <span style="color: #5B6268;">// Method</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">whoami</span>() {
     print(<span style="color: #98be65;">'I am </span><span style="color: #dcaeea;">$name</span><span style="color: #98be65;">'</span>);
   }
@@ -282,17 +282,17 @@ Map은 리스트에 그냥 쓰면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-org1a3d886" class="outline-3">
-<h3 id="org1a3d886">Setter 그리고 Getter</h3>
-<div class="outline-text-3" id="text-org1a3d886">
+<div id="outline-container-orgcf299e6" class="outline-3">
+<h3 id="orgcf299e6">Setter 그리고 Getter</h3>
+<div class="outline-text-3" id="text-orgcf299e6">
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">SomeClass</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">SomeParentClass</span> {
   <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">age</span> = <span style="color: #da8548; font-weight: bold;">0</span>;
   ...
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">bool get koreanAge {</span>
-  <span style="color: #5B6268;">//   </span><span style="color: #5B6268;">return age + 1;</span>
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">}</span>
+  <span style="color: #5B6268;">// bool get koreanAge {</span>
+  <span style="color: #5B6268;">//   return age + 1;</span>
+  <span style="color: #5B6268;">// }</span>
   <span style="color: #ECBE7B;">bool</span> <span style="color: #c678dd;">get</span> <span style="color: #dcaeea;">koreanAge</span> =&gt; <span style="color: #51afef;">this</span>.age + <span style="color: #da8548; font-weight: bold;">1</span>;
 
   <span style="color: #c678dd;">set</span> <span style="color: #c678dd;">koreanAge</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">korAge</span>) {
@@ -317,6 +317,16 @@ Map은 리스트에 그냥 쓰면 된다.
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</div>
+<hr /><div class="backlinks-container">
+<h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/flutter.html">Flutter</a></h2>
+<div class="article-link-date">
+2020년 5월 4일 수정</div>
+</div>
+</div>
 </div>
 </section>
 <div class="side-ad-container">

@@ -70,10 +70,10 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org1f75921">평범한 스펙 예제</a></li>
-<li><a href="#org90df230">사용자 지정</a></li>
-<li><a href="#org52bbe07">Health Checking</a></li>
-<li><a href="#orgbe5f0f0">Multi Stage Building</a></li>
+<li><a href="#org9cfed8c">평범한 스펙 예제</a></li>
+<li><a href="#org9dd6d15">사용자 지정</a></li>
+<li><a href="#orgc083bf8">Health Checking</a></li>
+<li><a href="#org6aed1a2">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -82,9 +82,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-org1f75921" class="outline-2">
-<h2 id="org1f75921">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-org1f75921">
+<div id="outline-container-org9cfed8c" class="outline-2">
+<h2 id="org9cfed8c">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-org9cfed8c">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">debian:buster</span>
 
@@ -129,9 +129,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org90df230" class="outline-2">
-<h2 id="org90df230">사용자 지정</h2>
-<div class="outline-text-2" id="text-org90df230">
+<div id="outline-container-org9dd6d15" class="outline-2">
+<h2 id="org9dd6d15">사용자 지정</h2>
+<div class="outline-text-2" id="text-org9dd6d15">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
@@ -146,9 +146,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org52bbe07" class="outline-2">
-<h2 id="org52bbe07">Health Checking</h2>
-<div class="outline-text-2" id="text-org52bbe07">
+<div id="outline-container-orgc083bf8" class="outline-2">
+<h2 id="orgc083bf8">Health Checking</h2>
+<div class="outline-text-2" id="text-orgc083bf8">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -158,9 +158,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </div>
 </div>
 </div>
-<div id="outline-container-orgbe5f0f0" class="outline-2">
-<h2 id="orgbe5f0f0">Multi Stage Building</h2>
-<div class="outline-text-2" id="text-orgbe5f0f0">
+<div id="outline-container-org6aed1a2" class="outline-2">
+<h2 id="org6aed1a2">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-org6aed1a2">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...
@@ -186,8 +186,8 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr /><div class="backlinks-container">
-<h1>이 글을 링크하는 글들</h1>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>

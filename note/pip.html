@@ -70,20 +70,20 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org0a50415">간단한 사용법</a>
+<li><a href="#orgc284a29">간단한 사용법</a>
 <ul>
-<li><a href="#org53c608d">패키지 검색</a></li>
-<li><a href="#orgaae76dd">패키지 설치</a></li>
-<li><a href="#org92a90c0">특정 버전 패키지 설치</a></li>
-<li><a href="#orgce5ff79">패키지 설치 및 업그레이드 하기</a></li>
-<li><a href="#org89b7e2e">패키지 제거</a></li>
-<li><a href="#orga7485fe">패키지 리스트 얻기</a></li>
-<li><a href="#org75f91ad">패키지 일괄 설치하기</a></li>
+<li><a href="#org18d5a35">패키지 검색</a></li>
+<li><a href="#org3dd53ba">패키지 설치</a></li>
+<li><a href="#org9c7f904">특정 버전 패키지 설치</a></li>
+<li><a href="#org21be4ac">패키지 설치 및 업그레이드 하기</a></li>
+<li><a href="#org5ff8a72">패키지 제거</a></li>
+<li><a href="#org2f6fc84">패키지 리스트 얻기</a></li>
+<li><a href="#org163a847">패키지 일괄 설치하기</a></li>
 </ul>
 </li>
-<li><a href="#org90c08d6">특수한 사용법</a>
+<li><a href="#orgd210aaa">특수한 사용법</a>
 <ul>
-<li><a href="#orgd59b781">패키지의 버전 정보 얻기</a></li>
+<li><a href="#orga953080">패키지의 버전 정보 얻기</a></li>
 </ul>
 </li>
 </ul>
@@ -94,58 +94,58 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-org0a50415" class="outline-2">
-<h2 id="org0a50415">간단한 사용법</h2>
-<div class="outline-text-2" id="text-org0a50415">
+<div id="outline-container-orgc284a29" class="outline-2">
+<h2 id="orgc284a29">간단한 사용법</h2>
+<div class="outline-text-2" id="text-orgc284a29">
 </div>
-<div id="outline-container-org53c608d" class="outline-3">
-<h3 id="org53c608d">패키지 검색</h3>
-<div class="outline-text-3" id="text-org53c608d">
+<div id="outline-container-org18d5a35" class="outline-3">
+<h3 id="org18d5a35">패키지 검색</h3>
+<div class="outline-text-3" id="text-org18d5a35">
 <div class="org-src-container">
 <pre class="src src-bash">pip search PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgaae76dd" class="outline-3">
-<h3 id="orgaae76dd">패키지 설치</h3>
-<div class="outline-text-3" id="text-orgaae76dd">
+<div id="outline-container-org3dd53ba" class="outline-3">
+<h3 id="org3dd53ba">패키지 설치</h3>
+<div class="outline-text-3" id="text-org3dd53ba">
 <div class="org-src-container">
 <pre class="src src-bash">pip install PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org92a90c0" class="outline-3">
-<h3 id="org92a90c0">특정 버전 패키지 설치</h3>
-<div class="outline-text-3" id="text-org92a90c0">
+<div id="outline-container-org9c7f904" class="outline-3">
+<h3 id="org9c7f904">특정 버전 패키지 설치</h3>
+<div class="outline-text-3" id="text-org9c7f904">
 <div class="org-src-container">
 <pre class="src src-bash">pip install <span style="color: #dcaeea;">PACKAGE_NAME</span>==VERSION
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgce5ff79" class="outline-3">
-<h3 id="orgce5ff79">패키지 설치 및 업그레이드 하기</h3>
-<div class="outline-text-3" id="text-orgce5ff79">
+<div id="outline-container-org21be4ac" class="outline-3">
+<h3 id="org21be4ac">패키지 설치 및 업그레이드 하기</h3>
+<div class="outline-text-3" id="text-org21be4ac">
 <div class="org-src-container">
 <pre class="src src-bash">pip install --upgrade PACKAGE_NAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org89b7e2e" class="outline-3">
-<h3 id="org89b7e2e">패키지 제거</h3>
-<div class="outline-text-3" id="text-org89b7e2e">
+<div id="outline-container-org5ff8a72" class="outline-3">
+<h3 id="org5ff8a72">패키지 제거</h3>
+<div class="outline-text-3" id="text-org5ff8a72">
 <div class="org-src-container">
 <pre class="src src-bash">pip uninstall PACKAGE_nAME
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga7485fe" class="outline-3">
-<h3 id="orga7485fe">패키지 리스트 얻기</h3>
-<div class="outline-text-3" id="text-orga7485fe">
+<div id="outline-container-org2f6fc84" class="outline-3">
+<h3 id="org2f6fc84">패키지 리스트 얻기</h3>
+<div class="outline-text-3" id="text-org2f6fc84">
 <div class="org-src-container">
 <pre class="src src-bash">pip freeze
 </pre>
@@ -165,9 +165,9 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 </p>
 </div>
 </div>
-<div id="outline-container-org75f91ad" class="outline-3">
-<h3 id="org75f91ad">패키지 일괄 설치하기</h3>
-<div class="outline-text-3" id="text-org75f91ad">
+<div id="outline-container-org163a847" class="outline-3">
+<h3 id="org163a847">패키지 일괄 설치하기</h3>
+<div class="outline-text-3" id="text-org163a847">
 <p>
 아래는 앞서 구한 목록인 <code>requirements.txt</code> 파일을 이용해 패키지를 일괄 설치하는 커맨드다.
 </p>
@@ -178,13 +178,13 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
 </div>
 </div>
 </div>
-<div id="outline-container-org90c08d6" class="outline-2">
-<h2 id="org90c08d6">특수한 사용법</h2>
-<div class="outline-text-2" id="text-org90c08d6">
+<div id="outline-container-orgd210aaa" class="outline-2">
+<h2 id="orgd210aaa">특수한 사용법</h2>
+<div class="outline-text-2" id="text-orgd210aaa">
 </div>
-<div id="outline-container-orgd59b781" class="outline-3">
-<h3 id="orgd59b781">패키지의 버전 정보 얻기</h3>
-<div class="outline-text-3" id="text-orgd59b781">
+<div id="outline-container-orga953080" class="outline-3">
+<h3 id="orga953080">패키지의 버전 정보 얻기</h3>
+<div class="outline-text-3" id="text-orga953080">
 <p>
 패키지 버전 리스트를 얻기 위한 별도의 커맨드는 없고, 대신 아래 트릭으로 구할 수
 있다.
@@ -211,8 +211,8 @@ pip는 <a href="python.html">Python</a> 용 패키지를 설치하거나 관리�
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr /><div class="backlinks-container">
-<h1>이 글을 링크하는 글들</h1>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/pyenv.html">pyenv</a></h2>

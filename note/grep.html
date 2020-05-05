@@ -70,16 +70,16 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org38b5b23">기본 사용법</a></li>
-<li><a href="#org326ac9c">대소문자 무시</a></li>
-<li><a href="#org768cd74">바이너리(Binary) 파일 무시하기</a></li>
-<li><a href="#orgc36a5a6">재귀(Recursive) 검색</a></li>
-<li><a href="#orgf99f48d">검색된 파일 이름만 보기</a></li>
-<li><a href="#org14eb5b9">단어만 검색하기</a></li>
-<li><a href="#org75bfcdf">줄 번호(Line Number) 보기</a></li>
-<li><a href="#orgc9b8874">발견 개수 보기</a></li>
-<li><a href="#org162f99f">검색되지 않는 것만 보기</a></li>
-<li><a href="#org0d83fff">정규표현식</a></li>
+<li><a href="#orgea6e1ec">기본 사용법</a></li>
+<li><a href="#org03b9469">대소문자 무시</a></li>
+<li><a href="#org80cf06b">바이너리(Binary) 파일 무시하기</a></li>
+<li><a href="#org04fe265">재귀(Recursive) 검색</a></li>
+<li><a href="#org1303a06">검색된 파일 이름만 보기</a></li>
+<li><a href="#orgd812516">단어만 검색하기</a></li>
+<li><a href="#org39c6eb9">줄 번호(Line Number) 보기</a></li>
+<li><a href="#org0368a93">발견 개수 보기</a></li>
+<li><a href="#org0e7d72f">검색되지 않는 것만 보기</a></li>
+<li><a href="#orgff16595">정규표현식</a></li>
 </ul>
 </div>
 </div>
@@ -87,9 +87,9 @@
 Grep은 파일이나 텍스트에서 특정 텍스트를 검색하는 데 사용되는 *NIX <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-org38b5b23" class="outline-2">
-<h2 id="org38b5b23">기본 사용법</h2>
-<div class="outline-text-2" id="text-org38b5b23">
+<div id="outline-container-orgea6e1ec" class="outline-2">
+<h2 id="orgea6e1ec">기본 사용법</h2>
+<div class="outline-text-2" id="text-orgea6e1ec">
 <p>
 기본적으로는 텍스트 파일에서 문자열을 검색하는 것을 생각할 수 있다.
 </p>
@@ -116,9 +116,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-org326ac9c" class="outline-2">
-<h2 id="org326ac9c">대소문자 무시</h2>
-<div class="outline-text-2" id="text-org326ac9c">
+<div id="outline-container-org03b9469" class="outline-2">
+<h2 id="org03b9469">대소문자 무시</h2>
+<div class="outline-text-2" id="text-org03b9469">
 <p>
 <code>-i</code> 옵션을 사용하면 대소문자를 가리지 않고 검색한다.
 </p>
@@ -128,9 +128,9 @@ this is sample
 </div>
 </div>
 </div>
-<div id="outline-container-org768cd74" class="outline-2">
-<h2 id="org768cd74">바이너리(Binary) 파일 무시하기</h2>
-<div class="outline-text-2" id="text-org768cd74">
+<div id="outline-container-org80cf06b" class="outline-2">
+<h2 id="org80cf06b">바이너리(Binary) 파일 무시하기</h2>
+<div class="outline-text-2" id="text-org80cf06b">
 <p>
 가끔 이진 파일에서 검색하느라 느려지거나 이상한 것을 검색하기도 하는데, 이를 때는 <code>-I</code> 옵션을 사용할 수 있다.
 </p>
@@ -140,9 +140,9 @@ this is sample
 </div>
 </div>
 </div>
-<div id="outline-container-orgc36a5a6" class="outline-2">
-<h2 id="orgc36a5a6">재귀(Recursive) 검색</h2>
-<div class="outline-text-2" id="text-orgc36a5a6">
+<div id="outline-container-org04fe265" class="outline-2">
+<h2 id="org04fe265">재귀(Recursive) 검색</h2>
+<div class="outline-text-2" id="text-org04fe265">
 <p>
 재귀 검색이란 하위 디렉터리를 모두 다 뒤져본다는 의미다.
 </p>
@@ -168,9 +168,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orgf99f48d" class="outline-2">
-<h2 id="orgf99f48d">검색된 파일 이름만 보기</h2>
-<div class="outline-text-2" id="text-orgf99f48d">
+<div id="outline-container-org1303a06" class="outline-2">
+<h2 id="org1303a06">검색된 파일 이름만 보기</h2>
+<div class="outline-text-2" id="text-org1303a06">
 <p>
 <code>-l</code> 옵션은 발견된 패턴을 화면에 표시하지 않게 한다.
 </p>
@@ -185,9 +185,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-org14eb5b9" class="outline-2">
-<h2 id="org14eb5b9">단어만 검색하기</h2>
-<div class="outline-text-2" id="text-org14eb5b9">
+<div id="outline-container-orgd812516" class="outline-2">
+<h2 id="orgd812516">단어만 검색하기</h2>
+<div class="outline-text-2" id="text-orgd812516">
 <p>
 단어 단위 검색을 하기 위해서 <code>-w</code> 옵션을 사용할 수 있다.
 </p>
@@ -200,9 +200,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-org75bfcdf" class="outline-2">
-<h2 id="org75bfcdf">줄 번호(Line Number) 보기</h2>
-<div class="outline-text-2" id="text-org75bfcdf">
+<div id="outline-container-org39c6eb9" class="outline-2">
+<h2 id="org39c6eb9">줄 번호(Line Number) 보기</h2>
+<div class="outline-text-2" id="text-org39c6eb9">
 <p>
 <code>-n</code> 옵션을 이용해 줄 번호를 표시할 수 있다.
 </p>
@@ -215,9 +215,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-orgc9b8874" class="outline-2">
-<h2 id="orgc9b8874">발견 개수 보기</h2>
-<div class="outline-text-2" id="text-orgc9b8874">
+<div id="outline-container-org0368a93" class="outline-2">
+<h2 id="org0368a93">발견 개수 보기</h2>
+<div class="outline-text-2" id="text-org0368a93">
 <p>
 <code>-c</code> 옵션을 주면 발견된 개수(count)를 구할 수 있다.
 </p>
@@ -230,9 +230,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-org162f99f" class="outline-2">
-<h2 id="org162f99f">검색되지 않는 것만 보기</h2>
-<div class="outline-text-2" id="text-org162f99f">
+<div id="outline-container-org0e7d72f" class="outline-2">
+<h2 id="org0e7d72f">검색되지 않는 것만 보기</h2>
+<div class="outline-text-2" id="text-org0e7d72f">
 <p>
 <code>-v</code> 옵션을 주면 검색되지 않는 라인을 화면에 표시한다.
 </p>
@@ -245,9 +245,9 @@ this is sample
 </p>
 </div>
 </div>
-<div id="outline-container-org0d83fff" class="outline-2">
-<h2 id="org0d83fff">정규표현식</h2>
-<div class="outline-text-2" id="text-org0d83fff">
+<div id="outline-container-orgff16595" class="outline-2">
+<h2 id="orgff16595">정규표현식</h2>
+<div class="outline-text-2" id="text-orgff16595">
 <p>
 원래 정규표현식이 지원되지 때문에 그냥 써도 된다.
 </p>

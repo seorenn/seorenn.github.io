@@ -289,7 +289,9 @@ body {
   width: auto;
 }
 
-hr {
+div.header-content > hr,
+div.backlinks-container > hr,
+div.refs-container > hr {
   width: 100%;
   border: 0.5px solid #bcc2ce;
   margin-top: 48px;
@@ -297,7 +299,7 @@ hr {
   clear: both;
 }
 
-hr.spliter {
+div.outline-text-2 > hr {
   width: 20%;
   border: 0.5px solid #5c6267;
   margin-top: 36px;

@@ -70,26 +70,26 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf5adce6">설치</a></li>
-<li><a href="#orga5ecbbf">버전 별 정리</a>
+<li><a href="#orgf37c199">설치</a></li>
+<li><a href="#orge5dc69d">버전 별 정리</a>
 <ul>
-<li><a href="#orgb580900">3.8</a></li>
+<li><a href="#org1e90c45">3.8</a></li>
 </ul>
 </li>
-<li><a href="#orga1b5006">메모</a>
+<li><a href="#org934428d">메모</a>
 <ul>
-<li><a href="#org727a9fa">Bytes</a></li>
-<li><a href="#org557281a">List Comprehension</a></li>
-<li><a href="#org4fd3936">파일 혹은 디렉토리(폴더) 관련</a></li>
-<li><a href="#org6ea945c">사전(Dictionary)형 합치기</a></li>
+<li><a href="#org0d60f5d">Bytes</a></li>
+<li><a href="#org02b3ec5">List Comprehension</a></li>
+<li><a href="#org07d184c">파일 혹은 디렉토리(폴더) 관련</a></li>
+<li><a href="#org6015e92">사전(Dictionary)형 합치기</a></li>
 </ul>
 </li>
-<li><a href="#orgbf47ddf">커맨드</a>
+<li><a href="#org3467065">커맨드</a>
 <ul>
-<li><a href="#org9c75c88">간단한 웹 서버 띄우기</a></li>
+<li><a href="#org622e1d5">간단한 웹 서버 띄우기</a></li>
 </ul>
 </li>
-<li><a href="#orgcf27379">외부 링크</a></li>
+<li><a href="#orgb5efd96">외부 링크</a></li>
 </ul>
 </div>
 </div>
@@ -101,9 +101,9 @@
 언어라는 점이 가장 큰 특징이다.
 </p>
 
-<div id="outline-container-orgf5adce6" class="outline-2">
-<h2 id="orgf5adce6">설치</h2>
-<div class="outline-text-2" id="text-orgf5adce6">
+<div id="outline-container-orgf37c199" class="outline-2">
+<h2 id="orgf37c199">설치</h2>
+<div class="outline-text-2" id="text-orgf37c199">
 <p>
 <a href="macos.html">macOS</a> 의 경우
 <a href="homebrew.html">Homebrew</a> 를 통해 설치하거나
@@ -123,13 +123,13 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orga5ecbbf" class="outline-2">
-<h2 id="orga5ecbbf">버전 별 정리</h2>
-<div class="outline-text-2" id="text-orga5ecbbf">
+<div id="outline-container-orge5dc69d" class="outline-2">
+<h2 id="orge5dc69d">버전 별 정리</h2>
+<div class="outline-text-2" id="text-orge5dc69d">
 </div>
-<div id="outline-container-orgb580900" class="outline-3">
-<h3 id="orgb580900">3.8</h3>
-<div class="outline-text-3" id="text-orgb580900">
+<div id="outline-container-org1e90c45" class="outline-3">
+<h3 id="org1e90c45">3.8</h3>
+<div class="outline-text-3" id="text-org1e90c45">
 <dl class="org-dl">
 <dt><code>:=</code> (Walrus) 오페레이터</dt><dd>좁은(?) 지역 변수.
 <a href="swift.html">Swift</a> 의 <code>if let</code> 과 용도가 비슷하다.
@@ -147,13 +147,13 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orga1b5006" class="outline-2">
-<h2 id="orga1b5006">메모</h2>
-<div class="outline-text-2" id="text-orga1b5006">
+<div id="outline-container-org934428d" class="outline-2">
+<h2 id="org934428d">메모</h2>
+<div class="outline-text-2" id="text-org934428d">
 </div>
-<div id="outline-container-org727a9fa" class="outline-3">
-<h3 id="org727a9fa">Bytes</h3>
-<div class="outline-text-3" id="text-org727a9fa">
+<div id="outline-container-org0d60f5d" class="outline-3">
+<h3 id="org0d60f5d">Bytes</h3>
+<div class="outline-text-3" id="text-org0d60f5d">
 <div class="org-src-container">
 <pre class="src src-python">b<span style="color: #83898d;">'some string'</span>
 </pre>
@@ -175,21 +175,21 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </div>
 </div>
 </div>
-<div id="outline-container-org557281a" class="outline-3">
-<h3 id="org557281a">List Comprehension</h3>
-<div class="outline-text-3" id="text-org557281a">
+<div id="outline-container-org02b3ec5" class="outline-3">
+<h3 id="org02b3ec5">List Comprehension</h3>
+<div class="outline-text-3" id="text-org02b3ec5">
 </div>
 <ul class="org-ul">
-<li><a id="org69290ce"></a>Map<br />
-<div class="outline-text-4" id="text-org69290ce">
+<li><a id="org2bc8a81"></a>Map<br />
+<div class="outline-text-4" id="text-org2bc8a81">
 <div class="org-src-container">
 <pre class="src src-python">[x * x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist]
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org5b0d0cf"></a>Filter<br />
-<div class="outline-text-4" id="text-org5b0d0cf">
+<li><a id="orga79bb1f"></a>Filter<br />
+<div class="outline-text-4" id="text-orga79bb1f">
 <div class="org-src-container">
 <pre class="src src-python">[x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist <span style="color: #51afef;">if</span> iswhat(x)]
 </pre>
@@ -198,13 +198,13 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </li>
 </ul>
 </div>
-<div id="outline-container-org4fd3936" class="outline-3">
-<h3 id="org4fd3936">파일 혹은 디렉토리(폴더) 관련</h3>
-<div class="outline-text-3" id="text-org4fd3936">
+<div id="outline-container-org07d184c" class="outline-3">
+<h3 id="org07d184c">파일 혹은 디렉토리(폴더) 관련</h3>
+<div class="outline-text-3" id="text-org07d184c">
 </div>
 <ul class="org-ul">
-<li><a id="org022768f"></a>경로에서 파일명만 얻기<br />
-<div class="outline-text-4" id="text-org022768f">
+<li><a id="org6290771"></a>경로에서 파일명만 얻기<br />
+<div class="outline-text-4" id="text-org6290771">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.path.basename(<span style="color: #98be65;">'/foo/bar/test.txt'</span>)
@@ -213,8 +213,8 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </div>
 </div>
 </li>
-<li><a id="org7bc527e"></a>파일명에서 확장자 분리하기<br />
-<div class="outline-text-4" id="text-org7bc527e">
+<li><a id="org8663bd4"></a>파일명에서 확장자 분리하기<br />
+<div class="outline-text-4" id="text-org8663bd4">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.path.splitext(<span style="color: #98be65;">'test.txt'</span>)
@@ -228,8 +228,8 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </p>
 </div>
 </li>
-<li><a id="orgd31eef3"></a>파일 혹은 디렉토리 구분하기<br />
-<div class="outline-text-4" id="text-orgd31eef3">
+<li><a id="org6a5fc40"></a>파일 혹은 디렉토리 구분하기<br />
+<div class="outline-text-4" id="text-org6a5fc40">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.path.isfile(<span style="color: #98be65;">'/foo/bar/some/file.txt'</span>)
@@ -240,8 +240,8 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </div>
 </div>
 </li>
-<li><a id="org91bb279"></a>디렉토리 안의 파일 목록 얻기<br />
-<div class="outline-text-4" id="text-org91bb279">
+<li><a id="org4736fce"></a>디렉토리 안의 파일 목록 얻기<br />
+<div class="outline-text-4" id="text-org4736fce">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.listdir(<span style="color: #98be65;">'.'</span>)
@@ -252,9 +252,9 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </li>
 </ul>
 </div>
-<div id="outline-container-org6ea945c" class="outline-3">
-<h3 id="org6ea945c">사전(Dictionary)형 합치기</h3>
-<div class="outline-text-3" id="text-org6ea945c">
+<div id="outline-container-org6015e92" class="outline-3">
+<h3 id="org6015e92">사전(Dictionary)형 합치기</h3>
+<div class="outline-text-3" id="text-org6015e92">
 <p>
 일반적인 방법으로 <code>update</code> 메서드를 활용할 수 있다.
 </p>
@@ -286,13 +286,13 @@ Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 �
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf47ddf" class="outline-2">
-<h2 id="orgbf47ddf">커맨드</h2>
-<div class="outline-text-2" id="text-orgbf47ddf">
+<div id="outline-container-org3467065" class="outline-2">
+<h2 id="org3467065">커맨드</h2>
+<div class="outline-text-2" id="text-org3467065">
 </div>
-<div id="outline-container-org9c75c88" class="outline-3">
-<h3 id="org9c75c88">간단한 웹 서버 띄우기</h3>
-<div class="outline-text-3" id="text-org9c75c88">
+<div id="outline-container-org622e1d5" class="outline-3">
+<h3 id="org622e1d5">간단한 웹 서버 띄우기</h3>
+<div class="outline-text-3" id="text-org622e1d5">
 <div class="org-src-container">
 <pre class="src src-bash">python -m http.server
 </pre>
@@ -303,9 +303,9 @@ Python 3 부터 사용 가능한 커맨드다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcf27379" class="outline-2">
-<h2 id="orgcf27379">외부 링크</h2>
-<div class="outline-text-2" id="text-orgcf27379">
+<div id="outline-container-orgb5efd96" class="outline-2">
+<h2 id="orgb5efd96">외부 링크</h2>
+<div class="outline-text-2" id="text-orgb5efd96">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/76">🌏Python에 F-string 이라는 게 있었다?</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/77">🌏Python 3 정적 타이핑 소개 및 소감(?)</a></li>
@@ -323,8 +323,8 @@ Python 3 부터 사용 가능한 커맨드다.
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr /><div class="backlinks-container">
-<h1>이 글을 링크하는 글들</h1>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/seorenn.html">Seorenn</a></h2>

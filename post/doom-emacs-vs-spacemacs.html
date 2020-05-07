@@ -1,0 +1,284 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Doom Emacs vs Spacemacs - Seorenn</title>
+<meta name="twitter:title" content="Doom Emacs vs Spacemacs" />
+<meta name="og:title" content="Doom Emacs vs Spacemacs" />
+<meta name="description" content="둠 이맥스와 스페이스맥스 간의 주관적인 비교" />
+<meta name="twitter:description" content="둠 이맥스와 스페이스맥스 간의 주관적인 비교" />
+<meta name="og:description" content="둠 이맥스와 스페이스맥스 간의 주관적인 비교" />
+<link rel="canonical" href="https://seorenn.github.io/post/doom-emacs-vs-spacemacs.html" />
+<meta property="og:url" content="https://seorenn.github.io/post/doom-emacs-vs-spacemacs.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<div class="top-ad-container">
+<ins class="adsbygoogle top-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>Doom Emacs vs Spacemacs</h1>
+<div class="title-date">2020년 5월 7일 작성</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#orga9fb667">설치 난이도</a></li>
+<li><a href="#org833de7b">시작 속도</a></li>
+<li><a href="#org5c8057f">설정 난이도</a></li>
+<li><a href="#orgede800f">UI의 미려함</a></li>
+<li><a href="#org2e039f1">사용성</a></li>
+<li><a href="#orgd1cf9de">퍼포먼스</a></li>
+<li><a href="#org994e008">한글 친화도</a></li>
+<li><a href="#orgf3d8854">마무리</a></li>
+</ul>
+</div>
+</div>
+<p>
+나름(?) 제법 오랜 시간 동안 <a href="../note/doom-emacs.html">Doom Emacs</a>를 사용해왔기에
+이제 슬슬 <a href="../note/spacemacs.html">Spacemacs</a>와의 비교를 써 봐도 괜찮을 시점은 것 같다.
+당연하겠지만 굉장히 주관적인 시점이다.
+</p>
+
+<div id="outline-container-orga9fb667" class="outline-2">
+<h2 id="orga9fb667">설치 난이도</h2>
+<div class="outline-text-2" id="text-orga9fb667">
+<p>
+큰 차이는 없지만 <a href="../note/spacemacs.html">Spacemacs</a>가 약간은 편한 편이다.
+</p>
+
+<p>
+설치 방법은 둘 다 깃허브 저장소를 복제하는 것에서 설치가 시작된다.
+다만 <a href="../note/doom-emacs.html">Doom Emacs</a>의 경우 설치 스크립트 실행 단계가 더 존재하기 때문에
+굳이 비교를 해야 한다면 <a href="../note/spacemacs.html">Spacemacs</a>의 난이도가 살짝 낮은 편이다.
+</p>
+</div>
+</div>
+<div id="outline-container-org833de7b" class="outline-2">
+<h2 id="org833de7b">시작 속도</h2>
+<div class="outline-text-2" id="text-org833de7b">
+<p>
+<a href="../note/doom-emacs.html">Doom Emacs</a>가 월등하게 빠르다.
+</p>
+
+<p>
+이건 좀 비교가 많이 될 수 밖에 없는데,
+<a href="../note/spacemacs.html">Spacemacs</a>가 시작 후 패키지를 읽어 들이는 단계가 별도로 있는 반면,
+<a href="../note/doom-emacs.html">Doom Emacs</a>는 패키지를 필요할 때 읽어 들이는 방식이라
+아무래도 시작 속도는 빠를 수 밖에 없다.
+</p>
+</div>
+</div>
+<div id="outline-container-org5c8057f" class="outline-2">
+<h2 id="org5c8057f">설정 난이도</h2>
+<div class="outline-text-2" id="text-org5c8057f">
+<p>
+<a href="../note/spacemacs.html">Spacemacs</a>가 설정은 편한 편이다.
+</p>
+
+<p>
+<a href="../note/spacemacs.html">Spacemacs</a>의 설정은 대부분 한 파일에서 해결할 수 있고,
+모든 것이 <a href="../note/emacs.html">Emacs</a> 안에서 이뤄지고 굳이 재시작을 하지 않아도 될 정도로
+설정 방법이 편하게 구성되어 있다.
+</p>
+
+<p>
+반면 <a href="../note/doom-emacs.html">Doom Emacs</a>의 경우는 설정 난이도도 약간 있는 편인 데다가,
+설정 후 터미널 커맨드를 통한 별도의 작업이 필요하다.
+최근에는 이 커맨드를 하나로 합쳐서 약간의 난이도가 줄긴 했지만
+여전히 새로운 패키지가 필요하거나 혹은 필요 없어진 경우에는 이 커맨드를 별도로 실행시켜야만 한다.
+어차피 이 작업이 끝나면 재시작 해야 한다는 단점도 사라지진 않았다.
+</p>
+
+<p>
+다만 설정 문법 측면에서는 <a href="../note/doom-emacs.html">Doom Emacs</a> 쪽이 오히려 약간 편한 감이 있다고 느껴진다.
+물론 이건 개인의 취향에 따라 달라질 수 있는 요소다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgede800f" class="outline-2">
+<h2 id="orgede800f">UI의 미려함</h2>
+<div class="outline-text-2" id="text-orgede800f">
+<p>
+개인적으로 <a href="../note/doom-emacs.html">Doom Emacs</a>의 화면이 더 이쁘고 완성도가 높다고 판단된다.
+</p>
+
+<p>
+물론 테마의 경우는 오픈소스이기 때문에 상대방을 것을 마음껏 쓸 수 있다.
+심지어 모드라인도 오픈소스 패키지이기 때문에 그냥 가져다 쓰면 상대방의 모양을 동일하게 흉내 낼 수 있다.
+</p>
+
+<p>
+단지 이 비교는 기본 설정 상태에서 이야기 하는 것이니 오해는 없었으면 좋겠다.
+</p>
+</div>
+</div>
+<div id="outline-container-org2e039f1" class="outline-2">
+<h2 id="org2e039f1">사용성</h2>
+<div class="outline-text-2" id="text-org2e039f1">
+<p>
+<a href="../note/spacemacs.html">Spacemacs</a>의 단축키가 좀 더 체계적인 것 같다.
+</p>
+
+<p>
+<a href="../note/doom-emacs.html">Doom Emacs</a>의 단축키 배정은 규칙 보다는 사용성에 중심을 두고 있는 것 같다.
+즉 빠르게 자주 사용할 기능에 가능하면 편한(?) 단축키를 배정하고 있다.
+하지만 그래서 카테고리로 분류가 되어 있지 않은 키도 있기 때문에 헷갈리는 경우가 간혹 있다.
+</p>
+
+<p>
+물론 사용성은 사용하는 패키지가 사람 마다 다를 수도 있고 단축키 설정도 마음대로 바꿀 수 있는 만큼
+객관적인 비교가 힘들 수도 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd1cf9de" class="outline-2">
+<h2 id="orgd1cf9de">퍼포먼스</h2>
+<div class="outline-text-2" id="text-orgd1cf9de">
+<p>
+비교하기 힘들다.
+</p>
+
+<p>
+퍼포먼스는 사용하는 패키지에 따라 천차만별이다. 이를 테면 <a href="../note/org-mode.html">Org Mode</a>만 해도
+어떤 패키지를 같이 사용하는 지에 따라 퍼포먼스가 확 바뀐다.
+간단히는 줄 번호 표시만 꺼버려도 퍼포먼스가 확 올라가는 게 느껴 질 정도니 말이다.
+</p>
+</div>
+</div>
+<div id="outline-container-org994e008" class="outline-2">
+<h2 id="org994e008">한글 친화도</h2>
+<div class="outline-text-2" id="text-org994e008">
+<p>
+한글을 쓴다면 <a href="../note/doom-emacs.html">Doom Emacs</a>에 손을 들어주고 싶다.
+</p>
+
+<p>
+다만 위의 평가는 터미널에서 <a href="../note/emacs.html">Emacs</a>를 사용하는 경우에 한한다.
+왜냐하면 <a href="../note/spacemacs.html">Spacemacs</a>는 터미널에서 한글 붙여 넣기가 제대로 동작하지 않았기 때문이다.
+</p>
+
+<p>
+그런데 GUI에서는 둘 다 차이가 없다.
+어차피 한글 유저는 마이너하고 직접 설정을 해야 하기 때문이다.
+따라서 GUI만 사용한다면 둘 다 차이가 없다.
+</p>
+
+<p>
+다만 <a href="../note/spacemacs.html">Spacemacs</a>의 경우 한글 패키지가 따로 있다는 점에서 차이가 있다.
+하지만 이걸 굳이 쓸 이유는 못 찾았다.
+아무래도 이 설정 패키지는 비-한국어 권에서 쓰기 위한 용도로 보이기 때문이다.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf3d8854" class="outline-2">
+<h2 id="orgf3d8854">마무리</h2>
+<div class="outline-text-2" id="text-orgf3d8854">
+<p>
+그래서 결론이 뭐냐고 물어오는 사람이 있을 지도 모르겠는데,
+어쩔 수 없다. 둘 다 편하다. 그리고 둘 다 불편할 때가 있다.
+</p>
+
+<p>
+단지 나는 현재는 <a href="../note/doom-emacs.html">Doom Emacs</a>를 사용하고 있으며
+다시 <a href="../note/spacemacs.html">Spacemacs</a>로 돌아갈 생각은 없다.
+<a href="../note/doom-emacs.html">Doom Emacs</a>가 약간 불편한 점은 있어도
+너무 적응되어 버렸다고 해야 할까?
+너무 많은 커스터마이징이 생겨 버렸기 때문이기도 하겠지만 말이다.
+</p>
+
+<p>
+그러니 그냥 쓰고 싶은 거 쓰면 된다. 이름이 마음에 들거나 테마나 마음에 들거나 등등
+개인 취향도 너무나 많은 카테고리가 있다.
+</p>
+</div>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

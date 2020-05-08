@@ -70,9 +70,9 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org9cd32e4">설정 저장하기</a></li>
-<li><a href="#orgcbb23e8">설정 읽어오기</a></li>
-<li><a href="#orgc8c03e6">synchronize()</a></li>
+<li><a href="#org92e54eb">설정 저장하기</a></li>
+<li><a href="#org377b989">설정 읽어오기</a></li>
+<li><a href="#orgdaf4aa8">synchronize()</a></li>
 </ul>
 </div>
 </div>
@@ -98,9 +98,9 @@ UserDefaults 혹은 NSUserDefaults 는 iOS 나 <a href="macos.html">macOS</a> �
 복잡하거나 큰 데이터는 이 저장소에 어울리지 않으니 별도의 DB나 Core Data를 활용하자.
 </p>
 
-<div id="outline-container-org9cd32e4" class="outline-2">
-<h2 id="org9cd32e4">설정 저장하기</h2>
-<div class="outline-text-2" id="text-org9cd32e4">
+<div id="outline-container-org92e54eb" class="outline-2">
+<h2 id="org92e54eb">설정 저장하기</h2>
+<div class="outline-text-2" id="text-org92e54eb">
 <p>
 아래 예제는 age 라는 키의 값을 27로 저장하는 예제다.
 </p>
@@ -112,11 +112,15 @@ UserDefaults 혹은 NSUserDefaults 는 iOS 나 <a href="macos.html">macOS</a> �
 데이터 타입에 따라 다양한 오버로드가 있기 때문에
 <a href="swift.html">Swift</a>의 기본 타입 데이터는 대부분 그대로 저장할 수 있다.
 </p>
+
+<p>
+저장된 데이터는 앱이 종료되어도 계속 파일 시스템에 기록되어서 남는다.
+</p>
 </div>
 </div>
-<div id="outline-container-orgcbb23e8" class="outline-2">
-<h2 id="orgcbb23e8">설정 읽어오기</h2>
-<div class="outline-text-2" id="text-orgcbb23e8">
+<div id="outline-container-org377b989" class="outline-2">
+<h2 id="org377b989">설정 읽어오기</h2>
+<div class="outline-text-2" id="text-org377b989">
 <p>
 읽을 때는 타입에 신경을 쓰는 편이 좋다.
 </p>
@@ -140,22 +144,23 @@ UserDefaults 혹은 NSUserDefaults 는 iOS 나 <a href="macos.html">macOS</a> �
 </p>
 </div>
 </div>
-<div id="outline-container-orgc8c03e6" class="outline-2">
-<h2 id="orgc8c03e6">synchronize()</h2>
-<div class="outline-text-2" id="text-orgc8c03e6">
+<div id="outline-container-orgdaf4aa8" class="outline-2">
+<h2 id="orgdaf4aa8">synchronize()</h2>
+<div class="outline-text-2" id="text-orgdaf4aa8">
 <p>
-결론부터 말하자면 이제 이 메서드는 잊어도 된다.
+결론부터 말하자면 이 메서드는 이제 잊어도 된다.
 </p>
 
 <p>
-과거에는 값을 저장할 때 반드시 이 메서드를 호출해야 했었다.
+과거에는 값을 저장한 뒤에는 이 메서드를 호출하는 편이 안전했다.
+파일 시스템과 메모리의 내용을 동기화 하는 커맨드이기 때문이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #c678dd;">UserDefaults</span>.<span style="color: #c678dd;">standard</span>.<span style="color: #c678dd;">synchronize</span>()
 </pre>
 </div>
 <p>
-이래야만 제대로 파일 시스템에 해당 값이 제대로 쓰여졌다.
+이 메서드가 호출되면 값이 바로 파일 시스템이 기록되었다.
 반대로 쓰지 않았을 경우 간혹 데이터를 잃어 버리는 경우도 있었다.
 </p>
 

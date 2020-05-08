@@ -7,9 +7,9 @@
 <title>Tmux - Seorenn</title>
 <meta name="twitter:title" content="Tmux" />
 <meta name="og:title" content="Tmux" />
-<meta name="description" content="터미널 멀티플렉서인 Tmux 소개 및 사용법, 단축키 등을 정리합니다" />
-<meta name="twitter:description" content="터미널 멀티플렉서인 Tmux 소개 및 사용법, 단축키 등을 정리합니다" />
-<meta name="og:description" content="터미널 멀티플렉서인 Tmux 소개 및 사용법, 단축키 등을 정리합니다" />
+<meta name="description" content="터미널 멀티플렉서인 Tmux 소개 및 사용법, 단축키 등을 정리하는 글" />
+<meta name="twitter:description" content="터미널 멀티플렉서인 Tmux 소개 및 사용법, 단축키 등을 정리하는 글" />
+<meta name="og:description" content="터미널 멀티플렉서인 Tmux 소개 및 사용법, 단축키 등을 정리하는 글" />
 <link rel="canonical" href="https://seorenn.github.io/note/tmux.html" />
 <meta property="og:url" content="https://seorenn.github.io/note/tmux.html" />
 <link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
@@ -65,43 +65,43 @@
 <section class="content">
 <header>
 <h1>Tmux</h1>
-<div class="title-date">2020년 4월 15일 수정</div>
+<div class="title-date">2020년 5월 9일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgec1a034">사용법</a></li>
-<li><a href="#org78bb78c">설정 방법</a>
+<li><a href="#orga987e3b">사용법</a></li>
+<li><a href="#org0b23b17">설정 방법</a>
 <ul>
-<li><a href="#orgba04c78">리더 키(Prefix) 변경하기</a></li>
+<li><a href="#org804aa6e">리더 키(Prefix) 변경하기</a></li>
 </ul>
 </li>
-<li><a href="#org0eb6191">단축키</a></li>
-<li><a href="#org682e2cb">기타 팁</a>
+<li><a href="#org3c8f3f7">단축키</a></li>
+<li><a href="#orgc85f1b1">기타 팁</a>
 <ul>
-<li><a href="#org156653f">선택 영역 복사하기</a></li>
-<li><a href="#org3a61cb3">종료하지 않고 설정 다시 읽어 들이기</a></li>
+<li><a href="#org631f06c">선택 영역 복사하기</a></li>
+<li><a href="#orgda45291">종료하지 않고 설정 다시 읽어 들이기</a></li>
 </ul>
 </li>
-<li><a href="#org0764774">관련된 글들</a></li>
+<li><a href="#org1971e18">외부 링크</a></li>
 </ul>
 </div>
 </div>
 <p>
 Tmux 는 터미널 멀티플렉서라고 불리는 도구다.
 쉽게 말해서 하나의 터미널을 여러 개로 나누어서 쓸 수 있게 만들어 준다.
-현대적인 터미널의 멀티탭이나 멀티 Pane 기능과 비슷한 기능을 구현하기도 한다.
+현대적인 터미널의 멀티 탭이나 멀티 Pane 기능과 비슷한 기능을 터미널 안에서 구현하기도 한다.
 </p>
 
 <p>
 비슷하면서도 원조 격인 <code>screen</code> 이라는 도구에 영향을 많이 받은 것으로 보인다.
 </p>
 
-<div id="outline-container-orgec1a034" class="outline-2">
-<h2 id="orgec1a034">사용법</h2>
-<div class="outline-text-2" id="text-orgec1a034">
+<div id="outline-container-orga987e3b" class="outline-2">
+<h2 id="orga987e3b">사용법</h2>
+<div class="outline-text-2" id="text-orga987e3b">
 <p>
-그냥 실행시키면 실행은 된다.
+별 다른 인자 없이 그냥 실행시키면 실행된다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">tmux
@@ -117,26 +117,34 @@ Tmux 는 터미널 멀티플렉서라고 불리는 도구다.
 </pre>
 </div>
 <p>
+detach 상태 즉 백그라운드 상태에 있는 tmux 에서 구동 중인 <a href="shell.html">셸</a>은 터미널이 종료되어도 계속 돌아간다.
+개발 중인 서버 프로세스를 테스트 할 때 편하다.
+</p>
+
+<p>
 백그라운드에 있는 tmux 세션을 포그라운드로 돌리려면 아래 커맨드를 입력하면 된다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">tmux attach
 </pre>
 </div>
+<p>
+이렇게 하면 해당 세션이 다시 뜬다.
+</p>
 </div>
 </div>
-<div id="outline-container-org78bb78c" class="outline-2">
-<h2 id="org78bb78c">설정 방법</h2>
-<div class="outline-text-2" id="text-org78bb78c">
+<div id="outline-container-org0b23b17" class="outline-2">
+<h2 id="org0b23b17">설정 방법</h2>
+<div class="outline-text-2" id="text-org0b23b17">
 <p>
 <code>~/.tmux.conf</code> 파일에 원하는 설정을 기록할 수 있다.
 </p>
 </div>
-<div id="outline-container-orgba04c78" class="outline-3">
-<h3 id="orgba04c78">리더 키(Prefix) 변경하기</h3>
-<div class="outline-text-3" id="text-orgba04c78">
+<div id="outline-container-org804aa6e" class="outline-3">
+<h3 id="org804aa6e">리더 키(Prefix) 변경하기</h3>
+<div class="outline-text-3" id="text-org804aa6e">
 <p>
-기본 리더키는 <code>^b</code> (Ctrl-B)로 설정되어 있다.
+기본 리더 키는 <code>^b</code> (Ctrl-B)로 설정되어 있다.
 이걸 바꾸려면, 예를 들어 리더 키를 <code>^\</code> 로 바꾸려면
 아래의 설정을 추가하면 된다.
 </p>
@@ -164,9 +172,9 @@ set-option -g prefix2 C-']'
 </div>
 </div>
 </div>
-<div id="outline-container-org0eb6191" class="outline-2">
-<h2 id="org0eb6191">단축키</h2>
-<div class="outline-text-2" id="text-org0eb6191">
+<div id="outline-container-org3c8f3f7" class="outline-2">
+<h2 id="org3c8f3f7">단축키</h2>
+<div class="outline-text-2" id="text-org3c8f3f7">
 <p>
 아래에 언급하는 모든 단축키는 리더 키(Prefix)를 먼저 누른 후 눌러야 한다.
 참고로 리더 키는 앞서 언급한 대로
@@ -189,13 +197,13 @@ set-option -g prefix2 C-']'
 </dl>
 </div>
 </div>
-<div id="outline-container-org682e2cb" class="outline-2">
-<h2 id="org682e2cb">기타 팁</h2>
-<div class="outline-text-2" id="text-org682e2cb">
+<div id="outline-container-orgc85f1b1" class="outline-2">
+<h2 id="orgc85f1b1">기타 팁</h2>
+<div class="outline-text-2" id="text-orgc85f1b1">
 </div>
-<div id="outline-container-org156653f" class="outline-3">
-<h3 id="org156653f">선택 영역 복사하기</h3>
-<div class="outline-text-3" id="text-org156653f">
+<div id="outline-container-org631f06c" class="outline-3">
+<h3 id="org631f06c">선택 영역 복사하기</h3>
+<div class="outline-text-3" id="text-org631f06c">
 <p>
 마우스로 드래그 해서 <code>^C</code> 혹은 Command-C 를 눌렀는데 복사가 안 된다면
 <code>^W</code> (Ctrl+W)를 눌러보자.
@@ -209,9 +217,9 @@ set-option -g prefix2 C-']'
 </p>
 </div>
 </div>
-<div id="outline-container-org3a61cb3" class="outline-3">
-<h3 id="org3a61cb3">종료하지 않고 설정 다시 읽어 들이기</h3>
-<div class="outline-text-3" id="text-org3a61cb3">
+<div id="outline-container-orgda45291" class="outline-3">
+<h3 id="orgda45291">종료하지 않고 설정 다시 읽어 들이기</h3>
+<div class="outline-text-3" id="text-orgda45291">
 <p>
 tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 리더 키(Prefix)를 누르고 아래 커맨드를 입력해 보자.
@@ -239,9 +247,9 @@ tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 </div>
 </div>
 </div>
-<div id="outline-container-org0764774" class="outline-2">
-<h2 id="org0764774">관련된 글들</h2>
-<div class="outline-text-2" id="text-org0764774">
+<div id="outline-container-org1971e18" class="outline-2">
+<h2 id="org1971e18">외부 링크</h2>
+<div class="outline-text-2" id="text-org1971e18">
 <ul class="org-ul">
 <li><a target="_blank" href="https://github.com/gpakosz/.tmux">🌏🇫🇷 Oh My Tmux! Pretty &amp; versatile tmux configuration</a>:
 잘 만들어진 설정을 공유하고 있으며 그대로 쓰기에도 괜찮고
@@ -266,7 +274,7 @@ tmux를 종료하지 않고 바꾼 설정을 적용하고 싶다면
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
 <div class="article-link-date">
-2020년 5월 3일 수정</div>
+2020년 5월 7일 수정</div>
 </div>
 </div>
 </div>

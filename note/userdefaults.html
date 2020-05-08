@@ -70,22 +70,22 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orga9a23a4">설정 저장하기</a></li>
-<li><a href="#org48537ee">설정 읽어오기</a></li>
-<li><a href="#org2f5c749">synchronize()</a></li>
+<li><a href="#org9cd32e4">설정 저장하기</a></li>
+<li><a href="#orgcbb23e8">설정 읽어오기</a></li>
+<li><a href="#orgc8c03e6">synchronize()</a></li>
 </ul>
 </div>
 </div>
 <p>
-<code>UserDefaults</code> 혹은 <code>NSUserDefaults</code> 는 iOS 나 <a href="macos.html">macOS</a> 용 앱에서
+UserDefaults 혹은 NSUserDefaults 는 iOS 나 <a href="macos.html">macOS</a> 용 앱에서
 간단한 정보나 설정을 저장하고 읽어 들이기 위해 사용하는 클래스다.
 데이터를 키-값(Key-Value) 스타일로 읽거나 쓸 수 있게 구성되어 있다.
 해당 데이터는 각 앱의 전용 공간에 plist 형태로 저장된다.
 </p>
 
 <p>
-<a href="swift.html">Swift</a>에서는 <code>UserDefaults</code> 라는 이름으로 사용되고 있지만
-원래 이름은 <code>NSUserDefaults</code> 이고 Objective-C에서는 아직도 이 이름이 사용되고 있다.
+<a href="swift.html">Swift</a>에서는 UserDefaults 라는 이름으로 사용되고 있지만
+원래 이름은 NSUserDefaults 이고 Objective-C에서는 아직도 이 이름이 사용되고 있다.
 </p>
 
 <p>
@@ -98,9 +98,9 @@
 복잡하거나 큰 데이터는 이 저장소에 어울리지 않으니 별도의 DB나 Core Data를 활용하자.
 </p>
 
-<div id="outline-container-orga9a23a4" class="outline-2">
-<h2 id="orga9a23a4">설정 저장하기</h2>
-<div class="outline-text-2" id="text-orga9a23a4">
+<div id="outline-container-org9cd32e4" class="outline-2">
+<h2 id="org9cd32e4">설정 저장하기</h2>
+<div class="outline-text-2" id="text-org9cd32e4">
 <p>
 아래 예제는 age 라는 키의 값을 27로 저장하는 예제다.
 </p>
@@ -114,11 +114,11 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org48537ee" class="outline-2">
-<h2 id="org48537ee">설정 읽어오기</h2>
-<div class="outline-text-2" id="text-org48537ee">
+<div id="outline-container-orgcbb23e8" class="outline-2">
+<h2 id="orgcbb23e8">설정 읽어오기</h2>
+<div class="outline-text-2" id="text-orgcbb23e8">
 <p>
-읽은 때는 타입에 신경을 쓰는 편이 좋다.
+읽을 때는 타입에 신경을 쓰는 편이 좋다.
 </p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">let</span> age = <span style="color: #c678dd;">UserDefaults</span>.<span style="color: #c678dd;">standard</span>.<span style="color: #c678dd;">integer</span>(forKey: <span style="color: #98be65;">"age"</span>)
@@ -129,20 +129,24 @@
 </p>
 
 <p>
-혹은 아래 처럼 캐스팅을 통해서 사용하는 것도 가능하긴 하다.
+물론 아래 처럼 캐스팅을 통해서 사용하는 것도 가능하긴 하다.
 </p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">let</span> age = UserDefatuls.<span style="color: #c678dd;">standard</span>.<span style="color: #c678dd;">object</span>(forKey: <span style="color: #98be65;">"age"</span>) <span style="color: #51afef;">as</span>? <span style="color: #c678dd;">Int</span>
 </pre>
 </div>
 <p>
-개인적으로는 캐스팅은 코드가 복잡해 보이는 경향이 있어서 전용 메서드를 사용하는 것을 추천한다.
+개인적으로는 캐스팅 방식은 코드가 복잡해 보이는 경향이 있어서 전용 메서드를 사용하는 것을 추천한다.
 </p>
 </div>
 </div>
-<div id="outline-container-org2f5c749" class="outline-2">
-<h2 id="org2f5c749">synchronize()</h2>
-<div class="outline-text-2" id="text-org2f5c749">
+<div id="outline-container-orgc8c03e6" class="outline-2">
+<h2 id="orgc8c03e6">synchronize()</h2>
+<div class="outline-text-2" id="text-orgc8c03e6">
+<p>
+결론부터 말하자면 이제 이 메서드는 잊어도 된다.
+</p>
+
 <p>
 과거에는 값을 저장할 때 반드시 이 메서드를 호출해야 했었다.
 </p>
@@ -152,6 +156,7 @@
 </div>
 <p>
 이래야만 제대로 파일 시스템에 해당 값이 제대로 쓰여졌다.
+반대로 쓰지 않았을 경우 간혹 데이터를 잃어 버리는 경우도 있었다.
 </p>
 
 <p>

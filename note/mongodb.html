@@ -65,49 +65,49 @@
 <section class="content">
 <header>
 <h1>MongoDB</h1>
-<div class="title-date">2020년 4월 18일 수정</div>
+<div class="title-date">2020년 5월 8일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc16ff40">CLI 사용법 메모</a>
+<li><a href="#orgd5ce762">CLI 사용법 메모</a>
 <ul>
-<li><a href="#org503f906">연결하기(Connect)</a></li>
-<li><a href="#orgef8d990">데이터베이스 선택(Select Database)</a></li>
-<li><a href="#org02ddb50">데이터베이스 목록 보기(List Databases)</a></li>
-<li><a href="#org1d0397c">컬렉션 조회(List Collections)</a></li>
-<li><a href="#org31952dc">삽입(Insert)</a></li>
-<li><a href="#orga9ccbfb">조회(Find or Query)</a></li>
-<li><a href="#org66c5b3e">수정(Update)</a></li>
-<li><a href="#org8c5b557">삭제(Remove)</a></li>
+<li><a href="#orgc05a9e3">연결하기(Connect)</a></li>
+<li><a href="#org8406db3">데이터베이스 선택(Select Database)</a></li>
+<li><a href="#orga950007">데이터베이스 목록 보기(List Databases)</a></li>
+<li><a href="#orgbe777ac">컬렉션 조회(List Collections)</a></li>
+<li><a href="#orgb33c0f5">삽입(Insert)</a></li>
+<li><a href="#orgc2231f6">조회(Find or Query)</a></li>
+<li><a href="#org324466f">수정(Update)</a></li>
+<li><a href="#org7c7e766">삭제(Remove)</a></li>
 </ul>
 </li>
-<li><a href="#orgda176b0">조회법 메모</a>
+<li><a href="#org1aa4eed">조회법 메모</a>
 <ul>
-<li><a href="#org5fb7506">정렬, 위치, 갯수 제한</a></li>
-<li><a href="#org075b240">수치 비교</a></li>
-<li><a href="#orgf03c310">특정 필드 표시하지 않기</a></li>
-<li><a href="#orga8c5ec0">특정 필드가 있는 도큐먼트 검색하기</a></li>
-<li><a href="#org897aa57">Not Null???</a></li>
+<li><a href="#org872493d">정렬, 위치, 갯수 제한</a></li>
+<li><a href="#org113201d">수치 비교</a></li>
+<li><a href="#org113700c">특정 필드 표시하지 않기</a></li>
+<li><a href="#org4ca8cdb">특정 필드가 있는 도큐먼트 검색하기</a></li>
+<li><a href="#orgfa3a8e5">Not Null???</a></li>
 </ul>
 </li>
-<li><a href="#org5e3cf92">어그리게이트(Aggregate)</a>
+<li><a href="#orgff7e4b8">어그리게이트(Aggregate)</a>
 <ul>
-<li><a href="#orgdd4497d">기초</a></li>
-<li><a href="#org15e0d21">예제</a></li>
-<li><a href="#orga040cd0">몇 가지 유용한 파이프라인 오퍼레이터</a></li>
+<li><a href="#org3d0a879">기초</a></li>
+<li><a href="#org0455ffd">예제</a></li>
+<li><a href="#orge402dbc">몇 가지 유용한 파이프라인 오퍼레이터</a></li>
 </ul>
 </li>
-<li><a href="#org571944b">백업 및 복원(Dump and Restore)</a>
+<li><a href="#org364e8a7">백업 및 복원(Dump and Restore)</a>
 <ul>
-<li><a href="#org72b5415">백업(Dump)</a></li>
-<li><a href="#org0eb4f81">복원(Restore)</a></li>
+<li><a href="#orgbb47ec3">백업(Dump)</a></li>
+<li><a href="#orgcbdd8f2">복원(Restore)</a></li>
 </ul>
 </li>
-<li><a href="#orgdb18351">기타</a>
+<li><a href="#org426729f">기타</a>
 <ul>
-<li><a href="#org1d3862c">컬렉션 몽땅 비우기(지우기)</a></li>
-<li><a href="#org0caf6ed">Replica Set 에서 Primary 바꾸기</a></li>
+<li><a href="#orgaa54edc">컬렉션 몽땅 비우기(지우기)</a></li>
+<li><a href="#org4b70c60">Replica Set 에서 Primary 바꾸기</a></li>
 </ul>
 </li>
 </ul>
@@ -120,13 +120,13 @@ MongoDB 는 이름처럼 Database 시스템이다.
 이로 인해 NoSQL DB 의 대명사이기도 하다.
 </p>
 
-<div id="outline-container-orgc16ff40" class="outline-2">
-<h2 id="orgc16ff40"><a href="cli.html">CLI</a> 사용법 메모</h2>
-<div class="outline-text-2" id="text-orgc16ff40">
+<div id="outline-container-orgd5ce762" class="outline-2">
+<h2 id="orgd5ce762"><a href="cli.html">CLI</a> 사용법 메모</h2>
+<div class="outline-text-2" id="text-orgd5ce762">
 </div>
-<div id="outline-container-org503f906" class="outline-3">
-<h3 id="org503f906">연결하기(Connect)</h3>
-<div class="outline-text-3" id="text-org503f906">
+<div id="outline-container-orgc05a9e3" class="outline-3">
+<h3 id="orgc05a9e3">연결하기(Connect)</h3>
+<div class="outline-text-3" id="text-orgc05a9e3">
 <div class="org-src-container">
 <pre class="src src-bash">mongo --host foo.bar --port <span style="color: #da8548; font-weight: bold;">27017</span>
 </pre>
@@ -147,18 +147,18 @@ dbname 은 생략할 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgef8d990" class="outline-3">
-<h3 id="orgef8d990">데이터베이스 선택(Select Database)</h3>
-<div class="outline-text-3" id="text-orgef8d990">
+<div id="outline-container-org8406db3" class="outline-3">
+<h3 id="org8406db3">데이터베이스 선택(Select Database)</h3>
+<div class="outline-text-3" id="text-org8406db3">
 <div class="org-src-container">
 <pre class="src src-javascript">use dbname
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org02ddb50" class="outline-3">
-<h3 id="org02ddb50">데이터베이스 목록 보기(List Databases)</h3>
-<div class="outline-text-3" id="text-org02ddb50">
+<div id="outline-container-orga950007" class="outline-3">
+<h3 id="orga950007">데이터베이스 목록 보기(List Databases)</h3>
+<div class="outline-text-3" id="text-orga950007">
 <div class="org-src-container">
 <pre class="src src-javascript">db.adminCommand({listDatabases: <span style="color: #da8548; font-weight: bold;">1</span>})
 </pre>
@@ -169,27 +169,27 @@ dbname 은 생략할 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org1d0397c" class="outline-3">
-<h3 id="org1d0397c">컬렉션 조회(List Collections)</h3>
-<div class="outline-text-3" id="text-org1d0397c">
+<div id="outline-container-orgbe777ac" class="outline-3">
+<h3 id="orgbe777ac">컬렉션 조회(List Collections)</h3>
+<div class="outline-text-3" id="text-orgbe777ac">
 <div class="org-src-container">
 <pre class="src src-javascript">show collections
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org31952dc" class="outline-3">
-<h3 id="org31952dc">삽입(Insert)</h3>
-<div class="outline-text-3" id="text-org31952dc">
+<div id="outline-container-orgb33c0f5" class="outline-3">
+<h3 id="orgb33c0f5">삽입(Insert)</h3>
+<div class="outline-text-3" id="text-orgb33c0f5">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.insert({key: value, ...})
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga9ccbfb" class="outline-3">
-<h3 id="orga9ccbfb">조회(Find or Query)</h3>
-<div class="outline-text-3" id="text-orga9ccbfb">
+<div id="outline-container-orgc2231f6" class="outline-3">
+<h3 id="orgc2231f6">조회(Find or Query)</h3>
+<div class="outline-text-3" id="text-orgc2231f6">
 <div class="org-src-container">
 <pre class="src src-javascript">db.colllection.find({key: value, ...})
 </pre>
@@ -199,9 +199,9 @@ dbname 은 생략할 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-org66c5b3e" class="outline-3">
-<h3 id="org66c5b3e">수정(Update)</h3>
-<div class="outline-text-3" id="text-org66c5b3e">
+<div id="outline-container-org324466f" class="outline-3">
+<h3 id="org324466f">수정(Update)</h3>
+<div class="outline-text-3" id="text-org324466f">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.update({key: value, ...}, {$set: {key: value, ...}})
 </pre>
@@ -219,9 +219,9 @@ find 에서 쓰는 쿼리와 동일하다.
 </p>
 </div>
 </div>
-<div id="outline-container-org8c5b557" class="outline-3">
-<h3 id="org8c5b557">삭제(Remove)</h3>
-<div class="outline-text-3" id="text-org8c5b557">
+<div id="outline-container-org7c7e766" class="outline-3">
+<h3 id="org7c7e766">삭제(Remove)</h3>
+<div class="outline-text-3" id="text-org7c7e766">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.remove({key: value, ...})
 </pre>
@@ -232,13 +232,13 @@ find 에서 쓰는 쿼리와 동일하다.
 </div>
 </div>
 </div>
-<div id="outline-container-orgda176b0" class="outline-2">
-<h2 id="orgda176b0">조회법 메모</h2>
-<div class="outline-text-2" id="text-orgda176b0">
+<div id="outline-container-org1aa4eed" class="outline-2">
+<h2 id="org1aa4eed">조회법 메모</h2>
+<div class="outline-text-2" id="text-org1aa4eed">
 </div>
-<div id="outline-container-org5fb7506" class="outline-3">
-<h3 id="org5fb7506">정렬, 위치, 갯수 제한</h3>
-<div class="outline-text-3" id="text-org5fb7506">
+<div id="outline-container-org872493d" class="outline-3">
+<h3 id="org872493d">정렬, 위치, 갯수 제한</h3>
+<div class="outline-text-3" id="text-org872493d">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.find({key: value, ...})
              .sort({field: -<span style="color: #da8548; font-weight: bold;">1</span>})
@@ -251,9 +251,9 @@ find 에서 쓰는 쿼리와 동일하다.
 </p>
 </div>
 </div>
-<div id="outline-container-org075b240" class="outline-3">
-<h3 id="org075b240">수치 비교</h3>
-<div class="outline-text-3" id="text-org075b240">
+<div id="outline-container-org113201d" class="outline-3">
+<h3 id="org113201d">수치 비교</h3>
+<div class="outline-text-3" id="text-org113201d">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.find({key: {$gt: <span style="color: #da8548; font-weight: bold;">10</span>}})
 </pre>
@@ -266,9 +266,9 @@ find 에서 쓰는 쿼리와 동일하다.
 </dl>
 </div>
 </div>
-<div id="outline-container-orgf03c310" class="outline-3">
-<h3 id="orgf03c310">특정 필드 표시하지 않기</h3>
-<div class="outline-text-3" id="text-orgf03c310">
+<div id="outline-container-org113700c" class="outline-3">
+<h3 id="org113700c">특정 필드 표시하지 않기</h3>
+<div class="outline-text-3" id="text-org113700c">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.find({key: value, ...},
                    {keyToHide: <span style="color: #da8548; font-weight: bold;">0</span>})
@@ -280,9 +280,9 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데
 </p>
 </div>
 </div>
-<div id="outline-container-orga8c5ec0" class="outline-3">
-<h3 id="orga8c5ec0">특정 필드가 있는 도큐먼트 검색하기</h3>
-<div class="outline-text-3" id="text-orga8c5ec0">
+<div id="outline-container-org4ca8cdb" class="outline-3">
+<h3 id="org4ca8cdb">특정 필드가 있는 도큐먼트 검색하기</h3>
+<div class="outline-text-3" id="text-org4ca8cdb">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.find({key: {$exists: <span style="color: #a9a1e1;">true</span>}})
 </pre>
@@ -292,9 +292,9 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데
 </p>
 </div>
 </div>
-<div id="outline-container-org897aa57" class="outline-3">
-<h3 id="org897aa57">Not Null???</h3>
-<div class="outline-text-3" id="text-org897aa57">
+<div id="outline-container-orgfa3a8e5" class="outline-3">
+<h3 id="orgfa3a8e5">Not Null???</h3>
+<div class="outline-text-3" id="text-orgfa3a8e5">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.find({key: {$ne: <span style="color: #a9a1e1;">null</span>}})
 </pre>
@@ -305,9 +305,9 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데
 </div>
 </div>
 </div>
-<div id="outline-container-org5e3cf92" class="outline-2">
-<h2 id="org5e3cf92">어그리게이트(Aggregate)</h2>
-<div class="outline-text-2" id="text-org5e3cf92">
+<div id="outline-container-orgff7e4b8" class="outline-2">
+<h2 id="orgff7e4b8">어그리게이트(Aggregate)</h2>
+<div class="outline-text-2" id="text-orgff7e4b8">
 <p>
 어그리게이트는 도큐먼트를 파이프 라인을 통해
 여러 차례에 걸쳐서 처리할 수 있도록 하는 특수한 기능이다.
@@ -315,9 +315,9 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데
 이걸 결과로 넘기는 식이 일렬로 처리되는 것과 비슷하다.
 </p>
 </div>
-<div id="outline-container-orgdd4497d" class="outline-3">
-<h3 id="orgdd4497d">기초</h3>
-<div class="outline-text-3" id="text-orgdd4497d">
+<div id="outline-container-org3d0a879" class="outline-3">
+<h3 id="org3d0a879">기초</h3>
+<div class="outline-text-3" id="text-org3d0a879">
 <p>
 어그리게이트의 기본 문법은 아래와 같다.
 </p>
@@ -332,9 +332,9 @@ find()의 두 번째 필드는 여러 옵션을 줄 수 있는데
 </p>
 </div>
 </div>
-<div id="outline-container-org15e0d21" class="outline-3">
-<h3 id="org15e0d21">예제</h3>
-<div class="outline-text-3" id="text-org15e0d21">
+<div id="outline-container-org0455ffd" class="outline-3">
+<h3 id="org0455ffd">예제</h3>
+<div class="outline-text-3" id="text-org0455ffd">
 <div class="org-src-container">
 <pre class="src src-text">db.user.aggregate([
     {$match:
@@ -367,9 +367,9 @@ user라는 컬렉션에서 2000년 이후로 가입한 사람들만 간추려서
 </p>
 </div>
 </div>
-<div id="outline-container-orga040cd0" class="outline-3">
-<h3 id="orga040cd0">몇 가지 유용한 파이프라인 오퍼레이터</h3>
-<div class="outline-text-3" id="text-orga040cd0">
+<div id="outline-container-orge402dbc" class="outline-3">
+<h3 id="orge402dbc">몇 가지 유용한 파이프라인 오퍼레이터</h3>
+<div class="outline-text-3" id="text-orge402dbc">
 <ul class="org-ul">
 <li><code>$match</code> 필터 혹은 쿼리(find와 비슷)</li>
 <li><code>$group</code> 특정한 필드를 기준으로 모으기(grouping)</li>
@@ -378,6 +378,7 @@ user라는 컬렉션에서 2000년 이후로 가입한 사람들만 간추려서
 <li><code>$sort</code> 정렬</li>
 <li><code>$limit</code> 갯수 제한</li>
 <li><code>$count</code> 도큐먼트 갯수</li>
+<li><code>$unwind</code> array를 풀어헤치기</li>
 </ul>
 
 <p>
@@ -393,13 +394,13 @@ Pipeline Stages</a> 문서를 참고해보자.
 </div>
 </div>
 </div>
-<div id="outline-container-org571944b" class="outline-2">
-<h2 id="org571944b">백업 및 복원(Dump and Restore)</h2>
-<div class="outline-text-2" id="text-org571944b">
+<div id="outline-container-org364e8a7" class="outline-2">
+<h2 id="org364e8a7">백업 및 복원(Dump and Restore)</h2>
+<div class="outline-text-2" id="text-org364e8a7">
 </div>
-<div id="outline-container-org72b5415" class="outline-3">
-<h3 id="org72b5415">백업(Dump)</h3>
-<div class="outline-text-3" id="text-org72b5415">
+<div id="outline-container-orgbb47ec3" class="outline-3">
+<h3 id="orgbb47ec3">백업(Dump)</h3>
+<div class="outline-text-3" id="text-orgbb47ec3">
 <div class="org-src-container">
 <pre class="src src-bash">mongodump --host host.foo.bar <span style="color: #98be65;">\</span>
           --out /foo/bar/dump/directory <span style="color: #98be65;">\</span>
@@ -414,9 +415,9 @@ Pipeline Stages</a> 문서를 참고해보자.
 </p>
 </div>
 </div>
-<div id="outline-container-org0eb4f81" class="outline-3">
-<h3 id="org0eb4f81">복원(Restore)</h3>
-<div class="outline-text-3" id="text-org0eb4f81">
+<div id="outline-container-orgcbdd8f2" class="outline-3">
+<h3 id="orgcbdd8f2">복원(Restore)</h3>
+<div class="outline-text-3" id="text-orgcbdd8f2">
 <div class="org-src-container">
 <pre class="src src-bash">mongorestore --host host.foo.bar /foo/bar/dump/directory
 </pre>
@@ -428,13 +429,13 @@ Pipeline Stages</a> 문서를 참고해보자.
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb18351" class="outline-2">
-<h2 id="orgdb18351">기타</h2>
-<div class="outline-text-2" id="text-orgdb18351">
+<div id="outline-container-org426729f" class="outline-2">
+<h2 id="org426729f">기타</h2>
+<div class="outline-text-2" id="text-org426729f">
 </div>
-<div id="outline-container-org1d3862c" class="outline-3">
-<h3 id="org1d3862c">컬렉션 몽땅 비우기(지우기)</h3>
-<div class="outline-text-3" id="text-org1d3862c">
+<div id="outline-container-orgaa54edc" class="outline-3">
+<h3 id="orgaa54edc">컬렉션 몽땅 비우기(지우기)</h3>
+<div class="outline-text-3" id="text-orgaa54edc">
 <div class="org-src-container">
 <pre class="src src-javascript">db.collection.remove({})
 </pre>
@@ -444,9 +445,9 @@ Pipeline Stages</a> 문서를 참고해보자.
 </p>
 </div>
 </div>
-<div id="outline-container-org0caf6ed" class="outline-3">
-<h3 id="org0caf6ed">Replica Set 에서 Primary 바꾸기</h3>
-<div class="outline-text-3" id="text-org0caf6ed">
+<div id="outline-container-org4b70c60" class="outline-3">
+<h3 id="org4b70c60">Replica Set 에서 Primary 바꾸기</h3>
+<div class="outline-text-3" id="text-org4b70c60">
 <p>
 삽질로 알아낸 정보라 이 방법 외에 다른 방법이 있을 수도 있음을 먼저 알린다.
 </p>

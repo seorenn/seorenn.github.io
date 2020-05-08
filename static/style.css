@@ -60,7 +60,7 @@ body {
 
   .content-container {
     display: grid;
-    grid-template-columns: 80px 800px 160px;
+    grid-template-columns: 60px 800px 180px;
     grid-template-rows: auto;
     grid-column-gap: 24px;
     justify-content: center;

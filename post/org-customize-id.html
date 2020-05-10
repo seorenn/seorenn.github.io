@@ -1,0 +1,365 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<title>Org 문서를 HTML로 출력했을 때 Headline의 ID가 계속 바뀌는 문제 - Seorenn</title>
+<meta name="twitter:title" content="Org 문서를 HTML로 출력했을 때 Headline의 ID가 계속 바뀌는 문제" />
+<meta name="og:title" content="Org 문서를 HTML로 출력했을 때 Headline의 ID가 계속 바뀌는 문제" />
+<meta name="description" content="Org Mode 문서를 HTML로 Export 했을 때 Headline의 링크 ID가 왜 계속 바뀌는가를 추적해보고 고친 이야기" />
+<meta name="twitter:description" content="Org Mode 문서를 HTML로 Export 했을 때 Headline의 링크 ID가 왜 계속 바뀌는가를 추적해보고 고친 이야기" />
+<meta name="og:description" content="Org Mode 문서를 HTML로 Export 했을 때 Headline의 링크 ID가 왜 계속 바뀌는가를 추적해보고 고친 이야기" />
+<link rel="canonical" href="https://seorenn.github.io/post/org-customize-id.html" />
+<meta property="og:url" content="https://seorenn.github.io/post/org-customize-id.html" />
+<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><img src="/static/icon-home.svg" alt="home" class="menu-icon" /></a>
+<a href="/post" title="Post"><img src="/static/icon-post.svg" alt="post" class="menu-icon" /></a>
+ <a href="/note" title="Note"><img src="/static/icon-note.svg" alt="note" class="menu-icon" /></a>
+ <a href="/log" title="Log"><img src="/static/icon-log.svg" alt="log" class="menu-icon" /></a>
+</nav>
+</div>
+</header>
+<div class="top-ad-container">
+<ins class="adsbygoogle top-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>Org 문서를 HTML로 출력했을 때 Headline의 ID가 계속 바뀌는 문제</h1>
+<div class="title-date">2020년 5월 11일 작성</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#25964318">서두</a></li>
+<li><a href="#cb5a241b">문제의 상황</a></li>
+<li><a href="#b92c4ecd">문제의 추적</a></li>
+<li><a href="#d6edc42c">뜯어 고쳐보자</a></li>
+<li><a href="#c0f78afa">사족</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-25964318" class="outline-2">
+<h2 id="25964318">서두</h2>
+<div class="outline-text-2" id="text-25964318">
+<p>
+이 사이트는 <a href="../note/org-mode.html">Org Mode</a>를 이용해 문서를 작성하고
+이를 HTML로 익스포트 하는 방식으로 제작하고 운영된다.
+<a href="../note/emacs.html">Emacs</a>에서 글을 작성하는 것을 목표로 하다보니 이런 방식이 가장 편하기 때문이다.
+</p>
+
+<p>
+출력된 HTML 문서는 목차(Table of Contents)가 자동으로 첨부된다.
+개인적으로 정말 좋아하는 기능이다.
+Org 문서를 적정 사이트 생성의 소스로 정한 이유 중 하나이기도 할 정도다.
+</p>
+
+<p>
+그런데 이 목차를 구현하는데 있어 약간 문제가 되는 상황이 생겼다.
+</p>
+</div>
+</div>
+<div id="outline-container-cb5a241b" class="outline-2">
+<h2 id="cb5a241b">문제의 상황</h2>
+<div class="outline-text-2" id="text-cb5a241b">
+<p>
+목차는 문서 내부의 ID를 이용한 하이퍼링크로 작성되는데 각 ID는 <code>org1234xyz</code> 이런 식으로 구성되어 있다.
+그런데 하필 이 ID가 익스포트 할 때마다 매번 바뀐다.
+즉 HTML로 출력할 때마다 목차의 링크 주소가 매번 바뀌는 셈이다.
+</p>
+
+<p>
+이 상황은 개별 문서에는 별 문제가 되지 않는다.
+하지만 난 웹 사이트로 이 문서를 올리려는 것이 주 목적이고
+구글 등 검색엔진은 이 목차의 링크도 중요한 정보로 다루고 있다.
+</p>
+
+<p>
+즉 구글이 기껏 인덱싱을 해놔도 글을 수정하고 출력한 HTML을 사이트에 올려두면
+결국 구글이 다시 긁어가기 전까지는 링크가 깨진 상태와 다름 없게 된다.
+가뜩이나 검색 트래픽도 떨어지고 있는 상황이라서 이 문제는 어떻게든 손을 보고 싶었다.
+</p>
+
+<p>
+방법이 아예 없는 것은 아니다. <code>:PROPERTIES:</code> 문법을 이용해 각 headline 에 <code>CUSTOM_ID</code> 를 부여할 수 있다.
+이렇게 하면 고유한 ID를 마음껏 원하는 대로 부여할 수 있다.
+하지만 당연하게도 이 방법은 굉장히 귀찮다.
+이미 100개 가까운 문서가 있는 마당에 어떻게 하나하나 다 뒤져보며 고칠까.
+</p>
+
+<p>
+어차피 귀차니즘의 결정체인 개발자인 입장에 자동화가 아니면 답이 아니었다.
+그렇다면 원인을 추적해서 뜯어 고치면 되는 것 아닌가?
+</p>
+</div>
+</div>
+<div id="outline-container-b92c4ecd" class="outline-2">
+<h2 id="b92c4ecd">문제의 추적</h2>
+<div class="outline-text-2" id="text-b92c4ecd">
+<p>
+문제라고 적긴 했지만, 사실 이 상황은 버그가 아니다.
+<a href="../note/org-mode.html">Org Mode</a>의 특수한 기능으로,
+최대한 고유한 ID를 만들어서 링크가 겹치는 일이 없도록 하기 위해
+시스템 시간 값을 활용해 ID 용도의 해시를 매번 최대한 무작위로 생성한다.
+</p>
+
+<p>
+하지만 이 기능을 바꾸는 옵션이 없다는 게 나에게는 문제였다.
+애초에 옛날 <a href="../note/org-mode.html">Org Mode</a>에서는 링크 해시를 별도로 생성하지 않고
+<code>sec-1-2</code> 이런 식으로 고정된 제목 번호를 메겨서 출력했었는데
+아마도 이게 문제가 많아서 매번 무작위로 생성하는 형태로 바뀐 것 같다.
+</p>
+
+<p>
+뭐 어쨌건 오픈소스인 소프트웨어다. 코드를 뒤져보면 뭔가 나올 것이다.
+이런 생각으로 가볍게 덤벼 들었다가 코드를 보고 한숨을 내쉬었다.
+</p>
+
+<blockquote>
+<p>
+"아&#x2026; 이건 Lisp 코드다. 괄호로 구성된 암호의 지옥이지."
+</p>
+</blockquote>
+
+<p>
+하여간 <a href="../note/emacs-lisp.html">Emacs Lisp</a> 코드의 가독성은 아무리 노력해도 영 꽝이다.
+</p>
+
+<p>
+그래서 방향을 돌려서 구글링을 통해 검색하게 되고 결국 힌트를 찾았다.
+</p>
+
+<p>
+Org 문서를 HTML로 출력하는 과정의 몇 가지 함수가 있다.
+대표적으로 <code>ox-html.el</code> 파일에 들어있는 <code>org-html--format-toc-headline</code> 함수를 살펴보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">org-html--format-toc-headline</span> <span style="color: #c678dd;">(</span>headline info<span style="color: #c678dd;">)</span>
+  ...
+  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">format</span> <span style="color: #98be65;">"&lt;a href=\"#%s\"&gt;%s&lt;/a&gt;"</span>
+          <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Label.</span>
+          <span style="color: #98be65;">(</span><span style="color: #51afef;">or</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">org-element-property</span> <span style="color: #c678dd;">:CUSTOM_ID</span> headline<span style="color: #51afef;">)</span>
+              <span style="color: #51afef;">(</span><span style="color: #c678dd;">org-export-get-reference</span> headline info<span style="color: #51afef;">)</span><span style="color: #98be65;">)</span>
+  ...
+</pre>
+</div>
+<p>
+많은 부분이 생략했지만, 위 코드가 TOC(Table of Contents)를 구성하는 한 부분이라는 것은 확실해 보인다.
+<code>CUSTOM_ID</code> 프로퍼티를 읽어 들이는 부분도 보이는데,
+그렇다면 그 아래에 있는 <code>org-export-get-reference</code> 함수가 무작위의 ID를 만들어내는 녀석이라고 추측이 가능하다.
+</p>
+
+<p>
+이와 비슷한 코드는 또 다른 곳에서도 보인다. 아래는 같은 파일의 <code>org-html-headline</code> 함수의 일부분이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">org-html-headline</span> <span style="color: #c678dd;">(</span>headline contents info<span style="color: #c678dd;">)</span>
+  ...
+  <span style="color: #c678dd;">(</span>id <span style="color: #98be65;">(</span><span style="color: #51afef;">or</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">org-element-property</span> <span style="color: #c678dd;">:CUSTOM_ID</span> headline<span style="color: #51afef;">)</span>
+          <span style="color: #51afef;">(</span><span style="color: #c678dd;">org-export-get-reference</span> headline info<span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
+  ...
+</pre>
+</div>
+<p>
+각 제목(headline)을 HTML로 출력하는 코드라 유추되는 이름의 함수이고,
+여기도 <code>CUSTOM_ID</code> 를 읽는 부분과 함께 <code>org-export-get-reference</code> 함수가 사용되고 있는 것이 보인다.
+</p>
+
+<p>
+그렇다면 문제의 함수를 살펴봐야겠다. <code>ox.el</code> 파일에서 찾을 수 있었다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">org-export-get-reference</span> <span style="color: #c678dd;">(</span>datum info<span style="color: #c678dd;">)</span>
+  ...
+  <span style="color: #c678dd;">(</span>reference-string <span style="color: #98be65;">(</span><span style="color: #c678dd;">org-export-format-reference</span> new<span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+  ...
+</pre>
+</div>
+<p>
+많은 부분을 들쳐냈지만 핵심은 저거 하나다.
+<code>org-export-format-reference</code> 를 구한 결과를 이후에 반환하는 함수다.
+그렇다면 이 함수를 찾아보면 어떨까?
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">org-export-format-reference</span> <span style="color: #c678dd;">(</span>reference<span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">format</span> <span style="color: #98be65;">"org%07x"</span> reference<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+빙고! 목표를 정확히 발견했다.
+</p>
+</div>
+</div>
+<div id="outline-container-d6edc42c" class="outline-2">
+<h2 id="d6edc42c">뜯어 고쳐보자</h2>
+<div class="outline-text-2" id="text-d6edc42c">
+<p>
+내가 원하는 것은 그냥 HTML로 출력했을 때 각 제목의 ID가 변경되지 않는 것이다.
+이를 위해선 과거처럼 sec-n-n 처럼 출력하는 것도 좋긴 한데
+이걸 어떻게 해야 구현할 수 있을지는 좀 막막했다.
+</p>
+
+<p>
+하지만 다르게 돌려서, 만약 해당 headline 의 raw text를 알 수만 있다면
+그 문자열을 hash 한 값을 사용할 수 있지 않을까 하는 것은 어떨까?
+이건 충분히 단순하고 쉬우면서도 ID도 구분될 수 있고 HTML로 출력해도 고정된 값이 들어가게 된다.
+</p>
+
+<p>
+그래서 MD5 해시를 이용하는 것으로 목표로 했다.
+</p>
+
+<p>
+목표한 대로 고치려면 <code>org-export-format-reference</code> 를 고치는 것은 답이 아닌 것 같다.
+매개변수로 넘어오는 값은 뭔가 이상한 데이터만 있었기 때문이다.
+</p>
+
+<p>
+그렇다면 이 함수를 호출하는 함수인 <code>org-export-get-reference</code> 를 고치면 될 것이다.
+아마도 매개변수로 넘어오는 정보 중 필요한 것이 있을 것이라는 추측 때문이다.
+</p>
+
+<p>
+그래서 매개변수로 넘어오는 <code>datum</code> 과 <code>info</code> 를 찍어봤는데&#x2026; <code>info</code> 는 절대로 콘솔에 출력하지 말 것을 추천한다.
+<a href="../note/emacs.html">Emacs</a>가 멈출 정도로 엄청나게 많은 내용이 출력 된다.
+</p>
+
+<p>
+다행히도 <code>datum</code> 에는 온갖 정보가 들어있긴 했지만 headline 정보도 같이 들어있다는 것을 파악했다.
+</p>
+
+<p>
+그래서 최종적으로 이 함수를 다음처럼 고쳐졌다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">org-export-get-reference</span> <span style="color: #c678dd;">(</span>datum info<span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #51afef;">let*</span> <span style="color: #98be65;">(</span><span style="color: #51afef;">(</span>words <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">cdr</span> <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">car</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">org-export-search-cells</span> datum<span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+         <span style="color: #51afef;">(</span>hash <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">substring</span> <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">md5</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">string-join</span> words <span style="color: #98be65;">" "</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span> <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">8</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span>
+    hash<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+headline 문자열이 <code>org-export-search-cells</code> 를 통해 오면서 리스트로 분할되어서 넘어오는데
+이걸 다시 하나의 문자열로 합친 뒤 MD5 해시의 첫 8자를 ID로써 반환하는 코드가 완성되었다.
+</p>
+
+<p>
+이 코드를 내 설정 파일에 <a href="../note/org-mode.html">Org Mode</a>가 require 되는 코드 이후에 넣어놓으니
+원하는 대로 동작하기 시작했다.
+</p>
+
+<p>
+목적을 이루었다. 뿌듯하다.
+</p>
+</div>
+</div>
+<div id="outline-container-c0f78afa" class="outline-2">
+<h2 id="c0f78afa">사족</h2>
+<div class="outline-text-2" id="text-c0f78afa">
+<p>
+<a href="../note/emacs.html">Emacs</a>에서 함수를 재정의 하는 것이 가능해서 천만 다행이라는 생각이 들었다.
+이게 아니었다면 매개변수 디버깅도 못 했을 것이고 뭐 하여간 많은 것을 못 했을 것 같다.
+</p>
+
+<p>
+그 전에 Lisp 이라는 희대의 변태 같은 언어를 좀 어떻게 버렸으면 좋겠다는 생각이 들지만&#x2026;
+나도 변태인지 가끔 다루면 즐거울 때도 있다.
+</p>
+
+<p>
+뭐 어때서.
+</p>
+</div>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="refs-container">
+<hr /><h1>이 글과 비슷한 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/post/seorenn-publish.html">정적 사이트 생성을 위한 개인적인 욕망의 분출(?)</a></h2>
+<div class="article-link-date">
+2020년 4월 13일 작성</div>
+</div>
+</div>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

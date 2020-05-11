@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Emacs</h1>
-<div class="title-date">2020년 5월 10일 수정</div>
+<div class="title-date">2020년 5월 12일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -67,7 +67,7 @@
 <li><a href="#17ec5bf2">시작 시 풀스크린 모드로 만들기</a></li>
 </ul>
 </li>
-<li><a href="#f3720a73">메모</a>
+<li><a href="#e352cada">노트</a>
 <ul>
 <li><a href="#8c324b74">멈추는 현상(freezing) 디버깅 하기</a></li>
 <li><a href="#74709b9f">터미널에서 트루컬러 이맥스 사용하기</a></li>
@@ -75,6 +75,7 @@
 <li><a href="#3eff7ab3">CRLF to LF</a></li>
 <li><a href="#69cdc1ec">셸에서 이맥스 스크립트 실행시키기</a></li>
 <li><a href="#5cf3c8dc">퍼포먼스 프로파일</a></li>
+<li><a href="#ec7c1dea">메시지 버퍼 지우기</a></li>
 </ul>
 </li>
 <li><a href="#0bbb90e1">외부 링크</a>
@@ -137,9 +138,9 @@ Spacemacs나 Doom Emacs 같은 설정 팩을 사용하는 것도 괜찮다.
 </div>
 </div>
 </div>
-<div id="outline-container-f3720a73" class="outline-2">
-<h2 id="f3720a73">메모</h2>
-<div class="outline-text-2" id="text-f3720a73">
+<div id="outline-container-e352cada" class="outline-2">
+<h2 id="e352cada">노트</h2>
+<div class="outline-text-2" id="text-e352cada">
 </div>
 <div id="outline-container-8c324b74" class="outline-3">
 <h3 id="8c324b74">멈추는 현상(freezing) 디버깅 하기</h3>
@@ -409,6 +410,27 @@ CRLF를 쓰고 싶다면 <code>utf-8-dos</code> 를 선택해주면 된다.
 <pre class="src src-text">M-x profiler-stop
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-ec7c1dea" class="outline-3">
+<h3 id="ec7c1dea">메시지 버퍼 지우기</h3>
+<div class="outline-text-3" id="text-ec7c1dea">
+<p>
+<code>*Messages*</code> 버퍼는 콘솔 용도로 여러 메시지가 표시되는 버퍼다.
+그런데 모종의 사유로,
+예를 들어 개인적으로 개발 중인 코드가 출력하는 메시지를 좀 더 깔끔하게 보고 싶어서
+이 버퍼의 내용을 지우고 싶을 때가 있을 것이다.
+</p>
+
+<p>
+답은 간단하다. 그냥 이 버퍼를 지워버리면 된다.
+<code>kill-buffer</code> 함수를 호출하거나
+<a href="doom-emacs.html">Doom Emacs</a>의 경우라면 <code>SPC b k</code> 단축키로 날려버릴 수 있다.
+</p>
+
+<p>
+그리고 새로운 메시지가 생기면 자동으로 <code>*Messages*</code> 버퍼가 새로 생긴다.
+</p>
 </div>
 </div>
 </div>

@@ -29,6 +29,7 @@
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <div class="content-container">
@@ -45,17 +46,7 @@
 </nav>
 </div>
 </header>
-<div class="top-ad-container">
-<ins class="adsbygoogle top-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+<hr/>
 </div>
 <div class="side-ad-container"></div>
 </div>
@@ -70,10 +61,10 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org20873d0">평범한 스펙 예제</a></li>
-<li><a href="#orgc116e66">사용자 지정</a></li>
-<li><a href="#org2ea7c9b">Health Checking</a></li>
-<li><a href="#orgeb97017">Multi Stage Building</a></li>
+<li><a href="#39a2e4c2">평범한 스펙 예제</a></li>
+<li><a href="#28af54f1">사용자 지정</a></li>
+<li><a href="#5d5e8bc1">Health Checking</a></li>
+<li><a href="#67358999">Multi Stage Building</a></li>
 </ul>
 </div>
 </div>
@@ -82,9 +73,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 특수한 DSL 스크립트 언어로 작성하는 스펙 파일이다.
 </p>
 
-<div id="outline-container-org20873d0" class="outline-2">
-<h2 id="org20873d0">평범한 스펙 예제</h2>
-<div class="outline-text-2" id="text-org20873d0">
+<div id="outline-container-39a2e4c2" class="outline-2">
+<h2 id="39a2e4c2">평범한 스펙 예제</h2>
+<div class="outline-text-2" id="text-39a2e4c2">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">debian:buster</span>
 
@@ -129,9 +120,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-orgc116e66" class="outline-2">
-<h2 id="orgc116e66">사용자 지정</h2>
-<div class="outline-text-2" id="text-orgc116e66">
+<div id="outline-container-28af54f1" class="outline-2">
+<h2 id="28af54f1">사용자 지정</h2>
+<div class="outline-text-2" id="text-28af54f1">
 <p>
 특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
@@ -146,9 +137,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 </div>
 </div>
-<div id="outline-container-org2ea7c9b" class="outline-2">
-<h2 id="org2ea7c9b">Health Checking</h2>
-<div class="outline-text-2" id="text-org2ea7c9b">
+<div id="outline-container-5d5e8bc1" class="outline-2">
+<h2 id="5d5e8bc1">Health Checking</h2>
+<div class="outline-text-2" id="text-5d5e8bc1">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -158,9 +149,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb97017" class="outline-2">
-<h2 id="orgeb97017">Multi Stage Building</h2>
-<div class="outline-text-2" id="text-orgeb97017">
+<div id="outline-container-67358999" class="outline-2">
+<h2 id="67358999">Multi Stage Building</h2>
+<div class="outline-text-2" id="text-67358999">
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...

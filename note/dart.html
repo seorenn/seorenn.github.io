@@ -29,6 +29,7 @@
 <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
 <meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 <div class="content-container">
@@ -45,17 +46,7 @@
 </nav>
 </div>
 </header>
-<div class="top-ad-container">
-<ins class="adsbygoogle top-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+<hr/>
 </div>
 <div class="side-ad-container"></div>
 </div>
@@ -70,15 +61,15 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#org0414595">엔트리 포인트(Entry Point)</a></li>
-<li><a href="#org17a09ec">문자열 조합(String Interpolation)</a></li>
-<li><a href="#org18a8dac">함수(Function)</a></li>
-<li><a href="#org1a3dd7c">루프(Loop)</a></li>
-<li><a href="#org03249bc">Map과 Filter</a></li>
-<li><a href="#orgf700c7a">클래스(Class)</a>
+<li><a href="#b8058042">엔트리 포인트(Entry Point)</a></li>
+<li><a href="#563713fb">문자열 조합(String Interpolation)</a></li>
+<li><a href="#cd4e2449">함수(Function)</a></li>
+<li><a href="#13ba80d2">루프(Loop)</a></li>
+<li><a href="#b177d702">Map과 Filter</a></li>
+<li><a href="#3f114ee5">클래스(Class)</a>
 <ul>
-<li><a href="#orgf6ea9e1">기본 형태</a></li>
-<li><a href="#org2dff16d">Setter 그리고 Getter</a></li>
+<li><a href="#3969d8a6">기본 형태</a></li>
+<li><a href="#0e3ec4a3">Setter 그리고 Getter</a></li>
 </ul>
 </li>
 </ul>
@@ -106,9 +97,9 @@
 싫어하는 언어이지만 써야 하기 때문에 억지로 남기는 메모가 이어진다.
 </p>
 
-<div id="outline-container-org0414595" class="outline-2">
-<h2 id="org0414595">엔트리 포인트(Entry Point)</h2>
-<div class="outline-text-2" id="text-org0414595">
+<div id="outline-container-b8058042" class="outline-2">
+<h2 id="b8058042">엔트리 포인트(Entry Point)</h2>
+<div class="outline-text-2" id="text-b8058042">
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">main</span>() {
   print(<span style="color: #98be65;">'Hello World!'</span>);
@@ -125,9 +116,9 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </p>
 </div>
 </div>
-<div id="outline-container-org17a09ec" class="outline-2">
-<h2 id="org17a09ec">문자열 조합(String Interpolation)</h2>
-<div class="outline-text-2" id="text-org17a09ec">
+<div id="outline-container-563713fb" class="outline-2">
+<h2 id="563713fb">문자열 조합(String Interpolation)</h2>
+<div class="outline-text-2" id="text-563713fb">
 <div class="org-src-container">
 <pre class="src src-dart">print(<span style="color: #98be65;">'foo is </span><span style="color: #dcaeea;">$foo</span><span style="color: #98be65;">'</span>);
 </pre>
@@ -141,15 +132,15 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </div>
 </div>
 </div>
-<div id="outline-container-org18a8dac" class="outline-2">
-<h2 id="org18a8dac">함수(Function)</h2>
-<div class="outline-text-2" id="text-org18a8dac">
+<div id="outline-container-cd4e2449" class="outline-2">
+<h2 id="cd4e2449">함수(Function)</h2>
+<div class="outline-text-2" id="text-cd4e2449">
 <p>
 그냥 함수를 정의하는 몇 가지 예를 보자.
 </p>
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #c678dd;">someProcedure</span>() {
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+  <span style="color: #5B6268;">// ...</span>
 }
 
 <span style="color: #c678dd;">anotherProcedure</span>(<span style="color: #dcaeea;">value</span>) {
@@ -183,9 +174,9 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 </p>
 </div>
 </div>
-<div id="outline-container-org1a3dd7c" class="outline-2">
-<h2 id="org1a3dd7c">루프(Loop)</h2>
-<div class="outline-text-2" id="text-org1a3dd7c">
+<div id="outline-container-13ba80d2" class="outline-2">
+<h2 id="13ba80d2">루프(Loop)</h2>
+<div class="outline-text-2" id="text-13ba80d2">
 <p>
 기본적은 for-loop 모양은 C 식과 거의 동일하다.
 </p>
@@ -199,7 +190,7 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 <code>forEach</code> 는 아래와 같이 리스트와 섞어서 쓰면 편하다.
 </p>
 <div class="org-src-container">
-<pre class="src src-dart"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">['alpha', 'beta', 'gamma'].forEach((e) =&gt; print(e));</span>
+<pre class="src src-dart"><span style="color: #5B6268;">// ['alpha', 'beta', 'gamma'].forEach((e) =&gt; print(e));</span>
 [<span style="color: #98be65;">'alpha'</span>, <span style="color: #98be65;">'beta'</span>, <span style="color: #98be65;">'gamma'</span>].forEach((<span style="color: #dcaeea;">e</span>) {
     print(e);
 });
@@ -207,9 +198,9 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 </div>
 </div>
 </div>
-<div id="outline-container-org03249bc" class="outline-2">
-<h2 id="org03249bc">Map과 Filter</h2>
-<div class="outline-text-2" id="text-org03249bc">
+<div id="outline-container-b177d702" class="outline-2">
+<h2 id="b177d702">Map과 Filter</h2>
+<div class="outline-text-2" id="text-b177d702">
 <p>
 Map은 리스트에 그냥 쓰면 된다.
 </p>
@@ -230,44 +221,44 @@ Map은 리스트에 그냥 쓰면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf700c7a" class="outline-2">
-<h2 id="orgf700c7a">클래스(Class)</h2>
-<div class="outline-text-2" id="text-orgf700c7a">
+<div id="outline-container-3f114ee5" class="outline-2">
+<h2 id="3f114ee5">클래스(Class)</h2>
+<div class="outline-text-2" id="text-3f114ee5">
 </div>
-<div id="outline-container-orgf6ea9e1" class="outline-3">
-<h3 id="orgf6ea9e1">기본 형태</h3>
-<div class="outline-text-3" id="text-orgf6ea9e1">
+<div id="outline-container-3969d8a6" class="outline-3">
+<h3 id="3969d8a6">기본 형태</h3>
+<div class="outline-text-3" id="text-3969d8a6">
 <p>
 기본적인 모양은 이런 식이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">SomeClass</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">SomeParentClass</span> {
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Property and Default Value</span>
+  <span style="color: #5B6268;">// Property and Default Value</span>
   <span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">name</span> = <span style="color: #98be65;">'Conrad'</span>;
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Constructor</span>
+  <span style="color: #5B6268;">// Constructor</span>
   <span style="color: #ECBE7B;">SomeClass</span>(<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">anotherName</span>) {
     name = anotherName;
   }
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Named Constructor</span>
+  <span style="color: #5B6268;">// Named Constructor</span>
   <span style="color: #ECBE7B;">SomeClass</span>.<span style="color: #c678dd;">anonymous</span>() {
     name = <span style="color: #98be65;">'Nonamed Who'</span>;
   }
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method</span>
+  <span style="color: #5B6268;">// Method</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">whoami</span>() {
     print(<span style="color: #98be65;">'I am </span><span style="color: #dcaeea;">$name</span><span style="color: #98be65;">'</span>);
   }
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method - usage of 'this'</span>
+  <span style="color: #5B6268;">// Method - usage of 'this'</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">updateName</span>(<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">name</span>) {
     <span style="color: #51afef;">this</span>.name = name;
   }
 
   ...
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">override method</span>
+  <span style="color: #5B6268;">// override method</span>
   <span style="color: #a9a1e1;">@override</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">nag</span>() {
     <span style="color: #51afef;">super</span>.nag()
@@ -281,17 +272,17 @@ Map은 리스트에 그냥 쓰면 된다.
 </p>
 </div>
 </div>
-<div id="outline-container-org2dff16d" class="outline-3">
-<h3 id="org2dff16d">Setter 그리고 Getter</h3>
-<div class="outline-text-3" id="text-org2dff16d">
+<div id="outline-container-0e3ec4a3" class="outline-3">
+<h3 id="0e3ec4a3">Setter 그리고 Getter</h3>
+<div class="outline-text-3" id="text-0e3ec4a3">
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">SomeClass</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">SomeParentClass</span> {
   <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">age</span> = <span style="color: #da8548; font-weight: bold;">0</span>;
   ...
 
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">bool get koreanAge {</span>
-  <span style="color: #5B6268;">//   </span><span style="color: #5B6268;">return age + 1;</span>
-  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">}</span>
+  <span style="color: #5B6268;">// bool get koreanAge {</span>
+  <span style="color: #5B6268;">//   return age + 1;</span>
+  <span style="color: #5B6268;">// }</span>
   <span style="color: #ECBE7B;">bool</span> <span style="color: #c678dd;">get</span> <span style="color: #dcaeea;">koreanAge</span> =&gt; <span style="color: #51afef;">this</span>.age + <span style="color: #da8548; font-weight: bold;">1</span>;
 
   <span style="color: #c678dd;">set</span> <span style="color: #c678dd;">koreanAge</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">korAge</span>) {
@@ -323,7 +314,7 @@ Map은 리스트에 그냥 쓰면 된다.
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/flutter.html">Flutter</a></h2>
 <div class="article-link-date">
-2020년 5월 4일 수정</div>
+2020년 5월 9일 수정</div>
 </div>
 </div>
 </div>

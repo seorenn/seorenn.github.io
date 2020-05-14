@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Org Mode</h1>
-<div class="title-date">2020년 5월 11일 수정</div>
+<div class="title-date">2020년 5월 15일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -69,7 +69,10 @@
 <li><a href="#aeee2070">문법</a>
 <ul>
 <li><a href="#3c34ef13">헤더</a></li>
-<li><a href="#44c203bf">기본 문법들</a></li>
+<li><a href="#9c49a0b0">제목줄(Headline)</a></li>
+<li><a href="#0a9f6b66">링크(Link)</a></li>
+<li><a href="#fc1fcba6">텍스트 스타일(Text Styles)</a></li>
+<li><a href="#895dce2e">코드(Code)</a></li>
 <li><a href="#ce6dd84f">블록 문법들</a></li>
 <li><a href="#351f3e67">테이블</a></li>
 <li><a href="#7f598db0">기타</a></li>
@@ -125,8 +128,11 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 <div id="outline-container-3c34ef13" class="outline-3">
 <h3 id="3c34ef13">헤더</h3>
 <div class="outline-text-3" id="text-3c34ef13">
+<p>
+헤더에 해당하는 여러 프로퍼티를 정의할 수 있다.
+</p>
 <dl class="org-dl">
-<dt><code>#+TITLE: Title Text</code></dt><dd>문서의 제목</dd>
+<dt><code>#+TITLE: Title Text</code></dt><dd>문서의 제목. 필수라고 생각하자.</dd>
 <dt><code>#+DESCRIPTION: Description Text</code></dt><dd>문서의 핵심을 정리하는 내용. 익스포트
 시 Meta 태그의 description 항목으로도 출력 된다.</dd>
 <dt><code>#+KEYWORDS: foo, bar, ...</code></dt><dd>문서의 핵심 단어를 정리한다.
@@ -134,28 +140,86 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 <dt><code>#+OPTIONS: ...</code></dt><dd>문서의 다양한 옵션을 줄 수 있다.
 예를 들어 <code>toc:2</code> 라는 옵션을 주게 될 경우
 익스포트 시 목차를 2레벨 헤더까지만 정리한다.</dd>
+<dt><code>#+FILETAGS: :foo:bar:</code></dt><dd>현재 파일에 foo와 bar라는 태그를 정의한다.</dd>
+<dt><code>#+DATE: 2020-04-20</code></dt><dd>작성된 날짜나 시간을 기입할 수 있다.</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-44c203bf" class="outline-3">
-<h3 id="44c203bf">기본 문법들</h3>
-<div class="outline-text-3" id="text-44c203bf">
+<div id="outline-container-9c49a0b0" class="outline-3">
+<h3 id="9c49a0b0">제목줄(Headline)</h3>
+<div class="outline-text-3" id="text-9c49a0b0">
+<p>
+아래와 같이 여러 레벨로 쓸 수 있다.
+</p>
 <ul class="org-ul">
 <li><code>* Heading 1</code></li>
 <li><code>** Heading 2</code></li>
 <li><code>*** Heading 3</code></li>
-<li><code>=code=</code></li>
-<li id="<code>[[URL]]</code>">단순한 하이퍼 링크</li>
-<li id="<code>[[URL][Name]]</code>">특정 이름으로 표시되는 하이퍼 링크</li>
 </ul>
+
+<p>
+제한은 없으므로 더 깊은 레벨도 쓸 수 있지만&#x2026; 적당히 쓰자.
+</p>
+</div>
+</div>
+<div id="outline-container-0a9f6b66" class="outline-3">
+<h3 id="0a9f6b66">링크(Link)</h3>
+<div class="outline-text-3" id="text-0a9f6b66">
+<p>
+웹 브라우저용 하이퍼링크는 보통 아래처럼 쓴다.
+</p>
+<dl class="org-dl">
+<dt><code>[[URL]]</code></dt><dd>단순한 하이퍼 링크</dd>
+<dt><code>[[URL][Name]]</code></dt><dd>특정 이름으로 표시되는 하이퍼 링크</dd>
+</dl>
+
+<p>
+로컬 링크나 org 파일 링크를 직접 거는 경우라면 file 형식을 붙여주자.
+</p>
+<dl class="org-dl">
+<dt><code>[[file:somefile.org]]</code></dt><dd>특정 파일로 링크 걸기</dd>
+<dt><code>[[file:foobar.org][Foo Bar]]</code></dt><dd>특정 파일 링크를 특정 이름으로 표시하기</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-fc1fcba6" class="outline-3">
+<h3 id="fc1fcba6">텍스트 스타일(Text Styles)</h3>
+<div class="outline-text-3" id="text-fc1fcba6">
+<p>
+아래와 같은 기본 스타일들이 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">*bold*  /italics/  _underline_  ~verbatim~  +strike-through+
+</pre>
+</div>
+<p>
+물론 렌더링되면 <b>bold</b>, <i>italics</i>, <span class="underline">underline</span>, <code>verbatim</code>, <del>strike-through</del> 로 표시된다.
+</p>
+</div>
+</div>
+<div id="outline-container-895dce2e" class="outline-3">
+<h3 id="895dce2e">코드(Code)</h3>
+<div class="outline-text-3" id="text-895dce2e">
+<div class="org-src-container">
+<pre class="src src-text">=code=
+</pre>
+</div>
+<p>
+이렇게 등호로 둘러싸게 되면 code 태그로 둘러싸이는 형태로 렌더링 된다.
+당연하게도 내부의 다른 마크업은 다 무시된다.
+</p>
 </div>
 </div>
 <div id="outline-container-ce6dd84f" class="outline-3">
 <h3 id="ce6dd84f">블록 문법들</h3>
 <div class="outline-text-3" id="text-ce6dd84f">
+<p>
+렌더링할 경우 blockquote나 pre 태그로 묶이게 렌더링 되는 문법이다.
+</p>
 <dl class="org-dl">
-<dt><code>#+BEGIN_SRC</code> pre 내용 <code>#+END_SRC</code></dt><dd>코드 블록</dd>
-<dt><code>#+BEGIN_SRC python</code> Python 코드의 pre 블록 <code>#+END_SRC</code></dt><dd>지원되는 언어는 매우 많다. 예를 들어 c, python, swift, lisp, bash 등등</dd>
+<dt><code>#+BEGIN_SRC</code> pre 내용 <code>#+END_SRC</code></dt><dd>기본적인 코드 블록</dd>
+<dt><code>#+BEGIN_SRC python</code> Python 코드의 pre 블록 <code>#+END_SRC</code></dt><dd>메이저모드를 명시해서 문법 강조와 실행 지원을 얻을 수 있다.
+지원되는 언어는 매우 많다. 예를 들어 c, python, swift, lisp, bash 등등&#x2026;</dd>
 <dt><code>#+BEGIN_QUOTE</code> blockquote 내용 <code>#+END_QUOTE</code></dt><dd>인용 블록</dd>
 <dt><code>#+BEGIN_COMMENT</code> comment 내용 <code>#+END_COMMENT</code></dt><dd>프로그래밍 언어의 주석과 비슷하게 이 블럭 안의 내용은 익스포트가 되지 않는다.</dd>
 </dl>

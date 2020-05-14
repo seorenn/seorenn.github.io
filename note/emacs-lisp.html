@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Emacs Lisp</h1>
-<div class="title-date">2020년 5월 1일 수정</div>
+<div class="title-date">2020년 5월 15일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -79,6 +79,7 @@
 <li><a href="#59fa72e7">타입 변환</a></li>
 <li><a href="#b6e70697">셸 커맨드</a></li>
 <li><a href="#1cc54506">비동기 호출</a></li>
+<li><a href="#031366bb">파일의 내용을 실행시키기</a></li>
 </ul>
 </li>
 <li><a href="#fae28b42">에러 노트</a>
@@ -410,6 +411,27 @@ evaluated 시킨 결과로 치환 시킨다는 점이 다른 것 같다. 간혹 
 <p>
 <code>sit-for</code> 는 <code>sleep-for</code> 와는 다르게 특정 시간 동안 쉰 뒤 화면을 갱신 시킨다는 차이가 있어서
 화면이 얼어 보이는 것이 싫을 때 유용하게 사용할 수 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-031366bb" class="outline-3">
+<h3 id="031366bb">파일의 내용을 실행시키기</h3>
+<div class="outline-text-3" id="text-031366bb">
+<p>
+Emacs Lisp 코드를 작성한 파일의 내용을 읽어서 바로 실행시키 위하 아래 함수를 정의해서 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">eval-file</span> <span style="color: #c678dd;">(</span>file<span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">eval</span>
+   <span style="color: #98be65;">(</span><span style="color: #51afef;">ignore-errors</span>
+     <span style="color: #51afef;">(</span><span style="color: #c678dd;">read-from-whole-string</span>
+      <span style="color: #c678dd;">(</span><span style="color: #51afef;">with-temp-buffer</span>
+        <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">insert-file-contents</span> file<span style="color: #98be65;">)</span>
+        <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">buffer-string</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+<p>
+당연하게도 공용 시스템에선 보안 구멍으로 작용할 수 있으니 가급적 개인 PC에서만 사용하자.
 </p>
 </div>
 </div>

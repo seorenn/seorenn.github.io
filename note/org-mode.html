@@ -72,7 +72,6 @@
 <li><a href="#9c49a0b0">제목줄(Headline)</a></li>
 <li><a href="#0a9f6b66">링크(Link)</a></li>
 <li><a href="#fc1fcba6">텍스트 스타일(Text Styles)</a></li>
-<li><a href="#895dce2e">코드(Code)</a></li>
 <li><a href="#ce6dd84f">블록 문법들</a></li>
 <li><a href="#351f3e67">테이블</a></li>
 <li><a href="#7f598db0">기타</a></li>
@@ -189,24 +188,12 @@ Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기�
 아래와 같은 기본 스타일들이 있다.
 </p>
 <div class="org-src-container">
-<pre class="src src-text">*bold*  /italics/  _underline_  ~verbatim~  +strike-through+
+<pre class="src src-text">*bold*  /italics/  _underline_  ~verbatim~  =code=  +strike-through+
 </pre>
 </div>
 <p>
-물론 렌더링되면 <b>bold</b>, <i>italics</i>, <span class="underline">underline</span>, <code>verbatim</code>, <del>strike-through</del> 로 표시된다.
-</p>
-</div>
-</div>
-<div id="outline-container-895dce2e" class="outline-3">
-<h3 id="895dce2e">코드(Code)</h3>
-<div class="outline-text-3" id="text-895dce2e">
-<div class="org-src-container">
-<pre class="src src-text">=code=
-</pre>
-</div>
-<p>
-이렇게 등호로 둘러싸게 되면 code 태그로 둘러싸이는 형태로 렌더링 된다.
-당연하게도 내부의 다른 마크업은 다 무시된다.
+물론 렌더링되면 <b>bold</b>, <i>italics</i>, <span class="underline">underline</span>, <code>verbatim</code>, <code>code</code>, <del>strike-through</del> 로 표시된다.
+verbatim과 code가 동일해 보이는데 사실 동일하다. 문법을 무시하고 그대로 표시하기 위한 문법이다.
 </p>
 </div>
 </div>

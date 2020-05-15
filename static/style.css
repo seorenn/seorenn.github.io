@@ -235,6 +235,10 @@ body {
 
 }
 
+nav a, nav a:link, nav a:visited, nav a:hover, nav a:active {
+  text-decoration: none;
+  color: white;
+}
 
 .title-date {
   font-size: 0.8rem;
@@ -387,7 +391,7 @@ div.outline-text-2 > hr {
   font-weight: 350;
 }
 
-.content a, a:link, a:visited, a:hover, a:active {
+.content a, .content a:link, .content a:visited, .content a:hover, .content a:active {
   text-decoration: none;
   color: #69aee9;
 }

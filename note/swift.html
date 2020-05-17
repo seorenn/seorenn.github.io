@@ -57,7 +57,7 @@
 <section class="content">
 <header>
 <h1>Swift</h1>
-<div class="title-date">2020년 4월 30일 수정</div>
+<div class="title-date">2020년 5월 17일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -75,8 +75,9 @@
 </li>
 <li><a href="#f3afe2a7">버전 정리</a>
 <ul>
-<li><a href="#43ff194f">5.1</a></li>
-<li><a href="#d3fc3e6e">5.2</a></li>
+<li><a href="#8c1bb6ad">Swift 5.3</a></li>
+<li><a href="#0394fd2d">Swift 5.2</a></li>
+<li><a href="#ec34f149">Swift 5.1</a></li>
 </ul>
 </li>
 <li><a href="#73603172">그 외의 사소한 팁</a>
@@ -257,9 +258,49 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 <h2 id="f3afe2a7">버전 정리</h2>
 <div class="outline-text-2" id="text-f3afe2a7">
 </div>
-<div id="outline-container-43ff194f" class="outline-3">
-<h3 id="43ff194f">5.1</h3>
-<div class="outline-text-3" id="text-43ff194f">
+<div id="outline-container-8c1bb6ad" class="outline-3">
+<h3 id="8c1bb6ad">Swift 5.3</h3>
+<div class="outline-text-3" id="text-8c1bb6ad">
+<ul class="org-ul">
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0276-multi-pattern-catch-clauses.md">🌏Multi-Pattern Catch Clauses (SE-0276)</a>:
+예외 처리를 위한 <code>do</code> - <code>catch</code> 구문에서 <code>catch</code> 블록을 연속으로 여러 개 쓸 수 있게 지원한다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0279-multiple-trailing-closures.md">🌏Multiple Trailing Closures (SE-0279)</a>:
+코딩 양을 줄여 주는 꼬리 클로저(trailing closure) 기능을 마지막 매개변수가 아니어도 쓸 수 있게 지원한다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0266-synthesized-comparable-for-enumerations.md">🌏Synthesized <code>Comparable</code> conformance for <code>enum</code> types (SE-0266)</a>:
+<code>enum</code> 타입을 기본 값 없이도 비교할 수 있게 된다. 아마도 코딩 된 순서대로 크기가 결정되는 것 같다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md">🌏Increase availability of implicit <code>self</code> in <code>@escaping</code> closures when reference cycles are unlikely to occur (SE-0269)</a>:
+클로저 내부 등 일부는 <code>self</code> 의 표기가 강제되었던 곳이 많았는데 이제 꼭 필요한 경우가 아니라면 생략해도 된다.
+<a href="swiftui.html">SwiftUI</a> 관련 코딩 시 약간 코드가 줄어들어서 편리해 질 것 같다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0281-main-attribute.md">🌏<code>@main</code>: Type-Based Program Entry Points (SE-0281)</a>:
+<code>@main</code> 키워드를 통해 프로그램 진입점(entry point)을 지정할 수 있게 되었다.
+클래스나 구조체에 명시된 경우라면 <code>static func main()</code> 메서드가 실제 진입점이 된다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0267-where-on-contextually-generic.md">🌏<code>where</code> clauses on contextually generic declarations (SE-0267)</a>:
+<code>where</code> 절을 메서드 등에서도 사용할 수 있게 지원한다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0270-rangeset-and-collection-operations.md">🌏Add Collection Operations on Noncontiguous Elements (SE-0270)</a>:
+<code>RangeSet</code> 타입의 추가와 함께 Collection에 관련된 기능이 추가된다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0268-didset-semantics.md">🌏Refine <code>didSet</code> Semantics (SE-0268)</a>:
+<code>didSet</code> 의 개선과 함께 약간의 동작이 변경된다.</li>
+<li><a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0277-float16.md">🌏Float16 (SE-0277)</a>:
+<code>Float16</code> 타입이 추가되었다. 바이트 버퍼를 다루는 것이 아니라면 크게 쓸 일은 없을지도 모르겠다.</li>
+<li>SPM(Swift Package Manager) 개선:
+<a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md">🌏Package Manager Resources (SE-0271)</a>,
+<a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0272-swiftpm-binary-dependencies.md">🌏Package Manager Binary Dependencies (SE-0272)</a>,
+<a target="_blank" href="https://github.com/apple/swift-evolution/blob/master/proposals/0273-swiftpm-conditional-target-dependencies.md">🌏Package Manager Conditional Target Dependencies (SE-0273)</a> 등의 개선이 있다.
+특히 0272의 바이너리 의존성 지원으로 인해 이전보다 SPM의 사용처가 더 늘어나게 될 것 같다.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-0394fd2d" class="outline-3">
+<h3 id="0394fd2d">Swift 5.2</h3>
+<div class="outline-text-3" id="text-0394fd2d">
+<ul class="org-ul">
+<li><a target="_blank" href="https://seorenn.tistory.com/108">🌏Swift 5.2 업데이트 내역 살펴보기</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-ec34f149" class="outline-3">
+<h3 id="ec34f149">Swift 5.1</h3>
+<div class="outline-text-3" id="text-ec34f149">
 <ul class="org-ul">
 <li><a target="_blank" href="https://seorenn.tistory.com/27">🌏Self 키워드의 기능 추가 (SE-0068)</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/28">🌏순서가 있는 콜렉션끼리 차이점 비교하기 (SE-0240)</a></li>
@@ -269,14 +310,6 @@ A 구조체의 테이블보다 우선 검색된다는 말이 된다.
 <li><a target="_blank" href="https://seorenn.tistory.com/33">🌏키 패스를 이용한 동적 멤버 찾아보기 (SE-0252)</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/35">🌏Static Subscript (SE-0254)</a></li>
 <li><a target="_blank" href="https://seorenn.tistory.com/37">🌏Identifiable (SE-0261)</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-d3fc3e6e" class="outline-3">
-<h3 id="d3fc3e6e">5.2</h3>
-<div class="outline-text-3" id="text-d3fc3e6e">
-<ul class="org-ul">
-<li><a target="_blank" href="https://seorenn.tistory.com/108">🌏Swift 5.2 업데이트 내역 살펴보기</a></li>
 </ul>
 </div>
 </div>

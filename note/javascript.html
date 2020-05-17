@@ -57,7 +57,7 @@
 <section class="content">
 <header>
 <h1>Javascript</h1>
-<div class="title-date">2020년 4월 28일 수정</div>
+<div class="title-date">2020년 5월 17일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -67,15 +67,16 @@
 <li><a href="#4bf4b92b">모듈(Module)</a></li>
 <li><a href="#2d495506">스프레드(Spreads) 연산자</a></li>
 <li><a href="#811ee247">튜플 비슷한 문법</a></li>
+<li><a href="#e525fa55">For Each</a></li>
+<li><a href="#8ebf91db">Object(Dictionary) vs Map</a></li>
 </ul>
 </li>
-<li><a href="#880b2f19">실전(?) 메모</a>
+<li><a href="#72182e9a">웹 브라우저 관련 노트</a>
 <ul>
 <li><a href="#931c4cd5">요소 얻기</a></li>
 <li><a href="#4d3ccdfc">특정 블록에 HTML 넣기</a></li>
 <li><a href="#5c40f76c">콘텐츠 높이 구하기</a></li>
 <li><a href="#8c91cb46">특정 태그 앞에 요소 넣기</a></li>
-<li><a href="#30eb5001">forEach</a></li>
 </ul>
 </li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
@@ -222,6 +223,9 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 <div id="outline-container-811ee247" class="outline-3">
 <h3 id="811ee247">튜플 비슷한 문법</h3>
 <div class="outline-text-3" id="text-811ee247">
+<p>
+<a href="python.html">Python</a>의 튜플(Tuple)과 비슷한 문법을 발견해서 메모한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">let</span> [<span style="color: #dcaeea;">foo</span>, <span style="color: #dcaeea;">bar</span>] = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>]
 [foo, bar] = [bar, foo]
@@ -232,10 +236,113 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </p>
 </div>
 </div>
+<div id="outline-container-e525fa55" class="outline-3">
+<h3 id="e525fa55">For Each</h3>
+<div class="outline-text-3" id="text-e525fa55">
+<p>
+자바스크립트의 Array에는 <code>forEach</code> 메서드가 제공된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">&gt; [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>].forEach((e) =&gt; console.log(e))
+<span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #da8548; font-weight: bold;">2</span>
+<span style="color: #da8548; font-weight: bold;">3</span>
+<span style="color: #da8548; font-weight: bold;">4</span>
+<span style="color: #da8548; font-weight: bold;">5</span>
+</pre>
 </div>
-<div id="outline-container-880b2f19" class="outline-2">
-<h2 id="880b2f19">실전(?) 메모</h2>
-<div class="outline-text-2" id="text-880b2f19">
+<p>
+위는 화살표 함수를 써서 간단하게 <a href="implementation.html">구현</a>한 것이지만
+조금 더 전통적인(?) 방식으로 <a href="implementation.html">구현</a>하면 아래와 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">&gt; [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>].forEach(<span style="color: #51afef;">function</span>(<span style="color: #dcaeea;">e</span>) { console.log(e); });
+<span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #da8548; font-weight: bold;">2</span>
+<span style="color: #da8548; font-weight: bold;">3</span>
+<span style="color: #da8548; font-weight: bold;">4</span>
+<span style="color: #da8548; font-weight: bold;">5</span>
+</pre>
+</div>
+<p>
+일부러 전통적이라는 의미에서 세미콜론까지 붙여봤다. 근데 ES6를 지원하는 브라우저라면 굳이 쓸 필요는 없다. 개인적으로는 안 쓰는 것을 선호한다.
+</p>
+
+<p>
+간혹 getElements류 함수의 결과로 forEach를 쓰려하면 에러가 나는 경우가 있는데 당연히 타입이 Array가 아니라서 오류가 발생한다.
+이럴 때는 대충 아래처럼 돌려서 쓸 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #51afef;">var</span> <span style="color: #dcaeea;">elements</span> = document.getElementsByClassName(<span style="color: #98be65;">'some-class'</span>);
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">pre ES6</span>
+Array.<span style="color: #a9a1e1;">prototype</span>.forEach.call(elements, <span style="color: #51afef;">function</span>(<span style="color: #dcaeea;">e</span>) { ... });
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">after ES6</span>
+Array.from(elements).forEach((e) =&gt; { ... })
+</pre>
+</div>
+<p>
+개인적으로 ES6 코드는 일부러 세미콜론을 안 붙이고 있으니 구분은 가능할 것 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-8ebf91db" class="outline-3">
+<h3 id="8ebf91db">Object(Dictionary) vs Map</h3>
+<div class="outline-text-3" id="text-8ebf91db">
+<p>
+자바스크립트에서 키-값(Key-Value) 액세스를 위한 타입으로 Object와 Map 이라는 내장 타입을 사용할 수 있다.
+이 둘을 비교해보자.
+</p>
+
+<p>
+아래는 Object를 사용하는 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">obj</span> = {};
+obj[<span style="color: #98be65;">'key'</span>] = <span style="color: #98be65;">'value'</span>;
+
+console.log(Object.keys(obj).length);
+
+<span style="color: #51afef;">if</span> (obj[<span style="color: #98be65;">'key'</span>]) {
+  console.log(obj[<span style="color: #98be65;">'key'</span>]);
+}
+
+<span style="color: #51afef;">for</span> (<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">key</span> of Object.keys(obj)) { ... }
+</pre>
+</div>
+<ul class="org-ul">
+<li>Object는 말 그대로 자바스크립트의 기본 객체 타입이지 사전(Dictionary)형 타입이 아님에 염두를 두자.</li>
+<li>아이템 개수를 구하는 부분을 잘 보면 알겠지만 열거를 통해 나열 시킨 다음 개수를 구하는 방식이라
+아무래도 쓸 데 없는 퍼포먼스 낭비가 있다.</li>
+<li>열거 방식도 키 리스트를 구해서 각 키를 별도로 액세스 해야 하는 부담이 있다.</li>
+<li>키 순서는 입력한 순서와 다를 수도 있다.</li>
+<li>사전 타입이 아닌 만큼 이미 키를 덮어 쓸 경우 문제를 일으킬 수 있다.</li>
+</ul>
+
+<p>
+아래는 <code>Map</code> 을 사용하는 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">map</span> = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">Map</span>();
+map.set(<span style="color: #98be65;">'key'</span>, <span style="color: #98be65;">'vaule'</span>);
+console.log(map.size);
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">v</span> = map.get(<span style="color: #98be65;">'key'</span>);
+
+<span style="color: #51afef;">for</span> (<span style="color: #51afef;">let</span> [<span style="color: #dcaeea;">key</span>, <span style="color: #dcaeea;">value</span>] of map) { ... }
+</pre>
+</div>
+<ul class="org-ul">
+<li><code>Map</code> 은 Hash Map을 <a href="implementation.html">구현</a>하는 자료구조 클래스다.</li>
+<li><code>.size</code> 를 통해 개수를 구하는 부분의 퍼포먼스가 Object에 비해 월등히 빠르다.</li>
+<li>열거 시 키와 값을 미리 가져와서 사용할 수 있기 때문에 퍼포먼스 측면에서 역시 Object 보다 유리하다.</li>
+<li>열거 시 키 순서가 입력된 순서대로 나타난다.</li>
+<li>순수한 자료구조 용도의 객체이기 때문에 키를 마음껏 사용할 수 있다.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-72182e9a" class="outline-2">
+<h2 id="72182e9a">웹 브라우저 관련 노트</h2>
+<div class="outline-text-2" id="text-72182e9a">
 </div>
 <div id="outline-container-931c4cd5" class="outline-3">
 <h3 id="931c4cd5">요소 얻기</h3>
@@ -310,51 +417,6 @@ targetElement.parentNode.insertBefore(newElement, targetElement)
 <p>
 <code>beforebegin</code> 이 위치를 가리키는 의미인데 별도의 상수 정의는 없는 것 같다.
 참고로 <code>afterbegin</code>, <code>beforeend</code>, <code>afterend</code> 등 다양한 위치를 지정할 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-30eb5001" class="outline-3">
-<h3 id="30eb5001">forEach</h3>
-<div class="outline-text-3" id="text-30eb5001">
-<div class="org-src-container">
-<pre class="src src-javascript">&gt; [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>].forEach((e) =&gt; console.log(e))
-<span style="color: #da8548; font-weight: bold;">1</span>
-<span style="color: #da8548; font-weight: bold;">2</span>
-<span style="color: #da8548; font-weight: bold;">3</span>
-<span style="color: #da8548; font-weight: bold;">4</span>
-<span style="color: #da8548; font-weight: bold;">5</span>
-</pre>
-</div>
-<p>
-위는 화살표 함수를 써서 간단하게 <a href="implementation.html">구현</a>한 것이지만 조금 더 전통적인(?) 방식으로 <a href="implementation.html">구현</a>하면 아래와 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript">&gt; [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>].forEach(<span style="color: #51afef;">function</span>(<span style="color: #dcaeea;">e</span>) { console.log(e); });
-<span style="color: #da8548; font-weight: bold;">1</span>
-<span style="color: #da8548; font-weight: bold;">2</span>
-<span style="color: #da8548; font-weight: bold;">3</span>
-<span style="color: #da8548; font-weight: bold;">4</span>
-<span style="color: #da8548; font-weight: bold;">5</span>
-</pre>
-</div>
-<p>
-일부러 전통적이라는 의미에서 세미콜론까지 붙여봤다. 근데 ES6를 지원하는 브라우저라면 굳이 쓸 필요는 없다. 개인적으로는 안 쓰는 것을 선호한다.
-</p>
-
-<p>
-간혹 getElements류 함수의 결과로 forEach를 쓰려하면 에러가 나는 경우가 있는데 당연히 타입이 Array가 아니라서 오류가 발생한다.
-이럴 때는 대충 아래처럼 돌려서 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">var</span> <span style="color: #dcaeea;">elements</span> = document.getElementsByClassName(<span style="color: #98be65;">'some-class'</span>);
-<span style="color: #5B6268;">// </span><span style="color: #5B6268;">pre ES6</span>
-Array.<span style="color: #a9a1e1;">prototype</span>.forEach.call(elements, <span style="color: #51afef;">function</span>(<span style="color: #dcaeea;">e</span>) { ... });
-<span style="color: #5B6268;">// </span><span style="color: #5B6268;">after ES6</span>
-Array.from(elements).forEach((e) =&gt; { ... })
-</pre>
-</div>
-<p>
-개인적으로 ES6 코드는 일부러 세미콜론을 안 붙이고 있으니 구분은 가능할 것 같다.
 </p>
 </div>
 </div>

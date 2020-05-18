@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>Dart - Seorenn</title>
+<title>Dart - Seorenn Note</title>
 <meta name="twitter:title" content="Dart" />
 <meta name="og:title" content="Dart" />
 <meta name="description" content="다트(Dart) 프로그래밍 언어의 정보 모음" />
@@ -13,7 +13,6 @@
 <meta name="og:description" content="다트(Dart) 프로그래밍 언어의 정보 모음" />
 <link rel="canonical" href="https://seorenn.github.io/note/dart.html" />
 <meta property="og:url" content="https://seorenn.github.io/note/dart.html" />
-<link rel="alternate" type="application/rss+xml" title="Seorenn Note Feeds" href="/rss.xml"/>
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -23,7 +22,7 @@
 <meta name="twitter:site" content="@seorenn" />
 <meta name="twitter:creator" content="@seorenn" />
 <meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn Note" />
+<meta property="og:site_name" content="Seorenn" />
 <meta property="og:locale" content="ko_KR" />
 <meta name="referrer" content="unsafe-url" />
 <meta name="robots" content="follow,index" />
@@ -141,7 +140,7 @@ C와 비슷하지만 print 함수가 자동으로 개행 문자를 붙인다는 
 </p>
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #c678dd;">someProcedure</span>() {
-  <span style="color: #5B6268;">// ...</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
 }
 
 <span style="color: #c678dd;">anotherProcedure</span>(<span style="color: #dcaeea;">value</span>) {
@@ -191,7 +190,7 @@ named field 형태를 구현하는 방법으로 역시 빌어먹을 <a href="jav
 <code>forEach</code> 는 아래와 같이 리스트와 섞어서 쓰면 편하다.
 </p>
 <div class="org-src-container">
-<pre class="src src-dart"><span style="color: #5B6268;">// ['alpha', 'beta', 'gamma'].forEach((e) =&gt; print(e));</span>
+<pre class="src src-dart"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">['alpha', 'beta', 'gamma'].forEach((e) =&gt; print(e));</span>
 [<span style="color: #98be65;">'alpha'</span>, <span style="color: #98be65;">'beta'</span>, <span style="color: #98be65;">'gamma'</span>].forEach((<span style="color: #dcaeea;">e</span>) {
     print(e);
 });
@@ -234,32 +233,32 @@ Map은 리스트에 그냥 쓰면 된다.
 </p>
 <div class="org-src-container">
 <pre class="src src-dart"><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">SomeClass</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">SomeParentClass</span> {
-  <span style="color: #5B6268;">// Property and Default Value</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Property and Default Value</span>
   <span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">name</span> = <span style="color: #98be65;">'Conrad'</span>;
 
-  <span style="color: #5B6268;">// Constructor</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Constructor</span>
   <span style="color: #ECBE7B;">SomeClass</span>(<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">anotherName</span>) {
     name = anotherName;
   }
 
-  <span style="color: #5B6268;">// Named Constructor</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Named Constructor</span>
   <span style="color: #ECBE7B;">SomeClass</span>.<span style="color: #c678dd;">anonymous</span>() {
     name = <span style="color: #98be65;">'Nonamed Who'</span>;
   }
 
-  <span style="color: #5B6268;">// Method</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">whoami</span>() {
     print(<span style="color: #98be65;">'I am </span><span style="color: #dcaeea;">$name</span><span style="color: #98be65;">'</span>);
   }
 
-  <span style="color: #5B6268;">// Method - usage of 'this'</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method - usage of 'this'</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">updateName</span>(<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">name</span>) {
     <span style="color: #51afef;">this</span>.name = name;
   }
 
   ...
 
-  <span style="color: #5B6268;">// override method</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">override method</span>
   <span style="color: #a9a1e1;">@override</span>
   <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">nag</span>() {
     <span style="color: #51afef;">super</span>.nag()
@@ -281,9 +280,9 @@ Map은 리스트에 그냥 쓰면 된다.
   <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">age</span> = <span style="color: #da8548; font-weight: bold;">0</span>;
   ...
 
-  <span style="color: #5B6268;">// bool get koreanAge {</span>
-  <span style="color: #5B6268;">//   return age + 1;</span>
-  <span style="color: #5B6268;">// }</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">bool get koreanAge {</span>
+  <span style="color: #5B6268;">//   </span><span style="color: #5B6268;">return age + 1;</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">}</span>
   <span style="color: #ECBE7B;">bool</span> <span style="color: #c678dd;">get</span> <span style="color: #dcaeea;">koreanAge</span> =&gt; <span style="color: #51afef;">this</span>.age + <span style="color: #da8548; font-weight: bold;">1</span>;
 
   <span style="color: #c678dd;">set</span> <span style="color: #c678dd;">koreanAge</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">korAge</span>) {

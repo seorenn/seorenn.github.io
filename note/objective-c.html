@@ -93,16 +93,33 @@ C/C++의 슈퍼셋인 만큼 헤더 파일로 인터페이스를 전달하는 �
 </p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">let</span> sc = <span style="color: #c678dd;">SomeClass</span>()
-sc.<span style="color: #51afef;">init</span>()
 </pre>
 </div>
 <p>
 이런 의미로 볼 수 있다.
-Lisp의 괄호 악몽이 살짝 떠오르지만, 다행히도 대괄호로 모든 것을 하지는 않는 언어라 문법적 난이도는 덜한 편이다.
+init 호출이 생략된 이유는 사실상 alloc과 init을 합쳐서 하나의 생성자 역할을 하기 때문에 그렇다.
+대괄호의 사용은 Lisp의 괄호 악몽이 살짝 떠오르지만, 다행히도 대괄호로 모든 것을 하지는 않는 언어라 문법적 난이도는 덜한 편이다.
+</p>
+
+<p>
+이 외에 좀 더 특수한 특징은 매개변수 필드 이름 표기를 강제화 한다는 점이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-objective-c">[worker doProcess:@"name" type:WORKER_TYPE_NORMAL options:0];
+</pre>
+</div>
+<p>
+이런 식으로 메서드 이름을 포함하면 모든 매개변수는 이름을 표기해야 한다.
+그래서 자동 완성이 지원되는 <a href="xcode.html">Xcode</a> 같은 에디터가 아니면 코딩 하기는 귀찮지만
+매개변수 이름 만으로 어느 정도 역할 유추가 가능해서 코드의 가독성은 제법 괜찮은 편이다.
 </p>
 
 <p>
 프로퍼티 개념과 setter, getter 개념 또한 제공된다. 궁금하면 <code>@property</code> 키워드에 대해 찾아보자.
+</p>
+
+<p>
+추상화 개념도 지원된다. 궁금하면 <code>@protocol</code> 키워드에 대해 조사해보자.
 </p>
 
 <p>

@@ -5,14 +5,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>iOS - Seorenn Note</title>
-<meta name="twitter:title" content="iOS" />
-<meta name="og:title" content="iOS" />
-<meta name="description" content="애플의 모바일 운영체제인 iOS에 대한 이야기들" />
-<meta name="twitter:description" content="애플의 모바일 운영체제인 iOS에 대한 이야기들" />
-<meta name="og:description" content="애플의 모바일 운영체제인 iOS에 대한 이야기들" />
-<link rel="canonical" href="https://seorenn.github.io/note/ios.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/ios.html" />
+<title>Objective-C - Seorenn Note</title>
+<meta name="twitter:title" content="Objective-C" />
+<meta name="og:title" content="Objective-C" />
+<meta name="description" content="Objective-C에 대한 짧은 소개" />
+<meta name="twitter:description" content="Objective-C에 대한 짧은 소개" />
+<meta name="og:description" content="Objective-C에 대한 짧은 소개" />
+<link rel="canonical" href="https://seorenn.github.io/note/objective-c.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/objective-c.html" />
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -55,37 +55,73 @@
 </div>
 <section class="content">
 <header>
-<h1>iOS</h1>
-<div class="title-date">2020년 5월 9일 수정</div>
+<h1>Objective-C</h1>
+<div class="title-date">2020년 5월 21일 수정</div>
 </header>
 <p>
-iOS 는 <a href="apple.html">애플</a>의 모바일 디바이스를 위한 전용 운영체제(Operating System)다.
-아이폰, 아이패드, 애플 워치 등 다양한 디바이스에 탑재되었다.
+Objective-C는 프로그래밍 언어의 한 종류로 C/C++ 언어의 슈퍼셋(superset)이다.
+쉽게 말해서 C나 C++과 호환되면서도 특유의 다른 문법 또한 추가로 지원한다는 말이다.
 </p>
 
 <p>
-완전히 독자적으로 개발된 OS 라기 보다는
-<a href="macos.html">macOS</a>를 모바일에 맞게 변경한 것으로 유추된다.
-왜냐하면 최초에는 OS X for iPhone 이라는 이름의 OS였기 때문이다.
+이름에서 유추 가능하듯이 클래스 개념을 제공하는 OOP(Objective Oriented Programming) 패러다임의 언어다.
 </p>
 
 <p>
-물론 <a href="macos.html">macOS</a>와는 다른 점이 상당히 많다.
-모바일에 맞는 기본 앱 등은 <a href="macos.html">macOS</a>에는 없는 것 들이다.
-거기다 요즘은 처지가 역전 되었는지 iOS 용으로 먼저 개발된 소프트웨어가 <a href="macos.html">macOS</a> 용으로 포팅 되는 경우도 종종 보인다.
+주로 사용되던 곳은 과거 스티브 잡스로 유명했던 <a href="nextstep.html">NeXTSTEP</a>의 주력 언어였고
+이후 <a href="macos.html">macOS</a>에서도 주류로 사용된다.
+이 과정에서 <a href="ios.html">iOS</a>에서도 당연하게 사용되다
+최근 몇 년 사이에 현대적으로 새롭게 만들어진 <a href="swift.html">Swift</a> 언어로 주도권이 넘어가는 과도기로 인식된다.
 </p>
 
 <p>
-최근에는 모바일 제품 별 전문화 전략으로 iOS 는 아이폰 전용 OS가 되었다.
-그리고 나머지 디바이스는 별도의 OS로 분리되기 시작했다.
-예를 들어 아이패드의 경우는 iPadOS 라는 별도의 OS가 생겼다.
-하지만 베이스는 iOS 라는 점은 변함이 없고 프레임워크의 인터페이스는 사실상 동일하다.
+C/C++의 슈퍼셋인 만큼 헤더 파일로 인터페이스를 전달하는 등의 동일한 구조를 가지고 있다.
+클래스 정의는 헤더에 <code>@interface</code> 를 통해 정의를 하고
+구현 파일에 <code>@implementation</code> 을 통해 실제 구현이 되는 방식이다.
 </p>
 
 <p>
-맥과 아이폰의 점유율 차이로 인해 이제는 부모 격에 해당하는 <a href="macos.html">macOS</a> 보다도 비중이 더 높아졌다고 볼 수 있다.
-대부분의 <a href="apple.html">애플</a> 플랫폼 용 앱 개발 튜토리얼은 iOS 를 기준으로 하고 있으며
-<a href="macos.html">macOS</a> 용 앱 개발에 관한 자료를 찾기 힘든 점이 이를 반영한다고 생각한다.
+대괄호가 클래스 인스턴스 생성과 메서드 호출 등에 중요하게 사용된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-objective-c">SomeClass *sc = [[SomeClass alloc] init];
+</pre>
+</div>
+<p>
+위의 코드는 SomeClass 라는 클래스의 메모리를 할당(alloc) 받은 후 초기화 메서드(init)를 호출하는 두 가지 일을 하나의 코드로 표현한 것이다.
+예를 들어 이를 <a href="swift.html">Swift</a> 방식으로 표현한다면
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">let</span> sc = <span style="color: #c678dd;">SomeClass</span>()
+sc.<span style="color: #51afef;">init</span>()
+</pre>
+</div>
+<p>
+이런 의미로 볼 수 있다.
+Lisp의 괄호 악몽이 살짝 떠오르지만, 다행히도 대괄호로 모든 것을 하지는 않는 언어라 문법적 난이도는 덜한 편이다.
+</p>
+
+<p>
+프로퍼티 개념과 setter, getter 개념 또한 제공된다. 궁금하면 <code>@property</code> 키워드에 대해 찾아보자.
+</p>
+
+<p>
+Reference Count를 통해 메모리를 관리하는 스타일을 채용하고 있어서 alloc/free 개념은 잘 안 쓴다.
+이 카운드트를 증가시키는 의미로 retain, 감소시키는 의미로 release 개념이 사용되고
+이 카운트가 0이 되면 자동으로 메모리가 해제되는 방식이다.
+</p>
+
+<p>
+물론 C 코드로 쓸 수 있고 alloc/free 함수류도 쓸 수 있지만 retain이 걸리지 않도록 코딩에 주의는 필요하다.
+</p>
+
+<p>
+요즘은 retain과 release를 컴파일 타임에 자동으로 부여하는 ARC(Automatic Reference Counting)을 사용하기 때문에
+이 두 키워드를 보는 일도 별로 없어진 시대이다.
+</p>
+
+<p>
+애초에 Objective-C 자체가 인기도 면에선 점점 잊혀서 가고 있는 언어라는 점은 인식하자.
 </p>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"
@@ -102,6 +138,13 @@ iOS 는 <a href="apple.html">애플</a>의 모바일 디바이스를 위한 전�
 <hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/nextstep.html">NeXTSTEP</a></h2>
+<div class="article-link-date">
+2020년 5월 21일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/userdefaults.html">UserDefaults</a></h2>
 <div class="article-link-date">
 2020년 5월 21일 수정</div>
@@ -109,51 +152,9 @@ iOS 는 <a href="apple.html">애플</a>의 모바일 디바이스를 위한 전�
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/objective-c.html">Objective-C</a></h2>
+<h2><a class="article-link-title" href="/note/swift.html">Swift</a></h2>
 <div class="article-link-date">
 2020년 5월 21일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/apple.html">애플</a></h2>
-<div class="article-link-date">
-2020년 5월 21일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/macos.html">macOS</a></h2>
-<div class="article-link-date">
-2020년 5월 19일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/ios-macos-dev-links.html">iOS, macOS 개발 관련 링크</a></h2>
-<div class="article-link-date">
-2020년 5월 11일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/swiftui.html">SwiftUI</a></h2>
-<div class="article-link-date">
-2020년 5월 9일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/flutter.html">Flutter</a></h2>
-<div class="article-link-date">
-2020년 5월 9일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/carthage.html">Carthage</a></h2>
-<div class="article-link-date">
-2020년 5월 9일 수정</div>
 </div>
 </div>
 </div>

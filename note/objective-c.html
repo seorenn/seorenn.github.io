@@ -88,7 +88,7 @@ C/C++의 슈퍼셋인 만큼 헤더 파일로 인터페이스를 전달하는 �
 </pre>
 </div>
 <p>
-위의 코드는 SomeClass 라는 클래스의 메모리를 할당(alloc) 받은 후 초기화 메서드(init)를 호출하는 두 가지 일을 하나의 코드로 표현한 것이다.
+위의 코드는 <code>SomeClass</code> 라는 클래스의 메모리를 할당(alloc) 받은 후 초기화 메서드(init)를 호출하는 두 가지 일을 하나의 코드로 표현한 것이다.
 예를 들어 이를 <a href="swift.html">Swift</a> 방식으로 표현한다면
 </p>
 <div class="org-src-container">
@@ -102,7 +102,7 @@ init 호출이 생략된 이유는 사실상 alloc과 init을 합쳐서 하나�
 </p>
 
 <p>
-이 외에 좀 더 특수한 특징은 매개변수 필드 이름 표기를 강제화 한다는 점이다.
+이 외에 좀 더 특수한 특징은 매개변수 필드 이름 표기를 강제한다는 점이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-objective-c">[worker doProcess:@"name" type:WORKER_TYPE_NORMAL options:0];
@@ -124,16 +124,16 @@ init 호출이 생략된 이유는 사실상 alloc과 init을 합쳐서 하나�
 
 <p>
 Reference Count를 통해 메모리를 관리하는 스타일을 채용하고 있어서 alloc/free 개념은 잘 안 쓴다.
-이 카운드트를 증가시키는 의미로 retain, 감소시키는 의미로 release 개념이 사용되고
+이 카운트를 증가시키는 의미로 retain, 감소시키는 의미로 release 개념이 사용되고
 이 카운트가 0이 되면 자동으로 메모리가 해제되는 방식이다.
 </p>
 
 <p>
-물론 C 코드로 쓸 수 있고 alloc/free 함수류도 쓸 수 있지만 retain이 걸리지 않도록 코딩에 주의는 필요하다.
+물론 C 코드로 쓸 수 있고 alloc/free 함수도 쓸 수 있지만 retain이 걸리지 않도록 코딩에 주의는 필요하다.
 </p>
 
 <p>
-요즘은 retain과 release를 컴파일 타임에 자동으로 부여하는 ARC(Automatic Reference Counting)을 사용하기 때문에
+요즘은 retain과 release를 컴파일 타임에 자동으로 부여하는 ARC(Automatic Reference Counting)를 사용하기 때문에
 이 두 키워드를 보는 일도 별로 없어진 시대이다.
 </p>
 

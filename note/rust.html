@@ -56,12 +56,27 @@
 <section class="content">
 <header>
 <h1>Rust</h1>
-<div class="title-date">2020년 5월 24일 수정</div>
+<div class="title-date">2020년 5월 25일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
 <li><a href="#4d08a6c8">macOS에서 Rust 설치하기</a></li>
+<li><a href="#1733268e">엔트리포인트</a></li>
+<li><a href="#c2b769c0">스칼라 타입</a>
+<ul>
+<li><a href="#4d4e7024">정수형</a></li>
+<li><a href="#b9cce57b">실수형</a></li>
+<li><a href="#0ea48347">이진 타입</a></li>
+<li><a href="#e2d0a8af">문자형</a></li>
+</ul>
+</li>
+<li><a href="#7734396c">변수와 상수 시스템</a></li>
+<li><a href="#8661ef1f">복합 타입</a></li>
+<li><a href="#0272d9d3">함수</a></li>
+<li><a href="#d52e9694">제어문</a></li>
+<li><a href="#8378a9a9">루프</a></li>
+<li><a href="#be53bfa5">메모리 소유권</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -112,6 +127,355 @@ rustup은 통합 인스톨러 패키지라고 보면 된다.
 </div>
 </div>
 </div>
+<div id="outline-container-1733268e" class="outline-2">
+<h2 id="1733268e">엔트리포인트</h2>
+<div class="outline-text-2" id="text-1733268e">
+<p>
+프로그램이 시작되는 지점은 main 이라는 이름을 가진 함수다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">main</span>() {
+    ...
+}
+</pre>
+</div>
+<p>
+말 그대로 메인 함수다.
+</p>
+</div>
+</div>
+<div id="outline-container-c2b769c0" class="outline-2">
+<h2 id="c2b769c0">스칼라 타입</h2>
+<div class="outline-text-2" id="text-c2b769c0">
+</div>
+<div id="outline-container-4d4e7024" class="outline-3">
+<h3 id="4d4e7024">정수형</h3>
+<div class="outline-text-3" id="text-4d4e7024">
+<p>
+부호 있는(signed) 정수 타입들은 아래와 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ECBE7B;">i8</span>, <span style="color: #ECBE7B;">i16</span>, <span style="color: #ECBE7B;">i32</span>, <span style="color: #ECBE7B;">i64</span>
+</pre>
+</div>
+<p>
+부호 없는(unsigned) 정수 타입들은 아래와 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ECBE7B;">u8</span>, <span style="color: #ECBE7B;">u16</span>, <span style="color: #ECBE7B;">u32</span>, <span style="color: #ECBE7B;">u64</span>
+</pre>
+</div>
+<p>
+이렇게 명확하게 표기되는 점이 참 좋다고 생각된다.
+</p>
+
+<p>
+좀 특수하게 시스템 크기에 따른 정수 타입이 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ECBE7B;">isize</span>, <span style="color: #ECBE7B;">usize</span>
+</pre>
+</div>
+<p>
+근데 뭐 특별한 건 아니고 C의 int와 비슷하게 시스템이 32비트면 32비트, 64비트면 64비트 크기다 되는 정수형 타입이다.
+</p>
+</div>
+</div>
+<div id="outline-container-b9cce57b" class="outline-3">
+<h3 id="b9cce57b">실수형</h3>
+<div class="outline-text-3" id="text-b9cce57b">
+<p>
+실수형도 실제 비트 크기로 표기한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ECBE7B;">f32</span>, <span style="color: #ECBE7B;">f64</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-0ea48347" class="outline-3">
+<h3 id="0ea48347">이진 타입</h3>
+<div class="outline-text-3" id="text-0ea48347">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ECBE7B;">bool</span>
+</pre>
+</div>
+<p>
+개발자들의 영원한 족쇄(?) 논리 구문의 핵심 타입이다.
+</p>
+</div>
+</div>
+<div id="outline-container-e2d0a8af" class="outline-3">
+<h3 id="e2d0a8af">문자형</h3>
+<div class="outline-text-3" id="text-e2d0a8af">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ECBE7B;">char</span>
+</pre>
+</div>
+<p>
+C의 그 문자(char) 타입과 거의 동일한 의미다.
+다만 Rust의 char 타입은 유니코드 스칼라를 담을 수 있는 타입이라 i8, u8 과는 전혀 다르다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-7734396c" class="outline-2">
+<h2 id="7734396c">변수와 상수 시스템</h2>
+<div class="outline-text-2" id="text-7734396c">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">immutable and mutable</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">immutable_variable</span> = <span style="color: #da8548; font-weight: bold;">10</span>;
+<span style="color: #51afef;">let</span> <span style="color: #51afef;">mut</span> <span style="color: #dcaeea;">mutable_variable</span> = <span style="color: #da8548; font-weight: bold;">20</span>;
+mutable_variable = <span style="color: #da8548; font-weight: bold;">30</span>;
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#49345;&#49688;(constant)</span>
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">some_constant</span>: <span style="color: #ECBE7B;">u32</span> = <span style="color: #da8548; font-weight: bold;">100</span>;
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#49408;&#46020;&#51081;(shadowing)</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">immutable_variable</span> = immutable_variable * <span style="color: #da8548; font-weight: bold;">2</span>;
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#48373;&#51105;&#54620; &#52488;&#44592;&#54868;</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">x</span> = {
+    <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">y</span> = <span style="color: #da8548; font-weight: bold;">10</span>;
+    y * <span style="color: #da8548; font-weight: bold;">2</span>;
+};
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#47749;&#49884;&#51201; &#53440;&#51077;</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">decimal</span>: <span style="color: #ECBE7B;">i32</span> = <span style="color: #da8548; font-weight: bold;">123</span>;
+</pre>
+</div>
+<p>
+shadowing은 Rust에서만 볼 수 있는 특수한 기능 같다.
+immutable 변수를 동일 이름으로 데이터를 변경 시키는 것이 가능한 것처럼 보이지만
+애초에 immutable은 동일한 메모리를 쓰지 않는 방식으로 데이터를 변경 시키는 것이 목적인 방식이라는 점만 알면
+이상할 것은 없는 것 같다.
+</p>
+
+<p>
+복잡한 초기화라는 것은 정확한 이름은 아니다.
+아마도 <code>return</code> 이 생략된 형태 같은데 그렇다면 <code>return</code> 을 넣어도 아마 문제는 없지 않을까?
+</p>
+
+<p>
+여담이지만 <a href="swift.html">Swift</a>의 향기가 나서 기분 좋다.
+</p>
+</div>
+</div>
+<div id="outline-container-8661ef1f" class="outline-2">
+<h2 id="8661ef1f">복합 타입</h2>
+<div class="outline-text-2" id="text-8661ef1f">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#53916;&#54540;(Tuple)</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">tup</span>: (<span style="color: #ECBE7B;">i32</span>, <span style="color: #ECBE7B;">i64</span>, <span style="color: #ECBE7B;">u8</span>) = (<span style="color: #da8548; font-weight: bold;">500</span>, <span style="color: #da8548; font-weight: bold;">6.4</span>, <span style="color: #da8548; font-weight: bold;">1</span>);
+<span style="color: #51afef;">let</span> (x, y, z) = tup;
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">first</span> = tup.<span style="color: #da8548; font-weight: bold;">0</span>;
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#48176;&#50676;(Array)</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">list</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>];
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">second</span> = list[<span style="color: #da8548; font-weight: bold;">1</span>];
+</pre>
+</div>
+<p>
+튜플이 지원되길래 임시 변수 없는 교환(swap)이 가능할까 시험해 봤는데 문법 오류가 발생한다. 안타깝다.
+</p>
+</div>
+</div>
+<div id="outline-container-0272d9d3" class="outline-2">
+<h2 id="0272d9d3">함수</h2>
+<div class="outline-text-2" id="text-0272d9d3">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">function_name</span>(<span style="color: #dcaeea;">x</span>: <span style="color: #ECBE7B;">i32</span>, <span style="color: #dcaeea;">y</span>: <span style="color: #ECBE7B;">i64</span>) -&gt; <span style="color: #ECBE7B;">u32</span> {
+    ...
+    <span style="color: #51afef;">loop</span> {
+        ...
+        <span style="color: #51afef;">return</span> <span style="color: #da8548; font-weight: bold;">10</span>;
+    }
+    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#51473;&#44036;&#50640; &#50504; &#44152;&#47160;&#51004;&#47732;(?) &#48152;&#54872;&#46104;&#45716; &#44050;</span>
+    <span style="color: #da8548; font-weight: bold;">20</span>;
+}
+</pre>
+</div>
+<p>
+마지막의 20은 <code>return</code> 명령을 생략할 수도 있다는 것을 보여주기 위한 샘플일 뿐이다.
+그리고 리턴 타입이 생략되면 뭐 예상하다시피 리턴이 없는 함수가 될 뿐이다.
+<a href="swift.html">Swift</a>와 비슷한 문법이어서 참 마음에 든다.
+</p>
+</div>
+</div>
+<div id="outline-container-d52e9694" class="outline-2">
+<h2 id="d52e9694">제어문</h2>
+<div class="outline-text-2" id="text-d52e9694">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">if</span> n == <span style="color: #da8548; font-weight: bold;">100</span> {
+    ...
+} <span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span> n &gt; <span style="color: #da8548; font-weight: bold;">100</span> {
+    ...
+} <span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span> n &lt; <span style="color: #da8548; font-weight: bold;">100</span> &amp;&amp; n != <span style="color: #da8548; font-weight: bold;">0</span> {
+    ...
+} <span style="color: #51afef;">else</span> {
+    ...
+}
+
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">number</span> = <span style="color: #da8548; font-weight: bold;">10</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">even</span> = <span style="color: #51afef;">if</span> number % <span style="color: #da8548; font-weight: bold;">2</span> == <span style="color: #da8548; font-weight: bold;">0</span> {
+    <span style="color: #51afef;">true</span>
+} <span style="color: #51afef;">else</span> {
+    <span style="color: #51afef;">false</span>
+}
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">if let</span>
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">value</span> = expression {
+    ...
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-8378a9a9" class="outline-2">
+<h2 id="8378a9a9">루프</h2>
+<div class="outline-text-2" id="text-8378a9a9">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#47924;&#54620; &#47336;&#54532;</span>
+<span style="color: #51afef;">loop</span> {
+    ...
+    <span style="color: #51afef;">if</span> condition {
+        <span style="color: #51afef;">break</span>;
+    }
+}
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#51068;&#48152;&#51201;&#51064; while &#49828;&#53440;&#51068;</span>
+<span style="color: #51afef;">while</span> condition {
+    ...
+}
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">for each &#49828;&#53440;&#51068;</span>
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">values</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>];
+<span style="color: #51afef;">for</span> value <span style="color: #51afef;">in</span> values.iter() {
+    ...
+}
+
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">for &#49828;&#53440;&#51068;</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> (<span style="color: #da8548; font-weight: bold;">0</span>..<span style="color: #da8548; font-weight: bold;">4</span>).rev() {
+    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">i&#51032; &#44050;&#51008; 3, 2, 1, 0 &#49692;&#49436;</span>
+    ...
+}
+</pre>
+</div>
+<p>
+개발자들의 영원한 악마와 천사인 무한 루프가 아예 문법으로 제공된다니 사악하면서도 멋지다.
+</p>
+</div>
+</div>
+<div id="outline-container-be53bfa5" class="outline-2">
+<h2 id="be53bfa5">메모리 소유권</h2>
+<div class="outline-text-2" id="text-be53bfa5">
+<p>
+러스트의 핵심인 메모리 관리와 관련된 것을 매우 간단하게 살펴보자.
+일단 스택에 올라가는 기본적인 스칼라 타입들은 데이터가 그대로 복제되니 메모리 관리고 뭐고 필요 없고 안심이다.
+C 언어를 잘 안다면 당연한 이야기다.
+그리고 스칼라 타입으로만 구성된 튜플도 복제가 되므로 메모리 관리에서 자유롭다.
+</p>
+
+<p>
+기본적으로 Rust도 스코프를 벗어나면 내부에서 사용하던 변수의 메모리가 해제된다는 점을 기본으로 깔고 시작하자.
+</p>
+
+<p>
+다른 언어들과 비슷하게 포인터나 레퍼런스 개념이 사용되면 문제가 생길 수 있는데
+Rust는 좀 특이한 방식으로 레퍼런스의 소유권을 관리한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s1</span> = <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"foo bar"</span>);
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s2</span> = s1;
+</pre>
+</div>
+<p>
+위 코드 두 번째 라인은 s1 이 s2 로 이동(move)했다고 표현한다.
+따라서 이 코드 이후 s1 을 액세스 하는 행위는 컴파일 에러로 막힌다.
+</p>
+
+<p>
+소유권의 이전은 함수 호출로 넘어갈 경우도 동일하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust">some_function(s1);
+</pre>
+</div>
+<p>
+위 코드는 some<sub>function</sub> 함수가 s1 을 소유하게 된다.
+그리고 이 함수가 종료될 때 s1 도 같이 사라지게 된다.
+</p>
+
+<p>
+대신 반환(return)은 소유권도 반환한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s1</span> = another_function(s1);
+</pre>
+</div>
+<p>
+위 코드에서 s1 은 another<sub>function</sub> 함수로 소유권이 넘어갔다가 반환되면서 다시 현재 스코프로 소유권이 반환된다.
+물론 이 함수 내부에서 입력 받은 매개변수를 그대로 반환했을 경우이긴 하지만 말이다.
+</p>
+
+<p>
+복제를 하지 않고 소유권을 빌려줄 수 있는 방법이 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s3</span> = &amp;s1;
+</pre>
+</div>
+<p>
+함수 매개변수로도 가능하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">foo</span>(<span style="color: #dcaeea;">s</span>: &amp;<span style="color: #ECBE7B;">String</span>) {
+    ...
+}
+</pre>
+</div>
+<p>
+다만 빌려주기만 할 뿐 불변(immutable)이기 때문에 읽기 참조만 가능하다.
+</p>
+
+<p>
+참조에서 쓰기까지 가능하게 하려면 이렇게 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s3</span> = &amp;<span style="color: #51afef;">mut</span> s1;
+</pre>
+</div>
+<p>
+가변 참조는 한 변수 당 하나 씩만 쓸 수 있다.
+즉 하나의 포인터를 여러 곳에서 쓸(write) 수 없도록 제한하고 있다. 친절하다.
+</p>
+
+<p>
+소유권 걱정 없이 쓰려면 데이터를 복제하면 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s3</span> = s1.clone();
+</pre>
+</div>
+<p>
+이 정도가 러스트의 메모리 관리의 기본 지식인 것 같다.
+</p>
+
+<p>
+문자열 같은 복잡한 데이터는 내용의 일부를 가져오는 것도 소유권 문제를 유발할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s4</span> = &amp;s1[..<span style="color: #da8548; font-weight: bold;">2</span>];  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#50526;&#51032; &#46160; &#44544;&#51088;&#47564; &#49836;&#46972;&#51060;&#49828;, ..2 &#45716; 0..2 &#50752; &#46041;&#51068;</span>
+</pre>
+</div>
+
+<p>
+일부 잘라내기(slice)의 경우 기본적으로 소유권을 빌리는 형태로 동작 한다는 데,
+이런 자르기는 가변(mutable) 형식을 다루는 방식으로 구현하는 게 더 좋다는 생각이라 일단 정리는 생략했다.
+물론 성능은 레퍼런스를 참조하는 러스트 방식이 압도적이겠지만 말이다.
+</p>
+</div>
+</div>
 <div id="outline-container-0bbb90e1" class="outline-2">
 <h2 id="0bbb90e1">외부 링크</h2>
 <div class="outline-text-2" id="text-0bbb90e1">
@@ -137,7 +501,7 @@ rustup은 통합 인스톨러 패키지라고 보면 된다.
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/cargo.html">Cargo</a></h2>
 <div class="article-link-date">
-2020년 5월 24일 수정</div>
+2020년 5월 25일 수정</div>
 </div>
 </div>
 </div>

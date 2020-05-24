@@ -1,0 +1,174 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<title>Rust - Seorenn Note</title>
+<meta name="twitter:title" content="Rust" />
+<meta name="og:title" content="Rust" />
+<meta name="description" content="러스트(Rust)에 대한 글 모음" />
+<meta name="twitter:description" content="러스트(Rust)에 대한 글 모음" />
+<meta name="og:description" content="러스트(Rust)에 대한 글 모음" />
+<link rel="canonical" href="https://seorenn.github.io/note/rust.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/rust.html" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><i class="material-icons md-light">home</i></a>
+<a href="/post" title="Post"><i class="material-icons md-light">subject</i></a>
+ <a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
+ <a href="/log" title="Log"><i class="material-icons md-light">portrait</i></a>
+</nav>
+</div>
+</header>
+<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>Rust</h1>
+<div class="title-date">2020년 5월 24일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#4d08a6c8">macOS에서 Rust 설치하기</a></li>
+<li><a href="#0bbb90e1">외부 링크</a></li>
+</ul>
+</div>
+</div>
+<p>
+러스트(Rust)는 프로그래밍 언어 중 하나로 최근에 가장 주목을 받고 있는 언어다.
+주로 컴파일이 필요한 시스템 소프트웨어를 개발하기 위한 목적의 언어로 개발되었으며
+초기에는 모질라 재단의 프로젝트에서 활용되다가,
+특유의 메모리 관리의 우수성을 인정 받아서 여기저기에서 활발하게 채용되기 시작한 언어다.
+</p>
+
+<div id="outline-container-4d08a6c8" class="outline-2">
+<h2 id="4d08a6c8">macOS에서 Rust 설치하기</h2>
+<div class="outline-text-2" id="text-4d08a6c8">
+<p>
+개인적으로는 <a href="homebrew.html">Homebrew</a>를 통해 설치하는 것을 선호한다.
+바로 rust 패키지를 설치할 필요 없이 아래 명령으로 rustup을 설치한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew install rustup
+</pre>
+</div>
+<p>
+rustup은 통합 인스톨러 패키지라고 보면 된다.
+설치한 후 <code>rustup-init</code> 으로 설치를 진행한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">rustup-init
+</pre>
+</div>
+<p>
+컴파일러인 <code>rustc</code> 를 비롯해 패키지 매니저인 <a href="cargo.html">Cargo</a>도 함께 알아서 설치된다.
+</p>
+
+<p>
+참고로 설치된 경로가 일반적이 경로가 아니기 때문에 PATH 환경 변수를 프로파일에 작성해 준다.
+이걸 원하는 <a href="shell.html">셸</a> 초기화 스크립트로 옮기던가 하는 것은 각자의 마음이니 알아서 하자.
+</p>
+
+<p>
+만약 <code>rust</code> 같은 패키지를 별도 설치했다면 아마 설치가 진행되지 않을 것이다.
+진정하고 설치한 방법에 맞는 삭제 방법으로 rust 패키지를 날려버리고 다시 시도해보자.
+<a href="homebrew.html">Homebrew</a>로 설치했다면 아래 커맨드로 삭제할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew uninstall rust
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-0bbb90e1" class="outline-2">
+<h2 id="0bbb90e1">외부 링크</h2>
+<div class="outline-text-2" id="text-0bbb90e1">
+<ul class="org-ul">
+<li><a target="_blank" href="https://rinthel.github.io/rust-lang-book-ko/foreword.html">🌏The Rust Programming Language (한국어)</a></li>
+</ul>
+</div>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/cargo.html">Cargo</a></h2>
+<div class="article-link-date">
+2020년 5월 24일 수정</div>
+</div>
+</div>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

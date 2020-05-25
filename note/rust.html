@@ -72,11 +72,14 @@
 </ul>
 </li>
 <li><a href="#7734396c">변수와 상수 시스템</a></li>
+<li><a href="#4c22e2d3">Nullable(Option)</a></li>
 <li><a href="#8661ef1f">복합 타입</a></li>
 <li><a href="#0272d9d3">함수</a></li>
 <li><a href="#d52e9694">제어문</a></li>
 <li><a href="#8378a9a9">루프</a></li>
 <li><a href="#be53bfa5">메모리 소유권</a></li>
+<li><a href="#6d5c6eee">구조체(Structure)</a></li>
+<li><a href="#8c7986f4">열거형(Enumeration)</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -224,12 +227,12 @@ C의 그 문자(char) 타입과 거의 동일한 의미다.
 <div class="outline-text-2" id="text-7734396c">
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">immutable and mutable</span>
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">immutable_variable</span> = <span style="color: #da8548; font-weight: bold;">10</span>;
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">immutable_variable</span> = <span style="color: #da8548; font-weight: bold;">10</span>;     <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#53440;&#51077; &#52628;&#47200; &#44032;&#45733;</span>
 <span style="color: #51afef;">let</span> <span style="color: #51afef;">mut</span> <span style="color: #dcaeea;">mutable_variable</span> = <span style="color: #da8548; font-weight: bold;">20</span>;
 mutable_variable = <span style="color: #da8548; font-weight: bold;">30</span>;
 
 <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#49345;&#49688;(constant)</span>
-<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">some_constant</span>: <span style="color: #ECBE7B;">u32</span> = <span style="color: #da8548; font-weight: bold;">100</span>;
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">some_constant</span>: <span style="color: #ECBE7B;">u32</span> = <span style="color: #da8548; font-weight: bold;">100</span>;  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#53440;&#51077; &#52628;&#47200; &#45824;&#49888; &#47749;&#54869;&#54620; &#53440;&#51077; &#54364;&#44592;</span>
 
 <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#49408;&#46020;&#51081;(shadowing)</span>
 <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">immutable_variable</span> = immutable_variable * <span style="color: #da8548; font-weight: bold;">2</span>;
@@ -258,6 +261,60 @@ immutable 변수를 동일 이름으로 데이터를 변경 시키는 것이 가
 
 <p>
 여담이지만 <a href="swift.html">Swift</a>의 향기가 나서 기분 좋다.
+</p>
+</div>
+</div>
+<div id="outline-container-4c22e2d3" class="outline-2">
+<h2 id="4c22e2d3">Nullable(Option)</h2>
+<div class="outline-text-2" id="text-4c22e2d3">
+<p>
+러스트에서는 null 을 별도의 값으로 제공하지 않는다. 요즘 추세로는 당연하다.
+대신 <a href="swift.html">Swift</a>의 Optional 개념과 비슷한 Option 이라는 것이 지원된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">value</span> = <span style="color: #da8548; font-weight: bold;">5</span>;
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">some_value</span> = <span style="color: #ECBE7B;">Some</span>(<span style="color: #da8548; font-weight: bold;">5</span>);
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">another_some_value</span>: <span style="color: #ECBE7B;">Option</span>&lt;<span style="color: #ECBE7B;">i32</span>&gt; = <span style="color: #ECBE7B;">None</span>;
+
+<span style="color: #51afef;">if</span> some_value.is_some() { ... }
+<span style="color: #51afef;">if</span> some_value.contains(&amp;<span style="color: #da8548; font-weight: bold;">5</span>) { ... }
+<span style="color: #51afef;">if</span> another_some_value.is_none() { ... }
+
+<span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"some_value = </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, some_value.unwrap());
+
+<span style="color: #51afef;">match</span> another_some_value {
+    <span style="color: #ECBE7B;">None</span> =&gt; <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"another_some_value has no value!"</span>);
+    <span style="color: #ECBE7B;">Some</span>(value) =&gt; {
+        <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"another_some_value * 2 = </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, value * <span style="color: #da8548; font-weight: bold;">2</span>);
+    }
+}
+</pre>
+</div>
+<p>
+Some 이라는 것은 값이 있음을 의미하는데 <a href="swift.html">Swift</a>와 동일한 개념이다.
+None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매칭이 가능한 의미다.
+</p>
+
+<p>
+<code>unwrap()</code> 을 통해 원래의 값을 얻을 수도 있고,
+<code>match</code> 를 통해 두 경우를 분기해서 처리할 수도 있다.
+</p>
+
+<p>
+참고로 타입 추론이 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">get_position</span>() -&gt; <span style="color: #ECBE7B;">Option</span>&lt;<span style="color: #ECBE7B;">i32</span>&gt; {
+    <span style="color: #51afef;">if</span> condition {
+        <span style="color: #ECBE7B;">Some</span>(<span style="color: #da8548; font-weight: bold;">2</span>)
+    } <span style="color: #51afef;">else</span> {
+        <span style="color: #ECBE7B;">None</span>
+    }
+}
+</pre>
+</div>
+<p>
+명확하게 표기하지 않아도 이런 식으로 Option 타입을 리턴할 수 있다.
 </p>
 </div>
 </div>
@@ -377,16 +434,27 @@ C 언어를 잘 안다면 당연한 이야기다.
 </p>
 
 <p>
-기본적으로 Rust도 스코프를 벗어나면 내부에서 사용하던 변수의 메모리가 해제된다는 점을 기본으로 깔고 시작하자.
+기본적으로 Rust는 스코프를 벗어나면 내부에서 사용하던 변수의 메모리가 해제된다는 점을 깔고 시작하자.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">if</span> <span style="color: #51afef;">true</span> {
+  <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">v</span> = <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"foo bar"</span>);
+}
+<span style="color: #51afef; font-weight: bold;">println!</span>(v);   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Error!</span>
+</pre>
+</div>
+<p>
+스코프를 생각한다면야 접근 제한은 당연한 이야기로도 볼 수 있는데 메모리가 해제된다는 점은 아무래도 일부 언어들만 사용하는 메커니즘이긴 하다.
 </p>
 
 <p>
-다른 언어들과 비슷하게 포인터나 레퍼런스 개념이 사용되면 문제가 생길 수 있는데
-Rust는 좀 특이한 방식으로 레퍼런스의 소유권을 관리한다.
+다른 언어들과 비슷하게 포인터나 레퍼런스 개념이 사용되면 메모리 관리에 여러 문제가 생길 수 있는데
+Rust는 소유권(ownership)이라는 좀 특이한 방식으로 메모리를 관리한다.
 </p>
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s1</span> = <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"foo bar"</span>);
 <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s2</span> = s1;
+<span style="color: #51afef; font-weight: bold;">println!</span>(s1);   <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Error!</span>
 </pre>
 </div>
 <p>
@@ -395,7 +463,7 @@ Rust는 좀 특이한 방식으로 레퍼런스의 소유권을 관리한다.
 </p>
 
 <p>
-소유권의 이전은 함수 호출로 넘어갈 경우도 동일하다.
+소유권의 이전은 함수 호출의 매개변수로 넘어갈 경우도 동일하다.
 </p>
 <div class="org-src-container">
 <pre class="src src-rust">some_function(s1);
@@ -468,11 +536,171 @@ Rust는 좀 특이한 방식으로 레퍼런스의 소유권을 관리한다.
 <pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s4</span> = &amp;s1[..<span style="color: #da8548; font-weight: bold;">2</span>];  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#50526;&#51032; &#46160; &#44544;&#51088;&#47564; &#49836;&#46972;&#51060;&#49828;, ..2 &#45716; 0..2 &#50752; &#46041;&#51068;</span>
 </pre>
 </div>
-
 <p>
 일부 잘라내기(slice)의 경우 기본적으로 소유권을 빌리는 형태로 동작 한다는 데,
-이런 자르기는 가변(mutable) 형식을 다루는 방식으로 구현하는 게 더 좋다는 생각이라 일단 정리는 생략했다.
+이런 자르기는 불변(immutable) 형식을 다루는 방식으로 구현하는 게 더 좋다는 생각이라 일단 정리는 생략했다.
+쉽게 말해서 바꾸는 것이 안되면 새로 만들어라는 의미다.
+String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 데이터를 복사하는 것 뿐이다.
 물론 성능은 레퍼런스를 참조하는 러스트 방식이 압도적이겠지만 말이다.
+</p>
+</div>
+</div>
+<div id="outline-container-6d5c6eee" class="outline-2">
+<h2 id="6d5c6eee">구조체(Structure)</h2>
+<div class="outline-text-2" id="text-6d5c6eee">
+<p>
+구조체란 일반적으로 여러 데이터를 담을 수 있는 그릇 타입인데 러스트도 비슷하게 지원된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">struct</span> <span style="color: #ECBE7B;">Human</span> {
+    <span style="color: #dcaeea;">name</span>: <span style="color: #ECBE7B;">String</span>,
+    <span style="color: #dcaeea;">family_name</span>: <span style="color: #ECBE7B;">String</span>,
+    <span style="color: #dcaeea;">age</span>: <span style="color: #ECBE7B;">u16</span>
+}
+</pre>
+</div>
+<p>
+그냥 모양만 조금 특별한 뿐이지 개념 자체가 생소하진 않다.
+</p>
+
+<p>
+인스턴스 생성 시 초기화 하는 방법도 조금 생소하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">h</span> = <span style="color: #ECBE7B;">Human</span> {
+    <span style="color: #dcaeea;">name</span>: <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"Conrad"</span>),
+    <span style="color: #dcaeea;">family_name</span>: <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"Renn"</span>),
+    <span style="color: #dcaeea;">age</span>: <span style="color: #da8548; font-weight: bold;">20</span>
+};
+</pre>
+</div>
+<p>
+생성 시 필드와 변수 이름이 동일한 경우에 한해서 아래와 같이 필드 이름을 생략하는 트릭이 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">create_human</span>(<span style="color: #dcaeea;">name</span>: <span style="color: #ECBE7B;">String</span>, <span style="color: #dcaeea;">family_name</span>: <span style="color: #ECBE7B;">String</span>, <span style="color: #dcaeea;">age</span>: <span style="color: #ECBE7B;">u16</span>) -&gt; <span style="color: #ECBE7B;">Human</span> {
+    <span style="color: #ECBE7B;">Human</span> {
+        name,
+        family_name,
+        age
+    }
+}
+</pre>
+</div>
+<p>
+아마도 위 방식은 함수 보다는 아래의 메소드 예제에서 볼 수 있다시피 연관 함수 방식의 정적 메소드 형태로 많이 쓰일 것 같다.
+</p>
+
+<p>
+이 외에도 초기화 방법으로 동일하게 미리 할당된 변수의 값을 그대로 가져오는 방법이 제공된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">h2</span> = <span style="color: #ECBE7B;">Human</span> {
+    <span style="color: #dcaeea;">name</span>: <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"James"</span>),
+    ..h
+};
+</pre>
+</div>
+<p>
+이렇게 하면 <code>name</code> 을 제외한 나머지 데이터는 <code>h</code> 의 것을 이용해서 생성된다.
+</p>
+
+<p>
+러스트의 구조체는 메서드 개념이 제공된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">impl</span> <span style="color: #ECBE7B;">Human</span> {
+    <span style="color: #51afef;">fn</span> <span style="color: #c678dd;">birthday</span>(&amp;<span style="color: #51afef;">mut</span> <span style="color: #51afef;">self</span>) {
+        <span style="color: #51afef;">self</span>.age += <span style="color: #da8548; font-weight: bold;">1</span>;
+    }
+
+    <span style="color: #51afef;">fn</span> <span style="color: #c678dd;">birth</span>(<span style="color: #dcaeea;">name</span>: <span style="color: #ECBE7B;">String</span>, <span style="color: #dcaeea;">family_name</span>: <span style="color: #ECBE7B;">String</span>) -&gt; <span style="color: #ECBE7B;">Human</span> {
+        <span style="color: #ECBE7B;">Human</span> {
+            name,
+            family_name,
+            <span style="color: #dcaeea;">age</span>: <span style="color: #da8548; font-weight: bold;">0</span>
+        }
+    }
+}
+</pre>
+</div>
+<p>
+<code>impl</code> 이라는 별도의 구분된 공간에 메서드를 구현할 수 있는데 <a href="swift.html">Swift</a>의 <code>extension</code> 과 비슷하다고 느껴지기도 한다.
+하여간 여기서 처음의 <code>birthday</code> 는 자시 자신의 프로퍼티를 변경하는 메서드다.
+</p>
+
+<p>
+<code>birth()</code> 메서드는 그냥 메서드가 아니라 연관 함수라 불리는데 정적 메서드와 비슷한 방식으로 쓰인다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">h3</span> = <span style="color: #ECBE7B;">Human</span>::birth(<span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"John"</span>), <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"Kim"</span>))
+</pre>
+</div>
+<p>
+사실 <code>String::from()</code> 도 연관함수다. 한꺼번에 같이 볼 수 있는 특별한(?) 예제 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-8c7986f4" class="outline-2">
+<h2 id="8c7986f4">열거형(Enumeration)</h2>
+<div class="outline-text-2" id="text-8c7986f4">
+<p>
+일반적인 열겨형이야 당연히 지원 되겠지만, <a href="swift.html">Swift</a>와 비슷하게 별도의 데이터를 가질 수 있는 형태도 가능하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">enum</span> <span style="color: #ECBE7B;">Gender</span> {
+    <span style="color: #ECBE7B;">Male</span>,
+    <span style="color: #ECBE7B;">Female</span>,
+    <span style="color: #ECBE7B;">Other</span>(<span style="color: #ECBE7B;">String</span>),
+    <span style="color: #ECBE7B;">Intersex</span>(<span style="color: #ECBE7B;">String</span>, <span style="color: #ECBE7B;">i32</span>),
+    <span style="color: #ECBE7B;">Special</span> { <span style="color: #51afef;">type</span>: <span style="color: #ECBE7B;">String</span>, <span style="color: #dcaeea;">desc</span>: <span style="color: #ECBE7B;">String</span> }
+    <span style="color: #ECBE7B;">Secret</span>
+}
+</pre>
+</div>
+<p>
+다양한 모습을 한 번에 정리하기 위해 억지로 이상한 필드를 끼워 넣었으니 오해하지 말자.
+</p>
+
+<p>
+사용할 때는 이런 식이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">gender</span> = <span style="color: #ECBE7B;">Gender</span>::unknown;
+</pre>
+</div>
+<p>
+아마도 타입 추론 역시 가능하리라 생각된다.
+</p>
+
+<p>
+앞서 <code>Option</code> 에 대해 거론하면서 <code>match</code> 도 함께 예제로 등장했는데 바로 이 열거형에서 사용하기 위한 특별한 명령어다.
+마치 다른 언어의 switch - case 문법과 비슷하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">match</span> gender {
+    <span style="color: #ECBE7B;">Male</span> =&gt; <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"He is male"</span>);
+    <span style="color: #ECBE7B;">Female</span> =&gt; <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"She is female"</span>);
+    <span style="color: #ECBE7B;">Other</span>(name) =&gt; <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"This is </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, name);
+    <span style="color: #ECBE7B;">Intersex</span>(name, identifier) =&gt; <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"</span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;"> type identifier </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, name, identifier);
+    _ =&gt; <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"It is so difficult!"</span>);
+}
+</pre>
+</div>
+<p>
+아마도 <code>match</code> 의 경우는 <a href="swift.html">Swift</a>의 <code>switch</code> 문과 비슷하게 모든 케이스를 열거하지 않으면 에러가 날 것 같다.
+그래서 default의 역할을 겸하는 밑줄이 지원되는 것 같다.
+</p>
+
+<p>
+만약 하나 정도의 케이스만 일치시킨다면 이것 보다는 <code>if let</code> 을 쓰는 편이 편할 것 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">if</span> <span style="color: #51afef;">let</span> <span style="color: #ECBE7B;">Other</span>(name) = gender { ... }
+</pre>
+</div>
+<p>
+개인적으로 익숙한 <a href="swift.html">Swift</a>랑 용도가 달라서 왠지 오해할 수도 있을 것 같다.
 </p>
 </div>
 </div>

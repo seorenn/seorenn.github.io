@@ -74,7 +74,7 @@
 <li><a href="#7734396c">변수와 상수 시스템</a></li>
 <li><a href="#4c22e2d3">Nullable(Option)</a></li>
 <li><a href="#8661ef1f">복합 타입</a></li>
-<li><a href="#0272d9d3">함수</a></li>
+<li><a href="#821baaf0">함수(Functions)</a></li>
 <li><a href="#d52e9694">제어문</a></li>
 <li><a href="#8378a9a9">루프</a></li>
 <li><a href="#be53bfa5">메모리 소유권</a></li>
@@ -321,6 +321,9 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 <div id="outline-container-8661ef1f" class="outline-2">
 <h2 id="8661ef1f">복합 타입</h2>
 <div class="outline-text-2" id="text-8661ef1f">
+<p>
+튜플이나 배열처럼 여러개의 값을 나열하기 위한 타입이다.
+</p>
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#53916;&#54540;(Tuple)</span>
 <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">tup</span>: (<span style="color: #ECBE7B;">i32</span>, <span style="color: #ECBE7B;">i64</span>, <span style="color: #ECBE7B;">u8</span>) = (<span style="color: #da8548; font-weight: bold;">500</span>, <span style="color: #da8548; font-weight: bold;">6.4</span>, <span style="color: #da8548; font-weight: bold;">1</span>);
@@ -337,9 +340,9 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 </p>
 </div>
 </div>
-<div id="outline-container-0272d9d3" class="outline-2">
-<h2 id="0272d9d3">함수</h2>
-<div class="outline-text-2" id="text-0272d9d3">
+<div id="outline-container-821baaf0" class="outline-2">
+<h2 id="821baaf0">함수(Functions)</h2>
+<div class="outline-text-2" id="text-821baaf0">
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">function_name</span>(<span style="color: #dcaeea;">x</span>: <span style="color: #ECBE7B;">i32</span>, <span style="color: #dcaeea;">y</span>: <span style="color: #ECBE7B;">i64</span>) -&gt; <span style="color: #ECBE7B;">u32</span> {
     ...
@@ -355,7 +358,18 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 <p>
 마지막의 20은 <code>return</code> 명령을 생략할 수도 있다는 것을 보여주기 위한 샘플일 뿐이다.
 그리고 리턴 타입이 생략되면 뭐 예상하다시피 리턴이 없는 함수가 될 뿐이다.
-<a href="swift.html">Swift</a>와 비슷한 문법이어서 참 마음에 든다.
+<a href="swift.html">Swift</a>와 비슷해 보인다.
+</p>
+
+<p>
+하지만 호출 시 필드 이름은 쓸 수가 없다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">r</span> = function_name(<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>);
+</pre>
+</div>
+<p>
+좋다 말았다지만 딱히 단점은 아닌 것 같다. 그냥 <a href="swift.html">Swift</a>랑 헷갈린다는 것이 문제다.
 </p>
 </div>
 </div>
@@ -379,13 +393,11 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 } <span style="color: #51afef;">else</span> {
     <span style="color: #51afef;">false</span>
 }
-
-<span style="color: #5B6268;">// </span><span style="color: #5B6268;">if let</span>
-<span style="color: #51afef;">if</span> <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">value</span> = expression {
-    ...
-}
 </pre>
 </div>
+<p>
+제어문은 그다지 특이한 건 없는 것 같다.
+</p>
 </div>
 </div>
 <div id="outline-container-8378a9a9" class="outline-2">

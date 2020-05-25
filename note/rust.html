@@ -91,6 +91,11 @@
 독창적인 메모리 관리 체계의 우수성을 인정 받아서 다양한 프로젝트의 메인 언어로 활발하게 채용되고 있다.
 </p>
 
+<p>
+이후로 이어지는 글들은 <a href="swift.html">Swift</a> 언어를 좋아하는 사람이 작성한 거라
+비교를 조금씩 하고 있다는 것에 유의하자.
+</p>
+
 <div id="outline-container-4d08a6c8" class="outline-2">
 <h2 id="4d08a6c8">macOS에서 Rust 설치하기</h2>
 <div class="outline-text-2" id="text-4d08a6c8">
@@ -298,6 +303,19 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 <p>
 <code>unwrap()</code> 을 통해 원래의 값을 얻을 수도 있고,
 <code>match</code> 를 통해 두 경우를 분기해서 처리할 수도 있다.
+</p>
+
+<p>
+좀 더 편한 <code>if let</code> 방식도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">if</span> <span style="color: #51afef;">let</span> <span style="color: #ECBE7B;">Some</span>(v) = some_value {
+    <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"v = </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, v);
+}
+</pre>
+</div>
+<p>
+물론 사용 방식이 <a href="swift.html">Swift</a>와는 좀 다르긴 하다.
 </p>
 
 <p>

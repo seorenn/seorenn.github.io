@@ -56,21 +56,21 @@
 <section class="content">
 <header>
 <h1>Javascript</h1>
-<div class="title-date">2020년 5월 20일 수정</div>
+<div class="title-date">2020년 5월 26일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#e352cada">노트</a>
+<li><a href="#b3815f71">문자열 치환(String Interpolation)</a></li>
+<li><a href="#4bf4b92b">모듈(Module)</a>
 <ul>
-<li><a href="#4bf4b92b">모듈(Module)</a></li>
 <li><a href="#2d495506">스프레드(Spreads) 연산자</a></li>
 <li><a href="#811ee247">튜플 비슷한 문법</a></li>
 <li><a href="#e525fa55">For Each</a></li>
 <li><a href="#8ebf91db">Object(Dictionary) vs Map</a></li>
 </ul>
 </li>
-<li><a href="#72182e9a">웹 브라우저 관련 노트</a>
+<li><a href="#164db910">웹 브라우저 DOM 관련</a>
 <ul>
 <li><a href="#931c4cd5">요소 얻기</a></li>
 <li><a href="#4d3ccdfc">특정 블록에 HTML 넣기</a></li>
@@ -96,13 +96,22 @@
 버전은 ES6를 기준으로 한다.
 </p>
 
-<div id="outline-container-e352cada" class="outline-2">
-<h2 id="e352cada">노트</h2>
-<div class="outline-text-2" id="text-e352cada">
+<div id="outline-container-b3815f71" class="outline-2">
+<h2 id="b3815f71">문자열 치환(String Interpolation)</h2>
+<div class="outline-text-2" id="text-b3815f71">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #98be65;">`value = ${value}`</span>
+</pre>
 </div>
-<div id="outline-container-4bf4b92b" class="outline-3">
-<h3 id="4bf4b92b">모듈(Module)</h3>
-<div class="outline-text-3" id="text-4bf4b92b">
+<p>
+백틱으로 둘러싼다는 점에 유의하자.
+중괄호 내부는 변수 뿐만 아니라 식(expression)도 얼마든지 사용할 수 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-4bf4b92b" class="outline-2">
+<h2 id="4bf4b92b">모듈(Module)</h2>
+<div class="outline-text-2" id="text-4bf4b92b">
 <p>
 일반적으로 모듈은 아래와 같은 형식으로 쓰인다.
 </p>
@@ -151,7 +160,6 @@
 console.log(someValues.value1);
 console.log(someValues.value2);
 </pre>
-</div>
 </div>
 </div>
 <div id="outline-container-2d495506" class="outline-3">
@@ -340,9 +348,9 @@ console.log(map.size);
 </div>
 </div>
 </div>
-<div id="outline-container-72182e9a" class="outline-2">
-<h2 id="72182e9a">웹 브라우저 관련 노트</h2>
-<div class="outline-text-2" id="text-72182e9a">
+<div id="outline-container-164db910" class="outline-2">
+<h2 id="164db910">웹 브라우저 DOM 관련</h2>
+<div class="outline-text-2" id="text-164db910">
 </div>
 <div id="outline-container-931c4cd5" class="outline-3">
 <h3 id="931c4cd5">요소 얻기</h3>

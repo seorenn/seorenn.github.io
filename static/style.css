@@ -58,10 +58,6 @@ body {
     bottom: 0;
   }
 
-  .archive-link {
-    font-size: 1rem;
-  }
-
   .content-container {
     display: grid;
     grid-template-columns: 40px 800px 200px;
@@ -237,6 +233,10 @@ body {
     display: none !important;
   }
 
+}
+
+.archive-link {
+  font-size: 1rem;
 }
 
 nav a, nav a:link, nav a:visited, nav a:hover, nav a:active {

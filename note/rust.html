@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Rust</h1>
-<div class="title-date">2020년 5월 26일 수정</div>
+<div class="title-date">2020년 5월 27일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -80,6 +80,7 @@
 <li><a href="#be53bfa5">메모리 소유권</a></li>
 <li><a href="#6d5c6eee">구조체(Structure)</a></li>
 <li><a href="#8c7986f4">열거형(Enumeration)</a></li>
+<li><a href="#29eebf0a">모듈 임포트(Import)</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -732,6 +733,16 @@ String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 �
 <p>
 개인적으로 익숙한 <a href="swift.html">Swift</a>랑 용도가 달라서 왠지 오해할 수도 있을 것 같다.
 </p>
+</div>
+</div>
+<div id="outline-container-29eebf0a" class="outline-2">
+<h2 id="29eebf0a">모듈 임포트(Import)</h2>
+<div class="outline-text-2" id="text-29eebf0a">
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">foo</span>::bar;
+<span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">foo</span>::*;
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-0bbb90e1" class="outline-2">

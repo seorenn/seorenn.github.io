@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>CSS</h1>
-<div class="title-date">2020년 5월 20일 수정</div>
+<div class="title-date">2020년 5월 28일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -94,6 +94,7 @@
 <li><a href="#c7d446c6">소수점 자리로 정렬</a></li>
 <li><a href="#c8df4364">Floating</a></li>
 <li><a href="#21ef59af">해상도 혹은 브라우저 크기 별로 스타일 대응하기</a></li>
+<li><a href="#027bd86e">배경을 흐리게(Blur) 만들기</a></li>
 </ul>
 </li>
 <li><a href="#d69eae23">약간 특이한 팁</a>
@@ -471,6 +472,27 @@ p {
 }
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-027bd86e" class="outline-3">
+<h3 id="027bd86e">배경을 흐리게(Blur) 만들기</h3>
+<div class="outline-text-3" id="text-027bd86e">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">backdrop-filter</span>: blur(4px);
+<span style="color: #da8548;">-webkit-backdrop-filter</span>: blur(4px);
+</pre>
+</div>
+<p>
+팝업 스타일에서 유용하게 써먹을 수 있는 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">backdrop-filter</span>: blur(4px) grayscale(<span style="color: #da8548; font-weight: bold;">90</span>%);
+<span style="color: #da8548;">-webkit-backdrop-filter</span>: blur(4px) grayscale(<span style="color: #da8548; font-weight: bold;">90</span>%);
+</pre>
+</div>
+<p>
+아예 배경을 더 어둡게 만들어 버리면 더 눈에 띄는 팝업 스타일을 만들 수도 있다.
+</p>
 </div>
 </div>
 </div>

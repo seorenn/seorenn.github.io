@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Doom Emacs</h1>
-<div class="title-date">2020년 5월 25일 수정</div>
+<div class="title-date">2020년 5월 29일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -155,7 +155,7 @@ Doom Emacs는 설정 후 동기화가 성능 이슈로 자동화가 지원되지
 </pre>
 </div>
 <p>
-참고로 sync는 과거에는 refresh와 purge라는 이름으로 양분되어 있는 커맨드다.
+참고로 sync는 과거에는 refresh와 purge라는 이름으로 양분되어 있던 커맨드가 합쳐지면서 새롭게 만들어진 커맨드다.
 </p>
 </div>
 </div>
@@ -245,15 +245,19 @@ Doom Emacs에 포함된 <code>solaire-mode</code> 는 배경 색을 임의로 �
 </pre>
 </div>
 <p>
-그리고 아래 코드를 <code>config.el</code> 에 넣어주자.
+특정 문자가 자동으로 이모티콘으로 표시되게 하고 싶다면 아래 코드를 <code>config.el</code> 에 넣어주자.
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">add-hook!</span> <span style="color: #51afef;">'</span><span style="color: #dcaeea;">after-init-hook</span> <span style="color: #51afef;">#'</span><span style="color: #dcaeea;">global-emojify-mode</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
 <p>
+위 코드는 옵션이고 유니코드 기반 이모티콘만 사용 할거라면 없어도 된다.
+</p>
+
+<p>
 sync가 완료된 후 <a href="emacs.html">Emacs</a>를 재시작하고
-<code>SPC :</code> 를 눌러 <code>emojify-insert-emoji</code> 함수를 찾아서 실행시켜보자.
+<code>SPC :</code> 를 눌러 <code>emojify-insert-emoji</code> 함수를 찾아서 실행시키면 이모티콘 입력기가 뜬다.
 </p>
 </div>
 </div>
@@ -577,7 +581,7 @@ Package error: (error Could not find package hover in recipe repositories: (org-
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
 <div class="article-link-date">
-2020년 5월 28일 수정</div>
+2020년 5월 29일 수정</div>
 </div>
 </div>
 <div class="article-link">

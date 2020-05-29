@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Xcode</h1>
-<div class="title-date">2020년 5월 20일 수정</div>
+<div class="title-date">2020년 5월 29일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -67,6 +67,8 @@
 <li><a href="#23a68252">이 파일은 어디에 있나?</a></li>
 <li><a href="#e066acfb">디버깅 시 문자열 보기</a></li>
 <li><a href="#24cd4336">터미널에서 시뮬레이터 열기</a></li>
+<li><a href="#836edb53">오래된 시뮬레이터 삭제하기</a></li>
+<li><a href="#90ab11a5">오래된 시뮬레이터 런타임 삭제하기</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -169,6 +171,41 @@ Command+Shift+Space를 누르면 Quickly Box라는 파일 빠르게 열기 창�
 그런데 눈에 보이지 않는 시뮬레이터 GUI 프로세스는 별도이기 때문에 죽지 않고 살아 남아 있다.
 완벽하게 종료하려면 시뮬레이터 창에서 <code>Command Q</code> 키나 메뉴에서 종료를 선택해
 확실하게 종료 시켜 주는 편이 좋다.
+</p>
+</div>
+</div>
+<div id="outline-container-836edb53" class="outline-2">
+<h2 id="836edb53">오래된 시뮬레이터 삭제하기</h2>
+<div class="outline-text-2" id="text-836edb53">
+<p>
+Xcode 메뉴바에서 Window 를 눌러보면 Devices and Simulators 메뉴를 찾을 수 있다.
+이걸 눌러보면 장치 관리 윈도우가 뜬다.
+여기서 Simulators 탭을 선택해서 원하는 시뮬레이터를 삭제할 수 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-90ab11a5" class="outline-2">
+<h2 id="90ab11a5">오래된 시뮬레이터 런타임 삭제하기</h2>
+<div class="outline-text-2" id="text-90ab11a5">
+<p>
+Xcode의 Preferences를 통해 특정 버전의 콤포넌트(components)를 설치한 경우
+시뮬레이터 삭제만으로 제거할 수 없는 경우가 있는데 이 콤포넌트들은 공유 런타임이라 그렇다.
+이걸 지우려면 터미널에서 아래 커맨드를 통해 런타임 디렉토리로 먼저 들어가보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">cd</span> /Library/Developer/CoreSimulator/Profiles/Runtimes
+</pre>
+</div>
+<p>
+여기 안에 각 버전에 해당하는 디렉터리들이 보인다. 이 디렉터리들을 루트 권한을 줘서 삭제하면 된다.
+즉 아래와 같은 방식으로 삭제할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">sudo</span> <span style="color: #ECBE7B;">rm</span> -rf iOS<span style="color: #98be65;">\ </span>xx.yy.simruntime
+</pre>
+</div>
+<p>
+최신 버전 런타임은 여기에 위치하지 않으므로 최신 버전의 시뮬레이터에서만 테스트 하겠다면 다 지워도 무관한 것 같다.
 </p>
 </div>
 </div>

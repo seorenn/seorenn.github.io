@@ -125,6 +125,12 @@ CSS는 Cascade Style Sheet의 약자로
 나머지 내용은 CSS와 관련된 팁이다.
 </p>
 
+<style>
+.example-block {
+  border: 1px dashed gray;
+}
+</style>
+
 <div id="outline-container-a2a1ad0f" class="outline-2">
 <h2 id="a2a1ad0f">개념 노트</h2>
 <div class="outline-text-2" id="text-a2a1ad0f">
@@ -203,13 +209,33 @@ CSS에서 어떤 태그나 클래스 등에 스타일을 입힐 건지 결정하
 </pre>
 </div>
 
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
+.goodhead {
+  color: gray;
+}
+.goodhead::before {
+  color: white;
+  content: "!";
+}
+&lt;/<span style="color: #c678dd;">style</span>&gt;
+
+&lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"goodhead"</span>&gt;Sample&lt;/<span style="color: #c678dd;">div</span>&gt;
+</pre>
+</div>
+
 <style>
 .goodhead {
-  color: red;
+  color: gray;
+}
+.goodhead::before {
+  color: white;
   content: "!";
 }
 </style>
+<div class="example-block">
 <div class="goodhead">Sample</div>
+</div>
 </div>
 </div>
 </div>

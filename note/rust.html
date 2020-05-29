@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Rust</h1>
-<div class="title-date">2020년 5월 27일 수정</div>
+<div class="title-date">2020년 5월 30일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -661,7 +661,7 @@ String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 �
 </p>
 
 <p>
-<code>birth()</code> 메서드는 그냥 메서드가 아니라 연관 함수라 불리는데 정적 메서드와 비슷한 방식으로 쓰인다.
+<code>birth()</code> 메서드는 매개변수에 <code>self</code> 가 없어서 연관 함수라 불리는데 정적 메서드(Static Method)와 비슷한 개념이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">h3</span> = <span style="color: #ECBE7B;">Human</span>::birth(<span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"John"</span>), <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"Kim"</span>))

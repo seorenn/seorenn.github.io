@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>CSS</h1>
-<div class="title-date">2020년 5월 28일 수정</div>
+<div class="title-date">2020년 5월 29일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -64,6 +64,7 @@
 <li><a href="#a2a1ad0f">개념 노트</a>
 <ul>
 <li><a href="#ecd8b31f">셀렉터(Selector)</a></li>
+<li><a href="#1603c77d">가상 요소</a></li>
 </ul>
 </li>
 <li><a href="#eef2269c">요소 메모</a>
@@ -184,6 +185,31 @@ CSS에서 어떤 태그나 클래스 등에 스타일을 입힐 건지 결정하
 <span style="color: #51afef;">div.content &gt; p </span>{ ... }
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-1603c77d" class="outline-3">
+<h3 id="1603c77d">가상 요소</h3>
+<div class="outline-text-3" id="text-1603c77d">
+<p>
+아래는 자주 사용되는 가상 요소들이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css">::first-line    <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#52395; &#51460; </span><span style="color: #5B6268;">*/</span>
+::first-letter  <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#52395; &#44544;&#51088; </span><span style="color: #5B6268;">*/</span>
+::before        <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#53080;&#53584;&#52768; &#50526; </span><span style="color: #5B6268;">*/</span>
+::after         <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#53080;&#53584;&#52768; &#46244; </span><span style="color: #5B6268;">*/</span>
+::selection     <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#49440;&#53469; &#50689;&#50669; </span><span style="color: #5B6268;">*/</span>
+::placeholder   <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#54268; &#54596;&#46300; &#54540;&#47112;&#51060;&#49828;&#54848;&#45908; </span><span style="color: #5B6268;">*/</span>
+</pre>
+</div>
+
+<style>
+.goodhead {
+  color: red;
+  content: "!";
+}
+</style>
+<div class="goodhead">Sample</div>
 </div>
 </div>
 </div>

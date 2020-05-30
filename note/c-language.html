@@ -5,14 +5,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>인스턴스 - Seorenn Note</title>
-<meta name="twitter:title" content="인스턴스" />
-<meta name="og:title" content="인스턴스" />
-<meta name="description" content="인스턴스(Instance)에 대하여" />
-<meta name="twitter:description" content="인스턴스(Instance)에 대하여" />
-<meta name="og:description" content="인스턴스(Instance)에 대하여" />
-<link rel="canonical" href="https://seorenn.github.io/note/instance.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/instance.html" />
+<title>C 언어 - Seorenn Note</title>
+<meta name="twitter:title" content="C 언어" />
+<meta name="og:title" content="C 언어" />
+<meta name="description" content="C 언어에 대한 이야기들" />
+<meta name="twitter:description" content="C 언어에 대한 이야기들" />
+<meta name="og:description" content="C 언어에 대한 이야기들" />
+<link rel="canonical" href="https://seorenn.github.io/note/c-language.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/c-language.html" />
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -55,76 +55,75 @@
 </div>
 <section class="content">
 <header>
-<h1>인스턴스</h1>
-<div class="title-date">2020년 4월 26일 수정</div>
+<h1>C 언어</h1>
+<div class="title-date">2020년 5월 30일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#86c898d4">프로세스 개념</a></li>
-<li><a href="#4a43cd99">특정 서비스의 용어</a></li>
-<li><a href="#38e11b82">컴퓨터 프로그래밍 개념</a></li>
+<li><a href="#aa5a8671">진입점(Entry Point)</a></li>
+<li><a href="#9375884c">Clang</a></li>
 </ul>
 </div>
 </div>
+<p>
+켄 톰슨과 데니스 리치에 의해 개발된 Unix를 위한 프로그래밍 언어다.
+현재 주류로 사용되는 언어 중 실직적으로 가장 저수준(Low-Level)의 시스템 프로그래밍을 위한 언어로 볼 수 있다.
+</p>
 
-<div id="outline-container-86c898d4" class="outline-2">
-<h2 id="86c898d4">프로세스 개념</h2>
-<div class="outline-text-2" id="text-86c898d4">
+<blockquote>
 <p>
-실행 중인 임의의 프로세스를 인스턴스라고 부르기도 한다.
+프로그래밍 언어에서 저수준과 고수준은 언어의 품격 같은 걸 평가하는 것이 아니다.
+바다를 생각해보자. 깊고 깊은 바다는 어둡고 사람이 들어가기 힘들다.
+저수준이란 것은 이런 시스템의 깊은 부분을 다루는 데 유리한 언어라는 의미이고,
+고수준 언어는 시스템의 얕을 부분을 이용하거나 혹은 아예 시스템콜을 직접 다루지 않는 수준의 언어다.
+즉 사용분야가 다를 뿐이다.
 </p>
-</div>
-</div>
-<div id="outline-container-4a43cd99" class="outline-2">
-<h2 id="4a43cd99">특정 서비스의 용어</h2>
-<div class="outline-text-2" id="text-4a43cd99">
+</blockquote>
+
 <p>
-예를 들어 AWS의 EC2 서비스의 경우 각각의 가상 서버를 EC2 인스턴스라고 부른다.
-</p>
-</div>
-</div>
-<div id="outline-container-38e11b82" class="outline-2">
-<h2 id="38e11b82">컴퓨터 프로그래밍 개념</h2>
-<div class="outline-text-2" id="text-38e11b82">
-<p>
-<a href="definition.html">정의</a>를 실체화(?) 시킨 것을 인스턴스라고 부른다.
+상당수의 Unix 기반의 유틸리티들은 대부분 C 언어로 작성되어 있다.
+거기다 요즘은 리눅스 커널 같이 OS의 핵심도 대체로 C 언어로 쓰여져있다.
+그리고 상당수의 언어들의 코어나 인터프리터 부분도 C 언어로 쓰여진 경우가 많다.
+따라서 어떻게 보면 대부분의 시스템과 대부분의 프로그래밍 언어의 선조(혹은 재료?)로도 볼 수도 있다.
 </p>
 
 <p>
-예를 들어 아래 <a href="swift.html">Swift</a> 코드를 보자.
+과거에는 어셈블리어의 관점에서 번역되기 쉬운 언어라서 속도에 유리한 점이 있었지만,
+현재는 컴파일러들의 최적화 기술이 많이 발전된 상태라서 굳이 속도를 이점으로 잡기는 힘들다.
+</p>
+
+<div id="outline-container-aa5a8671" class="outline-2">
+<h2 id="aa5a8671">진입점(Entry Point)</h2>
+<div class="outline-text-2" id="text-aa5a8671">
+<p>
+C 언어는 아무런 파일이든 상관없이 유일한 <code>main</code> 함수에서 시작된다.
+이 함수의 스펙은 C11 기준으로 아래 두 종류가 표준으로 정의되어 있다.
 </p>
 <div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">Human</span> {
-  <span style="color: #51afef;">let</span> name: <span style="color: #c678dd;">String</span>
-  <span style="color: #51afef;">var</span> age = <span style="color: #da8548; font-weight: bold;">0</span>
-
-  <span style="color: #51afef;">func</span> <span style="color: #c678dd;">birthdayParty</span>() {
-    age += <span style="color: #da8548; font-weight: bold;">1</span>
-  }
-}
+<pre class="src src-c++"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">argc</span>, <span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">argv</span>[]) { <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">...</span><span style="color: #5B6268;"> */</span> }
 </pre>
 </div>
 <p>
-위 코드는 Human이라는 구조체를 <a href="definition.html">정의</a>하고 있다.
-따라서 위 코드 만으로는 아무런 동작을 하지 않는다.
-</p>
-
-<p>
-하지만 아래 코드가 나오는 순간부터 약간 달라진다.
+우리가 흔히 사용하는 Unix 표준 방식은 위의 방식이다.
+만약 프로그램의 인자가 사용되지 않는다면 아래처럼도 사용 가능하다.
 </p>
 <div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">var</span> james = <span style="color: #c678dd;">Human</span>(name: <span style="color: #98be65;">"James"</span>, age: <span style="color: #da8548; font-weight: bold;">23</span>)
+<pre class="src src-c++"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span>(<span style="color: #ECBE7B;">void</span>) { <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">...</span><span style="color: #5B6268;"> */</span> }
 </pre>
 </div>
 <p>
-위 코드는 Human 구조체의 인스턴스를 생성한다. 즉 메모리가 할당되고 여기에 초기값으로 이름과 나이가 들어가게 된다.
+물론 인자가 있든 없든 아래 방식 보다는 위 방식이 많이 쓰인다.
 </p>
-
+</div>
+</div>
+<div id="outline-container-9375884c" class="outline-2">
+<h2 id="9375884c">Clang</h2>
+<div class="outline-text-2" id="text-9375884c">
 <p>
-이렇게 인스턴스는 <a href="definition.html">정의</a>를 실체화 시킨 것을 의미한다.
-그래서 위의 james 라는 변수는 'Human의 인스턴스'라고도 부른다.
-물론 명확하게 하자면 인스턴스는 james가 가리키고 있는 메모리가 맞겠지만 뭐&#x2026; 어렵게 생각하지는 말자.
+Clang이라는 이름은 마치 C Language 라는 의미로 보이는데 실제로 이렇게 해석할 수도 있다.
+실제로 C 혹은 C++이나 Objective-C 같이 C 언어에서 유래한 언어들 자체를 이렇게 부를 때도 있다.
+다만 명확하게 하자면 Clang은 이 언어들의 컴파일러의 한 종류다.
 </p>
 </div>
 </div>
@@ -150,23 +149,23 @@
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/swiftui.html">SwiftUI</a></h2>
+<h2><a class="article-link-title" href="/note/rust.html">Rust</a></h2>
 <div class="article-link-date">
-2020년 5월 25일 수정</div>
+2020년 5월 30일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>
+<h2><a class="article-link-title" href="/note/objective-c.html">Objective-C</a></h2>
 <div class="article-link-date">
-2020년 5월 9일 수정</div>
+2020년 5월 30일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/object.html">오브젝트</a></h2>
+<h2><a class="article-link-title" href="/note/implementation.html">구현</a></h2>
 <div class="article-link-date">
-2020년 4월 25일 수정</div>
+2020년 5월 30일 수정</div>
 </div>
 </div>
 </div>

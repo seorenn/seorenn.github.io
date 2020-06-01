@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Docker</h1>
-<div class="title-date">2020년 5월 9일 수정</div>
+<div class="title-date">2020년 6월 1일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -100,6 +100,11 @@
 <ul>
 <li><a href="#e5d2f1ef">컨테이너에서 호스트 포트에 접근하기(macOS)</a></li>
 <li><a href="#8f72b672">적당히 시작하기 좋은 이미지들</a></li>
+</ul>
+</li>
+<li><a href="#bf2994a4">트러블슈팅</a>
+<ul>
+<li><a href="#3e0be69a">137 error</a></li>
 </ul>
 </li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
@@ -423,6 +428,28 @@ docker volume <span style="color: #ECBE7B;">rm</span> $<span style="color: #51af
 apt도 없다.
 매우 작은 이미지를 만들 거라면 베이스 이미지로 적당할 것 같다.</dd>
 </dl>
+</div>
+</div>
+</div>
+<div id="outline-container-bf2994a4" class="outline-2">
+<h2 id="bf2994a4">트러블슈팅</h2>
+<div class="outline-text-2" id="text-bf2994a4">
+</div>
+<div id="outline-container-3e0be69a" class="outline-3">
+<h3 id="3e0be69a">137 error</h3>
+<div class="outline-text-3" id="text-3e0be69a">
+<p>
+도커로 이미지를 빌드하던 중 아래와 같은 오류가 나면서 빌드가 실패한 적이 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">The command '/bin/sh -c foo bar' returned a non-zero code: 137
+</pre>
+</div>
+<p>
+명령어야 뭐든 올 수 있을거고, 뭐 하여간 이 137 오류는 out of memery
+즉 메모리 부족이라는 의미다.
+따라서 할당된 램을 늘리던가 스왑(swap)을 늘리는 식으로 대응할 수 있다.
+</p>
 </div>
 </div>
 </div>

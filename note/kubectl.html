@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>kubectl</h1>
-<div class="title-date">2020년 4월 22일 수정</div>
+<div class="title-date">2020년 6월 2일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -71,6 +71,7 @@
 <li><a href="#ab45e221">로그 보기</a></li>
 <li><a href="#afaf613f">포트 포워딩</a></li>
 <li><a href="#e477aa2a">컨테이너의 커맨드 실행시키기</a></li>
+<li><a href="#6b52aedf">사용량 등 메트릭 조회</a></li>
 </ul>
 </li>
 <li><a href="#caf6583f">심화 예제</a>
@@ -226,6 +227,26 @@ Deployment가 아닌 포드는 이 방법으로 삭제하는 것이 편한 것 �
 <pre class="src src-bash">kubectl exec -it POD_NAME --container CONTAINER_NAME -- COMMAND
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-6b52aedf" class="outline-3">
+<h3 id="6b52aedf">사용량 등 메트릭 조회</h3>
+<div class="outline-text-3" id="text-6b52aedf">
+<div class="org-src-container">
+<pre class="src src-bash">kubectl top node <span style="color: #51afef;">[</span>NODE<span style="color: #51afef;">]</span>
+</pre>
+</div>
+<p>
+노드의 메트릭을 조회할 수 있다. 노드 이름을 넣지 않으면 모든 노드의 메트릭을 볼 수 있다.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">kubectl top pod <span style="color: #51afef;">[</span>POD-NAME<span style="color: #51afef;">]</span>
+</pre>
+</div>
+<p>
+비슷하게 단일 포드 혹은 전체 포드의 메트릭을 조회할 수 있다.
+</p>
 </div>
 </div>
 </div>

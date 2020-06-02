@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Rust</h1>
-<div class="title-date">2020년 5월 31일 수정</div>
+<div class="title-date">2020년 6월 3일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -362,6 +362,9 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 <div id="outline-container-821baaf0" class="outline-2">
 <h2 id="821baaf0">함수(Functions)</h2>
 <div class="outline-text-2" id="text-821baaf0">
+<p>
+아래는 함수의 예다.
+</p>
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #51afef;">fn</span> <span style="color: #c678dd;">function_name</span>(<span style="color: #dcaeea;">x</span>: <span style="color: #ECBE7B;">i32</span>, <span style="color: #dcaeea;">y</span>: <span style="color: #ECBE7B;">i64</span>) -&gt; <span style="color: #ECBE7B;">u32</span> {
     ...
@@ -370,18 +373,23 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
         <span style="color: #51afef;">return</span> <span style="color: #da8548; font-weight: bold;">10</span>;
     }
     <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#51473;&#44036;&#50640; &#50504; &#44152;&#47160;&#51004;&#47732;(?) &#48152;&#54872;&#46104;&#45716; &#44050;</span>
-    <span style="color: #da8548; font-weight: bold;">20</span>;
+    <span style="color: #da8548; font-weight: bold;">20</span>
 }
 </pre>
 </div>
 <p>
 마지막의 20은 <code>return</code> 명령을 생략할 수도 있다는 것을 보여주기 위한 샘플일 뿐이다.
-그리고 리턴 타입이 생략되면 뭐 예상하다시피 리턴이 없는 함수가 될 뿐이다.
+세미콜론이 없는데 <code>return</code> 을 생략한 경우 세미콜론도 뺄 수 있다.
+이렇게 세미콜론이 없는 식을 표현식(Expression)이라 부른다.
+</p>
+
+<p>
+리턴 타입이 생략되면 뭐 예상하다시피 리턴이 없는 함수가 될 뿐이다.
 <a href="swift.html">Swift</a>와 비슷해 보인다.
 </p>
 
 <p>
-하지만 호출 시 필드 이름은 쓸 수가 없다.
+그런데 <a href="swift.html">Swift</a>와는 다르게 호출 시 필드 이름은 쓸 수가 없다.
 </p>
 <div class="org-src-container">
 <pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">r</span> = function_name(<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>);

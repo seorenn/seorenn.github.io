@@ -56,18 +56,27 @@
 <section class="content">
 <header>
 <h1>Javascript</h1>
-<div class="title-date">2020년 5월 26일 수정</div>
+<div class="title-date">2020년 6월 4일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#b3815f71">문자열 치환(String Interpolation)</a></li>
 <li><a href="#4bf4b92b">모듈(Module)</a>
 <ul>
 <li><a href="#2d495506">스프레드(Spreads) 연산자</a></li>
 <li><a href="#811ee247">튜플 비슷한 문법</a></li>
 <li><a href="#e525fa55">For Each</a></li>
 <li><a href="#8ebf91db">Object(Dictionary) vs Map</a></li>
+</ul>
+</li>
+<li><a href="#e905cbf0">문자열(String)</a>
+<ul>
+<li><a href="#b3815f71">문자열 치환(String Interpolation)</a></li>
+</ul>
+</li>
+<li><a href="#bfb0ebf5">배열(Array)</a>
+<ul>
+<li><a href="#1aa5fa4a">배열에 특정 원소가 포함되어 있는지 판단하기</a></li>
 </ul>
 </li>
 <li><a href="#164db910">웹 브라우저 DOM 관련</a>
@@ -96,19 +105,6 @@
 버전은 ES6를 기준으로 한다.
 </p>
 
-<div id="outline-container-b3815f71" class="outline-2">
-<h2 id="b3815f71">문자열 치환(String Interpolation)</h2>
-<div class="outline-text-2" id="text-b3815f71">
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #98be65;">`value = ${value}`</span>
-</pre>
-</div>
-<p>
-백틱으로 둘러싼다는 점에 유의하자.
-중괄호 내부는 변수 뿐만 아니라 식(expression)도 얼마든지 사용할 수 있다.
-</p>
-</div>
-</div>
 <div id="outline-container-4bf4b92b" class="outline-2">
 <h2 id="4bf4b92b">모듈(Module)</h2>
 <div class="outline-text-2" id="text-4bf4b92b">
@@ -345,6 +341,51 @@ console.log(map.size);
 <li>열거 시 키 순서가 입력된 순서대로 나타난다.</li>
 <li>순수한 자료구조 용도의 객체이기 때문에 키를 마음껏 사용할 수 있다.</li>
 </ul>
+</div>
+</div>
+</div>
+<div id="outline-container-e905cbf0" class="outline-2">
+<h2 id="e905cbf0">문자열(String)</h2>
+<div class="outline-text-2" id="text-e905cbf0">
+</div>
+<div id="outline-container-b3815f71" class="outline-3">
+<h3 id="b3815f71">문자열 치환(String Interpolation)</h3>
+<div class="outline-text-3" id="text-b3815f71">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #98be65;">`value = ${value}`</span>
+</pre>
+</div>
+<p>
+백틱으로 둘러싼다는 점에 유의하자.
+중괄호 내부는 변수 뿐만 아니라 식(expression)도 얼마든지 사용할 수 있다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-bfb0ebf5" class="outline-2">
+<h2 id="bfb0ebf5">배열(Array)</h2>
+<div class="outline-text-2" id="text-bfb0ebf5">
+</div>
+<div id="outline-container-1aa5fa4a" class="outline-3">
+<h3 id="1aa5fa4a">배열에 특정 원소가 포함되어 있는지 판단하기</h3>
+<div class="outline-text-3" id="text-1aa5fa4a">
+<p>
+<code>Array.prototype.includes</code> 를 사용하는 게 가장 간단하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].includes(<span style="color: #98be65;">"0"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; true</span>
+[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].includes(<span style="color: #da8548; font-weight: bold;">0</span>)    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; false</span>
+</pre>
+</div>
+<p>
+위치(index)를 알고 싶다면 <code>Array.prototype.find()</code> 를 사용할 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"0"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; 0</span>
+[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"1"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; 1</span>
+[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"4"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; undefined</span>
+</pre>
+</div>
 </div>
 </div>
 </div>

@@ -56,12 +56,12 @@
 <section class="content">
 <header>
 <h1>Git</h1>
-<div class="title-date">2020년 5월 15일 수정</div>
+<div class="title-date">2020년 6월 4일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#2b417271">사용법 메모</a>
+<li><a href="#f31a3a78">사용법</a>
 <ul>
 <li><a href="#109cc06d">설정</a></li>
 <li><a href="#2a99d5a5">저장소 만들기</a></li>
@@ -93,6 +93,7 @@
 <li><a href="#96047851">파일 지우기</a></li>
 <li><a href="#77d2d8d6">업데이트 무시하기</a></li>
 <li><a href="#3410bc49">원격 브랜치 동기화 하기</a></li>
+<li><a href="#85d45b36">다른 브랜치간의 변경 내역만 뽑아서 적용하기</a></li>
 </ul>
 </li>
 <li><a href="#97d1a2f5">설정 분리하기</a></li>
@@ -107,9 +108,9 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 파일의 변경 내역을 추적 및 관리하는데 사용하는 <a href="cli.html">CLI</a> 도구다.
 </p>
 
-<div id="outline-container-2b417271" class="outline-2">
-<h2 id="2b417271">사용법 메모</h2>
-<div class="outline-text-2" id="text-2b417271">
+<div id="outline-container-f31a3a78" class="outline-2">
+<h2 id="f31a3a78">사용법</h2>
+<div class="outline-text-2" id="text-f31a3a78">
 </div>
 <div id="outline-container-109cc06d" class="outline-3">
 <h3 id="109cc06d">설정</h3>
@@ -701,6 +702,40 @@ fetch 시 <code>--prune</code> 혹은 <code>-p</code> 옵션은 원격에 없는
 </p>
 </div>
 </div>
+<div id="outline-container-85d45b36" class="outline-3">
+<h3 id="85d45b36">다른 브랜치간의 변경 내역만 뽑아서 적용하기</h3>
+<div class="outline-text-3" id="text-85d45b36">
+<p>
+예를 들어 A 라는 브랜치에서 출발한 B 브랜치에서 작업하다가 너무 잦은 머지로 트리가 너무 복잡해졌다.
+이 경우 커밋을 정리하기 위해 rebase를 사용할 수도 있겠지만
+이번에는 C라는 브랜치를 만들어서 여기다 B의 수정 사항만 별도로 커밋을 만들고 싶다고 하자.
+</p>
+
+<p>
+우선 변경 사항만 뽑아보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> diff A B &gt; /foo/bar/patch
+</pre>
+</div>
+<p>
+이렇게 하면 A를 기준으로 B의 내용을 패치로 뽑아준다.
+즉 A에서 B로 바꿔야 할 때 무엇을 수정해야 하는 지가 파일로 정리된다.
+</p>
+
+<p>
+이제 원하는 브랜치인 C에다 변경 사항을 적용해보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> switch C
+<span style="color: #ECBE7B;">git</span> apply /foo/bar/patch
+</pre>
+</div>
+<p>
+apply 명령을 통해 현재 브랜치에 간단히 패치를 적용할 수 있다.
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-97d1a2f5" class="outline-2">
 <h2 id="97d1a2f5">설정 분리하기</h2>
@@ -798,7 +833,7 @@ github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
 <div class="article-link-date">
-2020년 5월 29일 수정</div>
+2020년 6월 2일 수정</div>
 </div>
 </div>
 <div class="article-link">

@@ -1,0 +1,225 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<title>bitstring - Seorenn Note</title>
+<meta name="twitter:title" content="bitstring" />
+<meta name="og:title" content="bitstring" />
+<meta name="description" content="파이썬 bitstring 패키지 소개" />
+<meta name="twitter:description" content="파이썬 bitstring 패키지 소개" />
+<meta name="og:description" content="파이썬 bitstring 패키지 소개" />
+<link rel="canonical" href="https://seorenn.github.io/note/python-bitstring.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/python-bitstring.html" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" /></a>
+<nav>
+<a href="/" title="Home"><i class="material-icons md-light">home</i></a>
+<a href="/post" title="Post"><i class="material-icons md-light">subject</i></a>
+ <a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
+ <a href="/log" title="Log"><i class="material-icons md-light">portrait</i></a>
+</nav>
+</div>
+</header>
+<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>bitstring</h1>
+<div class="title-date">2020년 6월 5일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#801a40f0">설치 및 임포트</a></li>
+<li><a href="#f10034ef">Bits</a></li>
+<li><a href="#28a78c80">BitArray</a></li>
+<li><a href="#94121c5e">ConstBitStream, BitStream</a></li>
+<li><a href="#0bbb90e1">외부 링크</a></li>
+</ul>
+</div>
+</div>
+<p>
+bitstring은 <a href="python.html">Python</a>에서 이진 데이터를 생성하거나 분석하기 쉽게 해주는 도구다.
+특히 문자열 데이터 표현을 실제 이진 데이터로 바꾸거나 혹은 그 반대의 작업을 하기에 유용하다.
+</p>
+
+<div id="outline-container-801a40f0" class="outline-2">
+<h2 id="801a40f0">설치 및 임포트</h2>
+<div class="outline-text-2" id="text-801a40f0">
+<p>
+설치야 당연하게도 <a href="pip.html">pip</a>를 이용해 쉽게 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">pip install bitstring
+</pre>
+</div>
+<p>
+임포트도 그냥 통채로 해도 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> bitstring
+</pre>
+</div>
+<p>
+물론 주요 클래스 중 필요한 것만 골라서 할 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">from</span> bitstring <span style="color: #51afef;">import</span> Bits, BitArray, BitStream
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-f10034ef" class="outline-2">
+<h2 id="f10034ef">Bits</h2>
+<div class="outline-text-2" id="text-f10034ef">
+<p>
+bitstring의 근간이 되는 기본 클래스다. 그리고 불변(Immutable) 클래스다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; Bits(0x01)
+Bits(<span style="color: #98be65;">'0b0'</span>)
+&gt;&gt;&gt; Bits(<span style="color: #98be65;">'0x01'</span>)
+Bits(<span style="color: #98be65;">'0x01'</span>)
+</pre>
+</div>
+<p>
+데이터 표현에 사용되는 클래스로 보여서 아마도 직접 사용할 일은 별로 없을 것 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-28a78c80" class="outline-2">
+<h2 id="28a78c80">BitArray</h2>
+<div class="outline-text-2" id="text-28a78c80">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">ba</span> = BitArray(<span style="color: #98be65;">'0xff'</span>)
+&gt;&gt;&gt; ba
+BitArray(<span style="color: #98be65;">'0xff'</span>)
+&gt;&gt;&gt; ba.append(<span style="color: #98be65;">'0xaa'</span>)
+&gt;&gt;&gt; ba
+BitArray(<span style="color: #98be65;">'0xffaa'</span>)
+&gt;&gt;&gt; ba.<span style="color: #c678dd;">bin</span>
+<span style="color: #98be65;">'1111111110101010'</span>
+&gt;&gt;&gt; ba.<span style="color: #c678dd;">hex</span>
+<span style="color: #98be65;">'ffaa'</span>
+&gt;&gt;&gt; ba.<span style="color: #c678dd;">bytes</span>
+b<span style="color: #98be65;">'\xff\xaa'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-94121c5e" class="outline-2">
+<h2 id="94121c5e">ConstBitStream, BitStream</h2>
+<div class="outline-text-2" id="text-94121c5e">
+<p>
+<code>ConstBitStream</code> 는 바이트 스트림에서 위치를 이동해가며 원하는 타입으로 읽기 편하게 구성되어 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">cbs</span> = ConstBitStream(<span style="color: #98be65;">'0x01020304'</span>)
+&gt;&gt;&gt; cbs.pos
+<span style="color: #da8548; font-weight: bold;">0</span>
+&gt;&gt;&gt; cbs.read(<span style="color: #98be65;">'int:8'</span>)
+<span style="color: #da8548; font-weight: bold;">1</span>
+&gt;&gt;&gt; cbs.pos
+<span style="color: #da8548; font-weight: bold;">8</span>
+&gt;&gt;&gt; cbs.bytepos
+<span style="color: #da8548; font-weight: bold;">1</span>
+</pre>
+</div>
+<p>
+<code>pos</code> 와 <code>bytepos</code> 의 차이점을 잘 보자. <code>pos</code> 는 비트 단위다. 즉 비트 단위로 데이터를 읽을 수 있다는 말이다.
+</p>
+
+<p>
+<code>ConstBitStream</code> 은 <code>BitStream</code> 의 불변(Immutable) 타입 클래스다.
+메서드 등은 거의 동일하지만 <code>BitStream</code> 은 <code>append()</code> 같은 가변(Mutable) 메서드를 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">bs</span> = BitStream(<span style="color: #98be65;">'0x0102'</span>)
+&gt;&gt;&gt; bs.append(<span style="color: #98be65;">'0x0304'</span>)
+&gt;&gt;&gt; bs
+BitStream(<span style="color: #98be65;">'0x01020304'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-0bbb90e1" class="outline-2">
+<h2 id="0bbb90e1">외부 링크</h2>
+<div class="outline-text-2" id="text-0bbb90e1">
+<ul class="org-ul">
+<li><a target="_blank" href="https://github.com/scott-griffiths/bitstring">🌏bitstring 프로젝트 저장소</a></li>
+</ul>
+</div>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Python</h1>
-<div class="title-date">2020년 4월 22일 수정</div>
+<div class="title-date">2020년 6월 5일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -67,19 +67,28 @@
 <li><a href="#80a938c3">3.8</a></li>
 </ul>
 </li>
-<li><a href="#f3720a73">메모</a>
-<ul>
 <li><a href="#600e754f">Bytes</a></li>
-<li><a href="#ab6a62ec">List Comprehension</a></li>
-<li><a href="#a07495da">파일 혹은 디렉토리(폴더) 관련</a></li>
-<li><a href="#7df3788a">사전(Dictionary)형 합치기</a></li>
+<li><a href="#ab6a62ec">List Comprehension</a>
+<ul>
+<li><a href="#46f3ea05">Map</a></li>
+<li><a href="#d7778d0c">Filter</a></li>
 </ul>
 </li>
-<li><a href="#b1c1a675">커맨드</a>
+<li><a href="#17bb72bf">파일 혹은 디렉토리(폴더) 관련 팁</a>
+<ul>
+<li><a href="#e9e48928">경로에서 파일명만 얻기</a></li>
+<li><a href="#ec19234e">파일명에서 확장자 분리하기</a></li>
+<li><a href="#4ac854e0">파일 혹은 디렉토리 구분하기</a></li>
+<li><a href="#bf73e04c">디렉토리 안의 파일 목록 얻기</a></li>
+</ul>
+</li>
+<li><a href="#7df3788a">사전(Dictionary)형 합치기</a></li>
+<li><a href="#de5636e8">편리한 커맨드</a>
 <ul>
 <li><a href="#540afe19">간단한 웹 서버 띄우기</a></li>
 </ul>
 </li>
+<li><a href="#abdaed76">패키지 노트</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -138,13 +147,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-f3720a73" class="outline-2">
-<h2 id="f3720a73">메모</h2>
-<div class="outline-text-2" id="text-f3720a73">
-</div>
-<div id="outline-container-600e754f" class="outline-3">
-<h3 id="600e754f">Bytes</h3>
-<div class="outline-text-3" id="text-600e754f">
+<div id="outline-container-600e754f" class="outline-2">
+<h2 id="600e754f">Bytes</h2>
+<div class="outline-text-2" id="text-600e754f">
 <div class="org-src-container">
 <pre class="src src-python">b<span style="color: #83898d;">'some string'</span>
 </pre>
@@ -166,36 +171,36 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </div>
 </div>
 </div>
-<div id="outline-container-ab6a62ec" class="outline-3">
-<h3 id="ab6a62ec">List Comprehension</h3>
-<div class="outline-text-3" id="text-ab6a62ec">
+<div id="outline-container-ab6a62ec" class="outline-2">
+<h2 id="ab6a62ec">List Comprehension</h2>
+<div class="outline-text-2" id="text-ab6a62ec">
 </div>
-<ul class="org-ul">
-<li><a id="46f3ea05"></a>Map<br />
-<div class="outline-text-4" id="text-46f3ea05">
+<div id="outline-container-46f3ea05" class="outline-3">
+<h3 id="46f3ea05">Map</h3>
+<div class="outline-text-3" id="text-46f3ea05">
 <div class="org-src-container">
 <pre class="src src-python">[x * x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist]
 </pre>
 </div>
 </div>
-</li>
-<li><a id="d7778d0c"></a>Filter<br />
-<div class="outline-text-4" id="text-d7778d0c">
+</div>
+<div id="outline-container-d7778d0c" class="outline-3">
+<h3 id="d7778d0c">Filter</h3>
+<div class="outline-text-3" id="text-d7778d0c">
 <div class="org-src-container">
 <pre class="src src-python">[x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist <span style="color: #51afef;">if</span> iswhat(x)]
 </pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-<div id="outline-container-a07495da" class="outline-3">
-<h3 id="a07495da">파일 혹은 디렉토리(폴더) 관련</h3>
-<div class="outline-text-3" id="text-a07495da">
 </div>
-<ul class="org-ul">
-<li><a id="e9e48928"></a>경로에서 파일명만 얻기<br />
-<div class="outline-text-4" id="text-e9e48928">
+<div id="outline-container-17bb72bf" class="outline-2">
+<h2 id="17bb72bf">파일 혹은 디렉토리(폴더) 관련 팁</h2>
+<div class="outline-text-2" id="text-17bb72bf">
+</div>
+<div id="outline-container-e9e48928" class="outline-3">
+<h3 id="e9e48928">경로에서 파일명만 얻기</h3>
+<div class="outline-text-3" id="text-e9e48928">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.path.basename(<span style="color: #98be65;">'/foo/bar/test.txt'</span>)
@@ -203,9 +208,10 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </pre>
 </div>
 </div>
-</li>
-<li><a id="ec19234e"></a>파일명에서 확장자 분리하기<br />
-<div class="outline-text-4" id="text-ec19234e">
+</div>
+<div id="outline-container-ec19234e" class="outline-3">
+<h3 id="ec19234e">파일명에서 확장자 분리하기</h3>
+<div class="outline-text-3" id="text-ec19234e">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.path.splitext(<span style="color: #98be65;">'test.txt'</span>)
@@ -218,9 +224,10 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 <code>/foo/bar/text.txt</code> 를 입력할 경우 <code>/foo/bar/text</code> 와 <code>.txt</code> 로 분리됩니다.
 </p>
 </div>
-</li>
-<li><a id="4ac854e0"></a>파일 혹은 디렉토리 구분하기<br />
-<div class="outline-text-4" id="text-4ac854e0">
+</div>
+<div id="outline-container-4ac854e0" class="outline-3">
+<h3 id="4ac854e0">파일 혹은 디렉토리 구분하기</h3>
+<div class="outline-text-3" id="text-4ac854e0">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.path.isfile(<span style="color: #98be65;">'/foo/bar/some/file.txt'</span>)
@@ -230,9 +237,10 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </pre>
 </div>
 </div>
-</li>
-<li><a id="bf73e04c"></a>디렉토리 안의 파일 목록 얻기<br />
-<div class="outline-text-4" id="text-bf73e04c">
+</div>
+<div id="outline-container-bf73e04c" class="outline-3">
+<h3 id="bf73e04c">디렉토리 안의 파일 목록 얻기</h3>
+<div class="outline-text-3" id="text-bf73e04c">
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
 &gt;&gt;&gt; os.listdir(<span style="color: #98be65;">'.'</span>)
@@ -240,12 +248,11 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-<div id="outline-container-7df3788a" class="outline-3">
-<h3 id="7df3788a">사전(Dictionary)형 합치기</h3>
-<div class="outline-text-3" id="text-7df3788a">
+</div>
+<div id="outline-container-7df3788a" class="outline-2">
+<h2 id="7df3788a">사전(Dictionary)형 합치기</h2>
+<div class="outline-text-2" id="text-7df3788a">
 <p>
 일반적인 방법으로 <code>update</code> 메서드를 활용할 수 있다.
 </p>
@@ -276,10 +283,9 @@ Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 �
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-b1c1a675" class="outline-2">
-<h2 id="b1c1a675">커맨드</h2>
-<div class="outline-text-2" id="text-b1c1a675">
+<div id="outline-container-de5636e8" class="outline-2">
+<h2 id="de5636e8">편리한 커맨드</h2>
+<div class="outline-text-2" id="text-de5636e8">
 </div>
 <div id="outline-container-540afe19" class="outline-3">
 <h3 id="540afe19">간단한 웹 서버 띄우기</h3>
@@ -292,6 +298,14 @@ Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 �
 Python 3 부터 사용 가능한 커맨드다.
 </p>
 </div>
+</div>
+</div>
+<div id="outline-container-abdaed76" class="outline-2">
+<h2 id="abdaed76">패키지 노트</h2>
+<div class="outline-text-2" id="text-abdaed76">
+<ul class="org-ul">
+<li><a href="python-bitstring.html">bitstring</a></li>
+</ul>
 </div>
 </div>
 <div id="outline-container-0bbb90e1" class="outline-2">

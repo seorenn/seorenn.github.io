@@ -67,13 +67,13 @@
 <li><a href="#80a938c3">3.8</a></li>
 </ul>
 </li>
-<li><a href="#600e754f">Bytes</a></li>
-<li><a href="#ab6a62ec">List Comprehension</a>
+<li><a href="#be124333">List Comprehension 정리</a>
 <ul>
 <li><a href="#46f3ea05">Map</a></li>
 <li><a href="#d7778d0c">Filter</a></li>
 </ul>
 </li>
+<li><a href="#3d558e5f">Bytes 관련 팁</a></li>
 <li><a href="#17bb72bf">파일 혹은 디렉토리(폴더) 관련 팁</a>
 <ul>
 <li><a href="#e9e48928">경로에서 파일명만 얻기</a></li>
@@ -82,7 +82,11 @@
 <li><a href="#bf73e04c">디렉토리 안의 파일 목록 얻기</a></li>
 </ul>
 </li>
-<li><a href="#7df3788a">사전(Dictionary)형 합치기</a></li>
+<li><a href="#8818473f">사전(Dictionary)형 관련 팁</a>
+<ul>
+<li><a href="#d6c1bfd0">합치기</a></li>
+</ul>
+</li>
 <li><a href="#de5636e8">편리한 커맨드</a>
 <ul>
 <li><a href="#540afe19">간단한 웹 서버 띄우기</a></li>
@@ -147,15 +151,56 @@
 </div>
 </div>
 </div>
-<div id="outline-container-600e754f" class="outline-2">
-<h2 id="600e754f">Bytes</h2>
-<div class="outline-text-2" id="text-600e754f">
+<div id="outline-container-be124333" class="outline-2">
+<h2 id="be124333">List Comprehension 정리</h2>
+<div class="outline-text-2" id="text-be124333">
+<p>
+보통 함수형 언어들의 핵심 일꾼(?)인 map과 filter의 사용법이 Python에서는 특별한 문법으로 제공된다.
+</p>
+</div>
+<div id="outline-container-46f3ea05" class="outline-3">
+<h3 id="46f3ea05">Map</h3>
+<div class="outline-text-3" id="text-46f3ea05">
+<p>
+아래는 somelist라는 리스트에 들어있는 데이터를 제곱한 결과로 가공하여 새로운 리스트로 생성한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">[x * x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist]
+</pre>
+</div>
+<p>
+<code>for</code> 앞에 있는 식이 가공하는 식이다.
+</p>
+</div>
+</div>
+<div id="outline-container-d7778d0c" class="outline-3">
+<h3 id="d7778d0c">Filter</h3>
+<div class="outline-text-3" id="text-d7778d0c">
+<p>
+아래는 somelist라는 리스트에서 각 아이템이 iswhat 함수의 결과를 만족하는 경우만을 뽑아서 별도의 리스트로 생성한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">[x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist <span style="color: #51afef;">if</span> iswhat(x)]
+</pre>
+</div>
+<p>
+뒤에 붙어있는 <code>if</code> 의 의미만 이해한다면 어려울 것 없는 문법 같다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-3d558e5f" class="outline-2">
+<h2 id="3d558e5f">Bytes 관련 팁</h2>
+<div class="outline-text-2" id="text-3d558e5f">
+<p>
+Python 3 부터 Bytes를 표시하는 방법이 바뀌었다.
+</p>
 <div class="org-src-container">
 <pre class="src src-python">b<span style="color: #83898d;">'some string'</span>
 </pre>
 </div>
 <p>
-Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
+<code>b</code> 접두어를 붙인 문자열은 Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </p>
 
 <p>
@@ -169,29 +214,9 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 <span style="color: #a9a1e1;">True</span>
 </pre>
 </div>
-</div>
-</div>
-<div id="outline-container-ab6a62ec" class="outline-2">
-<h2 id="ab6a62ec">List Comprehension</h2>
-<div class="outline-text-2" id="text-ab6a62ec">
-</div>
-<div id="outline-container-46f3ea05" class="outline-3">
-<h3 id="46f3ea05">Map</h3>
-<div class="outline-text-3" id="text-46f3ea05">
-<div class="org-src-container">
-<pre class="src src-python">[x * x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist]
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-d7778d0c" class="outline-3">
-<h3 id="d7778d0c">Filter</h3>
-<div class="outline-text-3" id="text-d7778d0c">
-<div class="org-src-container">
-<pre class="src src-python">[x <span style="color: #51afef;">for</span> x <span style="color: #51afef;">in</span> somelist <span style="color: #51afef;">if</span> iswhat(x)]
-</pre>
-</div>
-</div>
+<p>
+기존 2.x 에서 쓰던 바이트 버퍼와 관련된 코드들이 아마도 이런 변경 때문에 오류가 나는 경우를 겪을 수 있을 것이다.
+</p>
 </div>
 </div>
 <div id="outline-container-17bb72bf" class="outline-2">
@@ -250,9 +275,13 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 </div>
 </div>
 </div>
-<div id="outline-container-7df3788a" class="outline-2">
-<h2 id="7df3788a">사전(Dictionary)형 합치기</h2>
-<div class="outline-text-2" id="text-7df3788a">
+<div id="outline-container-8818473f" class="outline-2">
+<h2 id="8818473f">사전(Dictionary)형 관련 팁</h2>
+<div class="outline-text-2" id="text-8818473f">
+</div>
+<div id="outline-container-d6c1bfd0" class="outline-3">
+<h3 id="d6c1bfd0">합치기</h3>
+<div class="outline-text-3" id="text-d6c1bfd0">
 <p>
 일반적인 방법으로 <code>update</code> 메서드를 활용할 수 있다.
 </p>
@@ -281,6 +310,7 @@ Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
 <p>
 Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 든다.
 </p>
+</div>
 </div>
 </div>
 <div id="outline-container-de5636e8" class="outline-2">

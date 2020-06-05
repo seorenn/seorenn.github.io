@@ -5,14 +5,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>Spacemacs - Seorenn Note</title>
-<meta name="twitter:title" content="Spacemacs" />
-<meta name="og:title" content="Spacemacs" />
-<meta name="description" content="Spacemacs(스페이스맥스)에 관한 간략한 설명 및 관련글들" />
-<meta name="twitter:description" content="Spacemacs(스페이스맥스)에 관한 간략한 설명 및 관련글들" />
-<meta name="og:description" content="Spacemacs(스페이스맥스)에 관한 간략한 설명 및 관련글들" />
-<link rel="canonical" href="https://seorenn.github.io/note/spacemacs.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/spacemacs.html" />
+<title>보일러플레이트 - Seorenn Note</title>
+<meta name="twitter:title" content="보일러플레이트" />
+<meta name="og:title" content="보일러플레이트" />
+<meta name="description" content="보일러플레이트(Boilerplate)란 무엇일까" />
+<meta name="twitter:description" content="보일러플레이트(Boilerplate)란 무엇일까" />
+<meta name="og:description" content="보일러플레이트(Boilerplate)란 무엇일까" />
+<link rel="canonical" href="https://seorenn.github.io/note/boilerplate.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/boilerplate.html" />
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -55,45 +55,30 @@
 </div>
 <section class="content">
 <header>
-<h1>Spacemacs</h1>
-<div class="title-date">2020년 4월 17일 수정</div>
+<h1>보일러플레이트</h1>
+<div class="title-date">2020년 6월 6일 수정</div>
 </header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#0bbb90e1">외부 링크</a></li>
-</ul>
-</div>
-</div>
 <p>
-스페이스맥스(Spacemacs)는 Community Driven Emacs Configuration 으로
-거대한 설정 파일 묶음 프로젝트다.
-<a href="vim.html">Vim</a> 키맵을 구현하는 evil 확장을 기반으로
-많은 확장들을 여기에 맞게 설정하고 있다.
-또한 이름에 맞게 스페이스키를 커맨드 트리거로 사용하는 등
-원래의 <a href="emacs.html">Emacs</a>에 비해 편리하면서도
-통일된 단축키 설정을 제공하는 것이 특징이다.
+보일러플레이트(Boilerplate)란 사전상 '표준 문안' 이라는 의미를 가지고 있지만,
+IT 개발 분야에서는 기본적으로 사용이 가능한 수준으로 제공되는 기본 코드 정도의 의미다.
+다르지만 비슷한 의미로 템플릿(Template)이 비교가 가능할 것 같다.
 </p>
 
 <p>
-개인적으로 1년 넘게 사용해오다 최근에는
-<a href="doom-emacs.html">Doom Emacs</a>로 갈아타긴 했지만
-편리한 설정 환경과 <a href="emacs.html">Emacs</a>를 벗어나지 않고도
-다양한 확장을 자동으로 설치해 주는 등
-여전히 좋은 설정 패키지라고 생각한다.
+예를 들자면 <a href="doom-emacs.html">Doom Emacs</a>의 경우
+초기 설치 스크립트가 기본 설정 파일인 <code>init.el</code>, <code>config.el</code>, <code>packages.el</code> 에
+기본 코드를 작성해 주는데 이 코드들을 보일러플레이트 코드라도 부른다.
 </p>
 
-<div id="outline-container-0bbb90e1" class="outline-2">
-<h2 id="0bbb90e1">외부 링크</h2>
-<div class="outline-text-2" id="text-0bbb90e1">
-<ul class="org-ul">
-<li><a target="_blank" href="https://www.spacemacs.org/">🌏스페이맥스 공식 홈페이지</a></li>
-<li><a target="_blank" href="https://www.youtube.com/playlist?list=PLPNohcoOBa5GejCpa5-Mw79bXnyynM1Nn">🌏The (Subjective) Spacemacs Howto</a>:
-개인적으로 운영하는 유튜브 채널의 스페이스맥스 플레이 리스트.
-현재 둠으로 잠시 이주한 탓에 업데이트가 안 되고 있기는 하다.</li>
-</ul>
-</div>
-</div>
+<p>
+다른 예로 <a href="xcode.html">Xcode</a>의 경우 새 프로젝트 생성 시
+Core Data를 사용한다고 할 경우 기초 코드로 Core Data를 로드하는 보일러플레이트 코드를 자동으로 작성해 준다.
+</p>
+
+<p>
+물론 이 외에도 다양한 IDE의 프로젝트나 UI 프레임워크 등에서 생성해주는 코드 등
+'시작하기 좋은 준비물' 을 보일러플레이트라 부른다.
+</p>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"
      style="display:block"
@@ -109,37 +94,16 @@
 <hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
+<h2><a class="article-link-title" href="/note/dockerfile.html">Dockerfile</a></h2>
 <div class="article-link-date">
 2020년 6월 6일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/vim.html">Vim</a></h2>
+<h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
 <div class="article-link-date">
-2020년 6월 3일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
-<div class="article-link-date">
-2020년 5월 29일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/magit.html">Magit</a></h2>
-<div class="article-link-date">
-2020년 5월 28일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/seorenn.html">Seorenn</a></h2>
-<div class="article-link-date">
-2020년 5월 1일 수정</div>
+2020년 6월 6일 수정</div>
 </div>
 </div>
 </div>

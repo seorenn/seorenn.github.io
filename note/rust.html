@@ -63,6 +63,7 @@
 <ul>
 <li><a href="#4d08a6c8">macOS에서 Rust 설치하기</a></li>
 <li><a href="#1733268e">엔트리포인트</a></li>
+<li><a href="#29eebf0a">모듈 임포트(Import)</a></li>
 <li><a href="#c2b769c0">스칼라 타입</a>
 <ul>
 <li><a href="#4d4e7024">정수형</a></li>
@@ -73,7 +74,6 @@
 </li>
 <li><a href="#7734396c">변수와 상수 시스템</a></li>
 <li><a href="#4c22e2d3">Nullable(Option)</a></li>
-<li><a href="#8661ef1f">복합 타입</a></li>
 <li><a href="#821baaf0">함수(Functions)</a></li>
 <li><a href="#d52e9694">제어문</a></li>
 <li><a href="#8378a9a9">루프</a></li>
@@ -81,7 +81,16 @@
 <li><a href="#6d5c6eee">구조체(Structure)</a></li>
 <li><a href="#8c7986f4">열거형(Enumeration)</a></li>
 <li><a href="#593425aa">Result 타입</a></li>
-<li><a href="#29eebf0a">모듈 임포트(Import)</a></li>
+<li><a href="#c43caff4">복합 타입 및 콜렉션(Collections)</a>
+<ul>
+<li><a href="#9b6990d1">튜플(Tuple)</a></li>
+<li><a href="#bfb0ebf5">배열(Array)</a></li>
+<li><a href="#9862d309">벡터(Vector)</a></li>
+<li><a href="#75857fe7">해시맵(Hash Map)</a></li>
+<li><a href="#e905cbf0">문자열(String)</a></li>
+</ul>
+</li>
+<li><a href="#5da15dae">모듈(Module) 및 접근 제어(Access Control)</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -151,6 +160,22 @@ rustup은 통합 인스톨러 패키지라고 보면 된다.
 </div>
 <p>
 말 그대로 메인 함수다.
+</p>
+</div>
+</div>
+<div id="outline-container-29eebf0a" class="outline-2">
+<h2 id="29eebf0a">모듈 임포트(Import)</h2>
+<div class="outline-text-2" id="text-29eebf0a">
+<p>
+별도로 구현한 모듈이나 외부 패키지를 사용하기 위해서는 임포트를 해야한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">foo</span>::bar;
+<span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">foo</span>::*;
+</pre>
+</div>
+<p>
+자바와 비슷한 스타일의 네임스페이스 체계를 갖추고 있는데 개인적으로는 좀 불만이지만 장점도 있으니깐 이렇게 쓰겠지?
 </p>
 </div>
 </div>
@@ -335,28 +360,6 @@ None의 경우는 nil 혹은 <a href="python.html">Python</a>의 None과도 매�
 </div>
 <p>
 명확하게 표기하지 않아도 이런 식으로 Option 타입을 리턴할 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-8661ef1f" class="outline-2">
-<h2 id="8661ef1f">복합 타입</h2>
-<div class="outline-text-2" id="text-8661ef1f">
-<p>
-튜플이나 배열처럼 여러개의 값을 나열하기 위한 타입이다.
-</p>
-<div class="org-src-container">
-<pre class="src src-rust"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#53916;&#54540;(Tuple)</span>
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">tup</span>: (<span style="color: #ECBE7B;">i32</span>, <span style="color: #ECBE7B;">i64</span>, <span style="color: #ECBE7B;">u8</span>) = (<span style="color: #da8548; font-weight: bold;">500</span>, <span style="color: #da8548; font-weight: bold;">6.4</span>, <span style="color: #da8548; font-weight: bold;">1</span>);
-<span style="color: #51afef;">let</span> (x, y, z) = tup;
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">first</span> = tup.<span style="color: #da8548; font-weight: bold;">0</span>;
-
-<span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#48176;&#50676;(Array)</span>
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">list</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>];
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">second</span> = list[<span style="color: #da8548; font-weight: bold;">1</span>];
-</pre>
-</div>
-<p>
-튜플이 지원되길래 임시 변수 없는 교환(swap)이 가능할까 시험해 봤는데 문법 오류가 발생한다. 안타깝다.
 </p>
 </div>
 </div>
@@ -768,14 +771,213 @@ String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 �
 </p>
 </div>
 </div>
-<div id="outline-container-29eebf0a" class="outline-2">
-<h2 id="29eebf0a">모듈 임포트(Import)</h2>
-<div class="outline-text-2" id="text-29eebf0a">
+<div id="outline-container-c43caff4" class="outline-2">
+<h2 id="c43caff4">복합 타입 및 콜렉션(Collections)</h2>
+<div class="outline-text-2" id="text-c43caff4">
+</div>
+<div id="outline-container-9b6990d1" class="outline-3">
+<h3 id="9b6990d1">튜플(Tuple)</h3>
+<div class="outline-text-3" id="text-9b6990d1">
+<p>
+튜플은 하나 이상의 다양한 타입을 담을 수 있는 타입이다.
+</p>
 <div class="org-src-container">
-<pre class="src src-rust"><span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">foo</span>::bar;
-<span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">foo</span>::*;
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">tup</span>: (<span style="color: #ECBE7B;">i32</span>, <span style="color: #ECBE7B;">i64</span>, <span style="color: #ECBE7B;">u8</span>) = (<span style="color: #da8548; font-weight: bold;">500</span>, <span style="color: #da8548; font-weight: bold;">6.4</span>, <span style="color: #da8548; font-weight: bold;">1</span>);
+<span style="color: #51afef;">let</span> (x, y, z) = tup;
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">first</span> = tup.<span style="color: #da8548; font-weight: bold;">0</span>;
 </pre>
 </div>
+<p>
+<a href="python.html">Python</a>에서 가능한 튜플을 이용한 임시 변수 없는 교환(swap)이 가능할까 시험해 봤는데
+문법 오류가 발생한다. 안타깝다.
+</p>
+</div>
+</div>
+<div id="outline-container-bfb0ebf5" class="outline-3">
+<h3 id="bfb0ebf5">배열(Array)</h3>
+<div class="outline-text-3" id="text-bfb0ebf5">
+<p>
+배열은 일반적인 그 배열이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">list</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>];
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">second</span> = list[<span style="color: #da8548; font-weight: bold;">1</span>];
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-9862d309" class="outline-3">
+<h3 id="9862d309">벡터(Vector)</h3>
+<div class="outline-text-3" id="text-9862d309">
+<p>
+러스트의 벡터는 수학에서 방향과 세기를 나타내는 그 벡터가 아니라 단일 타입을 지원하는 리스트와 비슷하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">v1</span> = <span style="color: #51afef; font-weight: bold;">vec!</span>[<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>];
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">v1second</span>: &amp;<span style="color: #ECBE7B;">i32</span> = &amp;v1[<span style="color: #da8548; font-weight: bold;">1</span>];
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">v1third</span>: <span style="color: #ECBE7B;">Option</span>&lt;<span style="color: #ECBE7B;">i32</span>&gt; = v.get(<span style="color: #da8548; font-weight: bold;">2</span>);
+</pre>
+</div>
+<p>
+가변 벡터는 물론 추가로 다양한 가변 명령을 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #51afef;">mut</span> <span style="color: #dcaeea;">v2</span> = <span style="color: #ECBE7B;">Vec</span>::new();
+v2.push(<span style="color: #da8548; font-weight: bold;">1</span>);
+v2.push(<span style="color: #da8548; font-weight: bold;">2</span>);
+v2.push(<span style="color: #da8548; font-weight: bold;">3</span>);
+</pre>
+</div>
+<p>
+반복문에서 참조 및 변경이 가능하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> &amp;v1 {
+    ...
+}
+
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> &amp;<span style="color: #51afef;">mut</span> v2 {
+    ...
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-75857fe7" class="outline-3">
+<h3 id="75857fe7">해시맵(Hash Map)</h3>
+<div class="outline-text-3" id="text-75857fe7">
+<p>
+해시맵은 다른 언어들의 사전형(Dictionary)와 비슷하게 쓸 수 있는 Key - Value 콜렉션이다.
+단지 기본 타입이 아니어서 모듈 임포트가 필요하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">use</span> <span style="color: #a9a1e1;">std</span>::<span style="color: #dcaeea;">collections</span>:<span style="color: #ECBE7B;">HashMap</span>;
+</pre>
+</div>
+<p>
+동적으로 해시맵을 생성하는 예는 이렇다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #51afef;">mut</span> <span style="color: #dcaeea;">dict</span> = <span style="color: #ECBE7B;">HashMap</span>::new();
+dict.insert(<span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"apple"</span>), <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"&#49324;&#44284;"</span>));
+dict.insert(<span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"banana"</span>), <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"&#48260;&#45236;&#45320;"</span>));
+dict.insert(<span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"pear"</span>), <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"&#48176;"</span>));
+</pre>
+</div>
+<p>
+해시맵에 insert를 하는 과정에서 원시 타입 등은 복제가 진행되지 소유권 문제에서 자유로운 편이다.
+</p>
+
+<p>
+값을 읽을 때는 Option 타입을 리턴함을 주의하자.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">if</span> <span style="color: #51afef;">let</span> <span style="color: #ECBE7B;">Some</span>(banana) = dict.get(&amp;<span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"banana"</span>)) {
+    <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"banana -&gt; </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, &amp;banana);
+}
+</pre>
+</div>
+<p>
+나열도 간단한 편이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">for</span> (key, value) <span style="color: #51afef;">in</span> &amp;dict {
+    <span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"</span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;"> -&gt; </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, key, value);
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-e905cbf0" class="outline-3">
+<h3 id="e905cbf0">문자열(String)</h3>
+<div class="outline-text-3" id="text-e905cbf0">
+<p>
+일단 C 문자열과 비슷한 raw string과 러스트의 String 타입은 다르다는 것은 인식하자.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s1</span> = <span style="color: #98be65;">"C String"</span>.to_string();
+<span style="color: #c678dd;">println!</span>(<span style="color: #98be65;">"length of s1 = </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, &amp;s1.len());
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s1substr</span> = &amp;s1[<span style="color: #da8548; font-weight: bold;">1</span>..<span style="color: #da8548; font-weight: bold;">4</span>];  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; " St"</span>
+
+<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s2</span> = <span style="color: #ECBE7B;">String</span>::from(<span style="color: #98be65;">"Rust String"</span>);
+</pre>
+</div>
+<p>
+당연하겠지만 가변형도 지원된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #51afef;">mut</span> <span style="color: #dcaeea;">s3</span> = <span style="color: #ECBE7B;">String</span>::new();
+s3.push(<span style="color: #98be65;">'f'</span>);       <span style="color: #5B6268;">// </span><span style="color: #5B6268;">s3 -&gt; "f"</span>
+s3.push_str(<span style="color: #98be65;">"oo"</span>);  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">s3 -&gt; "foo"</span>
+s3 += &amp;s1;          <span style="color: #5B6268;">// </span><span style="color: #5B6268;">s3 -&gt; "fooC String"</span>
+s3 += &amp;s2;          <span style="color: #5B6268;">// </span><span style="color: #5B6268;">s3 -&gt; "fooC StringRust String"</span>
+</pre>
+</div>
+<p>
+문자열 포맷은 <code>println!</code> 과 비슷하게 아래와 같은 식으로 쓸 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">s4</span> = <span style="color: #c678dd;">format!</span>(<span style="color: #98be65;">"s1 = </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">, s2 = </span><span style="color: #98be65; font-style: italic;">{}</span><span style="color: #98be65;">"</span>, s1, s2);
+</pre>
+</div>
+<p>
+마치 <a href="python.html">Python</a>의 <code>format()</code> 을 연상시키는 문법이다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-5da15dae" class="outline-2">
+<h2 id="5da15dae">모듈(Module) 및 접근 제어(Access Control)</h2>
+<div class="outline-text-2" id="text-5da15dae">
+<p>
+모듈은 <code>mod</code> 키워드로 네임스페이스를 구분하듯이 정의할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">mod</span> <span style="color: #a9a1e1;">module_name</span> {
+    <span style="color: #51afef;">pub</span> <span style="color: #51afef;">fn</span> <span style="color: #c678dd;">dowhat</span>() {
+    }
+
+    <span style="color: #51afef;">fn</span> <span style="color: #c678dd;">hiddenwork</span>() {
+    }
+
+    <span style="color: #51afef;">pub</span> <span style="color: #51afef;">mod</span> <span style="color: #a9a1e1;">some_submodule_name</span> {
+        <span style="color: #51afef;">fn</span> <span style="color: #c678dd;">dosomewhat</span>() {
+        }
+    }
+}
+</pre>
+</div>
+<p>
+<code>pub</code> 가 붙은 모듈 및 함수 등은 public으로 외부에 이름이 공개된다.
+이를 접근 제어(Access Control) 용도로 사용할 수 있다.
+<a href="swift.html">Swift</a>와 비슷하게 별도의 표시가 없으면 internal 혹은 private 정도로 제한되는 것 같다.
+</p>
+
+<p>
+모듈을 별도의 파일로 분리할 때는 일단 모듈 선언을 해야한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">mod</span> <span style="color: #a9a1e1;">another_module</span>;
+</pre>
+</div>
+<p>
+그리고 실제 모듈 내용은 <code>another_module.rs</code> 파일에 구현한다.
+</p>
+
+<p>
+혹은 위 모듈을 별도의 디렉토리로 구현하려면 아래와 같이 서브 디렉터리 이름을 모듈 이름으로 짓고
+파일 이름을 <code>mod.rs</code> 로 명확히 해줘야 한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">src/
+    lib.rs
+    another_module/
+        mod.rs
+</pre>
+</div>
+<p>
+이런 식으로 <code>mod.rs</code> 파일에 해당 모듈을 구현하면 된다.
+</p>
 </div>
 </div>
 <div id="outline-container-0bbb90e1" class="outline-2">

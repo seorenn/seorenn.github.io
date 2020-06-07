@@ -80,6 +80,7 @@
 <li><a href="#be53bfa5">메모리 소유권</a></li>
 <li><a href="#6d5c6eee">구조체(Structure)</a></li>
 <li><a href="#8c7986f4">열거형(Enumeration)</a></li>
+<li><a href="#593425aa">Result 타입</a></li>
 <li><a href="#29eebf0a">모듈 임포트(Import)</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
@@ -740,6 +741,30 @@ String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 �
 </div>
 <p>
 개인적으로 익숙한 <a href="swift.html">Swift</a>랑 용도가 달라서 왠지 오해할 수도 있을 것 같다.
+</p>
+</div>
+</div>
+<div id="outline-container-593425aa" class="outline-2">
+<h2 id="593425aa">Result 타입</h2>
+<div class="outline-text-2" id="text-593425aa">
+<p>
+위의 열거형으로 만들어진 타입으로 Result가 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #51afef;">enum</span> <span style="color: #ECBE7B;">Result</span>&lt;<span style="color: #ECBE7B;">T</span>, <span style="color: #ECBE7B;">E</span>&gt; {
+    <span style="color: #ECBE7B;">Ok</span>(<span style="color: #ECBE7B;">T</span>),
+    <span style="color: #ECBE7B;">Err</span>(<span style="color: #ECBE7B;">E</span>)
+}
+</pre>
+</div>
+<p>
+아는 사람은 알겠지만, <a href="swift.html">Swift</a>의 Result 타입과 거의 동일하다.
+목적도 동일한데, 특정 함수의 동작이 성공하면 <code>Ok</code> 가 돌아오고 결과가 있으면 <code>T</code> 타입의 데이터를 얻을 수 있다.
+그리고 오류가 발생했다면 <code>Err</code> 이 돌아오면서 에러 정보가 <code>E</code> 에 들어온다.
+</p>
+
+<p>
+예외처리 방식 보다도 효율성으로 주목을 받고 있는 공공연한(?) 타입인 만큼 잘 활용하는 게 좋을 것 같다.
 </p>
 </div>
 </div>

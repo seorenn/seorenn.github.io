@@ -272,7 +272,7 @@ mutable_variable = <span style="color: #da8548; font-weight: bold;">30</span>;
 <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#48373;&#51105;&#54620; &#52488;&#44592;&#54868;</span>
 <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">x</span> = {
     <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">y</span> = <span style="color: #da8548; font-weight: bold;">10</span>;
-    y * <span style="color: #da8548; font-weight: bold;">2</span>;
+    y * <span style="color: #da8548; font-weight: bold;">2</span>
 };
 
 <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#47749;&#49884;&#51201; &#53440;&#51077;</span>
@@ -288,7 +288,8 @@ immutable 변수를 동일 이름으로 데이터를 변경 시키는 것이 가
 
 <p>
 복잡한 초기화라는 것은 정확한 이름은 아니다.
-아마도 <code>return</code> 이 생략된 형태 같은데 그렇다면 <code>return</code> 을 넣어도 아마 문제는 없지 않을까?
+마지막의 세미콜론이 생략된 줄은 아마도 <code>return</code> 이 생략된 형태 같은데
+그렇다면 <code>return</code> 을 넣어도 아마 문제는 없지 않을까?
 </p>
 
 <p>
@@ -669,7 +670,7 @@ String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 �
 </div>
 <p>
 <code>impl</code> 이라는 별도의 구분된 공간에 메서드를 구현할 수 있는데 <a href="swift.html">Swift</a>의 <code>extension</code> 과 비슷하다고 느껴지기도 한다.
-하여간 여기서 처음의 <code>birthday</code> 는 자시 자신의 프로퍼티를 변경하는 메서드다.
+하여간 여기서 처음의 <code>birthday</code> 는 자기 자신의 프로퍼티를 변경하는 메서드다.
 </p>
 
 <p>
@@ -709,7 +710,7 @@ String의 <code>clone()</code> 도 사실상 메모리를 새로 만들어서 �
 사용할 때는 이런 식이다.
 </p>
 <div class="org-src-container">
-<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">gender</span> = <span style="color: #ECBE7B;">Gender</span>::unknown;
+<pre class="src src-rust"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">gender</span> = <span style="color: #ECBE7B;">Gender</span>::<span style="color: #ECBE7B;">Female</span>;
 </pre>
 </div>
 <p>

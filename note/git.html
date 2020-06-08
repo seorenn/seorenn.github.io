@@ -63,16 +63,16 @@
 <ul>
 <li><a href="#f31a3a78">사용법</a>
 <ul>
-<li><a href="#109cc06d">설정</a></li>
+<li><a href="#2823631a">환경 설정</a></li>
 <li><a href="#2a99d5a5">저장소 만들기</a></li>
 <li><a href="#bb2b6af6">보관용 저장소 만들기</a></li>
-<li><a href="#5075aa1c">상황 보기</a></li>
+<li><a href="#b07af6a3">상황 보기(Status)</a></li>
 <li><a href="#4e75a252">파일 스테이지(Stage) 하기</a></li>
 <li><a href="#74701a69">스테이지 취소하기</a></li>
 <li><a href="#eed384c2">변경점만 스테이지 하기(Stage Patch)</a></li>
 <li><a href="#6ec1fad1">커밋(Commit)</a></li>
 <li><a href="#1d39026e">커밋 메시지 수정하기</a></li>
-<li><a href="#5f7712b5">커밋 내역</a></li>
+<li><a href="#7cc09863">커밋 내역(Log)</a></li>
 <li><a href="#6a095b12">원격과 연결하기</a></li>
 <li><a href="#e06e2386">푸시(Push)</a></li>
 <li><a href="#f62cacbb">풀(Pull)</a></li>
@@ -84,16 +84,15 @@
 <li><a href="#d1ec6196">브랜치 조회하기</a></li>
 <li><a href="#6904e4c5">브랜치 삭제하기</a></li>
 <li><a href="#4d1d5b7a">다른 브랜치에서 파일 복사해오기</a></li>
-<li><a href="#8cc0f43e">원격 브랜치 가져오기</a></li>
+<li><a href="#7b82683b">특정 원격 브랜치를 로컬에 그대로 가져오기</a></li>
 <li><a href="#7f367055">다른 브랜치의 내용 패치 하기</a></li>
 <li><a href="#155e2b8c">임시 저장(stash)</a></li>
 <li><a href="#387ad0a5">임시 저장(stash)과 비교(diff)해보기</a></li>
 <li><a href="#12fde229">작업 내역 취소하기</a></li>
 <li><a href="#895ccfb2">커밋 합치기</a></li>
-<li><a href="#b634ed7a">강제로 푸시 하기</a></li>
 <li><a href="#96047851">파일 지우기</a></li>
 <li><a href="#77d2d8d6">업데이트 무시하기</a></li>
-<li><a href="#3410bc49">원격 브랜치 동기화 하기</a></li>
+<li><a href="#9778452b">원격과 브랜치 동기화 하기</a></li>
 <li><a href="#85d45b36">다른 브랜치간의 변경 내역만 뽑아서 적용하기</a></li>
 </ul>
 </li>
@@ -113,11 +112,11 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <h2 id="f31a3a78">사용법</h2>
 <div class="outline-text-2" id="text-f31a3a78">
 </div>
-<div id="outline-container-109cc06d" class="outline-3">
-<h3 id="109cc06d">설정</h3>
-<div class="outline-text-3" id="text-109cc06d">
+<div id="outline-container-2823631a" class="outline-3">
+<h3 id="2823631a">환경 설정</h3>
+<div class="outline-text-3" id="text-2823631a">
 <p>
-전역(global)
+전역(global)으로 이름 및 이메일 주소 설정은 아래 커맨드로 할 수 있다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global user.name <span style="color: #98be65;">"your name"</span>
@@ -125,7 +124,11 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </pre>
 </div>
 <p>
-현재 프로젝트에만 설정하기(local)
+이 외에도 많은 설정이 있다. 공식 매뉴얼을 참고하자.
+</p>
+
+<p>
+참고로 현재 프로젝트에만 별도(local)로 설정하려면 <code>--global</code> 옵션을 빼면 된다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config user.name <span style="color: #98be65;">"your name"</span>
@@ -137,37 +140,41 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <div id="outline-container-2a99d5a5" class="outline-3">
 <h3 id="2a99d5a5">저장소 만들기</h3>
 <div class="outline-text-3" id="text-2a99d5a5">
+<p>
+현재 디렉터리를 Git 저장소로 만드려면 <code>init</code> 커맨드를 사용한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> init
 </pre>
 </div>
 <p>
-현재 디렉터리를 Git 저장소로 만든다. <code>.git</code> 를 비롯해 상황에 따라 여러 숨김 디렉토리가 생겨난다.
+이렇게 하면 <code>.git</code> 를 비롯해 상황에 따라 여러 숨겨진 디렉토리가 생겨난다.
 </p>
 </div>
 </div>
 <div id="outline-container-bb2b6af6" class="outline-3">
 <h3 id="bb2b6af6">보관용 저장소 만들기</h3>
 <div class="outline-text-3" id="text-bb2b6af6">
+<p>
+보관용 저장소는 작업용 저장소가 아니라 보통 remote 용도로 사용되는 저장소를 의미한다.
+아래와 같이 <code>--bare</code> 옵션을 추가하면 만들 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> init --bare
 </pre>
 </div>
-<p>
-보관 용 저장소를 생성한다.
-직접적으로 코드를 추가하거나 커밋하는 용도가 아닌 원격 저장소 용도다.
-</p>
 </div>
 </div>
-<div id="outline-container-5075aa1c" class="outline-3">
-<h3 id="5075aa1c">상황 보기</h3>
-<div class="outline-text-3" id="text-5075aa1c">
+<div id="outline-container-b07af6a3" class="outline-3">
+<h3 id="b07af6a3">상황 보기(Status)</h3>
+<div class="outline-text-3" id="text-b07af6a3">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> status
 </pre>
 </div>
 <p>
-가장 많이 사용하게 될 커맨드다. 현재 저장소에서 일어나고 있는 일들을 정리해서 보여 준다.
+Git 사용 시 가장 많이 사용하게 될 커맨드다.
+현재 저장소에서 일어나고 있는 일들을 정리해서 보여 준다.
 </p>
 
 <p>
@@ -179,7 +186,7 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </pre>
 </div>
 <p>
-이러면 이상한 문구들 다 집어치우고 간략한 status를 보여 준다.
+이러면 아래와 같이 이상한 문구들 다 집어치우고 간략한 status를 보여 준다.
 </p>
 <div class="org-src-container">
 <pre class="src src-text"> M foo.txt
@@ -196,7 +203,7 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <h3 id="4e75a252">파일 스테이지(Stage) 하기</h3>
 <div class="outline-text-3" id="text-4e75a252">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add FILE_PATH
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add path/to/file
 </pre>
 </div>
 <p>
@@ -213,7 +220,7 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <h3 id="74701a69">스테이지 취소하기</h3>
 <div class="outline-text-3" id="text-74701a69">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> reset FILE_PATH
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> reset path/to/file
 </pre>
 </div>
 <p>
@@ -224,18 +231,24 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <div id="outline-container-eed384c2" class="outline-3">
 <h3 id="eed384c2">변경점만 스테이지 하기(Stage Patch)</h3>
 <div class="outline-text-3" id="text-eed384c2">
+<p>
+파일 단위가 아니라 변경된 내역 단위로 스테이지 하려면 <code>-p</code> 옵션을 추가로 사용한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> add -p
 </pre>
 </div>
 <p>
-저장소의 변경된 파일을 변경점 위주로 리뷰하며 스테이지할 패치를 고를 수 있다.
+이렇게 하면 각 변경점 위주로 리뷰하며 스테이지할 패치를 고를 수 있다.
 </p>
 </div>
 </div>
 <div id="outline-container-6ec1fad1" class="outline-3">
 <h3 id="6ec1fad1">커밋(Commit)</h3>
 <div class="outline-text-3" id="text-6ec1fad1">
+<p>
+변경된 내용을 저장소에 올릴 때 커밋을 한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> commit
 </pre>
@@ -248,6 +261,11 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> commit -a
 </pre>
 </div>
+<p>
+다만 <code>-a</code> 옵션은 저장소에 추가되지 않은 파일(untracked file)은 커밋되지 않으니 주의하자.
+이런 파일은 수동으로 <code>add</code> 해야 한다.
+</p>
+
 <p>
 <code>-m</code> 옵션을 사용하면 커밋 메세지를 간단히 작성할 수 있다.
 </p>
@@ -269,9 +287,12 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 </div>
 </div>
 </div>
-<div id="outline-container-5f7712b5" class="outline-3">
-<h3 id="5f7712b5">커밋 내역</h3>
-<div class="outline-text-3" id="text-5f7712b5">
+<div id="outline-container-7cc09863" class="outline-3">
+<h3 id="7cc09863">커밋 내역(Log)</h3>
+<div class="outline-text-3" id="text-7cc09863">
+<p>
+아래 커맨으로 커밋 내역을 볼 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> log
 </pre>
@@ -295,27 +316,44 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <div id="outline-container-6a095b12" class="outline-3">
 <h3 id="6a095b12">원격과 연결하기</h3>
 <div class="outline-text-3" id="text-6a095b12">
+<p>
+원격 저장소를 특정 보관용 저장소와 연결하고 싶을 때 아래와 같이 할 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> remote add origin somegit://foo.bar/address
 </pre>
 </div>
 <p>
 origin 이라는 원격 저장소를 현재 저장소에 알려 주는 커맨드다.
-뒤의 주소는 연결하려는 원격 서비스(github)에서 제공하는 주소를 입력해야 합니다.
-물론 로컬의 다른 bare 저장소 디렉토리를 지정하는 것도 가능하다.
+</p>
+
+<p>
+위의 커맨드는 그냥 예제일 뿐이고 실제로 동작하지 않는다.
+뒤의 somegit으로 시작하는 주소는
+실제로 연결하려는 원격 서비스(github)에서 제공하는 주소를 입력해야 한다.
+</p>
+
+<p>
+물론 원격 저장소 대신 로컬의 다른 보관용 저장소(bare repository)의 디렉토리를 지정하는 것도 가능하다.
 </p>
 </div>
 </div>
 <div id="outline-container-e06e2386" class="outline-3">
 <h3 id="e06e2386">푸시(Push)</h3>
 <div class="outline-text-3" id="text-e06e2386">
+<p>
+아래 커맨드는 origin 이라는 이름의 원격 저장소에 master 라는 브랜치 이름으로 푸시한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push origin master
 </pre>
 </div>
 <p>
-origin 이라는 이름의 원격 저장소에 master 라는 브랜치 이름으로 푸시한다.
-<code>-u</code> 옵션으로 원격 브랜치와 로컬 브랜치를 연결시킬 수도 있다.
+굉장히 자주 사용하게 될 커맨드다.
+</p>
+
+<p>
+추가로 <code>-u</code> 옵션으로 원격 브랜치와 로컬 브랜치를 연결시킬 수도 있다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push -u origin master
@@ -328,19 +366,35 @@ origin 이라는 이름의 원격 저장소에 master 라는 브랜치 이름으
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push
 </pre>
 </div>
+
+<p>
+만약 푸시 후 커밋 내용을 바꾸거나 rebase 하는 등의 커밋 히스토리의 변동이 일어났다면
+일반적인 푸시는 에러가 날 수도 있다.
+이럴 때는 강제로(forcely) 푸시해야만 한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push --force origin master
+</pre>
+</div>
+<p>
+하지만 <code>master</code> 브랜치 같은 기본 브랜치에 이런 강제 명령은 사용하지 말자.
+협업 중인 저장소라면 다른 사람들에게 민폐를 끼칠 수도 있다.
+</p>
 </div>
 </div>
 <div id="outline-container-f62cacbb" class="outline-3">
 <h3 id="f62cacbb">풀(Pull)</h3>
 <div class="outline-text-3" id="text-f62cacbb">
+<p>
+아래 커맨드는 origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용을 가져와서
+로컬 master 브랜치에 합쳐(merge)준다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> pull origin master
 </pre>
 </div>
 <p>
-origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용을 가져와서
-로컬 master 브랜치에 합쳐(merge)준다.
-아래의 두 커맨드를 하나로 합쳐놓은 것과 비슷하다.
+위는 아래의 두 커맨드를 하나로 합쳐놓은 것과 비슷하다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> fetch origin master
@@ -387,13 +441,13 @@ origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용
 <div id="outline-container-87c1062a" class="outline-3">
 <h3 id="87c1062a">특정 파일의 수정 이력 조회하기</h3>
 <div class="outline-text-3" id="text-87c1062a">
+<p>
+아래 명령은 해당 파일의 커밋 별 변경 이력을 최근부터 과거 순으로 계속 보여준다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> log -p path/to/file
 </pre>
 </div>
-<p>
-이 명령은 해당 파일의 커밋 별 변경 이력을 최근부터 과거 순으로 계속 보여준다.
-</p>
 </div>
 </div>
 <div id="outline-container-cd667d2a" class="outline-3">
@@ -415,7 +469,7 @@ origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용
 </pre>
 </div>
 <p>
-브랜치는 일(task)의 단위로도 자주 활용되기 때문에
+브랜치는 작업(task)의 단위로도 자주 활용되기 때문에
 GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 사용하게 된다.
 </p>
 </div>
@@ -423,12 +477,15 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 <div id="outline-container-fa35be49" class="outline-3">
 <h3 id="fa35be49">작업 브랜치 변경하기</h3>
 <div class="outline-text-3" id="text-fa35be49">
+<p>
+<code>switch</code> 명령으로 작업 브랜치를 변경할 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> switch branch_name
 </pre>
 </div>
 <p>
-<code>switch</code> 는 최근의 Git에서 활용할 수 있는 직관적인 의미의 명령이다.
+참고로 <code>switch</code> 는 최근에 추가된 명령이다.
 만약 자신이 옛날 사람이라면 <code>checkout</code> 커맨드도 사용할 수 있다는 것을 알 것이다.
 </p>
 <div class="org-src-container">
@@ -440,12 +497,14 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 <div id="outline-container-d1ec6196" class="outline-3">
 <h3 id="d1ec6196">브랜치 조회하기</h3>
 <div class="outline-text-3" id="text-d1ec6196">
+<p>
+아래의 커맨드로 로컬의 브랜치 목록을 볼 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> branch
 </pre>
 </div>
 <p>
-위의 경우는 로컬의 브랜치 리스트만 나타나며,
 원격을 보기 위해서는 <code>-r</code> 옵션을 추가해야 한다.
 </p>
 <div class="org-src-container">
@@ -457,6 +516,9 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 <div id="outline-container-6904e4c5" class="outline-3">
 <h3 id="6904e4c5">브랜치 삭제하기</h3>
 <div class="outline-text-3" id="text-6904e4c5">
+<p>
+아래 커맨드로 로컬의 브랜치를 삭제할 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> branch -D branch_name
 </pre>
@@ -468,22 +530,28 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push origin --delete REMOTE_BRANCH_NAME
 </pre>
 </div>
+<p>
+하지만 원격 브랜치를 로컬에서 직접 삭제할 일은 별로 없을 것 같다.
+</p>
 </div>
 </div>
 <div id="outline-container-4d1d5b7a" class="outline-3">
 <h3 id="4d1d5b7a">다른 브랜치에서 파일 복사해오기</h3>
 <div class="outline-text-3" id="text-4d1d5b7a">
+<p>
+아래와 같이 다른 브랜치의 파일을 현재 브랜치로 복사해 올 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> checkout branch_name path/to/file
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-8cc0f43e" class="outline-3">
-<h3 id="8cc0f43e">원격 브랜치 가져오기</h3>
-<div class="outline-text-3" id="text-8cc0f43e">
+<div id="outline-container-7b82683b" class="outline-3">
+<h3 id="7b82683b">특정 원격 브랜치를 로컬에 그대로 가져오기</h3>
+<div class="outline-text-3" id="text-7b82683b">
 <p>
-원격에만 있는 특정 브랜치를 로컬에도 그대로 가져오기 위해서는 아래 커맨드를 이용한다.
+원격에만 있는 특정 브랜치를 로컬에 같은 이름의 브랜치로 가져오기 위해서는 아래 커맨드를 이용한다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> checkout -t origin/branch_name
@@ -561,11 +629,21 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> stash apply
 </pre>
 </div>
+<p>
+필요 없을 때는 <code>drop</code> 으로 삭제할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> stash drop stash_name
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-387ad0a5" class="outline-3">
 <h3 id="387ad0a5">임시 저장(stash)과 비교(diff)해보기</h3>
 <div class="outline-text-3" id="text-387ad0a5">
+<p>
+아래와 같이 stash 된 내용이 현재 내용과 어떻게 다른지 파악할 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> stash show -p
 </pre>
@@ -643,33 +721,18 @@ GitHub 등에서 오픈소스 프로젝트에 기여한다면 굉장히 자주 �
 </p>
 </div>
 </div>
-<div id="outline-container-b634ed7a" class="outline-3">
-<h3 id="b634ed7a">강제로 푸시 하기</h3>
-<div class="outline-text-3" id="text-b634ed7a">
-<p>
-rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
-이럴 때는 강제로 푸시할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> push --force branch_name
-</pre>
-</div>
-<p>
-굉장히 자유롭게 쓸 수 있지만 중요한
-<code>master</code> 브랜치를 강제로 푸시하는 등의 행위는 자제하자.
-강제 푸시는 개인이 생성한 브랜치에만 하는 것이 현명하다.
-</p>
-</div>
-</div>
 <div id="outline-container-96047851" class="outline-3">
 <h3 id="96047851">파일 지우기</h3>
 <div class="outline-text-3" id="text-96047851">
+<p>
+아래 커맨드는 로컬과 저장소에서 파일을 삭제한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> <span style="color: #ECBE7B;">rm</span> FILE_PATH
 </pre>
 </div>
 <p>
-로컬과 저장소 양쪽에서 파일이 삭제된다.
+삭제된 내역은 add 등으로 삭제 되었다고 스테이지 해줘야 커밋 시 반영된다.
 </p>
 
 <p>
@@ -689,8 +752,8 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
 <h3 id="77d2d8d6">업데이트 무시하기</h3>
 <div class="outline-text-3" id="text-77d2d8d6">
 <p>
-어떤 이유(?)로 특정 파일이 업데이트되어도 이를 커밋하지 않으려면 아래 커맨드를
-이용할 수 있다.
+어떤 이유(?)로 특정 파일이 업데이트 되어도 이를 커밋하지 않으려면
+아래 커맨드를 이용할 수 있다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> update-index --assume-unchanged PATH
@@ -703,15 +766,24 @@ rebase 후 원격 저장소에 푸시하려 하면 오류가 날 수 있다.
 </p>
 </div>
 </div>
-<div id="outline-container-3410bc49" class="outline-3">
-<h3 id="3410bc49">원격 브랜치 동기화 하기</h3>
-<div class="outline-text-3" id="text-3410bc49">
+<div id="outline-container-9778452b" class="outline-3">
+<h3 id="9778452b">원격과 브랜치 동기화 하기</h3>
+<div class="outline-text-3" id="text-9778452b">
+<p>
+예를 들어 이런저런 작업을 하면서 원격에서 받은 브랜치가 많아졌는데,
+시간이 흐른 후 원격에서 이런 브랜치들 일부가 사라졌다.
+이럴 때 아래 커맨드로 원격에서 삭제된 브랜치를 로컬에서 지울 수 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> fetch --prune
 </pre>
 </div>
 <p>
 fetch 시 <code>--prune</code> 혹은 <code>-p</code> 옵션은 원격에 없는 원격 브랜치를 추적 중인 로컬 브랜치를 삭제해 준다.
+</p>
+
+<p>
+참고로 완전한 동기화는 안 해주니 오해하지 말자.
 </p>
 </div>
 </div>

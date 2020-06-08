@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Magit</h1>
-<div class="title-date">2020년 5월 28일 수정</div>
+<div class="title-date">2020년 6월 8일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -70,6 +70,7 @@
 <li><a href="#37943d0d">브랜치(Branch)</a></li>
 <li><a href="#bf1d1572">취소 혹은 원복시키기(Reset or Revert)</a></li>
 <li><a href="#859bed23">특정 커밋 시점으로 전환하기(switch commit)</a></li>
+<li><a href="#8517bb18">임시 저장(Stash) 및 복원</a></li>
 <li><a href="#7f598db0">기타</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
@@ -88,8 +89,10 @@ Magit은 <a href="emacs.html">Emacs</a>용 <a href="git.html">Git</a> 프론트�
 
 <p>
 참고로 이 글은 순수 magit이 아닌
-<a href="doom-emacs.html">Doom Emacs</a>나 <a href="spacemacs.html">Spacemacs</a>용으로 커스터마이징 된 단축키를 위주로 정리한다.
+<a href="doom-emacs.html">Doom Emacs</a>나 <a href="spacemacs.html">Spacemacs</a>용으로
+커스터마이징 된 단축키를 위주로 정리한다.
 </p>
+
 <div id="outline-container-61f4e102" class="outline-2">
 <h2 id="61f4e102">magit-status</h2>
 <div class="outline-text-2" id="text-61f4e102">
@@ -188,7 +191,7 @@ fetch 시 로컬과 origin 원격의 브랜치를 동기화 하고 싶다면 - �
 <h2 id="37943d0d">브랜치(Branch)</h2>
 <div class="outline-text-2" id="text-37943d0d">
 <dl class="org-dl">
-<dt><code>b c</code></dt><dd>브랜치 생성</dd>
+<dt><code>b c</code></dt><dd>브랜치 생성. 출발점이 되는 브랜치를 먼저 입력 받고 그 이후에 생성할 브랜치 이름을 입력한다.</dd>
 <dt><code>b b</code></dt><dd>브랜치 전환</dd>
 <dt><code>b x</code></dt><dd>브랜치 삭제</dd>
 </dl>
@@ -198,7 +201,8 @@ fetch 시 로컬과 origin 원격의 브랜치를 동기화 하고 싶다면 - �
 <h2 id="bf1d1572">취소 혹은 원복시키기(Reset or Revert)</h2>
 <div class="outline-text-2" id="text-bf1d1572">
 <p>
-<code>magit-status</code> 상에서 원하는 변경점을 선택한 후 <code>x</code> 를 누르면 해당 변경 사항을 취소하고 원래대로(HEAD) 돌린다.
+<code>magit-status</code> 상에서 원하는 변경점을 선택한 후 <code>x</code> 를 누르면
+해당 변경 사항을 취소하고 원래대로(HEAD) 돌린다.
 </p>
 </div>
 </div>
@@ -210,6 +214,19 @@ fetch 시 로컬과 origin 원격의 브랜치를 동기화 하고 싶다면 - �
 그러면 해당 커밋의 자세한 내용이 나타나는데 그 상태에서 <code>b b</code> 를 누르면
 브랜치 전환 인터페이스가 나타나면서 제일 상단에 선택한 로그의 커밋 해시가 나타난다.
 그러면 간단히 <code>RET</code> 를 누르면 원하는 시점으로 이동할 수 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-8517bb18" class="outline-2">
+<h2 id="8517bb18">임시 저장(Stash) 및 복원</h2>
+<div class="outline-text-2" id="text-8517bb18">
+<p>
+<a href="git.html">Git</a>의 stash 기능을 이용해 현재 작업 중이던 사항을 임시로 보관해놓고
+변화 내역을 날려버릴 수 있다. 물론 복구도 가능하다.
+<code>Z z</code> :: 현재 브랜치의 모든 수정 중이던 사항을 Stash로 보관한다. 실행 시 메모를 남길 수 있다.
+<code>Z a</code> :: 선택된 Stash의 수정 사항을 반영(apply)한다. 원래의 Stash는 계속 남는다.
+<code>Z p</code> :: 선택된 Stash의 수정 사항을 반영하고 Stash를 삭제한다. (pop)
+<code>Z k</code> :: 선택된 Stash를 날려버린다. (drop)
 </p>
 </div>
 </div>

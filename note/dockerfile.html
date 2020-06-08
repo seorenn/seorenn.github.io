@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Dockerfile</h1>
-<div class="title-date">2020년 6월 6일 수정</div>
+<div class="title-date">2020년 6월 8일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -103,13 +103,18 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 </p>
 
 <p>
-<code>RUN</code> 커맨드를 여러 줄에 나누어서 적어도 관계 없지만,
+<code>RUN</code> 은 보다시피 실행시킬 명령어를 기입할 수 있는 커맨드다.
+커맨드를 여러 줄에 나누어서 적어도 관계 없지만,
 길이에 한계가 있기 때문에 이런 식으로 한 줄에 몰아서 적는 형태를 많이들 사용한다.
 </p>
 
 <p>
 <code>ADD</code> 는 현재 빌드가 진행되고 있는 디렉터리의 내용물을 이미지에 몽땅 복사한다.
 어쩌면 가장 중요한 명령이다.
+</p>
+
+<p>
+<code>ENV</code> 는 이름에서 유추 가능하다시피 환경 변수(Environment Variable)를 설정하는 커맨드다.
 </p>
 
 <p>
@@ -125,7 +130,7 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 <h2 id="28af54f1">사용자 지정</h2>
 <div class="outline-text-2" id="text-28af54f1">
 <p>
-특정 사용자로 굴리고(?) 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
+특정 사용자 권한으로 특정 명령을 실행하고 싶다면 <code>USER</code> 커맨드를 쓸 수 있다.
 </p>
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">RUN</span> groupadd -r someuser
@@ -141,6 +146,9 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 <div id="outline-container-5d5e8bc1" class="outline-2">
 <h2 id="5d5e8bc1">Health Checking</h2>
 <div class="outline-text-2" id="text-5d5e8bc1">
+<p>
+이제는 서버가 떴는지 확인하기 위한 스크립팅을 지원한다.
+</p>
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">HEALTHCHECK</span> --<span style="color: #dcaeea;">interval</span>=5s <span style="color: #98be65;">\</span>
             --<span style="color: #dcaeea;">timeout</span>=5s <span style="color: #98be65;">\</span>
@@ -153,6 +161,10 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 <div id="outline-container-67358999" class="outline-2">
 <h2 id="67358999">Multi Stage Building</h2>
 <div class="outline-text-2" id="text-67358999">
+<p>
+이미지를 작성하는 데 단계가 많다면 중간에 실패했을 때의 리스크가 너무 크다.
+이럴 때는 스테이지를 나눠서 빌드하는 방법이 있다.
+</p>
 <div class="org-src-container">
 <pre class="src src-dockerfile"><span style="color: #51afef;">FROM</span> <span style="color: #ECBE7B; font-weight: bold;">someimage</span> AS <span style="color: #a9a1e1; font-weight: bold;">stage1</span>
 ...
@@ -165,6 +177,10 @@ Dockerfile은 <a href="docker.html">Docker</a> 용 이미지를 빌드하기 위
 ...
 </pre>
 </div>
+<p>
+이렇게 하면 특정 스테이지에서 중단되어도 이전 스테이지의 빌드 내용은 기록되어 있어서
+다시 빠르게 시도할 수 있다.
+</p>
 </div>
 </div>
 <div id="outline-container-0bbb90e1" class="outline-2">

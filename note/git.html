@@ -56,7 +56,7 @@
 <section class="content">
 <header>
 <h1>Git</h1>
-<div class="title-date">2020년 6월 4일 수정</div>
+<div class="title-date">2020년 6월 8일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -78,6 +78,7 @@
 <li><a href="#f62cacbb">풀(Pull)</a></li>
 <li><a href="#01509f7b">비교(diff)</a></li>
 <li><a href="#f98c521a">브랜치 간 파일 비교하기</a></li>
+<li><a href="#87c1062a">특정 파일의 수정 이력 조회하기</a></li>
 <li><a href="#cd667d2a">브랜치 만들기</a></li>
 <li><a href="#fa35be49">작업 브랜치 변경하기</a></li>
 <li><a href="#d1ec6196">브랜치 조회하기</a></li>
@@ -381,6 +382,18 @@ origin 이라는 이름의 원격 저장소의 master 라는 브랜치의 내용
 <pre class="src src-bash"><span style="color: #ECBE7B;">git</span> diff branch-a:path/to/file branch-b:path/to/file
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-87c1062a" class="outline-3">
+<h3 id="87c1062a">특정 파일의 수정 이력 조회하기</h3>
+<div class="outline-text-3" id="text-87c1062a">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> log -p path/to/file
+</pre>
+</div>
+<p>
+이 명령은 해당 파일의 커밋 별 변경 이력을 최근부터 과거 순으로 계속 보여준다.
+</p>
 </div>
 </div>
 <div id="outline-container-cd667d2a" class="outline-3">
@@ -833,7 +846,7 @@ github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
 <div class="article-link-date">
-2020년 6월 2일 수정</div>
+2020년 6월 8일 수정</div>
 </div>
 </div>
 <div class="article-link">

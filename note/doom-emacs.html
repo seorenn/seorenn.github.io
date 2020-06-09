@@ -57,7 +57,7 @@
 <section class="content">
 <header>
 <h1>Doom Emacs</h1>
-<div class="title-date">2020년 6월 8일 수정</div>
+<div class="title-date">2020년 6월 10일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -66,6 +66,7 @@
 <ul>
 <li><a href="#b622f862">설정 파일 위치</a></li>
 <li><a href="#8b1dd7b7">설정 파일 쉽게 열기</a></li>
+<li><a href="#c9c4627d">설정 파일 용도</a></li>
 <li><a href="#19faecfa">설정을 고친 후</a></li>
 <li><a href="#328764b6">폰트 설정</a></li>
 <li><a href="#1eb157d0">줄 간격 설정</a></li>
@@ -76,33 +77,12 @@
 <li><a href="#1473040d">컬러 테마 커스터마이징</a></li>
 </ul>
 </li>
-<li><a href="#87e80dc0">단축키 메모</a>
-<ul>
-<li><a href="#6301c26e">설정(Configuration) 관련</a></li>
-<li><a href="#5256ebb8">파일(File) 관련</a></li>
-<li><a href="#f8a8aa90">버퍼(Buffer) 관련</a></li>
-<li><a href="#e7e9fcd0">프로젝트(Project)</a></li>
-<li><a href="#183a3df2">창(Window)</a></li>
-<li><a href="#35b605d8">폴딩(Folding)</a></li>
-<li><a href="#6869346f">셸(Shell) 혹은 터미널(Terminal)</a></li>
-<li><a href="#eb070dcc">템플릿(Snippets)</a></li>
-<li><a href="#953f2b9c">검색(Search)</a></li>
-<li><a href="#af57ec51">점프(Jump)</a></li>
-<li><a href="#b851cbd5">멀티 커서(Multiple Cursors) - evil-multiedit</a></li>
-<li><a href="#e3b031f3">멀티 커서(Multiple Cursors) - evil-mc</a></li>
-<li><a href="#239b7d8a">특수 텍스트 변환</a></li>
-<li><a href="#3f060fa4">Emacs Lisp 관련</a></li>
-<li><a href="#91038c53">프로그래밍 관련</a></li>
-<li><a href="#2c239f1d">Org Mode 공통</a></li>
-<li><a href="#05f59e8b">Org Mode 테이블 스프레드시트</a></li>
-<li><a href="#a3b4107a">프로파일러(profiler)</a></li>
-</ul>
-</li>
 <li><a href="#89e15078">문제 해결</a>
 <ul>
 <li><a href="#215d2f92">Package error</a></li>
 </ul>
 </li>
+<li><a href="#867ded23">관련글</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -141,6 +121,16 @@ Doom Emacs도 <a href="spacemacs.html">Spacemacs</a>와 비슷하게
 <p>
 <code>SPC f p</code> 를 누르면 개인 설정 파일 목록이 뜨기 때문에 쉽게 열 수 있다.
 </p>
+</div>
+</div>
+<div id="outline-container-c9c4627d" class="outline-3">
+<h3 id="c9c4627d">설정 파일 용도</h3>
+<div class="outline-text-3" id="text-c9c4627d">
+<ul class="org-ul">
+<li><code>init.el</code> 은 둠의 핵심인 모듈 설정이 들어간다. 원하는 모듈을 목록에 추가하면 <code>sync</code> 시 자동으로 설치된다.</li>
+<li><code>config.el</code> 은 일반적인 설정 코드를 넣을 수 있다.</li>
+<li><code>packages.el</code> 은 추가로 필요한 패키지나 혹은 필요 없는 패키지들을 나열할 수 있다. 해당 패키지는 <code>sync</code> 시 설치되거나 삭제된다.</li>
+</ul>
 </div>
 </div>
 <div id="outline-container-19faecfa" class="outline-3">
@@ -306,214 +296,6 @@ sync가 완료된 후 <a href="emacs.html">Emacs</a>를 재시작하고
 </div>
 </div>
 </div>
-<div id="outline-container-87e80dc0" class="outline-2">
-<h2 id="87e80dc0">단축키 메모</h2>
-<div class="outline-text-2" id="text-87e80dc0">
-</div>
-<div id="outline-container-6301c26e" class="outline-3">
-<h3 id="6301c26e">설정(Configuration) 관련</h3>
-<div class="outline-text-3" id="text-6301c26e">
-<dl class="org-dl">
-<dt><code>SPC f p</code></dt><dd>설정 파일 열기 (선택 다이얼로그가 뜬다)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-5256ebb8" class="outline-3">
-<h3 id="5256ebb8">파일(File) 관련</h3>
-<div class="outline-text-3" id="text-5256ebb8">
-<dl class="org-dl">
-<dt><code>SPC f f</code></dt><dd>find-file, 즉 파일 열기</dd>
-<dt><code>SPC .</code></dt><dd>현재 디렉토리에서 파일 열기 (생성하기도 가능)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-f8a8aa90" class="outline-3">
-<h3 id="f8a8aa90">버퍼(Buffer) 관련</h3>
-<div class="outline-text-3" id="text-f8a8aa90">
-<dl class="org-dl">
-<dt><code>SPC ,</code></dt><dd>혹은 <code>SPC b b</code> 워크스페이스(혹은 프로젝트) 버퍼 전환</dd>
-<dt><code>SPC `</code></dt><dd>동일 워크스페이스의 이전 버퍼로 전환</dd>
-<dt><code>SPC b B</code></dt><dd>버퍼 전환</dd>
-<dt><code>SPC p x</code></dt><dd>스크래치 버퍼를 작게 아래쪽에 띄우기</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-e7e9fcd0" class="outline-3">
-<h3 id="e7e9fcd0">프로젝트(Project)</h3>
-<div class="outline-text-3" id="text-e7e9fcd0">
-<ul class="org-ul">
-<li><code>SPC p p</code> 프로젝트 전환</li>
-<li><code>SPC SPC</code> 프로젝트 파일 열기</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-183a3df2" class="outline-3">
-<h3 id="183a3df2">창(Window)</h3>
-<div class="outline-text-3" id="text-183a3df2">
-<p>
-참고로 <a href="emacs.html">Emacs</a>에서 창(window)이란 하나의 윈도를 여러 pane으로
-분할해서 쓰는 것을 의미하지 용어에 주의하자.
-</p>
-<dl class="org-dl">
-<dt><code>SPC w s</code></dt><dd>창을 위아래로 나누기</dd>
-<dt><code>SPC w v</code></dt><dd>창을 좌우로 나누기</dd>
-<dt><code>SPC w w</code></dt><dd>다음 창으로 포커스(커서) 이동</dd>
-<dt><code>SPC w c</code></dt><dd>창 닫기</dd>
-<dt><code>SPC w j</code> 혹은 <code>SPC w k</code></dt><dd>아래쪽 창 혹은 윗쪽 창으로 이동하기</dd>
-<dt><code>SPC w h</code> 혹은 <code>SPC w l</code></dt><dd>왼쪽 창 혹은 오른쪽쪽 창으로 이동하기</dd>
-<dt><code>SPC w o</code></dt><dd>하나의 창을 많이 크게 만들기</dd>
-<dt><code>SPC w C-o</code></dt><dd>현재 창만 남기고 다른 창 닫기</dd>
-<dt><code>SPC w =</code></dt><dd>모든 창의 크기를 비슷하게 맞추기</dd>
-<dt><code>C-w C-w</code> 혹은 <code>C-x o</code></dt><dd>지정된 캐릭터의 윈도로 스위칭(ace-window)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-35b605d8" class="outline-3">
-<h3 id="35b605d8">폴딩(Folding)</h3>
-<div class="outline-text-3" id="text-35b605d8">
-<dl class="org-dl">
-<dt><code>z f</code></dt><dd>선택 영역 접기(폴딩)</dd>
-<dt><code>z a</code></dt><dd>폴딩 토글하기</dd>
-<dt><code>z d</code></dt><dd>폴딩 제거하기(코드는 당연히 삭제 안됨)</dd>
-<dt><code>z E</code></dt><dd>모든 폴딩 제거</dd>
-<dt><code>z j</code></dt><dd>다음 폴딩으로 이동</dd>
-<dt><code>z k</code></dt><dd>이전 폴딩으로 이동</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-6869346f" class="outline-3">
-<h3 id="6869346f">셸(Shell) 혹은 터미널(Terminal)</h3>
-<div class="outline-text-3" id="text-6869346f">
-<dl class="org-dl">
-<dt><code>SPC o t</code></dt><dd>터미널 열기</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-eb070dcc" class="outline-3">
-<h3 id="eb070dcc">템플릿(Snippets)</h3>
-<div class="outline-text-3" id="text-eb070dcc">
-<dl class="org-dl">
-<dt><code>SPC s /</code></dt><dd>스니펫 목록 및 검색하기</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-953f2b9c" class="outline-3">
-<h3 id="953f2b9c">검색(Search)</h3>
-<div class="outline-text-3" id="text-953f2b9c">
-<dl class="org-dl">
-<dt><code>SPC s p</code></dt><dd>프로젝트에서 검색(search in project)</dd>
-<dt><code>SPC s d</code></dt><dd>디렉터리에서 검색(search in directory)</dd>
-<dt><code>SPC '</code></dt><dd>계속 검색(ivy-resume)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-af57ec51" class="outline-3">
-<h3 id="af57ec51">점프(Jump)</h3>
-<div class="outline-text-3" id="text-af57ec51">
-<dl class="org-dl">
-<dt><code>t [character]</code></dt><dd>해당 문자로 점프(evil-snipe)</dd>
-<dt><code>s [characters]</code></dt><dd>문자 완성 형식으로 해당 문자열로 점프(evil-snipe)</dd>
-<dt><code>S [characters]</code></dt><dd>문자 완성 형식으로 해당 문자열로 역방향 점프(evil-snipe)</dd>
-<dt><code>g s j</code></dt><dd>표시된 문자를 입력한 위치로 아래방향 점프(evil-easymotion)</dd>
-<dt><code>g s k</code></dt><dd>표시된 문자를 입력한 위치로 아래방향 점프(evil-easymotion)</dd>
-<dt><code>g s SPC</code></dt><dd>키보드로 입력하는 글자 위치로 점프(avy)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-b851cbd5" class="outline-3">
-<h3 id="b851cbd5">멀티 커서(Multiple Cursors) - evil-multiedit</h3>
-<div class="outline-text-3" id="text-b851cbd5">
-<dl class="org-dl">
-<dt><code>M-d</code></dt><dd>현재 커서 위치의 단어 혹은 선택영역 선택 혹은 아래 방향으로 같은 단어를 하나 검색해서 선택</dd>
-<dt><code>M-D</code></dt><dd>현재 커서 위치의 단어 혹은 선택영역 선택 혹은 윗쪽 방향으로 같은 단어를 하나 검색해서 선택</dd>
-<dt>영역 선택 후 <code>R</code></dt><dd>해당 단어 모두 선택</dd>
-<dt><code>R</code></dt><dd>선택된 단어들을 덮어쓰기(Replace) 모드로 몽땅 편집하기</dd>
-<dt><code>I</code></dt><dd>선택된 단어들을 삽입(Insert) 모드로 몽땅 편집하기</dd>
-<dt><code>D</code></dt><dd>선택된 단어들을 삭제하기</dd>
-<dt><code>C-n</code> 혹은 <code>C-p</code></dt><dd>선택중인 다음 혹은 이전 단어들로 점프</dd>
-<dt><code>RET</code></dt><dd>선택 영역 토글</dd>
-<dt><code>ESC</code></dt><dd>탈출(Exit evil-multiedit mode)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-e3b031f3" class="outline-3">
-<h3 id="e3b031f3">멀티 커서(Multiple Cursors) - evil-mc</h3>
-<div class="outline-text-3" id="text-e3b031f3">
-<dl class="org-dl">
-<dt><code>g z z</code></dt><dd>현재 위치에 커서 만들기</dd>
-<dt><code>g z j</code></dt><dd>현재 커서 위치에서 서브커서를 만들고 아래로 이동 (<code>g z k</code> 는 위로)</dd>
-<dt><code>g z m</code></dt><dd>현재 커서 위치와 관련이 있는 모든 곳에 서브커서 생성</dd>
-<dt><code>g z d</code></dt><dd>현재 커서의 단어 끝이 서브커서를 만들고 비슷한 다음 단어로 커서
-이동(<code>g z D</code> 는 이전으로 이동)</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-239b7d8a" class="outline-3">
-<h3 id="239b7d8a">특수 텍스트 변환</h3>
-<div class="outline-text-3" id="text-239b7d8a">
-<dl class="org-dl">
-<dt><code>!</code></dt><dd>연관 텍스트로 변환 rotate-text</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-3f060fa4" class="outline-3">
-<h3 id="3f060fa4"><a href="emacs-lisp.html">Emacs Lisp</a> 관련</h3>
-<div class="outline-text-3" id="text-3f060fa4">
-<dl class="org-dl">
-<dt><code>SPC :</code></dt><dd>함수 실행하기(Emacs 의 <code>M-x</code> 와 동일). 콜론 주의.</dd>
-<dt><code>SPC ;</code></dt><dd>명령 실행하기(eval expression). 세미콜론임에 주의</dd>
-<dt><code>g r</code></dt><dd>선택 영역 실행하기(eval region)</dd>
-<dt><code>g R</code></dt><dd>버퍼 전체 실행하기(eval buffer). 근데 버그가 있는지 첫 문단만 실행되네?
-추후 수정될 가능성 있음.</dd>
-<dt><code>SPC m e b</code></dt><dd>버퍼 전체 실행하기(eval buffer). 이건 잘 돌아감.</dd>
-<dt><code>S b</code></dt><dd>선택 영역을 괄호(braces)로 둘러싸기</dd>
-<dt><code>z M</code></dt><dd>모든 헤드라인 폴딩</dd>
-<dt><code>z R</code></dt><dd>모든 헤드라인 폴딩 열기</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-91038c53" class="outline-3">
-<h3 id="91038c53">프로그래밍 관련</h3>
-<div class="outline-text-3" id="text-91038c53">
-<dl class="org-dl">
-<dt><code>g c</code></dt><dd>선택 영역을 주석(commenting)으로 처리하거나 혹은 해제(uncommenting) (evil-nerd-commenter)</dd>
-<dt><code>SPC c d</code></dt><dd>레퍼런스로 이동(Look up reference)</dd>
-<dt><code>=</code></dt><dd>선택영역 들여쓰기(indentation) 정리</dd>
-<dt><code>]e</code></dt><dd>Next Error</dd>
-<dt><code>[e</code></dt><dd>Previous Error</dd>
-<dt><code>SPC c x</code></dt><dd>List Errors</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-2c239f1d" class="outline-3">
-<h3 id="2c239f1d"><a href="org-mode.html">Org Mode</a> 공통</h3>
-<div class="outline-text-3" id="text-2c239f1d">
-<dl class="org-dl">
-<dt><code>SPC m t</code></dt><dd>TO DO 마크 (띄어서 쓴 이유는 org agenda에 안 걸리게 하기 위함)</dd>
-<dt><code>SPC m p</code></dt><dd>우선순위(priority)</dd>
-<dt><code>SPC n s</code></dt><dd>노트(org) 검색</dd>
-<dt><code>SPC n r f</code></dt><dd>Org Roam 문서 제목으로 파일 열기</dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-05f59e8b" class="outline-3">
-<h3 id="05f59e8b"><a href="org-mode.html">Org Mode</a> 테이블 스프레드시트</h3>
-<div class="outline-text-3" id="text-05f59e8b">
-<dl class="org-dl">
-<dt><code>SPC m b h</code></dt><dd>테이블에서 커서 위치의 필드 정보 <code>org-table-field-info</code></dd>
-<dt><code>C-c }</code></dt><dd>테이블 필드 정보 오버레이 토글 <code>org-table-toggle-coordinate-overlays</code></dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-a3b4107a" class="outline-3">
-<h3 id="a3b4107a">프로파일러(profiler)</h3>
-<div class="outline-text-3" id="text-a3b4107a">
-<dl class="org-dl">
-<dt><code>SPC h T</code></dt><dd>Toggle Profiler</dd>
-</dl>
-</div>
-</div>
-</div>
 <div id="outline-container-89e15078" class="outline-2">
 <h2 id="89e15078">문제 해결</h2>
 <div class="outline-text-2" id="text-89e15078">
@@ -558,6 +340,14 @@ Package error: (error Could not find package hover in recipe repositories: (org-
 </div>
 </div>
 </div>
+<div id="outline-container-867ded23" class="outline-2">
+<h2 id="867ded23">관련글</h2>
+<div class="outline-text-2" id="text-867ded23">
+<ul class="org-ul">
+<li><a href="doom-emacs-shortcuts.html">Doom Emacs 단축키</a>: 개인적으로 자주 사용하는 단축키를 정리한 글</li>
+</ul>
+</div>
+</div>
 <div id="outline-container-0bbb90e1" class="outline-2">
 <h2 id="0bbb90e1">외부 링크</h2>
 <div class="outline-text-2" id="text-0bbb90e1">
@@ -581,6 +371,13 @@ Package error: (error Could not find package hover in recipe repositories: (org-
 </div>
 <div class="backlinks-container">
 <hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/doom-emacs-shortcuts.html">Doom Emacs 단축키</a></h2>
+<div class="article-link-date">
+2020년 6월 10일 수정</div>
+</div>
+</div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/magit.html">Magit</a></h2>

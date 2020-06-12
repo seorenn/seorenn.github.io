@@ -57,7 +57,7 @@
 <section class="content">
 <header>
 <h1>Python</h1>
-<div class="title-date">2020년 6월 5일 수정</div>
+<div class="title-date">2020년 6월 12일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -86,6 +86,17 @@
 <li><a href="#8818473f">사전(Dictionary)형 관련 팁</a>
 <ul>
 <li><a href="#d6c1bfd0">합치기</a></li>
+</ul>
+</li>
+<li><a href="#0f9f7ecb">정규표현식(Regular Expression)</a>
+<ul>
+<li><a href="#fb6758ab">정규표현식 패턴</a></li>
+<li><a href="#42c3b144">정규표현식 패턴 컴파일</a></li>
+<li><a href="#e8711f23">match()</a></li>
+<li><a href="#b4fc4298">search()</a></li>
+<li><a href="#d85f2e80">findall()</a></li>
+<li><a href="#d63c6c39">fullmatch()</a></li>
+<li><a href="#68abd0c6">Match 오브젝트</a></li>
 </ul>
 </li>
 <li><a href="#de5636e8">편리한 커맨드</a>
@@ -311,6 +322,155 @@ Python 3 부터 Bytes를 표시하는 방법이 바뀌었다.
 <p>
 Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 든다.
 </p>
+</div>
+</div>
+</div>
+<div id="outline-container-0f9f7ecb" class="outline-2">
+<h2 id="0f9f7ecb">정규표현식(Regular Expression)</h2>
+<div class="outline-text-2" id="text-0f9f7ecb">
+<p>
+아래는 간략하게 정리한 글이며 상세한 것은 공식 매뉴얼을 참조하자.
+</p>
+</div>
+<div id="outline-container-fb6758ab" class="outline-3">
+<h3 id="fb6758ab">정규표현식 패턴</h3>
+<div class="outline-text-3" id="text-fb6758ab">
+<p>
+매뉴얼을 정리하는 것은 너무 방대하고 자주 쓰일 만한 패턴 몇 가지만 정리해보자.
+</p>
+<dl class="org-dl">
+<dt><code>^</code></dt><dd>시작 지점</dd>
+<dt><code>$</code></dt><dd>끝 지점</dd>
+<dt><code>[abc]*</code></dt><dd>a 혹은 b, c 등의 문자로 구성된 문자열이거나 혹은 없거나</dd>
+<dt><code>[a-zA-Z]+</code></dt><dd>영문자 1자 이상</dd>
+<dt><code>[\d]{10}</code></dt><dd>숫자만 10자리</dd>
+<dt><code>(message)</code></dt><dd>'message' 라는 문자열을 매치하고 이를 그룹으로 표현</dd>
+</dl>
+<p>
+<code>\d</code> 처럼 몇 가지 특수한 문자셋을 지정할 수 있는데 예를 들어 아래와 같은 것들이 있다.
+</p>
+<dl class="org-dl">
+<dt><code>\d</code></dt><dd>숫자(Digit). <code>[0-9]</code> 와 거의 동일한 표현이다.</dd>
+<dt><code>\D</code></dt><dd>숫자가 아닌 것. <code>[^0-9]</code> 와 거의 동일한 표현이다.</dd>
+<dt><code>\s</code></dt><dd>공백(Whitespace)</dd>
+<dt><code>\S</code></dt><dd>공백이 아닌 것</dd>
+<dt><code>\w</code></dt><dd>문자(숫자 + 영문자). <code>[0-9a-zA-z]</code> 와 비슷하다.</dd>
+<dt><code>\W</code></dt><dd>영문자나 숫자가 아닌 모든 경우. <code>[^0-9a-zA-Z]</code> 와 비슷하다.</dd>
+</dl>
+<p>
+소문자와 대문사 사이의 캐릭터셋이 반대로 구성되어 있다는 점이 특징이라면 특징이다.
+</p>
+</div>
+</div>
+<div id="outline-container-42c3b144" class="outline-3">
+<h3 id="42c3b144">정규표현식 패턴 컴파일</h3>
+<div class="outline-text-3" id="text-42c3b144">
+<p>
+정규표현식을 이용하려면 우선 패턴을 만들어야 한다.
+패턴은 <code>re</code> 모듈의 <code>compile</code> 을 사용하면 만들 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> re
+<span style="color: #dcaeea;">p</span> = re.<span style="color: #c678dd;">compile</span>(r<span style="color: #98be65;">'(a(bc))'</span>)
+</pre>
+</div>
+<p>
+문자열 앞에 <code>r</code> 이 붙이었는데 이 표현은 순수(raw) 문자열 표현,
+즉 문자열 내부를 이스케이프(escape)하지 말라는 의미다.
+예를 들어 문자열 안에 <code>\n</code> 있으면 해당 위치에는 일반적으로는 개행(newline) 문자가 들어가는데
+문자열 앞에 <code>r</code> 이 붙어있으면 <code>\n</code> 이 그대로 들어간다.
+</p>
+
+<p>
+이제 이 컴파일 된 패턴을 이용해 패턴 매칭을 할 수 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-e8711f23" class="outline-3">
+<h3 id="e8711f23">match()</h3>
+<div class="outline-text-3" id="text-e8711f23">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; p.match(<span style="color: #98be65;">'aaabcccc'</span>)
+&gt;&gt;&gt; p.match(<span style="color: #98be65;">'abc'</span>)
+&lt;re.Match <span style="color: #c678dd;">object</span>; <span style="color: #dcaeea;">span</span>=(<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">3</span>), <span style="color: #dcaeea;">match</span>=<span style="color: #98be65;">'abc'</span>&gt;
+</pre>
+</div>
+<p>
+<code>match</code> 는 해당 문자열의 처음부터 비교를 수행한다. 처음부터 비교를 수행한다는 점을 주의하자.
+</p>
+</div>
+</div>
+<div id="outline-container-b4fc4298" class="outline-3">
+<h3 id="b4fc4298">search()</h3>
+<div class="outline-text-3" id="text-b4fc4298">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; p.search(<span style="color: #98be65;">'aaabcccc'</span>)
+&lt;re.Match <span style="color: #c678dd;">object</span>; <span style="color: #dcaeea;">span</span>=(<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">5</span>), <span style="color: #dcaeea;">match</span>=<span style="color: #98be65;">'abc'</span>&gt;
+</pre>
+</div>
+<p>
+<code>search</code> 는 문자열 내부에서 매칭을 시도한다.
+</p>
+</div>
+</div>
+<div id="outline-container-d85f2e80" class="outline-3">
+<h3 id="d85f2e80">findall()</h3>
+<div class="outline-text-3" id="text-d85f2e80">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; p.findall(<span style="color: #98be65;">'aaabcccc'</span>)
+[(<span style="color: #98be65;">'abc'</span>, <span style="color: #98be65;">'bc'</span>)]
+</pre>
+</div>
+<p>
+<code>findall</code> 은 모든 그룹에 대한 매칭 결과를 돌려준다.
+</p>
+</div>
+</div>
+<div id="outline-container-d63c6c39" class="outline-3">
+<h3 id="d63c6c39">fullmatch()</h3>
+<div class="outline-text-3" id="text-d63c6c39">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; p.fullmatch(<span style="color: #98be65;">'aaabcccc'</span>)
+&gt;&gt;&gt; p.fullmatch(<span style="color: #98be65;">'abcc'</span>)
+&gt;&gt;&gt; p.fullmatch(<span style="color: #98be65;">'abc'</span>)
+&lt;re.Match <span style="color: #c678dd;">object</span>; <span style="color: #dcaeea;">span</span>=(<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">3</span>), <span style="color: #dcaeea;">match</span>=<span style="color: #98be65;">'abc'</span>&gt;
+</pre>
+</div>
+<p>
+<code>fullmatch</code> 는 완벽하게 일치하는 패턴을 검사한다.
+마치 패턴 시작에 <code>^</code> 를 넣고 패턴 끝에 <code>$</code> 를 넣은 것과 동일하다.
+</p>
+</div>
+</div>
+<div id="outline-container-68abd0c6" class="outline-3">
+<h3 id="68abd0c6">Match 오브젝트</h3>
+<div class="outline-text-3" id="text-68abd0c6">
+<p>
+<code>match()</code> 와 <code>search()</code> 의 결과로 받은 <code>re.Match</code> 오브젝트는 별도의 추가 정보를 담고 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">m</span> = p.search(<span style="color: #98be65;">'aaabcccc'</span>)
+&gt;&gt;&gt; m
+&lt;re.Match <span style="color: #c678dd;">object</span>; <span style="color: #dcaeea;">span</span>=(<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">5</span>), <span style="color: #dcaeea;">match</span>=<span style="color: #98be65;">'abc'</span>&gt;
+&gt;&gt;&gt; m.groups()
+(<span style="color: #98be65;">'abc'</span>, <span style="color: #98be65;">'bc'</span>)
+&gt;&gt;&gt; m.group()
+<span style="color: #98be65;">'abc'</span>
+&gt;&gt;&gt; m.start()
+<span style="color: #da8548; font-weight: bold;">2</span>
+&gt;&gt;&gt; m.end()
+<span style="color: #da8548; font-weight: bold;">5</span>
+&gt;&gt;&gt; m.span()
+(<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">5</span>)
+</pre>
+</div>
+<dl class="org-dl">
+<dt><code>groups()</code></dt><dd>경우 세부 그룹이 있을 때 각 그룹에 매칭된 결과를 모두 담아준다.</dd>
+<dt><code>group()</code></dt><dd>매칭된 문자열 자체를 돌려준다.</dd>
+<dt><code>start()</code></dt><dd>원래 문자열에서 매칭된 문자열의 시작 위치(index)를 돌려준다.</dd>
+<dt><code>end()</code></dt><dd>원래 문자열에서 매칭된 문자열의 끝 위치(index)를 돌려준다.</dd>
+<dt><code>span()</code></dt><dd>위 <code>start()</code> 와 <code>end()</code> 가 하나로 합쳐진 형태의 튜플을 돌려준다.</dd>
+</dl>
 </div>
 </div>
 </div>

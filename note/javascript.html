@@ -62,19 +62,10 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#4bf4b92b">모듈(Module)</a>
-<ul>
+<li><a href="#4bf4b92b">모듈(Module)</a></li>
 <li><a href="#2d495506">스프레드(Spreads) 연산자</a></li>
 <li><a href="#811ee247">튜플 비슷한 문법</a></li>
-<li><a href="#e525fa55">For Each</a></li>
-<li><a href="#8ebf91db">Object(Dictionary) vs Map</a></li>
-</ul>
-</li>
-<li><a href="#cb841aba">논리식</a>
-<ul>
-<li><a href="#99bff694">동일 여부 판단식</a></li>
-</ul>
-</li>
+<li><a href="#724651c9">논리식 - 동일 여부 판단</a></li>
 <li><a href="#e905cbf0">문자열(String)</a>
 <ul>
 <li><a href="#b3815f71">문자열 치환(String Interpolation)</a></li>
@@ -83,8 +74,10 @@
 <li><a href="#bfb0ebf5">배열(Array)</a>
 <ul>
 <li><a href="#1aa5fa4a">배열에 특정 원소가 포함되어 있는지 판단하기</a></li>
+<li><a href="#e525fa55">For Each</a></li>
 </ul>
 </li>
+<li><a href="#8ebf91db">Object(Dictionary) vs Map</a></li>
 <li><a href="#164db910">웹 브라우저 DOM 관련</a>
 <ul>
 <li><a href="#931c4cd5">요소 얻기</a></li>
@@ -164,9 +157,10 @@ console.log(someValues.value2);
 </pre>
 </div>
 </div>
-<div id="outline-container-2d495506" class="outline-3">
-<h3 id="2d495506">스프레드(Spreads) 연산자</h3>
-<div class="outline-text-3" id="text-2d495506">
+</div>
+<div id="outline-container-2d495506" class="outline-2">
+<h2 id="2d495506">스프레드(Spreads) 연산자</h2>
+<div class="outline-text-2" id="text-2d495506">
 <p>
 스프레드 연산자는 <code>...</code> 으로 표기되며
 이름처럼 펼치거나 확산한다라는 의미로 동작한다.
@@ -229,9 +223,9 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 </p>
 </div>
 </div>
-<div id="outline-container-811ee247" class="outline-3">
-<h3 id="811ee247">튜플 비슷한 문법</h3>
-<div class="outline-text-3" id="text-811ee247">
+<div id="outline-container-811ee247" class="outline-2">
+<h2 id="811ee247">튜플 비슷한 문법</h2>
+<div class="outline-text-2" id="text-811ee247">
 <p>
 <a href="python.html">Python</a>의 튜플(Tuple)과 비슷한 문법을 발견해서 메모한다.
 </p>
@@ -244,6 +238,78 @@ rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
 무슨 문법인지 아직 이름은 모르겠다.
 하여간 덕분에 중간 매개체 없이 교환(swap) 구현이 가능해졌다.
 </p>
+</div>
+</div>
+<div id="outline-container-724651c9" class="outline-2">
+<h2 id="724651c9">논리식 - 동일 여부 판단</h2>
+<div class="outline-text-2" id="text-724651c9">
+<p>
+자바스크립트에서 두 식이 동일한지 비교할 때는 다른 언어들과는 다르게
+두 가지 오퍼레이터 중 하나를 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">a</span> = <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">b</span> = <span style="color: #98be65;">'1'</span>
+&gt; a == b
+<span style="color: #a9a1e1;">true</span>
+&gt; a === b
+<span style="color: #a9a1e1;">false</span>
+</pre>
+</div>
+<p>
+<code>==</code> 와 <code>===</code> 는 둘 다 같음을 비교하기 위한 오퍼레이터다.
+하지만 결과에 차이가 있는데, <code>==</code> 는 값(value)을 비교하기 위한 오퍼레이터고,
+<code>===</code> 는 값과 함께 타입(types)도 비교하는 오퍼레이터다.
+</p>
+
+<p>
+비슷하게 같지 않다라는 의미로 <code>!=</code> 와 <code>!==</code> 가 있는데 위와 같이
+값만 비교하냐 타입도 비교하냐의 차이가 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-e905cbf0" class="outline-2">
+<h2 id="e905cbf0">문자열(String)</h2>
+<div class="outline-text-2" id="text-e905cbf0">
+</div>
+<div id="outline-container-b3815f71" class="outline-3">
+<h3 id="b3815f71">문자열 치환(String Interpolation)</h3>
+<div class="outline-text-3" id="text-b3815f71">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #98be65;">`value = ${value}`</span>
+</pre>
+</div>
+<p>
+백틱으로 둘러싼다는 점에 유의하자.
+중괄호 내부는 변수 뿐만 아니라 식(expression)도 얼마든지 사용할 수 있다.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-bfb0ebf5" class="outline-2">
+<h2 id="bfb0ebf5">배열(Array)</h2>
+<div class="outline-text-2" id="text-bfb0ebf5">
+</div>
+<div id="outline-container-1aa5fa4a" class="outline-3">
+<h3 id="1aa5fa4a">배열에 특정 원소가 포함되어 있는지 판단하기</h3>
+<div class="outline-text-3" id="text-1aa5fa4a">
+<p>
+<code>Array.prototype.includes()</code> 를 사용하는 게 가장 간단하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].includes(<span style="color: #98be65;">"0"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; true</span>
+[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].includes(<span style="color: #da8548; font-weight: bold;">0</span>)    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; false</span>
+</pre>
+</div>
+<p>
+위치(index)를 알고 싶다면 <code>Array.prototype.find()</code> 를 사용할 수도 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"0"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; 0</span>
+[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"1"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; 1</span>
+[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"4"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; undefined</span>
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-e525fa55" class="outline-3">
@@ -295,9 +361,10 @@ Array.from(elements).forEach((e) =&gt; { ... })
 </p>
 </div>
 </div>
-<div id="outline-container-8ebf91db" class="outline-3">
-<h3 id="8ebf91db">Object(Dictionary) vs Map</h3>
-<div class="outline-text-3" id="text-8ebf91db">
+</div>
+<div id="outline-container-8ebf91db" class="outline-2">
+<h2 id="8ebf91db">Object(Dictionary) vs Map</h2>
+<div class="outline-text-2" id="text-8ebf91db">
 <p>
 자바스크립트에서 키-값(Key-Value) 액세스를 위한 타입으로 Object와 Map 이라는 내장 타입을 사용할 수 있다.
 이 둘을 비교해보자.
@@ -347,85 +414,6 @@ console.log(map.size);
 <li>열거 시 키 순서가 입력된 순서대로 나타난다.</li>
 <li>순수한 자료구조 용도의 객체이기 때문에 키를 마음껏 사용할 수 있다.</li>
 </ul>
-</div>
-</div>
-</div>
-<div id="outline-container-cb841aba" class="outline-2">
-<h2 id="cb841aba">논리식</h2>
-<div class="outline-text-2" id="text-cb841aba">
-</div>
-<div id="outline-container-99bff694" class="outline-3">
-<h3 id="99bff694">동일 여부 판단식</h3>
-<div class="outline-text-3" id="text-99bff694">
-<p>
-자바스크립트에서 두 식이 동일한지 비교할 때는 다른 언어들과는 다르게
-두 가지 오퍼레이터 중 하나를 사용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript">&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">a</span> = <span style="color: #da8548; font-weight: bold;">1</span>
-&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">b</span> = <span style="color: #98be65;">'1'</span>
-&gt; a == b
-<span style="color: #a9a1e1;">true</span>
-&gt; a === b
-<span style="color: #a9a1e1;">false</span>
-</pre>
-</div>
-<p>
-<code>==</code> 와 <code>===</code> 는 둘 다 같음을 비교하기 위한 오퍼레이터다.
-하지만 결과에 차이가 있는데, <code>==</code> 는 값(value)을 비교하기 위한 오퍼레이터고,
-<code>===</code> 는 값과 함께 타입(types)도 비교하는 오퍼레이터다.
-</p>
-
-<p>
-비슷하게 같지 않다라는 의미로 <code>!=</code> 와 <code>!==</code> 가 있는데 위와 같이
-값만 비교하냐 타입도 비교하냐의 차이가 있다.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-e905cbf0" class="outline-2">
-<h2 id="e905cbf0">문자열(String)</h2>
-<div class="outline-text-2" id="text-e905cbf0">
-</div>
-<div id="outline-container-b3815f71" class="outline-3">
-<h3 id="b3815f71">문자열 치환(String Interpolation)</h3>
-<div class="outline-text-3" id="text-b3815f71">
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #98be65;">`value = ${value}`</span>
-</pre>
-</div>
-<p>
-백틱으로 둘러싼다는 점에 유의하자.
-중괄호 내부는 변수 뿐만 아니라 식(expression)도 얼마든지 사용할 수 있다.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-bfb0ebf5" class="outline-2">
-<h2 id="bfb0ebf5">배열(Array)</h2>
-<div class="outline-text-2" id="text-bfb0ebf5">
-</div>
-<div id="outline-container-1aa5fa4a" class="outline-3">
-<h3 id="1aa5fa4a">배열에 특정 원소가 포함되어 있는지 판단하기</h3>
-<div class="outline-text-3" id="text-1aa5fa4a">
-<p>
-<code>Array.prototype.includes()</code> 를 사용하는 게 가장 간단하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript">[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].includes(<span style="color: #98be65;">"0"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; true</span>
-[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].includes(<span style="color: #da8548; font-weight: bold;">0</span>)    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; false</span>
-</pre>
-</div>
-<p>
-위치(index)를 알고 싶다면 <code>Array.prototype.find()</code> 를 사용할 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript">[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"0"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; 0</span>
-[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"1"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; 1</span>
-[<span style="color: #98be65;">"0"</span>, <span style="color: #98be65;">"1"</span>, <span style="color: #98be65;">"2"</span>, <span style="color: #98be65;">"3"</span>].find(e =&gt; e === <span style="color: #98be65;">"4"</span>)  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">-&gt; undefined</span>
-</pre>
-</div>
-</div>
 </div>
 </div>
 <div id="outline-container-164db910" class="outline-2">

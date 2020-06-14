@@ -246,7 +246,7 @@ nav a, nav a:link, nav a:visited, nav a:hover, nav a:active {
 
 .title-date {
   font-size: 0.8rem;
-  color: #5c6267;
+  color: #788086;
 }
 
 #table-of-contents {
@@ -305,7 +305,7 @@ div.refs-container > hr {
 
 div.outline-text-2 > hr {
   width: 10%;
-  border: 0.5px solid #5c6267;
+  border: 0.5px solid #788086;
   margin-top: 36px;
   margin-bottom: 36px;
   clear: both;
@@ -342,7 +342,7 @@ div.outline-text-2 > hr {
 
 .article-link-date {
   font-size: 0.9rem;
-  color: #5c6267;
+  color: #788086;
 }
 
 .mid-ad-container {
@@ -413,7 +413,7 @@ div.outline-text-2 > hr {
   margin-bottom: 1rem;
   padding-top: 16px;
   padding-bottom: 0;
-  border-top: 0.5px #5c6267 dashed;
+  border-top: 0.5px #788086 dashed;
 }
 
 .content h3 {
@@ -578,5 +578,5 @@ footer {
   padding-bottom: 32px;
   text-align: center;
   font-size: 0.9rem;
-  color: #5c6267;
+  color: #788086;
 }

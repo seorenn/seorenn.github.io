@@ -20,6 +20,10 @@
 <url><loc>https://seorenn.github.io/post/humanlike-google.html</loc><lastmod>2020-04-25</lastmod></url>
 <url><loc>https://seorenn.github.io/post/weird-github-page.html</loc><lastmod>2020-04-25</lastmod></url>
 <url><loc>https://seorenn.github.io/post/seorenn-publish.html</loc><lastmod>2020-05-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/arc.html</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-15</lastmod></url>
@@ -49,7 +53,6 @@
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-06-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/definition.html</loc><lastmod>2020-05-30</lastmod></url>
-<url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/implementation.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-05-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2020-05-29</lastmod></url>
@@ -57,7 +60,6 @@
 <url><loc>https://seorenn.github.io/note/killer-application.html</loc><lastmod>2020-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2020-05-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2020-05-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-05-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-05-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-05-21</lastmod></url>
@@ -111,8 +113,8 @@
 <url><loc>https://seorenn.github.io/log/2020-06.html</loc><lastmod>2020-06-14</lastmod></url>
 <url><loc>https://seorenn.github.io/log/2020-05.html</loc><lastmod>2020-06-03</lastmod></url>
 <url><loc>https://seorenn.github.io/log/2020-04.html</loc><lastmod>2020-04-30</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-06-15</lastmod></url>
-<url><loc>https://seorenn.github.io/post/</loc><lastmod>2020-06-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-06-15</lastmod></url>
-<url><loc>https://seorenn.github.io/log/</loc><lastmod>2020-06-15</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/post/</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/log/</loc><lastmod>2020-06-16</lastmod></url>
 </urlset>

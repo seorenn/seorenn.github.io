@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<title>클로저 - Seorenn Note</title>
+<meta name="twitter:title" content="클로저" />
+<meta name="og:title" content="클로저" />
+<meta name="description" content="클로저(Closure)에 대한 이야기들" />
+<meta name="twitter:description" content="클로저(Closure)에 대한 이야기들" />
+<meta name="og:description" content="클로저(Closure)에 대한 이야기들" />
+<link rel="canonical" href="https://seorenn.github.io/note/closure.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/closure.html" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" alt="Seorenn" /></a>
+<nav>
+<a href="/" title="Home"><i class="material-icons md-light">home</i></a>
+<a href="/post" title="Post"><i class="material-icons md-light">subject</i></a>
+ <a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
+ <a href="/log" title="Log"><i class="material-icons md-light">portrait</i></a>
+</nav>
+</div>
+</header>
+<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>클로저</h1>
+<div class="title-date">2020년 6월 16일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#89cab4d7">유명한 Javascript 예제</a></li>
+<li><a href="#aa905561">Swift의 클로저</a></li>
+<li><a href="#d361b195">생각해 볼 일</a></li>
+</ul>
+</div>
+</div>
+<p>
+개인적으로 컴퓨터 프로그래밍 개념에서 클로저(Closure)는 동적으로 생성되는 함수라고 정의한다. 그리고 생성되는 시점의 주변 환경을 복제하는 특수한 능력을 갖추고 있다는 점이 공통적이기도 할 것 같다. 그 외에 이름 없는 함수라고도 불리기도 한다.
+</p>
+
+<p>
+물론 매우 주관적인 정의라는 것에 유의하자.
+</p>
+
+<div id="outline-container-89cab4d7" class="outline-2">
+<h2 id="89cab4d7">유명한 Javascript 예제</h2>
+<div class="outline-text-2" id="text-89cab4d7">
+<p>
+아마도 아래와 같은 구조의 예제는 인터넷에서 클로저에 관해 찾아보면 쉽게 발견할 수 있는 예제일 것이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #51afef;">function</span> <span style="color: #c678dd;">generateClosure</span>(<span style="color: #dcaeea;">x</span>) {
+    <span style="color: #51afef;">return</span> <span style="color: #51afef;">function</span>(<span style="color: #dcaeea;">y</span>) {
+        <span style="color: #51afef;">return</span> x + y;
+    }
+}
+</pre>
+</div>
+<p>
+이런 예가 자주 언급되는 이유가 있다. 앞서 설명했던 클로저의 다양한 특성이 많이 드러나는 예이기 때문이다.
+</p>
+
+<p>
+우선 동적 생성 함수라는 점이다. <code>generateClosure()</code> 함수 안에서 이름이 없는 함수를 리턴하고 있다. 이 함수는 코드를 해석하는 시점에서는 존재하지 않다가 이 <code>generateClose()</code> 함수가 호출되어야만 생성된다.
+</p>
+
+<p>
+반환되는 함수는 이름이 없다. 즉 이름 없는 함수다. 거기다 이 <code>generateClose()</code> 함수가 아니면 이 함수를 구할 방법이 없다.
+</p>
+
+<p>
+나머지 주요 특성은 바로 주변 환경을 복제한다는 점이다. 아래 예제는 위 코드를 호출하고 어떤 결과가 나오는지를 보기 위한 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">c</span> = generateClosure(<span style="color: #da8548; font-weight: bold;">1</span>);
+&gt; c(<span style="color: #da8548; font-weight: bold;">2</span>);
+<span style="color: #da8548; font-weight: bold;">3</span>
+&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">d</span> = generateClosure(<span style="color: #da8548; font-weight: bold;">2</span>);
+&gt; d(<span style="color: #da8548; font-weight: bold;">2</span>);
+<span style="color: #da8548; font-weight: bold;">4</span>
+</pre>
+</div>
+<p>
+여기서 <code>c</code> 와 <code>d</code> 를 같은 매개변수로 호출했음에도 결과가 다르다는 것에 주목하자.
+</p>
+
+<p>
+<code>generateClose()</code> 함수 안에서 반환하는 클로저는 앞서 이야기했지만 호출 시점에 동적으로 생성된다. 이 생성되는 시점의 <code>x</code> 의 값을 복제해서 가져간다. 주변 환경을 복제한다는 말은 바로 이 부분이다.
+</p>
+
+<p>
+개념은 이렇게 되는데, 클로저가 자주 쓰이는 분야는 아무래도 핸들러(handler) 혹은 콜백(callback) 구현인 것 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">setTimeout(<span style="color: #51afef;">function</span>() {
+    console.log(<span style="color: #98be65;">'over 2 seconds!'</span>);
+}, <span style="color: #da8548; font-weight: bold;">2000</span>);
+</pre>
+</div>
+<p>
+<code>setTimeout()</code> 함수는 특정 시간 뒤 특정 명령을 실행시키는 함수다. 여기서 첫 매개변수로 이름 없는 함수를 넘기는데 이것도 클로저다.
+</p>
+
+<p>
+이 외에 화살표 함수(Arrow Function)의 경우도 동적으로 생성되는 이름 없는 함수이기 때문에 클로저로 볼 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">&gt; <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">adder</span> = (x, y) =&gt; x + y;
+&gt; adder(<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>)
+<span style="color: #da8548; font-weight: bold;">3</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-aa905561" class="outline-2">
+<h2 id="aa905561">Swift의 클로저</h2>
+<div class="outline-text-2" id="text-aa905561">
+<p>
+<a href="swift.html">Swift</a>의 클로저도 위의 개념적인 부분은 거의 동일하다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">let</span> adder: (<span style="color: #c678dd;">Int</span>, <span style="color: #c678dd;">Int</span>) -&gt; <span style="color: #c678dd;">Int</span> = {
+    (x, y) <span style="color: #51afef;">in</span>
+    <span style="color: #51afef;">return</span> x + y
+}
+</pre>
+</div>
+<p>
+문법의 차이만 있을 뿐이지 이름도 없고 동적으로 생성되는 데다 주변 환경을 복제하는 것은 거의 동일하다.
+</p>
+
+<p>
+하지만 차이도 있다.
+</p>
+
+<p>
+Swift의 메모리 관리(<a href="arc.html">ARC</a>)의 특징으로 인해 주변 환경 복제 뿐만 아니라 납치(Capture)도 발생하게 된다. 값(value) 타입이 아닌 인스턴스의 경우 리테인 카운드를 증가시키게 되어서 메모리 해제를 제때 하지 못 하는 등의 문제를 발생시킬 수도 있다.
+</p>
+
+<p>
+그래서 납치 규칙(capture rule) 같은 것도 정의할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #51afef;">let</span> selfAdder: (<span style="color: #c678dd;">Int</span>) -&gt; <span style="color: #c678dd;">Int</span> = {
+    [<span style="color: #51afef;">unowned</span> <span style="color: #51afef;">self</span>] (y) <span style="color: #51afef;">in</span>
+    <span style="color: #51afef;">return</span> <span style="color: #51afef;">self</span>.<span style="color: #c678dd;">x</span> + y
+}
+</pre>
+</div>
+<p>
+위의 코드는 <code>unowned</code> 를 통해 <code>self</code> 에 대해 <code>weak</code> 참조를 하도록 하는 예이다.
+</p>
+</div>
+</div>
+<div id="outline-container-d361b195" class="outline-2">
+<h2 id="d361b195">생각해 볼 일</h2>
+<div class="outline-text-2" id="text-d361b195">
+<ul class="org-ul">
+<li>성능 문제. 주변 환경 복제. 당연히 CPU 사이클 소비. 메모리 소비. 설계 효율성은 좋지만 성능을 위한다면 잘 생각하고 쓰자. 특히 gc를 쓰는 언어라면 메모리가 제때 해제되지 않거나 퍼포먼스를 크게 저하시킬 수도.</li>
+</ul>
+</div>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/swift.html">Swift</a></h2>
+<div class="article-link-date">
+2020년 6월 16일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/arc.html">ARC</a></h2>
+<div class="article-link-date">
+2020년 6월 16일 수정</div>
+</div>
+</div>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

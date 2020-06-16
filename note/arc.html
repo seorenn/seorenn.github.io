@@ -75,18 +75,22 @@ ARC(Automatic Reference Counting)은 <a href="objective-c.html">Objective-C</a>�
 </p>
 
 <p>
-이름으로 보면 Reference Counting 이라는 것을 자동화한 것 같은 늬앙스인데 그렇게 보는 것이 합당하다.
+이름으로 보면 Reference Counting 이라는 것을 자동화한 것 같은 늬앙스인데 정말 그렇다.
+</p>
+
+<p>
+설명을 위해서 우선 레퍼런스 카운팅 메모리 관리 체계부터 살펴보자.
 </p>
 
 <div id="outline-container-3326a1a1" class="outline-2">
 <h2 id="3326a1a1">레퍼런스 카운팅(Reference Counting)</h2>
 <div class="outline-text-2" id="text-3326a1a1">
 <p>
-번역하여 참조 횟수를 검사하는 방식의 메모리 관리 기법이다. 인스턴스가 생성될 때 혹은 참조될 때 카운트가 1 증가하고 참조가 끝나면 카운트를 1 감소시킨다. 그리고 카운트가 0이 되면 해당 인스턴스의 메모리를 해제시킨다.
+번역하여 참조 횟수를 검사하는 방식의 메모리 관리 체계다. 모든 인스턴스는 내부에 카운터를 가지고 있다. 인스턴스가 생성될 때 혹은 참조될 때 이 카운터가 1 증가하고 참조가 끝나면 카운터를 1 감소시킨다. 그리고 카운터가 0이 되면 해당 인스턴스의 메모리를 해제시킨다.
 </p>
 
 <p>
-참조 카운트를 증가시키는 것을 리테인(retain)이라 부르고 감소시키는 것을 릴리즈(release)라고 부른다. 아래는 ARC를 사용하지 않던 방식의 <a href="objective-c.html">Objective-C</a> 예제다.
+참조 카운터를 증가시키는 것을 리테인(retain)이라 부르고 감소시키는 것을 릴리즈(release)라고 부른다. 아래는 ARC를 사용하지 않던 방식의 <a href="objective-c.html">Objective-C</a> 예제다.
 </p>
 <div class="org-src-container">
 <pre class="src src-objective-c">SomeClass *obj = [[SomeClass alloc] init];  // retain
@@ -100,7 +104,7 @@ SomeClass *objStalker = [obj retain];
 </pre>
 </div>
 <p>
-따라서 retain과 release 쌍만 잘 맞추면 굉장히 효율적이고 낭비 없이 메모리 관리가 가능하면서도 GC 같이 퍼포먼스를 저하시키지도 않는 효율적인 메모리 방식으로 볼 수 있다.
+따라서 retain과 release 쌍만 잘 맞추면 굉장히 효율적이고 낭비 없이 메모리 관리가 가능하면서도 GC 같이 퍼포먼스를 저하시키는 요소도 없어서 나름 효율적인 메모리 방식으로 볼 수 있다.
 </p>
 
 <p>
@@ -116,7 +120,7 @@ SomeClass *objStalker = [obj retain];
 </p>
 
 <p>
-예상외로 단순한데, 컴파일러가 알아서 retain - release 코드를 빌드 타임에 자동으로 집어 넣고 빌드하는 방식이다. 그래서 레퍼런스 카운트 시스템 고유의 장점을 살리면서도 코드 양을 획기적으로 줄일 수 있게 되었다.
+예상외로 단순한데, 컴파일러가 알아서 retain - release 코드를 빌드 타임에 자동으로 집어 넣고 빌드하는 방식이다. 그래서 레퍼런스 카운팅 시스템 고유의 장점을 살리면서도 코드 라인 수를 획기적으로 줄일 수 있게 되었다.
 </p>
 <div class="org-src-container">
 <pre class="src src-objective-c">if (...) {
@@ -131,7 +135,7 @@ SomeClass *objStalker = [obj retain];
 </pre>
 </div>
 <p>
-추석으로 표기한 부분들이 컴파일러가 자동으로 해 주는 부분들이다. 레퍼런스 참조와 관련된 코드의 거의 대부분이 사라졌음에도 레퍼런스 카운트 관리의 장점을 그대로 가져갈 수 있는 메모리 관리 체계다. 당연하게도 GC에 비해 퍼포먼스가 좋을 수밖에 없다.
+주석으로 표기한 부분들이 컴파일러가 자동으로 해주는 부분들이다. 레퍼런스 참조와 관련된 코드의 거의 대부분이 사라졌음에도 레퍼런스 카운트 관리 방식을 그대로 구현하고 있다.
 </p>
 
 <p>
@@ -175,11 +179,12 @@ SomeClass *objStalker = [obj retain];
 </pre>
 </div>
 <p>
-더이상 소유할 필요가 없을 때 인위적으로 release를 할 수도 있다. 다른 오브젝트를 어사인하면 릴리즈가 되지만 <code>nil</code> 을 어사인하는 방법도 있다.
+더이상 소유할 필요가 없을 때 인위적으로 release를 할 수도 있다. 다른 오브젝트를 어사인하면 릴리즈가 되지만 <code>nil</code> 을 어사인하는 방법이 대표적이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-objective-c">a.obj = c;    // [a.obj release];
               // a.obj = [c retain];
+
 a.obj = nil;  // [a.obj release];
               // a.obj = nil;
 </pre>
@@ -208,7 +213,7 @@ objB = nil;
 </pre>
 </div>
 <p>
-위의 예에서 <code>objA</code> 와 <code>objB</code> 는 자신의 프로퍼티가 서로를 강하게 참조하고 있다. 이 상황에서 자기 자신에 대한 정보를 읽어버리게 되면 <code>.ref</code> 로 참조하는 메모리가 모두 영원히 해제되니 못 하는 순환 참조 상태가 되어버린다.
+위의 예에서 <code>objA</code> 와 <code>objB</code> 는 자신의 프로퍼티가 서로를 강하게 참조하고 있다. 이 상황에서 자기 자신에 대한 정보를 읽어버리고 <code>.ref</code> 프로퍼티가 release 될 곳이 사라져 버렸다. 결국 참조하는 메모리가 영원히 해제되니 못 하는 순환 참조 상태가 되어버린다.
 </p>
 
 <p>
@@ -225,11 +230,11 @@ objB = nil;
 </pre>
 </div>
 <p>
-미리 참조하던 오브젝트들을 release 해두면 당연히 문제는 생기지 않는다. 단지 코드가 더 추가되어야 해서 귀찮아질 뿐이다.
+미리 참조하던 프로퍼티들이 가리키는 인스턴스를 release 해두면 당연히 문제는 생기지 않는다. 단지 코드가 더 추가되어야 해서 귀찮아질 뿐이다.
 </p>
 
 <p>
-하지만 특정한 설계가 아니고선 이런 문제는 생각보다 잘 일어나지 않는다. 단지, <a href="uikit.html">UIKit</a>이나 <a href="appkit.html">AppKit</a> 프로그래밍을 하다보면 뷰의 인스턴스를 여기저기 넣다가 메모리가 제대로 해제되지 않는 경험은 자주 할 수도 있다.
+하지만 특정한 설계가 아니고선 이런 문제는 생각보다 잘 일어나지 않는다. 단지, <a href="uikit.html">UIKit</a>이나 <a href="appkit.html">AppKit</a> 프로그래밍을 하다보면 뷰의 인스턴스를 여기저기 넣다가 메모리가 제대로 해제되지 않는 경험은 어쩌다 겪을 수도 있다.
 </p>
 </div>
 </div>
@@ -251,11 +256,11 @@ objB = nil;
 </pre>
 </div>
 <p>
-의미도 개념도 완전히 동일하다. 거기다 순환 참조가 발생하는 단점까지 그대로 가져간다.
+의미도 개념도 완전히 동일하다. 거기다 순환 참조가 발생하는 단점까지 그대로 가지고 있다. 순환 참조 예방법 조차 동일하다.
 </p>
 
 <p>
-<a href="closure.html">클로저</a>의 경우에도 캡처 과정에서 발생하는 객체 참조 현상이 발생한다.
+<a href="closure.html">클로저</a>의 경우 객체 납치(capture)라는 현상으로 인해 순환참조 못지 않은 메모리 릭 문제가 발생할 수 있다. 그래서 여기에도 예방 장치가 생겼다.
 </p>
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">let</span> someClosure: (<span style="color: #c678dd;">Int</span>) -&gt; <span style="color: #c678dd;">Int</span> {
@@ -265,7 +270,7 @@ objB = nil;
 </pre>
 </div>
 <p>
-위의 <a href="closure.html">클로저</a>는 <code>self</code> 를 참조하고 있기 때문에 이 <a href="closure.html">클로저</a>를 어디에서 참조하느냐에 따라 이 <code>self</code> 가 가리키는 객체의 메모리 해제 여부가 갈리게 된다.
+위의 <a href="closure.html">클로저</a>는 <code>self</code> 를 참조하고 있기 때문에 이 <a href="closure.html">클로저</a>를 어디에서 참조하느냐에 따라 <code>self</code> 가 가리키는 객체의 메모리 해제 여부가 갈리게 된다.
 </p>
 
 <p>

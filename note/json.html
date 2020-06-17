@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<title>JSON - Seorenn Note</title>
+<meta name="twitter:title" content="JSON" />
+<meta name="og:title" content="JSON" />
+<meta name="description" content="JSON에 대한 간단한 정리" />
+<meta name="twitter:description" content="JSON에 대한 간단한 정리" />
+<meta name="og:description" content="JSON에 대한 간단한 정리" />
+<link rel="canonical" href="https://seorenn.github.io/note/json.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/json.html" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" alt="Seorenn" /></a>
+<nav>
+<a href="/" title="Home"><i class="material-icons md-light">home</i></a>
+<a href="/post" title="Post"><i class="material-icons md-light">subject</i></a>
+ <a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
+ <a href="/log" title="Log"><i class="material-icons md-light">portrait</i></a>
+</nav>
+</div>
+</header>
+<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>JSON</h1>
+<div class="title-date">2020년 6월 18일 수정</div>
+</header>
+<p>
+JSON(Javascript Object Notation)은 데이터를 문자열로 표시하기 위한 특수한 언어다. 이미 약자에서도 알 수 있겠지만, <a href="javascript.html">Javascript</a>에서 사용하는 문법으로 데이터를 구성하는 것이 특징이다.
+</p>
+
+<p>
+이제는 많이 쓰이는 표현법이라 XML을 대체하는 수준에 이르렀고, 아예 기본 데이터 직렬화 방법으로 봐도 손색없을 정도로 많이 쓰인다.
+</p>
+
+<p>
+데이터의 표현은 두 가지 콜렉션 형태를 사용하며 그 중 하나가 키와 값 쌍을 사용하는 오브젝트(Object) 타입이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #51afef;">"key"</span>: <span style="color: #98be65;">"value"</span>,
+    <span style="color: #51afef;">"foo"</span>: <span style="color: #98be65;">"bar"</span>
+}
+</pre>
+</div>
+<p>
+다른 언어에선 사전(Dictionary)형으로 불리기도 한다.
+</p>
+
+<p>
+그 밖에 리스트(List)타입 형태도 많이 쓰인다.
+</p>
+<div class="org-src-container">
+<pre class="src src-json">[<span style="color: #98be65;">"foo"</span>, <span style="color: #98be65;">"bar"</span>, <span style="color: #98be65;">"qux"</span>]
+</pre>
+</div>
+<p>
+익숙한 형태다.
+</p>
+
+<p>
+물론 이 둘을 조합해서 사용하는 것이 일반적이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #51afef;">"success"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+    <span style="color: #51afef;">"results"</span>: [
+        {
+            name: <span style="color: #98be65;">"foo"</span>
+        },
+        {
+            name: <span style="color: #98be65;">"bar"</span>
+        }
+    ]
+}
+</pre>
+</div>
+<p>
+지원되는 값의 타입은 문자, 숫자, 그리고 이진형과 null 타입이다.
+</p>
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #51afef;">"key1"</span>: <span style="color: #98be65;">"string value"</span>,
+    <span style="color: #51afef;">"key2"</span>: <span style="color: #da8548; font-weight: bold;">100</span>,
+    <span style="color: #51afef;">"key3"</span>: <span style="color: #a9a1e1;">true</span>,
+    <span style="color: #51afef;">"key4"</span>: <span style="color: #a9a1e1;">null</span>
+}
+</pre>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/curl.html">Curl</a></h2>
+<div class="article-link-date">
+2020년 6월 18일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/yaml.html">YAML</a></h2>
+<div class="article-link-date">
+2020년 6월 18일 수정</div>
+</div>
+</div>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

@@ -20,8 +20,10 @@
 <url><loc>https://seorenn.github.io/post/humanlike-google.html</loc><lastmod>2020-04-25</lastmod></url>
 <url><loc>https://seorenn.github.io/post/weird-github-page.html</loc><lastmod>2020-04-25</lastmod></url>
 <url><loc>https://seorenn.github.io/post/seorenn-publish.html</loc><lastmod>2020-05-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/json.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2020-06-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-06-17</lastmod></url>
@@ -34,7 +36,6 @@
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-06-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-06-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appkit.html</loc><lastmod>2020-06-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/uikit.html</loc><lastmod>2020-06-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/csso.html</loc><lastmod>2020-06-10</lastmod></url>
@@ -115,8 +116,8 @@
 <url><loc>https://seorenn.github.io/log/2020-06.html</loc><lastmod>2020-06-14</lastmod></url>
 <url><loc>https://seorenn.github.io/log/2020-05.html</loc><lastmod>2020-06-03</lastmod></url>
 <url><loc>https://seorenn.github.io/log/2020-04.html</loc><lastmod>2020-04-30</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-06-17</lastmod></url>
-<url><loc>https://seorenn.github.io/post/</loc><lastmod>2020-06-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-06-17</lastmod></url>
-<url><loc>https://seorenn.github.io/log/</loc><lastmod>2020-06-17</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/post/</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/log/</loc><lastmod>2020-06-18</lastmod></url>
 </urlset>

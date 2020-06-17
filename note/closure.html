@@ -57,12 +57,12 @@
 <section class="content">
 <header>
 <h1>클로저</h1>
-<div class="title-date">2020년 6월 16일 수정</div>
+<div class="title-date">2020년 6월 17일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#89cab4d7">유명한 Javascript 예제</a></li>
+<li><a href="#c64282ad">Javascript의 클로저</a></li>
 <li><a href="#aa905561">Swift의 클로저</a></li>
 </ul>
 </div>
@@ -75,11 +75,11 @@
 물론 매우 주관적인 정의라는 것에 유의하자.
 </p>
 
-<div id="outline-container-89cab4d7" class="outline-2">
-<h2 id="89cab4d7">유명한 Javascript 예제</h2>
-<div class="outline-text-2" id="text-89cab4d7">
+<div id="outline-container-c64282ad" class="outline-2">
+<h2 id="c64282ad">Javascript의 클로저</h2>
+<div class="outline-text-2" id="text-c64282ad">
 <p>
-아마도 아래와 같은 구조의 예제는 인터넷에서 클로저에 관해 찾아보면 쉽게 발견할 수 있는 예제일 것이다.
+아마도 아래와 같은 구조의 예제는 인터넷에서 클로저에 관해 찾아보면 쉽게 발견할 수 있는 <a href="javascript.html">Javascript</a> 클로저의 예제일 것이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">function</span> <span style="color: #c678dd;">generateClosure</span>(<span style="color: #dcaeea;">x</span>) {
@@ -167,7 +167,7 @@
 </p>
 
 <p>
-Swift의 메모리 관리(<a href="arc.html">ARC</a>)의 특징으로 인해 주변 환경 복제 뿐만 아니라 납치(Capture)도 발생하게 된다. 값(value) 타입이 아닌 인스턴스의 경우 리테인 카운드를 증가시키게 되어서 메모리 해제를 제때 하지 못 하는 등의 문제를 발생시킬 수도 있다.
+Swift의 메모리 관리 체계인 <a href="arc.html">ARC</a>의 특징으로 인해 주변 환경 복제 뿐만 아니라 납치(Capture) 문제도 발생하게 된다. 값(value) 타입이 아닌 인스턴스의 경우 리테인 카운드를 증가시키게 되어서 메모리 해제를 제때 하지 못 하는 등의 문제를 발생시킬 수도 있다.
 </p>
 
 <p>
@@ -181,7 +181,7 @@ Swift의 메모리 관리(<a href="arc.html">ARC</a>)의 특징으로 인해 주
 </pre>
 </div>
 <p>
-위의 코드는 <code>unowned</code> 를 통해 <code>self</code> 에 대해 <code>weak</code> 참조를 하도록 하는 예이다.
+위의 코드는 <code>unowned</code> 를 통해 <code>self</code> 에 대해 <code>weak</code> 참조를 하도록 하는 예이다. 이렇게 하면 위의 클로저의 메모리가 해제되지 않으면 <code>self</code> 도 해제되지 않는 문제를 해결할 수 있다.
 </p>
 </div>
 </div>

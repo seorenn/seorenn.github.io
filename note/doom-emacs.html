@@ -57,7 +57,7 @@
 <section class="content">
 <header>
 <h1>Doom Emacs</h1>
-<div class="title-date">2020년 6월 15일 수정</div>
+<div class="title-date">2020년 6월 19일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -76,12 +76,6 @@
 <li><a href="#ff8a8396">프로젝트 추가하기</a></li>
 <li><a href="#1473040d">컬러 테마 커스터마이징</a></li>
 <li><a href="#5c0e1c8c">visual-line-mode와 커서 이동</a></li>
-</ul>
-</li>
-<li><a href="#89e15078">문제 해결</a>
-<ul>
-<li><a href="#215d2f92">Package error</a></li>
-<li><a href="#afca1c0e">if: No catch for tag: emacs-version-changed, nil</a></li>
 </ul>
 </li>
 <li><a href="#867ded23">관련글</a></li>
@@ -317,85 +311,12 @@ sync가 완료된 후 <a href="emacs.html">Emacs</a>를 재시작하고
 </div>
 </div>
 </div>
-<div id="outline-container-89e15078" class="outline-2">
-<h2 id="89e15078">문제 해결</h2>
-<div class="outline-text-2" id="text-89e15078">
-</div>
-<div id="outline-container-215d2f92" class="outline-3">
-<h3 id="215d2f92">Package error</h3>
-<div class="outline-text-3" id="text-215d2f92">
-<p>
-<code>bin/doom up</code> 명령으로 업그레이드 도중 아래와 같은 오류가 발생할 수 있다.
-</p>
-<blockquote>
-<p>
-Package error: (error Could not find package org-superstar in recipe repositories: (org-elpa melpa gnu-elpa-mirror emacsmirror-mirror))
-Package error: (error Could not find package hover in recipe repositories: (org-elpa melpa gnu-elpa-mirror emacsmirror-mirror))
-</p>
-</blockquote>
-<p>
-패키지 이름은 상황에 따라 다를 수도 있다.
-여기서는 Package error 라는 문구와 함께 특정 패키지를 레시피 저장소에서 찾을 수 없다는 오류에 대해 다룬다.
-</p>
-
-<p>
-이 문제는 MELPA 저장소가 제대로 업데이트 되지 않으면 발생할 수 있다.
-따라서 수동으로 업데이트 해 주자.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">cd</span> ~/.emacs.d/.local/straight/repos/melpa
-<span style="color: #ECBE7B;">git</span> pull
-</pre>
-</div>
-<p>
-이후 straight의 캐시를 갱신해주자.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">rm</span> -f ~/.emacs.d/.local/straight/build-cache.el
-~/.emacs.d/bin/doom sync
-</pre>
-</div>
-<p>
-이후 문제가 사라졌다.
-</p>
-</div>
-</div>
-<div id="outline-container-afca1c0e" class="outline-3">
-<h3 id="afca1c0e">if: No catch for tag: emacs-version-changed, nil</h3>
-<div class="outline-text-3" id="text-afca1c0e">
-<p>
-가끔 <a href="emacs.html">Emacs</a>를 업그레이드 한 후 아래와 같은 에러 메시지를 만나는 경우가 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-text">if: No catch for tag: emacs-version-changed, nil
-</pre>
-</div>
-<p>
-이 경우 straight가 현재 버전과 다른 버전으로 컴파일된 경우일 가능성이 높다. 공식 저장소 이슈에선 <code>upgrade</code> 커맨드가 해결해 줄거라고 한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash">~/.emacs.d/bin/doom upgrade
-</pre>
-</div>
-<p>
-하지만 개인적으로는 이 방법으로 문제가 해결되지 않았다. 그래서 문제의 원흉(?)인 straight를 날리고 다시 설치를 시도했다.
-</p>
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">rm</span> -rf ~/.emacs.d/.local/straight
-~/.emacs.d/bin/doom install
-</pre>
-</div>
-<p>
-이 조치 후 문제는 사라졌다.
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-867ded23" class="outline-2">
 <h2 id="867ded23">관련글</h2>
 <div class="outline-text-2" id="text-867ded23">
 <ul class="org-ul">
-<li><a href="doom-emacs-shortcuts.html">Doom Emacs 단축키</a>: 개인적으로 자주 사용하는 단축키를 정리한 글</li>
+<li><a href="doom-emacs-shortcuts.html">Doom Emacs 단축키</a></li>
+<li><a href="doom-emacs-troubleshotting.html">Doom Emacs 문제 해결</a></li>
 </ul>
 </div>
 </div>
@@ -422,6 +343,13 @@ Package error: (error Could not find package hover in recipe repositories: (org-
 </div>
 <div class="backlinks-container">
 <hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/doom-emacs-troubleshotting.html">Doom Emacs 문제 해결</a></h2>
+<div class="article-link-date">
+2020년 6월 19일 수정</div>
+</div>
+</div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/doom-emacs-shortcuts.html">Doom Emacs 단축키</a></h2>

@@ -59,19 +59,38 @@
 <h1>npm</h1>
 <div class="title-date">2020년 6월 21일 수정</div>
 </header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#88804751">기본 사용법</a></li>
+<li><a href="#0504bc03">프로젝트 패키지 관리</a></li>
+</ul>
+</div>
+</div>
 <p>
 npm은 Javascript Package Manager라는 소개를 달고 있지만 실상은 Node.js Package Manager의 약자가 아닐까 추정되는 이름이다. 그 이름대로 의존 패키지를 설치하고 관리하기 위한 <a href="cli.html">CLI</a> 도구다.
 </p>
 
+<div id="outline-container-88804751" class="outline-2">
+<h2 id="88804751">기본 사용법</h2>
+<div class="outline-text-2" id="text-88804751">
 <p>
-보통은 로컬 프로젝트에 패키지를 설치할 때 사용한다.
+npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용한다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">npm install &lt;package-name&gt;
 </pre>
 </div>
 <p>
-위 커맨드는 아래처럼 줄여서 쓸 수도 있다.
+이 경우 위 명령을 실행한 디렉터리에 <code>node_modules/</code> 라는 디렉터리가 생기고 여기에 패키지가 설치된다.
+</p>
+
+<p>
+함께 생성되는 <code>package-lock.json</code> 파일은 당시 커맨드로 설치한 패키지의 버전 정보가 기록된다.
+</p>
+
+<p>
+참고로 <code>install</code> 커맨드는 <code>i</code> 로 줄여서 쓸 수도 있다.
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">npm i &lt;package-name&gt;
@@ -83,6 +102,45 @@ npm은 Javascript Package Manager라는 소개를 달고 있지만 실상은 Nod
 <div class="org-src-container">
 <pre class="src src-bash">npm i -g &lt;package-name&gt;
 </pre>
+</div>
+</div>
+</div>
+<div id="outline-container-0504bc03" class="outline-2">
+<h2 id="0504bc03">프로젝트 패키지 관리</h2>
+<div class="outline-text-2" id="text-0504bc03">
+<p>
+프로젝트 단위의 의존성을 관리하고 싶다면 아래 명령으로 패키지 목록을 초기화할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">npm init
+</pre>
+</div>
+<p>
+몇 가지 물음에 답하면 <code>package.json</code> 파일이 생성되고 여기에서 의존성 정보를 관리할 수 있다.
+</p>
+
+<p>
+패키지 설치와 의존성 목록 추가를 자동으로 하고 싶다면 <code>--save</code> 옵션을 추가해서 설치해보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">npm install --save &lt;package-name&gt;
+</pre>
+</div>
+<p>
+이렇게 하면 설치가 되면서 동시에 <code>package.json</code> 에 해당 의존성도 함께 추가된다.
+</p>
+
+<p>
+목록에 존재하는 패키지를 한번에 설치하려면 그냥 설치 커맨드를 실행시키면 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">npm install
+</pre>
+</div>
+<p>
+이렇게 하면 각 의존성이 몽땅 설치된다.
+</p>
+</div>
 </div>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"

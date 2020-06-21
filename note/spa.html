@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.min.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>HTML - Seorenn Note</title>
-<meta name="twitter:title" content="HTML" />
-<meta name="og:title" content="HTML" />
-<meta name="description" content="HTML에 대한 조각글 모음" />
-<meta name="twitter:description" content="HTML에 대한 조각글 모음" />
-<meta name="og:description" content="HTML에 대한 조각글 모음" />
-<link rel="canonical" href="https://seorenn.github.io/note/html.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/html.html" />
+<title>SPA - Seorenn Note</title>
+<meta name="twitter:title" content="SPA" />
+<meta name="og:title" content="SPA" />
+<meta name="description" content="SPA(Single Page Application) 개념 소개" />
+<meta name="twitter:description" content="SPA(Single Page Application) 개념 소개" />
+<meta name="og:description" content="SPA(Single Page Application) 개념 소개" />
+<link rel="canonical" href="https://seorenn.github.io/note/spa.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/spa.html" />
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -56,56 +56,32 @@
 </div>
 <section class="content">
 <header>
-<h1>HTML</h1>
-<div class="title-date">2020년 5월 20일 수정</div>
+<h1>SPA</h1>
+<div class="title-date">2020년 6월 21일 수정</div>
 </header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#1d5d303a">다운로드 전용 하이퍼링크</a></li>
-</ul>
-</div>
-</div>
-<blockquote>
 <p>
-HTML을 절대로 프로그래밍 언어라고 하지 말자.
-</p>
-</blockquote>
-
-<p>
-HTML(Hyper Text Markup Language)은 웹 페이지의 내용을 구성하는 언어다.
-사실 언어라고 하기에 조금 빈약한 측면은 있어서 마크 업 언어라는 표현을 쓴다.
+SPA는 Single Page Application의 약자로써 말 그대로 하나의 페이지 만으로 모든 것을 수행하는 웹 애플리케이션을 의미한다.
 </p>
 
 <p>
-HTML은 문서의 구조와 내용을 정의하기 위한 다양한 요소로 구성되어 있다.
-그래서 과거에는 흔히 인터넷이라 부르는 거의 대부분의 것이 이 HTML로 구성되어 있었다.
+일반적인 정적 페이지는 <a href="html.html">HTML</a>에 내용이 적혀있고 <a href="css.html">CSS</a>로 스타일을 만들고 일부 편의 기능을 <a href="javascript.html">Javascript</a>로 구현하는 방식으로 웹 페이지를 구현한다. 그리고 웹 브라우저로 해당 <a href="html.html">HTML</a> 파일만 로딩하면 핵심 내용이 모두 로딩되는 형태다.
 </p>
 
 <p>
-하지만 요즘은 HTML 만으로 웹 사이트를 만드는 것은 너무 구닥다리 세대로 불릴만한 일이고,
-<a href="css.html">CSS</a>나 <a href="javascript.html">Javascript</a>가 사이트 구축에 필수적으로 같이 사용되고 있다.
+반면에 SPA는 단 하나의 <a href="html.html">HTML</a> 파일을 작성하지만 여기에 실제 내용은 없다. 대신 첫 등장 시 처리를 <a href="javascript.html">Javascript</a>를 이용해 처리하며 그 외의 모든 클릭 등의 액션 또한 웹 브라우저가 아니라 <a href="javascript.html">Javascript</a>가 받아서 처리한다.
 </p>
 
 <p>
-이후로 이어지는 글들은 HTML 5 버전에 한한 메모다.
+SPA는 스크립트로 모든 UI를 생성하고 처리하기 때문에 <a href="html.html">HTML</a> 등을 이용해 화면을 구성하느 것에 비해 구조적이고 편리하게 개발할 수 있다는 장점이 있다. 또한 사용자는 한 번에 거대한 스크립트가 로딩만 된다면 이후 동작에서 로딩은 거의 겪지 않아도 된다는 장점도 있다.
 </p>
 
-<div id="outline-container-1d5d303a" class="outline-2">
-<h2 id="1d5d303a">다운로드 전용 하이퍼링크</h2>
-<div class="outline-text-2" id="text-1d5d303a">
 <p>
-<code>A</code> 태그에 <code>download</code> 라는 속성을 부여하면 다운로드 전용 링크를 만들 수 있다.
+하지만 첫 페이지에서 SPA는 아무런 정보를 가지고 있지 않다. 오로지 거대한 스크립트가 동작해야지만 내용이 화면에 표시된다. 따라서 검색엔진은 이런 SPA 페이지를 아무런 내용이 없는 것처럼 이해할 가능성이 높다.
 </p>
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #c678dd;">a</span> download <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"foo/bar"</span>&gt;Download Here&lt;/<span style="color: #c678dd;">a</span>&gt;
-</pre>
-</div>
+
 <p>
-이 링크를 클릭하면 Save As 다이얼로그가 뜬다.
+즉 SPA는 SEO(Search Engine Optimization)에 최악인 웹 페이지이기도 하다. 그리고 사용자 입장에서는 거대한 스크립트를 로딩해야 하기에 첫 등장에서 답답함을 느낄 수 있다.
 </p>
-</div>
-</div>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"
      style="display:block"
@@ -116,44 +92,6 @@ HTML은 문서의 구조와 내용을 정의하기 위한 다양한 요소로 �
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/spa.html">SPA</a></h2>
-<div class="article-link-date">
-2020년 6월 21일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/css.html">CSS</a></h2>
-<div class="article-link-date">
-2020년 6월 21일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/javascript.html">Javascript</a></h2>
-<div class="article-link-date">
-2020년 6월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/html-minifier.html">HTMLMinifier</a></h2>
-<div class="article-link-date">
-2020년 6월 10일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/org-mode.html">Org Mode</a></h2>
-<div class="article-link-date">
-2020년 5월 29일 수정</div>
-</div>
-</div>
 </div>
 </section>
 <div class="side-ad-container">

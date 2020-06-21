@@ -62,8 +62,20 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#88804751">기본 사용법</a></li>
-<li><a href="#0504bc03">프로젝트 패키지 관리</a></li>
+<li><a href="#88804751">기본 사용법</a>
+<ul>
+<li><a href="#9ccdeb46">로컬 패키지 설치</a></li>
+<li><a href="#b298c12e">전역 유틸리티 패키지 설치</a></li>
+</ul>
+</li>
+<li><a href="#0504bc03">프로젝트 패키지 관리</a>
+<ul>
+<li><a href="#5cfbfce9">의존성 목록 만들기</a></li>
+<li><a href="#1e558bbb">의존성 설치 및 목록에 추가</a></li>
+<li><a href="#7cb4bdb8">외존 패키지 전부 설치하기</a></li>
+<li><a href="#2b57ad1b">스크립트 관리</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -74,6 +86,10 @@ npm은 Javascript Package Manager라는 소개를 달고 있지만 실상은 Nod
 <div id="outline-container-88804751" class="outline-2">
 <h2 id="88804751">기본 사용법</h2>
 <div class="outline-text-2" id="text-88804751">
+</div>
+<div id="outline-container-9ccdeb46" class="outline-3">
+<h3 id="9ccdeb46">로컬 패키지 설치</h3>
+<div class="outline-text-3" id="text-9ccdeb46">
 <p>
 npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용한다.
 </p>
@@ -96,6 +112,11 @@ npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용�
 <pre class="src src-bash">npm i &lt;package-name&gt;
 </pre>
 </div>
+</div>
+</div>
+<div id="outline-container-b298c12e" class="outline-3">
+<h3 id="b298c12e">전역 유틸리티 패키지 설치</h3>
+<div class="outline-text-3" id="text-b298c12e">
 <p>
 만약 프로젝트 의존성이 아닌 시스템 도구라서 전역(global)으로 설치하고 싶다면 <code>-g</code> 옵션을 추가할 수 있다.
 </p>
@@ -105,9 +126,14 @@ npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용�
 </div>
 </div>
 </div>
+</div>
 <div id="outline-container-0504bc03" class="outline-2">
 <h2 id="0504bc03">프로젝트 패키지 관리</h2>
 <div class="outline-text-2" id="text-0504bc03">
+</div>
+<div id="outline-container-5cfbfce9" class="outline-3">
+<h3 id="5cfbfce9">의존성 목록 만들기</h3>
+<div class="outline-text-3" id="text-5cfbfce9">
 <p>
 프로젝트 단위의 의존성을 관리하고 싶다면 아래 명령으로 패키지 목록을 초기화할 수 있다.
 </p>
@@ -118,7 +144,11 @@ npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용�
 <p>
 몇 가지 물음에 답하면 <code>package.json</code> 파일이 생성되고 여기에서 의존성 정보를 관리할 수 있다.
 </p>
-
+</div>
+</div>
+<div id="outline-container-1e558bbb" class="outline-3">
+<h3 id="1e558bbb">의존성 설치 및 목록에 추가</h3>
+<div class="outline-text-3" id="text-1e558bbb">
 <p>
 패키지 설치와 의존성 목록 추가를 자동으로 하고 싶다면 <code>--save</code> 옵션을 추가해서 설치해보자.
 </p>
@@ -129,7 +159,11 @@ npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용�
 <p>
 이렇게 하면 설치가 되면서 동시에 <code>package.json</code> 에 해당 의존성도 함께 추가된다.
 </p>
-
+</div>
+</div>
+<div id="outline-container-7cb4bdb8" class="outline-3">
+<h3 id="7cb4bdb8">외존 패키지 전부 설치하기</h3>
+<div class="outline-text-3" id="text-7cb4bdb8">
 <p>
 목록에 존재하는 패키지를 한번에 설치하려면 그냥 설치 커맨드를 실행시키면 된다.
 </p>
@@ -138,8 +172,38 @@ npm은 기본적으로 로컬 디렉터리에 패키지를 설치할 때 사용�
 </pre>
 </div>
 <p>
-이렇게 하면 각 의존성이 몽땅 설치된다.
+이렇게 하면 <code>package.json</code> 에 적혀 있는 의존 패키지가 몽땅 설치된다.
 </p>
+</div>
+</div>
+<div id="outline-container-2b57ad1b" class="outline-3">
+<h3 id="2b57ad1b">스크립트 관리</h3>
+<div class="outline-text-3" id="text-2b57ad1b">
+<p>
+npm을 통해 스크립트를 실행하는 것도 가능하다. 위에서 생성한 <code>package.json</code> 파일에 <code>scripts</code> 라는 항목에 원하는 커맨드를 추가할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">scripts: {
+    <span style="color: #98be65;">"mytest"</span>: <span style="color: #98be65;">"echo TEST"</span>
+}
+</pre>
+</div>
+<p>
+이렇게 작성해두면 아래와 같이 스크립트를 실행시킬 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ npm run mytest
+
+&gt; project-name@1.0.0 mytest /foo/bar/project-name
+&gt; <span style="color: #ECBE7B;">echo</span> TEST
+
+TEST
+</pre>
+</div>
+<p>
+따라서 자주 사용하는 커맨드를 작성해 놓기에 유용하다.
+</p>
+</div>
 </div>
 </div>
 <div class="mid-ad-container">

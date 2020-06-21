@@ -57,7 +57,7 @@
 <section class="content">
 <header>
 <h1>CSS</h1>
-<div class="title-date">2020년 5월 29일 수정</div>
+<div class="title-date">2020년 6월 21일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -103,6 +103,7 @@
 <ul>
 <li><a href="#8b61d3d0">이미지(img)에 alt 설명이 없을 때 경고하기</a></li>
 <li><a href="#c2906f05">스크롤 할 때 딱 맞추기(?)</a></li>
+<li><a href="#5f2bdf8c">링크된 주소가 없을 때 경고하기</a></li>
 </ul>
 </li>
 <li><a href="#0bbb90e1">외부 링크</a>
@@ -597,6 +598,20 @@ alt는 접근성을 보완하기 위해 중요한 설명이다. 예를 들어
 </p>
 </div>
 </div>
+<div id="outline-container-5f2bdf8c" class="outline-3">
+<h3 id="5f2bdf8c">링크된 주소가 없을 때 경고하기</h3>
+<div class="outline-text-3" id="text-5f2bdf8c">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #98be65;">a</span>:is(:not([href]), [href=<span style="color: #98be65;">""</span>], [href=<span style="color: #98be65;">"#"</span>]) {
+    <span style="color: #98be65;">outline</span>: 2px dotted <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+}
+</pre>
+</div>
+<p>
+앵커(a)에 링크가 없거나 <code>href</code> 속성 자체가 없는 경우 등에 빨간색 점선 테두리로 경고해주는 스타일이다.
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-0bbb90e1" class="outline-2">
 <h2 id="0bbb90e1">외부 링크</h2>
@@ -662,9 +677,9 @@ alt는 접근성을 보완하기 위해 중요한 설명이다. 예를 들어
 <hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/csso.html">csso</a></h2>
+<h2><a class="article-link-title" href="/note/csso.html">CSSO</a></h2>
 <div class="article-link-date">
-2020년 6월 9일 수정</div>
+2020년 6월 21일 수정</div>
 </div>
 </div>
 <div class="article-link">

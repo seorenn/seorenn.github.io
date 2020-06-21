@@ -57,15 +57,14 @@
 <section class="content">
 <header>
 <h1>Doom Emacs 단축키</h1>
-<div class="title-date">2020년 6월 10일 수정</div>
+<div class="title-date">2020년 6월 20일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
 <li><a href="#6301c26e">설정(Configuration) 관련</a></li>
-<li><a href="#5256ebb8">파일(File) 관련</a></li>
+<li><a href="#1e941079">파일, 프로젝트, 워크스페이스 관련</a></li>
 <li><a href="#f8a8aa90">버퍼(Buffer) 관련</a></li>
-<li><a href="#e7e9fcd0">프로젝트(Project)</a></li>
 <li><a href="#183a3df2">창(Window)</a></li>
 <li><a href="#35b605d8">폴딩(Folding)</a></li>
 <li><a href="#6869346f">셸(Shell) 혹은 터미널(Terminal)</a></li>
@@ -93,15 +92,20 @@
 <div class="outline-text-2" id="text-6301c26e">
 <dl class="org-dl">
 <dt><code>SPC f p</code></dt><dd>설정 파일 열기 (선택 다이얼로그가 뜬다)</dd>
+<dt><code>SPC h r r</code></dt><dd>설정 싱크(sync) 및 리로드(<code>doom/reload</code>)</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-5256ebb8" class="outline-2">
-<h2 id="5256ebb8">파일(File) 관련</h2>
-<div class="outline-text-2" id="text-5256ebb8">
+<div id="outline-container-1e941079" class="outline-2">
+<h2 id="1e941079">파일, 프로젝트, 워크스페이스 관련</h2>
+<div class="outline-text-2" id="text-1e941079">
 <dl class="org-dl">
 <dt><code>SPC f f</code></dt><dd>find-file, 즉 파일 열기</dd>
 <dt><code>SPC .</code></dt><dd>현재 디렉토리에서 파일 열기 (생성하기도 가능)</dd>
+<dt><code>SPC p p</code></dt><dd>프로젝트 전환(워크스페이스가 없으면 생성)</dd>
+<dt><code>SPC SPC</code></dt><dd>프로젝트 파일 열기</dd>
+<dt><code>SPC TAB .</code></dt><dd>워크스페이스(프로젝트) 목록 및 전환</dd>
+<dt><code>SPC TAB NUM</code></dt><dd>NUM 숫자에 해당하는 워크스페이스로 전환</dd>
 </dl>
 </div>
 </div>
@@ -109,20 +113,13 @@
 <h2 id="f8a8aa90">버퍼(Buffer) 관련</h2>
 <div class="outline-text-2" id="text-f8a8aa90">
 <dl class="org-dl">
-<dt><code>SPC ,</code></dt><dd>혹은 <code>SPC b b</code> 워크스페이스(혹은 프로젝트) 버퍼 전환</dd>
+<dt><code>SPC ,</code> 혹은 <code>SPC b b</code></dt><dd>워크스페이스(혹은 프로젝트) 버퍼 전환</dd>
 <dt><code>SPC `</code></dt><dd>동일 워크스페이스의 이전 버퍼로 전환</dd>
 <dt><code>SPC b B</code></dt><dd>버퍼 전환</dd>
+<dt><code>SPC b p</code></dt><dd>이전 버퍼로 전환</dd>
+<dt><code>SPC b n</code></dt><dd>다음 버퍼로 전환</dd>
 <dt><code>SPC p x</code></dt><dd>스크래치 버퍼를 작게 아래쪽에 띄우기</dd>
 </dl>
-</div>
-</div>
-<div id="outline-container-e7e9fcd0" class="outline-2">
-<h2 id="e7e9fcd0">프로젝트(Project)</h2>
-<div class="outline-text-2" id="text-e7e9fcd0">
-<ul class="org-ul">
-<li><code>SPC p p</code> 프로젝트 전환</li>
-<li><code>SPC SPC</code> 프로젝트 파일 열기</li>
-</ul>
 </div>
 </div>
 <div id="outline-container-183a3df2" class="outline-2">
@@ -308,7 +305,7 @@
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/doom-emacs.html">Doom Emacs</a></h2>
 <div class="article-link-date">
-2020년 6월 10일 수정</div>
+2020년 6월 19일 수정</div>
 </div>
 </div>
 </div>

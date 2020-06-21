@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.min.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>셸 - Seorenn Note</title>
-<meta name="twitter:title" content="셸" />
-<meta name="og:title" content="셸" />
-<meta name="description" content="셸(Shell)" />
-<meta name="twitter:description" content="셸(Shell)" />
-<meta name="og:description" content="셸(Shell)" />
-<link rel="canonical" href="https://seorenn.github.io/note/shell.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/shell.html" />
+<title>npm - Seorenn Note</title>
+<meta name="twitter:title" content="npm" />
+<meta name="og:title" content="npm" />
+<meta name="description" content="npm은 무엇일까?" />
+<meta name="twitter:description" content="npm은 무엇일까?" />
+<meta name="og:description" content="npm은 무엇일까?" />
+<link rel="canonical" href="https://seorenn.github.io/note/npm.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/npm.html" />
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 <meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
 <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -56,21 +56,34 @@
 </div>
 <section class="content">
 <header>
-<h1>셸</h1>
-<div class="title-date">2020년 4월 13일 수정</div>
+<h1>npm</h1>
+<div class="title-date">2020년 6월 21일 수정</div>
 </header>
 <p>
-셸(Shell)은 텍스트 커맨드를 입력 받아 분석하고 명령을 전달하는 시스템
-소프트웨어다.
+npm은 Javascript Package Manager라는 소개를 달고 있지만 실상은 Node.js Package Manager의 약자가 아닐까 추정되는 이름이다. 그 이름대로 의존 패키지를 설치하고 관리하기 위한 <a href="cli.html">CLI</a> 도구다.
 </p>
 
 <p>
-대표적으로 <a href="sh.html">Bourne Shell</a>이 유명하다.
+보통은 로컬 프로젝트에 패키지를 설치할 때 사용한다.
 </p>
-
+<div class="org-src-container">
+<pre class="src src-bash">npm install &lt;package-name&gt;
+</pre>
+</div>
 <p>
-주로 <a href="cli.html">CLI</a>와 큰 관계가 있다.
+위 커맨드는 아래처럼 줄여서 쓸 수도 있다.
 </p>
+<div class="org-src-container">
+<pre class="src src-bash">npm i &lt;package-name&gt;
+</pre>
+</div>
+<p>
+만약 프로젝트 의존성이 아닌 시스템 도구라서 전역(global)으로 설치하고 싶다면 <code>-g</code> 옵션을 추가할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">npm i -g &lt;package-name&gt;
+</pre>
+</div>
 <div class="mid-ad-container">
 <ins class="adsbygoogle mid-ad"
      style="display:block"
@@ -86,6 +99,13 @@
 <hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/npx.html">npx</a></h2>
+<div class="article-link-date">
+2020년 6월 21일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/poetry.html">Poetry</a></h2>
 <div class="article-link-date">
 2020년 6월 21일 수정</div>
@@ -93,107 +113,23 @@
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/rust.html">Rust</a></h2>
+<h2><a class="article-link-title" href="/note/csso.html">CSSO</a></h2>
 <div class="article-link-date">
-2020년 6월 19일 수정</div>
+2020년 6월 21일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/kubectl.html">kubectl</a></h2>
+<h2><a class="article-link-title" href="/note/uglify-js.html">UglifyJS</a></h2>
 <div class="article-link-date">
-2020년 6월 17일 수정</div>
+2020년 6월 21일 수정</div>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/ielm.html">ielm</a></h2>
+<h2><a class="article-link-title" href="/note/cargo.html">Cargo</a></h2>
 <div class="article-link-date">
-2020년 6월 8일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/docker.html">Docker</a></h2>
-<div class="article-link-date">
-2020년 6월 1일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/xcode.html">Xcode</a></h2>
-<div class="article-link-date">
-2020년 5월 29일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
-<div class="article-link-date">
-2020년 5월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/date.html">date</a></h2>
-<div class="article-link-date">
-2020년 5월 12일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs.html">Emacs</a></h2>
-<div class="article-link-date">
-2020년 5월 12일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/tmux.html">Tmux</a></h2>
-<div class="article-link-date">
-2020년 5월 9일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/gitignore.html">gitignore</a></h2>
-<div class="article-link-date">
-2020년 4월 28일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/grep.html">Grep</a></h2>
-<div class="article-link-date">
-2020년 4월 24일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/pyenv.html">pyenv</a></h2>
-<div class="article-link-date">
-2020년 4월 22일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/find.html">find</a></h2>
-<div class="article-link-date">
-2020년 4월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/cli.html">CLI</a></h2>
-<div class="article-link-date">
-2020년 4월 15일 수정</div>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/sh.html">Bourne Shell</a></h2>
-<div class="article-link-date">
-2020년 4월 13일 수정</div>
+2020년 6월 21일 수정</div>
 </div>
 </div>
 </div>

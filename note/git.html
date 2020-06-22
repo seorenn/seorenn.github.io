@@ -96,7 +96,7 @@
 </ul>
 </li>
 <li><a href="#97d1a2f5">설정 분리하기</a></li>
-<li><a href="#aa6e479a">전역 무시(Global Git-Ignore)</a></li>
+<li><a href="#299ab221">전역 무시 목록(Global Git-Ignore)</a></li>
 <li><a href="#9ec9cd97">페이저 비활성화</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
@@ -857,18 +857,25 @@ github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 
 </p>
 </div>
 </div>
-<div id="outline-container-aa6e479a" class="outline-2">
-<h2 id="aa6e479a">전역 무시(Global Git-Ignore)</h2>
-<div class="outline-text-2" id="text-aa6e479a">
+<div id="outline-container-299ab221" class="outline-2">
+<h2 id="299ab221">전역 무시 목록(Global Git-Ignore)</h2>
+<div class="outline-text-2" id="text-299ab221">
 <p>
-전역으로 무시할 파일 목록을 만들어 두고 싶다면 우선 <code>~/.gitignore</code> 파일에 원하는 내용을 작성한다. (사실 파일 이름은 마음대로 지어도 관계는 없다)
+우선 아래 커맨드로 전역 무시 설정이 존재하는지 살펴보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --get core.excludesfile
+</pre>
+</div>
+<p>
+이 명령으로 뭔가 출력된다면 그 파일에 전역 무시 설정을 적으면 바로 적용이 된다.
 </p>
 
 <p>
-이후 아래 커맨드로 전역 설정으로 지정하면 이후 효과가 발생한다.
+만약 이 설정이 없거나 바꾸고 싶다면 원하는 파일, 예를 들어 <code>~/.gitignore_global</code> 파일에 원하는 내용을 작성한 후 아래 커맨드로 전역 설정으로 지정하면 이후 효과가 발생한다.
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global core.excludesFile ~/.gitignore
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global core.excludesFile ~/.gitignore_global
 </pre>
 </div>
 </div>

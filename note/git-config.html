@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/static/style.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<title>Git 설정하기 - Seorenn Note</title>
+<meta name="twitter:title" content="Git 설정하기" />
+<meta name="og:title" content="Git 설정하기" />
+<meta name="description" content="Git의 환경 설정과 관련된 글 모음" />
+<meta name="twitter:description" content="Git의 환경 설정과 관련된 글 모음" />
+<meta name="og:description" content="Git의 환경 설정과 관련된 글 모음" />
+<link rel="canonical" href="https://seorenn.github.io/note/git-config.html" />
+<meta property="og:url" content="https://seorenn.github.io/note/git-config.html" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+<meta property="og:image:width" content="520" />
+<meta property="og:image:height" content="329" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@seorenn" />
+<meta name="twitter:creator" content="@seorenn" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Seorenn" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="robots" content="follow,index" />
+<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<header class="top-header">
+<div class="logo-container">
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" alt="Seorenn" /></a>
+<nav>
+<a href="/" title="Home"><i class="material-icons md-light">home</i></a>
+<a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
+</nav>
+</div>
+</header>
+<hr/>
+</div>
+<div class="side-ad-container"></div>
+</div>
+<div class="content-container">
+<div class="left-empty">
+</div>
+<section class="content">
+<header>
+<h1>Git 설정하기</h1>
+<div class="title-date">2020년 6월 23일 수정</div>
+</header>
+<div id="table-of-contents">
+<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
+<ul>
+<li><a href="#92f51152">기초 정보 설정</a></li>
+<li><a href="#299ab221">전역 무시 목록(Global Git-Ignore)</a></li>
+<li><a href="#9ec9cd97">페이저 비활성화</a></li>
+<li><a href="#97d1a2f5">설정 분리하기</a></li>
+</ul>
+</div>
+</div>
+<p>
+이 글은 <a href="git.html">Git</a> 설정 관련 팁을 몇 가지 모은 글이다. 아마도 이름이나 메일 설정하는 것을 제외하면 별로 사용할 일은 없을 것 같다. 이 외의 사용법에 관해서는 <a href="git-basic-usage.html">Git 일반적인 사용법</a> 혹은 <a href="git-special-usage.html">Git의 특별한 사용법</a> 글을 참고하자.
+</p>
+
+<div id="outline-container-92f51152" class="outline-2">
+<h2 id="92f51152">기초 정보 설정</h2>
+<div class="outline-text-2" id="text-92f51152">
+<p>
+전역(global)으로 이름 및 이메일 주소 설정은 아래 커맨드로 할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global user.name <span style="color: #98be65;">"your name"</span>
+<span style="color: #ECBE7B;">git</span> config --global user.email <span style="color: #98be65;">"your email address"</span>
+</pre>
+</div>
+<p>
+이 외에도 많은 설정이 있다. 공식 매뉴얼을 참고하자.
+</p>
+
+<p>
+참고로 현재 프로젝트에만 별도(local)로 설정하려면 <code>--global</code> 옵션을 빼면 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config user.name <span style="color: #98be65;">"your name"</span>
+<span style="color: #ECBE7B;">git</span> config user.email <span style="color: #98be65;">"your email address"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-299ab221" class="outline-2">
+<h2 id="299ab221">전역 무시 목록(Global Git-Ignore)</h2>
+<div class="outline-text-2" id="text-299ab221">
+<p>
+우선 아래 커맨드로 전역 무시 설정이 존재하는지 살펴보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --get core.excludesfile
+</pre>
+</div>
+<p>
+이 명령으로 뭔가 출력된다면 그 파일에 전역 무시 설정을 적으면 바로 적용이 된다.
+</p>
+
+<p>
+만약 이 설정이 없거나 바꾸고 싶다면 원하는 파일, 예를 들어 <code>~/.gitignore_global</code> 파일에 원하는 내용을 작성한 후 아래 커맨드로 전역 설정으로 지정하면 이후 효과가 발생한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global core.excludesFile ~/.gitignore_global
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-9ec9cd97" class="outline-2">
+<h2 id="9ec9cd97">페이저 비활성화</h2>
+<div class="outline-text-2" id="text-9ec9cd97">
+<p>
+페이저(pager)란 less나 more 같은 도구로
+터미널에서 로그나 변경사항을 볼 때 긴 내용을 편하게 볼 수 있게 도와준다.
+하지만 사람의 눈이 아닌 다른 UNIX 유틸리티로 파이프로 넘기려고 할 때는
+이런 페이저가 방해가 될 수 있다.
+이 경우 <code>--no-pager</code> 옵션을 줘서 실행시킬 수 있다.
+</p>
+
+<p>
+예를 들어 diff를 페이저 없이 쓰려면 아래와 같이 입력하면 된다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> --no-pager diff
+</pre>
+</div>
+
+<p>
+이 옵션은 <code>pager.</code> 으로 시작되는 다양한 설정으로 설정도 가능하다.
+예를 들어 branch 명령에서 페이저를 영원히 비활성화 시키려면
+아래의 커맨드를 이용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">git</span> config --global pager.branch false
+</pre>
+</div>
+<p>
+이 외에도 <code>pager.diff</code> 등 다양한 설정이 있다.
+</p>
+</div>
+</div>
+<div id="outline-container-97d1a2f5" class="outline-2">
+<h2 id="97d1a2f5">설정 분리하기</h2>
+<div class="outline-text-2" id="text-97d1a2f5">
+<p>
+디렉토리별로 Git 설정을 분리하려면
+<code>~/.gitconfig</code> 파일에 아래와 같은 식으로 설정할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[user]
+    email = your primary email address
+    name = your name
+[includeIf "gitdir:~/foo/bar/"]
+    path = ~/.gitconfig-foo-bar
+</pre>
+</div>
+<p>
+위의 설정의 경우
+<code>~/foo/bar/</code> 라는 디렉터리 안에서는
+<code>~/.gitconfig-foo-bar</code> 라는 설정 파일을 읽어 들이도록 동작한다.
+여기에 필요한 설정을 추가해주면 된다.
+아래는 <code>~/.gitconfig-foo-bar</code> 파일의 예제다.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">[user]
+    email = your secondary email address
+    name = your name
+[github]
+    user = github user name
+</pre>
+</div>
+<p>
+github 설정이 추가되어 있다는 점만 제외하면 지극히 평범한 Git 설정이다.
+</p>
+</div>
+</div>
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="backlinks-container">
+<hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/git.html">Git</a></h2>
+<div class="article-link-date">
+2020년 6월 23일 수정</div>
+</div>
+</div>
+</div>
+</section>
+<div class="side-ad-container">
+<ins class="adsbygoogle side-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="content-container">
+<div class="left-empty"></div>
+<div class="header-content">
+<hr/>
+<footer>
+Copyright 2019 ~ 2020. Seorenn all rights reserved.
+</footer>
+</div><div class="side-ad-container"></div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-44534026-1');
+</script>
+</body>
+</html>

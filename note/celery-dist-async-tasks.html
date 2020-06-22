@@ -66,11 +66,12 @@
 <li><a href="#07ba81d8">워커(worker) 띄우기</a></li>
 <li><a href="#c735efc5">태스크(task) 호출하기</a></li>
 <li><a href="#cddd7f20">결과 받아보기</a></li>
+<li><a href="#4f65b655">마무리</a></li>
 </ul>
 </div>
 </div>
 <p>
-이 글은 <a href="python.html">Python</a>의 <a href="celery.html">Celery</a>를 이용해 비동기 및 분산처리 방법을 아주 간단히 정리한다.
+이 글은 <a href="python.html">Python</a>의 <a href="celery.html">Celery</a>를 이용해 비동기 분산처리 방법을 아주 간단히 정리한다.
 </p>
 
 <div id="outline-container-f6c3e57e" class="outline-2">
@@ -206,6 +207,14 @@
 </div>
 <p>
 <code>AsyncResult</code> 타입에서 제공하는 <code>get</code> 메서드를 이용하면 응답을 받을 수 있다. 물론 타임아웃이 발생한다면 워커가 내려갔거나 브로커나 백엔드에 문제가 생겼을 것이다.
+</p>
+</div>
+</div>
+<div id="outline-container-4f65b655" class="outline-2">
+<h2 id="4f65b655">마무리</h2>
+<div class="outline-text-2" id="text-4f65b655">
+<p>
+이 글은 정말 기초만 겉핥기 하는 수준의 글이다. <a href="celery.html">Celery</a> 자체가 태스크 큐 관리 정책 등 다양한 분산처리를 위한 관리 기능을 제공하기 때문에 이 외에 많은 부분을 알아야 할 것 같다. 다행히도 제법 많이 쓰이는 도구라 인터넷에서 많은 정보를 찾을 수 있으니 참고해보자.
 </p>
 </div>
 </div>

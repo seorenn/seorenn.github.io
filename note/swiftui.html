@@ -41,9 +41,7 @@
 <a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" alt="Seorenn" /></a>
 <nav>
 <a href="/" title="Home"><i class="material-icons md-light">home</i></a>
-<a href="/post" title="Post"><i class="material-icons md-light">subject</i></a>
- <a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
- <a href="/log" title="Log"><i class="material-icons md-light">portrait</i></a>
+<a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
 </nav>
 </div>
 </header>
@@ -57,7 +55,7 @@
 <section class="content">
 <header>
 <h1>SwiftUI</h1>
-<div class="title-date">2020년 5월 25일 수정</div>
+<div class="title-date">2020년 6월 23일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -247,6 +245,16 @@ ZStack은 UI를 바닥부터 쌓아 가는 형태로 만들 때 사용한다.
 + <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"bar"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">blue</span>)
 </pre>
 </div>
+<p>
+<a href="xcode.html">Xcode</a> 11.5부터 시간 관련 기능이 추가된 것 같다.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #c678dd;">Date</span>().<span style="color: #c678dd;">addingTimeInterval</span>(<span style="color: #da8548; font-weight: bold;">600</span>), style: .<span style="color: #dcaeea;">relative</span>)
+</pre>
+</div>
+<p>
+style에는 이 외에 <code>.date</code>, <code>.time</code>, <code>.timer</code> 등 다양한 옵션이 있다.
+</p>
 </div>
 </div>
 <div id="outline-container-87b7760f" class="outline-3">

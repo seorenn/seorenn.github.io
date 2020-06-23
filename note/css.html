@@ -41,9 +41,7 @@
 <a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" alt="Seorenn" /></a>
 <nav>
 <a href="/" title="Home"><i class="material-icons md-light">home</i></a>
-<a href="/post" title="Post"><i class="material-icons md-light">subject</i></a>
- <a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
- <a href="/log" title="Log"><i class="material-icons md-light">portrait</i></a>
+<a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
 </nav>
 </div>
 </header>
@@ -57,7 +55,7 @@
 <section class="content">
 <header>
 <h1>CSS</h1>
-<div class="title-date">2020년 6월 21일 수정</div>
+<div class="title-date">2020년 6월 23일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -97,6 +95,7 @@
 <li><a href="#c8df4364">Floating</a></li>
 <li><a href="#21ef59af">해상도 혹은 브라우저 크기 별로 스타일 대응하기</a></li>
 <li><a href="#027bd86e">배경을 흐리게(Blur) 만들기</a></li>
+<li><a href="#62edfa6f">패턴 백그라운드 이미지</a></li>
 </ul>
 </li>
 <li><a href="#d69eae23">약간 특이한 팁</a>
@@ -555,6 +554,32 @@ p {
 <p>
 아예 배경을 더 어둡게 만들어 버리면 더 눈에 띄는 팝업 스타일을 만들 수도 있다.
 </p>
+</div>
+</div>
+<div id="outline-container-62edfa6f" class="outline-3">
+<h3 id="62edfa6f">패턴 백그라운드 이미지</h3>
+<div class="outline-text-3" id="text-62edfa6f">
+<p>
+아래와 같은 식으로 CSS 백그라운드 이미지를 쓸 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-css">{
+    <span style="color: #98be65;">background-image</span>: url<span style="color: #bbc2cf; background-color: #282c34;">(</span><span style="color: #98be65;">/foo/bar/image.png</span><span style="color: #bbc2cf; background-color: #282c34;">)</span>;
+    <span style="color: #98be65;">background-repeat</span>: repeat-x;
+}
+</pre>
+</div>
+<p>
+여기서 <code>background-repeat</code> 에 따라 패턴화 되는 경향이 다르다.
+</p>
+<ul class="org-ul">
+<li><code>no-repeat</code> 는 한 장의 이미지만 쓴다. 즉 패턴을 쓰지 않는다.</li>
+<li><code>repeat-x</code> 의 경우 가로축으로만 패턴이 나열되며 이미지가 크기에 따라 클리핑 될 수도 있다.</li>
+<li><code>repeat-y</code> 의 경우 세로축으로 나열되며 나머진 위와 동일하다.</li>
+<li><code>repeat</code> 는 x, y축 둘 다 위 처럼 나열된다.</li>
+<li><code>round</code> 는 패턴이 잘리지 않게 비율에 맞는 확대와 나열을 쓴다. 패턴 방식이라면 가장 효율적일 것 같다.</li>
+<li><code>space</code> 는 패턴을 나열하되 확대를 하지 않고 패턴 사이에 공백을 준다. 배경색에 영향을 받지 않고 이미지 크기를 그대로 유지하고자 한다면 효율적인 선택이다.</li>
+</ul>
 </div>
 </div>
 </div>

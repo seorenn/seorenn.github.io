@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-06-23</lastmod></url>
@@ -63,7 +65,6 @@
 <url><loc>https://seorenn.github.io/note/definition.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/implementation.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-05-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2020-05-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/killer-application.html</loc><lastmod>2020-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2020-05-28</lastmod></url>

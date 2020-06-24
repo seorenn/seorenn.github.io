@@ -277,7 +277,7 @@
 <h2 id="c43d9526">예외 상황의 메시지를 그대로 출력하기</h2>
 <div class="outline-text-2" id="text-c43d9526">
 <p>
-일반적으로 예외 처리가 완벽하지 않는 <a href="python.html">Python</a> 스크립트에서 에러가 나면 우리는 Traceback이라 불리우는 메시지를 볼 수 있다.
+일반적으로 예외 처리가 완벽하지 않은 <a href="python.html">Python</a> 스크립트에서 에러가 나면 스크립트가 죽으면서 Traceback이라 불리우는 메시지가 화면에 뿌려지는 것을 볼 수 있다.
 </p>
 <div class="org-src-container">
 <pre class="src src-text">Traceback (most recent call last):
@@ -289,11 +289,11 @@ Exception: QuxException: Foobar
 </pre>
 </div>
 <p>
-이런 메시지를 에러의 종류와 발생 위치나 순서 등을 알 수 있어서 디버깅에 도움이 된다.
+이런 메시지를 통해 에러의 종류와 발생 위치나 순서 등을 알 수 있어서 디버깅에 도움이 된다.
 </p>
 
 <p>
-만약 작성 중인 스크립트에서 모든 예외를 핸들링 하기가 힘든 상황이라 모든 예외의 경우 스크립트를 죽이지 않으면서 눈으로 봐가며 디버깅해야 하는 경우 위의 Traceback 메시지를 예외 상황에서 표시할 수 있으면 유용할 때가 있다.
+만약 작성 중인 스크립트에서 모든 예외를 핸들링 하기가 힘든 상황이라 예외 발생 시 스크립트를 죽이지 않으면서 그 내용을 눈으로 봐가며 디버깅해야 하는 경우 위의 Traceback 메시지를 예외 상황에서 표시할 수 있으면 유용할 때가 있다.
 </p>
 
 <p>

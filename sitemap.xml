@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-06-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-06-24</lastmod></url>
@@ -12,7 +15,6 @@
 <url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/celery.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2020-06-23</lastmod></url>
@@ -24,7 +26,6 @@
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/italian-note.html</loc><lastmod>2020-06-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python3-manual-migration.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-bitstring.html</loc><lastmod>2020-06-21</lastmod></url>

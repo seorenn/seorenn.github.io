@@ -60,7 +60,8 @@
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
-<li><a href="#17e8d513">try - except</a></li>
+<li><a href="#139a8c26">예외 처리하기</a></li>
+<li><a href="#c2a6c01f">예외 발생시키기</a></li>
 <li><a href="#b19ffe43">사용자 예외 클래스</a></li>
 <li><a href="#c43d9526">예외 상황의 메시지를 그대로 출력하기</a></li>
 </ul>
@@ -70,9 +71,9 @@
 이 글은 <a href="python.html">Python</a> 예외 처리(Exception Handling)의 가장 기초적인 부분을 다룬다. 참고로 문법은 버전 3.x 이후이며 2.x 버전에서는 조금 다를 수 있다.
 </p>
 
-<div id="outline-container-17e8d513" class="outline-2">
-<h2 id="17e8d513">try - except</h2>
-<div class="outline-text-2" id="text-17e8d513">
+<div id="outline-container-139a8c26" class="outline-2">
+<h2 id="139a8c26">예외 처리하기</h2>
+<div class="outline-text-2" id="text-139a8c26">
 <p>
 <a href="python.html">Python</a> 예외 처리의 가장 기본은 <code>try</code> 와 <code>except</code> 문이다. 대충 아래와 같은 식으로 쓰인다.
 </p>
@@ -158,6 +159,25 @@
 <p>
 물론 이건 예외 클래스에서 출력을 지원할 때의 이야기지만 말이다. 대부분의 기본 예외 오류는 메시지를 다 알려주긴 한다.
 </p>
+</div>
+</div>
+<div id="outline-container-c2a6c01f" class="outline-2">
+<h2 id="c2a6c01f">예외 발생시키기</h2>
+<div class="outline-text-2" id="text-c2a6c01f">
+<p>
+예외는 <code>raise</code> 커맨드로 발생시킬 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">raise</span> <span style="color: #ECBE7B;">ValueError</span>()
+</pre>
+</div>
+<p>
+보통은 첫 인자로 문자열 메시지를 넣을 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">raise</span> <span style="color: #ECBE7B;">ValueError</span>(<span style="color: #98be65;">"The value is invalid"</span>)
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-b19ffe43" class="outline-2">

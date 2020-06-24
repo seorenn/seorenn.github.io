@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg.html</loc><lastmod>2020-06-23</lastmod></url>
@@ -46,7 +47,6 @@
 <url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-06-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dockerfile.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/arc.html</loc><lastmod>2020-06-16</lastmod></url>

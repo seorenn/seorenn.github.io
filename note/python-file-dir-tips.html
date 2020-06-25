@@ -171,7 +171,7 @@
 </p>
 
 <p>
-굳이 <code>list()</code> 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 Iterator가 리턴된 것이기 때문에 굳이 <code>list()</code> 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.
+굳이 <code>list()</code> 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 generator가 리턴된 것이기 때문에 굳이 <code>list()</code> 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">for</span> p <span style="color: #51afef;">in</span> Path(<span style="color: #98be65;">"/Users/seorenn/tmp/a"</span>).rglob(<span style="color: #98be65;">"*"</span>):

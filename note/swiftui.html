@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>SwiftUI</h1>
-<div class="title-date">2020년 6월 24일 수정</div>
+<div class="title-date">2020년 6월 25일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -71,6 +71,7 @@
 <li><a href="#259542da">NavigationView</a></li>
 <li><a href="#880c1273">Shape</a></li>
 <li><a href="#a8875bbe">Toggle</a></li>
+<li><a href="#86d6c1f7">TextEditor</a></li>
 </ul>
 </li>
 <li><a href="#3917e451">레이아웃 속성들</a>
@@ -385,6 +386,20 @@ style에는 이 외에 <code>.date</code>, <code>.time</code>, <code>.timer</cod
 <pre class="src src-swift"><span style="color: #c678dd;">Toggle</span>(isOn: $someProperty) {
     <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Switch Title"</span>)
 }
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-86d6c1f7" class="outline-3">
+<h3 id="86d6c1f7">TextEditor</h3>
+<div class="outline-text-3" id="text-86d6c1f7">
+<div class="org-src-container">
+<pre class="src src-swift"><span style="color: #c678dd;">TextEditor</span>(text: $text)
+.<span style="color: #c678dd;">padding</span>()
+.<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">black</span>)
+.<span style="color: #c678dd;">font</span>(.<span style="color: #c678dd;">title</span>)
+.<span style="color: #c678dd;">frame</span>(minWidth: <span style="color: #da8548; font-weight: bold;">0</span>, maxWidth: .<span style="color: #c678dd;">infinity</span>, minHeight: <span style="color: #da8548; font-weight: bold;">0</span>, maxHeight: <span style="color: #da8548; font-weight: bold;">200</span>)
+.<span style="color: #c678dd;">border</span>(Color.<span style="color: #dcaeea;">black</span>, width: <span style="color: #da8548; font-weight: bold;">1</span>)
 </pre>
 </div>
 </div>

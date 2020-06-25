@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>Python</h1>
-<div class="title-date">2020년 6월 24일 수정</div>
+<div class="title-date">2020년 6월 25일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -67,26 +67,18 @@
 </ul>
 </li>
 <li><a href="#3d558e5f">Bytes 관련 팁</a></li>
-<li><a href="#17bb72bf">파일 혹은 디렉토리(폴더) 관련 팁</a>
-<ul>
-<li><a href="#e9e48928">경로에서 파일명만 얻기</a></li>
-<li><a href="#ec19234e">파일명에서 확장자 분리하기</a></li>
-<li><a href="#4ac854e0">파일 혹은 디렉토리 구분하기</a></li>
-<li><a href="#bf73e04c">디렉토리 안의 파일 목록 얻기</a></li>
-</ul>
-</li>
 <li><a href="#8818473f">사전(Dictionary)형 관련 팁</a>
 <ul>
 <li><a href="#d6c1bfd0">합치기</a></li>
 </ul>
 </li>
+<li><a href="#867ded23">관련글</a></li>
+<li><a href="#abdaed76">패키지 노트</a></li>
 <li><a href="#de5636e8">편리한 커맨드</a>
 <ul>
 <li><a href="#540afe19">간단한 웹 서버 띄우기</a></li>
 </ul>
 </li>
-<li><a href="#867ded23">관련글</a></li>
-<li><a href="#abdaed76">패키지 노트</a></li>
 <li><a href="#0bbb90e1">외부 링크</a></li>
 </ul>
 </div>
@@ -175,62 +167,6 @@ Python 3 부터 Bytes를 표시하는 방법이 바뀌었다.
 </p>
 </div>
 </div>
-<div id="outline-container-17bb72bf" class="outline-2">
-<h2 id="17bb72bf">파일 혹은 디렉토리(폴더) 관련 팁</h2>
-<div class="outline-text-2" id="text-17bb72bf">
-</div>
-<div id="outline-container-e9e48928" class="outline-3">
-<h3 id="e9e48928">경로에서 파일명만 얻기</h3>
-<div class="outline-text-3" id="text-e9e48928">
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
-&gt;&gt;&gt; os.path.basename(<span style="color: #98be65;">'/foo/bar/test.txt'</span>)
-<span style="color: #98be65;">'test.txt'</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-ec19234e" class="outline-3">
-<h3 id="ec19234e">파일명에서 확장자 분리하기</h3>
-<div class="outline-text-3" id="text-ec19234e">
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
-&gt;&gt;&gt; os.path.splitext(<span style="color: #98be65;">'test.txt'</span>)
-(<span style="color: #98be65;">'test'</span>, <span style="color: #98be65;">'.txt'</span>)
-</pre>
-</div>
-<p>
-<code>splitext</code> 는 파일명 뿐만이 아니라 경로(path)에서도 동작한다.
-예를 들어
-<code>/foo/bar/text.txt</code> 를 입력할 경우 <code>/foo/bar/text</code> 와 <code>.txt</code> 로 분리됩니다.
-</p>
-</div>
-</div>
-<div id="outline-container-4ac854e0" class="outline-3">
-<h3 id="4ac854e0">파일 혹은 디렉토리 구분하기</h3>
-<div class="outline-text-3" id="text-4ac854e0">
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
-&gt;&gt;&gt; os.path.isfile(<span style="color: #98be65;">'/foo/bar/some/file.txt'</span>)
-<span style="color: #a9a1e1;">True</span>
-&gt;&gt;&gt; os.path.isdir(<span style="color: #98be65;">'/foo/bar/some/file.txt'</span>)
-<span style="color: #a9a1e1;">False</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-bf73e04c" class="outline-3">
-<h3 id="bf73e04c">디렉토리 안의 파일 목록 얻기</h3>
-<div class="outline-text-3" id="text-bf73e04c">
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
-&gt;&gt;&gt; os.listdir(<span style="color: #98be65;">'.'</span>)
-[<span style="color: #98be65;">'foo.a'</span>, <span style="color: #98be65;">'bar.b'</span>, <span style="color: #98be65;">'somedir'</span>, ...]
-</pre>
-</div>
-</div>
-</div>
-</div>
 <div id="outline-container-8818473f" class="outline-2">
 <h2 id="8818473f">사전(Dictionary)형 관련 팁</h2>
 <div class="outline-text-2" id="text-8818473f">
@@ -269,6 +205,26 @@ Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 �
 </div>
 </div>
 </div>
+<div id="outline-container-867ded23" class="outline-2">
+<h2 id="867ded23">관련글</h2>
+<div class="outline-text-2" id="text-867ded23">
+<ul class="org-ul">
+<li><a href="python-list-comprehension.html">Python List Comprehension</a></li>
+<li><a href="python-regular-expression.html">Python 정규표현식</a></li>
+<li><a href="python-exception-handling.html">Python 예외 처리</a></li>
+<li><a href="python-file-dir-tips.html">Python으로 파일의 경로 및 목록 다루기</a></li>
+<li><a href="python3-manual-migration.html">Python 3로 수동으로 옮겨가기</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-abdaed76" class="outline-2">
+<h2 id="abdaed76">패키지 노트</h2>
+<div class="outline-text-2" id="text-abdaed76">
+<ul class="org-ul">
+<li><a href="python-bitstring.html">bitstring(Python)</a></li>
+</ul>
+</div>
+</div>
 <div id="outline-container-de5636e8" class="outline-2">
 <h2 id="de5636e8">편리한 커맨드</h2>
 <div class="outline-text-2" id="text-de5636e8">
@@ -284,25 +240,6 @@ Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 �
 Python 3 부터 사용 가능한 커맨드다.
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-867ded23" class="outline-2">
-<h2 id="867ded23">관련글</h2>
-<div class="outline-text-2" id="text-867ded23">
-<ul class="org-ul">
-<li><a href="python-list-comprehension.html">Python List Comprehension</a></li>
-<li><a href="python-regular-expression.html">Python 정규표현식</a></li>
-<li><a href="python-exception-handling.html">Python 예외 처리</a></li>
-<li><a href="python3-manual-migration.html">Python 3로 수동으로 옮겨가기</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-abdaed76" class="outline-2">
-<h2 id="abdaed76">패키지 노트</h2>
-<div class="outline-text-2" id="text-abdaed76">
-<ul class="org-ul">
-<li><a href="python-bitstring.html">bitstring(Python)</a></li>
-</ul>
 </div>
 </div>
 <div id="outline-container-0bbb90e1" class="outline-2">
@@ -329,6 +266,13 @@ Python 3 부터 사용 가능한 커맨드다.
 </div>
 <div class="backlinks-container">
 <hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/python-file-dir-tips.html">Python으로 파일의 경로 및 목록 다루기</a></h2>
+<div class="article-link-date">
+2020년 6월 25일 수정</div>
+</div>
+</div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/python-exception-handling.html">Python 예외 처리</a></h2>

@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-syntax.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-file-dir-tips.html</loc><lastmod>2020-06-25</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2020-06-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-06-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-24</lastmod></url>
-<url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg-compress-jpeg-images.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/seo-strategy.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2020-06-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2020-06-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/celery.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2020-06-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/celery-dist-async-tasks.html</loc><lastmod>2020-06-22</lastmod></url>
@@ -41,7 +44,6 @@
 <url><loc>https://seorenn.github.io/note/uglify-js.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc><lastmod>2020-06-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-06-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc><lastmod>2020-06-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/namespace.html</loc><lastmod>2020-06-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2020-06-18</lastmod></url>
@@ -70,7 +72,6 @@
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-06-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/definition.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/implementation.html</loc><lastmod>2020-05-30</lastmod></url>
-<url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-05-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/killer-application.html</loc><lastmod>2020-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2020-05-28</lastmod></url>
@@ -119,6 +120,6 @@
 <url><loc>https://seorenn.github.io/note/shell.html</loc><lastmod>2020-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2020-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/caffeinate.html</loc><lastmod>2020-04-13</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-06-25</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-06-25</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-06-26</lastmod></url>
 </urlset>

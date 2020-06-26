@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/static/style.min.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>Org Publish - Seorenn Note</title>
-<meta name="twitter:title" content="Org Publish" />
-<meta name="og:title" content="Org Publish" />
+<title>Org Publish로 익스포트 자동화하기 - Seorenn Note</title>
+<meta name="twitter:title" content="Org Publish로 익스포트 자동화하기" />
+<meta name="og:title" content="Org Publish로 익스포트 자동화하기" />
 <meta name="description" content="Org 문서들과 관련 파일들을 자동으로 익스포트해 주는 Org Publish의 설정방법과 사용법을 알아보자" />
 <meta name="twitter:description" content="Org 문서들과 관련 파일들을 자동으로 익스포트해 주는 Org Publish의 설정방법과 사용법을 알아보자" />
 <meta name="og:description" content="Org 문서들과 관련 파일들을 자동으로 익스포트해 주는 Org Publish의 설정방법과 사용법을 알아보자" />
@@ -54,7 +54,7 @@
 </div>
 <section class="content">
 <header>
-<h1>Org Publish</h1>
+<h1>Org Publish로 익스포트 자동화하기</h1>
 <div class="title-date">2020년 6월 26일 수정</div>
 </header>
 <div id="table-of-contents">
@@ -163,8 +163,7 @@ Org Publish의 프로젝트 설정은 <code>org-publish-project-alist</code> 라
          <span style="color: #c678dd;">:html-html5-fancy</span> t
          <span style="color: #c678dd;">:html-head-include-default-style</span> nil
          <span style="color: #c678dd;">:html-head-include-scripts</span> nil
-         <span style="color: #c678dd;">:htmlized-source</span> t
-         <span style="color: #98be65;">)</span>
+         <span style="color: #c678dd;">:htmlized-source</span> t<span style="color: #98be65;">)</span>
         <span style="color: #98be65;">(</span><span style="color: #98be65;">"static"</span>
          <span style="color: #c678dd;">:base-directory</span> <span style="color: #98be65;">"~/org/static"</span>
          <span style="color: #c678dd;">:base-extension</span> <span style="color: #98be65;">"css</span><span style="color: #51afef; font-weight: bold;">\\</span><span style="color: #51afef; font-weight: bold;">|</span><span style="color: #98be65;">js</span><span style="color: #51afef; font-weight: bold;">\\</span><span style="color: #51afef; font-weight: bold;">|</span><span style="color: #98be65;">png</span><span style="color: #51afef; font-weight: bold;">\\</span><span style="color: #51afef; font-weight: bold;">|</span><span style="color: #98be65;">jpg</span><span style="color: #51afef; font-weight: bold;">\\</span><span style="color: #51afef; font-weight: bold;">|</span><span style="color: #98be65;">jpeg</span><span style="color: #51afef; font-weight: bold;">\\</span><span style="color: #51afef; font-weight: bold;">|</span><span style="color: #98be65;">gif"</span>
@@ -191,7 +190,7 @@ Org Publish의 프로젝트 설정은 <code>org-publish-project-alist</code> 라
 <li><code>htmlized-source</code> 가 <code>nil</code> 이 아니기 때문에 익스포트는 <a href="html.html">HTML</a> 형식으로 한다.</li>
 </ul>
 <p>
-그 외에 여러 옵션이 있는데 이는 Org Mode의 Export 옵션 그 자체이기도 하니 일단 생략한다.
+그 외에 여러 옵션이 있는데 이는 <a href="org-mode.html">Org Mode</a>의 Export 옵션 그 자체이기도 하니 일단 생략한다.
 </p>
 
 <p>
@@ -237,7 +236,7 @@ Org Publish의 프로젝트 설정은 <code>org-publish-project-alist</code> 라
 </pre>
 </div>
 <p>
-참고로 <a href="doom-emacs.html">Doom Emacs</a>의 경우는 <code>SPC ;</code> 를 누르면 <a href="emacs-lisp.html">Emacs Lisp</a> 코드를 즉석에서 입력해서 실행시킬 수 있는 프롬프트가 뜬니 여기서 위 코드를 입력해보자.
+참고로 <a href="doom-emacs.html">Doom Emacs</a>의 경우는 <code>SPC ;</code> 를 누르면 <a href="emacs-lisp.html">Emacs Lisp</a> 코드를 즉석에서 입력해서 실행시킬 수 있는 프롬프트가 뜨니 여기서 위 코드를 입력해보자.
 </p>
 
 <p>
@@ -261,7 +260,7 @@ Org Publish의 프로젝트 설정은 <code>org-publish-project-alist</code> 라
 </pre>
 </div>
 <p>
-생략한 코드가 많은데, 그냥 앞서 설정했던 내용에서 마지막 <code>web</code> 을 정의하는 한 줄이 더 추가되었다. 이 코드의 의미는 <code>web</code> 프로젝트는 <code>doc</code>, <code>static</code>, <code>img</code> 라는 세 가지 컴포넌트로 구성되어 있다라는 것이다.
+생략한 코드가 많은데, 그냥 앞서 설정했던 내용에서 마지막 <code>web</code> 을 정의하는 한 줄이 더 추가되었다고 치자. 이 코드의 의미는 <code>web</code> 프로젝트는 <code>doc</code>, <code>static</code>, <code>img</code> 라는 세 가지 컴포넌트로 구성되어 있다라는 것이다.
 </p>
 
 <p>

@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>Python으로 파일의 경로 및 목록 다루기</h1>
-<div class="title-date">2020년 6월 25일 수정</div>
+<div class="title-date">2020년 6월 27일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -63,6 +63,7 @@
 <li><a href="#e9e48928">경로에서 파일명만 얻기</a></li>
 <li><a href="#7d954c7b">경로에서 디렉터리만 얻기</a></li>
 <li><a href="#ec19234e">파일명에서 확장자 분리하기</a></li>
+<li><a href="#6505b577">경로에서 디렉터리와 파일 분리하기</a></li>
 <li><a href="#4ac854e0">파일 혹은 디렉토리 구분하기</a></li>
 <li><a href="#aedb0bf4">디렉터리 안의 파일 목록 얻기</a></li>
 <li><a href="#11b77a1a">디렉터리 안의 모든 파일 및 디렉터리 목록 얻기</a></li>
@@ -70,7 +71,7 @@
 </div>
 </div>
 <p>
-이 글은 <a href="python.html">Python</a>으로 파일 및 디렉토리의 경로나 파일 목록 구하기와 관련된 내용을 정리한다. 딱히 이런 분류로 글을 쓰는 건 개인적으로 자주 사용하고 자주 찾게 되는 내용이라 그렇지 별 다른 구분이 있는 것은 아니다.
+이 글은 <a href="python.html">Python</a>으로 파일 및 디렉토리의 경로(path)나 파일 목록 구하기와 관련된 내용을 정리한다. 딱히 이런 분류로 글을 쓰는 건 개인적으로 자주 사용하고 자주 찾게 되는 내용이라 그렇지 별 다른 구분이 있는 것은 아니다.
 </p>
 
 <div id="outline-container-e9e48928" class="outline-2">
@@ -118,6 +119,28 @@
 예를 들어
 <code>/foo/bar/text.txt</code> 를 입력할 경우 <code>/foo/bar/text</code> 와 <code>.txt</code> 로 분리된다.
 </p>
+</div>
+</div>
+<div id="outline-container-6505b577" class="outline-2">
+<h2 id="6505b577">경로에서 디렉터리와 파일 분리하기</h2>
+<div class="outline-text-2" id="text-6505b577">
+<p>
+이 경우에는 <code>os.path</code> 모듈의 <code>split()</code> 함수를 사용해보자.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">import</span> os
+&gt;&gt;&gt; os.path.split(<span style="color: #98be65;">'/foo/bar/sample.txt'</span>)
+(<span style="color: #98be65;">'/foo/bar'</span>, <span style="color: #98be65;">'sample.txt'</span>)
+</pre>
+</div>
+<p>
+참고로 <code>os.path.split()</code> 함수는 경로에서 마지막 요소만을 분리해주는 용도다. 그래서 상위 디렉터리를 구하는 용도로도 사용할 수 있다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; os.path.split(<span style="color: #98be65;">'/foo/bar'</span>)
+(<span style="color: #83898d;">'/foo'</span>, <span style="color: #83898d;">'bar'</span>)
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-4ac854e0" class="outline-2">
@@ -204,7 +227,7 @@
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
 <div class="article-link-date">
-2020년 6월 25일 수정</div>
+2020년 6월 27일 수정</div>
 </div>
 </div>
 </div>

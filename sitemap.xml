@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rsvp.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-table-spreadsheet.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-syntax.html</loc><lastmod>2020-06-26</lastmod></url>
@@ -56,7 +58,6 @@
 <url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dockerfile.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/arc.html</loc><lastmod>2020-06-16</lastmod></url>
-<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appkit.html</loc><lastmod>2020-06-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/uikit.html</loc><lastmod>2020-06-11</lastmod></url>

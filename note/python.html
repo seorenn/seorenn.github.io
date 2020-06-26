@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>Python</h1>
-<div class="title-date">2020년 6월 26일 수정</div>
+<div class="title-date">2020년 6월 27일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -63,11 +63,6 @@
 <li><a href="#f6c3e57e">설치</a></li>
 <li><a href="#db81cb90">버전 별 정리</a></li>
 <li><a href="#3d558e5f">Bytes 관련 팁</a></li>
-<li><a href="#8818473f">사전(Dictionary)형 관련 팁</a>
-<ul>
-<li><a href="#d6c1bfd0">합치기</a></li>
-</ul>
-</li>
 <li><a href="#73ec6cea">주제별 내용</a></li>
 <li><a href="#abdaed76">패키지 노트</a></li>
 <li><a href="#de5636e8">편리한 커맨드</a>
@@ -97,16 +92,15 @@
 </p>
 
 <p>
-다만 최근 <a href="homebrew.html">Homebrew</a> 를 통해 설치하는 경우
-3.x 버전이 설치되며 python3 라는 이름으로만 실행시킬 수 있게 설치된다.
-즉 python 커맨드로 실행되는 버전은 시스템의 기본 파이썬 바이너리다.
-만약 python 커맨드로 새로 설치한 파이썬 3를 실행시키고자
-한다면 아래와 같은 경로 설정을 추가해야 한다.
+혹시 <a href="homebrew.html">Homebrew</a> 를 통해 설치했는데 python 커맨드가 시스템 파이썬을 실행시킨다면 아래와 같이 경로를 추가 설정해서 시험해보자.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PATH</span>=<span style="color: #98be65;">"/usr/local/opt/python/libexec/bin:</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">PATH</span><span style="color: #98be65;">"</span>
+<pre class="src src-bash"><span style="color: #c678dd;">export</span> <span style="color: #dcaeea;">PATH</span>=<span style="color: #98be65;">"/usr/local/opt/python/libexec/bin:</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">PATH</span><span style="color: #98be65;">"</span>
 </pre>
 </div>
+<p>
+이 설정은 포뮬러가 어떻게 바뀌느냐에 따라 바뀔 수도 있으니 참고만 하자.
+</p>
 </div>
 </div>
 <div id="outline-container-db81cb90" class="outline-2">
@@ -147,48 +141,11 @@ Python 3 부터 Bytes를 표시하는 방법이 바뀌었다.
 </p>
 </div>
 </div>
-<div id="outline-container-8818473f" class="outline-2">
-<h2 id="8818473f">사전(Dictionary)형 관련 팁</h2>
-<div class="outline-text-2" id="text-8818473f">
-</div>
-<div id="outline-container-d6c1bfd0" class="outline-3">
-<h3 id="d6c1bfd0">합치기</h3>
-<div class="outline-text-3" id="text-d6c1bfd0">
-<p>
-일반적인 방법으로 <code>update</code> 메서드를 활용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">a</span> = {<span style="color: #98be65;">'a'</span>:<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>}
-&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = {<span style="color: #98be65;">'b'</span>:<span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
-&gt;&gt;&gt; a.update(b)
-&gt;&gt;&gt; a
-{<span style="color: #98be65;">'a'</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">'b'</span>: <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
-</pre>
-</div>
-<p>
-파괴적인(destructive)한 방법이라 약간은 꺼려지기도 한다.
-</p>
-
-<p>
-이 외의 트릭으로 아래 방법이 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">a</span> = {<span style="color: #98be65;">'a'</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>}
-&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = {<span style="color: #98be65;">'b'</span>: <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
-&gt;&gt;&gt; {**a, **b}
-{<span style="color: #98be65;">'a'</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">'b'</span>: <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
-</pre>
-</div>
-<p>
-Immutable 한 스타일로 쓸 수가 있어서 개인적으로 더 마음에 든다.
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-73ec6cea" class="outline-2">
 <h2 id="73ec6cea">주제별 내용</h2>
 <div class="outline-text-2" id="text-73ec6cea">
 <ul class="org-ul">
+<li><a href="python-dictionary.html">Python 딕셔너리 타입 정리</a></li>
 <li><a href="python-list-comprehension.html">Python List Comprehension</a></li>
 <li><a href="python-regular-expression.html">Python 정규표현식</a></li>
 <li><a href="python-exception-handling.html">Python 예외 처리</a></li>
@@ -246,6 +203,13 @@ Python 3 부터 사용 가능한 커맨드다.
 </div>
 <div class="backlinks-container">
 <hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/python-dictionary.html">Python 딕셔너리 타입 정리</a></h2>
+<div class="article-link-date">
+2020년 6월 27일 수정</div>
+</div>
+</div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/python-3-8-updates.html">Python 3.8 업데이트 내역</a></h2>

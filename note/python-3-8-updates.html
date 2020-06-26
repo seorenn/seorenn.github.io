@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>Python 3.8 업데이트 내역</h1>
-<div class="title-date">2020년 6월 26일 수정</div>
+<div class="title-date">2020년 6월 27일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -74,11 +74,11 @@
 <h2 id="f5fb288a">The Walrus 오퍼레이터</h2>
 <div class="outline-text-2" id="text-f5fb288a">
 <p>
-<code>:=</code> 오퍼레이터가 추가되었다. 머리를 왼쪽으로 90도 눕혀서 보면 눈(코?)과 긴 이빨이 꼭 바다코끼리 같은데 그래서 바다코끼리(Walrus) 오퍼레이터라고 불린다.
+<code>:=</code> 오퍼레이터가 추가되었다. 머리를 왼쪽으로 90도 눕혀서 보면 눈(코?)과 긴 이빨이 꼭 바다코끼리 처럼 보이는데 그래서 바다코끼리(Walrus) 오퍼레이터라고 불린다.
 </p>
 
 <p>
-이 오퍼레이터는 함수의 실행 결과가 <code>True</code> 혹은 <code>True</code> 로 해석할 수 있는 결과를 반환한 경우 이를 변수에 받아서 바로 액세스할 수 있는 문법을 제공한다.
+이 오퍼레이터는 함수의 실행 결과가 있는 경우, 즉 <code>None</code> 이 아닌 값이 반환된 경우 이를 변수에 받아서 바로 액세스할 수 있는 문법을 제공한다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #51afef;">if</span> (result := some_work()):
@@ -86,7 +86,7 @@
 </pre>
 </div>
 <p>
-위 명령은 <code>some_work()</code> 의 반환 값이 <code>None</code> 이 아니면 <code>if</code> 문 아래의 블록에 진입한다. 그리고 <code>result</code> 라는 변수에 반환 값이 그대로 전달되어서 사용할 수 있다. 물론 이 <code>result</code> 변수는 이 <code>if</code> 블록이 끝나는 순간 사용할 수 없다.
+위 예제에서 <code>some_work()</code> 의 반환 값이 <code>None</code> 이 아니면 <code>if</code> 문 아래의 블록에 진입한다. 그리고 <code>result</code> 라는 변수에 반환 값이 그대로 전달되어서 사용할 수 있다. 물론 이 <code>result</code> 변수는 이 <code>if</code> 블록이 끝나는 순간 사용할 수 없다.
 </p>
 
 <p>
@@ -109,9 +109,11 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #51afef;">print</span>(f<span style="color: #98be65;">"{some_var=}"</span>)
-&#47566;&#51060; &#54200;&#54644;&#51652; &#44163; &#44057;&#45796;.
 </pre>
 </div>
+<p>
+많이 편해진 것 같다.
+</p>
 </div>
 </div>
 <div id="outline-container-2136960c" class="outline-2">
@@ -170,7 +172,7 @@
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
 <div class="article-link-date">
-2020년 6월 26일 수정</div>
+2020년 6월 27일 수정</div>
 </div>
 </div>
 </div>

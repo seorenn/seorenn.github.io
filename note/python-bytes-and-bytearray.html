@@ -62,12 +62,13 @@
 <ul>
 <li><a href="#600e754f">Bytes</a></li>
 <li><a href="#95449f20">Byte Array</a></li>
+<li><a href="#9c53a7a1">바이트를 문자열로 바꾸기</a></li>
 <li><a href="#ef2033e6">한글과 바이트</a></li>
 </ul>
 </div>
 </div>
 <p>
-이 글은 <a href="python.html">Python</a>의 <code>bytes</code> 와 <code>bytearray</code> 타입을 간략히 정리하는 글이다. 사용된 예제는 3.7 이상의 버전에서 테스트되었다.
+이 글은 <a href="python.html">Python</a>의 <code>bytes</code> 와 <code>bytearray</code> 타입을 간략히 정리하는 글이다. 사용된 예제는 3.7 이상의 버전에서 테스트되었다. 2.x 버전의 바이트 처리가 3.x에서 약간 바뀐 점도 있어서 2.x 버전에서는 예제가 오류가 날 가능성이 있다.
 </p>
 
 <div id="outline-container-600e754f" class="outline-2">
@@ -116,7 +117,7 @@ b<span style="color: #98be65;">'\x01\x02\x03\x04'</span>
 </pre>
 </div>
 <p>
-그 외에 사용법은 배열과 비슷하다.
+그 외에 사용법은 리스트와 비슷하다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = <span style="color: #c678dd;">bytes</span>([<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>])
@@ -162,7 +163,7 @@ Traceback (most recent call last):
 </pre>
 </div>
 <p>
-왜 안되는가라고 생각할 수 있는데 저건 문자열이다. 하지만 Byte Array는 이름처럼 바이트 단위로 액세스를 해야 한다. 아마 한 바이트 수치를 넣는 방식이면 수정이 될 것 같다.
+왜 안되는가라고 생각할 수 있는데 <code>'A'</code> 는 <a href="python.html">Python</a>의 문자열 오브젝트다. 그리고 Byte Array는 이름처럼 바이트 단위로 액세스를 해야 한다. 따라서 문자열 대신 한 바이트 수치를 넣는 방식이면 수정이 될 것 같다.
 </p>
 <div class="org-src-container">
 <pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">ba</span>[<span style="color: #da8548; font-weight: bold;">0</span>] = 0x41
@@ -200,31 +201,29 @@ Traceback (most recent call last):
 </pre>
 </div>
 <p>
-마치 리스트를 다루던 것과 비슷한 방식은 비슷하게 쓸 수 있다. 예를 들어 슬라이스나 for 루프로 순환하기 등등 말이다.
+마치 리스트를 다루는 것과 비슷하게 쓸 수 있다. 예를 들어 슬라이스나 for 루프로 순환하기 등등 말이다.
 </p>
-
-<p>
-이제 변경된 바이트 배열을 다시 문자열로 받을 수 있는지 살펴보자.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #c678dd;">str</span>(ba)
-<span style="color: #83898d;">"bytearray(b'ABcd')"</span>
-</pre>
 </div>
+</div>
+<div id="outline-container-9c53a7a1" class="outline-2">
+<h2 id="9c53a7a1">바이트를 문자열로 바꾸기</h2>
+<div class="outline-text-2" id="text-9c53a7a1">
 <p>
-아&#x2026; 뭔가 되기는 하는데 지금 원하는 것이 아니다. 그렇다면 어떻게 해야 할까?
-</p>
-
-<p>
-사실 우리가 쓰는 문자열은 유니코드 문자를 사용한다. 그래서 바이트 배열로 구성되는 C 문자열을 그대로 문자열로 변환하는 것은 이상한 행위다.
-</p>
-
-<p>
-<code>bytearray</code> 는 문자열 기준으로 인코딩 되어있다고 생각하면 될 것 같다. 즉 디코딩하면 문자열을 얻을 수도 있다. 물론 내용물이 문자열에 적합할 경우이지만 말이다.
+바이트 버퍼나 바이트 배열을 다시 문자열로 받을 수 있는지 살펴보자.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; ba.decode()
-<span style="color: #83898d;">'ABcd'</span>
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = b<span style="color: #98be65;">'abcd'</span>
+&gt;&gt;&gt; <span style="color: #c678dd;">str</span>(b)
+<span style="color: #98be65;">"b'abcd'</span>
+<span style="color: #98be65;">"</span><span style="color: #5B6268;">#</span><span style="color: #5B6268;">+END_SRC</span>
+&#50500;... &#47956;&#44032; &#46104;&#44592;&#45716; &#54616;&#45716;&#45936; &#51648;&#44552; &#50896;&#54616;&#45716; &#44163;&#51008; &#51200;&#44172; &#50500;&#45768;&#45796;. &#44536;&#47111;&#45796;&#47732; &#50612;&#46523;&#44172; &#54644;&#50556; &#54624;&#44620;?
+
+&#49324;&#49892; &#50864;&#47532;&#44032; &#50416;&#45716; &#47928;&#51088;&#50676;&#51008; &#50976;&#45768;&#53076;&#46300; &#47928;&#51088;&#47484; &#49324;&#50857;&#54620;&#45796;. &#44536;&#47000;&#49436; &#48148;&#51060;&#53944; &#48176;&#50676;&#47196; &#44396;&#49457;&#46104;&#45716; C &#47928;&#51088;&#50676;&#51012; &#44536;&#45824;&#47196; &#47928;&#51088;&#50676;&#47196; &#48320;&#54872;&#54616;&#45716; &#44163;&#51008; &#51060;&#49345;&#54620; &#54665;&#50948;&#45796;.
+
+&#45796;&#54665;&#55176;&#46020; &#54644;&#45813;&#51008; &#51080;&#45796;. &#51060; <span style="color: #dcaeea;">&#44221;&#50864;</span> =<span style="color: #c678dd;">bytes</span>= <span style="color: #dcaeea;">&#45208;</span> =<span style="color: #c678dd;">bytearray</span>= &#47484; decode&#54616;&#47732; &#45796;&#49884; &#50896;&#47000;&#51032; &#47928;&#51088;&#50676;&#51012; &#50619;&#51012; &#49688;&#46020; &#51080;&#45796;.
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">+BEGIN_SRC python</span>
+&gt;&gt;&gt; b.decode()
+<span style="color: #98be65;">'abcd'</span>
 </pre>
 </div>
 <p>

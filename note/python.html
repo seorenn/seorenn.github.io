@@ -55,14 +55,13 @@
 <section class="content">
 <header>
 <h1>Python</h1>
-<div class="title-date">2020년 6월 27일 수정</div>
+<div class="title-date">2020년 6월 28일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
 <li><a href="#f6c3e57e">설치</a></li>
 <li><a href="#db81cb90">버전 별 정리</a></li>
-<li><a href="#3d558e5f">Bytes 관련 팁</a></li>
 <li><a href="#73ec6cea">주제별 내용</a></li>
 <li><a href="#abdaed76">패키지 노트</a></li>
 <li><a href="#de5636e8">편리한 커맨드</a>
@@ -111,41 +110,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-3d558e5f" class="outline-2">
-<h2 id="3d558e5f">Bytes 관련 팁</h2>
-<div class="outline-text-2" id="text-3d558e5f">
-<p>
-Python 3 부터 Bytes를 표시하는 방법이 바뀌었다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">b<span style="color: #83898d;">'some string'</span>
-</pre>
-</div>
-<p>
-<code>b</code> 접두어를 붙인 문자열은 Binary String 혹은 <code>binstring</code> 이라 부르는 타입이다.
-</p>
-
-<p>
-바이트 배열과의 관계는 이렇다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = b<span style="color: #98be65;">'binstring'</span>
-&gt;&gt;&gt; <span style="color: #dcaeea;">ba</span> = <span style="color: #c678dd;">bytearray</span>(b)
-&gt;&gt;&gt; <span style="color: #dcaeea;">bb</span> = <span style="color: #c678dd;">bytes</span>(ba)
-&gt;&gt;&gt; b == bb
-<span style="color: #a9a1e1;">True</span>
-</pre>
-</div>
-<p>
-기존 2.x 에서 쓰던 바이트 버퍼와 관련된 코드들이 아마도 이런 변경 때문에 오류가 나는 경우를 겪을 수 있을 것이다.
-</p>
-</div>
-</div>
 <div id="outline-container-73ec6cea" class="outline-2">
 <h2 id="73ec6cea">주제별 내용</h2>
 <div class="outline-text-2" id="text-73ec6cea">
 <ul class="org-ul">
 <li><a href="python-dictionary.html">Python 딕셔너리 타입 정리</a></li>
+<li><a href="python-bytes-and-bytearray.html">Python의 Bytes와 Byte Array</a></li>
 <li><a href="python-list-comprehension.html">Python List Comprehension</a></li>
 <li><a href="python-regular-expression.html">Python 정규표현식</a></li>
 <li><a href="python-exception-handling.html">Python 예외 처리</a></li>
@@ -203,6 +173,13 @@ Python 3 부터 사용 가능한 커맨드다.
 </div>
 <div class="backlinks-container">
 <hr /><h1>이 글을 링크하는 글들</h1>
+<div class="article-link">
+<div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/python-bytes-and-bytearray.html">Python의 Bytes와 Byte Array</a></h2>
+<div class="article-link-date">
+2020년 6월 28일 수정</div>
+</div>
+</div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/python-dictionary.html">Python 딕셔너리 타입 정리</a></h2>

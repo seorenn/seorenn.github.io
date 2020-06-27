@@ -126,6 +126,9 @@ b<span style="color: #98be65;">'\x01\x02\x03\x04'</span>
 <span style="color: #da8548; font-weight: bold;">3</span>
 </pre>
 </div>
+<p>
+이 외에 리스트 슬라이스나 for 루프로 순환하기 등 리스트로 하던 행위를 대충 비슷하게 할 수 있다.
+</p>
 </div>
 </div>
 <div id="outline-container-95449f20" class="outline-2">
@@ -182,6 +185,10 @@ Traceback (most recent call last):
 </div>
 <p>
 당연하게 이 방법이 직관적이다.
+</p>
+
+<p>
+이 외에도 리스트를 다루던 것과 비슷한 방식을 쓸 수 있다. 예를 들어 슬라이스나 for 루프로 순환하기 등등 말이다.
 </p>
 
 <p>
@@ -256,6 +263,18 @@ Encode의 반대는 Decode니까 쉬운 문제였다.
 
 <p>
 일단 한글 주제로 이야기하긴 했는데, 사실상 유니코드로 표현하는 모든 문자에 해당하는 내용이다. 굳이 영어만 쓴다고 해도 바이트 단위로 작업을 해야한다면 인코딩과 디코딩은 하는 편이 좋다.
+</p>
+
+<p>
+앞의 내용에서는 생략했지만 사실 <code>bytes</code> 는 생성자 자체에서 인코딩을 지원한다.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #c678dd;">bytes</span>(<span style="color: #98be65;">'&#54620;&#44544;'</span>, <span style="color: #98be65;">'utf-8'</span>)
+b<span style="color: #83898d;">'\xed\x95\x9c\xea\xb8\x80'</span>
+</pre>
+</div>
+<p>
+이렇게 써도 된다는 이야기다.
 </p>
 </div>
 </div>

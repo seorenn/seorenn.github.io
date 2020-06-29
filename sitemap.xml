@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-06-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/crud.html</loc><lastmod>2020-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-bytes-and-bytearray.html</loc><lastmod>2020-06-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-06-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-dictionary.html</loc><lastmod>2020-06-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-3-8-updates.html</loc><lastmod>2020-06-27</lastmod></url>

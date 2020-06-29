@@ -55,13 +55,12 @@
 <section class="content">
 <header>
 <h1>Javascript</h1>
-<div class="title-date">2020년 6월 28일 수정</div>
+<div class="title-date">2020년 6월 30일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
 <ul>
 <li><a href="#4bf4b92b">모듈(Module)</a></li>
-<li><a href="#2d495506">스프레드(Spreads) 연산자</a></li>
 <li><a href="#811ee247">튜플 비슷한 문법</a></li>
 <li><a href="#724651c9">논리식 - 동일 여부 판단</a></li>
 <li><a href="#e905cbf0">문자열(String)</a>
@@ -155,71 +154,6 @@ console.log(someValues.value1);
 console.log(someValues.value2);
 </pre>
 </div>
-</div>
-</div>
-<div id="outline-container-2d495506" class="outline-2">
-<h2 id="2d495506">스프레드(Spreads) 연산자</h2>
-<div class="outline-text-2" id="text-2d495506">
-<p>
-스프레드 연산자는 <code>...</code> 으로 표기되며
-이름처럼 펼치거나 확산한다라는 의미로 동작한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">arr</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>];
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">combi</span> = [...arr, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>, <span style="color: #da8548; font-weight: bold;">6</span>];
-</pre>
-</div>
-<p>
-위 코드에서 <code>combi</code> 는 <code>[1, 2, 3, 4, 5, 6]</code> 이 된다.
-</p>
-
-<p>
-이 펼쳐지는 것이 굉장히 특이한데,
-배열로 감싸져 있으면 위 처럼 배열의 원소 형태로 펼쳐지지만,
-배열이 아니라 그대로 사용하면 코드에 그대로 펼쳐지는 듯이 작동한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">function</span> <span style="color: #c678dd;">sixArgs</span>(<span style="color: #dcaeea;">a</span>, <span style="color: #dcaeea;">b</span>, <span style="color: #dcaeea;">c</span>, <span style="color: #dcaeea;">d</span>, <span style="color: #dcaeea;">e</span>, <span style="color: #dcaeea;">f</span>) {
-    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
-}
-
-sixArgs(...arr);
-</pre>
-</div>
-<p>
-이렇게 하면 각 매개변수에 해당 배열의 값들이 알아서 펼쳐져서 들어간다.
-즉 <code>a</code> 에는 <code>1</code> 이, <code>b</code> 에는 <code>2</code> 가, 그리고 최종적으로 <code>f</code> 에는 <code>6</code> 이 들어간다.
-</p>
-
-<p>
-그래서 다양할 활용이 가능하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript">[a, b, ...others] = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>, <span style="color: #da8548; font-weight: bold;">6</span>]
-</pre>
-</div>
-<p>
-위 코드가 실행되면 <code>a</code> 에는 <code>1</code> 이, <code>b</code> 에는 <code>2</code> 가,
-그리고 <code>others</code> 에는 <code>[3, 4, 5, 6]</code> 이 들어간다.
-</p>
-
-<p>
-함수 매개변수로 사용할 수도 있다.
-참고로 이 경우 스프레드(Spreads)가 아니라
-Rest Parameter라 불린다.
-</p>
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">function</span> <span style="color: #c678dd;">someFunc</span>(<span style="color: #dcaeea;">value</span>, ...<span style="color: #dcaeea;">rest</span>) {
-    console.log(value);
-    console.log(rest);
-}
-</pre>
-</div>
-<p>
-위 함수를 <code>someFunc(1, 2, 3, 4, 5)</code> 로 호출한 경우
-<code>value</code> 에는 <code>1</code> 이,
-rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
-</p>
 </div>
 </div>
 <div id="outline-container-811ee247" class="outline-2">
@@ -540,6 +474,7 @@ targetElement.parentNode.insertBefore(newElement, targetElement)
 <h2 id="129c57bd">주제별 글들</h2>
 <div class="outline-text-2" id="text-129c57bd">
 <ul class="org-ul">
+<li><a href="javascript-spreads-operator.html">Javascript 스프레드 연산자</a></li>
 <li><a href="javascript-arrow-function.html">Javascript 화살표 함수</a></li>
 </ul>
 </div>
@@ -569,9 +504,16 @@ targetElement.parentNode.insertBefore(newElement, targetElement)
 <hr /><h1>이 글을 링크하는 글들</h1>
 <div class="article-link">
 <div class="article-link-title-block">
+<h2><a class="article-link-title" href="/note/javascript-spreads-operator.html">Javascript 스프레드 연산자</a></h2>
+<div class="article-link-date">
+2020년 6월 30일 수정</div>
+</div>
+</div>
+<div class="article-link">
+<div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/javascript-arrow-function.html">Javascript 화살표 함수</a></h2>
 <div class="article-link-date">
-2020년 6월 28일 수정</div>
+2020년 6월 30일 수정</div>
 </div>
 </div>
 <div class="article-link">

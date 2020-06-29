@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>Javascript 화살표 함수</h1>
-<div class="title-date">2020년 6월 28일 수정</div>
+<div class="title-date">2020년 6월 30일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -75,28 +75,34 @@
 <p>
 화살표 함수 표현법은 <code>=&gt;</code> 오퍼레이터를 사용하기 때문에 이런 이름이 붙은 것 같다. 문법은 생략하고 일단 예제를 보자.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">add</span> = (a, b) =&gt; {
     <span style="color: #51afef;">return</span> a + b
 }
 </pre>
 </div>
+
 <p>
 위 코드는 아래와 동일하다고 볼 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">add</span> = <span style="color: #51afef;">function</span>(<span style="color: #dcaeea;">a</span>, <span style="color: #dcaeea;">b</span>) {
     <span style="color: #51afef;">return</span> a + b
 }
 </pre>
 </div>
+
 <p>
 참고로 위의 두 코드는 아래와 같이 더 단순하게 구현할 수도 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">add</span> = (a, b) =&gt; a + b
 </pre>
 </div>
+
 <p>
 즉 단순한 식(expression)만 있을 경우 <code>return</code> 과 중괄호를 생략할 수 있다.
 </p>
@@ -104,43 +110,52 @@
 <p>
 당연하게도 <code>function</code> 을 이용해 <a href="closure.html">클로저</a>를 구현하던 것을 화살표 함수로 그대로 대체할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">setTimeout(() =&gt; {
   console.log(<span style="color: #98be65;">'after a second...'</span>)
 }, <span style="color: #da8548; font-weight: bold;">1000</span>)
 </pre>
 </div>
+
 <p>
 확실히 코드가 더 단축되기는 하는데 읽기가 좋은지는 잘 모르겠다.
 </p>
 </div>
 </div>
+
 <div id="outline-container-c62f58aa" class="outline-2">
 <h2 id="c62f58aa">식(expression) 표현법의 확장</h2>
 <div class="outline-text-2" id="text-c62f58aa">
 <p>
 위에서 언급했던 예를 다시 보자.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">(a, b) =&gt; a + b
 </pre>
 </div>
+
 <p>
 위 코드는 아래처럼 표현할 수도 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">(a, b) =&gt; (a + b)
 </pre>
 </div>
+
 <p>
 괄호로 감싼 것이 뭔가 특별한가 생각할 수도 있는데, 좀 더 복잡한 식을 표현하기 위해 괄호를 사용하는 것과 사실 별 차이는 없다. 다만 차이가 있다면 아래와 같이 표현할 수도 있다는 점이 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">(a, b) =&gt; (
     a + b
 )
 </pre>
 </div>
+
 <p>
 이렇게 줄바꿈을 해서 여러 줄의 식을 구현할 경우 유용한 방식이다.
 </p>
@@ -148,6 +163,7 @@
 <p>
 만약 오브젝트를 리턴해야 한다면 어떻게 해야할까?
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">(v1, v2) =&gt; {
     foo: v1,
@@ -155,6 +171,7 @@
 }
 </pre>
 </div>
+
 <p>
 불행히도 이 코드는 틀렸다. 당연하게도 중괄호는 함수 본체를 구현할 때 사용하는 문법으로 해석된다.
 </p>
@@ -162,6 +179,7 @@
 <p>
 그런데 이런 단순한 식으로 오브젝트(Object)를 리턴하는 경우에 괄호를 이용할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">(v1, v2) =&gt; ({
     foo: v1,
@@ -169,6 +187,7 @@
 })
 </pre>
 </div>
+
 <p>
 중괄호를 괄호로 감싸면 아주 간단하게 오브젝트를 리턴하는 화살표 함수를 구현할 수 있다.
 </p>

@@ -4,14 +4,14 @@
 <subtitle>Seorenn의 잡다한 메모를 적는 온라인 공개 공책</subtitle>
 <link href="https://seorenn.github.io"/>
 <link href="https://seorenn.github.io/feed.xml" rel="self"/>
-<updated>2020-07-02T01:48:08+0900</updated>
+<updated>2020-07-02T01:56:02+09:00</updated>
 <author><name>Seorenn</name></author>
 <id>https://seorenn.github.io</id>
 <entry>
 <title>Javascript에서 같음을 비교하기</title>
 <link href="https://seorenn.github.io/note/javascript-equality.html"/>
 <id>https://seorenn.github.io/note/javascript-equality.html</id>
-<updated>2020-07-01T01:11:10+0900</updated>
+<updated>2020-07-01T01:11:10+09:00</updated>
 <summary>이 글은 자바스크립트의 최악의 모호성으로 평가받는 같음을 비교하는 것에 관한 글이다</summary>
 <content type="text">
 이 글은 [Javascript]의 최악의 모호성으로 평가받는 같음(equality)을
@@ -172,7 +172,7 @@
 <title>Javascript</title>
 <link href="https://seorenn.github.io/note/javascript.html"/>
 <id>https://seorenn.github.io/note/javascript.html</id>
-<updated>2020-07-01T01:03:32+0900</updated>
+<updated>2020-07-01T01:03:32+09:00</updated>
 <summary>자바스크립트(Javascript), ECMAScript(ES5, ES6)와 관련된 글들</summary>
 <content type="text">
 자바스크립트(Javascript)는 웹 브라우저에서 동작하는 스크립트 언어다.
@@ -469,7 +469,7 @@ Object(Dictionary) vs Map
 <title>Annotation VS Comment</title>
 <link href="https://seorenn.github.io/note/annotation-vs-comment.html"/>
 <id>https://seorenn.github.io/note/annotation-vs-comment.html</id>
-<updated>2020-07-01T00:15:06+0900</updated>
+<updated>2020-07-01T00:15:06+09:00</updated>
 <summary>이 글은 annotation과 comment라는 두 단어를 개인적인 사정으로(?) 비교하는 이상한 글이다</summary>
 <content type="text">
 이 글은 annotation과 comment라는 두 단어를 개인적인 사정으로(?) 비교하는
@@ -596,7 +596,7 @@ Annotation과 Comment의 사전적 의미
 <title>영어 노트</title>
 <link href="https://seorenn.github.io/note/english-note.html"/>
 <id>https://seorenn.github.io/note/english-note.html</id>
-<updated>2020-07-01T00:08:50+0900</updated>
+<updated>2020-07-01T00:08:50+09:00</updated>
 <summary>개인적으로 작성하는 영어 노트</summary>
 <content type="text">
 이 글은 개인적인 필요에 의해서만 작성되는 영어 노트다.
@@ -730,7 +730,7 @@ present vs current
 <title>Python으로 간단한 웹 서버 띄우기</title>
 <link href="https://seorenn.github.io/note/python-simple-web-server.html"/>
 <id>https://seorenn.github.io/note/python-simple-web-server.html</id>
-<updated>2020-06-30T21:52:42+0900</updated>
+<updated>2020-06-30T21:52:42+09:00</updated>
 <summary>파이썬으로 디버깅 용도로 쓸 간단한 HTTP 웹 서버를 띄우는 방법을 알아보자</summary>
 <content type="text">
 이 글은 [Python]으로 간단한 웹 서버를 띄우는 방법을 정리한 글이다.
@@ -819,7 +819,7 @@ http.server
 <title>Python</title>
 <link href="https://seorenn.github.io/note/python.html"/>
 <id>https://seorenn.github.io/note/python.html</id>
-<updated>2020-06-30T21:50:33+0900</updated>
+<updated>2020-06-30T21:50:33+09:00</updated>
 <summary>Python(파이썬)에 관한 간략한 설명 및 자료 정리</summary>
 <content type="text">
 파이썬(Python)은 네덜란드 출신의 귀도 반 로썸(Guide van Rossum)에 의해
@@ -923,7 +923,7 @@ http.server
 <title>Javascript 스프레드 연산자</title>
 <link href="https://seorenn.github.io/note/javascript-spreads-operator.html"/>
 <id>https://seorenn.github.io/note/javascript-spreads-operator.html</id>
-<updated>2020-06-30T02:26:30+0900</updated>
+<updated>2020-06-30T02:26:30+09:00</updated>
 <summary>자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자</summary>
 <content type="text">
 이 글은 [Javascript]의 스프레드 연산자(Spreads Operator)에 대해 간략히
@@ -1014,7 +1014,7 @@ http.server
 <title>Javascript 화살표 함수</title>
 <link href="https://seorenn.github.io/note/javascript-arrow-function.html"/>
 <id>https://seorenn.github.io/note/javascript-arrow-function.html</id>
-<updated>2020-06-30T00:49:24+0900</updated>
+<updated>2020-06-30T00:49:24+09:00</updated>
 <summary>자바스크립트의 화살표 함수의 소개와 함께 이와 관련된 글들</summary>
 <content type="text">
 [Javascript]에서는 축약된 동적 함수 혹은 [클로저] 형태로 쓸 수 있는
@@ -1128,7 +1128,7 @@ http.server
 <title>CRUD</title>
 <link href="https://seorenn.github.io/note/crud.html"/>
 <id>https://seorenn.github.io/note/crud.html</id>
-<updated>2020-06-29T14:48:24+0900</updated>
+<updated>2020-06-29T14:48:24+09:00</updated>
 <summary>CRUD란 무슨 의미일까?</summary>
 <content type="text">
 CRUD란 Create, Read, Update, Delete의 앞자리만을 따서 지은 합성어로 말
@@ -1146,7 +1146,7 @@ DB입장에서 보자면 검색(Search)을 제외한 거의 모든 기능에 해
 <title>Python의 Bytes와 Byte Array</title>
 <link href="https://seorenn.github.io/note/python-bytes-and-bytearray.html"/>
 <id>https://seorenn.github.io/note/python-bytes-and-bytearray.html</id>
-<updated>2020-06-28T19:11:10+0900</updated>
+<updated>2020-06-28T19:11:10+09:00</updated>
 <summary>파이썬의 바이트와 바이트 배열 타입을 살펴보고 덤으로 한글과 바이트의 관계도 살펴보자</summary>
 <content type="text">
 이 글은 [Python]의 `bytes' 와 `bytearray' 타입을 간략히 정리하는 글이다.
@@ -1345,7 +1345,7 @@ Byte Array
 <title>Python 딕셔너리 타입 정리</title>
 <link href="https://seorenn.github.io/note/python-dictionary.html"/>
 <id>https://seorenn.github.io/note/python-dictionary.html</id>
-<updated>2020-06-27T14:57:39+0900</updated>
+<updated>2020-06-27T14:57:39+09:00</updated>
 <summary>파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법을 알아보자</summary>
 <content type="text">
 이 글은 [Python]의 딕셔너리 타입(Dictionary Type, 사전형)과 관련된
@@ -1545,7 +1545,7 @@ Byte Array
 <title>Python 3.8 업데이트 내역</title>
 <link href="https://seorenn.github.io/note/python-3-8-updates.html"/>
 <id>https://seorenn.github.io/note/python-3-8-updates.html</id>
-<updated>2020-06-27T01:52:22+0900</updated>
+<updated>2020-06-27T01:52:22+09:00</updated>
 <summary>파이썬 3.8에서 바뀌거나 추가된 것들을 간략히 알아보자</summary>
 <content type="text">
 이 글은 [Python] 3.8의 업데이트 내역을 간략히 정리한다.
@@ -1628,7 +1628,7 @@ F-string 기능 추가
 <title>Python으로 파일의 경로 및 목록 다루기</title>
 <link href="https://seorenn.github.io/note/python-file-dir-tips.html"/>
 <id>https://seorenn.github.io/note/python-file-dir-tips.html</id>
-<updated>2020-06-27T00:34:02+0900</updated>
+<updated>2020-06-27T00:34:02+09:00</updated>
 <summary>파이썬으로 경로에서 파일명 얻기, 확장자 분리하기, 디렉터리 구분하기, 파일 디렉터리 목록 얻기 등</summary>
 <content type="text">
 이 글은 [Python]으로 파일 및 디렉토리의 경로(path)나 파일 목록 구하기와
@@ -1762,7 +1762,7 @@ F-string 기능 추가
 <title>RSVP</title>
 <link href="https://seorenn.github.io/note/rsvp.html"/>
 <id>https://seorenn.github.io/note/rsvp.html</id>
-<updated>2020-06-26T22:24:07+0900</updated>
+<updated>2020-06-26T22:24:07+09:00</updated>
 <summary>RSVP의 의미와 용도는 무엇일까</summary>
 <content type="text">
 어떤 행사의 소개 페이지를 보면서 RSVP라는 단어를 보게 되었다. 뭔가의
@@ -1812,7 +1812,7 @@ RSVP
 <title>Org Publish로 익스포트 자동화하기</title>
 <link href="https://seorenn.github.io/note/org-publish.html"/>
 <id>https://seorenn.github.io/note/org-publish.html</id>
-<updated>2020-06-26T21:50:39+0900</updated>
+<updated>2020-06-26T21:50:39+09:00</updated>
 <summary>Org 문서들과 관련 파일들을 자동으로 익스포트해 주는 Org Publish의 설정방법과 사용법을 알아보자</summary>
 <content type="text">
 Org Publish는 [Emacs]에서 [Org Mode]로 작성된 .org 문서들로 정적
@@ -2072,7 +2072,7 @@ Publish 해보기
 <title>Org Mode</title>
 <link href="https://seorenn.github.io/note/org-mode.html"/>
 <id>https://seorenn.github.io/note/org-mode.html</id>
-<updated>2020-06-26T21:50:03+0900</updated>
+<updated>2020-06-26T21:50:03+09:00</updated>
 <summary>Org Mode 에 대한 소개와 문법, 관련된 글들을 정리합니다.</summary>
 <content type="text">
 Org Mode 는 문서나 할 일, 프로젝트 관리 Agenda 등등 다양한 기능을
@@ -2214,7 +2214,7 @@ Doom Emacs Snippets
 <title>iOS, macOS 개발 관련 링크</title>
 <link href="https://seorenn.github.io/note/ios-macos-dev-links.html"/>
 <id>https://seorenn.github.io/note/ios-macos-dev-links.html</id>
-<updated>2020-06-26T11:50:53+0900</updated>
+<updated>2020-06-26T11:50:53+09:00</updated>
 <summary>macOS, iOS, tvOS, iPadOS, watchOS 등등 애플 플랫폼 개발 및 리소스 링크 모음</summary>
 <content type="text">
 이 글은 [iOS], [macOS] 등등 [애플] 플랫폼 개발과 관련된 링크 모음집이다.
@@ -2457,7 +2457,7 @@ Xcode
 <title>Org 테이블 스프레드시트</title>
 <link href="https://seorenn.github.io/note/org-table-spreadsheet.html"/>
 <id>https://seorenn.github.io/note/org-table-spreadsheet.html</id>
-<updated>2020-06-26T01:08:16+0900</updated>
+<updated>2020-06-26T01:08:16+09:00</updated>
 <summary>Org Mode의 테이블의 스프레드시트 기능을 사용해보자</summary>
 <content type="text">
 [Org Mode]의 테이블은 간단한 스프레드시트(Spreadsheet) 기능을 제공한다.
@@ -2793,7 +2793,7 @@ calc 함수 목록
 <title>Org 문법 정리</title>
 <link href="https://seorenn.github.io/note/org-syntax.html"/>
 <id>https://seorenn.github.io/note/org-syntax.html</id>
-<updated>2020-06-26T00:58:09+0900</updated>
+<updated>2020-06-26T00:58:09+09:00</updated>
 <summary>Org Mode의 마크업 문법 일부를 정리하는 글</summary>
 <content type="text">
 이 글은 [Org Mode]의 마크업 문법 중 개인적으로 사용하는 것들을 정리한다.
@@ -2933,7 +2933,7 @@ calc 함수 목록
 <title>Xcode</title>
 <link href="https://seorenn.github.io/note/xcode.html"/>
 <id>https://seorenn.github.io/note/xcode.html</id>
-<updated>2020-06-26T00:24:38+0900</updated>
+<updated>2020-06-26T00:24:38+09:00</updated>
 <summary>Xcode와 관련된 정보 모음</summary>
 <content type="text">
 Xcode는 [애플] 플랫폼 용 소프트웨어를 개발할 때 사용하는 개발 도구 겸
@@ -2967,7 +2967,7 @@ IDE다. 무겁고 잘 죽는 연약한 도구지만 어쩔 수 없이 써야만 
 <title>WWDC</title>
 <link href="https://seorenn.github.io/note/wwdc.html"/>
 <id>https://seorenn.github.io/note/wwdc.html</id>
-<updated>2020-06-26T00:24:33+0900</updated>
+<updated>2020-06-26T00:24:33+09:00</updated>
 <summary>애플이 매년 개최하는 개발자 행사</summary>
 <content type="text">
 WWDC는 [애플]에서 개최하는 World Wide Developer Conference 즉 국제
@@ -2998,7 +2998,7 @@ WWDC는 [애플]에서 개최하는 World Wide Developer Conference 즉 국제
 <title>rsync</title>
 <link href="https://seorenn.github.io/note/rsync.html"/>
 <id>https://seorenn.github.io/note/rsync.html</id>
-<updated>2020-06-26T00:24:26+0900</updated>
+<updated>2020-06-26T00:24:26+09:00</updated>
 <summary>rsync 유틸리티 소개</summary>
 <content type="text">
 rsync는 remote sync의 약자로 두 원격지의 디렉터리를 동기화 하는데
@@ -3031,7 +3031,7 @@ rsync는 remote sync의 약자로 두 원격지의 디렉터리를 동기화 하
 <title>Git</title>
 <link href="https://seorenn.github.io/note/git.html"/>
 <id>https://seorenn.github.io/note/git.html</id>
-<updated>2020-06-26T00:24:19+0900</updated>
+<updated>2020-06-26T00:24:19+09:00</updated>
 <summary>Git 소개 및 간단한 사용법 정리</summary>
 <content type="text">
 Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System) 즉
@@ -3081,7 +3081,7 @@ Git은 현존하는 가장 대표적인 DVCS(Distributed Version Control System)
 <title>Doom Emacs</title>
 <link href="https://seorenn.github.io/note/doom-emacs.html"/>
 <id>https://seorenn.github.io/note/doom-emacs.html</id>
-<updated>2020-06-26T00:24:01+0900</updated>
+<updated>2020-06-26T00:24:01+09:00</updated>
 <summary>커뮤니티 주도 설정팩인 Doom Emacs(둠 이맥스)의 간략한 설명 및 설정, 단축키 등을 정리하는 글</summary>
 <content type="text">
 Doom Emacs 는 [Emacs] Community Driven Configuration의 양대산맥인
@@ -3301,7 +3301,7 @@ visual-line-mode와 커서 이동
 <title>Git 약간 특별한 사용법</title>
 <link href="https://seorenn.github.io/note/git-special-usage.html"/>
 <id>https://seorenn.github.io/note/git-special-usage.html</id>
-<updated>2020-06-25T16:21:28+0900</updated>
+<updated>2020-06-25T16:21:28+09:00</updated>
 <summary>Git의 약간은 특별한 기능들을 살펴보는 글</summary>
 <content type="text">
 이 글은 [Git]에서 그나마 자주 사용하지는 않지만 한 번 쯤은 사용할 지도
@@ -3479,7 +3479,7 @@ visual-line-mode와 커서 이동
 <title>SwiftUI</title>
 <link href="https://seorenn.github.io/note/swiftui.html"/>
 <id>https://seorenn.github.io/note/swiftui.html</id>
-<updated>2020-06-25T16:12:39+0900</updated>
+<updated>2020-06-25T16:12:39+09:00</updated>
 <summary>SwiftUI와 관련된 글 모음</summary>
 <content type="text">
 SwiftUI는 [Swift] 언어를 이용해 작성할 수 있는 UI 프로그래밍
@@ -4327,7 +4327,7 @@ Cannot assign to property: 'self' is immutable
 <title>Python 예외 처리</title>
 <link href="https://seorenn.github.io/note/python-exception-handling.html"/>
 <id>https://seorenn.github.io/note/python-exception-handling.html</id>
-<updated>2020-06-24T22:17:00+0900</updated>
+<updated>2020-06-24T22:17:00+09:00</updated>
 <summary>파이썬의 예외 처리와 예외 발생시키기, 예외 만들기, Traceback 출력하기 등을 알아보자</summary>
 <content type="text">
 이 글은 [Python] 예외 처리(Exception Handling)의 가장 기초적인 부분을
@@ -4557,7 +4557,7 @@ Cannot assign to property: 'self' is immutable
 <title>kubectl</title>
 <link href="https://seorenn.github.io/note/kubectl.html"/>
 <id>https://seorenn.github.io/note/kubectl.html</id>
-<updated>2020-06-24T13:20:39+0900</updated>
+<updated>2020-06-24T13:20:39+09:00</updated>
 <summary>kubectl 사용법 정리</summary>
 <content type="text">
 kubectl 은 Kubernetes 클러스터 컨트롤 [CLI] 도구다. 이 문서에서는 이
@@ -4731,7 +4731,7 @@ YAML 파일 적용
 <title>WWDC20</title>
 <link href="https://seorenn.github.io/note/wwdc2020.html"/>
 <id>https://seorenn.github.io/note/wwdc2020.html</id>
-<updated>2020-06-24T12:07:41+0900</updated>
+<updated>2020-06-24T12:07:41+09:00</updated>
 <summary>WWDC 2020(WWDC20) 키노트 정리</summary>
 <content type="text">
 미국 시간으로 2020년 6월 22일에 열린 [WWDC]의 키노트를 간단히 정리하는
@@ -4895,7 +4895,7 @@ ARM SoC
 <title>MozJPEG</title>
 <link href="https://seorenn.github.io/note/mozjpeg.html"/>
 <id>https://seorenn.github.io/note/mozjpeg.html</id>
-<updated>2020-06-23T22:28:32+0900</updated>
+<updated>2020-06-23T22:28:32+09:00</updated>
 <summary>Mozilla JPEG Encoder</summary>
 <content type="text">
 MozJPEG은 Mozilla 재단에서 제작한 JPEG Encoder 프로젝트다. 압축 용도로

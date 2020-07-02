@@ -4,7 +4,7 @@
 <subtitle>Seorenn의 잡다한 메모를 적는 온라인 공개 공책</subtitle>
 <link href="https://seorenn.github.io"/>
 <link href="https://seorenn.github.io/feed.xml" rel="self"/>
-<updated>2020-07-02T14:42:20+09:00</updated>
+<updated>2020-07-02T14:47:37+09:00</updated>
 <author><name>Seorenn</name></author>
 <id>https://seorenn.github.io/</id>
 <entry>
@@ -1856,7 +1856,7 @@ Xcode
 오디오(Audio)
 =============
 
-  - <https://github.com/mixedinkey-opensource/MIKMIDI>: 미디(MIDI) 라이브러리
+  - &lt;https://github.com/mixedinkey-opensource/MIKMIDI&gt;: 미디(MIDI) 라이브러리
 </content>
 </entry>
 <entry>

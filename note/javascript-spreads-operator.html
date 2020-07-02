@@ -1,208 +1,22 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/static/style.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>Javascript 스프레드 연산자 - Seorenn Note</title>
-<meta name="twitter:title" content="Javascript 스프레드 연산자" />
-<meta name="og:title" content="Javascript 스프레드 연산자" />
-<meta name="description" content="자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자" />
-<meta name="twitter:description" content="자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자" />
-<meta name="og:description" content="자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자" />
-<link rel="canonical" href="https://seorenn.github.io/note/javascript-spreads-operator.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/javascript-spreads-operator.html" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image:width" content="520" />
-<meta property="og:image:height" content="329" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@seorenn" />
-<meta name="twitter:creator" content="@seorenn" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn" />
-<meta property="og:locale" content="ko_KR" />
-<meta name="referrer" content="unsafe-url" />
-<meta name="robots" content="follow,index" />
-<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
-<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
-<body>
-<div class="header-content">
-<header class="top-header">
-<div class="logo-container">
-<span class="vertical-center-helper"></span>
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
-<nav>
-<span class="vertical-center-helper"></span>
-<a href="/" title="Home">HOME</a> |
-<a href="/note" title="All Notes">NOTES</a>
-</nav>
-</div>
-</header>
-</div>
-<div class="content-container">
-<section class="content">
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<header>
-<h1>Javascript 스프레드 연산자</h1>
-<div class="title-date">2020년 6월 30일 수정</div>
-</header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#2d495506">스프레드(Spreads) 연산자</a></li>
-<li><a href="#e5706333">함수 매개변수의 스프레드</a></li>
-</ul>
-</div>
-</div>
-<p>
-이 글은 <a href="javascript.html">Javascript</a>의 스프레드 연산자(Spreads Operator)에 대해 간략히 정리하는 글이다. 당연하겠지만 ES6(ES2015) 버전을 기준으로 한다.
-</p>
-
-<div id="outline-container-2d495506" class="outline-2">
-<h2 id="2d495506">스프레드(Spreads) 연산자</h2>
-<div class="outline-text-2" id="text-2d495506">
-<p>
-스프레드 혹은 전개 연산자는 <code>...</code> 으로 표기하며 이름처럼 펼치거나 확산한다라는 의미로 동작한다. 말로는 참 이해 안 되는 말이다. 그냥 예제를 보는 게 좋을 것 같다.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">a1</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>];
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">a2</span> = [...a1, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>, <span style="color: #da8548; font-weight: bold;">6</span>];
-</pre>
-</div>
-
-<p>
-위 코드에서 <code>a2</code> 는 <code>[1, 2, 3, 4, 5, 6]</code> 이 된다. 즉 <code>a1</code> 리스트의 내용이 <code>a2</code> 내에 풀어져서 자연스럽게 합체(?)되었다. 이것이 바로 스프레드의 정체성을 가장 잘 보여주는 예제같다.
-</p>
-
-<p>
-스프레드는 리스트 뿐만 아니라 오브젝트(Object)에서도 별 무리 없이 잘 풀어준다.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">let</span> <span style="color: #dcaeea;">o1</span> = {
-  name: <span style="color: #98be65;">"James"</span>,
-  age: <span style="color: #da8548; font-weight: bold;">16</span>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><link rel="stylesheet"href="/static/style.min.css"><title>Javascript 스프레드 연산자 - Seorenn Note</title><meta name="twitter:title"content="Javascript 스프레드 연산자"><meta name="og:title"content="Javascript 스프레드 연산자"><meta name="description"content="자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자"><meta name="twitter:description"content="자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자"><meta name="og:description"content="자바스크립트의 스프레드 연산자(Spreads Operator)에 대해 알아보자"><link rel="canonical"href="https://seorenn.github.io/note/javascript-spreads-operator.html"><meta property="og:url"content="https://seorenn.github.io/note/javascript-spreads-operator.html"><link rel="shortcut icon"type="image/x-icon"href="/static/favicon.ico"><meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image:width"content="520"><meta property="og:image:height"content="329"><meta name="twitter:card"content="summary"><meta name="twitter:site"content="@seorenn"><meta name="twitter:creator"content="@seorenn"><meta property="og:type"content="article"><meta property="og:site_name"content="Seorenn"><meta property="og:locale"content="ko_KR"><meta name="referrer"content="unsafe-url"><meta name="robots"content="follow,index"><meta name="google-site-verification"content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug"><meta name="naver-site-verification"content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script data-ad-client="ca-pub-1071465863344332"async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><div class="header-content"><header class="top-header"><div class="logo-container"><span class="vertical-center-helper"></span> <a href="/"title="Seorenn"><img class="site-logo"src="/static/seorenn-note-logo-light.png"alt="Seorenn Note"></a><nav><span class="vertical-center-helper"></span> <a href="/"title="Home">HOME</a> | <a href="/note"title="All Notes">NOTES</a></nav></div></header></div><div class="content-container"><section class="content"><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><header><h1>Javascript 스프레드 연산자</h1><div class="title-date">2020년 6월 30일 수정</div></header><div id="table-of-contents"><h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents"><ul><li><a href="#2d495506">스프레드(Spreads) 연산자</a></li><li><a href="#e5706333">함수 매개변수의 스프레드</a></li></ul></div></div><p>이 글은 <a href="javascript.html">Javascript</a>의 스프레드 연산자(Spreads Operator)에 대해 간략히 정리하는 글이다. 당연하겠지만 ES6(ES2015) 버전을 기준으로 한다.</p><div id="outline-container-2d495506"class="outline-2"><h2 id="2d495506">스프레드(Spreads) 연산자</h2><div class="outline-text-2"id="text-2d495506"><p>스프레드 혹은 전개 연산자는 <code>...</code> 으로 표기하며 이름처럼 펼치거나 확산한다라는 의미로 동작한다. 말로는 참 이해 안 되는 말이다. 그냥 예제를 보는 게 좋을 것 같다.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#51afef">let</span> <span style="color:#dcaeea">a1</span> = [<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>];
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">a2</span> = [...a1, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span>, <span style="color:#da8548;font-weight:700">6</span>];
+</pre></div><p>위 코드에서 <code>a2</code> 는 <code>[1, 2, 3, 4, 5, 6]</code> 이 된다. 즉 <code>a1</code> 리스트의 내용이 <code>a2</code> 내에 풀어져서 자연스럽게 합체(?)되었다. 이것이 바로 스프레드의 정체성을 가장 잘 보여주는 예제같다.</p><p>스프레드는 리스트 뿐만 아니라 오브젝트(Object)에서도 별 무리 없이 잘 풀어준다.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#51afef">let</span> <span style="color:#dcaeea">o1</span> = {
+  name: <span style="color:#98be65">"James"</span>,
+  age: <span style="color:#da8548;font-weight:700">16</span>
 }
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">o2</span> = {
-  familyName: <span style="color: #98be65;">"Kim"</span>,
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">o2</span> = {
+  familyName: <span style="color:#98be65">"Kim"</span>,
   ...o1
 }
-</pre>
-</div>
-
-<p>
-이렇게 하면 <code>o2</code> 에는 <code>{ familyName: "Kim", name: "James", age: 16 }</code> 이런 내용이 들어가게 된다. 따라서 오브젝트의 내용에 뭔가를 대량으로 추가할 때 상당히 편하게 사용할 수 있는 문법이다.
-</p>
-
-<p>
-물론 반대 방향(?)의 활용도 가능하다.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-javascript">[a, b, ...others] = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>, <span style="color: #da8548; font-weight: bold;">6</span>]
-</pre>
-</div>
-
-<p>
-아마도 예상 가능하겠지만, 위 코드를 실행시키면 <code>others</code> 에는 <code>[3, 4, 5, 6]</code> 이 들어간다.
-</p>
-</div>
-</div>
-
-<div id="outline-container-e5706333" class="outline-2">
-<h2 id="e5706333">함수 매개변수의 스프레드</h2>
-<div class="outline-text-2" id="text-e5706333">
-<p>
-스프레드의 이런 특징은 함수의 매개변수에서도 활용이 가능하다.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">function</span> <span style="color: #c678dd;">sixArgs</span>(<span style="color: #dcaeea;">a</span>, <span style="color: #dcaeea;">b</span>, <span style="color: #dcaeea;">c</span>, <span style="color: #dcaeea;">d</span>, <span style="color: #dcaeea;">e</span>, <span style="color: #dcaeea;">f</span>) {
-    <span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+</pre></div><p>이렇게 하면 <code>o2</code> 에는 <code>{ familyName: "Kim", name: "James", age: 16 }</code> 이런 내용이 들어가게 된다. 따라서 오브젝트의 내용에 뭔가를 대량으로 추가할 때 상당히 편하게 사용할 수 있는 문법이다.</p><p>물론 반대 방향(?)의 활용도 가능하다.</p><div class="org-src-container"><pre class="src src-javascript">[a, b, ...others] = [<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span>, <span style="color:#da8548;font-weight:700">6</span>]
+</pre></div><p>아마도 예상 가능하겠지만, 위 코드를 실행시키면 <code>others</code> 에는 <code>[3, 4, 5, 6]</code> 이 들어간다.</p></div></div><div id="outline-container-e5706333"class="outline-2"><h2 id="e5706333">함수 매개변수의 스프레드</h2><div class="outline-text-2"id="text-e5706333"><p>스프레드의 이런 특징은 함수의 매개변수에서도 활용이 가능하다.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#51afef">function</span> <span style="color:#c678dd">sixArgs</span>(<span style="color:#dcaeea">a</span>, <span style="color:#dcaeea">b</span>, <span style="color:#dcaeea">c</span>, <span style="color:#dcaeea">d</span>, <span style="color:#dcaeea">e</span>, <span style="color:#dcaeea">f</span>) {
+    <span style="color:#5b6268">// </span><span style="color:#5b6268">...</span>
 }
 
-<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">arr</span> = [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #da8548; font-weight: bold;">4</span>, <span style="color: #da8548; font-weight: bold;">5</span>, <span style="color: #da8548; font-weight: bold;">6</span>]
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">arr</span> = [<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span>, <span style="color:#da8548;font-weight:700">6</span>]
 sixArgs(...arr);
-</pre>
-</div>
-
-<p>
-이렇게 하면 각 매개변수에 해당 배열의 값들이 알아서 펼쳐져서 들어간다. 즉 <code>a</code> 에는 <code>1</code> 이, <code>b</code> 에는 <code>2</code> 가, 그리고 최종적으로 <code>f</code> 에는 <code>6</code> 이 들어간다.
-</p>
-
-<p>
-물론 스프레드를 사용하는 위치를 임의로 정할 수도 있다.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-javascript"><span style="color: #51afef;">function</span> <span style="color: #c678dd;">someFunc</span>(<span style="color: #dcaeea;">value</span>, ...<span style="color: #dcaeea;">rest</span>) {
+</pre></div><p>이렇게 하면 각 매개변수에 해당 배열의 값들이 알아서 펼쳐져서 들어간다. 즉 <code>a</code> 에는 <code>1</code> 이, <code>b</code> 에는 <code>2</code> 가, 그리고 최종적으로 <code>f</code> 에는 <code>6</code> 이 들어간다.</p><p>물론 스프레드를 사용하는 위치를 임의로 정할 수도 있다.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#51afef">function</span> <span style="color:#c678dd">someFunc</span>(<span style="color:#dcaeea">value</span>, ...<span style="color:#dcaeea">rest</span>) {
     console.log(value);
     console.log(rest);
 }
-</pre>
-</div>
-<p>
-위 함수를 <code>someFunc(1, 2, 3, 4, 5)</code> 로 호출한 경우 <code>value</code> 에는 <code>1</code> 이, rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.
-</p>
-
-<p>
-참고로 이 경우 스프레드(Spreads)가 아니라 나머지 매개변수(Rest Parameter)라 불리는 것 같다.
-</p>
-</div>
-</div>
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/javascript.html">Javascript</a></h2>
-<span class="article-description">
-자바스크립트(Javascript), ECMAScript(ES5, ES6)와 관련된 글들</span
-><span class="article-link-date">
-2020년 7월 2일 수정</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="footer-content">
-<footer>
-Copyright 2019 ~ 2020. Seorenn all rights reserved.
-</footer>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-</body>
-</html>
+</pre></div><p>위 함수를 <code>someFunc(1, 2, 3, 4, 5)</code> 로 호출한 경우 <code>value</code> 에는 <code>1</code> 이, rest에는 <code>[2, 3, 4, 5]</code> 가 들어간다.</p><p>참고로 이 경우 스프레드(Spreads)가 아니라 나머지 매개변수(Rest Parameter)라 불리는 것 같다.</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/javascript.html">Javascript</a></h2><span class="article-description">자바스크립트(Javascript), ECMAScript(ES5, ES6)와 관련된 글 정리</span><span class="article-link-date"> 2020년 7월 2일 수정</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

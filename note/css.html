@@ -1,226 +1,33 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/static/style.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>CSS - Seorenn Note</title>
-<meta name="twitter:title" content="CSS" />
-<meta name="og:title" content="CSS" />
-<meta name="description" content="CSS 팁 모음" />
-<meta name="twitter:description" content="CSS 팁 모음" />
-<meta name="og:description" content="CSS 팁 모음" />
-<link rel="canonical" href="https://seorenn.github.io/note/css.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/css.html" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image:width" content="520" />
-<meta property="og:image:height" content="329" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@seorenn" />
-<meta name="twitter:creator" content="@seorenn" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn" />
-<meta property="og:locale" content="ko_KR" />
-<meta name="referrer" content="unsafe-url" />
-<meta name="robots" content="follow,index" />
-<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
-<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
-<body>
-<div class="header-content">
-<header class="top-header">
-<div class="logo-container">
-<span class="vertical-center-helper"></span>
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
-<nav>
-<span class="vertical-center-helper"></span>
-<a href="/" title="Home">HOME</a> |
-<a href="/note" title="All Notes">NOTES</a>
-</nav>
-</div>
-</header>
-</div>
-<div class="content-container">
-<section class="content">
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<header>
-<h1>CSS</h1>
-<div class="title-date">2020년 6월 23일 수정</div>
-</header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#a2a1ad0f">개념 노트</a>
-<ul>
-<li><a href="#ecd8b31f">셀렉터(Selector)</a></li>
-<li><a href="#1603c77d">가상 요소</a></li>
-</ul>
-</li>
-<li><a href="#eef2269c">요소 메모</a>
-<ul>
-<li><a href="#2de42fbb">border</a></li>
-<li><a href="#1a18f195">outline</a></li>
-</ul>
-</li>
-<li><a href="#2f602a17">CSS를 HTML문서에 사용하기</a>
-<ul>
-<li><a href="#3d6d3cd4">태그에 바로 스타일 입히기</a></li>
-<li><a href="#df702d58">스타일 블록</a></li>
-<li><a href="#ed8014d1">스타일 파일 로딩 시키기</a></li>
-</ul>
-</li>
-<li><a href="#923f3e8b">Grid Layout</a>
-<ul>
-<li><a href="#81d78354">기본</a></li>
-<li><a href="#d9936505">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</a></li>
-<li><a href="#30dc211a">Grid 내부 가운데 정렬</a></li>
-</ul>
-</li>
-<li><a href="#b6f2fb59">공통 팁</a>
-<ul>
-<li><a href="#a607db31">단어를 자르지 않기</a></li>
-<li><a href="#dff174eb">둥근 모서리</a></li>
-<li><a href="#b30c3a97">div 블록의 위치 결정하기</a></li>
-<li><a href="#c7d446c6">소수점 자리로 정렬</a></li>
-<li><a href="#c8df4364">Floating</a></li>
-<li><a href="#21ef59af">해상도 혹은 브라우저 크기 별로 스타일 대응하기</a></li>
-<li><a href="#027bd86e">배경을 흐리게(Blur) 만들기</a></li>
-<li><a href="#62edfa6f">패턴 백그라운드 이미지</a></li>
-</ul>
-</li>
-<li><a href="#d69eae23">약간 특이한 팁</a>
-<ul>
-<li><a href="#8b61d3d0">이미지(img)에 alt 설명이 없을 때 경고하기</a></li>
-<li><a href="#c2906f05">스크롤 할 때 딱 맞추기(?)</a></li>
-<li><a href="#5f2bdf8c">링크된 주소가 없을 때 경고하기</a></li>
-</ul>
-</li>
-<li><a href="#0bbb90e1">외부 링크</a>
-<ul>
-<li><a href="#5174d130">Grid</a></li>
-<li><a href="#09d2bd16">Flex</a></li>
-<li><a href="#3ef012bb">다크 모드</a></li>
-<li><a href="#bb41b14a">템플릿</a></li>
-<li><a href="#7f598db0">기타</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<p>
-CSS는 Cascade Style Sheet의 약자로
-<a href="html.html">HTML</a> 문서의 스타일을 구성할 때 사용하는 일종의 언어이다.
-</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><link rel="stylesheet"href="/static/style.min.css"><title>CSS - Seorenn Note</title><meta name="twitter:title"content="CSS"><meta name="og:title"content="CSS"><meta name="description"content="CSS 팁 모음"><meta name="twitter:description"content="CSS 팁 모음"><meta name="og:description"content="CSS 팁 모음"><link rel="canonical"href="https://seorenn.github.io/note/css.html"><meta property="og:url"content="https://seorenn.github.io/note/css.html"><link rel="shortcut icon"type="image/x-icon"href="/static/favicon.ico"><meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image:width"content="520"><meta property="og:image:height"content="329"><meta name="twitter:card"content="summary"><meta name="twitter:site"content="@seorenn"><meta name="twitter:creator"content="@seorenn"><meta property="og:type"content="article"><meta property="og:site_name"content="Seorenn"><meta property="og:locale"content="ko_KR"><meta name="referrer"content="unsafe-url"><meta name="robots"content="follow,index"><meta name="google-site-verification"content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug"><meta name="naver-site-verification"content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script data-ad-client="ca-pub-1071465863344332"async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><div class="header-content"><header class="top-header"><div class="logo-container"><span class="vertical-center-helper"></span> <a href="/"title="Seorenn"><img class="site-logo"src="/static/seorenn-note-logo-light.png"alt="Seorenn Note"></a><nav><span class="vertical-center-helper"></span> <a href="/"title="Home">HOME</a> | <a href="/note"title="All Notes">NOTES</a></nav></div></header></div><div class="content-container"><section class="content"><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><header><h1>CSS</h1><div class="title-date">2020년 6월 23일 수정</div></header><div id="table-of-contents"><h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents"><ul><li><a href="#a2a1ad0f">개념 노트</a><ul><li><a href="#ecd8b31f">셀렉터(Selector)</a></li><li><a href="#1603c77d">가상 요소</a></li></ul></li><li><a href="#eef2269c">요소 메모</a><ul><li><a href="#2de42fbb">border</a></li><li><a href="#1a18f195">outline</a></li></ul></li><li><a href="#2f602a17">CSS를 HTML문서에 사용하기</a><ul><li><a href="#3d6d3cd4">태그에 바로 스타일 입히기</a></li><li><a href="#df702d58">스타일 블록</a></li><li><a href="#ed8014d1">스타일 파일 로딩 시키기</a></li></ul></li><li><a href="#923f3e8b">Grid Layout</a><ul><li><a href="#81d78354">기본</a></li><li><a href="#d9936505">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</a></li><li><a href="#30dc211a">Grid 내부 가운데 정렬</a></li></ul></li><li><a href="#b6f2fb59">공통 팁</a><ul><li><a href="#a607db31">단어를 자르지 않기</a></li><li><a href="#dff174eb">둥근 모서리</a></li><li><a href="#b30c3a97">div 블록의 위치 결정하기</a></li><li><a href="#c7d446c6">소수점 자리로 정렬</a></li><li><a href="#c8df4364">Floating</a></li><li><a href="#21ef59af">해상도 혹은 브라우저 크기 별로 스타일 대응하기</a></li><li><a href="#027bd86e">배경을 흐리게(Blur) 만들기</a></li><li><a href="#62edfa6f">패턴 백그라운드 이미지</a></li></ul></li><li><a href="#d69eae23">약간 특이한 팁</a><ul><li><a href="#8b61d3d0">이미지(img)에 alt 설명이 없을 때 경고하기</a></li><li><a href="#c2906f05">스크롤 할 때 딱 맞추기(?)</a></li><li><a href="#5f2bdf8c">링크된 주소가 없을 때 경고하기</a></li></ul></li><li><a href="#0bbb90e1">외부 링크</a><ul><li><a href="#5174d130">Grid</a></li><li><a href="#09d2bd16">Flex</a></li><li><a href="#3ef012bb">다크 모드</a></li><li><a href="#bb41b14a">템플릿</a></li><li><a href="#7f598db0">기타</a></li></ul></li></ul></div></div><p>CSS는 Cascade Style Sheet의 약자로 <a href="html.html">HTML</a> 문서의 스타일을 구성할 때 사용하는 일종의 언어이다.</p><p>나머지 내용은 CSS와 관련된 팁이다.</p><style>.example-block{border:1px dashed gray;padding:8px}</style><div id="outline-container-a2a1ad0f"class="outline-2"><h2 id="a2a1ad0f">개념 노트</h2><div class="outline-text-2"id="text-a2a1ad0f"></div><div id="outline-container-ecd8b31f"class="outline-3"><h3 id="ecd8b31f">셀렉터(Selector)</h3><div class="outline-text-3"id="text-ecd8b31f"><p>CSS에서 어떤 태그나 클래스 등에 스타일을 입힐 건지 결정하는 것이 셀렉터다. 기본적으로는 아래와 같은 것이다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#5b6268">/* </span><span style="color:#5b6268">body &#53468;&#44536; &#51204;&#52404;&#50640; &#51201;&#50857;&#46104;&#45716; &#49828;&#53440;&#51068; </span><span style="color:#5b6268">*/</span>
+<span style="color:#51afef">body </span>{ ... }
 
-<p>
-나머지 내용은 CSS와 관련된 팁이다.
-</p>
+<span style="color:#5b6268">/* </span><span style="color:#5b6268">container &#46972;&#45716; &#53364;&#47000;&#49828;&#50640; &#51201;&#50857;&#46104;&#45716; &#49828;&#53440;&#51068; </span><span style="color:#5b6268">*/</span>
+<span style="color:#51afef">.container </span>{ ... }
 
-<style>
-.example-block {
-  border: 1px dashed gray;
-  padding: 8px;
-}
-</style>
-
-<div id="outline-container-a2a1ad0f" class="outline-2">
-<h2 id="a2a1ad0f">개념 노트</h2>
-<div class="outline-text-2" id="text-a2a1ad0f">
-</div>
-<div id="outline-container-ecd8b31f" class="outline-3">
-<h3 id="ecd8b31f">셀렉터(Selector)</h3>
-<div class="outline-text-3" id="text-ecd8b31f">
-<p>
-CSS에서 어떤 태그나 클래스 등에 스타일을 입힐 건지 결정하는 것이 셀렉터다.
-기본적으로는 아래와 같은 것이다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #5B6268;">/* </span><span style="color: #5B6268;">body &#53468;&#44536; &#51204;&#52404;&#50640; &#51201;&#50857;&#46104;&#45716; &#49828;&#53440;&#51068; </span><span style="color: #5B6268;">*/</span>
-<span style="color: #51afef;">body </span>{ ... }
-
-<span style="color: #5B6268;">/* </span><span style="color: #5B6268;">container &#46972;&#45716; &#53364;&#47000;&#49828;&#50640; &#51201;&#50857;&#46104;&#45716; &#49828;&#53440;&#51068; </span><span style="color: #5B6268;">*/</span>
-<span style="color: #51afef;">.container </span>{ ... }
-
-<span style="color: #5B6268;">/* </span><span style="color: #5B6268;">seorenn &#51060;&#46972;&#45716; &#50500;&#51060;&#46356;&#50640;&#47564; &#51201;&#50857;&#46104;&#45716; &#49828;&#53440;&#51068; </span><span style="color: #5B6268;">*/</span>
-<span style="color: #51afef;">#seorenn </span>{ ... }
-</pre>
-</div>
-<p>
-특정 태그의 특정 클래스에 스타일을 적용하는 경우는 이런 식으로 쓴다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #5B6268;">/* </span><span style="color: #5B6268;">content &#53364;&#47000;&#49828;&#47484; &#49324;&#50857;&#54616;&#45716; p &#53468;&#44536;&#50640;&#47564; &#51077;&#54784;&#51648;&#45716; &#49828;&#53440;&#51068; </span><span style="color: #5B6268;">*/</span>
-<span style="color: #51afef;">p.content </span>{ ... }
-</pre>
-</div>
-<p>
-여러 스타일에서 공통된 부분을 만들 때 콤마를 이용해 셀렉터 그룹을 만들 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.foo_style,</span>
-<span style="color: #51afef;">.bar_style,</span>
-<span style="color: #51afef;">.foo_container .foobar_style,</span>
-<span style="color: #51afef;">.bar_container .foobar_style </span>{
-  <span style="color: #98be65;">font-size</span>: 12px;
+<span style="color:#5b6268">/* </span><span style="color:#5b6268">seorenn &#51060;&#46972;&#45716; &#50500;&#51060;&#46356;&#50640;&#47564; &#51201;&#50857;&#46104;&#45716; &#49828;&#53440;&#51068; </span><span style="color:#5b6268">*/</span>
+<span style="color:#51afef">#seorenn </span>{ ... }
+</pre></div><p>특정 태그의 특정 클래스에 스타일을 적용하는 경우는 이런 식으로 쓴다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#5b6268">/* </span><span style="color:#5b6268">content &#53364;&#47000;&#49828;&#47484; &#49324;&#50857;&#54616;&#45716; p &#53468;&#44536;&#50640;&#47564; &#51077;&#54784;&#51648;&#45716; &#49828;&#53440;&#51068; </span><span style="color:#5b6268">*/</span>
+<span style="color:#51afef">p.content </span>{ ... }
+</pre></div><p>여러 스타일에서 공통된 부분을 만들 때 콤마를 이용해 셀렉터 그룹을 만들 수 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.foo_style,</span>
+<span style="color:#51afef">.bar_style,</span>
+<span style="color:#51afef">.foo_container .foobar_style,</span>
+<span style="color:#51afef">.bar_container .foobar_style </span>{
+  <span style="color:#98be65">font-size</span>: 12px;
   ...
 }
-<span style="color: #51afef;">.foo_style </span>{
-  <span style="color: #98be65;">font-color</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+<span style="color:#51afef">.foo_style </span>{
+  <span style="color:#98be65">font-color</span>: <span style="color:#fff;background-color:red">red</span>;
   ...
 }
-</pre>
-</div>
-<p>
-이런 식으로 공통된 스타일을 하나로 모으고, 별도의 스타일은 별도로 나눠서 코딩
-양을 줄일 수 있다.
-</p>
-
-<p>
-태그나 클래스 간의 관계를 명시할 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #5B6268;">/* </span><span style="color: #5B6268;">content &#46972;&#45716; &#53364;&#47000;&#49828;&#47484; &#49440;&#50616;&#54620; div &#53468;&#44536; &#50504;&#50640; &#51080;&#45716; &#52395; p &#53468;&#44536;&#50640; &#51077;&#54784;&#51648;&#45716; &#49828;&#53440;&#51068; </span><span style="color: #5B6268;">*/</span>
-<span style="color: #51afef;">div.content &gt; p </span>{ ... }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-1603c77d" class="outline-3">
-<h3 id="1603c77d">가상 요소</h3>
-<div class="outline-text-3" id="text-1603c77d">
-<p>
-아래는 자주 사용되는 가상 요소들이다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css">::first-line    <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#52395; &#51460; </span><span style="color: #5B6268;">*/</span>
-::first-letter  <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#52395; &#44544;&#51088; </span><span style="color: #5B6268;">*/</span>
-::before        <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#53080;&#53584;&#52768; &#50526; </span><span style="color: #5B6268;">*/</span>
-::after         <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#53080;&#53584;&#52768; &#46244; </span><span style="color: #5B6268;">*/</span>
-::selection     <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#49440;&#53469; &#50689;&#50669; </span><span style="color: #5B6268;">*/</span>
-::placeholder   <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">&#54268; &#54596;&#46300; &#54540;&#47112;&#51060;&#49828;&#54848;&#45908; </span><span style="color: #5B6268;">*/</span>
-</pre>
-</div>
-<p>
-<code>::before</code> 를 써서 예를 만들어보자.
-</p>
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
+</pre></div><p>이런 식으로 공통된 스타일을 하나로 모으고, 별도의 스타일은 별도로 나눠서 코딩 양을 줄일 수 있다.</p><p>태그나 클래스 간의 관계를 명시할 수도 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#5b6268">/* </span><span style="color:#5b6268">content &#46972;&#45716; &#53364;&#47000;&#49828;&#47484; &#49440;&#50616;&#54620; div &#53468;&#44536; &#50504;&#50640; &#51080;&#45716; &#52395; p &#53468;&#44536;&#50640; &#51077;&#54784;&#51648;&#45716; &#49828;&#53440;&#51068; </span><span style="color:#5b6268">*/</span>
+<span style="color:#51afef">div.content &gt; p </span>{ ... }
+</pre></div></div></div><div id="outline-container-1603c77d"class="outline-3"><h3 id="1603c77d">가상 요소</h3><div class="outline-text-3"id="text-1603c77d"><p>아래는 자주 사용되는 가상 요소들이다.</p><div class="org-src-container"><pre class="src src-css">::first-line    <span style="color:#5b6268">/* </span><span style="color:#5b6268">&#52395; &#51460; </span><span style="color:#5b6268">*/</span>
+::first-letter  <span style="color:#5b6268">/* </span><span style="color:#5b6268">&#52395; &#44544;&#51088; </span><span style="color:#5b6268">*/</span>
+::before        <span style="color:#5b6268">/* </span><span style="color:#5b6268">&#53080;&#53584;&#52768; &#50526; </span><span style="color:#5b6268">*/</span>
+::after         <span style="color:#5b6268">/* </span><span style="color:#5b6268">&#53080;&#53584;&#52768; &#46244; </span><span style="color:#5b6268">*/</span>
+::selection     <span style="color:#5b6268">/* </span><span style="color:#5b6268">&#49440;&#53469; &#50689;&#50669; </span><span style="color:#5b6268">*/</span>
+::placeholder   <span style="color:#5b6268">/* </span><span style="color:#5b6268">&#54268; &#54596;&#46300; &#54540;&#47112;&#51060;&#49828;&#54848;&#45908; </span><span style="color:#5b6268">*/</span>
+</pre></div><p><code>::before</code> 를 써서 예를 만들어보자.</p><div class="org-src-container"><pre class="src src-html">&lt;<span style="color:#c678dd">style</span>&gt;
 .goodhead {
   color: gray;
 }
@@ -228,533 +35,107 @@ CSS에서 어떤 태그나 클래스 등에 스타일을 입힐 건지 결정하
   color: white;
   content: "[GOOD] ";
 }
-&lt;/<span style="color: #c678dd;">style</span>&gt;
+&lt;/<span style="color:#c678dd">style</span>&gt;
 
-&lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">class</span>=<span style="color: #98be65;">"goodhead"</span>&gt;Sample&lt;/<span style="color: #c678dd;">div</span>&gt;
-</pre>
-</div>
-<p>
-이렇게 하면 아래 처럼 표시된다.
-</p>
-<style>
-.goodhead {
-  color: gray;
-}
-.goodhead::before {
-  color: white;
-  content: "[GOOD] ";
-}
-</style>
-<div class="example-block">
-<div class="goodhead">Sample</div>
-</div>
-<p>
-여러모로 활용 방법이 많을 것 같다.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-eef2269c" class="outline-2">
-<h2 id="eef2269c">요소 메모</h2>
-<div class="outline-text-2" id="text-eef2269c">
-</div>
-<div id="outline-container-2de42fbb" class="outline-3">
-<h3 id="2de42fbb">border</h3>
-<div class="outline-text-3" id="text-2de42fbb">
-<p>
-테두리다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">border</span>: 1px solid;
-<span style="color: #98be65;">border-radius</span>: 3px;
-</pre>
-</div>
-<p>
-위 처럼 border-radius를 이용해 테두리를 둥글게 할 수도 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-1a18f195" class="outline-3">
-<h3 id="1a18f195">outline</h3>
-<div class="outline-text-3" id="text-1a18f195">
-<p>
-border랑 비슷하면서도 다르다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">outline</span>: solid;
+&lt;<span style="color:#c678dd">div</span> <span style="color:#dcaeea">class</span>=<span style="color:#98be65">"goodhead"</span>&gt;Sample&lt;/<span style="color:#c678dd">div</span>&gt;
+</pre></div><p>이렇게 하면 아래 처럼 표시된다.</p><style>.goodhead{color:gray}.goodhead::before{color:#fff;content:"[GOOD] "}</style><div class="example-block"><div class="goodhead">Sample</div></div><p>여러모로 활용 방법이 많을 것 같다.</p></div></div></div><div id="outline-container-eef2269c"class="outline-2"><h2 id="eef2269c">요소 메모</h2><div class="outline-text-2"id="text-eef2269c"></div><div id="outline-container-2de42fbb"class="outline-3"><h3 id="2de42fbb">border</h3><div class="outline-text-3"id="text-2de42fbb"><p>테두리다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">border</span>: 1px solid;
+<span style="color:#98be65">border-radius</span>: 3px;
+</pre></div><p>위 처럼 border-radius를 이용해 테두리를 둥글게 할 수도 있다.</p></div></div><div id="outline-container-1a18f195"class="outline-3"><h3 id="1a18f195">outline</h3><div class="outline-text-3"id="text-1a18f195"><p>border랑 비슷하면서도 다르다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">outline</span>: solid;
 
-<span style="color: #98be65;">outline</span>: dashed <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+<span style="color:#98be65">outline</span>: dashed <span style="color:#fff;background-color:red">red</span>;
 
-<span style="color: #98be65;">outline</span>: 1rem solid;
+<span style="color:#98be65">outline</span>: 1rem solid;
 
-<span style="color: #98be65;">outline</span>: thick double <span style="color: #ffffff; background-color: #32a1ce;">#32a1ce</span>;
+<span style="color:#98be65">outline</span>: thick double <span style="color:#fff;background-color:#32a1ce">#32a1ce</span>;
 
-<span style="color: #98be65;">outline</span>: 8px ridge <span style="color: #ffffff; background-color: #aa32dc;">rgba(170, 50, 220, .6)</span>;
-<span style="color: #98be65;">border-radius</span>: 2rem;
-</pre>
-</div>
-<p>
-마지막 예제에서 border는 outline의 안쪽에 생성되고 따로 논다(?).
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-2f602a17" class="outline-2">
-<h2 id="2f602a17">CSS를 HTML문서에 사용하기</h2>
-<div class="outline-text-2" id="text-2f602a17">
-</div>
-<div id="outline-container-3d6d3cd4" class="outline-3">
-<h3 id="3d6d3cd4">태그에 바로 스타일 입히기</h3>
-<div class="outline-text-3" id="text-3d6d3cd4">
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #c678dd;">p</span> <span style="color: #dcaeea;">style</span>=<span style="color: #98be65;">"font-size: 2rem"</span>&gt;...&lt;/<span style="color: #c678dd;">p</span>&gt;
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-df702d58" class="outline-3">
-<h3 id="df702d58">스타일 블록</h3>
-<div class="outline-text-3" id="text-df702d58">
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #c678dd;">style</span>&gt;
+<span style="color:#98be65">outline</span>: 8px ridge <span style="color:#fff;background-color:#aa32dc">rgba(170, 50, 220, .6)</span>;
+<span style="color:#98be65">border-radius</span>: 2rem;
+</pre></div><p>마지막 예제에서 border는 outline의 안쪽에 생성되고 따로 논다(?).</p></div></div></div><div id="outline-container-2f602a17"class="outline-2"><h2 id="2f602a17">CSS를 HTML문서에 사용하기</h2><div class="outline-text-2"id="text-2f602a17"></div><div id="outline-container-3d6d3cd4"class="outline-3"><h3 id="3d6d3cd4">태그에 바로 스타일 입히기</h3><div class="outline-text-3"id="text-3d6d3cd4"><div class="org-src-container"><pre class="src src-html">&lt;<span style="color:#c678dd">p</span> <span style="color:#dcaeea">style</span>=<span style="color:#98be65">"font-size: 2rem"</span>&gt;...&lt;/<span style="color:#c678dd">p</span>&gt;
+</pre></div></div></div><div id="outline-container-df702d58"class="outline-3"><h3 id="df702d58">스타일 블록</h3><div class="outline-text-3"id="text-df702d58"><div class="org-src-container"><pre class="src src-html">&lt;<span style="color:#c678dd">style</span>&gt;
 p {
   font-size: 2rem;
 }
 ...
-&lt;/<span style="color: #c678dd;">style</span>&gt;
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-ed8014d1" class="outline-3">
-<h3 id="ed8014d1">스타일 파일 로딩 시키기</h3>
-<div class="outline-text-3" id="text-ed8014d1">
-<div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">res</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"style.css"</span> /&gt;
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-923f3e8b" class="outline-2">
-<h2 id="923f3e8b">Grid Layout</h2>
-<div class="outline-text-2" id="text-923f3e8b">
-</div>
-<div id="outline-container-81d78354" class="outline-3">
-<h3 id="81d78354">기본</h3>
-<div class="outline-text-3" id="text-81d78354">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.container </span>{
-    <span style="color: #98be65;">display</span>: grid;
+&lt;/<span style="color:#c678dd">style</span>&gt;
+</pre></div></div></div><div id="outline-container-ed8014d1"class="outline-3"><h3 id="ed8014d1">스타일 파일 로딩 시키기</h3><div class="outline-text-3"id="text-ed8014d1"><div class="org-src-container"><pre class="src src-html">&lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">res</span>=<span style="color:#98be65">"stylesheet"</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">"style.css"</span> /&gt;
+</pre></div></div></div></div><div id="outline-container-923f3e8b"class="outline-2"><h2 id="923f3e8b">Grid Layout</h2><div class="outline-text-2"id="text-923f3e8b"></div><div id="outline-container-81d78354"class="outline-3"><h3 id="81d78354">기본</h3><div class="outline-text-3"id="text-81d78354"><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.container </span>{
+    <span style="color:#98be65">display</span>: grid;
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-d9936505" class="outline-3">
-<h3 id="d9936505">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</h3>
-<div class="outline-text-3" id="text-d9936505">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.container </span>{
-    <span style="color: #98be65;">display</span>: grid;
-    <span style="color: #98be65;">grid-template-columns</span>: 100px 800px 100px;
-    <span style="color: #98be65;">grid-template-rows</span>: auto;
+</pre></div></div></div><div id="outline-container-d9936505"class="outline-3"><h3 id="d9936505">좌우 사이드 바 고정 크기 콘텐츠 레이아웃 배치 예제</h3><div class="outline-text-3"id="text-d9936505"><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.container </span>{
+    <span style="color:#98be65">display</span>: grid;
+    <span style="color:#98be65">grid-template-columns</span>: 100px 800px 100px;
+    <span style="color:#98be65">grid-template-rows</span>: auto;
 }
 
-<span style="color: #51afef;">.left </span>{
-    <span style="color: #98be65;">grid-column</span>: <span style="color: #da8548; font-weight: bold;">1</span>;
+<span style="color:#51afef">.left </span>{
+    <span style="color:#98be65">grid-column</span>: <span style="color:#da8548;font-weight:700">1</span>;
 }
 
-<span style="color: #51afef;">.center </span>{
-    <span style="color: #98be65;">grid-column</span>: <span style="color: #da8548; font-weight: bold;">2</span>;
+<span style="color:#51afef">.center </span>{
+    <span style="color:#98be65">grid-column</span>: <span style="color:#da8548;font-weight:700">2</span>;
 }
 
-<span style="color: #51afef;">.right </span>{
-    <span style="color: #98be65;">grid-column</span>: <span style="color: #da8548; font-weight: bold;">3</span>;
+<span style="color:#51afef">.right </span>{
+    <span style="color:#98be65">grid-column</span>: <span style="color:#da8548;font-weight:700">3</span>;
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-30dc211a" class="outline-3">
-<h3 id="30dc211a">Grid 내부 가운데 정렬</h3>
-<div class="outline-text-3" id="text-30dc211a">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.container </span>{
+</pre></div></div></div><div id="outline-container-30dc211a"class="outline-3"><h3 id="30dc211a">Grid 내부 가운데 정렬</h3><div class="outline-text-3"id="text-30dc211a"><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.container </span>{
     ...
-    <span style="color: #98be65;">justify-content</span>: center;
+    <span style="color:#98be65">justify-content</span>: center;
 }
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-b6f2fb59" class="outline-2">
-<h2 id="b6f2fb59">공통 팁</h2>
-<div class="outline-text-2" id="text-b6f2fb59">
-</div>
-<div id="outline-container-a607db31" class="outline-3">
-<h3 id="a607db31">단어를 자르지 않기</h3>
-<div class="outline-text-3" id="text-a607db31">
-<p>
-문장이 길어져서 다음 줄로 넘어갈 때
-단어를 중간에 자르면 가독성에 문제가 있을 수 있다.
-이럴 때는 아래와 같은 스타일을 넣을 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">word-break</span>: keep-all;
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-dff174eb" class="outline-3">
-<h3 id="dff174eb">둥근 모서리</h3>
-<div class="outline-text-3" id="text-dff174eb">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">border-radius</span>: 8px;
-</pre>
-</div>
-<p>
-저기엔 숨겨진 많은 옵션이 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-b30c3a97" class="outline-3">
-<h3 id="b30c3a97">div 블록의 위치 결정하기</h3>
-<div class="outline-text-3" id="text-b30c3a97">
-</div>
-<ul class="org-ul">
-<li><a id="626d546f"></a>div 블록 가운데 정렬<br />
-<div class="outline-text-4" id="text-626d546f">
-<p>
-큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.some_block </span>{
-  <span style="color: #98be65;">max-width</span>: 640px;
-  <span style="color: #98be65;">margin</span>: <span style="color: #da8548; font-weight: bold;">0</span> auto;
+</pre></div></div></div></div><div id="outline-container-b6f2fb59"class="outline-2"><h2 id="b6f2fb59">공통 팁</h2><div class="outline-text-2"id="text-b6f2fb59"></div><div id="outline-container-a607db31"class="outline-3"><h3 id="a607db31">단어를 자르지 않기</h3><div class="outline-text-3"id="text-a607db31"><p>문장이 길어져서 다음 줄로 넘어갈 때 단어를 중간에 자르면 가독성에 문제가 있을 수 있다. 이럴 때는 아래와 같은 스타일을 넣을 수 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">word-break</span>: keep-all;
+</pre></div></div></div><div id="outline-container-dff174eb"class="outline-3"><h3 id="dff174eb">둥근 모서리</h3><div class="outline-text-3"id="text-dff174eb"><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">border-radius</span>: 8px;
+</pre></div><p>저기엔 숨겨진 많은 옵션이 있다.</p></div></div><div id="outline-container-b30c3a97"class="outline-3"><h3 id="b30c3a97">div 블록의 위치 결정하기</h3><div class="outline-text-3"id="text-b30c3a97"></div><ul class="org-ul"><li><a id="626d546f"></a>div 블록 가운데 정렬<br><div class="outline-text-4"id="text-626d546f"><p>큰 div 블록 안에 가로 640 픽셀의 작은 div 블록을 가운데로 정렬하려면 아래처럼 할 수 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.some_block </span>{
+  <span style="color:#98be65">max-width</span>: 640px;
+  <span style="color:#98be65">margin</span>: <span style="color:#da8548;font-weight:700">0</span> auto;
 }
-</pre>
-</div>
-</div>
-</li>
-<li><a id="9235638e"></a>오른쪽 아래에 붙이기(align to bottom right)<br />
-<div class="outline-text-4" id="text-9235638e">
-<p>
-바로는 안 되는 것 같고 바깥 쪽 블록이 outer-div 라는 클래스라고 가정하면 이렇게
-할 수 있는 것 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.outer-div </span>{
-  <span style="color: #98be65;">position</span>: relative;
+</pre></div></div></li><li><a id="9235638e"></a>오른쪽 아래에 붙이기(align to bottom right)<br><div class="outline-text-4"id="text-9235638e"><p>바로는 안 되는 것 같고 바깥 쪽 블록이 outer-div 라는 클래스라고 가정하면 이렇게 할 수 있는 것 같다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.outer-div </span>{
+  <span style="color:#98be65">position</span>: relative;
 }
-<span style="color: #51afef;">.bottom-right-div </span>{
-  <span style="color: #98be65;">position</span>: absolute;
-  <span style="color: #98be65;">right</span>: <span style="color: #da8548; font-weight: bold;">0</span>;
-  <span style="color: #98be65;">bottom</span>: <span style="color: #da8548; font-weight: bold;">0</span>;
+<span style="color:#51afef">.bottom-right-div </span>{
+  <span style="color:#98be65">position</span>: absolute;
+  <span style="color:#98be65">right</span>: <span style="color:#da8548;font-weight:700">0</span>;
+  <span style="color:#98be65">bottom</span>: <span style="color:#da8548;font-weight:700">0</span>;
 }
-</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-<div id="outline-container-c7d446c6" class="outline-3">
-<h3 id="c7d446c6">소수점 자리로 정렬</h3>
-<div class="outline-text-3" id="text-c7d446c6">
-<p>
-테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면
-아래와 같은 스타일을 추가할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.table </span>{
-  <span style="color: #98be65;">font-variant-numeric</span>: tabular-nums;
+</pre></div></div></li></ul></div><div id="outline-container-c7d446c6"class="outline-3"><h3 id="c7d446c6">소수점 자리로 정렬</h3><div class="outline-text-3"id="text-c7d446c6"><p>테이블 등에서 실수를 표시할 때 소수점 기준으로 표시하려면 아래와 같은 스타일을 추가할 수 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.table </span>{
+  <span style="color:#98be65">font-variant-numeric</span>: tabular-nums;
 }
-</pre>
-</div>
-<p>
-달러나 유로 단위의 경우 소수점 아래도 표기하는데 이럴 때 유용할 것 같다.
-</p>
-</div>
-</div>
-<div id="outline-container-c8df4364" class="outline-3">
-<h3 id="c8df4364">Floating</h3>
-<div class="outline-text-3" id="text-c8df4364">
-<p>
-콘텐츠를 좌 혹은 우측에 끼워 넣기 위해서 자주 사용하는 그 Float다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.left-content </span>{
-  <span style="color: #98be65;">float</span>: left;
+</pre></div><p>달러나 유로 단위의 경우 소수점 아래도 표기하는데 이럴 때 유용할 것 같다.</p></div></div><div id="outline-container-c8df4364"class="outline-3"><h3 id="c8df4364">Floating</h3><div class="outline-text-3"id="text-c8df4364"><p>콘텐츠를 좌 혹은 우측에 끼워 넣기 위해서 자주 사용하는 그 Float다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.left-content </span>{
+  <span style="color:#98be65">float</span>: left;
 }
-<span style="color: #51afef;">.right-content </span>{
-  <span style="color: #98be65;">float</span>: right;
+<span style="color:#51afef">.right-content </span>{
+  <span style="color:#98be65">float</span>: right;
 }
-</pre>
-</div>
-<p>
-그런데 이 부유 블록이 가끔 그 아래의 침범하지 않았으면 하는 블록에도 영향을 줄
-때가 있다. 이럴 때는 그 아래 블록에 clear를 지정해주자.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.following-div </span>{
-  <span style="color: #98be65;">clear</span>: both;
+</pre></div><p>그런데 이 부유 블록이 가끔 그 아래의 침범하지 않았으면 하는 블록에도 영향을 줄 때가 있다. 이럴 때는 그 아래 블록에 clear를 지정해주자.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.following-div </span>{
+  <span style="color:#98be65">clear</span>: both;
 }
-</pre>
-</div>
-<p>
-이러면 부유 블록은 자동으로 격리된다.
-</p>
-
-<p>
-블록 안의 콘텐츠가 float 속성을 사용하고 있을 때 그 바깥쪽 블록의 사이즈가
-자동으로 결정되지 않는데 이럴 때는 아래 속성을 그 바깥 블록 스타일로
-지정해버리면 해결될 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">.outer-div </span>{
-  <span style="color: #98be65;">overflow</span>: hidden;
+</pre></div><p>이러면 부유 블록은 자동으로 격리된다.</p><p>블록 안의 콘텐츠가 float 속성을 사용하고 있을 때 그 바깥쪽 블록의 사이즈가 자동으로 결정되지 않는데 이럴 때는 아래 속성을 그 바깥 블록 스타일로 지정해버리면 해결될 수도 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">.outer-div </span>{
+  <span style="color:#98be65">overflow</span>: hidden;
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-21ef59af" class="outline-3">
-<h3 id="21ef59af">해상도 혹은 브라우저 크기 별로 스타일 대응하기</h3>
-<div class="outline-text-3" id="text-21ef59af">
-<p>
-미디어 쿼리를 이용하면 브라우저 크기 별로 대응할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #c678dd;">@media</span> screen and (min-width: 1280px) {
-  <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">if screen width &gt;= 1280px </span><span style="color: #5B6268;">*/</span>
+</pre></div></div></div><div id="outline-container-21ef59af"class="outline-3"><h3 id="21ef59af">해상도 혹은 브라우저 크기 별로 스타일 대응하기</h3><div class="outline-text-3"id="text-21ef59af"><p>미디어 쿼리를 이용하면 브라우저 크기 별로 대응할 수 있다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#c678dd">@media</span> screen and (min-width: 1280px) {
+  <span style="color:#5b6268">/* </span><span style="color:#5b6268">if screen width &gt;= 1280px </span><span style="color:#5b6268">*/</span>
 }
 
-<span style="color: #c678dd;">@media</span> screen and (min-width: 800px) and (max-width: 1279px) {
-  <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">if screen in (800px &lt;= width &lt; 1280px) </span><span style="color: #5B6268;">*/</span>
+<span style="color:#c678dd">@media</span> screen and (min-width: 800px) and (max-width: 1279px) {
+  <span style="color:#5b6268">/* </span><span style="color:#5b6268">if screen in (800px &lt;= width &lt; 1280px) </span><span style="color:#5b6268">*/</span>
 }
 
-<span style="color: #c678dd;">@media</span> screen and (max-width: 799px) {
-  <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">if screen width &lt;= 799px </span><span style="color: #5B6268;">*/</span>
+<span style="color:#c678dd">@media</span> screen and (max-width: 799px) {
+  <span style="color:#5b6268">/* </span><span style="color:#5b6268">if screen width &lt;= 799px </span><span style="color:#5b6268">*/</span>
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-027bd86e" class="outline-3">
-<h3 id="027bd86e">배경을 흐리게(Blur) 만들기</h3>
-<div class="outline-text-3" id="text-027bd86e">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">backdrop-filter</span>: blur(4px);
-<span style="color: #da8548;">-webkit-backdrop-filter</span>: blur(4px);
-</pre>
-</div>
-<p>
-팝업 스타일에서 유용하게 써먹을 수 있는 예제다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">backdrop-filter</span>: blur(4px) grayscale(<span style="color: #da8548; font-weight: bold;">90</span>%);
-<span style="color: #da8548;">-webkit-backdrop-filter</span>: blur(4px) grayscale(<span style="color: #da8548; font-weight: bold;">90</span>%);
-</pre>
-</div>
-<p>
-아예 배경을 더 어둡게 만들어 버리면 더 눈에 띄는 팝업 스타일을 만들 수도 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-62edfa6f" class="outline-3">
-<h3 id="62edfa6f">패턴 백그라운드 이미지</h3>
-<div class="outline-text-3" id="text-62edfa6f">
-<p>
-아래와 같은 식으로 CSS 백그라운드 이미지를 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css">{
-    <span style="color: #98be65;">background-image</span>: url<span style="color: #bbc2cf; background-color: #282c34;">(</span><span style="color: #98be65;">/foo/bar/image.png</span><span style="color: #bbc2cf; background-color: #282c34;">)</span>;
-    <span style="color: #98be65;">background-repeat</span>: repeat-x;
+</pre></div></div></div><div id="outline-container-027bd86e"class="outline-3"><h3 id="027bd86e">배경을 흐리게(Blur) 만들기</h3><div class="outline-text-3"id="text-027bd86e"><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">backdrop-filter</span>: blur(4px);
+<span style="color:#da8548">-webkit-backdrop-filter</span>: blur(4px);
+</pre></div><p>팝업 스타일에서 유용하게 써먹을 수 있는 예제다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">backdrop-filter</span>: blur(4px) grayscale(<span style="color:#da8548;font-weight:700">90</span>%);
+<span style="color:#da8548">-webkit-backdrop-filter</span>: blur(4px) grayscale(<span style="color:#da8548;font-weight:700">90</span>%);
+</pre></div><p>아예 배경을 더 어둡게 만들어 버리면 더 눈에 띄는 팝업 스타일을 만들 수도 있다.</p></div></div><div id="outline-container-62edfa6f"class="outline-3"><h3 id="62edfa6f">패턴 백그라운드 이미지</h3><div class="outline-text-3"id="text-62edfa6f"><p>아래와 같은 식으로 CSS 백그라운드 이미지를 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-css">{
+    <span style="color:#98be65">background-image</span>: url<span style="color:#bbc2cf;background-color:#282c34">(</span><span style="color:#98be65">/foo/bar/image.png</span><span style="color:#bbc2cf;background-color:#282c34">)</span>;
+    <span style="color:#98be65">background-repeat</span>: repeat-x;
 }
-</pre>
-</div>
-<p>
-여기서 <code>background-repeat</code> 에 따라 패턴화 되는 경향이 다르다.
-</p>
-<ul class="org-ul">
-<li><code>no-repeat</code> 는 한 장의 이미지만 쓴다. 즉 패턴을 쓰지 않는다.</li>
-<li><code>repeat-x</code> 의 경우 가로축으로만 패턴이 나열되며 이미지가 크기에 따라 클리핑 될 수도 있다.</li>
-<li><code>repeat-y</code> 의 경우 세로축으로 나열되며 나머진 위와 동일하다.</li>
-<li><code>repeat</code> 는 x, y축 둘 다 위 처럼 나열된다.</li>
-<li><code>round</code> 는 패턴이 잘리지 않게 비율에 맞는 확대와 나열을 쓴다. 패턴 방식이라면 가장 효율적일 것 같다.</li>
-<li><code>space</code> 는 패턴을 나열하되 확대를 하지 않고 패턴 사이에 공백을 준다. 배경색에 영향을 받지 않고 이미지 크기를 그대로 유지하고자 한다면 효율적인 선택이다.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-d69eae23" class="outline-2">
-<h2 id="d69eae23">약간 특이한 팁</h2>
-<div class="outline-text-2" id="text-d69eae23">
-</div>
-<div id="outline-container-8b61d3d0" class="outline-3">
-<h3 id="8b61d3d0">이미지(img)에 alt 설명이 없을 때 경고하기</h3>
-<div class="outline-text-3" id="text-8b61d3d0">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #51afef;">img:not([alt]) </span>{
-    <span style="color: #98be65;">border</span>: 5px solid <span style="color: #ffffff; background-color: #ff0000;">red</span>;
-    <span style="color: #98be65;">filter</span>: blur(5px);
+</pre></div><p>여기서 <code>background-repeat</code> 에 따라 패턴화 되는 경향이 다르다.</p><ul class="org-ul"><li><code>no-repeat</code> 는 한 장의 이미지만 쓴다. 즉 패턴을 쓰지 않는다.</li><li><code>repeat-x</code> 의 경우 가로축으로만 패턴이 나열되며 이미지가 크기에 따라 클리핑 될 수도 있다.</li><li><code>repeat-y</code> 의 경우 세로축으로 나열되며 나머진 위와 동일하다.</li><li><code>repeat</code> 는 x, y축 둘 다 위 처럼 나열된다.</li><li><code>round</code> 는 패턴이 잘리지 않게 비율에 맞는 확대와 나열을 쓴다. 패턴 방식이라면 가장 효율적일 것 같다.</li><li><code>space</code> 는 패턴을 나열하되 확대를 하지 않고 패턴 사이에 공백을 준다. 배경색에 영향을 받지 않고 이미지 크기를 그대로 유지하고자 한다면 효율적인 선택이다.</li></ul></div></div></div><div id="outline-container-d69eae23"class="outline-2"><h2 id="d69eae23">약간 특이한 팁</h2><div class="outline-text-2"id="text-d69eae23"></div><div id="outline-container-8b61d3d0"class="outline-3"><h3 id="8b61d3d0">이미지(img)에 alt 설명이 없을 때 경고하기</h3><div class="outline-text-3"id="text-8b61d3d0"><div class="org-src-container"><pre class="src src-css"><span style="color:#51afef">img:not([alt]) </span>{
+    <span style="color:#98be65">border</span>: 5px solid <span style="color:#fff;background-color:red">red</span>;
+    <span style="color:#98be65">filter</span>: blur(5px);
 }
-</pre>
-</div>
-<p>
-alt가 없는 img를 빨간색 테두리와 흐림 처리를 하는 무섭고 이상한 코드다.
-</p>
-<blockquote>
-<p>
-alt는 접근성을 보완하기 위해 중요한 설명이다. 예를 들어
-시각장애인의 경우 이 alt 설명이 없으면 이미지가 무엇인지 전혀 알 수가 없다.
-</p>
-</blockquote>
-</div>
-</div>
-<div id="outline-container-c2906f05" class="outline-3">
-<h3 id="c2906f05">스크롤 할 때 딱 맞추기(?)</h3>
-<div class="outline-text-3" id="text-c2906f05">
-<p>
-아래 옵션이 붙은 블록은 스크롤 할 때 강제로 딱 맞춰 준다.
-</p>
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">scroll-snap-type</span>: x mandatory;
-</pre>
-</div>
-<p>
-뭔 소리인지 이해가 안 되면 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type">🌏scroll-snap-type</a>의 예제를 살펴보자.
-</p>
-</div>
-</div>
-<div id="outline-container-5f2bdf8c" class="outline-3">
-<h3 id="5f2bdf8c">링크된 주소가 없을 때 경고하기</h3>
-<div class="outline-text-3" id="text-5f2bdf8c">
-<div class="org-src-container">
-<pre class="src src-css"><span style="color: #98be65;">a</span>:is(:not([href]), [href=<span style="color: #98be65;">""</span>], [href=<span style="color: #98be65;">"#"</span>]) {
-    <span style="color: #98be65;">outline</span>: 2px dotted <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+</pre></div><p>alt가 없는 img를 빨간색 테두리와 흐림 처리를 하는 무섭고 이상한 코드다.</p><blockquote><p>alt는 접근성을 보완하기 위해 중요한 설명이다. 예를 들어 시각장애인의 경우 이 alt 설명이 없으면 이미지가 무엇인지 전혀 알 수가 없다.</p></blockquote></div></div><div id="outline-container-c2906f05"class="outline-3"><h3 id="c2906f05">스크롤 할 때 딱 맞추기(?)</h3><div class="outline-text-3"id="text-c2906f05"><p>아래 옵션이 붙은 블록은 스크롤 할 때 강제로 딱 맞춰 준다.</p><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">scroll-snap-type</span>: x mandatory;
+</pre></div><p>뭔 소리인지 이해가 안 되면 <a target="_blank"href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type">🌏scroll-snap-type</a>의 예제를 살펴보자.</p></div></div><div id="outline-container-5f2bdf8c"class="outline-3"><h3 id="5f2bdf8c">링크된 주소가 없을 때 경고하기</h3><div class="outline-text-3"id="text-5f2bdf8c"><div class="org-src-container"><pre class="src src-css"><span style="color:#98be65">a</span>:is(:not([href]), [href=<span style="color:#98be65">""</span>], [href=<span style="color:#98be65">"#"</span>]) {
+    <span style="color:#98be65">outline</span>: 2px dotted <span style="color:#fff;background-color:red">red</span>;
 }
-</pre>
-</div>
-<p>
-앵커(a)에 링크가 없거나 <code>href</code> 속성 자체가 없는 경우 등에 빨간색 점선 테두리로 경고해주는 스타일이다.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-0bbb90e1" class="outline-2">
-<h2 id="0bbb90e1">외부 링크</h2>
-<div class="outline-text-2" id="text-0bbb90e1">
-</div>
-<div id="outline-container-5174d130" class="outline-3">
-<h3 id="5174d130">Grid</h3>
-<div class="outline-text-3" id="text-5174d130">
-<ul class="org-ul">
-<li><a target="_blank" href="https://studiomeal.com/archives/533">🌏이번에야말로 CSS Grid를 익혀보자</a></li>
-<li><a target="_blank" href="https://cssgrid-generator.netlify.com">🌏CSS Grid Generator</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-09d2bd16" class="outline-3">
-<h3 id="09d2bd16">Flex</h3>
-<div class="outline-text-3" id="text-09d2bd16">
-<ul class="org-ul">
-<li><a target="_blank" href="https://studiomeal.com/archives/197">🌏이번에야말로 CSS Flex를 익혀보자</a></li>
-<li><a target="_blank" href="https://medium.com/@js_tut/the-complete-css-flex-box-tutorial-d17971950bdc">🌏The Complete CSS Flex Box Tutorial</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-3ef012bb" class="outline-3">
-<h3 id="3ef012bb">다크 모드</h3>
-<div class="outline-text-3" id="text-3ef012bb">
-<ul class="org-ul">
-<li><a target="_blank" href="https://github.com/hsh2001/apple-dark-mode">🌏🌙 다크모드 웹 페이지 디자인</a></li>
-<li><a target="_blank" href="https://chasem.co/2019/09/mvp-dark-mode">🌏Minimum viable dark mode</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-bb41b14a" class="outline-3">
-<h3 id="bb41b14a">템플릿</h3>
-<div class="outline-text-3" id="text-bb41b14a">
-<ul class="org-ul">
-<li><a target="_blank" href="https://stitches.hyperyolo.com/">🌏Stitches: Layout Template Generator</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-7f598db0" class="outline-3">
-<h3 id="7f598db0">기타</h3>
-<div class="outline-text-3" id="text-7f598db0">
-<ul class="org-ul">
-<li><a target="_blank" href="https://www.sitepoint.com/hide-elements-in-css/">🌏10 Ways to Hide Elements in CSS</a></li>
-<li><a target="_blank" href="https://moderncss.dev">🌏Modern CSS Solutions for Old CSS Problems</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/org-publish.html">Org Publish로 익스포트 자동화하기</a></h2>
-<span class="article-description">
-Org 문서들과 관련 파일들을 자동으로 익스포트해 주는 Org Publish의 설정방법과 사용법을 알아보자</span
-><span class="article-link-date">
-2020년 6월 26일 수정</span>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/spa.html">SPA</a></h2>
-<span class="article-description">
-SPA(Single Page Application) 개념 소개</span
-><span class="article-link-date">
-2020년 6월 21일 수정</span>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/csso.html">CSSO</a></h2>
-<span class="article-description">
-CSS 최적화 및 압축 도구 CSSO</span
-><span class="article-link-date">
-2020년 6월 21일 수정</span>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/html.html">HTML</a></h2>
-<span class="article-description">
-HTML에 대한 조각글 모음</span
-><span class="article-link-date">
-2020년 5월 20일 수정</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="footer-content">
-<footer>
-Copyright 2019 ~ 2020. Seorenn all rights reserved.
-</footer>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-</body>
-</html>
+</pre></div><p>앵커(a)에 링크가 없거나 <code>href</code> 속성 자체가 없는 경우 등에 빨간색 점선 테두리로 경고해주는 스타일이다.</p></div></div></div><div id="outline-container-0bbb90e1"class="outline-2"><h2 id="0bbb90e1">외부 링크</h2><div class="outline-text-2"id="text-0bbb90e1"></div><div id="outline-container-5174d130"class="outline-3"><h3 id="5174d130">Grid</h3><div class="outline-text-3"id="text-5174d130"><ul class="org-ul"><li><a target="_blank"href="https://studiomeal.com/archives/533">🌏이번에야말로 CSS Grid를 익혀보자</a></li><li><a target="_blank"href="https://cssgrid-generator.netlify.com">🌏CSS Grid Generator</a></li></ul></div></div><div id="outline-container-09d2bd16"class="outline-3"><h3 id="09d2bd16">Flex</h3><div class="outline-text-3"id="text-09d2bd16"><ul class="org-ul"><li><a target="_blank"href="https://studiomeal.com/archives/197">🌏이번에야말로 CSS Flex를 익혀보자</a></li><li><a target="_blank"href="https://medium.com/@js_tut/the-complete-css-flex-box-tutorial-d17971950bdc">🌏The Complete CSS Flex Box Tutorial</a></li></ul></div></div><div id="outline-container-3ef012bb"class="outline-3"><h3 id="3ef012bb">다크 모드</h3><div class="outline-text-3"id="text-3ef012bb"><ul class="org-ul"><li><a target="_blank"href="https://github.com/hsh2001/apple-dark-mode">🌏🌙 다크모드 웹 페이지 디자인</a></li><li><a target="_blank"href="https://chasem.co/2019/09/mvp-dark-mode">🌏Minimum viable dark mode</a></li></ul></div></div><div id="outline-container-bb41b14a"class="outline-3"><h3 id="bb41b14a">템플릿</h3><div class="outline-text-3"id="text-bb41b14a"><ul class="org-ul"><li><a target="_blank"href="https://stitches.hyperyolo.com/">🌏Stitches: Layout Template Generator</a></li></ul></div></div><div id="outline-container-7f598db0"class="outline-3"><h3 id="7f598db0">기타</h3><div class="outline-text-3"id="text-7f598db0"><ul class="org-ul"><li><a target="_blank"href="https://www.sitepoint.com/hide-elements-in-css/">🌏10 Ways to Hide Elements in CSS</a></li><li><a target="_blank"href="https://moderncss.dev">🌏Modern CSS Solutions for Old CSS Problems</a></li></ul></div></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/org-publish.html">Org Publish로 익스포트 자동화하기</a></h2><span class="article-description">Org 문서들과 관련 파일들을 자동으로 익스포트해 주는 Org Publish의 설정방법과 사용법 정리</span><span class="article-link-date"> 2020년 7월 3일 수정</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/spa.html">SPA</a></h2><span class="article-description">SPA(Single Page Application) 개념 소개</span><span class="article-link-date"> 2020년 6월 21일 수정</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/csso.html">CSSO</a></h2><span class="article-description">CSS 최적화 및 압축 도구 CSSO</span><span class="article-link-date"> 2020년 6월 21일 수정</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/html.html">HTML</a></h2><span class="article-description">HTML에 대한 조각글 모음</span><span class="article-link-date"> 2020년 5월 20일 수정</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

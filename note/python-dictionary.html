@@ -1,353 +1,61 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/static/style.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>Python 딕셔너리 타입 정리 - Seorenn Note</title>
-<meta name="twitter:title" content="Python 딕셔너리 타입 정리" />
-<meta name="og:title" content="Python 딕셔너리 타입 정리" />
-<meta name="description" content="파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법 정리" />
-<meta name="twitter:description" content="파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법 정리" />
-<meta name="og:description" content="파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법 정리" />
-<link rel="canonical" href="https://seorenn.github.io/note/python-dictionary.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/python-dictionary.html" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image:width" content="520" />
-<meta property="og:image:height" content="329" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@seorenn" />
-<meta name="twitter:creator" content="@seorenn" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn" />
-<meta property="og:locale" content="ko_KR" />
-<meta name="referrer" content="unsafe-url" />
-<meta name="robots" content="follow,index" />
-<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
-<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
-<body>
-<div class="header-content">
-<header class="top-header">
-<div class="logo-container">
-<span class="vertical-center-helper"></span>
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
-<nav>
-<span class="vertical-center-helper"></span>
-<a href="/" title="Home">HOME</a> |
-<a href="/note" title="All Notes">NOTES</a>
-</nav>
-</div>
-</header>
-</div>
-<div class="content-container">
-<section class="content">
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<header>
-<h1>Python 딕셔너리 타입 정리</h1>
-<div class="title-date">2020년 7월 3일 수정</div>
-</header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#e41c01b8">딕셔너리 타입</a></li>
-<li><a href="#e032d662">딕셔너리 인스턴스 생성</a></li>
-<li><a href="#f73af557">키 읽기, 쓰기, 수정, 삭제</a></li>
-<li><a href="#c1047d87">딕셔너리끼리 합치기</a></li>
-<li><a href="#f0fbc795">딕셔너리에 다른 딕셔너리를 풀어 넣기</a></li>
-<li><a href="#b83786de">순회하기</a></li>
-<li><a href="#e857bc27">참고</a></li>
-</ul>
-</div>
-</div>
-<p>
-이 글은 <a href="python.html">Python</a>의 딕셔너리 타입(Dictionary Type, 사전형)과 관련된 내용을 정리한다. 예제 코드는 3.7 버전에서만 돌려봤지만 아마도 2.x 버전에서도 별 문제 없이 실행 가능할거라 생각된다.
-</p>
-
-<div id="outline-container-e41c01b8" class="outline-2">
-<h2 id="e41c01b8">딕셔너리 타입</h2>
-<div class="outline-text-2" id="text-e41c01b8">
-<p>
-<a href="python.html">Python</a>의 딕셔너리 타입(Dictionary Type)은 <code>dict</code> 라는 이름의 내장 클래스로써, 하나 이상의 키를 이용해 각 키의 값을 읽거나 쓸 수 있는 타입이며, 여러 데이터를 담을 수 있어서 일반적으로 콜렉션 타입(Collection Type)의 한 종류로 분류된다.
-</p>
-
-<p>
-보통 이런 종류의 자료구조로 사전형이라 부르는 타입과 동일하거나 혹은 해시맵(Hash Map), 해시테이블(Hash Table)등의 자료구조와 유사하다.
-</p>
-</div>
-</div>
-<div id="outline-container-e032d662" class="outline-2">
-<h2 id="e032d662">딕셔너리 인스턴스 생성</h2>
-<div class="outline-text-2" id="text-e032d662">
-<p>
-아래 명령으로 빈 딕셔너리를 생성할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span> = {}
-</pre>
-</div>
-<p>
-중괄호는 <a href="python.html">Python</a>에서 딕셔너리 타입을 정의할 때 주로 사용되기 때문에 중괄호는 곧 딕셔너리라고 인식해도 크게 틀리진 않는다.
-</p>
-
-<p>
-이제 특정 키를 이용해 값을 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span>[<span style="color: #98be65;">'key'</span>] = <span style="color: #98be65;">'value'</span>
-&gt;&gt;&gt; <span style="color: #dcaeea;">d</span>[<span style="color: #98be65;">'other'</span>] = <span style="color: #da8548; font-weight: bold;">123</span>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><link rel="stylesheet"href="/static/style.min.css"><title>Python 딕셔너리 타입 정리 - Seorenn Note</title><meta name="twitter:title"content="Python 딕셔너리 타입 정리"><meta name="og:title"content="Python 딕셔너리 타입 정리"><meta name="description"content="파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법 정리"><meta name="twitter:description"content="파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법 정리"><meta name="og:description"content="파이썬의 사전형 혹은 딕셔너리 타입(Dictionary Type)의 생성과 수정 및 여러 변조 방법 정리"><link rel="canonical"href="https://seorenn.github.io/note/python-dictionary.html"><meta property="og:url"content="https://seorenn.github.io/note/python-dictionary.html"><link rel="shortcut icon"type="image/x-icon"href="/static/favicon.ico"><meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image:width"content="520"><meta property="og:image:height"content="329"><meta name="twitter:card"content="summary"><meta name="twitter:site"content="@seorenn"><meta name="twitter:creator"content="@seorenn"><meta property="og:type"content="article"><meta property="og:site_name"content="Seorenn"><meta property="og:locale"content="ko_KR"><meta name="referrer"content="unsafe-url"><meta name="robots"content="follow,index"><meta name="google-site-verification"content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug"><meta name="naver-site-verification"content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script data-ad-client="ca-pub-1071465863344332"async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><div class="header-content"><header class="top-header"><div class="logo-container"><span class="vertical-center-helper"></span> <a href="/"title="Seorenn"><img class="site-logo"src="/static/seorenn-note-logo-light.png"alt="Seorenn Note"></a><nav><span class="vertical-center-helper"></span> <a href="/"title="Home">HOME</a> | <a href="/note"title="All Notes">NOTES</a></nav></div></header></div><div class="content-container"><section class="content"><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><header><h1>Python 딕셔너리 타입 정리</h1><div class="title-date">2020년 7월 3일 수정</div></header><div id="table-of-contents"><h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents"><ul><li><a href="#e41c01b8">딕셔너리 타입</a></li><li><a href="#e032d662">딕셔너리 인스턴스 생성</a></li><li><a href="#f73af557">키 읽기, 쓰기, 수정, 삭제</a></li><li><a href="#c1047d87">딕셔너리끼리 합치기</a></li><li><a href="#f0fbc795">딕셔너리에 다른 딕셔너리를 풀어 넣기</a></li><li><a href="#b83786de">순회하기</a></li><li><a href="#e857bc27">참고</a></li></ul></div></div><p>이 글은 <a href="python.html">Python</a>의 딕셔너리 타입(Dictionary Type, 사전형)과 관련된 내용을 정리한다. 예제 코드는 3.7 버전에서만 돌려봤지만 아마도 2.x 버전에서도 별 문제 없이 실행 가능할거라 생각된다.</p><div id="outline-container-e41c01b8"class="outline-2"><h2 id="e41c01b8">딕셔너리 타입</h2><div class="outline-text-2"id="text-e41c01b8"><p><a href="python.html">Python</a>의 딕셔너리 타입(Dictionary Type)은 <code>dict</code> 라는 이름의 내장 클래스로써, 하나 이상의 키를 이용해 각 키의 값을 읽거나 쓸 수 있는 타입이며, 여러 데이터를 담을 수 있어서 일반적으로 콜렉션 타입(Collection Type)의 한 종류로 분류된다.</p><p>보통 이런 종류의 자료구조로 사전형이라 부르는 타입과 동일하거나 혹은 해시맵(Hash Map), 해시테이블(Hash Table)등의 자료구조와 유사하다.</p></div></div><div id="outline-container-e032d662"class="outline-2"><h2 id="e032d662">딕셔너리 인스턴스 생성</h2><div class="outline-text-2"id="text-e032d662"><p>아래 명령으로 빈 딕셔너리를 생성할 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = {}
+</pre></div><p>중괄호는 <a href="python.html">Python</a>에서 딕셔너리 타입을 정의할 때 주로 사용되기 때문에 중괄호는 곧 딕셔너리라고 인식해도 크게 틀리진 않는다.</p><p>이제 특정 키를 이용해 값을 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span>[<span style="color:#98be65">'key'</span>] = <span style="color:#98be65">'value'</span>
+&gt;&gt;&gt; <span style="color:#dcaeea">d</span>[<span style="color:#98be65">'other'</span>] = <span style="color:#da8548;font-weight:700">123</span>
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
-</pre>
-</div>
-<p>
-물론 한 번에 바로 생성할 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span> = {<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
+</pre></div><p>물론 한 번에 바로 생성할 수도 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = {<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
-</pre>
-</div>
-<p>
-아예 <code>dict</code> 클래스의 생성자를 활용하는 방법도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span> = <span style="color: #c678dd;">dict</span>(key=<span style="color: #98be65;">'value'</span>, other=<span style="color: #da8548; font-weight: bold;">123</span>)
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
+</pre></div><p>아예 <code>dict</code> 클래스의 생성자를 활용하는 방법도 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = <span style="color:#c678dd">dict</span>(key=<span style="color:#98be65">'value'</span>, other=<span style="color:#da8548;font-weight:700">123</span>)
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
-</pre>
-</div>
-<p>
-매개변수로 튜플 리스트를 사용할 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span> = <span style="color: #c678dd;">dict</span>([(<span style="color: #98be65;">'key'</span>, <span style="color: #98be65;">'value'</span>), (<span style="color: #98be65;">'other'</span>, <span style="color: #da8548; font-weight: bold;">123</span>)])
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
+</pre></div><p>매개변수로 튜플 리스트를 사용할 수도 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = <span style="color:#c678dd">dict</span>([(<span style="color:#98be65">'key'</span>, <span style="color:#98be65">'value'</span>), (<span style="color:#98be65">'other'</span>, <span style="color:#da8548;font-weight:700">123</span>)])
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
-</pre>
-</div>
-<p>
-이 외에도 다양한 방법이 있을 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-f73af557" class="outline-2">
-<h2 id="f73af557">키 읽기, 쓰기, 수정, 삭제</h2>
-<div class="outline-text-2" id="text-f73af557">
-<p>
-키의 값을 읽을 때는 배열 원소 참조하는 것과 비슷한 문법을 사용하지만 인덱스 대신 키를 사용한다는 점이 다르다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">print</span>(d[<span style="color: #98be65;">'key'</span>])
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
+</pre></div><p>이 외에도 다양한 방법이 있을 수 있다.</p></div></div><div id="outline-container-f73af557"class="outline-2"><h2 id="f73af557">키 읽기, 쓰기, 수정, 삭제</h2><div class="outline-text-2"id="text-f73af557"><p>키의 값을 읽을 때는 배열 원소 참조하는 것과 비슷한 문법을 사용하지만 인덱스 대신 키를 사용한다는 점이 다르다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">print</span>(d[<span style="color:#98be65">'key'</span>])
 value
-</pre>
-</div>
-<p>
-만약 없는 키를 읽으려고 하면 <code>KeyError</code> 예외가 발생한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">print</span>(d[<span style="color: #98be65;">'unknown'</span>])
+</pre></div><p>만약 없는 키를 읽으려고 하면 <code>KeyError</code> 예외가 발생한다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">print</span>(d[<span style="color:#98be65">'unknown'</span>])
 Traceback (most recent call last):
-  File <span style="color: #98be65;">"&lt;stdin&gt;"</span>, line <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #51afef;">in</span> &lt;module&gt;
-<span style="color: #ECBE7B;">KeyError</span>: <span style="color: #98be65;">'unknown'</span>
-</pre>
-</div>
-<p>
-굳이 예외처리를 하고 싶지 않다면 키가 없을 때의 기본 값을 지정할 수 있는 <code>get()</code> 메서드를 활용해서 값을 읽는 것이 편하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">print</span>(d.get(<span style="color: #98be65;">'key'</span>))
+  File <span style="color:#98be65">"&lt;stdin&gt;"</span>, line <span style="color:#da8548;font-weight:700">1</span>, <span style="color:#51afef">in</span> &lt;module&gt;
+<span style="color:#ecbe7b">KeyError</span>: <span style="color:#98be65">'unknown'</span>
+</pre></div><p>굳이 예외처리를 하고 싶지 않다면 키가 없을 때의 기본 값을 지정할 수 있는 <code>get()</code> 메서드를 활용해서 값을 읽는 것이 편하다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">print</span>(d.get(<span style="color:#98be65">'key'</span>))
 value
-&gt;&gt;&gt; <span style="color: #51afef;">print</span>(d.get(<span style="color: #98be65;">'unknown'</span>, <span style="color: #98be65;">'no key'</span>))
+&gt;&gt;&gt; <span style="color:#51afef">print</span>(d.get(<span style="color:#98be65">'unknown'</span>, <span style="color:#98be65">'no key'</span>))
 no key
-&gt;&gt;&gt; <span style="color: #51afef;">print</span>(d.get(<span style="color: #98be65;">'another unknown'</span>))
-<span style="color: #a9a1e1;">None</span>
-</pre>
-</div>
-<p>
-<code>get()</code> 메서드의 두 번째 인자가 기본값이며 이 값이 지정되지 않은 경우는 <code>None</code> 이 기본값이 된다.
-</p>
-
-<p>
-값을 쓰는 것은 제일 처음의 읽는 방법과 비슷하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span>[<span style="color: #98be65;">'a'</span>] = <span style="color: #98be65;">'aaa'</span>
+&gt;&gt;&gt; <span style="color:#51afef">print</span>(d.get(<span style="color:#98be65">'another unknown'</span>))
+<span style="color:#a9a1e1">None</span>
+</pre></div><p><code>get()</code> 메서드의 두 번째 인자가 기본값이며 이 값이 지정되지 않은 경우는 <code>None</code> 이 기본값이 된다.</p><p>값을 쓰는 것은 제일 처음의 읽는 방법과 비슷하다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span>[<span style="color:#98be65">'a'</span>] = <span style="color:#98be65">'aaa'</span>
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>, <span style="color: #98be65;">'a'</span>: <span style="color: #98be65;">'aaa'</span>}
-</pre>
-</div>
-<p>
-하지만 <code>set()</code> 메서드는 별도로 없는 것 같다.
-</p>
-
-<p>
-값을 수정하는 것은 그냥 값을 쓰는 것과 동일하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span>[<span style="color: #98be65;">'a'</span>] = <span style="color: #98be65;">'aaaaa'</span>
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>, <span style="color:#98be65">'a'</span>: <span style="color:#98be65">'aaa'</span>}
+</pre></div><p>하지만 <code>set()</code> 메서드는 별도로 없는 것 같다.</p><p>값을 수정하는 것은 그냥 값을 쓰는 것과 동일하다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span>[<span style="color:#98be65">'a'</span>] = <span style="color:#98be65">'aaaaa'</span>
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>, <span style="color: #98be65;">'a'</span>: <span style="color: #98be65;">'aaaaa'</span>}
-</pre>
-</div>
-<p>
-키를 삭제하려면 평범하게(?) <code>del()</code> 을 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #51afef;">del</span>(d[<span style="color: #98be65;">'a'</span>])
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>, <span style="color:#98be65">'a'</span>: <span style="color:#98be65">'aaaaa'</span>}
+</pre></div><p>키를 삭제하려면 평범하게(?) <code>del()</code> 을 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">del</span>(d[<span style="color:#98be65">'a'</span>])
 &gt;&gt;&gt; d
-{<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-c1047d87" class="outline-2">
-<h2 id="c1047d87">딕셔너리끼리 합치기</h2>
-<div class="outline-text-2" id="text-c1047d87">
-<p>
-일반적인 방법으로 <code>update</code> 메서드를 활용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">a</span> = {<span style="color: #98be65;">'a'</span>:<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>}
-&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = {<span style="color: #98be65;">'b'</span>:<span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
+{<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
+</pre></div></div></div><div id="outline-container-c1047d87"class="outline-2"><h2 id="c1047d87">딕셔너리끼리 합치기</h2><div class="outline-text-2"id="text-c1047d87"><p>일반적인 방법으로 <code>update</code> 메서드를 활용할 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">a</span> = {<span style="color:#98be65">'a'</span>:<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#98be65">'aa'</span>: <span style="color:#da8548;font-weight:700">2</span>}
+&gt;&gt;&gt; <span style="color:#dcaeea">b</span> = {<span style="color:#98be65">'b'</span>:<span style="color:#da8548;font-weight:700">3</span>, <span style="color:#98be65">'bb'</span>: <span style="color:#da8548;font-weight:700">4</span>}
 &gt;&gt;&gt; a.update(b)
 &gt;&gt;&gt; a
-{<span style="color: #98be65;">'a'</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">'b'</span>: <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
-</pre>
-</div>
-<p>
-<code>update()</code> 메서드는 원본을 변조하는 파괴적인(destructive) 방법이라 병렬 처리 시 인스턴스의 레퍼런스가 다른 태스크에서도 공유된다면 조심해서 사용해야 할 것 같다.
-</p>
-
-<p>
-이 외의 트릭으로 아래 방법이 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">a</span> = {<span style="color: #98be65;">'a'</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>}
-&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = {<span style="color: #98be65;">'b'</span>: <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
+{<span style="color:#98be65">'a'</span>: <span style="color:#da8548;font-weight:700">1</span>, <span style="color:#98be65">'aa'</span>: <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#98be65">'b'</span>: <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#98be65">'bb'</span>: <span style="color:#da8548;font-weight:700">4</span>}
+</pre></div><p><code>update()</code> 메서드는 원본을 변조하는 파괴적인(destructive) 방법이라 병렬 처리 시 인스턴스의 레퍼런스가 다른 태스크에서도 공유된다면 조심해서 사용해야 할 것 같다.</p><p>이 외의 트릭으로 아래 방법이 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">a</span> = {<span style="color:#98be65">'a'</span>: <span style="color:#da8548;font-weight:700">1</span>, <span style="color:#98be65">'aa'</span>: <span style="color:#da8548;font-weight:700">2</span>}
+&gt;&gt;&gt; <span style="color:#dcaeea">b</span> = {<span style="color:#98be65">'b'</span>: <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#98be65">'bb'</span>: <span style="color:#da8548;font-weight:700">4</span>}
 &gt;&gt;&gt; {**a, **b}
-{<span style="color: #98be65;">'a'</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">'aa'</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">'b'</span>: <span style="color: #da8548; font-weight: bold;">3</span>, <span style="color: #98be65;">'bb'</span>: <span style="color: #da8548; font-weight: bold;">4</span>}
-</pre>
-</div>
-<p>
-Immutable 작업 스타일로 쓸 수가 있어서 병렬 처리 환경에서도 안심하고 쓸 수 있을 것 같다.
-</p>
-</div>
-</div>
-<div id="outline-container-f0fbc795" class="outline-2">
-<h2 id="f0fbc795">딕셔너리에 다른 딕셔너리를 풀어 넣기</h2>
-<div class="outline-text-2" id="text-f0fbc795">
-<p>
-딕셔너리를 생성할 때 다른 딕셔너리의 값들을 같이 가져가려면 <code>**</code> 를 활용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">a</span> = {<span style="color: #98be65;">'john'</span>: <span style="color: #da8548; font-weight: bold;">100</span>}
-&gt;&gt;&gt; <span style="color: #dcaeea;">b</span> = {<span style="color: #98be65;">'james'</span>: <span style="color: #da8548; font-weight: bold;">50</span>, <span style="color: #98be65;">'kim'</span>: <span style="color: #da8548; font-weight: bold;">99</span>}
-&gt;&gt;&gt; <span style="color: #dcaeea;">c</span> = {<span style="color: #98be65;">'lee'</span>: <span style="color: #da8548; font-weight: bold;">98</span>, **a, **b}
+{<span style="color:#98be65">'a'</span>: <span style="color:#da8548;font-weight:700">1</span>, <span style="color:#98be65">'aa'</span>: <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#98be65">'b'</span>: <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#98be65">'bb'</span>: <span style="color:#da8548;font-weight:700">4</span>}
+</pre></div><p>Immutable 작업 스타일로 쓸 수가 있어서 병렬 처리 환경에서도 안심하고 쓸 수 있을 것 같다.</p></div></div><div id="outline-container-f0fbc795"class="outline-2"><h2 id="f0fbc795">딕셔너리에 다른 딕셔너리를 풀어 넣기</h2><div class="outline-text-2"id="text-f0fbc795"><p>딕셔너리를 생성할 때 다른 딕셔너리의 값들을 같이 가져가려면 <code>**</code> 를 활용할 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">a</span> = {<span style="color:#98be65">'john'</span>: <span style="color:#da8548;font-weight:700">100</span>}
+&gt;&gt;&gt; <span style="color:#dcaeea">b</span> = {<span style="color:#98be65">'james'</span>: <span style="color:#da8548;font-weight:700">50</span>, <span style="color:#98be65">'kim'</span>: <span style="color:#da8548;font-weight:700">99</span>}
+&gt;&gt;&gt; <span style="color:#dcaeea">c</span> = {<span style="color:#98be65">'lee'</span>: <span style="color:#da8548;font-weight:700">98</span>, **a, **b}
 &gt;&gt;&gt; c
-{<span style="color: #98be65;">'lee'</span>: <span style="color: #da8548; font-weight: bold;">98</span>, <span style="color: #98be65;">'john'</span>: <span style="color: #da8548; font-weight: bold;">100</span>, <span style="color: #98be65;">'james'</span>: <span style="color: #da8548; font-weight: bold;">50</span>, <span style="color: #98be65;">'kim'</span>: <span style="color: #da8548; font-weight: bold;">99</span>}
-</pre>
-</div>
-<p>
-이건 사실 위의 합치기 두 번째 예제랑 다를 게 없다. 하지만 목적이 좀 다르게 느껴저서 별도의 항목으로 분리했다.
-</p>
-</div>
-</div>
-<div id="outline-container-b83786de" class="outline-2">
-<h2 id="b83786de">순회하기</h2>
-<div class="outline-text-2" id="text-b83786de">
-<p>
-보통은 아래처럼 모든 키의 리스트(혹은 리스트 제너레이터)를 돌려주는 <code>keys()</code> 메서드를 이용해 모든 키의 값을 읽을 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">d</span> = {<span style="color: #98be65;">'key'</span>: <span style="color: #98be65;">'value'</span>, <span style="color: #98be65;">'other'</span>: <span style="color: #da8548; font-weight: bold;">123</span>}
-&gt;&gt;&gt; <span style="color: #51afef;">for</span> k <span style="color: #51afef;">in</span> d.keys():
-...     <span style="color: #51afef;">print</span>(f<span style="color: #98be65;">'{k} = {d.get(k)}'</span>)
+{<span style="color:#98be65">'lee'</span>: <span style="color:#da8548;font-weight:700">98</span>, <span style="color:#98be65">'john'</span>: <span style="color:#da8548;font-weight:700">100</span>, <span style="color:#98be65">'james'</span>: <span style="color:#da8548;font-weight:700">50</span>, <span style="color:#98be65">'kim'</span>: <span style="color:#da8548;font-weight:700">99</span>}
+</pre></div><p>이건 사실 위의 합치기 두 번째 예제랑 다를 게 없다. 하지만 목적이 좀 다르게 느껴저서 별도의 항목으로 분리했다.</p></div></div><div id="outline-container-b83786de"class="outline-2"><h2 id="b83786de">순회하기</h2><div class="outline-text-2"id="text-b83786de"><p>보통은 아래처럼 모든 키의 리스트(혹은 리스트 제너레이터)를 돌려주는 <code>keys()</code> 메서드를 이용해 모든 키의 값을 읽을 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = {<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
+&gt;&gt;&gt; <span style="color:#51afef">for</span> k <span style="color:#51afef">in</span> d.keys():
+...     <span style="color:#51afef">print</span>(f<span style="color:#98be65">'{k} = {d.get(k)}'</span>)
 ...
-<span style="color: #dcaeea;">key</span> = value
-<span style="color: #dcaeea;">other</span> = <span style="color: #da8548; font-weight: bold;">123</span>
-</pre>
-</div>
-<p>
-이 외에 값들만 순회하고자 한다면 <code>values()</code> 메서드를 이용할 수도 있다. 하지만 그다지 쓸 일은 잘 없을 것 같다.
-</p>
-</div>
-</div>
-<div id="outline-container-e857bc27" class="outline-2">
-<h2 id="e857bc27">참고</h2>
-<div class="outline-text-2" id="text-e857bc27">
-<p>
-요즘은 왠만해선 딕셔너리나 해시테이블 등의 자료구조에서 키를 문자열 형태로 사용하는 게 일반적이지만, 꼭 문자열만 키로 쓸 수 있는 것은 아니다.
-</p>
-<div class="org-src-container">
-<pre class="src src-python">&gt;&gt;&gt; <span style="color: #dcaeea;">a</span> = {<span style="color: #da8548; font-weight: bold;">1</span>: <span style="color: #da8548; font-weight: bold;">100</span>, <span style="color: #da8548; font-weight: bold;">2</span>:<span style="color: #da8548; font-weight: bold;">200</span>}
+<span style="color:#dcaeea">key</span> = value
+<span style="color:#dcaeea">other</span> = <span style="color:#da8548;font-weight:700">123</span>
+</pre></div><p>이 외에 값들만 순회하고자 한다면 <code>values()</code> 메서드를 이용할 수도 있다. 하지만 그다지 쓸 일은 잘 없을 것 같다.</p></div></div><div id="outline-container-e857bc27"class="outline-2"><h2 id="e857bc27">참고</h2><div class="outline-text-2"id="text-e857bc27"><p>요즘은 왠만해선 딕셔너리나 해시테이블 등의 자료구조에서 키를 문자열 형태로 사용하는 게 일반적이지만, 꼭 문자열만 키로 쓸 수 있는 것은 아니다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">a</span> = {<span style="color:#da8548;font-weight:700">1</span>: <span style="color:#da8548;font-weight:700">100</span>, <span style="color:#da8548;font-weight:700">2</span>:<span style="color:#da8548;font-weight:700">200</span>}
 &gt;&gt;&gt; a
-{<span style="color: #da8548; font-weight: bold;">1</span>: <span style="color: #da8548; font-weight: bold;">100</span>, <span style="color: #da8548; font-weight: bold;">2</span>: <span style="color: #da8548; font-weight: bold;">200</span>}
-&gt;&gt;&gt; a[<span style="color: #da8548; font-weight: bold;">1</span>]
-<span style="color: #da8548; font-weight: bold;">100</span>
-</pre>
-</div>
-<p>
-키를 정수로 지정하면 배열과 거의 같은 모습을 구경할 수 있기도 하다.
-</p>
-
-<p>
-물론 문자열이 아무래도 활용성이 좋으니 문자열 외의 타입을 키로 사용하는 일은 흔하진 않을 것이다. 아마도&#x2026;
-</p>
-</div>
-</div>
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/python.html">Python</a></h2>
-<span class="article-description">
-Python(파이썬)에 관한 간략한 설명 및 자료 정리</span
-><span class="article-link-date">
-2020년 6월 30일 수정</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="footer-content">
-<footer>
-Copyright 2019 ~ 2020. Seorenn all rights reserved.
-</footer>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-</body>
-</html>
+{<span style="color:#da8548;font-weight:700">1</span>: <span style="color:#da8548;font-weight:700">100</span>, <span style="color:#da8548;font-weight:700">2</span>: <span style="color:#da8548;font-weight:700">200</span>}
+&gt;&gt;&gt; a[<span style="color:#da8548;font-weight:700">1</span>]
+<span style="color:#da8548;font-weight:700">100</span>
+</pre></div><p>키를 정수로 지정하면 배열과 거의 같은 모습을 구경할 수 있기도 하다.</p><p>물론 문자열이 아무래도 활용성이 좋으니 문자열 외의 타입을 키로 사용하는 일은 흔하진 않을 것이다. 아마도&#x2026;</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/python.html">Python</a></h2><span class="article-description">Python(파이썬)에 관한 간략한 설명 및 자료 정리</span><span class="article-link-date"> 2020년 6월 30일 수정</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

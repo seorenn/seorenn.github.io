@@ -1,103 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/static/style.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>ARC - Seorenn Note</title>
-<meta name="twitter:title" content="ARC" />
-<meta name="og:title" content="ARC" />
-<meta name="description" content="Swift와 Objective-C에서 쓰이는 ARC(Automatic Reference Counting) 메모리 관리 시스템" />
-<meta name="twitter:description" content="Swift와 Objective-C에서 쓰이는 ARC(Automatic Reference Counting) 메모리 관리 시스템" />
-<meta name="og:description" content="Swift와 Objective-C에서 쓰이는 ARC(Automatic Reference Counting) 메모리 관리 시스템" />
-<link rel="canonical" href="https://seorenn.github.io/note/arc.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/arc.html" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image:width" content="520" />
-<meta property="og:image:height" content="329" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@seorenn" />
-<meta name="twitter:creator" content="@seorenn" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn" />
-<meta property="og:locale" content="ko_KR" />
-<meta name="referrer" content="unsafe-url" />
-<meta name="robots" content="follow,index" />
-<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
-<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
-<body>
-<div class="header-content">
-<header class="top-header">
-<div class="logo-container">
-<span class="vertical-center-helper"></span>
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
-<nav>
-<span class="vertical-center-helper"></span>
-<a href="/" title="Home">HOME</a> |
-<a href="/note" title="All Notes">NOTES</a>
-</nav>
-</div>
-</header>
-</div>
-<div class="content-container">
-<section class="content">
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<header>
-<h1>ARC</h1>
-<div class="title-date">2020년 6월 16일 수정</div>
-</header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#3326a1a1">레퍼런스 카운팅(Reference Counting)</a></li>
-<li><a href="#3e2e06f4">자동 레퍼런스 카운팅(ARC)</a></li>
-<li><a href="#6aa20404">강한 참조와 약한 참조</a></li>
-<li><a href="#6394acfb">순환 참조 문제</a></li>
-<li><a href="#0115958f">Swift의 ARC</a></li>
-</ul>
-</div>
-</div>
-<p>
-ARC(Automatic Reference Counting)은 <a href="objective-c.html">Objective-C</a>와 <a href="swift.html">Swift</a>에서 주로 쓰이는 메모리 관리 시스템이다.
-</p>
-
-<p>
-이름으로 보면 Reference Counting 이라는 것을 자동화한 것 같은 늬앙스인데 정말 그렇다.
-</p>
-
-<p>
-설명을 위해서 우선 레퍼런스 카운팅 메모리 관리 체계부터 살펴보자.
-</p>
-
-<div id="outline-container-3326a1a1" class="outline-2">
-<h2 id="3326a1a1">레퍼런스 카운팅(Reference Counting)</h2>
-<div class="outline-text-2" id="text-3326a1a1">
-<p>
-번역하여 참조 횟수를 검사하는 방식의 메모리 관리 체계다. 모든 인스턴스는 내부에 카운터를 가지고 있다. 인스턴스가 생성될 때 혹은 참조될 때 이 카운터가 1 증가하고 참조가 끝나면 카운터를 1 감소시킨다. 그리고 카운터가 0이 되면 해당 인스턴스의 메모리를 해제시킨다.
-</p>
-
-<p>
-참조 카운터를 증가시키는 것을 리테인(retain)이라 부르고 감소시키는 것을 릴리즈(release)라고 부른다. 아래는 ARC를 사용하지 않던 방식의 <a href="objective-c.html">Objective-C</a> 예제다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">SomeClass *obj = [[SomeClass alloc] init];  // retain
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><link rel="stylesheet"href="/static/style.min.css"><title>ARC - Seorenn Note</title><meta name="twitter:title"content="ARC"><meta name="og:title"content="ARC"><meta name="description"content="Swift와 Objective-C에서 쓰이는 ARC(Automatic Reference Counting) 메모리 관리 시스템"><meta name="twitter:description"content="Swift와 Objective-C에서 쓰이는 ARC(Automatic Reference Counting) 메모리 관리 시스템"><meta name="og:description"content="Swift와 Objective-C에서 쓰이는 ARC(Automatic Reference Counting) 메모리 관리 시스템"><link rel="canonical"href="https://seorenn.github.io/note/arc.html"><meta property="og:url"content="https://seorenn.github.io/note/arc.html"><link rel="shortcut icon"type="image/x-icon"href="/static/favicon.ico"><meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image:width"content="520"><meta property="og:image:height"content="329"><meta name="twitter:card"content="summary"><meta name="twitter:site"content="@seorenn"><meta name="twitter:creator"content="@seorenn"><meta property="og:type"content="article"><meta property="og:site_name"content="Seorenn"><meta property="og:locale"content="ko_KR"><meta name="referrer"content="unsafe-url"><meta name="robots"content="follow,index"><meta name="google-site-verification"content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug"><meta name="naver-site-verification"content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script data-ad-client="ca-pub-1071465863344332"async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><div class="header-content"><header class="top-header"><div class="logo-container"><span class="vertical-center-helper"></span> <a href="/"title="Seorenn"><img class="site-logo"src="/static/seorenn-note-logo-light.png"alt="Seorenn Note"></a><nav><span class="vertical-center-helper"></span> <a href="/"title="Home">HOME</a> | <a href="/note"title="All Notes">NOTES</a></nav></div></header></div><div class="content-container"><section class="content"><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><header><h1>ARC</h1><div class="title-date">2020년 6월 16일 수정</div></header><div id="table-of-contents"><h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents"><ul><li><a href="#3326a1a1">레퍼런스 카운팅(Reference Counting)</a></li><li><a href="#3e2e06f4">자동 레퍼런스 카운팅(ARC)</a></li><li><a href="#6aa20404">강한 참조와 약한 참조</a></li><li><a href="#6394acfb">순환 참조 문제</a></li><li><a href="#0115958f">Swift의 ARC</a></li></ul></div></div><p>ARC(Automatic Reference Counting)은 <a href="objective-c.html">Objective-C</a>와 <a href="swift.html">Swift</a>에서 주로 쓰이는 메모리 관리 시스템이다.</p><p>이름으로 보면 Reference Counting 이라는 것을 자동화한 것 같은 늬앙스인데 정말 그렇다.</p><p>설명을 위해서 우선 레퍼런스 카운팅 메모리 관리 체계부터 살펴보자.</p><div id="outline-container-3326a1a1"class="outline-2"><h2 id="3326a1a1">레퍼런스 카운팅(Reference Counting)</h2><div class="outline-text-2"id="text-3326a1a1"><p>번역하여 참조 횟수를 검사하는 방식의 메모리 관리 체계다. 모든 인스턴스는 내부에 카운터를 가지고 있다. 인스턴스가 생성될 때 혹은 참조될 때 이 카운터가 1 증가하고 참조가 끝나면 카운터를 1 감소시킨다. 그리고 카운터가 0이 되면 해당 인스턴스의 메모리를 해제시킨다.</p><p>참조 카운터를 증가시키는 것을 리테인(retain)이라 부르고 감소시키는 것을 릴리즈(release)라고 부른다. 아래는 ARC를 사용하지 않던 방식의 <a href="objective-c.html">Objective-C</a> 예제다.</p><div class="org-src-container"><pre class="src src-objective-c">SomeClass *obj = [[SomeClass alloc] init];  // retain
 SomeClass *objStalker = [obj retain];
 
 ...
@@ -105,29 +6,7 @@ SomeClass *objStalker = [obj retain];
 [objStalker release];
 [obj release];
 // obj가 가리키는 메모리 할당이 해제
-</pre>
-</div>
-<p>
-따라서 retain과 release 쌍만 잘 맞추면 굉장히 효율적이고 낭비 없이 메모리 관리가 가능하면서도 GC 같이 퍼포먼스를 저하시키는 요소도 없어서 나름 효율적인 메모리 방식으로 볼 수 있다.
-</p>
-
-<p>
-단지 retain - release 코드가 추가로 들어가야 되서 코드 양이 많아진다는 단점이 있을 뿐이다.
-</p>
-</div>
-</div>
-<div id="outline-container-3e2e06f4" class="outline-2">
-<h2 id="3e2e06f4">자동 레퍼런스 카운팅(ARC)</h2>
-<div class="outline-text-2" id="text-3e2e06f4">
-<p>
-이런 수동 레퍼런스 카운팅의 단점을 해소하기 위한 목적으로 ARC라는 시스템이 등장한다.
-</p>
-
-<p>
-예상외로 단순한데, 컴파일러가 알아서 retain - release 코드를 빌드 타임에 자동으로 집어 넣고 빌드하는 방식이다. 그래서 레퍼런스 카운팅 시스템 고유의 장점을 살리면서도 코드 라인 수를 획기적으로 줄일 수 있게 되었다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">if (...) {
+</pre></div><p>따라서 retain과 release 쌍만 잘 맞추면 굉장히 효율적이고 낭비 없이 메모리 관리가 가능하면서도 GC 같이 퍼포먼스를 저하시키는 요소도 없어서 나름 효율적인 메모리 방식으로 볼 수 있다.</p><p>단지 retain - release 코드가 추가로 들어가야 되서 코드 양이 많아진다는 단점이 있을 뿐이다.</p></div></div><div id="outline-container-3e2e06f4"class="outline-2"><h2 id="3e2e06f4">자동 레퍼런스 카운팅(ARC)</h2><div class="outline-text-2"id="text-3e2e06f4"><p>이런 수동 레퍼런스 카운팅의 단점을 해소하기 위한 목적으로 ARC라는 시스템이 등장한다.</p><p>예상외로 단순한데, 컴파일러가 알아서 retain - release 코드를 빌드 타임에 자동으로 집어 넣고 빌드하는 방식이다. 그래서 레퍼런스 카운팅 시스템 고유의 장점을 살리면서도 코드 라인 수를 획기적으로 줄일 수 있게 되었다.</p><div class="org-src-container"><pre class="src src-objective-c">if (...) {
     SomeClass *obj = [[SomeClass alloc] init];  // ARC: [obj retain];
     SomeClass *objStalker = obj;                // ARC: [objStalker retain];
 
@@ -136,43 +15,11 @@ SomeClass *objStalker = [obj retain];
     // ARC: [obj release];
     // ARC: [objStalker release];
 }
-</pre>
-</div>
-<p>
-주석으로 표기한 부분들이 컴파일러가 자동으로 해주는 부분들이다. 레퍼런스 참조와 관련된 코드의 거의 대부분이 사라졌음에도 레퍼런스 카운트 관리 방식을 그대로 구현하고 있다.
-</p>
-
-<p>
-물론 그렇다고 모든 것을 컴파일러가 알아서 자동으로 해주지 않겠지만 말이다.
-</p>
-</div>
-</div>
-<div id="outline-container-6aa20404" class="outline-2">
-<h2 id="6aa20404">강한 참조와 약한 참조</h2>
-<div class="outline-text-2" id="text-6aa20404">
-<p>
-참조에는 강한 참조와 약한 참조가 있는데, 여기서 약한 참조(Weak Reference)는 레퍼런스 카운트 증감에 관여하지 않는다. 대신 참조하는 메모리가 해제되면 <code>nil</code> 이 되어버려서 더이상 참조가 불가능해진다.
-</p>
-
-<p>
-이와는 반대로 강한 참조(Strong Reference)는 앞서 말한 retain - release를 제대로 활용한다. 즉 레퍼런스 카운팅 시스템의 핵심이라고 볼 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">@interface SomeClass
+</pre></div><p>주석으로 표기한 부분들이 컴파일러가 자동으로 해주는 부분들이다. 레퍼런스 참조와 관련된 코드의 거의 대부분이 사라졌음에도 레퍼런스 카운트 관리 방식을 그대로 구현하고 있다.</p><p>물론 그렇다고 모든 것을 컴파일러가 알아서 자동으로 해주지 않겠지만 말이다.</p></div></div><div id="outline-container-6aa20404"class="outline-2"><h2 id="6aa20404">강한 참조와 약한 참조</h2><div class="outline-text-2"id="text-6aa20404"><p>참조에는 강한 참조와 약한 참조가 있는데, 여기서 약한 참조(Weak Reference)는 레퍼런스 카운트 증감에 관여하지 않는다. 대신 참조하는 메모리가 해제되면 <code>nil</code> 이 되어버려서 더이상 참조가 불가능해진다.</p><p>이와는 반대로 강한 참조(Strong Reference)는 앞서 말한 retain - release를 제대로 활용한다. 즉 레퍼런스 카운팅 시스템의 핵심이라고 볼 수 있다.</p><div class="org-src-container"><pre class="src src-objective-c">@interface SomeClass
 @property (strong) AnotherClass *obj;
 @property (weak) AnotherClass *refObj;
 @end
-</pre>
-</div>
-<p>
-강한 참조의 경우 의미 상 소유하고 있는 객체로도 볼 수 있다. 위 예제에서 obj 프로퍼티는 SomeClass가 소유하는 프로퍼티로 해석해도 틀린 말이 아니다.
-</p>
-
-<p>
-따라서 아래와 같은 코드에선 ARC에 의해 자동으로 retain 및 release가 들어가게 된다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">if (...) {
+</pre></div><p>강한 참조의 경우 의미 상 소유하고 있는 객체로도 볼 수 있다. 위 예제에서 obj 프로퍼티는 SomeClass가 소유하는 프로퍼티로 해석해도 틀린 말이 아니다.</p><p>따라서 아래와 같은 코드에선 ARC에 의해 자동으로 retain 및 release가 들어가게 된다.</p><div class="org-src-container"><pre class="src src-objective-c">if (...) {
     SomeClass *a = [[SomeClass alloc] init];        // [a retain];
     AnotherClass *b = [[AnotherClass alloc] init];  // [b retain];
     a.obj = b;                                      // [a.obj retain]
@@ -180,156 +27,29 @@ SomeClass *objStalker = [obj retain];
     // [a.obj release];
     // [b release];
 }
-</pre>
-</div>
-<p>
-더이상 소유할 필요가 없을 때 인위적으로 release를 할 수도 있다. 다른 오브젝트를 어사인하면 릴리즈가 되지만 <code>nil</code> 을 어사인하는 방법이 대표적이다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">a.obj = c;    // [a.obj release];
+</pre></div><p>더이상 소유할 필요가 없을 때 인위적으로 release를 할 수도 있다. 다른 오브젝트를 어사인하면 릴리즈가 되지만 <code>nil</code> 을 어사인하는 방법이 대표적이다.</p><div class="org-src-container"><pre class="src src-objective-c">a.obj = c;    // [a.obj release];
               // a.obj = [c retain];
 
 a.obj = nil;  // [a.obj release];
               // a.obj = nil;
-</pre>
-</div>
-<p>
-그런데 이 ARC의 핵심인 강한 참조 때문에 ARC의 대표적인 단점이자 문제점이 나타난다.
-</p>
-</div>
-</div>
-<div id="outline-container-6394acfb" class="outline-2">
-<h2 id="6394acfb">순환 참조 문제</h2>
-<div class="outline-text-2" id="text-6394acfb">
-<p>
-ARC 이전에는 별 문제가 없다가 ARC가 도입된 이후 가장 큰 단점으로 손꼽히는 문제가 발생하게 되었다. 바로 순환 참조(Retain Cycle) 문제다.
-</p>
-
-<p>
-순환 참조는 서로의 프로퍼티가 상대를 강하게 참조하는 상태에서 이들을 쫓아갈 수단을 없애버리는 경우 발생하는 문제로 메모리 릭(leak)을 일으킨다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">objA.ref = objB;
+</pre></div><p>그런데 이 ARC의 핵심인 강한 참조 때문에 ARC의 대표적인 단점이자 문제점이 나타난다.</p></div></div><div id="outline-container-6394acfb"class="outline-2"><h2 id="6394acfb">순환 참조 문제</h2><div class="outline-text-2"id="text-6394acfb"><p>ARC 이전에는 별 문제가 없다가 ARC가 도입된 이후 가장 큰 단점으로 손꼽히는 문제가 발생하게 되었다. 바로 순환 참조(Retain Cycle) 문제다.</p><p>순환 참조는 서로의 프로퍼티가 상대를 강하게 참조하는 상태에서 이들을 쫓아갈 수단을 없애버리는 경우 발생하는 문제로 메모리 릭(leak)을 일으킨다.</p><div class="org-src-container"><pre class="src src-objective-c">objA.ref = objB;
 objB.ref = objA;
 
 objA = nil;
 objB = nil;
-</pre>
-</div>
-<p>
-위의 예에서 <code>objA</code> 와 <code>objB</code> 는 자신의 프로퍼티가 서로를 강하게 참조하고 있다. 이 상황에서 자기 자신에 대한 정보를 읽어버리고 <code>.ref</code> 프로퍼티가 release 될 곳이 사라져 버렸다. 결국 참조하는 메모리가 영원히 해제되니 못 하는 순환 참조 상태가 되어버린다.
-</p>
-
-<p>
-물론 고칠 수 있는 방법은 있다. 참조를 미리 잘 끝어주면 된다.
-</p>
-<div class="org-src-container">
-<pre class="src src-objective-c">objA.ref = objB;
+</pre></div><p>위의 예에서 <code>objA</code> 와 <code>objB</code> 는 자신의 프로퍼티가 서로를 강하게 참조하고 있다. 이 상황에서 자기 자신에 대한 정보를 읽어버리고 <code>.ref</code> 프로퍼티가 release 될 곳이 사라져 버렸다. 결국 참조하는 메모리가 영원히 해제되니 못 하는 순환 참조 상태가 되어버린다.</p><p>물론 고칠 수 있는 방법은 있다. 참조를 미리 잘 끝어주면 된다.</p><div class="org-src-container"><pre class="src src-objective-c">objA.ref = objB;
 objB.ref = objA;
 
 objA.ref = nil;
 objB.ref = nil;
 objA = nil;
 objB = nil;
-</pre>
-</div>
-<p>
-미리 참조하던 프로퍼티들이 가리키는 인스턴스를 release 해두면 당연히 문제는 생기지 않는다. 단지 코드가 더 추가되어야 해서 귀찮아질 뿐이다.
-</p>
-
-<p>
-하지만 특정한 설계가 아니고선 이런 문제는 생각보다 잘 일어나지 않는다. 단지, <a href="uikit.html">UIKit</a>이나 <a href="appkit.html">AppKit</a> 프로그래밍을 하다보면 뷰의 인스턴스를 여기저기 넣다가 메모리가 제대로 해제되지 않는 경험은 어쩌다 겪을 수도 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-0115958f" class="outline-2">
-<h2 id="0115958f">Swift의 ARC</h2>
-<div class="outline-text-2" id="text-0115958f">
-<p>
-여태까지 <a href="objective-c.html">Objective-C</a> 기준으로 ARC를 설명했는데 이제 <a href="apple.html">애플</a>에서 주력으로 미는 언어인 <a href="swift.html">Swift</a>를 기준으로 살펴보자.
-</p>
-
-<p>
-사실 설명할 것이 거의 없다. <a href="swift.html">Swift</a>는 기본적으로 ARC를 사용하고 따라서 메모리 관리와 관련된 부분은 거의 동일하다. 그저 기본적으로 강한 참조를 한다는 것만 차이가 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">class</span> <span style="color: #c678dd;">SomeClass</span> {
-    <span style="color: #51afef;">var</span> strongProerty: AnotherClass
-    <span style="color: #51afef;">weak</span> <span style="color: #51afef;">var</span> weakProperty: AnotherClass
+</pre></div><p>미리 참조하던 프로퍼티들이 가리키는 인스턴스를 release 해두면 당연히 문제는 생기지 않는다. 단지 코드가 더 추가되어야 해서 귀찮아질 뿐이다.</p><p>하지만 특정한 설계가 아니고선 이런 문제는 생각보다 잘 일어나지 않는다. 단지, <a href="uikit.html">UIKit</a>이나 <a href="appkit.html">AppKit</a> 프로그래밍을 하다보면 뷰의 인스턴스를 여기저기 넣다가 메모리가 제대로 해제되지 않는 경험은 어쩌다 겪을 수도 있다.</p></div></div><div id="outline-container-0115958f"class="outline-2"><h2 id="0115958f">Swift의 ARC</h2><div class="outline-text-2"id="text-0115958f"><p>여태까지 <a href="objective-c.html">Objective-C</a> 기준으로 ARC를 설명했는데 이제 <a href="apple.html">애플</a>에서 주력으로 미는 언어인 <a href="swift.html">Swift</a>를 기준으로 살펴보자.</p><p>사실 설명할 것이 거의 없다. <a href="swift.html">Swift</a>는 기본적으로 ARC를 사용하고 따라서 메모리 관리와 관련된 부분은 거의 동일하다. 그저 기본적으로 강한 참조를 한다는 것만 차이가 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">class</span> <span style="color:#c678dd">SomeClass</span> {
+    <span style="color:#51afef">var</span> strongProerty: AnotherClass
+    <span style="color:#51afef">weak</span> <span style="color:#51afef">var</span> weakProperty: AnotherClass
 }
-</pre>
-</div>
-<p>
-의미도 개념도 완전히 동일하다. 거기다 순환 참조가 발생하는 단점까지 그대로 가지고 있다. 순환 참조 예방법 조차 동일하다.
-</p>
-
-<p>
-<a href="closure.html">클로저</a>의 경우 객체 납치(capture)라는 현상으로 인해 순환참조 못지 않은 메모리 릭 문제가 발생할 수 있다. 그래서 여기에도 예방 장치가 생겼다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">let</span> someClosure: (<span style="color: #c678dd;">Int</span>) -&gt; <span style="color: #c678dd;">Int</span> {
-    [<span style="color: #51afef;">unowned</span> <span style="color: #51afef;">self</span>] (y) <span style="color: #51afef;">in</span>
-    <span style="color: #51afef;">return</span> <span style="color: #51afef;">self</span>.<span style="color: #c678dd;">x</span> + y
+</pre></div><p>의미도 개념도 완전히 동일하다. 거기다 순환 참조가 발생하는 단점까지 그대로 가지고 있다. 순환 참조 예방법 조차 동일하다.</p><p><a href="closure.html">클로저</a>의 경우 객체 납치(capture)라는 현상으로 인해 순환참조 못지 않은 메모리 릭 문제가 발생할 수 있다. 그래서 여기에도 예방 장치가 생겼다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">let</span> someClosure: (<span style="color:#c678dd">Int</span>) -&gt; <span style="color:#c678dd">Int</span> {
+    [<span style="color:#51afef">unowned</span> <span style="color:#51afef">self</span>] (y) <span style="color:#51afef">in</span>
+    <span style="color:#51afef">return</span> <span style="color:#51afef">self</span>.<span style="color:#c678dd">x</span> + y
 }
-</pre>
-</div>
-<p>
-위의 <a href="closure.html">클로저</a>는 <code>self</code> 를 참조하고 있기 때문에 이 <a href="closure.html">클로저</a>를 어디에서 참조하느냐에 따라 <code>self</code> 가 가리키는 객체의 메모리 해제 여부가 갈리게 된다.
-</p>
-
-<p>
-그래서 제때 메모리가 해제될 수 있도록 몇 가지 캡처 지시어를 제공하고 있는데 대표적인 것이 <code>unonwed</code> 다. <code>weak</code> 와 비슷하지만 Optional이 아니라는 특징이 있다. 대신 <code>self</code> 의 메모리가 해제되면 런타임 오류가 나겠지만 말이다.
-</p>
-
-<p>
-참고로 이 부분은 이제 <a href="objective-c.html">Objective-C</a>판 클로저인 블록(block) 문법에서도 비슷하게 지원한다. 이제 <code>self</code> 참조에 대해서는 weak self를 만들라는 경고를 자주 볼 수 있다.
-</p>
-</div>
-</div>
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/objective-c.html">Objective-C</a></h2>
-<span class="article-description">
-Objective-C에 대한 짧은 소개</span
-><span class="article-link-date">
-2020년 6월 23일 수정</span>
-</div>
-</div>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/closure.html">클로저</a></h2>
-<span class="article-description">
-클로저(Closure)에 대한 이야기들</span
-><span class="article-link-date">
-2020년 6월 18일 수정</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="footer-content">
-<footer>
-Copyright 2019 ~ 2020. Seorenn all rights reserved.
-</footer>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-</body>
-</html>
+</pre></div><p>위의 <a href="closure.html">클로저</a>는 <code>self</code> 를 참조하고 있기 때문에 이 <a href="closure.html">클로저</a>를 어디에서 참조하느냐에 따라 <code>self</code> 가 가리키는 객체의 메모리 해제 여부가 갈리게 된다.</p><p>그래서 제때 메모리가 해제될 수 있도록 몇 가지 캡처 지시어를 제공하고 있는데 대표적인 것이 <code>unonwed</code> 다. <code>weak</code> 와 비슷하지만 Optional이 아니라는 특징이 있다. 대신 <code>self</code> 의 메모리가 해제되면 런타임 오류가 나겠지만 말이다.</p><p>참고로 이 부분은 이제 <a href="objective-c.html">Objective-C</a>판 클로저인 블록(block) 문법에서도 비슷하게 지원한다. 이제 <code>self</code> 참조에 대해서는 weak self를 만들라는 경고를 자주 볼 수 있다.</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/objective-c.html">Objective-C</a></h2><span class="article-description">Objective-C에 대한 짧은 소개</span><span class="article-link-date"> 2020년 6월 23일 수정</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/closure.html">클로저</a></h2><span class="article-description">클로저(Closure)에 대한 이야기들</span><span class="article-link-date"> 2020년 6월 18일 수정</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

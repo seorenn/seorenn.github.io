@@ -1,944 +1,159 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/static/style.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>Emacs Lisp Functions - Seorenn Note</title>
-<meta name="twitter:title" content="Emacs Lisp Functions" />
-<meta name="og:title" content="Emacs Lisp Functions" />
-<meta name="description" content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글" />
-<meta name="twitter:description" content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글" />
-<meta name="og:description" content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글" />
-<link rel="canonical" href="https://seorenn.github.io/note/emacs-lisp-functions.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/emacs-lisp-functions.html" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image:width" content="520" />
-<meta property="og:image:height" content="329" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@seorenn" />
-<meta name="twitter:creator" content="@seorenn" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn" />
-<meta property="og:locale" content="ko_KR" />
-<meta name="referrer" content="unsafe-url" />
-<meta name="robots" content="follow,index" />
-<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
-<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
-<body>
-<div class="header-content">
-<header class="top-header">
-<div class="logo-container">
-<span class="vertical-center-helper"></span>
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
-<nav>
-<span class="vertical-center-helper"></span>
-<a href="/" title="Home">HOME</a> |
-<a href="/note" title="All Notes">NOTES</a>
-</nav>
-</div>
-</header>
-</div>
-<div class="content-container">
-<section class="content">
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<header>
-<h1>Emacs Lisp Functions</h1>
-<div class="title-date">2020년 5월 11일 수정</div>
-</header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#4df49487">변수</a>
-<ul>
-<li><a href="#31e2a9d4">setq</a></li>
-<li><a href="#e1686078">let</a></li>
-<li><a href="#916016ba">let*</a></li>
-</ul>
-</li>
-<li><a href="#dee3c0cf">리스트 관련</a>
-<ul>
-<li><a href="#dfda1ca0">리스트 생성하기</a></li>
-<li><a href="#bc37c181">아이템 꺼내오기</a></li>
-<li><a href="#f01e3f26">리스트 여분 구하기</a></li>
-<li><a href="#83d32be4">리스트 연장하기</a></li>
-<li><a href="#ab1cac9f">리스트 요소 다루기</a></li>
-</ul>
-</li>
-<li><a href="#0d2442e8">문자열 관련</a>
-<ul>
-<li><a href="#5efd27f5">length: 길이</a></li>
-<li><a href="#82150f02">concat: 이어 붙이기</a></li>
-<li><a href="#6e23a4f5">substring: 내부의 문자열 잘라서 얻기</a></li>
-<li><a href="#1a9d5cf1">string-trim: 다듬기</a></li>
-<li><a href="#d3fbd034">format: C 스타일 문자열 포맷</a></li>
-<li><a href="#a12f2e5a">string-remove-prefix, string-remove-suffix</a></li>
-<li><a href="#60cd1b52">string-match and replace-match</a></li>
-<li><a href="#77cb2eb3">number-to-string: 숫자를 문자열로 변환하기</a></li>
-<li><a href="#f8badb1f">split-string and string-join</a></li>
-</ul>
-</li>
-<li><a href="#cc7dbcea">조건문</a>
-<ul>
-<li><a href="#39c8942e">if</a></li>
-<li><a href="#a0bc65a3">비교 함수들</a></li>
-<li><a href="#52ecaf41">타입 확인</a></li>
-</ul>
-</li>
-<li><a href="#8378a9a9">루프</a>
-<ul>
-<li><a href="#901889f4">while</a></li>
-</ul>
-</li>
-<li><a href="#c41465a1">함수형 언어 스타일 열거 함수</a>
-<ul>
-<li><a href="#3708dcf1">mapcar</a></li>
-<li><a href="#eb086189">mapc</a></li>
-<li><a href="#3dd5b3d4">mapconcat</a></li>
-<li><a href="#139b24f0">seq-filter</a></li>
-</ul>
-</li>
-<li><a href="#e4729843">함수 형식</a>
-<ul>
-<li><a href="#98422a5c">기본적인 함수 정의 방법</a></li>
-<li><a href="#9a9b354f">옵셔널 매개 변수</a></li>
-</ul>
-</li>
-<li><a href="#7edad14f">버퍼 관련</a>
-<ul>
-<li><a href="#5dd81a85">char-after</a></li>
-<li><a href="#c9543468">goto-char</a></li>
-<li><a href="#e0df5f3d">insert</a></li>
-<li><a href="#ff25f555">generate-new-buffer</a></li>
-<li><a href="#a408aaca">switch-to-buffer</a></li>
-<li><a href="#cfb71b90">with-current-buffer</a></li>
-<li><a href="#7234ff39">with-temp-buffer</a></li>
-</ul>
-</li>
-<li><a href="#97b5edd7">선택영역 관련</a>
-<ul>
-<li><a href="#2ee1bb21">region-beginning and region-end</a></li>
-</ul>
-</li>
-<li><a href="#7c6d60de">커서 관련</a></li>
-<li><a href="#a5df47d9">파일/디렉토리 관련</a>
-<ul>
-<li><a href="#93777205">expand-file-name: 완벽한 절대 경로 구하기</a></li>
-<li><a href="#7e835a9c">file-relative-name: 상대 경로 구하기</a></li>
-<li><a href="#39e7c18d">file-name-nondirectory: 경로에서 파일 이름 구하기</a></li>
-<li><a href="#d125c245">file-name-directory: 경로에서 디렉터리만 구하기</a></li>
-<li><a href="#52fcc5a6">file-name-sans-extension: 확장자 제거</a></li>
-<li><a href="#81880a3f">file-name-as-directory: 디렉터리 경로 명확히 하기</a></li>
-<li><a href="#d4b324e0">file-expand-wildcards: 파일 목록 구하기</a></li>
-<li><a href="#1145cd74">file-exists-p: 파일 존재 여부 검사</a></li>
-</ul>
-</li>
-<li><a href="#c9027e3c">체크섬(Checksum)</a>
-<ul>
-<li><a href="#1bc29b36">md5</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<p>
-이 글은 <a href="emacs.html">Emacs</a>에서 사용하는 <a href="emacs-lisp.html">Emacs Lisp</a>의 함수를 정리하는 노트다.
-당연히 모든 것을 정리한 것은 아니고, 기회가 될 때 마다 추가하고 있다.
-</p>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><link rel="stylesheet"href="/static/style.min.css"><title>Emacs Lisp Functions - Seorenn Note</title><meta name="twitter:title"content="Emacs Lisp Functions"><meta name="og:title"content="Emacs Lisp Functions"><meta name="description"content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글"><meta name="twitter:description"content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글"><meta name="og:description"content="Emacs Lisp 의 여러 유용한 함수를 정리하는 글"><link rel="canonical"href="https://seorenn.github.io/note/emacs-lisp-functions.html"><meta property="og:url"content="https://seorenn.github.io/note/emacs-lisp-functions.html"><link rel="shortcut icon"type="image/x-icon"href="/static/favicon.ico"><meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image:width"content="520"><meta property="og:image:height"content="329"><meta name="twitter:card"content="summary"><meta name="twitter:site"content="@seorenn"><meta name="twitter:creator"content="@seorenn"><meta property="og:type"content="article"><meta property="og:site_name"content="Seorenn"><meta property="og:locale"content="ko_KR"><meta name="referrer"content="unsafe-url"><meta name="robots"content="follow,index"><meta name="google-site-verification"content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug"><meta name="naver-site-verification"content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script data-ad-client="ca-pub-1071465863344332"async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><div class="header-content"><header class="top-header"><div class="logo-container"><span class="vertical-center-helper"></span> <a href="/"title="Seorenn"><img class="site-logo"src="/static/seorenn-note-logo-light.png"alt="Seorenn Note"></a><nav><span class="vertical-center-helper"></span> <a href="/"title="Home">HOME</a> | <a href="/note"title="All Notes">NOTES</a></nav></div></header></div><div class="content-container"><section class="content"><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><header><h1>Emacs Lisp Functions</h1><div class="title-date">2020년 5월 11일 수정</div></header><div id="table-of-contents"><h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents"><ul><li><a href="#4df49487">변수</a><ul><li><a href="#31e2a9d4">setq</a></li><li><a href="#e1686078">let</a></li><li><a href="#916016ba">let*</a></li></ul></li><li><a href="#dee3c0cf">리스트 관련</a><ul><li><a href="#dfda1ca0">리스트 생성하기</a></li><li><a href="#bc37c181">아이템 꺼내오기</a></li><li><a href="#f01e3f26">리스트 여분 구하기</a></li><li><a href="#83d32be4">리스트 연장하기</a></li><li><a href="#ab1cac9f">리스트 요소 다루기</a></li></ul></li><li><a href="#0d2442e8">문자열 관련</a><ul><li><a href="#5efd27f5">length: 길이</a></li><li><a href="#82150f02">concat: 이어 붙이기</a></li><li><a href="#6e23a4f5">substring: 내부의 문자열 잘라서 얻기</a></li><li><a href="#1a9d5cf1">string-trim: 다듬기</a></li><li><a href="#d3fbd034">format: C 스타일 문자열 포맷</a></li><li><a href="#a12f2e5a">string-remove-prefix, string-remove-suffix</a></li><li><a href="#60cd1b52">string-match and replace-match</a></li><li><a href="#77cb2eb3">number-to-string: 숫자를 문자열로 변환하기</a></li><li><a href="#f8badb1f">split-string and string-join</a></li></ul></li><li><a href="#cc7dbcea">조건문</a><ul><li><a href="#39c8942e">if</a></li><li><a href="#a0bc65a3">비교 함수들</a></li><li><a href="#52ecaf41">타입 확인</a></li></ul></li><li><a href="#8378a9a9">루프</a><ul><li><a href="#901889f4">while</a></li></ul></li><li><a href="#c41465a1">함수형 언어 스타일 열거 함수</a><ul><li><a href="#3708dcf1">mapcar</a></li><li><a href="#eb086189">mapc</a></li><li><a href="#3dd5b3d4">mapconcat</a></li><li><a href="#139b24f0">seq-filter</a></li></ul></li><li><a href="#e4729843">함수 형식</a><ul><li><a href="#98422a5c">기본적인 함수 정의 방법</a></li><li><a href="#9a9b354f">옵셔널 매개 변수</a></li></ul></li><li><a href="#7edad14f">버퍼 관련</a><ul><li><a href="#5dd81a85">char-after</a></li><li><a href="#c9543468">goto-char</a></li><li><a href="#e0df5f3d">insert</a></li><li><a href="#ff25f555">generate-new-buffer</a></li><li><a href="#a408aaca">switch-to-buffer</a></li><li><a href="#cfb71b90">with-current-buffer</a></li><li><a href="#7234ff39">with-temp-buffer</a></li></ul></li><li><a href="#97b5edd7">선택영역 관련</a><ul><li><a href="#2ee1bb21">region-beginning and region-end</a></li></ul></li><li><a href="#7c6d60de">커서 관련</a></li><li><a href="#a5df47d9">파일/디렉토리 관련</a><ul><li><a href="#93777205">expand-file-name: 완벽한 절대 경로 구하기</a></li><li><a href="#7e835a9c">file-relative-name: 상대 경로 구하기</a></li><li><a href="#39e7c18d">file-name-nondirectory: 경로에서 파일 이름 구하기</a></li><li><a href="#d125c245">file-name-directory: 경로에서 디렉터리만 구하기</a></li><li><a href="#52fcc5a6">file-name-sans-extension: 확장자 제거</a></li><li><a href="#81880a3f">file-name-as-directory: 디렉터리 경로 명확히 하기</a></li><li><a href="#d4b324e0">file-expand-wildcards: 파일 목록 구하기</a></li><li><a href="#1145cd74">file-exists-p: 파일 존재 여부 검사</a></li></ul></li><li><a href="#c9027e3c">체크섬(Checksum)</a><ul><li><a href="#1bc29b36">md5</a></li></ul></li></ul></div></div><p>이 글은 <a href="emacs.html">Emacs</a>에서 사용하는 <a href="emacs-lisp.html">Emacs Lisp</a>의 함수를 정리하는 노트다. 당연히 모든 것을 정리한 것은 아니고, 기회가 될 때 마다 추가하고 있다.</p><div id="outline-container-4df49487"class="outline-2"><h2 id="4df49487">변수</h2><div class="outline-text-2"id="text-4df49487"></div><div id="outline-container-31e2a9d4"class="outline-3"><h3 id="31e2a9d4">setq</h3><div class="outline-text-3"id="text-31e2a9d4"><p>전역 변수를 생성한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">setq</span> variable-name <span style="color:#da8548;font-weight:700">100</span><span style="color:#51afef">)</span>
+<span style="color:#51afef">(</span><span style="color:#51afef">setq</span> v1 <span style="color:#da8548;font-weight:700">1</span>
+      v2 <span style="color:#da8548;font-weight:700">2</span>
+      v3 <span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-e1686078"class="outline-3"><h3 id="e1686078">let</h3><div class="outline-text-3"id="text-e1686078"><p>지역 변수를 생성한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">let</span> <span style="color:#c678dd">(</span>a b<span style="color:#c678dd">)</span>
+  ...<span style="color:#51afef">)</span>
+</pre></div><p>초기값도 사용 가능하다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">let</span> <span style="color:#c678dd">(</span><span style="color:#98be65">(</span>a <span style="color:#da8548;font-weight:700">1</span><span style="color:#98be65">)</span>
+      <span style="color:#98be65">(</span>b <span style="color:#da8548;font-weight:700">2</span><span style="color:#98be65">)</span>
+      <span style="color:#98be65">(</span>c <span style="color:#51afef">(</span>generate-some-value<span style="color:#51afef">)</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+  ... body ...<span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-916016ba"class="outline-3"><h3 id="916016ba">let*</h3><div class="outline-text-3"id="text-916016ba"><p>지역 변수를 생성하는데 앞서 생성한 값을 생성하는데 참고할 수 있는 특수한 형태다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">let*</span> <span style="color:#c678dd">(</span><span style="color:#98be65">(</span>a <span style="color:#da8548;font-weight:700">1</span><span style="color:#98be65">)</span>
+       <span style="color:#98be65">(</span>b <span style="color:#51afef">(</span><span style="color:#a9a1e1">+</span> a <span style="color:#da8548;font-weight:700">2</span><span style="color:#51afef">)</span><span style="color:#98be65">)</span>
+       <span style="color:#98be65">(</span>c <span style="color:#51afef">(</span><span style="color:#a9a1e1">/</span> b <span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">)</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+  ... body ...<span style="color:#51afef">)</span>
+</pre></div></div></div></div><div id="outline-container-dee3c0cf"class="outline-2"><h2 id="dee3c0cf">리스트 관련</h2><div class="outline-text-2"id="text-dee3c0cf"></div><div id="outline-container-dfda1ca0"class="outline-3"><h3 id="dfda1ca0">리스트 생성하기</h3><div class="outline-text-3"id="text-dfda1ca0"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">list</span> <span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#51afef">)</span>         <span style="color:#5b6268">;; </span><span style="color:#5b6268">(1 2 3 4)</span>
+<span style="color:#51afef">'</span><span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#51afef">)</span>             <span style="color:#5b6268">;; </span><span style="color:#5b6268">(1 2 3 4)</span>
+</pre></div><p>순차적인 리스트는 <code>number-sequence</code> 를 이용해 생성할 수 있다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">number-sequence</span> <span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">)</span>      <span style="color:#5b6268">;; </span><span style="color:#5b6268">(3)</span>
+<span style="color:#51afef">(</span><span style="color:#c678dd">number-sequence</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">5</span><span style="color:#51afef">)</span>    <span style="color:#5b6268">;; </span><span style="color:#5b6268">(2 3 4 5)</span>
+<span style="color:#51afef">(</span><span style="color:#c678dd">number-sequence</span> <span style="color:#da8548;font-weight:700">0</span> <span style="color:#da8548;font-weight:700">9</span> <span style="color:#da8548;font-weight:700">2</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">(0 2 4 6 8)</span>
+</pre></div></div></div><div id="outline-container-bc37c181"class="outline-3"><h3 id="bc37c181">아이템 꺼내오기</h3><div class="outline-text-3"id="text-bc37c181"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">car</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>            <span style="color:#5b6268">;; </span><span style="color:#5b6268">"a"</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">first</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>          <span style="color:#5b6268">;; </span><span style="color:#5b6268">"a"</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">nth</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span> <span style="color:#98be65">"d"</span> <span style="color:#98be65">"e"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">"d"</span>
+<span style="color:#51afef">(</span><span style="color:#c678dd">last</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>           <span style="color:#5b6268">;; </span><span style="color:#5b6268">("c")</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">car</span> <span style="color:#c678dd">(</span><span style="color:#c678dd">last</span> <span style="color:#51afef">'</span><span style="color:#98be65">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>     <span style="color:#5b6268">;; </span><span style="color:#5b6268">"c"</span>
+</pre></div></div></div><div id="outline-container-f01e3f26"class="outline-3"><h3 id="f01e3f26">리스트 여분 구하기</h3><div class="outline-text-3"id="text-f01e3f26"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">cdr</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>       <span style="color:#5b6268">;; </span><span style="color:#5b6268">(2 3 4)</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">rest</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>      <span style="color:#5b6268">;; </span><span style="color:#5b6268">(2 3 4)</span>
+<span style="color:#51afef">(</span><span style="color:#c678dd">butlast</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>   <span style="color:#5b6268">;; </span><span style="color:#5b6268">(1 2 3)</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">nthcdr</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">(3 4)</span>
+</pre></div></div></div><div id="outline-container-83d32be4"class="outline-3"><h3 id="83d32be4">리스트 연장하기</h3><div class="outline-text-3"id="text-83d32be4"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">cons</span> <span style="color:#98be65">"a"</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>           <span style="color:#5b6268">;; </span><span style="color:#5b6268">("a" "b" "c")</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">cons</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span><span style="color:#c678dd">)</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"c"</span> <span style="color:#98be65">"d"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>    <span style="color:#5b6268">;; </span><span style="color:#5b6268">(("a" "b") "c" "d")</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">append</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"a"</span> <span style="color:#98be65">"b"</span><span style="color:#c678dd">)</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"c"</span> <span style="color:#98be65">"d"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">("a" "b" "c" "d")</span>
+</pre></div><p>이 외에 <code>nconc</code> 도 <code>append</code> 와 비슷하게 사용할 수 있다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">let</span> <span style="color:#c678dd">(</span><span style="color:#98be65">(</span>some-list <span style="color:#51afef">'</span><span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">)</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#a9a1e1">nconc</span> some-list <span style="color:#51afef">'</span><span style="color:#98be65">(</span><span style="color:#da8548;font-weight:700">4</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+  some-list<span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">=&gt; (1 2 3 4)</span>
+</pre></div><p>다만 <code>nconc</code> 는 원본 변수의 값을 바꿔버리기 때문에 <code>append</code> 와는 다른 용도를 가지고 있다고 생각하자.</p></div></div><div id="outline-container-ab1cac9f"class="outline-3"><h3 id="ab1cac9f">리스트 요소 다루기</h3><div class="outline-text-3"id="text-ab1cac9f"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">let</span> <span style="color:#c678dd">(</span><span style="color:#98be65">(</span>lst <span style="color:#51afef">'</span><span style="color:#51afef">(</span><span style="color:#98be65">"b"</span> <span style="color:#98be65">"c"</span><span style="color:#51afef">)</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#51afef">push</span> <span style="color:#98be65">"a"</span> lst<span style="color:#c678dd">)</span>
+  <span style="color:#5b6268">;; </span><span style="color:#5b6268">lst -&gt; ("a" "b" "c")</span>
+  <span style="color:#c678dd">(</span><span style="color:#51afef">pop</span> lst<span style="color:#c678dd">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "a"</span>
+  <span style="color:#5b6268">;; </span><span style="color:#5b6268">lst -&gt; ("b" "c")</span>
+  <span style="color:#51afef">)</span>
+</pre></div></div></div></div><div id="outline-container-0d2442e8"class="outline-2"><h2 id="0d2442e8">문자열 관련</h2><div class="outline-text-2"id="text-0d2442e8"></div><div id="outline-container-5efd27f5"class="outline-3"><h3 id="5efd27f5">length: 길이</h3><div class="outline-text-3"id="text-5efd27f5"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">length</span> <span style="color:#98be65">"abcd"</span><span style="color:#51afef">)</span>
+</pre></div><p>근데 <code>length</code> 는 다용도라 리스트 개수 세기 용으로도 사용된다.</p></div></div><div id="outline-container-82150f02"class="outline-3"><h3 id="82150f02">concat: 이어 붙이기</h3><div class="outline-text-3"id="text-82150f02"><p>문자열을 이어 붙일 때 사용한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">concat</span> <span style="color:#98be65">"hello"</span> <span style="color:#98be65">" "</span> <span style="color:#98be65">"world!"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "hello world!"</span>
+</pre></div></div></div><div id="outline-container-6e23a4f5"class="outline-3"><h3 id="6e23a4f5">substring: 내부의 문자열 잘라서 얻기</h3><div class="outline-text-3"id="text-6e23a4f5"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">substring</span> <span style="color:#98be65">"abcde"</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">4</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "cd"</span>
+</pre></div></div></div><div id="outline-container-1a9d5cf1"class="outline-3"><h3 id="1a9d5cf1">string-trim: 다듬기</h3><div class="outline-text-3"id="text-1a9d5cf1"><p>문자열 좌우의 공백 문자(whitespaces)를 제거한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">string-trim</span> <span style="color:#98be65">"  blah blah "</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "blah blah"</span>
+</pre></div></div></div><div id="outline-container-d3fbd034"class="outline-3"><h3 id="d3fbd034">format: C 스타일 문자열 포맷</h3><div class="outline-text-3"id="text-d3fbd034"><p>특정 포맷으로 문자열을 생성한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">format</span> <span style="color:#98be65">"I am %d age %s"</span> <span style="color:#da8548;font-weight:700">19</span> <span style="color:#98be65">"old"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "I am 19 age old"</span>
+</pre></div></div></div><div id="outline-container-a12f2e5a"class="outline-3"><h3 id="a12f2e5a">string-remove-prefix, string-remove-suffix</h3><div class="outline-text-3"id="text-a12f2e5a"><p>문자열 앞 혹은 뒤쪽의 특정 문자열을 잘라낸다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">string-remove-prefix</span> <span style="color:#98be65">"aaa"</span> <span style="color:#98be65">"aaabbbccc"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "bbbccc"</span>
+<span style="color:#51afef">(</span><span style="color:#c678dd">string-remove-suffix</span> <span style="color:#98be65">"ccc"</span> <span style="color:#98be65">"aaabbbccc"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "aaabbb"</span>
+</pre></div></div></div><div id="outline-container-60cd1b52"class="outline-3"><h3 id="60cd1b52">string-match and replace-match</h3><div class="outline-text-3"id="text-60cd1b52"><p>문자열에서 일부분을 비교해서 위치를 반환한다. 정규표현식도 사용할 수 있다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">string-match</span> <span style="color:#98be65">"bbb"</span> <span style="color:#98be65">"aaabbbccc"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; 3</span>
+</pre></div><p>위 코드에 <code>replace-match</code> 를 이어서 사용할 수 있다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">replace-match</span> <span style="color:#98be65">"BBB"</span> nil nil <span style="color:#98be65">"aaabbbccc"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; aaaBBBccc</span>
+</pre></div></div></div><div id="outline-container-77cb2eb3"class="outline-3"><h3 id="77cb2eb3">number-to-string: 숫자를 문자열로 변환하기</h3><div class="outline-text-3"id="text-77cb2eb3"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">number-to-string</span> <span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">)</span>
+</pre></div><p>반대 용도로 <code>string-to-number</code> 도 있다.</p></div></div><div id="outline-container-f8badb1f"class="outline-3"><h3 id="f8badb1f">split-string and string-join</h3><div class="outline-text-3"id="text-f8badb1f"><p><code>split-string</code> 은 문자열을 특정 문자열을 단위로 나눌 때 사용한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">split-string</span> <span style="color:#98be65">"my name is conrad"</span> <span style="color:#98be65">" "</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; ("my" "name" "is" "conrad")</span>
+</pre></div><p>반대로 <code>string-join</code> 은 문자열 리스트를 하나의 문자열로 합친다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">string-join</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"my"</span> <span style="color:#98be65">"name"</span> <span style="color:#98be65">"is"</span> <span style="color:#98be65">"conrad"</span><span style="color:#c678dd">)</span> <span style="color:#98be65">" "</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "my name is conrad"</span>
+</pre></div></div></div></div><div id="outline-container-cc7dbcea"class="outline-2"><h2 id="cc7dbcea">조건문</h2><div class="outline-text-2"id="text-cc7dbcea"></div><div id="outline-container-39c8942e"class="outline-3"><h3 id="39c8942e">if</h3><div class="outline-text-3"id="text-39c8942e"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">if</span> <span style="color:#c678dd">(</span>condition<span style="color:#c678dd">)</span>
+    <span style="color:#c678dd">(</span>then-statement<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>else-statement<span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div><p>condition 값은 <code>nil</code> 혹은 <code>()</code> 인 경우에만 False이고 나머지는 True이다.</p><p>then-statement 와 else-statement는 둘 다 함수 하나만 쓸 수 있게 되어있다. 만약 여러 프로시저를 넣고 싶다면 <code>progn</code> 으로 블록을 정의해서 써야한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">if</span> <span style="color:#c678dd">(</span>condition<span style="color:#c678dd">)</span>
+    <span style="color:#c678dd">(</span><span style="color:#51afef">progn</span>
+      <span style="color:#98be65">(</span>statement <span style="color:#da8548;font-weight:700">1</span><span style="color:#98be65">)</span>
+      <span style="color:#98be65">(</span>statement <span style="color:#da8548;font-weight:700">2</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#51afef">progn</span>
+    <span style="color:#98be65">(</span>statement <span style="color:#da8548;font-weight:700">3</span><span style="color:#98be65">)</span>
+    <span style="color:#98be65">(</span>statement <span style="color:#da8548;font-weight:700">4</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div><p>and, or, not 등은 함수로 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">and</span> cond1 cond2 ...<span style="color:#51afef">)</span>
+<span style="color:#51afef">(</span><span style="color:#51afef">or</span> cond1 cond2 ...<span style="color:#51afef">)</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">not</span> <span style="color:#c678dd">(</span>condition<span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div><p>else 처리가 필요 없다면 좀 더 간단한 <code>when</code> 이나 <code>unless</code> 를 쓸 수도 있다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">when</span> <span style="color:#c678dd">(</span>condition<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>statement1<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>statement2<span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
 
-<div id="outline-container-4df49487" class="outline-2">
-<h2 id="4df49487">변수</h2>
-<div class="outline-text-2" id="text-4df49487">
-</div>
-<div id="outline-container-31e2a9d4" class="outline-3">
-<h3 id="31e2a9d4">setq</h3>
-<div class="outline-text-3" id="text-31e2a9d4">
-<p>
-전역 변수를 생성한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> variable-name <span style="color: #da8548; font-weight: bold;">100</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> v1 <span style="color: #da8548; font-weight: bold;">1</span>
-      v2 <span style="color: #da8548; font-weight: bold;">2</span>
-      v3 <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-e1686078" class="outline-3">
-<h3 id="e1686078">let</h3>
-<div class="outline-text-3" id="text-e1686078">
-<p>
-지역 변수를 생성한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">let</span> <span style="color: #c678dd;">(</span>a b<span style="color: #c678dd;">)</span>
-  ...<span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-초기값도 사용 가능하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">let</span> <span style="color: #c678dd;">(</span><span style="color: #98be65;">(</span>a <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">)</span>
-      <span style="color: #98be65;">(</span>b <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #98be65;">)</span>
-      <span style="color: #98be65;">(</span>c <span style="color: #51afef;">(</span>generate-some-value<span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
-  ... body ...<span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-916016ba" class="outline-3">
-<h3 id="916016ba">let*</h3>
-<div class="outline-text-3" id="text-916016ba">
-<p>
-지역 변수를 생성하는데 앞서 생성한 값을 생성하는데 참고할 수 있는 특수한 형태다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">let*</span> <span style="color: #c678dd;">(</span><span style="color: #98be65;">(</span>a <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">)</span>
-       <span style="color: #98be65;">(</span>b <span style="color: #51afef;">(</span><span style="color: #a9a1e1;">+</span> a <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span>
-       <span style="color: #98be65;">(</span>c <span style="color: #51afef;">(</span><span style="color: #a9a1e1;">/</span> b <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
-  ... body ...<span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-dee3c0cf" class="outline-2">
-<h2 id="dee3c0cf">리스트 관련</h2>
-<div class="outline-text-2" id="text-dee3c0cf">
-</div>
-<div id="outline-container-dfda1ca0" class="outline-3">
-<h3 id="dfda1ca0">리스트 생성하기</h3>
-<div class="outline-text-3" id="text-dfda1ca0">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">list</span> <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #51afef;">)</span>         <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(1 2 3 4)</span>
-<span style="color: #51afef;">'</span><span style="color: #51afef;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #51afef;">)</span>             <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(1 2 3 4)</span>
-</pre>
-</div>
-<p>
-순차적인 리스트는 <code>number-sequence</code> 를 이용해 생성할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">number-sequence</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #51afef;">)</span>      <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(3)</span>
-<span style="color: #51afef;">(</span><span style="color: #c678dd;">number-sequence</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">5</span><span style="color: #51afef;">)</span>    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(2 3 4 5)</span>
-<span style="color: #51afef;">(</span><span style="color: #c678dd;">number-sequence</span> <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">9</span> <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(0 2 4 6 8)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-bc37c181" class="outline-3">
-<h3 id="bc37c181">아이템 꺼내오기</h3>
-<div class="outline-text-3" id="text-bc37c181">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">car</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>            <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">"a"</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">first</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>          <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">"a"</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">nth</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span> <span style="color: #98be65;">"d"</span> <span style="color: #98be65;">"e"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">"d"</span>
-<span style="color: #51afef;">(</span><span style="color: #c678dd;">last</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>           <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">("c")</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">car</span> <span style="color: #c678dd;">(</span><span style="color: #c678dd;">last</span> <span style="color: #51afef;">'</span><span style="color: #98be65;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>     <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">"c"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-f01e3f26" class="outline-3">
-<h3 id="f01e3f26">리스트 여분 구하기</h3>
-<div class="outline-text-3" id="text-f01e3f26">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">cdr</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>       <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(2 3 4)</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">rest</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>      <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(2 3 4)</span>
-<span style="color: #51afef;">(</span><span style="color: #c678dd;">butlast</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>   <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(1 2 3)</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">nthcdr</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(3 4)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-83d32be4" class="outline-3">
-<h3 id="83d32be4">리스트 연장하기</h3>
-<div class="outline-text-3" id="text-83d32be4">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">cons</span> <span style="color: #98be65;">"a"</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>           <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">("a" "b" "c")</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">cons</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span><span style="color: #c678dd;">)</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"c"</span> <span style="color: #98be65;">"d"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">(("a" "b") "c" "d")</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">append</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"a"</span> <span style="color: #98be65;">"b"</span><span style="color: #c678dd;">)</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"c"</span> <span style="color: #98be65;">"d"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">("a" "b" "c" "d")</span>
-</pre>
-</div>
-<p>
-이 외에 <code>nconc</code> 도 <code>append</code> 와 비슷하게 사용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">let</span> <span style="color: #c678dd;">(</span><span style="color: #98be65;">(</span>some-list <span style="color: #51afef;">'</span><span style="color: #51afef;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">nconc</span> some-list <span style="color: #51afef;">'</span><span style="color: #98be65;">(</span><span style="color: #da8548; font-weight: bold;">4</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
-  some-list<span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">=&gt; (1 2 3 4)</span>
-</pre>
-</div>
-<p>
-다만 <code>nconc</code> 는 원본 변수의 값을 바꿔버리기 때문에 <code>append</code> 와는 다른 용도를 가지고 있다고 생각하자.
-</p>
-</div>
-</div>
-<div id="outline-container-ab1cac9f" class="outline-3">
-<h3 id="ab1cac9f">리스트 요소 다루기</h3>
-<div class="outline-text-3" id="text-ab1cac9f">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">let</span> <span style="color: #c678dd;">(</span><span style="color: #98be65;">(</span>lst <span style="color: #51afef;">'</span><span style="color: #51afef;">(</span><span style="color: #98be65;">"b"</span> <span style="color: #98be65;">"c"</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #51afef;">push</span> <span style="color: #98be65;">"a"</span> lst<span style="color: #c678dd;">)</span>
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">lst -&gt; ("a" "b" "c")</span>
-  <span style="color: #c678dd;">(</span><span style="color: #51afef;">pop</span> lst<span style="color: #c678dd;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "a"</span>
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">lst -&gt; ("b" "c")</span>
-  <span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-0d2442e8" class="outline-2">
-<h2 id="0d2442e8">문자열 관련</h2>
-<div class="outline-text-2" id="text-0d2442e8">
-</div>
-<div id="outline-container-5efd27f5" class="outline-3">
-<h3 id="5efd27f5">length: 길이</h3>
-<div class="outline-text-3" id="text-5efd27f5">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">length</span> <span style="color: #98be65;">"abcd"</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-근데 <code>length</code> 는 다용도라 리스트 개수 세기 용으로도 사용된다.
-</p>
-</div>
-</div>
-<div id="outline-container-82150f02" class="outline-3">
-<h3 id="82150f02">concat: 이어 붙이기</h3>
-<div class="outline-text-3" id="text-82150f02">
-<p>
-문자열을 이어 붙일 때 사용한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #98be65;">"hello"</span> <span style="color: #98be65;">" "</span> <span style="color: #98be65;">"world!"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "hello world!"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-6e23a4f5" class="outline-3">
-<h3 id="6e23a4f5">substring: 내부의 문자열 잘라서 얻기</h3>
-<div class="outline-text-3" id="text-6e23a4f5">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">substring</span> <span style="color: #98be65;">"abcde"</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "cd"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-1a9d5cf1" class="outline-3">
-<h3 id="1a9d5cf1">string-trim: 다듬기</h3>
-<div class="outline-text-3" id="text-1a9d5cf1">
-<p>
-문자열 좌우의 공백 문자(whitespaces)를 제거한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">string-trim</span> <span style="color: #98be65;">"  blah blah "</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "blah blah"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-d3fbd034" class="outline-3">
-<h3 id="d3fbd034">format: C 스타일 문자열 포맷</h3>
-<div class="outline-text-3" id="text-d3fbd034">
-<p>
-특정 포맷으로 문자열을 생성한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">format</span> <span style="color: #98be65;">"I am %d age %s"</span> <span style="color: #da8548; font-weight: bold;">19</span> <span style="color: #98be65;">"old"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "I am 19 age old"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-a12f2e5a" class="outline-3">
-<h3 id="a12f2e5a">string-remove-prefix, string-remove-suffix</h3>
-<div class="outline-text-3" id="text-a12f2e5a">
-<p>
-문자열 앞 혹은 뒤쪽의 특정 문자열을 잘라낸다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">string-remove-prefix</span> <span style="color: #98be65;">"aaa"</span> <span style="color: #98be65;">"aaabbbccc"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "bbbccc"</span>
-<span style="color: #51afef;">(</span><span style="color: #c678dd;">string-remove-suffix</span> <span style="color: #98be65;">"ccc"</span> <span style="color: #98be65;">"aaabbbccc"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "aaabbb"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-60cd1b52" class="outline-3">
-<h3 id="60cd1b52">string-match and replace-match</h3>
-<div class="outline-text-3" id="text-60cd1b52">
-<p>
-문자열에서 일부분을 비교해서 위치를 반환한다. 정규표현식도 사용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">string-match</span> <span style="color: #98be65;">"bbb"</span> <span style="color: #98be65;">"aaabbbccc"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; 3</span>
-</pre>
-</div>
-<p>
-위 코드에 <code>replace-match</code> 를 이어서 사용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">replace-match</span> <span style="color: #98be65;">"BBB"</span> nil nil <span style="color: #98be65;">"aaabbbccc"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; aaaBBBccc</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-77cb2eb3" class="outline-3">
-<h3 id="77cb2eb3">number-to-string: 숫자를 문자열로 변환하기</h3>
-<div class="outline-text-3" id="text-77cb2eb3">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">number-to-string</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-반대 용도로 <code>string-to-number</code> 도 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-f8badb1f" class="outline-3">
-<h3 id="f8badb1f">split-string and string-join</h3>
-<div class="outline-text-3" id="text-f8badb1f">
-<p>
-<code>split-string</code> 은 문자열을 특정 문자열을 단위로 나눌 때 사용한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">split-string</span> <span style="color: #98be65;">"my name is conrad"</span> <span style="color: #98be65;">" "</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; ("my" "name" "is" "conrad")</span>
-</pre>
-</div>
-<p>
-반대로 <code>string-join</code> 은 문자열 리스트를 하나의 문자열로 합친다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">string-join</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"my"</span> <span style="color: #98be65;">"name"</span> <span style="color: #98be65;">"is"</span> <span style="color: #98be65;">"conrad"</span><span style="color: #c678dd;">)</span> <span style="color: #98be65;">" "</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "my name is conrad"</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-cc7dbcea" class="outline-2">
-<h2 id="cc7dbcea">조건문</h2>
-<div class="outline-text-2" id="text-cc7dbcea">
-</div>
-<div id="outline-container-39c8942e" class="outline-3">
-<h3 id="39c8942e">if</h3>
-<div class="outline-text-3" id="text-39c8942e">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>condition<span style="color: #c678dd;">)</span>
-    <span style="color: #c678dd;">(</span>then-statement<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>else-statement<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-condition 값은 <code>nil</code> 혹은 <code>()</code> 인 경우에만 False이고 나머지는 True이다.
-</p>
+<span style="color:#51afef">(</span><span style="color:#51afef">unless</span> <span style="color:#c678dd">(</span>false-condition<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>statement1<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>statement2<span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div><p><code>when</code> 과 <code>unless</code> 는 <code>progn</code> 을 쓰지 않아도 여러 프로시저를 나열할 수 있다.</p></div></div><div id="outline-container-a0bc65a3"class="outline-3"><h3 id="a0bc65a3">비교 함수들</h3><div class="outline-text-3"id="text-a0bc65a3"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">equal</span> <span style="color:#da8548;font-weight:700">10</span> <span style="color:#da8548;font-weight:700">10</span><span style="color:#51afef">)</span>              <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; t</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">equal</span> <span style="color:#98be65">"str"</span> <span style="color:#98be65">"STR"</span><span style="color:#51afef">)</span>        <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; nil</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">equal</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span><span style="color:#c678dd">)</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; t</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">equal</span> <span style="color:#51afef">'</span><span style="color:#ecbe7b">symb</span> <span style="color:#51afef">'</span><span style="color:#ecbe7b">symb</span><span style="color:#51afef">)</span>        <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; t</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">&gt;</span> <span style="color:#da8548;font-weight:700">10</span> <span style="color:#da8548;font-weight:700">1</span><span style="color:#51afef">)</span>                   <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; t</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">string=</span> <span style="color:#98be65">"abc"</span> <span style="color:#98be65">"ABC"</span><span style="color:#51afef">)</span>      <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; nil</span>
+</pre></div></div></div><div id="outline-container-52ecaf41"class="outline-3"><h3 id="52ecaf41">타입 확인</h3><div class="outline-text-3"id="text-52ecaf41"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">integerp</span> <span style="color:#da8548;font-weight:700">10</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; t</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">floatp</span> <span style="color:#da8548;font-weight:700">3.14</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; t</span>
+</pre></div></div></div></div><div id="outline-container-8378a9a9"class="outline-2"><h2 id="8378a9a9">루프</h2><div class="outline-text-2"id="text-8378a9a9"></div><div id="outline-container-901889f4"class="outline-3"><h3 id="901889f4">while</h3><div class="outline-text-3"id="text-901889f4"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">while</span> <span style="color:#c678dd">(</span>condition<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>statement1<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span>statement2<span style="color:#c678dd">)</span>
+  ...<span style="color:#51afef">)</span>
+</pre></div></div></div></div><div id="outline-container-c41465a1"class="outline-2"><h2 id="c41465a1">함수형 언어 스타일 열거 함수</h2><div class="outline-text-2"id="text-c41465a1"></div><div id="outline-container-3708dcf1"class="outline-3"><h3 id="3708dcf1">mapcar</h3><div class="outline-text-3"id="text-3708dcf1"><p>리스트를 각 아이템을 특정 함수로 평가해서 리스트를 작성한다. 다른 언어에서 map 이라는 불리는 메서드와 거의 동일하다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">defun</span> <span style="color:#c678dd">make-double</span> <span style="color:#c678dd">(</span>x<span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#a9a1e1">+</span> x x<span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
 
-<p>
-then-statement 와 else-statement는 둘 다 함수 하나만 쓸 수 있게 되어있다.
-만약 여러 프로시저를 넣고 싶다면 <code>progn</code> 으로 블록을 정의해서 써야한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>condition<span style="color: #c678dd;">)</span>
-    <span style="color: #c678dd;">(</span><span style="color: #51afef;">progn</span>
-      <span style="color: #98be65;">(</span>statement <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">)</span>
-      <span style="color: #98be65;">(</span>statement <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #51afef;">progn</span>
-    <span style="color: #98be65;">(</span>statement <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #98be65;">)</span>
-    <span style="color: #98be65;">(</span>statement <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-and, or, not 등은 함수로 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">and</span> cond1 cond2 ...<span style="color: #51afef;">)</span>
-<span style="color: #51afef;">(</span><span style="color: #51afef;">or</span> cond1 cond2 ...<span style="color: #51afef;">)</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">not</span> <span style="color: #c678dd;">(</span>condition<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">mapcar</span> <span style="color:#51afef">#'</span><span style="color:#ecbe7b">make-double</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span> <span style="color:#da8548;font-weight:700">5</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; (2, 4, 6, 8, 10)</span>
+</pre></div><p>처리 함수가 공용이 아니라면 보통은 lambda 함수를 이용해 간단하게 구현하곤 한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">mapcar</span>
+ <span style="color:#c678dd">(</span><span style="color:#51afef">lambda</span> <span style="color:#98be65">(</span>x<span style="color:#98be65">)</span>
+   <span style="color:#98be65">(</span><span style="color:#a9a1e1">+</span> x x<span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+ <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span> <span style="color:#da8548;font-weight:700">5</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; (2, 4, 6, 8, 10)</span>
+</pre></div></div></div><div id="outline-container-eb086189"class="outline-3"><h3 id="eb086189">mapc</h3><div class="outline-text-3"id="text-eb086189"><p><code>mapc</code> 는 <code>mapcar</code> 와 비슷한데, 입력된 값을 그대로 반환하기 때문에 map 용도 보다는 그냥 for each에 가까운 용도로 사용한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">mapc</span>
+ <span style="color:#c678dd">(</span><span style="color:#51afef">lambda</span> <span style="color:#98be65">(</span>x<span style="color:#98be65">)</span>
+   <span style="color:#98be65">(</span><span style="color:#a9a1e1">+</span> x x<span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+ <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span> <span style="color:#da8548;font-weight:700">5</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
 
-<p>
-else 처리가 필요 없다면 좀 더 간단한 <code>when</code> 이나 <code>unless</code> 를 쓸 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">when</span> <span style="color: #c678dd;">(</span>condition<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>statement1<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>statement2<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">=&gt; (1 2 3 4 5)</span>
+</pre></div><p>돌아오는 결과가 전혀 가공되지 않았음을 주의해서 보자.</p></div></div><div id="outline-container-3dd5b3d4"class="outline-3"><h3 id="3dd5b3d4">mapconcat</h3><div class="outline-text-3"id="text-3dd5b3d4"><p>리스트를 하나의 문자열로 합칠 때 사용한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">mapconcat</span> <span style="color:#51afef">#'</span><span style="color:#ecbe7b">identity</span> <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#98be65">"hello"</span> <span style="color:#98be65">"world"</span> <span style="color:#98be65">"!"</span><span style="color:#c678dd">)</span> <span style="color:#98be65">" "</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "hello world !"</span>
+</pre></div><p>위 예제에서 마지막 매개변수는 각 문자열이 합쳐 질 때 사이에 들어가는 문자열이다.</p><p>참고로 위 예제에서 <code>identity</code> 는 입력된 값을 그대로 돌려주는 함수다.</p></div></div><div id="outline-container-139b24f0"class="outline-3"><h3 id="139b24f0">seq-filter</h3><div class="outline-text-3"id="text-139b24f0"><p>보통 다른 언어에서 filter라 부르는 메서드와 비슷한 용도의 함수다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">require</span> <span style="color:#51afef">'</span><span style="color:#a9a1e1">seq</span><span style="color:#51afef">)</span>
+<span style="color:#51afef">(</span><span style="color:#c678dd">seq-filter</span>
+ <span style="color:#c678dd">(</span><span style="color:#51afef">lambda</span> <span style="color:#98be65">(</span>x<span style="color:#98be65">)</span>
+   <span style="color:#98be65">(</span><span style="color:#a9a1e1">=</span> <span style="color:#da8548;font-weight:700">0</span> <span style="color:#51afef">(</span><span style="color:#dcaeea">%</span> x <span style="color:#da8548;font-weight:700">2</span><span style="color:#51afef">)</span><span style="color:#98be65">)</span><span style="color:#c678dd">)</span>
+ <span style="color:#51afef">'</span><span style="color:#c678dd">(</span><span style="color:#da8548;font-weight:700">1</span> <span style="color:#da8548;font-weight:700">2</span> <span style="color:#da8548;font-weight:700">3</span> <span style="color:#da8548;font-weight:700">4</span> <span style="color:#da8548;font-weight:700">5</span> <span style="color:#da8548;font-weight:700">6</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
 
-<span style="color: #51afef;">(</span><span style="color: #51afef;">unless</span> <span style="color: #c678dd;">(</span>false-condition<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>statement1<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>statement2<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-<code>when</code> 과 <code>unless</code> 는 <code>progn</code> 을 쓰지 않아도 여러 프로시저를 나열할 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-a0bc65a3" class="outline-3">
-<h3 id="a0bc65a3">비교 함수들</h3>
-<div class="outline-text-3" id="text-a0bc65a3">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">equal</span> <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #da8548; font-weight: bold;">10</span><span style="color: #51afef;">)</span>              <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">equal</span> <span style="color: #98be65;">"str"</span> <span style="color: #98be65;">"STR"</span><span style="color: #51afef;">)</span>        <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; nil</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">equal</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #c678dd;">)</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">equal</span> <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">symb</span> <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">symb</span><span style="color: #51afef;">)</span>        <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">&gt;</span> <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #51afef;">)</span>                   <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">string=</span> <span style="color: #98be65;">"abc"</span> <span style="color: #98be65;">"ABC"</span><span style="color: #51afef;">)</span>      <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; nil</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-52ecaf41" class="outline-3">
-<h3 id="52ecaf41">타입 확인</h3>
-<div class="outline-text-3" id="text-52ecaf41">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">integerp</span> <span style="color: #da8548; font-weight: bold;">10</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">floatp</span> <span style="color: #da8548; font-weight: bold;">3.14</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; t</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-8378a9a9" class="outline-2">
-<h2 id="8378a9a9">루프</h2>
-<div class="outline-text-2" id="text-8378a9a9">
-</div>
-<div id="outline-container-901889f4" class="outline-3">
-<h3 id="901889f4">while</h3>
-<div class="outline-text-3" id="text-901889f4">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">while</span> <span style="color: #c678dd;">(</span>condition<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>statement1<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span>statement2<span style="color: #c678dd;">)</span>
-  ...<span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-c41465a1" class="outline-2">
-<h2 id="c41465a1">함수형 언어 스타일 열거 함수</h2>
-<div class="outline-text-2" id="text-c41465a1">
-</div>
-<div id="outline-container-3708dcf1" class="outline-3">
-<h3 id="3708dcf1">mapcar</h3>
-<div class="outline-text-3" id="text-3708dcf1">
-<p>
-리스트를 각 아이템을 특정 함수로 평가해서 리스트를 작성한다. 다른 언어에서 map 이라는 불리는 메서드와 거의 동일하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">make-double</span> <span style="color: #c678dd;">(</span>x<span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">+</span> x x<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">mapcar</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">make-double</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span> <span style="color: #da8548; font-weight: bold;">5</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; (2, 4, 6, 8, 10)</span>
-</pre>
-</div>
-<p>
-처리 함수가 공용이 아니라면 보통은 lambda 함수를 이용해 간단하게 구현하곤 한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">mapcar</span>
- <span style="color: #c678dd;">(</span><span style="color: #51afef;">lambda</span> <span style="color: #98be65;">(</span>x<span style="color: #98be65;">)</span>
-   <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">+</span> x x<span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
- <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span> <span style="color: #da8548; font-weight: bold;">5</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; (2, 4, 6, 8, 10)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-eb086189" class="outline-3">
-<h3 id="eb086189">mapc</h3>
-<div class="outline-text-3" id="text-eb086189">
-<p>
-<code>mapc</code> 는 <code>mapcar</code> 와 비슷한데, 입력된 값을 그대로 반환하기 때문에 map 용도 보다는 그냥 for each에 가까운 용도로 사용한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">mapc</span>
- <span style="color: #c678dd;">(</span><span style="color: #51afef;">lambda</span> <span style="color: #98be65;">(</span>x<span style="color: #98be65;">)</span>
-   <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">+</span> x x<span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
- <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span> <span style="color: #da8548; font-weight: bold;">5</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">=&gt; (1 2 3 4 5)</span>
-</pre>
-</div>
-<p>
-돌아오는 결과가 전혀 가공되지 않았음을 주의해서 보자.
-</p>
-</div>
-</div>
-<div id="outline-container-3dd5b3d4" class="outline-3">
-<h3 id="3dd5b3d4">mapconcat</h3>
-<div class="outline-text-3" id="text-3dd5b3d4">
-<p>
-리스트를 하나의 문자열로 합칠 때 사용한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">mapconcat</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">identity</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"hello"</span> <span style="color: #98be65;">"world"</span> <span style="color: #98be65;">"!"</span><span style="color: #c678dd;">)</span> <span style="color: #98be65;">" "</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "hello world !"</span>
-</pre>
-</div>
-<p>
-위 예제에서 마지막 매개변수는 각 문자열이 합쳐 질 때 사이에 들어가는 문자열이다.
-</p>
-
-<p>
-참고로 위 예제에서 <code>identity</code> 는 입력된 값을 그대로 돌려주는 함수다.
-</p>
-</div>
-</div>
-<div id="outline-container-139b24f0" class="outline-3">
-<h3 id="139b24f0">seq-filter</h3>
-<div class="outline-text-3" id="text-139b24f0">
-<p>
-보통 다른 언어에서 filter라 부르는 메서드와 비슷한 용도의 함수다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">require</span> <span style="color: #51afef;">'</span><span style="color: #a9a1e1;">seq</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">(</span><span style="color: #c678dd;">seq-filter</span>
- <span style="color: #c678dd;">(</span><span style="color: #51afef;">lambda</span> <span style="color: #98be65;">(</span>x<span style="color: #98be65;">)</span>
-   <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">=</span> <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #51afef;">(</span><span style="color: #dcaeea;">%</span> x <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #51afef;">)</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
- <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">3</span> <span style="color: #da8548; font-weight: bold;">4</span> <span style="color: #da8548; font-weight: bold;">5</span> <span style="color: #da8548; font-weight: bold;">6</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">=&gt; (2 4 6)</span>
-</pre>
-</div>
-<p>
-내장 함수가 아니라 <code>seq</code> 라는 패키지에 들어있기 때문에 별도의 require가 필요하다는 것에 주의하자.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-e4729843" class="outline-2">
-<h2 id="e4729843">함수 형식</h2>
-<div class="outline-text-2" id="text-e4729843">
-</div>
-<div id="outline-container-98422a5c" class="outline-3">
-<h3 id="98422a5c">기본적인 함수 정의 방법</h3>
-<div class="outline-text-3" id="text-98422a5c">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">function-name</span> <span style="color: #c678dd;">(</span>param1 param2 ...<span style="color: #c678dd;">)</span>
-  <span style="color: #83898d;">"documentation"</span>
-  ... body ...<span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-함수를 <a href="emacs.html">Emacs</a> 커맨드로 쓰려면 <code>interactive</code> 를 선언해 주어야 한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">function-name</span> <span style="color: #c678dd;">(</span>...<span style="color: #c678dd;">)</span>
-  <span style="color: #83898d;">"documentation"</span>
-  <span style="color: #c678dd;">(</span><span style="color: #51afef;">interactive</span><span style="color: #c678dd;">)</span>   <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&lt;----</span>
-  ... body ...<span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-9a9b354f" class="outline-3">
-<h3 id="9a9b354f">옵셔널 매개 변수</h3>
-<div class="outline-text-3" id="text-9a9b354f">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">function-name</span> <span style="color: #c678dd;">(</span>a b <span style="color: #ECBE7B;">&amp;optional</span> c d<span style="color: #c678dd;">)</span>
-  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">...</span>
-  <span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-위의 경우 a, b는 필수 매개 변수지만, c와 d는 넘기지 않아도 되며 이 경우 <code>nil</code> 이 값으로 들어온다.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-7edad14f" class="outline-2">
-<h2 id="7edad14f">버퍼 관련</h2>
-<div class="outline-text-2" id="text-7edad14f">
-</div>
-<div id="outline-container-5dd81a85" class="outline-3">
-<h3 id="5dd81a85">char-after</h3>
-<div class="outline-text-3" id="text-5dd81a85">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">char-after</span> <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-c9543468" class="outline-3">
-<h3 id="c9543468">goto-char</h3>
-<div class="outline-text-3" id="text-c9543468">
-<p>
-특정 위치로 커서를 옮긴다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">goto-char</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">point-min</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">start of buffer</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">goto-char</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">point-max</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">end of buffer</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-e0df5f3d" class="outline-3">
-<h3 id="e0df5f3d">insert</h3>
-<div class="outline-text-3" id="text-e0df5f3d">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">insert</span> <span style="color: #98be65;">"text"</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-ff25f555" class="outline-3">
-<h3 id="ff25f555">generate-new-buffer</h3>
-<div class="outline-text-3" id="text-ff25f555">
-<p>
-이름대로 버퍼를 생성한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">generate-new-buffer</span> <span style="color: #98be65;">"buffer-name"</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-반환되는 값은 버퍼의 이름인데 꼭 지정된 이름과 일치하지는 않을 수도 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-a408aaca" class="outline-3">
-<h3 id="a408aaca">switch-to-buffer</h3>
-<div class="outline-text-3" id="text-a408aaca">
-<p>
-버퍼를 선택한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">switch-to-buffer</span> <span style="color: #c678dd;">(</span><span style="color: #c678dd;">generate-new-buffer</span> <span style="color: #98be65;">"some-buffer"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-cfb71b90" class="outline-3">
-<h3 id="cfb71b90">with-current-buffer</h3>
-<div class="outline-text-3" id="text-cfb71b90">
-<p>
-현재 선택된 버퍼로 뭔가를 할 때 사용한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">with-current-buffer</span> some-buffer
-  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">insert</span> <span style="color: #98be65;">"sample text"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-7234ff39" class="outline-3">
-<h3 id="7234ff39">with-temp-buffer</h3>
-<div class="outline-text-3" id="text-7234ff39">
-<p>
-임시로 빈 버퍼를 만들어 뭔가 할 때 사용한다.
-파일 내용을 읽어들일 때나 새로운 파일을 작성할 때 등등 의외로 자주 사용된다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">with-temp-buffer</span>
-  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">insert-file-contents</span> <span style="color: #98be65;">"readme.txt"</span><span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">insert</span> <span style="color: #98be65;">"hello world!"</span><span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #c678dd;">write-file</span> <span style="color: #98be65;">"helloworld.txt"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-97b5edd7" class="outline-2">
-<h2 id="97b5edd7">선택영역 관련</h2>
-<div class="outline-text-2" id="text-97b5edd7">
-</div>
-<div id="outline-container-2ee1bb21" class="outline-3">
-<h3 id="2ee1bb21">region-beginning and region-end</h3>
-<div class="outline-text-3" id="text-2ee1bb21">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">goto-char</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">region-beginning</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">goto-char</span> <span style="color: #c678dd;">(</span>regin-end<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-7c6d60de" class="outline-2">
-<h2 id="7c6d60de">커서 관련</h2>
-</div>
-<div id="outline-container-a5df47d9" class="outline-2">
-<h2 id="a5df47d9">파일/디렉토리 관련</h2>
-<div class="outline-text-2" id="text-a5df47d9">
-</div>
-<div id="outline-container-93777205" class="outline-3">
-<h3 id="93777205">expand-file-name: 완벽한 절대 경로 구하기</h3>
-<div class="outline-text-3" id="text-93777205">
-<p>
-축약 경로를 절대 경로로 해석해 준다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">expand-file-name</span> <span style="color: #98be65;">"~/test.txt"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; ex: /user/home/directory/test.txt</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-7e835a9c" class="outline-3">
-<h3 id="7e835a9c">file-relative-name: 상대 경로 구하기</h3>
-<div class="outline-text-3" id="text-7e835a9c">
-<p>
-특정 경로를 기준으로 원하는 파일 경로의 상대 경로를 구한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">file-relative-name</span> <span style="color: #98be65;">"/foo/bar/name"</span> <span style="color: #98be65;">"./"</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-39e7c18d" class="outline-3">
-<h3 id="39e7c18d">file-name-nondirectory: 경로에서 파일 이름 구하기</h3>
-<div class="outline-text-3" id="text-39e7c18d">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">file-name-nondirectory</span> <span style="color: #98be65;">"/foo/bar/name.ext"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "name.ext"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-d125c245" class="outline-3">
-<h3 id="d125c245">file-name-directory: 경로에서 디렉터리만 구하기</h3>
-<div class="outline-text-3" id="text-d125c245">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">file-name-directory</span> <span style="color: #98be65;">"/foo/bar/sample.txt"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "/foo/bar/"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-52fcc5a6" class="outline-3">
-<h3 id="52fcc5a6">file-name-sans-extension: 확장자 제거</h3>
-<div class="outline-text-3" id="text-52fcc5a6">
-<p>
-파일 이름에서 확장자를 제거한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">file-name-sans-extension</span> <span style="color: #98be65;">"sample.txt"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "sample"</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-81880a3f" class="outline-3">
-<h3 id="81880a3f">file-name-as-directory: 디렉터리 경로 명확히 하기</h3>
-<div class="outline-text-3" id="text-81880a3f">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">file-name-as-directory</span> <span style="color: #98be65;">"/foo/bar"</span><span style="color: #51afef;">)</span>
-<span style="color: #5B6268;">;; </span><span style="color: #5B6268;">-&gt; "/foo/bar/"</span>
-</pre>
-</div>
-<p>
-끝에 <code>/</code> 가 붙었다는 것을 잘 보자.
-</p>
-</div>
-</div>
-<div id="outline-container-d4b324e0" class="outline-3">
-<h3 id="d4b324e0">file-expand-wildcards: 파일 목록 구하기</h3>
-<div class="outline-text-3" id="text-d4b324e0">
-<p>
-아래 커맨드는 <code>~/foo/bar</code> 디렉터리 안의 모든 <code>.org</code> 파일 목록을 돌려준다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">file-expand-wildcards</span> <span style="color: #98be65;">"~/foo/bar/*.org"</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-1145cd74" class="outline-3">
-<h3 id="1145cd74">file-exists-p: 파일 존재 여부 검사</h3>
-<div class="outline-text-3" id="text-1145cd74">
-<p>
-파일이 존재하면 non-nil을 반환한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">when</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">file-exists-p</span> <span style="color: #98be65;">"/foo/bar/file/name"</span><span style="color: #c678dd;">)</span>
-  <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">message</span> <span style="color: #98be65;">"file exists!"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-c9027e3c" class="outline-2">
-<h2 id="c9027e3c">체크섬(Checksum)</h2>
-<div class="outline-text-2" id="text-c9027e3c">
-</div>
-<div id="outline-container-1bc29b36" class="outline-3">
-<h3 id="1bc29b36">md5</h3>
-<div class="outline-text-3" id="text-1bc29b36">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #a9a1e1;">md5</span> <span style="color: #98be65;">"some-string"</span><span style="color: #51afef;">)</span>
-</pre>
-</div>
-<p>
-이렇게 하면 MD5 해시를 문자열로 구할 수 있다.
-</p>
-</div>
-</div>
-</div>
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/emacs-lisp.html">Emacs Lisp</a></h2>
-<span class="article-description">
-Emacs Lisp에 관한 정보 모음</span
-><span class="article-link-date">
-2020년 5월 15일 수정</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="footer-content">
-<footer>
-Copyright 2019 ~ 2020. Seorenn all rights reserved.
-</footer>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-</body>
-</html>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">=&gt; (2 4 6)</span>
+</pre></div><p>내장 함수가 아니라 <code>seq</code> 라는 패키지에 들어있기 때문에 별도의 require가 필요하다는 것에 주의하자.</p></div></div></div><div id="outline-container-e4729843"class="outline-2"><h2 id="e4729843">함수 형식</h2><div class="outline-text-2"id="text-e4729843"></div><div id="outline-container-98422a5c"class="outline-3"><h3 id="98422a5c">기본적인 함수 정의 방법</h3><div class="outline-text-3"id="text-98422a5c"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">defun</span> <span style="color:#c678dd">function-name</span> <span style="color:#c678dd">(</span>param1 param2 ...<span style="color:#c678dd">)</span>
+  <span style="color:#83898d">"documentation"</span>
+  ... body ...<span style="color:#51afef">)</span>
+</pre></div><p>함수를 <a href="emacs.html">Emacs</a> 커맨드로 쓰려면 <code>interactive</code> 를 선언해 주어야 한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">defun</span> <span style="color:#c678dd">function-name</span> <span style="color:#c678dd">(</span>...<span style="color:#c678dd">)</span>
+  <span style="color:#83898d">"documentation"</span>
+  <span style="color:#c678dd">(</span><span style="color:#51afef">interactive</span><span style="color:#c678dd">)</span>   <span style="color:#5b6268">;; </span><span style="color:#5b6268">&lt;----</span>
+  ... body ...<span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-9a9b354f"class="outline-3"><h3 id="9a9b354f">옵셔널 매개 변수</h3><div class="outline-text-3"id="text-9a9b354f"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">defun</span> <span style="color:#c678dd">function-name</span> <span style="color:#c678dd">(</span>a b <span style="color:#ecbe7b">&amp;optional</span> c d<span style="color:#c678dd">)</span>
+  <span style="color:#5b6268">;; </span><span style="color:#5b6268">...</span>
+  <span style="color:#51afef">)</span>
+</pre></div><p>위의 경우 a, b는 필수 매개 변수지만, c와 d는 넘기지 않아도 되며 이 경우 <code>nil</code> 이 값으로 들어온다.</p></div></div></div><div id="outline-container-7edad14f"class="outline-2"><h2 id="7edad14f">버퍼 관련</h2><div class="outline-text-2"id="text-7edad14f"></div><div id="outline-container-5dd81a85"class="outline-3"><h3 id="5dd81a85">char-after</h3><div class="outline-text-3"id="text-5dd81a85"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">char-after</span> <span style="color:#da8548;font-weight:700">1</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-c9543468"class="outline-3"><h3 id="c9543468">goto-char</h3><div class="outline-text-3"id="text-c9543468"><p>특정 위치로 커서를 옮긴다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">goto-char</span> <span style="color:#c678dd">(</span><span style="color:#a9a1e1">point-min</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">start of buffer</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">goto-char</span> <span style="color:#c678dd">(</span><span style="color:#a9a1e1">point-max</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>  <span style="color:#5b6268">;; </span><span style="color:#5b6268">end of buffer</span>
+</pre></div></div></div><div id="outline-container-e0df5f3d"class="outline-3"><h3 id="e0df5f3d">insert</h3><div class="outline-text-3"id="text-e0df5f3d"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">insert</span> <span style="color:#98be65">"text"</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-ff25f555"class="outline-3"><h3 id="ff25f555">generate-new-buffer</h3><div class="outline-text-3"id="text-ff25f555"><p>이름대로 버퍼를 생성한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">generate-new-buffer</span> <span style="color:#98be65">"buffer-name"</span><span style="color:#51afef">)</span>
+</pre></div><p>반환되는 값은 버퍼의 이름인데 꼭 지정된 이름과 일치하지는 않을 수도 있다.</p></div></div><div id="outline-container-a408aaca"class="outline-3"><h3 id="a408aaca">switch-to-buffer</h3><div class="outline-text-3"id="text-a408aaca"><p>버퍼를 선택한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">switch-to-buffer</span> <span style="color:#c678dd">(</span><span style="color:#c678dd">generate-new-buffer</span> <span style="color:#98be65">"some-buffer"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-cfb71b90"class="outline-3"><h3 id="cfb71b90">with-current-buffer</h3><div class="outline-text-3"id="text-cfb71b90"><p>현재 선택된 버퍼로 뭔가를 할 때 사용한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">with-current-buffer</span> some-buffer
+  <span style="color:#c678dd">(</span><span style="color:#a9a1e1">insert</span> <span style="color:#98be65">"sample text"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-7234ff39"class="outline-3"><h3 id="7234ff39">with-temp-buffer</h3><div class="outline-text-3"id="text-7234ff39"><p>임시로 빈 버퍼를 만들어 뭔가 할 때 사용한다. 파일 내용을 읽어들일 때나 새로운 파일을 작성할 때 등등 의외로 자주 사용된다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">with-temp-buffer</span>
+  <span style="color:#c678dd">(</span><span style="color:#a9a1e1">insert-file-contents</span> <span style="color:#98be65">"readme.txt"</span><span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#a9a1e1">insert</span> <span style="color:#98be65">"hello world!"</span><span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#c678dd">write-file</span> <span style="color:#98be65">"helloworld.txt"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div></div></div></div><div id="outline-container-97b5edd7"class="outline-2"><h2 id="97b5edd7">선택영역 관련</h2><div class="outline-text-2"id="text-97b5edd7"></div><div id="outline-container-2ee1bb21"class="outline-3"><h3 id="2ee1bb21">region-beginning and region-end</h3><div class="outline-text-3"id="text-2ee1bb21"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">goto-char</span> <span style="color:#c678dd">(</span><span style="color:#a9a1e1">region-beginning</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+<span style="color:#51afef">(</span><span style="color:#a9a1e1">goto-char</span> <span style="color:#c678dd">(</span>regin-end<span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div></div></div></div><div id="outline-container-7c6d60de"class="outline-2"><h2 id="7c6d60de">커서 관련</h2></div><div id="outline-container-a5df47d9"class="outline-2"><h2 id="a5df47d9">파일/디렉토리 관련</h2><div class="outline-text-2"id="text-a5df47d9"></div><div id="outline-container-93777205"class="outline-3"><h3 id="93777205">expand-file-name: 완벽한 절대 경로 구하기</h3><div class="outline-text-3"id="text-93777205"><p>축약 경로를 절대 경로로 해석해 준다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">expand-file-name</span> <span style="color:#98be65">"~/test.txt"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; ex: /user/home/directory/test.txt</span>
+</pre></div></div></div><div id="outline-container-7e835a9c"class="outline-3"><h3 id="7e835a9c">file-relative-name: 상대 경로 구하기</h3><div class="outline-text-3"id="text-7e835a9c"><p>특정 경로를 기준으로 원하는 파일 경로의 상대 경로를 구한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">file-relative-name</span> <span style="color:#98be65">"/foo/bar/name"</span> <span style="color:#98be65">"./"</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-39e7c18d"class="outline-3"><h3 id="39e7c18d">file-name-nondirectory: 경로에서 파일 이름 구하기</h3><div class="outline-text-3"id="text-39e7c18d"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">file-name-nondirectory</span> <span style="color:#98be65">"/foo/bar/name.ext"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "name.ext"</span>
+</pre></div></div></div><div id="outline-container-d125c245"class="outline-3"><h3 id="d125c245">file-name-directory: 경로에서 디렉터리만 구하기</h3><div class="outline-text-3"id="text-d125c245"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">file-name-directory</span> <span style="color:#98be65">"/foo/bar/sample.txt"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "/foo/bar/"</span>
+</pre></div></div></div><div id="outline-container-52fcc5a6"class="outline-3"><h3 id="52fcc5a6">file-name-sans-extension: 확장자 제거</h3><div class="outline-text-3"id="text-52fcc5a6"><p>파일 이름에서 확장자를 제거한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">file-name-sans-extension</span> <span style="color:#98be65">"sample.txt"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "sample"</span>
+</pre></div></div></div><div id="outline-container-81880a3f"class="outline-3"><h3 id="81880a3f">file-name-as-directory: 디렉터리 경로 명확히 하기</h3><div class="outline-text-3"id="text-81880a3f"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">file-name-as-directory</span> <span style="color:#98be65">"/foo/bar"</span><span style="color:#51afef">)</span>
+<span style="color:#5b6268">;; </span><span style="color:#5b6268">-&gt; "/foo/bar/"</span>
+</pre></div><p>끝에 <code>/</code> 가 붙었다는 것을 잘 보자.</p></div></div><div id="outline-container-d4b324e0"class="outline-3"><h3 id="d4b324e0">file-expand-wildcards: 파일 목록 구하기</h3><div class="outline-text-3"id="text-d4b324e0"><p>아래 커맨드는 <code>~/foo/bar</code> 디렉터리 안의 모든 <code>.org</code> 파일 목록을 돌려준다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#c678dd">file-expand-wildcards</span> <span style="color:#98be65">"~/foo/bar/*.org"</span><span style="color:#51afef">)</span>
+</pre></div></div></div><div id="outline-container-1145cd74"class="outline-3"><h3 id="1145cd74">file-exists-p: 파일 존재 여부 검사</h3><div class="outline-text-3"id="text-1145cd74"><p>파일이 존재하면 non-nil을 반환한다.</p><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#51afef">when</span> <span style="color:#c678dd">(</span><span style="color:#a9a1e1">file-exists-p</span> <span style="color:#98be65">"/foo/bar/file/name"</span><span style="color:#c678dd">)</span>
+  <span style="color:#c678dd">(</span><span style="color:#a9a1e1">message</span> <span style="color:#98be65">"file exists!"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>
+</pre></div></div></div></div><div id="outline-container-c9027e3c"class="outline-2"><h2 id="c9027e3c">체크섬(Checksum)</h2><div class="outline-text-2"id="text-c9027e3c"></div><div id="outline-container-1bc29b36"class="outline-3"><h3 id="1bc29b36">md5</h3><div class="outline-text-3"id="text-1bc29b36"><div class="org-src-container"><pre class="src src-emacs-lisp"><span style="color:#51afef">(</span><span style="color:#a9a1e1">md5</span> <span style="color:#98be65">"some-string"</span><span style="color:#51afef">)</span>
+</pre></div><p>이렇게 하면 MD5 해시를 문자열로 구할 수 있다.</p></div></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/emacs-lisp.html">Emacs Lisp</a></h2><span class="article-description">Emacs Lisp에 관한 정보 모음</span><span class="article-link-date"> 2020년 5월 15일 수정</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

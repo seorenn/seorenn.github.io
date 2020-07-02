@@ -1,1223 +1,278 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/static/style.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<title>SwiftUI - Seorenn Note</title>
-<meta name="twitter:title" content="SwiftUI" />
-<meta name="og:title" content="SwiftUI" />
-<meta name="description" content="SwiftUI의 소개와 관련된 글 정리" />
-<meta name="twitter:description" content="SwiftUI의 소개와 관련된 글 정리" />
-<meta name="og:description" content="SwiftUI의 소개와 관련된 글 정리" />
-<link rel="canonical" href="https://seorenn.github.io/note/swiftui.html" />
-<meta property="og:url" content="https://seorenn.github.io/note/swiftui.html" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-<meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
-<meta property="og:image:width" content="520" />
-<meta property="og:image:height" content="329" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@seorenn" />
-<meta name="twitter:creator" content="@seorenn" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="Seorenn" />
-<meta property="og:locale" content="ko_KR" />
-<meta name="referrer" content="unsafe-url" />
-<meta name="robots" content="follow,index" />
-<meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
-<meta name="naver-site-verification" content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
-<body>
-<div class="header-content">
-<header class="top-header">
-<div class="logo-container">
-<span class="vertical-center-helper"></span>
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
-<nav>
-<span class="vertical-center-helper"></span>
-<a href="/" title="Home">HOME</a> |
-<a href="/note" title="All Notes">NOTES</a>
-</nav>
-</div>
-</header>
-</div>
-<div class="content-container">
-<section class="content">
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<header>
-<h1>SwiftUI</h1>
-<div class="title-date">2020년 7월 2일 수정</div>
-</header>
-<div id="table-of-contents">
-<h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
-<ul>
-<li><a href="#ed93de63">컴포넌트</a>
-<ul>
-<li><a href="#c7b884c9">HStack and VStack</a></li>
-<li><a href="#ecc59d61">ZStack</a></li>
-<li><a href="#6ab9a295">Spacer</a></li>
-<li><a href="#9dffbf69">Text</a></li>
-<li><a href="#87b7760f">Button</a></li>
-<li><a href="#4ee29ca1">List</a></li>
-<li><a href="#259542da">NavigationView</a></li>
-<li><a href="#880c1273">Shape</a></li>
-<li><a href="#a8875bbe">Toggle</a></li>
-<li><a href="#86d6c1f7">TextEditor</a></li>
-</ul>
-</li>
-<li><a href="#3917e451">레이아웃 속성들</a>
-<ul>
-<li><a href="#dcf3e36e">frame</a></li>
-<li><a href="#b70cdb87">padding</a></li>
-<li><a href="#38b7752f">lineLimit</a></li>
-<li><a href="#734912e2">layoutPriority</a></li>
-<li><a href="#0ce1e3db">alignmentGuide</a></li>
-<li><a href="#ed0b7251">aspectRatio</a></li>
-<li><a href="#7a86c157">offset</a></li>
-</ul>
-</li>
-<li><a href="#a5490daf">스타일 속성들</a>
-<ul>
-<li><a href="#d229bbf3">background</a></li>
-<li><a href="#36cfb062">foregroundColor</a></li>
-<li><a href="#47a282df">font</a></li>
-<li><a href="#a552c747">fill</a></li>
-<li><a href="#9624e870">stroke</a></li>
-<li><a href="#b064346e">strokeBorder</a></li>
-<li><a href="#96208210">clipShape</a></li>
-<li><a href="#380e537a">overlay</a></li>
-<li><a href="#3bf1114a">shadow</a></li>
-<li><a href="#f785494b">rotationEffect</a></li>
-<li><a href="#5a221b9d">scaleEffect</a></li>
-<li><a href="#2124ba2e">rotation3DEffect</a></li>
-<li><a href="#a0234d4d">accentColor</a></li>
-</ul>
-</li>
-<li><a href="#d9c298eb">액션 속성들</a>
-<ul>
-<li><a href="#7708fa35">tapAction</a></li>
-<li><a href="#ea6965f9">contextMenu</a></li>
-</ul>
-</li>
-<li><a href="#4e0b2491">그리기 컴포넌트</a>
-<ul>
-<li><a href="#30954d90">Circle</a></li>
-<li><a href="#4880c0f1">Capsule</a></li>
-<li><a href="#119518c2">Ellipse</a></li>
-<li><a href="#5e59525c">Gradient</a></li>
-<li><a href="#2a7a5ee9">LinearGradient</a></li>
-<li><a href="#6bb6bf95">AngularGradient</a></li>
-<li><a href="#ac70412e">Path</a></li>
-</ul>
-</li>
-<li><a href="#dd0f4139">애니메이션</a>
-<ul>
-<li><a href="#6f1c25ed">animation</a></li>
-<li><a href="#d0000716">withAnimation</a></li>
-<li><a href="#1e305752">transition</a></li>
-</ul>
-</li>
-<li><a href="#4241a8c9">매크로</a>
-<ul>
-<li><a href="#66ff5012">ViewModifier</a></li>
-</ul>
-</li>
-<li><a href="#00b97f40">기타 팁</a>
-<ul>
-<li><a href="#2f6fad5e">풀스크린 뷰(iOS)</a></li>
-<li><a href="#d39ca3d1">기존 컴포넌트 붙이기</a></li>
-<li><a href="#85d8ac8b">다크 테마 미리보기</a></li>
-<li><a href="#2721772e">미리보기(Preview) 크기 조절하기</a></li>
-<li><a href="#c03a1e59">멀티 미리보기(preview)</a></li>
-<li><a href="#a14e467d">디바이스 별 미리보기</a></li>
-<li><a href="#232b71e0">스토리보드에서 시험해보기</a></li>
-</ul>
-</li>
-<li><a href="#ac6ef9be">오류 메시지들</a>
-<ul>
-<li><a href="#a7a18303">Cannot assign to property: 'self' is immutable</a></li>
-</ul>
-</li>
-<li><a href="#129c57bd">주제별 글들</a></li>
-<li><a href="#0bbb90e1">외부 링크</a></li>
-</ul>
-</div>
-</div>
-<p>
-SwiftUI는 <a href="swift.html">Swift</a> 언어를 이용해 작성할 수 있는
-UI 프로그래밍 프레임워크다.
-</p>
-
-<p>
-아래의 글들은 SwiftUI에 관한 단편적인 메모 위주 위주다.
-</p>
-
-<div id="outline-container-ed93de63" class="outline-2">
-<h2 id="ed93de63">컴포넌트</h2>
-<div class="outline-text-2" id="text-ed93de63">
-</div>
-<div id="outline-container-c7b884c9" class="outline-3">
-<h3 id="c7b884c9">HStack and VStack</h3>
-<div class="outline-text-3" id="text-c7b884c9">
-<div class="org-src-container">
-<pre class="src src-swift">HStack {
-    <span style="color: #c678dd;">VStack</span>(spacing: <span style="color: #da8548; font-weight: bold;">4</span>) {
-        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo"</span>)
-        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"bar"</span>)
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="Content-Type"content="text/html; charset=UTF-8"><link rel="stylesheet"href="/static/style.min.css"><title>SwiftUI - Seorenn Note</title><meta name="twitter:title"content="SwiftUI"><meta name="og:title"content="SwiftUI"><meta name="description"content="SwiftUI의 소개와 관련된 글 정리"><meta name="twitter:description"content="SwiftUI의 소개와 관련된 글 정리"><meta name="og:description"content="SwiftUI의 소개와 관련된 글 정리"><link rel="canonical"href="https://seorenn.github.io/note/swiftui.html"><meta property="og:url"content="https://seorenn.github.io/note/swiftui.html"><link rel="shortcut icon"type="image/x-icon"href="/static/favicon.ico"><meta name="twitter:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image"content="https://seorenn.github.io/static/seorenn-symbol.png"><meta property="og:image:width"content="520"><meta property="og:image:height"content="329"><meta name="twitter:card"content="summary"><meta name="twitter:site"content="@seorenn"><meta name="twitter:creator"content="@seorenn"><meta property="og:type"content="article"><meta property="og:site_name"content="Seorenn"><meta property="og:locale"content="ko_KR"><meta name="referrer"content="unsafe-url"><meta name="robots"content="follow,index"><meta name="google-site-verification"content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug"><meta name="naver-site-verification"content="ebf6a89968fd9f447c1a77d83e2c4aa9bdbb0345"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script data-ad-client="ca-pub-1071465863344332"async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head><body><div class="header-content"><header class="top-header"><div class="logo-container"><span class="vertical-center-helper"></span> <a href="/"title="Seorenn"><img class="site-logo"src="/static/seorenn-note-logo-light.png"alt="Seorenn Note"></a><nav><span class="vertical-center-helper"></span> <a href="/"title="Home">HOME</a> | <a href="/note"title="All Notes">NOTES</a></nav></div></header></div><div class="content-container"><section class="content"><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><header><h1>SwiftUI</h1><div class="title-date">2020년 7월 2일 수정</div></header><div id="table-of-contents"><h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents"><ul><li><a href="#ed93de63">컴포넌트</a><ul><li><a href="#c7b884c9">HStack and VStack</a></li><li><a href="#ecc59d61">ZStack</a></li><li><a href="#6ab9a295">Spacer</a></li><li><a href="#9dffbf69">Text</a></li><li><a href="#87b7760f">Button</a></li><li><a href="#4ee29ca1">List</a></li><li><a href="#259542da">NavigationView</a></li><li><a href="#880c1273">Shape</a></li><li><a href="#a8875bbe">Toggle</a></li><li><a href="#86d6c1f7">TextEditor</a></li></ul></li><li><a href="#3917e451">레이아웃 속성들</a><ul><li><a href="#dcf3e36e">frame</a></li><li><a href="#b70cdb87">padding</a></li><li><a href="#38b7752f">lineLimit</a></li><li><a href="#734912e2">layoutPriority</a></li><li><a href="#0ce1e3db">alignmentGuide</a></li><li><a href="#ed0b7251">aspectRatio</a></li><li><a href="#7a86c157">offset</a></li></ul></li><li><a href="#a5490daf">스타일 속성들</a><ul><li><a href="#d229bbf3">background</a></li><li><a href="#36cfb062">foregroundColor</a></li><li><a href="#47a282df">font</a></li><li><a href="#a552c747">fill</a></li><li><a href="#9624e870">stroke</a></li><li><a href="#b064346e">strokeBorder</a></li><li><a href="#96208210">clipShape</a></li><li><a href="#380e537a">overlay</a></li><li><a href="#3bf1114a">shadow</a></li><li><a href="#f785494b">rotationEffect</a></li><li><a href="#5a221b9d">scaleEffect</a></li><li><a href="#2124ba2e">rotation3DEffect</a></li><li><a href="#a0234d4d">accentColor</a></li></ul></li><li><a href="#d9c298eb">액션 속성들</a><ul><li><a href="#7708fa35">tapAction</a></li><li><a href="#ea6965f9">contextMenu</a></li></ul></li><li><a href="#4e0b2491">그리기 컴포넌트</a><ul><li><a href="#30954d90">Circle</a></li><li><a href="#4880c0f1">Capsule</a></li><li><a href="#119518c2">Ellipse</a></li><li><a href="#5e59525c">Gradient</a></li><li><a href="#2a7a5ee9">LinearGradient</a></li><li><a href="#6bb6bf95">AngularGradient</a></li><li><a href="#ac70412e">Path</a></li></ul></li><li><a href="#dd0f4139">애니메이션</a><ul><li><a href="#6f1c25ed">animation</a></li><li><a href="#d0000716">withAnimation</a></li><li><a href="#1e305752">transition</a></li></ul></li><li><a href="#4241a8c9">매크로</a><ul><li><a href="#66ff5012">ViewModifier</a></li></ul></li><li><a href="#00b97f40">기타 팁</a><ul><li><a href="#2f6fad5e">풀스크린 뷰(iOS)</a></li><li><a href="#d39ca3d1">기존 컴포넌트 붙이기</a></li><li><a href="#85d8ac8b">다크 테마 미리보기</a></li><li><a href="#2721772e">미리보기(Preview) 크기 조절하기</a></li><li><a href="#c03a1e59">멀티 미리보기(preview)</a></li><li><a href="#a14e467d">디바이스 별 미리보기</a></li><li><a href="#232b71e0">스토리보드에서 시험해보기</a></li></ul></li><li><a href="#ac6ef9be">오류 메시지들</a><ul><li><a href="#a7a18303">Cannot assign to property: 'self' is immutable</a></li></ul></li><li><a href="#129c57bd">주제별 글들</a></li><li><a href="#0bbb90e1">외부 링크</a></li></ul></div></div><p>SwiftUI는 <a href="swift.html">Swift</a> 언어를 이용해 작성할 수 있는 UI 프로그래밍 프레임워크다.</p><p>아래의 글들은 SwiftUI에 관한 단편적인 메모 위주 위주다.</p><div id="outline-container-ed93de63"class="outline-2"><h2 id="ed93de63">컴포넌트</h2><div class="outline-text-2"id="text-ed93de63"></div><div id="outline-container-c7b884c9"class="outline-3"><h3 id="c7b884c9">HStack and VStack</h3><div class="outline-text-3"id="text-c7b884c9"><div class="org-src-container"><pre class="src src-swift">HStack {
+    <span style="color:#c678dd">VStack</span>(spacing: <span style="color:#da8548;font-weight:700">4</span>) {
+        <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo"</span>)
+        <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"bar"</span>)
     }
 
-    <span style="color: #c678dd;">VStack</span>(alignment: .<span style="color: #dcaeea;">leading</span>) {
+    <span style="color:#c678dd">VStack</span>(alignment: .<span style="color:#dcaeea">leading</span>) {
         ...
     }
 }
-</pre>
-</div>
-<p>
-HStack의 경우 베이스 라인의 기준을 정할 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">HStack</span>(alignment: .<span style="color: #dcaeea;">lastTextBaseline</span>) {
-    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"caption"</span>).<span style="color: #c678dd;">font</span>(.<span style="color: #dcaeea;">caption</span>)
-    <span style="color: #c678dd;">Image</span>(<span style="color: #98be65;">"20x20"</span>)
-    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Title"</span>)
+</pre></div><p>HStack의 경우 베이스 라인의 기준을 정할 수도 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">HStack</span>(alignment: .<span style="color:#dcaeea">lastTextBaseline</span>) {
+    <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"caption"</span>).<span style="color:#c678dd">font</span>(.<span style="color:#dcaeea">caption</span>)
+    <span style="color:#c678dd">Image</span>(<span style="color:#98be65">"20x20"</span>)
+    <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Title"</span>)
 }
-</pre>
-</div>
-<p>
-위 코드는 마지막 텍스트의 하단을 기준으로 베이스 라인을 맞춰준다.
-</p>
-
-<p>
-<code>HStack</code> 의 경우 오른쪽에서 왼쪽으로 읽는 문자 표시 시에는
-순서를 알아서 반대로 표시해 주는 듯 하다.
-</p>
-</div>
-</div>
-<div id="outline-container-ecc59d61" class="outline-3">
-<h3 id="ecc59d61">ZStack</h3>
-<div class="outline-text-3" id="text-ecc59d61">
-<p>
-ZStack은 UI를 바닥부터 쌓아 가는 형태로 만들 때 사용한다.
-대충 쌓기를 하고 있는데 위에서 쳐다본다고 생각하면 될 것 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">ZStack {
-    <span style="color: #c678dd;">ForEach</span>(...) {
+</pre></div><p>위 코드는 마지막 텍스트의 하단을 기준으로 베이스 라인을 맞춰준다.</p><p><code>HStack</code> 의 경우 오른쪽에서 왼쪽으로 읽는 문자 표시 시에는 순서를 알아서 반대로 표시해 주는 듯 하다.</p></div></div><div id="outline-container-ecc59d61"class="outline-3"><h3 id="ecc59d61">ZStack</h3><div class="outline-text-3"id="text-ecc59d61"><p>ZStack은 UI를 바닥부터 쌓아 가는 형태로 만들 때 사용한다. 대충 쌓기를 하고 있는데 위에서 쳐다본다고 생각하면 될 것 같다.</p><div class="org-src-container"><pre class="src src-swift">ZStack {
+    <span style="color:#c678dd">ForEach</span>(...) {
         ...
     }
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-6ab9a295" class="outline-3">
-<h3 id="6ab9a295">Spacer</h3>
-<div class="outline-text-3" id="text-6ab9a295">
-<p>
-플렉시블한 공백이다.
-컴포넌트와 컴포넌트 사이에 가능한 최대한의 공간을 넣는데 사용한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Spacer</span>()
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-9dffbf69" class="outline-3">
-<h3 id="9dffbf69">Text</h3>
-<div class="outline-text-3" id="text-9dffbf69">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"some text"</span>)
-</pre>
-</div>
-<p>
-<code>+</code> 오퍼레이터를 이용해 Attributed Text 를 만들 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">red</span>)
-+ <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"bar"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">blue</span>)
-</pre>
-</div>
-<p>
-<a href="xcode.html">Xcode</a> 11.5부터 시간 관련 기능이 추가된 것 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #c678dd;">Date</span>().<span style="color: #c678dd;">addingTimeInterval</span>(<span style="color: #da8548; font-weight: bold;">600</span>), style: .<span style="color: #dcaeea;">relative</span>)
-</pre>
-</div>
-<p>
-style에는 이 외에 <code>.date</code>, <code>.time</code>, <code>.timer</code> 등 다양한 옵션이 있다.
-</p>
-
-<p>
-속성을 넣는 방법도 생긴 것 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"\(</span><span style="color: #c678dd;">Text</span>(name).<span style="color: #c678dd;">bold</span>()<span style="color: #98be65;">) foo bar"</span>)
-</pre>
-</div>
-<p>
-인터폴레이션으로 Text 오브젝트를 처리할 수 있나보다.
-</p>
-
-<p>
-비슷하게 이미지를 넣을 수 있는 방법도 최근 도입된 것 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"\(</span><span style="color: #c678dd;">Image</span>(systemNamed: <span style="color: #98be65;">"music.mic"</span>)<span style="color: #98be65;">) foo bar"</span>)
-.<span style="color: #c678dd;">font</span>(.<span style="color: #c678dd;">custom</span>(<span style="color: #98be65;">"FontName"</span>, size: <span style="color: #da8548; font-weight: bold;">15</span>))
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-87b7760f" class="outline-3">
-<h3 id="87b7760f">Button</h3>
-<div class="outline-text-3" id="text-87b7760f">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Button</span>(
-    action: { <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"Button Action"</span>) },
-    label: { <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Button Title"</span>) }
+</pre></div></div></div><div id="outline-container-6ab9a295"class="outline-3"><h3 id="6ab9a295">Spacer</h3><div class="outline-text-3"id="text-6ab9a295"><p>플렉시블한 공백이다. 컴포넌트와 컴포넌트 사이에 가능한 최대한의 공간을 넣는데 사용한다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Spacer</span>()
+</pre></div></div></div><div id="outline-container-9dffbf69"class="outline-3"><h3 id="9dffbf69">Text</h3><div class="outline-text-3"id="text-9dffbf69"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"some text"</span>)
+</pre></div><p><code>+</code> 오퍼레이터를 이용해 Attributed Text 를 만들 수도 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo"</span>).<span style="color:#c678dd">foregroundColor</span>(Color.<span style="color:#dcaeea">red</span>)
++ <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"bar"</span>).<span style="color:#c678dd">foregroundColor</span>(Color.<span style="color:#dcaeea">blue</span>)
+</pre></div><p><a href="xcode.html">Xcode</a> 11.5부터 시간 관련 기능이 추가된 것 같다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#c678dd">Date</span>().<span style="color:#c678dd">addingTimeInterval</span>(<span style="color:#da8548;font-weight:700">600</span>), style: .<span style="color:#dcaeea">relative</span>)
+</pre></div><p>style에는 이 외에 <code>.date</code>, <code>.time</code>, <code>.timer</code> 등 다양한 옵션이 있다.</p><p>속성을 넣는 방법도 생긴 것 같다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"\(</span><span style="color:#c678dd">Text</span>(name).<span style="color:#c678dd">bold</span>()<span style="color:#98be65">) foo bar"</span>)
+</pre></div><p>인터폴레이션으로 Text 오브젝트를 처리할 수 있나보다.</p><p>비슷하게 이미지를 넣을 수 있는 방법도 최근 도입된 것 같다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"\(</span><span style="color:#c678dd">Image</span>(systemNamed: <span style="color:#98be65">"music.mic"</span>)<span style="color:#98be65">) foo bar"</span>)
+.<span style="color:#c678dd">font</span>(.<span style="color:#c678dd">custom</span>(<span style="color:#98be65">"FontName"</span>, size: <span style="color:#da8548;font-weight:700">15</span>))
+</pre></div></div></div><div id="outline-container-87b7760f"class="outline-3"><h3 id="87b7760f">Button</h3><div class="outline-text-3"id="text-87b7760f"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Button</span>(
+    action: { <span style="color:#c678dd">print</span>(<span style="color:#98be65">"Button Action"</span>) },
+    label: { <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Button Title"</span>) }
 )
-<span style="color: #c678dd;">Button</span>(action: {}) {
-    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Button with Image"</span>)
-    <span style="color: #c678dd;">Image</span>(systemName: <span style="color: #98be65;">"square.and.arrow.up"</span>)
+<span style="color:#c678dd">Button</span>(action: {}) {
+    <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Button with Image"</span>)
+    <span style="color:#c678dd">Image</span>(systemName: <span style="color:#98be65">"square.and.arrow.up"</span>)
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-4ee29ca1" class="outline-3">
-<h3 id="4ee29ca1">List</h3>
-<div class="outline-text-3" id="text-4ee29ca1">
-<p>
-가장 기본적인 정적 리스트는 아래와 같은 방식이다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">List {
-    <span style="color: #c678dd;">SomeRowView</span>()
-    <span style="color: #c678dd;">SomeRowView</span>()
+</pre></div></div></div><div id="outline-container-4ee29ca1"class="outline-3"><h3 id="4ee29ca1">List</h3><div class="outline-text-3"id="text-4ee29ca1"><p>가장 기본적인 정적 리스트는 아래와 같은 방식이다.</p><div class="org-src-container"><pre class="src src-swift">List {
+    <span style="color:#c678dd">SomeRowView</span>()
+    <span style="color:#c678dd">SomeRowView</span>()
 }
-</pre>
-</div>
-<p>
-데이터 모델을 사용한 동적 리스트는 아래와 같은 방식이다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">List</span>(someItemList, id: \.<span style="color: #dcaeea;">id</span>) { item <span style="color: #51afef;">in</span>
-    <span style="color: #c678dd;">SomeRowView</span>(data: item)
+</pre></div><p>데이터 모델을 사용한 동적 리스트는 아래와 같은 방식이다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">List</span>(someItemList, id: \.<span style="color:#dcaeea">id</span>) { item <span style="color:#51afef">in</span>
+    <span style="color:#c678dd">SomeRowView</span>(data: item)
 }
-</pre>
-</div>
-<p>
-해당 데이터가 각 아이템 타입이 <code>Identifiable</code> 프로토콜을 따른다면
-<code>id</code> 필드를 생략할 수도 있다.
-</p>
-
-<p>
-<code>listStyle</code> 을 이용해 테이블 스타일을 지정할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">List {
+</pre></div><p>해당 데이터가 각 아이템 타입이 <code>Identifiable</code> 프로토콜을 따른다면 <code>id</code> 필드를 생략할 수도 있다.</p><p><code>listStyle</code> 을 이용해 테이블 스타일을 지정할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
     ...
-}.<span style="color: #c678dd;">listStyle</span>(<span style="color: #c678dd;">GroupedListStyle</span>())  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">or PlainListStyle()</span>
-</pre>
-</div>
-<p>
-아직 SwiftUI에서는 inset grouped 리스트 스타일을 지원하지는 않는 것 같지만
-<a target="_blank" href="https://sarunw.com/tips/inset-grouped-in-swiftui/">🌏🌏 돌려서 구현하는 방법</a>이 있기는 한가 보다.
-</p>
-</div>
-</div>
-<div id="outline-container-259542da" class="outline-3">
-<h3 id="259542da">NavigationView</h3>
-<div class="outline-text-3" id="text-259542da">
-<p>
-기존의 Navigation Controller와 비슷한 역할을 하는 컴포넌트다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">NavigationView {
-    <span style="color: #c678dd;">List</span>(someItemList) {
-        <span style="color: #c678dd;">NavigationLink</span>(destination: <span style="color: #c678dd;">SomeDetailView</span>()) {
-            <span style="color: #c678dd;">SomeRowView</span>()
+}.<span style="color:#c678dd">listStyle</span>(<span style="color:#c678dd">GroupedListStyle</span>())  <span style="color:#5b6268">// </span><span style="color:#5b6268">or PlainListStyle()</span>
+</pre></div><p>아직 SwiftUI에서는 inset grouped 리스트 스타일을 지원하지는 않는 것 같지만 <a target="_blank"href="https://sarunw.com/tips/inset-grouped-in-swiftui/">🌏🌏 돌려서 구현하는 방법</a>이 있기는 한가 보다.</p></div></div><div id="outline-container-259542da"class="outline-3"><h3 id="259542da">NavigationView</h3><div class="outline-text-3"id="text-259542da"><p>기존의 Navigation Controller와 비슷한 역할을 하는 컴포넌트다.</p><div class="org-src-container"><pre class="src src-swift">NavigationView {
+    <span style="color:#c678dd">List</span>(someItemList) {
+        <span style="color:#c678dd">NavigationLink</span>(destination: <span style="color:#c678dd">SomeDetailView</span>()) {
+            <span style="color:#c678dd">SomeRowView</span>()
         }
     }
-    .<span style="color: #c678dd;">navigationBarTitle</span>(<span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Foo Bar"</span>))
+    .<span style="color:#c678dd">navigationBarTitle</span>(<span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Foo Bar"</span>))
 }
-</pre>
-</div>
-<p>
-타이틀은 여러 옵션이 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">.<span style="color: #c678dd;">navigationBarTitle</span>(<span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>), displayMode: .<span style="color: #c678dd;">inline</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-880c1273" class="outline-3">
-<h3 id="880c1273">Shape</h3>
-<div class="outline-text-3" id="text-880c1273">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SomeShape</span>: Shape {
-    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">path</span>(<span style="color: #51afef;">in</span> rect: CGRect) -&gt; Path {
-        <span style="color: #51afef;">var</span> path = <span style="color: #c678dd;">Path</span>()
-        path.<span style="color: #c678dd;">move</span>(to: ...)
-        path.<span style="color: #c678dd;">addLine</span>(to: ..., <span style="color: #51afef;">in</span>: ...)
+</pre></div><p>타이틀은 여러 옵션이 있다.</p><div class="org-src-container"><pre class="src src-swift">.<span style="color:#c678dd">navigationBarTitle</span>(<span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>), displayMode: .<span style="color:#c678dd">inline</span>)
+</pre></div></div></div><div id="outline-container-880c1273"class="outline-3"><h3 id="880c1273">Shape</h3><div class="outline-text-3"id="text-880c1273"><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SomeShape</span>: Shape {
+    <span style="color:#51afef">func</span> <span style="color:#c678dd">path</span>(<span style="color:#51afef">in</span> rect: CGRect) -&gt; Path {
+        <span style="color:#51afef">var</span> path = <span style="color:#c678dd">Path</span>()
+        path.<span style="color:#c678dd">move</span>(to: ...)
+        path.<span style="color:#c678dd">addLine</span>(to: ..., <span style="color:#51afef">in</span>: ...)
         ...
-        <span style="color: #51afef;">return</span> path
+        <span style="color:#51afef">return</span> path
     }
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-a8875bbe" class="outline-3">
-<h3 id="a8875bbe">Toggle</h3>
-<div class="outline-text-3" id="text-a8875bbe">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Toggle</span>(isOn: $someProperty) {
-    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Switch Title"</span>)
+</pre></div></div></div><div id="outline-container-a8875bbe"class="outline-3"><h3 id="a8875bbe">Toggle</h3><div class="outline-text-3"id="text-a8875bbe"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Toggle</span>(isOn: $someProperty) {
+    <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Switch Title"</span>)
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-86d6c1f7" class="outline-3">
-<h3 id="86d6c1f7">TextEditor</h3>
-<div class="outline-text-3" id="text-86d6c1f7">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">TextEditor</span>(text: $text)
-.<span style="color: #c678dd;">padding</span>()
-.<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">black</span>)
-.<span style="color: #c678dd;">font</span>(.<span style="color: #c678dd;">title</span>)
-.<span style="color: #c678dd;">frame</span>(minWidth: <span style="color: #da8548; font-weight: bold;">0</span>, maxWidth: .<span style="color: #c678dd;">infinity</span>, minHeight: <span style="color: #da8548; font-weight: bold;">0</span>, maxHeight: <span style="color: #da8548; font-weight: bold;">200</span>)
-.<span style="color: #c678dd;">border</span>(Color.<span style="color: #dcaeea;">black</span>, width: <span style="color: #da8548; font-weight: bold;">1</span>)
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-3917e451" class="outline-2">
-<h2 id="3917e451">레이아웃 속성들</h2>
-<div class="outline-text-2" id="text-3917e451">
-</div>
-<div id="outline-container-dcf3e36e" class="outline-3">
-<h3 id="dcf3e36e">frame</h3>
-<div class="outline-text-3" id="text-dcf3e36e">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Image</span>(<span style="color: #98be65;">"image_20x20"</span>).<span style="color: #c678dd;">frame</span>(width: <span style="color: #da8548; font-weight: bold;">30</span>, height: <span style="color: #da8548; font-weight: bold;">30</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-b70cdb87" class="outline-3">
-<h3 id="b70cdb87">padding</h3>
-<div class="outline-text-3" id="text-b70cdb87">
-<p>
-기본 패딩 용도로 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>()
-</pre>
-</div>
-<p>
-물론 어떤 방향에 패딩을 줄지 고를 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>([.<span style="color: #dcaeea;">leading</span>, .<span style="color: #dcaeea;">trailing</span>])
-</pre>
-</div>
-<p>
-패딩 수치도 당연히 고를 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>(<span style="color: #da8548; font-weight: bold;">10</span>)
-</pre>
-</div>
-<p>
-특정 한 방향에 음수로도 줄 수 있는 트릭도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">padding</span>(.<span style="color: #c678dd;">bottom</span>, -<span style="color: #da8548; font-weight: bold;">130</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-38b7752f" class="outline-3">
-<h3 id="38b7752f">lineLimit</h3>
-<div class="outline-text-3" id="text-38b7752f">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">font</span>(.<span style="color: #dcaeea;">caption</span>).<span style="color: #c678dd;">lineLimit</span>(<span style="color: #da8548; font-weight: bold;">1</span>)
-</pre>
-</div>
-<p>
-참고로 Stack에도 쓸 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">HStack {
+</pre></div></div></div><div id="outline-container-86d6c1f7"class="outline-3"><h3 id="86d6c1f7">TextEditor</h3><div class="outline-text-3"id="text-86d6c1f7"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">TextEditor</span>(text: $text)
+.<span style="color:#c678dd">padding</span>()
+.<span style="color:#c678dd">foregroundColor</span>(Color.<span style="color:#dcaeea">black</span>)
+.<span style="color:#c678dd">font</span>(.<span style="color:#c678dd">title</span>)
+.<span style="color:#c678dd">frame</span>(minWidth: <span style="color:#da8548;font-weight:700">0</span>, maxWidth: .<span style="color:#c678dd">infinity</span>, minHeight: <span style="color:#da8548;font-weight:700">0</span>, maxHeight: <span style="color:#da8548;font-weight:700">200</span>)
+.<span style="color:#c678dd">border</span>(Color.<span style="color:#dcaeea">black</span>, width: <span style="color:#da8548;font-weight:700">1</span>)
+</pre></div></div></div></div><div id="outline-container-3917e451"class="outline-2"><h2 id="3917e451">레이아웃 속성들</h2><div class="outline-text-2"id="text-3917e451"></div><div id="outline-container-dcf3e36e"class="outline-3"><h3 id="dcf3e36e">frame</h3><div class="outline-text-3"id="text-dcf3e36e"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Image</span>(<span style="color:#98be65">"image_20x20"</span>).<span style="color:#c678dd">frame</span>(width: <span style="color:#da8548;font-weight:700">30</span>, height: <span style="color:#da8548;font-weight:700">30</span>)
+</pre></div></div></div><div id="outline-container-b70cdb87"class="outline-3"><h3 id="b70cdb87">padding</h3><div class="outline-text-3"id="text-b70cdb87"><p>기본 패딩 용도로 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">padding</span>()
+</pre></div><p>물론 어떤 방향에 패딩을 줄지 고를 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">padding</span>([.<span style="color:#dcaeea">leading</span>, .<span style="color:#dcaeea">trailing</span>])
+</pre></div><p>패딩 수치도 당연히 고를 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">padding</span>(<span style="color:#da8548;font-weight:700">10</span>)
+</pre></div><p>특정 한 방향에 음수로도 줄 수 있는 트릭도 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">padding</span>(.<span style="color:#c678dd">bottom</span>, -<span style="color:#da8548;font-weight:700">130</span>)
+</pre></div></div></div><div id="outline-container-38b7752f"class="outline-3"><h3 id="38b7752f">lineLimit</h3><div class="outline-text-3"id="text-38b7752f"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">font</span>(.<span style="color:#dcaeea">caption</span>).<span style="color:#c678dd">lineLimit</span>(<span style="color:#da8548;font-weight:700">1</span>)
+</pre></div><p>참고로 Stack에도 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-swift">HStack {
     ...
 }
-.<span style="color: #c678dd;">lineLimit</span>(<span style="color: #da8548; font-weight: bold;">1</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-734912e2" class="outline-3">
-<h3 id="734912e2">layoutPriority</h3>
-<div class="outline-text-3" id="text-734912e2">
-<div class="org-src-container">
-<pre class="src src-swift">HStack {
-    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo"</span>)
-    <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"bar"</span>).<span style="color: #c678dd;">layoutPriority</span>(<span style="color: #da8548; font-weight: bold;">1</span>)
+.<span style="color:#c678dd">lineLimit</span>(<span style="color:#da8548;font-weight:700">1</span>)
+</pre></div></div></div><div id="outline-container-734912e2"class="outline-3"><h3 id="734912e2">layoutPriority</h3><div class="outline-text-3"id="text-734912e2"><div class="org-src-container"><pre class="src src-swift">HStack {
+    <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo"</span>)
+    <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"bar"</span>).<span style="color:#c678dd">layoutPriority</span>(<span style="color:#da8548;font-weight:700">1</span>)
 }
-.<span style="color: #c678dd;">lineLimit</span>(<span style="color: #da8548; font-weight: bold;">1</span>)
-</pre>
-</div>
-<p>
-우선순위가 낮으면 텍스트가 넘칠 경우 <code>...</code> 으로 단축될 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-0ce1e3db" class="outline-3">
-<h3 id="0ce1e3db">alignmentGuide</h3>
-<div class="outline-text-3" id="text-0ce1e3db">
-<p>
-베이스라인을 수동으로 맞춰준다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Image</span>(<span style="color: #98be65;">"some_image"</span>).<span style="color: #c678dd;">alignmentGuide</span>(.<span style="color: #dcaeea;">lastTextBaseline</span>) {
-    d <span style="color: #51afef;">in</span> d[.<span style="color: #c678dd;">bottom</span>] * <span style="color: #da8548; font-weight: bold;">0.927</span>
+.<span style="color:#c678dd">lineLimit</span>(<span style="color:#da8548;font-weight:700">1</span>)
+</pre></div><p>우선순위가 낮으면 텍스트가 넘칠 경우 <code>...</code> 으로 단축될 수 있다.</p></div></div><div id="outline-container-0ce1e3db"class="outline-3"><h3 id="0ce1e3db">alignmentGuide</h3><div class="outline-text-3"id="text-0ce1e3db"><p>베이스라인을 수동으로 맞춰준다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Image</span>(<span style="color:#98be65">"some_image"</span>).<span style="color:#c678dd">alignmentGuide</span>(.<span style="color:#dcaeea">lastTextBaseline</span>) {
+    d <span style="color:#51afef">in</span> d[.<span style="color:#c678dd">bottom</span>] * <span style="color:#da8548;font-weight:700">0.927</span>
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-ed0b7251" class="outline-3">
-<h3 id="ed0b7251">aspectRatio</h3>
-<div class="outline-text-3" id="text-ed0b7251">
-<div class="org-src-container">
-<pre class="src src-swift">SomeView {
+</pre></div></div></div><div id="outline-container-ed0b7251"class="outline-3"><h3 id="ed0b7251">aspectRatio</h3><div class="outline-text-3"id="text-ed0b7251"><div class="org-src-container"><pre class="src src-swift">SomeView {
     ...
 }
-.<span style="color: #c678dd;">aspectRatio</span>(<span style="color: #da8548; font-weight: bold;">1</span>, contentMode: .<span style="color: #dcaeea;">fit</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-7a86c157" class="outline-3">
-<h3 id="7a86c157">offset</h3>
-<div class="outline-text-3" id="text-7a86c157">
-<p>
-레이아웃 위치에서 임의로 벗어나게 만들 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">offset</span>(y: -<span style="color: #da8548; font-weight: bold;">130</span>)
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-a5490daf" class="outline-2">
-<h2 id="a5490daf">스타일 속성들</h2>
-<div class="outline-text-2" id="text-a5490daf">
-</div>
-<div id="outline-container-d229bbf3" class="outline-3">
-<h3 id="d229bbf3">background</h3>
-<div class="outline-text-3" id="text-d229bbf3">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">background</span>(Color.<span style="color: #dcaeea;">green</span>)
-</pre>
-</div>
-<p>
-이름에 color가 안 들어가 있는 이유는
-색상 외에도 쓸 수 있는 게 있어서 일 것 같다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">SomeView</span>()
-    .<span style="color: #c678dd;">background</span>(<span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">stroke</span>())
-    .<span style="color: #c678dd;">background</span>(<span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">white</span>))
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-36cfb062" class="outline-3">
-<h3 id="36cfb062">foregroundColor</h3>
-<div class="outline-text-3" id="text-36cfb062">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo bar"</span>).<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">white</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-47a282df" class="outline-3">
-<h3 id="47a282df">font</h3>
-<div class="outline-text-3" id="text-47a282df">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo"</span>).<span style="color: #c678dd;">font</span>(.<span style="color: #c678dd;">title</span>)
-<span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"bar"</span>).<span style="color: #c678dd;">font</span>(.<span style="color: #dcaeea;">caption</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-a552c747" class="outline-3">
-<h3 id="a552c747">fill</h3>
-<div class="outline-text-3" id="text-a552c747">
-<p>
-모양(shape)에 색칠을 한다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">red</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-9624e870" class="outline-3">
-<h3 id="9624e870">stroke</h3>
-</div>
-<div id="outline-container-b064346e" class="outline-3">
-<h3 id="b064346e">strokeBorder</h3>
-<div class="outline-text-3" id="text-b064346e">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">strokeBorder</span>(Color.<span style="color: #dcaeea;">red</span>, lineWidth: <span style="color: #da8548; font-weight: bold;">50</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-96208210" class="outline-3">
-<h3 id="96208210">clipShape</h3>
-<div class="outline-text-3" id="text-96208210">
-<div class="org-src-container">
-<pre class="src src-swift">image.<span style="color: #c678dd;">clipShape</span>(<span style="color: #c678dd;">Circle</span>())
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-380e537a" class="outline-3">
-<h3 id="380e537a">overlay</h3>
-<div class="outline-text-3" id="text-380e537a">
-<div class="org-src-container">
-<pre class="src src-swift">image.<span style="color: #c678dd;">overlay</span>(<span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">stroke</span>(Color.<span style="color: #dcaeea;">white</span>, lineWidth: <span style="color: #da8548; font-weight: bold;">4</span>))
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-3bf1114a" class="outline-3">
-<h3 id="3bf1114a">shadow</h3>
-<div class="outline-text-3" id="text-3bf1114a">
-<div class="org-src-container">
-<pre class="src src-swift">image.<span style="color: #c678dd;">shadow</span>(radius: <span style="color: #da8548; font-weight: bold;">10</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-f785494b" class="outline-3">
-<h3 id="f785494b">rotationEffect</h3>
-<div class="outline-text-3" id="text-f785494b">
-<div class="org-src-container">
-<pre class="src src-swift">SomeView.<span style="color: #c678dd;">rotationEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">90</span>))
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-5a221b9d" class="outline-3">
-<h3 id="5a221b9d">scaleEffect</h3>
-<div class="outline-text-3" id="text-5a221b9d">
-<div class="org-src-container">
-<pre class="src src-swift">SomeView.<span style="color: #c678dd;">scaleEffect</span>(<span style="color: #da8548; font-weight: bold;">1.5</span>)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-2124ba2e" class="outline-3">
-<h3 id="2124ba2e">rotation3DEffect</h3>
-<div class="outline-text-3" id="text-2124ba2e">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"..."</span>)
-    .<span style="color: #c678dd;">rotation3DEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">450</span>), axis: (x: <span style="color: #da8548; font-weight: bold;">1</span>, y: <span style="color: #da8548; font-weight: bold;">0</span>, z: <span style="color: #da8548; font-weight: bold;">0</span>))
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-a0234d4d" class="outline-3">
-<h3 id="a0234d4d">accentColor</h3>
-<div class="outline-text-3" id="text-a0234d4d">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Button</span>(<span style="color: #98be65;">"Red"</span>).<span style="color: #c678dd;">accentColor</span>(.<span style="color: #dcaeea;">red</span>)
-</pre>
-</div>
-<p>
-기존 UIKit의 tintColor 프로퍼티와 비슷한 용도
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-d9c298eb" class="outline-2">
-<h2 id="d9c298eb">액션 속성들</h2>
-<div class="outline-text-2" id="text-d9c298eb">
-</div>
-<div id="outline-container-7708fa35" class="outline-3">
-<h3 id="7708fa35">tapAction</h3>
-<div class="outline-text-3" id="text-7708fa35">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"foo"</span>).<span style="color: #dcaeea;">tapAction</span> {
+.<span style="color:#c678dd">aspectRatio</span>(<span style="color:#da8548;font-weight:700">1</span>, contentMode: .<span style="color:#dcaeea">fit</span>)
+</pre></div></div></div><div id="outline-container-7a86c157"class="outline-3"><h3 id="7a86c157">offset</h3><div class="outline-text-3"id="text-7a86c157"><p>레이아웃 위치에서 임의로 벗어나게 만들 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">offset</span>(y: -<span style="color:#da8548;font-weight:700">130</span>)
+</pre></div></div></div></div><div id="outline-container-a5490daf"class="outline-2"><h2 id="a5490daf">스타일 속성들</h2><div class="outline-text-2"id="text-a5490daf"></div><div id="outline-container-d229bbf3"class="outline-3"><h3 id="d229bbf3">background</h3><div class="outline-text-3"id="text-d229bbf3"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">background</span>(Color.<span style="color:#dcaeea">green</span>)
+</pre></div><p>이름에 color가 안 들어가 있는 이유는 색상 외에도 쓸 수 있는 게 있어서 일 것 같다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">SomeView</span>()
+    .<span style="color:#c678dd">background</span>(<span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">stroke</span>())
+    .<span style="color:#c678dd">background</span>(<span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">fill</span>(Color.<span style="color:#dcaeea">white</span>))
+</pre></div></div></div><div id="outline-container-36cfb062"class="outline-3"><h3 id="36cfb062">foregroundColor</h3><div class="outline-text-3"id="text-36cfb062"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo bar"</span>).<span style="color:#c678dd">foregroundColor</span>(Color.<span style="color:#dcaeea">white</span>)
+</pre></div></div></div><div id="outline-container-47a282df"class="outline-3"><h3 id="47a282df">font</h3><div class="outline-text-3"id="text-47a282df"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo"</span>).<span style="color:#c678dd">font</span>(.<span style="color:#c678dd">title</span>)
+<span style="color:#c678dd">Text</span>(<span style="color:#98be65">"bar"</span>).<span style="color:#c678dd">font</span>(.<span style="color:#dcaeea">caption</span>)
+</pre></div></div></div><div id="outline-container-a552c747"class="outline-3"><h3 id="a552c747">fill</h3><div class="outline-text-3"id="text-a552c747"><p>모양(shape)에 색칠을 한다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">fill</span>(Color.<span style="color:#dcaeea">red</span>)
+</pre></div></div></div><div id="outline-container-9624e870"class="outline-3"><h3 id="9624e870">stroke</h3></div><div id="outline-container-b064346e"class="outline-3"><h3 id="b064346e">strokeBorder</h3><div class="outline-text-3"id="text-b064346e"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">strokeBorder</span>(Color.<span style="color:#dcaeea">red</span>, lineWidth: <span style="color:#da8548;font-weight:700">50</span>)
+</pre></div></div></div><div id="outline-container-96208210"class="outline-3"><h3 id="96208210">clipShape</h3><div class="outline-text-3"id="text-96208210"><div class="org-src-container"><pre class="src src-swift">image.<span style="color:#c678dd">clipShape</span>(<span style="color:#c678dd">Circle</span>())
+</pre></div></div></div><div id="outline-container-380e537a"class="outline-3"><h3 id="380e537a">overlay</h3><div class="outline-text-3"id="text-380e537a"><div class="org-src-container"><pre class="src src-swift">image.<span style="color:#c678dd">overlay</span>(<span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">stroke</span>(Color.<span style="color:#dcaeea">white</span>, lineWidth: <span style="color:#da8548;font-weight:700">4</span>))
+</pre></div></div></div><div id="outline-container-3bf1114a"class="outline-3"><h3 id="3bf1114a">shadow</h3><div class="outline-text-3"id="text-3bf1114a"><div class="org-src-container"><pre class="src src-swift">image.<span style="color:#c678dd">shadow</span>(radius: <span style="color:#da8548;font-weight:700">10</span>)
+</pre></div></div></div><div id="outline-container-f785494b"class="outline-3"><h3 id="f785494b">rotationEffect</h3><div class="outline-text-3"id="text-f785494b"><div class="org-src-container"><pre class="src src-swift">SomeView.<span style="color:#c678dd">rotationEffect</span>(.<span style="color:#c678dd">degrees</span>(<span style="color:#da8548;font-weight:700">90</span>))
+</pre></div></div></div><div id="outline-container-5a221b9d"class="outline-3"><h3 id="5a221b9d">scaleEffect</h3><div class="outline-text-3"id="text-5a221b9d"><div class="org-src-container"><pre class="src src-swift">SomeView.<span style="color:#c678dd">scaleEffect</span>(<span style="color:#da8548;font-weight:700">1.5</span>)
+</pre></div></div></div><div id="outline-container-2124ba2e"class="outline-3"><h3 id="2124ba2e">rotation3DEffect</h3><div class="outline-text-3"id="text-2124ba2e"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"..."</span>)
+    .<span style="color:#c678dd">rotation3DEffect</span>(.<span style="color:#c678dd">degrees</span>(<span style="color:#da8548;font-weight:700">450</span>), axis: (x: <span style="color:#da8548;font-weight:700">1</span>, y: <span style="color:#da8548;font-weight:700">0</span>, z: <span style="color:#da8548;font-weight:700">0</span>))
+</pre></div></div></div><div id="outline-container-a0234d4d"class="outline-3"><h3 id="a0234d4d">accentColor</h3><div class="outline-text-3"id="text-a0234d4d"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Button</span>(<span style="color:#98be65">"Red"</span>).<span style="color:#c678dd">accentColor</span>(.<span style="color:#dcaeea">red</span>)
+</pre></div><p>기존 UIKit의 tintColor 프로퍼티와 비슷한 용도</p></div></div></div><div id="outline-container-d9c298eb"class="outline-2"><h2 id="d9c298eb">액션 속성들</h2><div class="outline-text-2"id="text-d9c298eb"></div><div id="outline-container-7708fa35"class="outline-3"><h3 id="7708fa35">tapAction</h3><div class="outline-text-3"id="text-7708fa35"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"foo"</span>).<span style="color:#dcaeea">tapAction</span> {
     ...
 }
-</pre>
-</div>
-<p>
-<a href="macos.html">macOS</a> 에서는 클릭 이벤트로 동작하나 보다.
-</p>
-</div>
-</div>
-<div id="outline-container-ea6965f9" class="outline-3">
-<h3 id="ea6965f9">contextMenu</h3>
-<div class="outline-text-3" id="text-ea6965f9">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Some Text"</span>)
-    .<span style="color: #dcaeea;">contextMenu</span> {
-        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Wow super good context menu!"</span>)
-        <span style="color: #c678dd;">Button</span>(action: {},
-               label: { <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Menu Button"</span>) })
+</pre></div><p><a href="macos.html">macOS</a> 에서는 클릭 이벤트로 동작하나 보다.</p></div></div><div id="outline-container-ea6965f9"class="outline-3"><h3 id="ea6965f9">contextMenu</h3><div class="outline-text-3"id="text-ea6965f9"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Some Text"</span>)
+    .<span style="color:#dcaeea">contextMenu</span> {
+        <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Wow super good context menu!"</span>)
+        <span style="color:#c678dd">Button</span>(action: {},
+               label: { <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Menu Button"</span>) })
     }
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-4e0b2491" class="outline-2">
-<h2 id="4e0b2491">그리기 컴포넌트</h2>
-<div class="outline-text-2" id="text-4e0b2491">
-</div>
-<div id="outline-container-30954d90" class="outline-3">
-<h3 id="30954d90">Circle</h3>
-<div class="outline-text-3" id="text-30954d90">
-<p>
-동그라미
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">red</span>).<span style="color: #c678dd;">padding</span>()
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-4880c0f1" class="outline-3">
-<h3 id="4880c0f1">Capsule</h3>
-<div class="outline-text-3" id="text-4880c0f1">
-<p>
-알약 모양 동그라미
-</p>
-</div>
-</div>
-<div id="outline-container-119518c2" class="outline-3">
-<h3 id="119518c2">Ellipse</h3>
-<div class="outline-text-3" id="text-119518c2">
-<p>
-타원
-</p>
-</div>
-</div>
-<div id="outline-container-5e59525c" class="outline-3">
-<h3 id="5e59525c">Gradient</h3>
-<div class="outline-text-3" id="text-5e59525c">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Gradient</span>(colors: [.<span style="color: #dcaeea;">red</span>, .<span style="color: #dcaeea;">yellow</span>, .<span style="color: #dcaeea;">green</span>])
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-2a7a5ee9" class="outline-3">
-<h3 id="2a7a5ee9">LinearGradient</h3>
-<div class="outline-text-3" id="text-2a7a5ee9">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">LinearGradient</span>(gradient: ..., startPoint: ..., endPoint: ...)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-6bb6bf95" class="outline-3">
-<h3 id="6bb6bf95">AngularGradient</h3>
-<div class="outline-text-3" id="text-6bb6bf95">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">AngularGradient</span>(gradient: <span style="color: #c678dd;">Gradient</span>(...),
-                center: .<span style="color: #dcaeea;">center</span>,
-                angle: .<span style="color: #c678dd;">degrees</span>(-<span style="color: #da8548; font-weight: bold;">90</span>))
-</pre>
-</div>
-<p>
-center 점을 중앙으로 삼고 둥글게 그라디언트를 그린다.
-어디에 그리는지에 따라 최종 형상이 달라진다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Circle</span>().<span style="color: #c678dd;">fill</span>(someGradient)
-</pre>
-</div>
-<p>
-위 코드로 눈치챌 수 있지만 그라디언트는 색(Color) 대신 사용할 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-ac70412e" class="outline-3">
-<h3 id="ac70412e">Path</h3>
-<div class="outline-text-3" id="text-ac70412e">
-<div class="org-src-container">
-<pre class="src src-switch">var p = Path()
+</pre></div></div></div></div><div id="outline-container-4e0b2491"class="outline-2"><h2 id="4e0b2491">그리기 컴포넌트</h2><div class="outline-text-2"id="text-4e0b2491"></div><div id="outline-container-30954d90"class="outline-3"><h3 id="30954d90">Circle</h3><div class="outline-text-3"id="text-30954d90"><p>동그라미</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">fill</span>(Color.<span style="color:#dcaeea">red</span>).<span style="color:#c678dd">padding</span>()
+</pre></div></div></div><div id="outline-container-4880c0f1"class="outline-3"><h3 id="4880c0f1">Capsule</h3><div class="outline-text-3"id="text-4880c0f1"><p>알약 모양 동그라미</p></div></div><div id="outline-container-119518c2"class="outline-3"><h3 id="119518c2">Ellipse</h3><div class="outline-text-3"id="text-119518c2"><p>타원</p></div></div><div id="outline-container-5e59525c"class="outline-3"><h3 id="5e59525c">Gradient</h3><div class="outline-text-3"id="text-5e59525c"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Gradient</span>(colors: [.<span style="color:#dcaeea">red</span>, .<span style="color:#dcaeea">yellow</span>, .<span style="color:#dcaeea">green</span>])
+</pre></div></div></div><div id="outline-container-2a7a5ee9"class="outline-3"><h3 id="2a7a5ee9">LinearGradient</h3><div class="outline-text-3"id="text-2a7a5ee9"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">LinearGradient</span>(gradient: ..., startPoint: ..., endPoint: ...)
+</pre></div></div></div><div id="outline-container-6bb6bf95"class="outline-3"><h3 id="6bb6bf95">AngularGradient</h3><div class="outline-text-3"id="text-6bb6bf95"><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">AngularGradient</span>(gradient: <span style="color:#c678dd">Gradient</span>(...),
+                center: .<span style="color:#dcaeea">center</span>,
+                angle: .<span style="color:#c678dd">degrees</span>(-<span style="color:#da8548;font-weight:700">90</span>))
+</pre></div><p>center 점을 중앙으로 삼고 둥글게 그라디언트를 그린다. 어디에 그리는지에 따라 최종 형상이 달라진다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Circle</span>().<span style="color:#c678dd">fill</span>(someGradient)
+</pre></div><p>위 코드로 눈치챌 수 있지만 그라디언트는 색(Color) 대신 사용할 수 있다.</p></div></div><div id="outline-container-ac70412e"class="outline-3"><h3 id="ac70412e">Path</h3><div class="outline-text-3"id="text-ac70412e"><div class="org-src-container"><pre class="src src-switch">var p = Path()
 p.addArc(center: ..., radius: ..., startAngle: ..., endAngle: ..., clockwise: false)
 p.addLine(to: ...)
 ...
 p.closeSubpath()
-</pre>
-</div>
-<p>
-아래와 같은 식이 좀 더 SwiftUI 답긴 하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">Path { path <span style="color: #51afef;">in</span>
-    path.<span style="color: #c678dd;">move</span>(to: ...)
-    path.<span style="color: #c678dd;">addLine</span>(to: ...)
-    path.<span style="color: #c678dd;">addQuadCurve</span>(to: ..., control: ...)
+</pre></div><p>아래와 같은 식이 좀 더 SwiftUI 답긴 하다.</p><div class="org-src-container"><pre class="src src-swift">Path { path <span style="color:#51afef">in</span>
+    path.<span style="color:#c678dd">move</span>(to: ...)
+    path.<span style="color:#c678dd">addLine</span>(to: ...)
+    path.<span style="color:#c678dd">addQuadCurve</span>(to: ..., control: ...)
     ...
 }
-.<span style="color: #c678dd;">fill</span>(Color.<span style="color: #dcaeea;">black</span>)
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-dd0f4139" class="outline-2">
-<h2 id="dd0f4139">애니메이션</h2>
-<div class="outline-text-2" id="text-dd0f4139">
-</div>
-<div id="outline-container-6f1c25ed" class="outline-3">
-<h3 id="6f1c25ed">animation</h3>
-<div class="outline-text-3" id="text-6f1c25ed">
-<div class="org-src-container">
-<pre class="src src-swift">SomeView.<span style="color: #c678dd;">rotationEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">90</span>))
-    .<span style="color: #c678dd;">animation</span>(.<span style="color: #c678dd;">spring</span>())
-</pre>
-</div>
-<p>
-멀티 애니메이션도 가능하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">SomeView.<span style="color: #c678dd;">rotationEffect</span>(.<span style="color: #c678dd;">degrees</span>(<span style="color: #da8548; font-weight: bold;">90</span>))
-    .<span style="color: #c678dd;">animation</span>(<span style="color: #a9a1e1;">nil</span>)
-    .<span style="color: #c678dd;">scaleEffect</span>(<span style="color: #da8548; font-weight: bold;">1.5</span>)
-    .<span style="color: #c678dd;">animation</span>(.<span style="color: #c678dd;">spring</span>())
-</pre>
-</div>
-<p>
-물론 위의 애니메이션은 순차가 아니라 동시에 발동한다.
-</p>
-</div>
-</div>
-<div id="outline-container-d0000716" class="outline-3">
-<h3 id="d0000716">withAnimation</h3>
-<div class="outline-text-3" id="text-d0000716">
-<p>
-가장 기본적인 뷰 애니메이션 용도다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">withAnimation {
-    someSwitch.<span style="color: #c678dd;">toggle</span>()
+.<span style="color:#c678dd">fill</span>(Color.<span style="color:#dcaeea">black</span>)
+</pre></div></div></div></div><div id="outline-container-dd0f4139"class="outline-2"><h2 id="dd0f4139">애니메이션</h2><div class="outline-text-2"id="text-dd0f4139"></div><div id="outline-container-6f1c25ed"class="outline-3"><h3 id="6f1c25ed">animation</h3><div class="outline-text-3"id="text-6f1c25ed"><div class="org-src-container"><pre class="src src-swift">SomeView.<span style="color:#c678dd">rotationEffect</span>(.<span style="color:#c678dd">degrees</span>(<span style="color:#da8548;font-weight:700">90</span>))
+    .<span style="color:#c678dd">animation</span>(.<span style="color:#c678dd">spring</span>())
+</pre></div><p>멀티 애니메이션도 가능하다.</p><div class="org-src-container"><pre class="src src-swift">SomeView.<span style="color:#c678dd">rotationEffect</span>(.<span style="color:#c678dd">degrees</span>(<span style="color:#da8548;font-weight:700">90</span>))
+    .<span style="color:#c678dd">animation</span>(<span style="color:#a9a1e1">nil</span>)
+    .<span style="color:#c678dd">scaleEffect</span>(<span style="color:#da8548;font-weight:700">1.5</span>)
+    .<span style="color:#c678dd">animation</span>(.<span style="color:#c678dd">spring</span>())
+</pre></div><p>물론 위의 애니메이션은 순차가 아니라 동시에 발동한다.</p></div></div><div id="outline-container-d0000716"class="outline-3"><h3 id="d0000716">withAnimation</h3><div class="outline-text-3"id="text-d0000716"><p>가장 기본적인 뷰 애니메이션 용도다.</p><div class="org-src-container"><pre class="src src-swift">withAnimation {
+    someSwitch.<span style="color:#c678dd">toggle</span>()
 }
-</pre>
-</div>
-<p>
-알고리즘도 바꿀 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">withAnimation</span>(.<span style="color: #c678dd;">spring</span>()) {
-    someSwitch.<span style="color: #c678dd;">toggle</span>()
+</pre></div><p>알고리즘도 바꿀 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">withAnimation</span>(.<span style="color:#c678dd">spring</span>()) {
+    someSwitch.<span style="color:#c678dd">toggle</span>()
 }
-</pre>
-</div>
-<p>
-아래는 버튼과 섞은 좀 더 복잡한 예제다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Button</span>(<span style="color: #98be65;">"Animate..!"</span>) {
+</pre></div><p>아래는 버튼과 섞은 좀 더 복잡한 예제다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Button</span>(<span style="color:#98be65">"Animate..!"</span>) {
      withAnimation {
-         <span style="color: #51afef;">self</span>.<span style="color: #c678dd;">degrees</span> += <span style="color: #da8548; font-weight: bold;">360</span>
+         <span style="color:#51afef">self</span>.<span style="color:#c678dd">degrees</span> += <span style="color:#da8548;font-weight:700">360</span>
      }
 }
-.<span style="color: #c678dd;">padding</span>(<span style="color: #da8548; font-weight: bold;">20</span>)
-.<span style="color: #c678dd;">background</span>(Color.<span style="color: #dcaeea;">blue</span>.<span style="color: #c678dd;">opacity</span>(<span style="color: #da8548; font-weight: bold;">0.8</span>))
-.<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">white</span>)
-.<span style="color: #c678dd;">rotation3DEffect</span>(.<span style="color: #c678dd;">degrees</span>(degrees), axis: (x: <span style="color: #da8548; font-weight: bold;">1</span>, y: <span style="color: #da8548; font-weight: bold;">1</span>, z: <span style="color: #da8548; font-weight: bold;">1</span>))
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-1e305752" class="outline-3">
-<h3 id="1e305752">transition</h3>
-<div class="outline-text-3" id="text-1e305752">
-<div class="org-src-container">
-<pre class="src src-swift">SomeView.<span style="color: #c678dd;">transition</span>(.<span style="color: #c678dd;">move</span>(edge: .<span style="color: #c678dd;">top</span>))
-</pre>
-</div>
-<p>
-조합의 경우는 아래와 같은 식으로 할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift">SomeView.<span style="color: #c678dd;">transition</span>(
+.<span style="color:#c678dd">padding</span>(<span style="color:#da8548;font-weight:700">20</span>)
+.<span style="color:#c678dd">background</span>(Color.<span style="color:#dcaeea">blue</span>.<span style="color:#c678dd">opacity</span>(<span style="color:#da8548;font-weight:700">0.8</span>))
+.<span style="color:#c678dd">foregroundColor</span>(Color.<span style="color:#dcaeea">white</span>)
+.<span style="color:#c678dd">rotation3DEffect</span>(.<span style="color:#c678dd">degrees</span>(degrees), axis: (x: <span style="color:#da8548;font-weight:700">1</span>, y: <span style="color:#da8548;font-weight:700">1</span>, z: <span style="color:#da8548;font-weight:700">1</span>))
+</pre></div></div></div><div id="outline-container-1e305752"class="outline-3"><h3 id="1e305752">transition</h3><div class="outline-text-3"id="text-1e305752"><div class="org-src-container"><pre class="src src-swift">SomeView.<span style="color:#c678dd">transition</span>(.<span style="color:#c678dd">move</span>(edge: .<span style="color:#c678dd">top</span>))
+</pre></div><p>조합의 경우는 아래와 같은 식으로 할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">SomeView.<span style="color:#c678dd">transition</span>(
     AnyTransition
-        .<span style="color: #c678dd;">move</span>(edge: .<span style="color: #c678dd;">top</span>)
-        .<span style="color: #c678dd;">combined</span>(with: .<span style="color: #dcaeea;">opacity</span>)
+        .<span style="color:#c678dd">move</span>(edge: .<span style="color:#c678dd">top</span>)
+        .<span style="color:#c678dd">combined</span>(with: .<span style="color:#dcaeea">opacity</span>)
 )
-</pre>
-</div>
-<p>
-등장과 퇴장 애니메이션을 별도로 <a href="implementation.html">구현</a>할 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">extension</span> <span style="color: #c678dd;">AnyTransition</span> {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> someTransitionName: AnyTransition {
-        <span style="color: #51afef;">return</span> .<span style="color: #c678dd;">asymmetric</span>(
+</pre></div><p>등장과 퇴장 애니메이션을 별도로 <a href="implementation.html">구현</a>할 수도 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">extension</span> <span style="color:#c678dd">AnyTransition</span> {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> someTransitionName: AnyTransition {
+        <span style="color:#51afef">return</span> .<span style="color:#c678dd">asymmetric</span>(
             insertion:
                 AnyTransition
-                    .<span style="color: #c678dd;">move</span>(edge: .<span style="color: #c678dd;">top</span>)
-                    .<span style="color: #c678dd;">combined</span>(with: .<span style="color: #dcaeea;">opacity</span>)
+                    .<span style="color:#c678dd">move</span>(edge: .<span style="color:#c678dd">top</span>)
+                    .<span style="color:#c678dd">combined</span>(with: .<span style="color:#dcaeea">opacity</span>)
             removal:
                 AnyTransition
-                    .<span style="color: #dcaeea;">scale</span>
-                    .<span style="color: #c678dd;">combined</span>(with: .<span style="color: #dcaeea;">opacity</span>)
+                    .<span style="color:#dcaeea">scale</span>
+                    .<span style="color:#c678dd">combined</span>(with: .<span style="color:#dcaeea">opacity</span>)
         )
     }
 }
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-4241a8c9" class="outline-2">
-<h2 id="4241a8c9">매크로</h2>
-<div class="outline-text-2" id="text-4241a8c9">
-</div>
-<div id="outline-container-66ff5012" class="outline-3">
-<h3 id="66ff5012">ViewModifier</h3>
-<div class="outline-text-3" id="text-66ff5012">
-<p>
-스타일을 매크로처럼 사용할 수 있게 해 준다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">TitleStyleModifier</span>: ViewModifier {
-    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">body</span>(content: Content) -&gt; <span style="color: #51afef;">some</span> View {
+</pre></div></div></div></div><div id="outline-container-4241a8c9"class="outline-2"><h2 id="4241a8c9">매크로</h2><div class="outline-text-2"id="text-4241a8c9"></div><div id="outline-container-66ff5012"class="outline-3"><h3 id="66ff5012">ViewModifier</h3><div class="outline-text-3"id="text-66ff5012"><p>스타일을 매크로처럼 사용할 수 있게 해 준다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">TitleStyleModifier</span>: ViewModifier {
+    <span style="color:#51afef">func</span> <span style="color:#c678dd">body</span>(content: Content) -&gt; <span style="color:#51afef">some</span> View {
         content
-            .<span style="color: #c678dd;">foregroundColor</span>(Color.<span style="color: #dcaeea;">black</span>)
-            .<span style="color: #c678dd;">backgroundColor</span>(Color.<span style="color: #dcaeea;">yellow</span>)
-            .<span style="color: #c678dd;">font</span>(.<span style="color: #dcaeea;">largeTitle</span>)
+            .<span style="color:#c678dd">foregroundColor</span>(Color.<span style="color:#dcaeea">black</span>)
+            .<span style="color:#c678dd">backgroundColor</span>(Color.<span style="color:#dcaeea">yellow</span>)
+            .<span style="color:#c678dd">font</span>(.<span style="color:#dcaeea">largeTitle</span>)
     }
 }
-</pre>
-</div>
-<p>
-이제 이 스타일을 특정 뷰에 적용할 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Title Text"</span>).<span style="color: #c678dd;">modifier</span>(TitleStyleModifier)
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-00b97f40" class="outline-2">
-<h2 id="00b97f40">기타 팁</h2>
-<div class="outline-text-2" id="text-00b97f40">
-</div>
-<div id="outline-container-2f6fad5e" class="outline-3">
-<h3 id="2f6fad5e">풀스크린 뷰(<a href="ios.html">iOS</a>)</h3>
-<div class="outline-text-3" id="text-2f6fad5e">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">ContentView</span>: View {
-    <span style="color: #51afef;">var</span> body: <span style="color: #51afef;">some</span> View {
-        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Fullscreen Text View"</span>)
-            .<span style="color: #c678dd;">edgesIgnoringSafeArea</span>(.<span style="color: #c678dd;">all</span>)
+</pre></div><p>이제 이 스타일을 특정 뷰에 적용할 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Title Text"</span>).<span style="color:#c678dd">modifier</span>(TitleStyleModifier)
+</pre></div></div></div></div><div id="outline-container-00b97f40"class="outline-2"><h2 id="00b97f40">기타 팁</h2><div class="outline-text-2"id="text-00b97f40"></div><div id="outline-container-2f6fad5e"class="outline-3"><h3 id="2f6fad5e">풀스크린 뷰(<a href="ios.html">iOS</a>)</h3><div class="outline-text-3"id="text-2f6fad5e"><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">ContentView</span>: View {
+    <span style="color:#51afef">var</span> body: <span style="color:#51afef">some</span> View {
+        <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Fullscreen Text View"</span>)
+            .<span style="color:#c678dd">edgesIgnoringSafeArea</span>(.<span style="color:#c678dd">all</span>)
     }
 }
-</pre>
-</div>
-<p>
-<code>edgesIgnoringSafeArea</code> 속성으로 안전 영역을 몽땅 덮어버리는
-그게 바로 풀스크린 뷰다.
-</p>
-</div>
-</div>
-<div id="outline-container-d39ca3d1" class="outline-3">
-<h3 id="d39ca3d1">기존 컴포넌트 붙이기</h3>
-<div class="outline-text-3" id="text-d39ca3d1">
-<p>
-SwiftUI가 도입되기 전에 사용하던 컴포넌트를 SwiftUI 뷰에 붙이는 방법이다.
-아래는 MKMapView를 SwiftUI 형태로 감싸는 예제다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">MapView</span>: UIViewRepresentable {
-    <span style="color: #51afef;">var</span> coordinate: CLLocationCoordinate2D
+</pre></div><p><code>edgesIgnoringSafeArea</code> 속성으로 안전 영역을 몽땅 덮어버리는 그게 바로 풀스크린 뷰다.</p></div></div><div id="outline-container-d39ca3d1"class="outline-3"><h3 id="d39ca3d1">기존 컴포넌트 붙이기</h3><div class="outline-text-3"id="text-d39ca3d1"><p>SwiftUI가 도입되기 전에 사용하던 컴포넌트를 SwiftUI 뷰에 붙이는 방법이다. 아래는 MKMapView를 SwiftUI 형태로 감싸는 예제다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">MapView</span>: UIViewRepresentable {
+    <span style="color:#51afef">var</span> coordinate: CLLocationCoordinate2D
 
-    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">makeUIView</span>(context: <span style="color: #c678dd;">Context</span>) -&gt; MKMapView {
-        <span style="color: #c678dd;">MKMapView</span>(frame: .<span style="color: #c678dd;">zero</span>)
+    <span style="color:#51afef">func</span> <span style="color:#c678dd">makeUIView</span>(context: <span style="color:#c678dd">Context</span>) -&gt; MKMapView {
+        <span style="color:#c678dd">MKMapView</span>(frame: .<span style="color:#c678dd">zero</span>)
     }
 
-    <span style="color: #51afef;">func</span> <span style="color: #c678dd;">updateUIView</span>(_ view: MKMapView, context: <span style="color: #c678dd;">Context</span>) {
-        <span style="color: #51afef;">let</span> span = <span style="color: #c678dd;">MKCoordinateSpan</span>(latitudeDelta: <span style="color: #da8548; font-weight: bold;">0.02</span>, longitudeDelta: <span style="color: #da8548; font-weight: bold;">0.02</span>)
-        <span style="color: #51afef;">let</span> region = <span style="color: #c678dd;">MKCoordinateRegion</span>(center: coordinate, span: span)
-        view.<span style="color: #c678dd;">setRegion</span>(region, animated: <span style="color: #a9a1e1;">true</span>)
+    <span style="color:#51afef">func</span> <span style="color:#c678dd">updateUIView</span>(_ view: MKMapView, context: <span style="color:#c678dd">Context</span>) {
+        <span style="color:#51afef">let</span> span = <span style="color:#c678dd">MKCoordinateSpan</span>(latitudeDelta: <span style="color:#da8548;font-weight:700">0.02</span>, longitudeDelta: <span style="color:#da8548;font-weight:700">0.02</span>)
+        <span style="color:#51afef">let</span> region = <span style="color:#c678dd">MKCoordinateRegion</span>(center: coordinate, span: span)
+        view.<span style="color:#c678dd">setRegion</span>(region, animated: <span style="color:#a9a1e1">true</span>)
     }
 }
-</pre>
-</div>
-<p>
-이런 식으로 코딩해 놓으면 SwiftUI 코드들과 조화를 이룰 수 있다.
-</p>
-</div>
-</div>
-<div id="outline-container-85d8ac8b" class="outline-3">
-<h3 id="85d8ac8b">다크 테마 미리보기</h3>
-<div class="outline-text-3" id="text-85d8ac8b">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+</pre></div><p>이런 식으로 코딩해 놓으면 SwiftUI 코드들과 조화를 이룰 수 있다.</p></div></div><div id="outline-container-85d8ac8b"class="outline-3"><h3 id="85d8ac8b">다크 테마 미리보기</h3><div class="outline-text-3"id="text-85d8ac8b"><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
         Group {
-            <span style="color: #c678dd;">SampleView</span>()
-                .<span style="color: #c678dd;">environment</span>(\.<span style="color: #dcaeea;">colorScheme</span>, .<span style="color: #dcaeea;">dark</span>)
+            <span style="color:#c678dd">SampleView</span>()
+                .<span style="color:#c678dd">environment</span>(\.<span style="color:#dcaeea">colorScheme</span>, .<span style="color:#dcaeea">dark</span>)
         }
     }
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-2721772e" class="outline-3">
-<h3 id="2721772e">미리보기(Preview) 크기 조절하기</h3>
-<div class="outline-text-3" id="text-2721772e">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
-        <span style="color: #c678dd;">SampleView</span>()
-            .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">500</span>, height: <span style="color: #da8548; font-weight: bold;">300</span>))
+</pre></div></div></div><div id="outline-container-2721772e"class="outline-3"><h3 id="2721772e">미리보기(Preview) 크기 조절하기</h3><div class="outline-text-3"id="text-2721772e"><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
+        <span style="color:#c678dd">SampleView</span>()
+            .<span style="color:#c678dd">previewLayout</span>(.<span style="color:#c678dd">fixed</span>(width: <span style="color:#da8548;font-weight:700">500</span>, height: <span style="color:#da8548;font-weight:700">300</span>))
     }
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-c03a1e59" class="outline-3">
-<h3 id="c03a1e59">멀티 미리보기(preview)</h3>
-<div class="outline-text-3" id="text-c03a1e59">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+</pre></div></div></div><div id="outline-container-c03a1e59"class="outline-3"><h3 id="c03a1e59">멀티 미리보기(preview)</h3><div class="outline-text-3"id="text-c03a1e59"><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
         Group {
-            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">0</span>])
-                .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">300</span>, height: <span style="color: #da8548; font-weight: bold;">100</span>))
-            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">1</span>])
-                .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">300</span>, height: <span style="color: #da8548; font-weight: bold;">100</span>))
+            <span style="color:#c678dd">SampleView</span>(data: someData[<span style="color:#da8548;font-weight:700">0</span>])
+                .<span style="color:#c678dd">previewLayout</span>(.<span style="color:#c678dd">fixed</span>(width: <span style="color:#da8548;font-weight:700">300</span>, height: <span style="color:#da8548;font-weight:700">100</span>))
+            <span style="color:#c678dd">SampleView</span>(data: someData[<span style="color:#da8548;font-weight:700">1</span>])
+                .<span style="color:#c678dd">previewLayout</span>(.<span style="color:#c678dd">fixed</span>(width: <span style="color:#da8548;font-weight:700">300</span>, height: <span style="color:#da8548;font-weight:700">100</span>))
         }
     }
 }
-</pre>
-</div>
-<p>
-각각의 뷰 사이즈가 동일하다면 아래 처럼 묶을 수도 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+</pre></div><p>각각의 뷰 사이즈가 동일하다면 아래 처럼 묶을 수도 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
         Group {
-            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">0</span>])
-            <span style="color: #c678dd;">SampleView</span>(data: someData[<span style="color: #da8548; font-weight: bold;">1</span>])
+            <span style="color:#c678dd">SampleView</span>(data: someData[<span style="color:#da8548;font-weight:700">0</span>])
+            <span style="color:#c678dd">SampleView</span>(data: someData[<span style="color:#da8548;font-weight:700">1</span>])
         }
-        .<span style="color: #c678dd;">previewLayout</span>(.<span style="color: #c678dd;">fixed</span>(width: <span style="color: #da8548; font-weight: bold;">300</span>, height: <span style="color: #da8548; font-weight: bold;">100</span>))
+        .<span style="color:#c678dd">previewLayout</span>(.<span style="color:#c678dd">fixed</span>(width: <span style="color:#da8548;font-weight:700">300</span>, height: <span style="color:#da8548;font-weight:700">100</span>))
     }
 }
-</pre>
-</div>
-<p>
-밝은 모드나 다크 모드 시의 차이를 한 번에 볼 때도 유용하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
+</pre></div><p>밝은 모드나 다크 모드 시의 차이를 한 번에 볼 때도 유용하다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
         Group {
-            <span style="color: #c678dd;">SampleView</span>()
-                .<span style="color: #c678dd;">environment</span>(\.<span style="color: #dcaeea;">colorScheme</span>, .<span style="color: #dcaeea;">light</span>)
-            <span style="color: #c678dd;">SampleView</span>()
-                .<span style="color: #c678dd;">environment</span>(\.<span style="color: #dcaeea;">colorScheme</span>, .<span style="color: #dcaeea;">dark</span>)
+            <span style="color:#c678dd">SampleView</span>()
+                .<span style="color:#c678dd">environment</span>(\.<span style="color:#dcaeea">colorScheme</span>, .<span style="color:#dcaeea">light</span>)
+            <span style="color:#c678dd">SampleView</span>()
+                .<span style="color:#c678dd">environment</span>(\.<span style="color:#dcaeea">colorScheme</span>, .<span style="color:#dcaeea">dark</span>)
         }
     }
 }
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-a14e467d" class="outline-3">
-<h3 id="a14e467d">디바이스 별 미리보기</h3>
-<div class="outline-text-3" id="text-a14e467d">
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
-        <span style="color: #c678dd;">SomeView</span>()
-            .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: <span style="color: #98be65;">"iPhone SE"</span>))
+</pre></div></div></div><div id="outline-container-a14e467d"class="outline-3"><h3 id="a14e467d">디바이스 별 미리보기</h3><div class="outline-text-3"id="text-a14e467d"><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
+        <span style="color:#c678dd">SomeView</span>()
+            .<span style="color:#c678dd">previewDevice</span>(<span style="color:#c678dd">PreviewDevice</span>(rawValue: <span style="color:#98be65">"iPhone SE"</span>))
     }
 }
-</pre>
-</div>
-<p>
-물론 멀티 디바이스 미리보기도 가능하다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">struct</span> <span style="color: #c678dd;">SampleView_Previews</span>: PreviewProvider {
-    <span style="color: #51afef;">static</span> <span style="color: #51afef;">var</span> previews: <span style="color: #51afef;">some</span> View {
-        <span style="color: #c678dd;">SomeView</span>()
-            .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: <span style="color: #98be65;">"iPhone SE"</span>))
-        <span style="color: #c678dd;">SomeView</span>()
-            .<span style="color: #c678dd;">previewDevice</span>(<span style="color: #c678dd;">PreviewDevice</span>(rawValue: <span style="color: #98be65;">"iPhone XS Max"</span>))
+</pre></div><p>물론 멀티 디바이스 미리보기도 가능하다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">SampleView_Previews</span>: PreviewProvider {
+    <span style="color:#51afef">static</span> <span style="color:#51afef">var</span> previews: <span style="color:#51afef">some</span> View {
+        <span style="color:#c678dd">SomeView</span>()
+            .<span style="color:#c678dd">previewDevice</span>(<span style="color:#c678dd">PreviewDevice</span>(rawValue: <span style="color:#98be65">"iPhone SE"</span>))
+        <span style="color:#c678dd">SomeView</span>()
+            .<span style="color:#c678dd">previewDevice</span>(<span style="color:#c678dd">PreviewDevice</span>(rawValue: <span style="color:#98be65">"iPhone XS Max"</span>))
     }
 }
-</pre>
-</div>
-<p>
-디바이스가 많으면 ForEach로 묶어버릴 수도 있다.
-기왕 하는거 프리뷰 밑에 이름도 붙여서 구분해 보자.
-#+BEGIN<sub>SRC</sub> swift
-struct SampleView<sub>Previews</sub>: PreviewProvider {
-    static var previews: some View {
-        ForEach(["iPhone SE", "iPhone XS", "iPhone XS Max"], id: \.self) {
-            deviceName in
-            SomeView()
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
-        }
-    }
-}
-</p>
-</div>
-</div>
-<div id="outline-container-232b71e0" class="outline-3">
-<h3 id="232b71e0">스토리보드에서 시험해보기</h3>
-<div class="outline-text-3" id="text-232b71e0">
-<p>
-아래 같은 코드로 플레이그라운드에서 SwiftUI를 시험해 볼 수 있다.
-</p>
-<div class="org-src-container">
-<pre class="src src-swift"><span style="color: #51afef;">import</span> SwiftUI
-<span style="color: #51afef;">import</span> PlaygroundSupport
+</pre></div><p>디바이스가 많으면 ForEach로 묶어버릴 수도 있다. 기왕 하는거 프리뷰 밑에 이름도 붙여서 구분해 보자. #+BEGIN<sub>SRC</sub> swift struct SampleView<sub>Previews</sub>: PreviewProvider { static var previews: some View { ForEach(["iPhone SE", "iPhone XS", "iPhone XS Max"], id: \.self) { deviceName in SomeView() .previewDevice(PreviewDevice(rawValue: deviceName)) .previewDisplayName(deviceName) } } }</p></div></div><div id="outline-container-232b71e0"class="outline-3"><h3 id="232b71e0">스토리보드에서 시험해보기</h3><div class="outline-text-3"id="text-232b71e0"><p>아래 같은 코드로 플레이그라운드에서 SwiftUI를 시험해 볼 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">import</span> SwiftUI
+<span style="color:#51afef">import</span> PlaygroundSupport
 
-<span style="color: #51afef;">struct</span> <span style="color: #c678dd;">ContentView</span>: View {
-    <span style="color: #51afef;">var</span> body: <span style="color: #51afef;">some</span> View {
-        <span style="color: #c678dd;">Text</span>(<span style="color: #98be65;">"Hello Playground!"</span>)
+<span style="color:#51afef">struct</span> <span style="color:#c678dd">ContentView</span>: View {
+    <span style="color:#51afef">var</span> body: <span style="color:#51afef">some</span> View {
+        <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Hello Playground!"</span>)
     }
 }
 
-PlaygroundPage.<span style="color: #c678dd;">current</span>.<span style="color: #c678dd;">setLiveView</span>(<span style="color: #c678dd;">ContentView</span>())
-</pre>
-</div>
-<p>
-실행시킨 후 창 우측 상단에 있는 'Adjuest Editor Options' 메뉴에서
-Live View 를 켜 주면 뷰의 모습을 볼 수 있다.
-</p>
-
-<p>
-macOS 에서는 텍스트가 상단에 표시되고,
-<a href="ios.html">iOS</a>의 경우는 텍스트가 가운데에 표시된다는 차이가 있다.
-</p>
-
-<p>
-다만 아직 SwiftUI를 플레이그라운드에서 완벽히 돌리기엔 무리가 있다는 점을 알아두자.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-ac6ef9be" class="outline-2">
-<h2 id="ac6ef9be">오류 메시지들</h2>
-<div class="outline-text-2" id="text-ac6ef9be">
-</div>
-<div id="outline-container-a7a18303" class="outline-3">
-<h3 id="a7a18303">Cannot assign to property: 'self' is immutable</h3>
-<div class="outline-text-3" id="text-a7a18303">
-<blockquote>
-<p>
-팁: 혹시 멤버 프로퍼티를 <code>@Published</code> 로 설정해서 이 에러가 났다면 <code>@State</code> 로 고쳐서 시도해보자.
-</p>
-</blockquote>
-<p>
-SwiftUI의 모든 뷰는 Immutable 구조체 <a href="instance.html">인스턴스</a>가 생성되는 형태로 동작한다.
-따라서 자신의 모든 프로퍼티를 바꾸는 행위는 불가능하다.
-이 점을 이해한다면 어떤 행위가 이 오류를 발생 시키는지 알 수 있을 것이다.
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-129c57bd" class="outline-2">
-<h2 id="129c57bd">주제별 글들</h2>
-<div class="outline-text-2" id="text-129c57bd">
-<ul class="org-ul">
-<li><a href="swiftui-property-wrappers.html">SwiftUI Property Wrappers</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-0bbb90e1" class="outline-2">
-<h2 id="0bbb90e1">외부 링크</h2>
-<div class="outline-text-2" id="text-0bbb90e1">
-<ul class="org-ul">
-<li><a target="_blank" href="https://seorenn.tistory.com/67">🌏Combine과 SwiftUI</a></li>
-<li><a target="_blank" href="https://fuckingswiftui.com/">🌏Fucking SwiftUI</a></li>
-<li><a target="_blank" href="https://developer.apple.com/videos/play/wwdc2019/237">🌏Building Custom Views
-with SwiftUI</a></li>
-<li><a target="_blank" href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">🌏Drawing Paths and Shapes</a></li>
-<li><a target="_blank" href="https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation">🌏Building Lists and Navigation</a></li>
-</ul>
-</div>
-</div>
-<div class="mid-ad-container">
-<ins class="adsbygoogle mid-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<div class="backlinks-container">
-<hr /><h1>이 글을 링크하는 글들</h1>
-<div class="article-link">
-<div class="article-link-title-block">
-<h2><a class="article-link-title" href="/note/swiftui-property-wrappers.html">SwiftUI Property Wrappers</a></h2>
-<span class="article-description">
-SwiftUI에서 유용하게 사용되는 Property Wrapper 정리</span
-><span class="article-link-date">
-2020년 7월 2일 수정</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div class="footer-content">
-<footer>
-Copyright 2019 ~ 2020. Seorenn all rights reserved.
-</footer>
-</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-44534026-1');
-</script>
-</body>
-</html>
+PlaygroundPage.<span style="color:#c678dd">current</span>.<span style="color:#c678dd">setLiveView</span>(<span style="color:#c678dd">ContentView</span>())
+</pre></div><p>실행시킨 후 창 우측 상단에 있는 'Adjuest Editor Options' 메뉴에서 Live View 를 켜 주면 뷰의 모습을 볼 수 있다.</p><p>macOS 에서는 텍스트가 상단에 표시되고, <a href="ios.html">iOS</a>의 경우는 텍스트가 가운데에 표시된다는 차이가 있다.</p><p>다만 아직 SwiftUI를 플레이그라운드에서 완벽히 돌리기엔 무리가 있다는 점을 알아두자.</p></div></div></div><div id="outline-container-ac6ef9be"class="outline-2"><h2 id="ac6ef9be">오류 메시지들</h2><div class="outline-text-2"id="text-ac6ef9be"></div><div id="outline-container-a7a18303"class="outline-3"><h3 id="a7a18303">Cannot assign to property: 'self' is immutable</h3><div class="outline-text-3"id="text-a7a18303"><blockquote><p>팁: 혹시 멤버 프로퍼티를 <code>@Published</code> 로 설정해서 이 에러가 났다면 <code>@State</code> 로 고쳐서 시도해보자.</p></blockquote><p>SwiftUI의 모든 뷰는 Immutable 구조체 <a href="instance.html">인스턴스</a>가 생성되는 형태로 동작한다. 따라서 자신의 모든 프로퍼티를 바꾸는 행위는 불가능하다. 이 점을 이해한다면 어떤 행위가 이 오류를 발생 시키는지 알 수 있을 것이다.</p></div></div></div><div id="outline-container-129c57bd"class="outline-2"><h2 id="129c57bd">주제별 글들</h2><div class="outline-text-2"id="text-129c57bd"><ul class="org-ul"><li><a href="swiftui-property-wrappers.html">SwiftUI Property Wrappers</a></li></ul></div></div><div id="outline-container-0bbb90e1"class="outline-2"><h2 id="0bbb90e1">외부 링크</h2><div class="outline-text-2"id="text-0bbb90e1"><ul class="org-ul"><li><a target="_blank"href="https://seorenn.tistory.com/67">🌏Combine과 SwiftUI</a></li><li><a target="_blank"href="https://fuckingswiftui.com/">🌏Fucking SwiftUI</a></li><li><a target="_blank"href="https://developer.apple.com/videos/play/wwdc2019/237">🌏Building Custom Views with SwiftUI</a></li><li><a target="_blank"href="https://developer.apple.com/tutorials/swiftui/drawing-paths-and-shapes">🌏Drawing Paths and Shapes</a></li><li><a target="_blank"href="https://developer.apple.com/tutorials/swiftui/building-lists-and-navigation">🌏Building Lists and Navigation</a></li></ul></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/swiftui-property-wrappers.html">SwiftUI Property Wrappers</a></h2><span class="article-description">SwiftUI에서 유용하게 사용되는 Property Wrapper 정리</span><span class="article-link-date"> 2020년 7월 2일 수정</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

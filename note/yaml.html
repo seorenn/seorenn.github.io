@@ -33,26 +33,32 @@
 <script data-ad-client="ca-pub-1071465863344332" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-<div class="content-container">
-<div class="left-empty"></div>
 <div class="header-content">
 <header class="top-header">
 <div class="logo-container">
-<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-logo.png" alt="Seorenn" /></a>
+<span class="vertical-center-helper"></span>
+<a href="/" title="Seorenn"><img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn Note" /></a>
 <nav>
-<a href="/" title="Home"><i class="material-icons md-light">home</i></a>
-<a href="/note" title="Note"><i class="material-icons md-light">list_alt</i></a>
+<span class="vertical-center-helper"></span>
+<a href="/" title="Home">HOME</a> |
+<a href="/note" title="All Notes">NOTES</a>
 </nav>
 </div>
 </header>
-<hr/>
-</div>
-<div class="side-ad-container"></div>
 </div>
 <div class="content-container">
-<div class="left-empty">
-</div>
 <section class="content">
+<div class="mid-ad-container">
+<ins class="adsbygoogle mid-ad"
+     style="display:block"
+     data-ad-client="ca-pub-1071465863344332"
+     data-ad-slot="4306465772"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 <header>
 <h1>YAML</h1>
 <div class="title-date">2020년 6월 18일 수정</div>
@@ -89,44 +95,44 @@ YAML이라는 이름은 뭔가의 약자 같은데 큰의미를 가지는 것 �
 자주 쓰는 문법만 하나로 모아보면 이런 형태다.
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml"># comment line
-name: value
-some name: some value
-foo: "some string with double-quotes"
-bar: 'some string with single-quotes'
-bool1: true
-bool2: false
-bool3: yes
-bool4: no
+<pre class="src src-yaml"><span style="color: #5B6268;"># </span><span style="color: #5B6268;">comment line</span>
+<span style="color: #dcaeea;">name</span>: value
+<span style="color: #dcaeea;">some name</span>: some value
+<span style="color: #dcaeea;">foo</span>: <span style="color: #98be65;">"some string with double-quotes"</span>
+<span style="color: #dcaeea;">bar</span>: <span style="color: #98be65;">'some string with single-quotes'</span>
+<span style="color: #dcaeea;">bool1</span>: <span style="color: #a9a1e1;">true</span>
+<span style="color: #dcaeea;">bool2</span>: <span style="color: #a9a1e1;">false</span>
+<span style="color: #dcaeea;">bool3</span>: <span style="color: #a9a1e1;">yes</span>
+<span style="color: #dcaeea;">bool4</span>: <span style="color: #a9a1e1;">no</span>
 
-list1: [1, 2, 3]
+<span style="color: #dcaeea;">list1</span>: [1, 2, 3]
 
-list2:
+<span style="color: #dcaeea;">list2</span>:
   - 1
   - 2
   - 3
 
-list-strings: ["foo", "bar", "string"]
+<span style="color: #dcaeea;">list-strings</span>: [<span style="color: #98be65;">"foo"</span>, <span style="color: #98be65;">"bar"</span>, <span style="color: #98be65;">"string"</span>]
 
-simple-dict: {item1: "a", item2: "b"}
-dict:
-  item1: "string"
-  item2: 0123      # Octet Value
-  item3:
-    - subdict1-item1: 1
-      subdict1-item2: 2
-    - subdict2-item1: 3
-      subdict2-item2: 4
+<span style="color: #dcaeea;">simple-dict</span>: {<span style="color: #dcaeea;">item1</span>: <span style="color: #98be65;">"a"</span>, <span style="color: #dcaeea;">item2</span>: <span style="color: #98be65;">"b"</span>}
+<span style="color: #dcaeea;">dict</span>:
+  <span style="color: #dcaeea;">item1</span>: <span style="color: #98be65;">"string"</span>
+  <span style="color: #dcaeea;">item2</span>: 0123      <span style="color: #5B6268;"># </span><span style="color: #5B6268;">Octet Value</span>
+  <span style="color: #dcaeea;">item3</span>:
+    - <span style="color: #dcaeea;">subdict1-item1</span>: 1
+      <span style="color: #dcaeea;">subdict1-item2</span>: 2
+    - <span style="color: #dcaeea;">subdict2-item1</span>: 3
+      <span style="color: #dcaeea;">subdict2-item2</span>: 4
 
-multiline-string: |
-  line1
-  line2
-  line3
+<span style="color: #dcaeea;">multiline-string</span>: |
+  <span style="color: #98be65;">line1</span>
+<span style="color: #98be65;">  line2</span>
+<span style="color: #98be65;">  line3</span>
 
-singleline-string: &gt;
-  this is
-  not multi-line string,
-  just single line
+<span style="color: #dcaeea;">singleline-string</span>: &gt;
+  <span style="color: #98be65;">this is</span>
+<span style="color: #98be65;">  not multi-line string,</span>
+<span style="color: #98be65;">  just single line</span>
 </pre>
 </div>
 </div>
@@ -168,8 +174,8 @@ bool7: off
 리스트 형태일 경우 <code>[...]</code> 로 감싸거나 혹은 리스트의 각 아이템이 <code>-</code> 로 시작된다.
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml">list1: [1, 2, 3]
-list2:
+<pre class="src src-yaml"><span style="color: #dcaeea;">list1</span>: [1, 2, 3]
+<span style="color: #dcaeea;">list2</span>:
   - 1
   - 2
   - 3
@@ -187,11 +193,11 @@ list2:
 위의 <code>item3</code> 를 표현하는 과정에서 처럼 리스트 아이템을 표시하는 <code>-</code> 를 해석하는 것 때문에 골치아플 수도 있다.
 </p>
 <div class="org-src-container">
-<pre class="src src-yaml">item3:
-  - subdict1-item1: 1
-    subdict1-item2: 2
-  - subdict2-item1: 3
-    subdict2-item2: 4
+<pre class="src src-yaml"><span style="color: #dcaeea;">item3</span>:
+  - <span style="color: #dcaeea;">subdict1-item1</span>: 1
+    <span style="color: #dcaeea;">subdict1-item2</span>: 2
+  - <span style="color: #dcaeea;">subdict2-item1</span>: 3
+    <span style="color: #dcaeea;">subdict2-item2</span>: 4
 </pre>
 </div>
 <p>
@@ -259,41 +265,29 @@ list2:
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/kubectl.html">kubectl</a></h2>
-<div class="article-link-date">
-2020년 6월 24일 수정</div>
+<span class="article-description">
+kubectl 사용법 정리</span
+><span class="article-link-date">
+2020년 6월 24일 수정</span>
 </div>
 </div>
 <div class="article-link">
 <div class="article-link-title-block">
 <h2><a class="article-link-title" href="/note/docker-compose.html">Docker Compose</a></h2>
-<div class="article-link-date">
-2020년 6월 17일 수정</div>
+<span class="article-description">
+도커 명령을 스펙 파일로 자동화할 수 있는 도구인 Docker Compose(도커 컴포즈)에 대한 간단한 소개 및 예제를 정리하는 글</span
+><span class="article-link-date">
+2020년 6월 17일 수정</span>
 </div>
 </div>
 </div>
 </section>
-<div class="side-ad-container">
-<ins class="adsbygoogle side-ad"
-     style="display:block"
-     data-ad-client="ca-pub-1071465863344332"
-     data-ad-slot="4306465772"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </div>
-</div>
-<div class="content-container">
-<div class="left-empty"></div>
-<div class="header-content">
-<hr/>
+<div class="footer-content">
 <footer>
 Copyright 2019 ~ 2020. Seorenn all rights reserved.
 </footer>
-</div><div class="side-ad-container"></div>
-</div>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
+</div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

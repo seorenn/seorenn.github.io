@@ -22,7 +22,7 @@ body {
 .header-content {
   position: fixed;
   top: 0;
-  padding: 0;
+  padding: 0 16px 0 16px;
   margin: 0;
   height: 42px;
   width: 100%;

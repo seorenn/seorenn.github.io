@@ -108,6 +108,10 @@
 <p>
 위의 예제는 버튼을 누르면 프로퍼티의 내용이 바뀌는데 이때 텍스트 뷰의 내용도 자동으로 바뀌는 것을 볼 수 있다.
 </p>
+
+<p>
+참고로 예제에서도 볼 수 있다시피 <code>@State</code> 는 <code>private</code> 프로퍼티에만 사용할 수 있다.
+</p>
 </div>
 </div>
 
@@ -250,7 +254,11 @@ window.<span style="color: #dcaeea;">rootViewController</span> =
 <h2 id="b586c804">@StateObject</h2>
 <div class="outline-text-2" id="text-b586c804">
 <p>
-<code>@StateObject</code> 는 새로 추가된 Property Wrapper로 <a href="ios.html">iOS</a> 14, <a href="macos.html">macOS</a> 11 Big Sur 혹은 그 이후 버전에서만 사용이 가능하다. 이 글을 쓰는 이가 아직 테스트용 맥이 없어서 이 부분을 확인하지 못 한 관계로 제목만 남겨둔다. ㅠ.ㅠ
+<code>@StateObject</code> 는 새로 추가된 Property Wrapper로 <a href="ios.html">iOS</a> 14, <a href="macos.html">macOS</a> 11 Big Sur 혹은 그 이후 버전에서만 사용이 가능하다. 이 글을 쓰는 이가 아직 테스트용 맥이 없어서 이 부분을 확인하지 못 하여서 일단 제목만 남겨 놓는다.
+</p>
+
+<p>
+추측으로 <code>@ObservedObject</code> 와 비슷하면서도 <code>@State</code> 처럼 <code>private</code> 로만 액세스 가능한 프로퍼티를 구현하는 것이 목적일 것 같다.
 </p>
 </div>
 </div>

@@ -9,9 +9,9 @@
 <title>Swift Package Manager - Seorenn Note</title>
 <meta name="twitter:title" content="Swift Package Manager" />
 <meta name="og:title" content="Swift Package Manager" />
-<meta name="description" content="Swift Package Manager(SPM)에 대한 소개 및 사용법" />
-<meta name="twitter:description" content="Swift Package Manager(SPM)에 대한 소개 및 사용법" />
-<meta name="og:description" content="Swift Package Manager(SPM)에 대한 소개 및 사용법" />
+<meta name="description" content="Swift Package Manager(SPM)에 대한 소개 및 사용법을 알아보자" />
+<meta name="twitter:description" content="Swift Package Manager(SPM)에 대한 소개 및 사용법을 알아보자" />
+<meta name="og:description" content="Swift Package Manager(SPM)에 대한 소개 및 사용법을 알아보자" />
 <link rel="canonical" href="https://seorenn.github.io/note/swift-package-manager.html" />
 <meta property="og:url" content="https://seorenn.github.io/note/swift-package-manager.html" />
 <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
@@ -55,7 +55,7 @@
 <section class="content">
 <header>
 <h1>Swift Package Manager</h1>
-<div class="title-date">2020년 6월 3일 수정</div>
+<div class="title-date">2020년 7월 2일 수정</div>
 </header>
 <div id="table-of-contents">
 <h2>≡ 목차 (Table of Contents)</h2><div id="text-table-of-contents">
@@ -82,10 +82,12 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 <p>
 아래 커맨드로 현재 디렉터리에 프로젝트를 생성할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift package init
 </pre>
 </div>
+
 <p>
 프로젝트 이름은 디렉토리 이름과 동일하게 생성된다.
 <code>Sources/ProjectName/ProjectName.swift</code> 라는 파일이 기본적으로 생성되는데
@@ -96,10 +98,12 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 정확하게 이야기해서 위 커맨드는 라이브러리 프로젝트를 생성한다.
 명확하게 말하자면 아래 커맨드가 라이브러리 프로젝트를 생성하는 정확한 명령이다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift package init --type library
 </pre>
 </div>
+
 <p>
 사실상 위와 동일한 프로젝트가 생성된다.
 명확한 것을 좋아하면 이 커맨드를 쓰는 게 좋을 것 같다.
@@ -108,10 +112,12 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 <p>
 만약 라이브러리가 아니라 실행 파일 프로젝트를 만들고 싶다면 아래와 같이 할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift package init --type executable
 </pre>
 </div>
+
 <p>
 생성되는 내용은 거의 동일하다.
 단지 <code>Sources/ProjectName/main.swift</code> 라는 파일이 기본적으로 생성되고
@@ -121,17 +127,20 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 <p>
 추가로 <a href="xcode.html">Xcode</a> 프로젝트를 생성하고 싶다면 아래 커맨드를 사용할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift package generate-xcodeproj
 </pre>
 </div>
+
 <p>
 이 커맨드는 정말 <code>projectName.xcodeproj</code> 파일만 생성한다.
 하지만 기존 <code>UIKit</code> 혹은 <code>AppKit</code> 프로젝트와는 다르게 뭔가 많이 빠진 썰렁한 프로젝트로 생성된다.
-순수 <a href="swift.html">Swift</a> 프로젝트라서 그런 듯하다.
+아마도 순수 <a href="swift.html">Swift</a> 프로젝트라서 그런 듯하다.
 </p>
 </div>
 </div>
+
 <div id="outline-container-e58e659e" class="outline-2">
 <h2 id="e58e659e">의존성 설정하기</h2>
 <div class="outline-text-2" id="text-e58e659e">
@@ -139,6 +148,7 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 의존성(Dependency)은 프로젝트 루트의 <code>Packages.swift</code> 라는 파일로 설정한다.
 이 파일을 열어보면 <code>dependencies</code> 항목을 찾을 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-swift"><span style="color: #51afef;">let</span> package = <span style="color: #c678dd;">Package</span>(
   name: <span style="color: #98be65;">"ProjectName"</span>,
@@ -151,6 +161,7 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 )
 </pre>
 </div>
+
 <p>
 이미 예제코드가 주석으로 쓰여져 있어서 작성하기는 쉽다.
 <code>url</code> 은 예제 처럼 디렉터리가 올 수도 있고 github 등의 URL이 올 수도 있다.
@@ -158,16 +169,19 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 </p>
 </div>
 </div>
+
 <div id="outline-container-b15bc76c" class="outline-2">
 <h2 id="b15bc76c">의존성 설치 및 업데이트 하기</h2>
 <div class="outline-text-2" id="text-b15bc76c">
 <p>
 아래 커맨드로 의존 패키지를 설치할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift package update
 </pre>
 </div>
+
 <p>
 필요하다면 업데이트도 진행된다.
 </p>
@@ -177,12 +191,14 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 </p>
 </div>
 </div>
+
 <div id="outline-container-2057a6e6" class="outline-2">
 <h2 id="2057a6e6">테스트, 빌드, 실행하기</h2>
 <div class="outline-text-2" id="text-2057a6e6">
 <p>
 테스트는 아래 커맨드로 수행할 수 있다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift test
 </pre>
@@ -191,6 +207,7 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 <p>
 디버그 빌드는 <code>build</code> 커맨드를 이용한다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift build
 </pre>
@@ -199,6 +216,7 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 <p>
 릴리즈 빌드는 릴리즈 설정을 별도로 사용한다.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift build --configuration release
 </pre>
@@ -207,12 +225,14 @@ Cocoapods와 비슷하다고 볼 수도 있는데,
 <p>
 바로 실행하고 싶다면 <code>run</code> 커맨드를 이용해보자.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-bash">swift run
 </pre>
 </div>
 </div>
 </div>
+
 <div id="outline-container-a341a32d" class="outline-2">
 <h2 id="a341a32d">Xcode에서 의존성 설정하기</h2>
 <div class="outline-text-2" id="text-a341a32d">

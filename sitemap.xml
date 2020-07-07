@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-07-07</lastmod></url>
@@ -23,7 +26,6 @@
 <url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python3-manual-migration.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-bitstring.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -60,7 +62,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2020-07-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsvp.html</loc><lastmod>2020-06-26</lastmod></url>
@@ -143,6 +144,6 @@
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-08</lastmod></url>
 </urlset>

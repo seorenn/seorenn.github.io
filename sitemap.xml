@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-troubleshooting.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2020-07-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2020-07-04</lastmod></url>
@@ -62,7 +64,6 @@
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsvp.html</loc><lastmod>2020-06-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2020-06-26</lastmod></url>
@@ -92,7 +93,6 @@
 <url><loc>https://seorenn.github.io/note/namespace.html</loc><lastmod>2020-06-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/json.html</loc><lastmod>2020-06-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dockerfile.html</loc><lastmod>2020-06-17</lastmod></url>
@@ -143,6 +143,6 @@
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-06</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-07</lastmod></url>
 </urlset>

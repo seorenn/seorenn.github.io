@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-map.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-07-08</lastmod></url>
@@ -15,7 +17,6 @@
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-07-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/special-char-name.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-virtualenv.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -123,7 +124,6 @@
 <url><loc>https://seorenn.github.io/note/date.html</loc><lastmod>2020-05-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp-functions.html</loc><lastmod>2020-05-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/coffee.html</loc><lastmod>2020-05-09</lastmod></url>
-<url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-05-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2020-05-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2020-05-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/carthage.html</loc><lastmod>2020-05-09</lastmod></url>

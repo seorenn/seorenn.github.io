@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-map.html</loc><lastmod>2020-07-08</lastmod></url>
@@ -117,7 +119,6 @@
 <url><loc>https://seorenn.github.io/note/apple.html</loc><lastmod>2020-05-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pip.html</loc><lastmod>2020-05-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/html.html</loc><lastmod>2020-05-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2020-05-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2020-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mongodb.html</loc><lastmod>2020-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2020-05-15</lastmod></url>

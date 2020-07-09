@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-map.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2020-07-08</lastmod></url>
@@ -145,6 +145,6 @@
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-09</lastmod></url>
 </urlset>

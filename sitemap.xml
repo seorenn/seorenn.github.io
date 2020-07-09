@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl-special-usage.html</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2020-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2020-07-08</lastmod></url>
@@ -12,7 +15,6 @@
 <url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-07-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-troubleshooting.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2020-07-06</lastmod></url>

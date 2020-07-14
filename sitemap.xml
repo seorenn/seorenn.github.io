@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-multi-container-devenv.html</loc><lastmod>2020-07-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lru.html</loc><lastmod>2020-07-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2020-07-09</lastmod></url>
@@ -32,7 +34,6 @@
 <url><loc>https://seorenn.github.io/note/pyenv-installation.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python3-manual-migration.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -103,7 +104,6 @@
 <url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/json.html</loc><lastmod>2020-06-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2020-06-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dockerfile.html</loc><lastmod>2020-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/arc.html</loc><lastmod>2020-06-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appkit.html</loc><lastmod>2020-06-11</lastmod></url>
@@ -150,6 +150,6 @@
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-13</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-14</lastmod></url>
 </urlset>

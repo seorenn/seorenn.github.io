@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-object-as-dictionary.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/grep.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-multi-container-devenv.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose-devenv.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
@@ -27,7 +30,6 @@
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-07-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/special-char-name.html</loc><lastmod>2020-07-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-virtualenv.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-manage-python-version.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -143,7 +145,6 @@
 <url><loc>https://seorenn.github.io/note/gitignore.html</loc><lastmod>2020-04-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2020-04-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2020-04-25</lastmod></url>
-<url><loc>https://seorenn.github.io/note/grep.html</loc><lastmod>2020-04-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/svg.html</loc><lastmod>2020-04-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
@@ -151,6 +152,6 @@
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-14</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-15</lastmod></url>
 </urlset>

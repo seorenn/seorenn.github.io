@@ -44,10 +44,10 @@ $ <span style="color:#ecbe7b">echo</span> $<span style="color:#dcaeea">?</span>
     <span style="color:#5b6268">// </span><span style="color:#5b6268">...</span>
     <span style="color:#ecbe7b">Err</span>(<span style="color:#ecbe7b">Error</span>::from_raw_os_error(<span style="color:#da8548;font-weight:700">1</span>))
 }
-</pre></div></div></div><div id="outline-container-7101b5bf"class="outline-2"><h2 id="7101b5bf">파라미터(Parameter or Arguments)</h2><div class="outline-text-2"id="text-7101b5bf"><p>다시 <a href="c-language.html">C 언어</a>와 비교해보자. main 함수의 기본 형태는 대체로 아래와 같은 식이다.</p><div class="org-src-container"><pre class="src src-c++"><span style="color:#ecbe7b">int</span> <span style="color:#c678dd">main</span>(<span style="color:#ecbe7b">int</span> <span style="color:#dcaeea">argc</span>, <span style="color:#ecbe7b">char</span> *<span style="color:#dcaeea">argv</span>[]) {
+</pre></div></div></div><div id="outline-container-7101b5bf"class="outline-2"><h2 id="7101b5bf">파라미터(Parameter or Arguments)</h2><div class="outline-text-2"id="text-7101b5bf"><p>다시 <a href="c-language.html">C 언어</a>와 비교해보자. <a href="c-language.html">C 언어</a> main 함수의 기본 형태는 대체로 아래와 같은 식으로 arguments 목록을 얻기 위한 매개변수를 정의한다.</p><div class="org-src-container"><pre class="src src-c++"><span style="color:#ecbe7b">int</span> <span style="color:#c678dd">main</span>(<span style="color:#ecbe7b">int</span> <span style="color:#dcaeea">argc</span>, <span style="color:#ecbe7b">char</span> *<span style="color:#dcaeea">argv</span>[]) {
     <span style="color:#5b6268">// </span><span style="color:#5b6268">...</span>
 }
-</pre></div><p>하지만 <a href="rust.html">Rust</a>의 main 함수 예제에선 저런 파라미터 처리를 위한 매개변수를 전달받는 예제를 전혀 볼 수 있다.</p><p>이유는 단순하다. 이런 파라미터 전달 방식이 다르기 때문이다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">use</span> <span style="color:#a9a1e1">std</span>::env;
+</pre></div><p>하지만 <a href="rust.html">Rust</a>의 main 함수 예제에선 저런 파라미터 처리를 위한 매개변수를 전달받는 예제를 전혀 볼 수 있다.</p><p>이유는 단순하다. 파라미터(arguments) 전달 방식이 다르기 때문이다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">use</span> <span style="color:#a9a1e1">std</span>::env;
 
 <span style="color:#51afef">fn</span> <span style="color:#c678dd">main</span>() {
     <span style="color:#51afef">let</span> <span style="color:#dcaeea">args</span>: <span style="color:#ecbe7b">Vec</span>&lt;<span style="color:#ecbe7b">String</span>&gt; = <span style="color:#a9a1e1">env</span>::args().collect();
@@ -55,7 +55,7 @@ $ <span style="color:#ecbe7b">echo</span> $<span style="color:#dcaeea">?</span>
 }
 </pre></div><p><code>std::env::args</code> 를 이용해 파라미터(arguments)를 받아올 수 있다. 실행시켜보면 아래와 같은 결과를 얻을 수 있다.</p><div class="org-src-container"><pre class="src src-bash">$ target/debug/someproj param1 param2 param3
 <span style="color:#51afef">[</span><span style="color:#98be65">"target/debug/someproj"</span>, <span style="color:#98be65">"param1"</span>, <span style="color:#98be65">"param2"</span>, <span style="color:#98be65">"param3"</span><span style="color:#51afef">]</span>
-</pre></div><p>첫 파라미터는 자기자신이 돌아오는 것이나 공백을 기준으로 나눠진 리스트로 얻을 수 있다. 다른 언어에서 다뤄봤다면 매우 익숙하게 느껴질 것이다.</p><p>참고로 저렇게 빌드해서 실행하는 게 귀찮다면 <a href="cargo.html">Cargo</a>의 <code>run</code> 커맨드에서도 파라미터를 줄 수 있으니 멀리 돌아가지 않아도 된다.</p><div class="org-src-container"><pre class="src src-bash">$ cargo run param1 param2 param3
+</pre></div><p>첫 파라미터는 자기자신이고, 나머지는 공백을 기준으로 나눠진 파라미터 리스트(Vec)로 얻을 수 있다. 다른 언어에서 다뤄봤다면 매우 익숙하게 느껴질 것이다.</p><p>참고로 저렇게 빌드해서 실행하는 게 귀찮다면 <a href="cargo.html">Cargo</a>의 <code>run</code> 커맨드에서도 파라미터를 줄 수 있으니 멀리 돌아가지 않아도 된다.</p><div class="org-src-container"><pre class="src src-bash">$ cargo run param1 param2 param3
     Finished dev <span style="color:#51afef">[</span>unoptimized + debuginfo<span style="color:#51afef">]</span> target<span style="color:#51afef">(</span>s<span style="color:#51afef">)</span> <span style="color:#51afef">in</span> 0.00s
      Running <span style="color:#51afef;font-weight:700">`target/debug/someproj param1 param2 param3`</span>
 <span style="color:#51afef">[</span><span style="color:#98be65">"target/debug/someproj"</span>, <span style="color:#98be65">"param1"</span>, <span style="color:#98be65">"param2"</span>, <span style="color:#98be65">"param3"</span><span style="color:#51afef">]</span>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh-scripting.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/shell.html</loc><lastmod>2020-07-17</lastmod></url>
@@ -7,7 +12,6 @@
 <url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-07-15</lastmod></url>
@@ -16,7 +20,6 @@
 <url><loc>https://seorenn.github.io/note/docker-multi-container-devenv.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lru.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-13</lastmod></url>
@@ -102,7 +105,6 @@
 <url><loc>https://seorenn.github.io/note/spa.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/csso.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/uglify-js.html</loc><lastmod>2020-06-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-06-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc><lastmod>2020-06-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc><lastmod>2020-06-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/namespace.html</loc><lastmod>2020-06-19</lastmod></url>

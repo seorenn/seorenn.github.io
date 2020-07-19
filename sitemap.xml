@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh-scripting.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2020-07-17</lastmod></url>
@@ -72,7 +74,6 @@
 <url><loc>https://seorenn.github.io/note/python-bytes-and-bytearray.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/crud.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/annotation-vs-comment.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -155,7 +156,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-19</lastmod></url>
 </urlset>

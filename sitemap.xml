@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lru.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust-module-system.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-07-20</lastmod></url>
@@ -7,10 +9,8 @@
 <url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-19</lastmod></url>
-<url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh-scripting.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2020-07-17</lastmod></url>

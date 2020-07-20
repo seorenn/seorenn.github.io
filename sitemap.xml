@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust-module-system.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-object-as-dictionary.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-07-17</lastmod></url>
@@ -18,12 +21,10 @@
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-07-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/javascript-object-as-dictionary.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/grep.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-multi-container-devenv.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lru.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2020-07-09</lastmod></url>
@@ -79,7 +80,6 @@
 <url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-equality.html</loc><lastmod>2020-07-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>

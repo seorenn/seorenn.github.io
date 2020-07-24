@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/poetry.html</loc><lastmod>2020-07-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-07-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-map.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-07-20</lastmod></url>
@@ -18,7 +20,6 @@
 <url><loc>https://seorenn.github.io/note/shell.html</loc><lastmod>2020-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose-devenv.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2020-07-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-15</lastmod></url>
@@ -57,7 +58,6 @@
 <url><loc>https://seorenn.github.io/note/python-list-comprehension.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/npm.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/npx.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/poetry.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -157,6 +157,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-21</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-24</lastmod></url>
 </urlset>

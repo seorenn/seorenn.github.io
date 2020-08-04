@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-08-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2020-07-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-29</lastmod></url>
@@ -62,7 +63,6 @@
 <url><loc>https://seorenn.github.io/note/npx.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/killer-application.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flake8.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -158,6 +158,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-07-31</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-07-31</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-08-04</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-08-04</lastmod></url>
 </urlset>

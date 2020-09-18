@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-09-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2020-09-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2020-09-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2020-09-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2020-09-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-09-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/twitter.html</loc><lastmod>2020-09-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2020-09-11</lastmod></url>
@@ -105,7 +106,6 @@
 <url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/celery.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2020-06-23</lastmod></url>
@@ -161,6 +161,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2020-09-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-09-15</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2020-09-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2020-09-18</lastmod></url>
 </urlset>

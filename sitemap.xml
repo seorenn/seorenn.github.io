@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://seorenn.github.io/note/xcode-tips.html</loc>
+    <lastmod>2021-01-31</lastmod>
+  </url>
+  <url>
+    <loc>
+    https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc>
+    <lastmod>2021-01-31</lastmod>
+  </url>
+  <url>
+    <loc>https://seorenn.github.io/note/swiftui.html</loc>
+    <lastmod>2021-01-31</lastmod>
+  </url>
+  <url>
+    <loc>https://seorenn.github.io/note/gccemacs.html</loc>
+    <lastmod>2021-01-31</lastmod>
+  </url>
+  <url>
     <loc>
     https://seorenn.github.io/note/ios-macos-dev-links.html</loc>
     <lastmod>2021-01-29</lastmod>
@@ -130,10 +147,6 @@
   <url>
     <loc>
     https://seorenn.github.io/note/rust-module-system.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/swiftui.html</loc>
     <lastmod>2020-07-20</lastmod>
   </url>
   <url>
@@ -462,10 +475,6 @@
     <lastmod>2020-06-23</lastmod>
   </url>
   <url>
-    <loc>https://seorenn.github.io/note/xcode-tips.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
     <loc>https://seorenn.github.io/note/nextstep.html</loc>
     <lastmod>2020-06-23</lastmod>
   </url>
@@ -509,11 +518,6 @@
   <url>
     <loc>https://seorenn.github.io/note/uglify-js.html</loc>
     <lastmod>2020-06-21</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc>
-    <lastmod>2020-06-19</lastmod>
   </url>
   <url>
     <loc>https://seorenn.github.io/note/namespace.html</loc>

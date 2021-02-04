@@ -64,7 +64,11 @@ nav {
   color: #ddd;
 }
 
-nav a, nav a:link, nav a:visited, nav a:hover, nav a:active {
+nav a,
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
   text-decoration: none;
   color: #999;
 }
@@ -174,7 +178,6 @@ input::placeholder {
 }
 
 #text-table-of-contents {
-
 }
 
 #text-table-of-contents ul {
@@ -217,7 +220,6 @@ div.outline-text-2 > hr {
 }
 
 .summary-container h1 {
-
 }
 
 .article-link {
@@ -286,12 +288,21 @@ div.outline-text-2 > hr {
   font-weight: bold;
 }
 
-.content a, .content a:link, .content a:visited, .content a:hover, .content a:active {
+.content a,
+.content a:link,
+.content a:visited,
+.content a:hover,
+.content a:active {
   text-decoration: none;
   color: #2b7bb9;
 }
 
-.content h1, h2, h3, h4, h5, h6 {
+.content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding-top: 0;
   padding-bottom: 0;
   font-weight: bold;
@@ -364,7 +375,8 @@ div.outline-text-2 > hr {
   font-style: italic;
 }
 
-.content ul, ol {
+.content ul,
+ol {
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
 }
@@ -485,4 +497,74 @@ footer {
   text-align: center;
   font-size: 10pt;
   color: #999;
+}
+
+/* dark-mode */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #272c34;
+    color: #dfdfdf;
+  }
+
+  .header-content {
+    background-color: #2a2f38;
+    border-bottom: 1px solid #5b6268;
+  }
+
+  #search-keyword {
+    background-color: #5b6268;
+  }
+
+  #search-button {
+    background-color: #5b6268;
+    color: #bbb;
+  }
+
+  .title-date {
+    color: #5b6268;
+  }
+
+  div.backlinks-container > hr,
+  div.refs-container > hr {
+    border: 0.5px solid #5b6268;
+  }
+
+  div.outline-text-2 > hr {
+    border: 0.5px solid #5b6268;
+  }
+
+  .content h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #efefef;
+  }
+
+  .content h2 {
+    border-top: 0.5px #5b6268 dashed;
+  }
+
+  .content pre {
+    background-color: #21252b; /* TODO */
+  }
+
+  .content code {
+    background: #2f353d; /* TODO */
+  }
+
+  .content a,
+  .content a:link,
+  .content a:visited,
+  .content a:hover,
+  .content a:active {
+    color: #51afef;
+  }
+
+  .article-description {
+    color: #dfdfdf;
+    display: block;
+  }
 }

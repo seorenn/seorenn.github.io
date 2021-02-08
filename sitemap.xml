@@ -1,704 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://seorenn.github.io/note/gccemacs.html</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/doom-emacs.html</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/org-mode-config-tips.html</loc>
-    <lastmod>2021-02-02</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc>
-    <lastmod>2021-02-01</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/swiftui.html</loc>
-    <lastmod>2021-02-01</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/ios-macos-dev-links.html</loc>
-    <lastmod>2021-02-01</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/xcode-tips.html</loc>
-    <lastmod>2021-01-31</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/macos-special-tips.html</loc>
-    <lastmod>2021-01-28</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/apple.html</loc>
-    <lastmod>2021-01-22</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/swift.html</loc>
-    <lastmod>2021-01-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/flutter.html</loc>
-    <lastmod>2021-01-19</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/vim.html</loc>
-    <lastmod>2020-09-25</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/css.html</loc>
-    <lastmod>2020-09-16</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/resource-links.html</loc>
-    <lastmod>2020-09-16</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/web-dev-links.html</loc>
-    <lastmod>2020-09-15</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/twitter.html</loc>
-    <lastmod>2020-09-14</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/etc-dev-links.html</loc>
-    <lastmod>2020-09-11</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/rust.html</loc>
-    <lastmod>2020-09-06</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/git-special-usage.html</loc>
-    <lastmod>2020-09-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/safari.html</loc>
-    <lastmod>2020-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/economic-terms.html</loc>
-    <lastmod>2020-08-12</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/javascript.html</loc>
-    <lastmod>2020-08-10</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/cargo.html</loc>
-    <lastmod>2020-08-10</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/apple-silicon-mac.html</loc>
-    <lastmod>2020-08-06</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/python-list.html</loc>
-    <lastmod>2020-08-05</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/special-char-name.html</loc>
-    <lastmod>2020-08-05</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/chrome.html</loc>
-    <lastmod>2020-08-04</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/english-note.html</loc>
-    <lastmod>2020-07-30</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/doom-emacs-python-env.html</loc>
-    <lastmod>2020-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/life-helpful.html</loc>
-    <lastmod>2020-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/html.html</loc>
-    <lastmod>2020-07-27</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/poetry.html</loc>
-    <lastmod>2020-07-24</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/docker.html</loc>
-    <lastmod>2020-07-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/javascript-map.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/lru.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/rust-module-system.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/javascript-object-as-dictionary.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-cli-commands.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/rust-main-function.html</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/cli.html</loc>
-    <lastmod>2020-07-19</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/install-rust-on-macos.html</loc>
-    <lastmod>2020-07-19</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/sh-scripting.html</loc>
-    <lastmod>2020-07-17</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/sh.html</loc>
-    <lastmod>2020-07-17</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/shell.html</loc>
-    <lastmod>2020-07-17</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-compose-devenv.html</loc>
-    <lastmod>2020-07-15</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-development-environment.html</loc>
-    <lastmod>2020-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/tmux.html</loc>
-    <lastmod>2020-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/liquidity.html</loc>
-    <lastmod>2020-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/grep.html</loc>
-    <lastmod>2020-07-15</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-multi-container-devenv.html</loc>
-    <lastmod>2020-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/docker-compose.html</loc>
-    <lastmod>2020-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/curl-usage.html</loc>
-    <lastmod>2020-07-09</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/curl.html</loc>
-    <lastmod>2020-07-09</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/curl-special-usage.html</loc>
-    <lastmod>2020-07-09</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/macos.html</loc>
-    <lastmod>2020-07-08</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/python.html</loc>
-    <lastmod>2020-07-08</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc>
-    <lastmod>2020-07-07</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-troubleshooting.html</loc>
-    <lastmod>2020-07-06</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/docker-insufficient-volume.html</loc>
-    <lastmod>2020-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/apple-silicon.html</loc>
-    <lastmod>2020-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/org-mode.html</loc>
-    <lastmod>2020-07-04</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/pyenv-virtualenv.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/pyenv-manage-python-version.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/pyenv.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/pyenv-installation.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/wwdc2020.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/promise.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-exception-handling.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python3-manual-migration.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/python-bitstring.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-regular-expression.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-list-comprehension.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/npm.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/npx.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/dsl.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/killer-application.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/emacs.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/flake8.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/homebrew.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/afplay.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/caffeinate.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/org-syntax.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/org-table-spreadsheet.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/org-publish.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-file-dir-tips.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-3-8-updates.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-dictionary.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-bytes-and-bytearray.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/crud.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/python-simple-web-server.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/annotation-vs-comment.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/swift-package-manager.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/x86.html</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/javascript-equality.html</loc>
-    <lastmod>2020-07-02</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/swiftui-property-wrappers.html</loc>
-    <lastmod>2020-07-02</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/javascript-spreads-operator.html</loc>
-    <lastmod>2020-06-30</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/javascript-arrow-function.html</loc>
-    <lastmod>2020-06-30</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/rsvp.html</loc>
-    <lastmod>2020-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/xcode.html</loc>
-    <lastmod>2020-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/wwdc.html</loc>
-    <lastmod>2020-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/rsync.html</loc>
-    <lastmod>2020-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/git.html</loc>
-    <lastmod>2020-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/kubectl.html</loc>
-    <lastmod>2020-06-24</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/mozjpeg.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/mozjpeg-compress-jpeg-images.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/seo-strategy.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/nextstep.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/objective-c.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/celery.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/git-config.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/git-basic-usage.html</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/celery-dist-async-tasks.html</loc>
-    <lastmod>2020-06-22</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/italian-note.html</loc>
-    <lastmod>2020-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/seo.html</loc>
-    <lastmod>2020-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/spa.html</loc>
-    <lastmod>2020-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/csso.html</loc>
-    <lastmod>2020-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/uglify-js.html</loc>
-    <lastmod>2020-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/namespace.html</loc>
-    <lastmod>2020-06-19</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/closure.html</loc>
-    <lastmod>2020-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/json.html</loc>
-    <lastmod>2020-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/yaml.html</loc>
-    <lastmod>2020-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/dockerfile.html</loc>
-    <lastmod>2020-06-17</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/arc.html</loc>
-    <lastmod>2020-06-16</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/appkit.html</loc>
-    <lastmod>2020-06-11</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/uikit.html</loc>
-    <lastmod>2020-06-11</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/html-minifier.html</loc>
-    <lastmod>2020-06-10</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/lithum-ion-battery.html</loc>
-    <lastmod>2020-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/magit.html</loc>
-    <lastmod>2020-06-08</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/ielm.html</loc>
-    <lastmod>2020-06-08</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/version.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/boilerplate.html</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/c-language.html</loc>
-    <lastmod>2020-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/facebook.html</loc>
-    <lastmod>2020-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/definition.html</loc>
-    <lastmod>2020-05-30</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/implementation.html</loc>
-    <lastmod>2020-05-30</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/userdefaults.html</loc>
-    <lastmod>2020-05-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/pip.html</loc>
-    <lastmod>2020-05-20</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/dart.html</loc>
-    <lastmod>2020-05-18</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/mongodb.html</loc>
-    <lastmod>2020-05-18</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/emacs-lisp.html</loc>
-    <lastmod>2020-05-15</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/date.html</loc>
-    <lastmod>2020-05-12</lastmod>
-  </url>
-  <url>
-    <loc>
-    https://seorenn.github.io/note/emacs-lisp-functions.html</loc>
-    <lastmod>2020-05-11</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/coffee.html</loc>
-    <lastmod>2020-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/ios.html</loc>
-    <lastmod>2020-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/carthage.html</loc>
-    <lastmod>2020-05-09</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/cafe-latte.html</loc>
-    <lastmod>2020-05-08</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/temp-name.html</loc>
-    <lastmod>2020-05-07</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/seorenn.html</loc>
-    <lastmod>2020-05-01</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/pngquant.html</loc>
-    <lastmod>2020-05-01</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/fcpx.html</loc>
-    <lastmod>2020-04-30</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/motion.html</loc>
-    <lastmod>2020-04-30</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/gitignore.html</loc>
-    <lastmod>2020-04-28</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/instance.html</loc>
-    <lastmod>2020-04-26</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/object.html</loc>
-    <lastmod>2020-04-25</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/svg.html</loc>
-    <lastmod>2020-04-23</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/diskutil.html</loc>
-    <lastmod>2020-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/dd.html</loc>
-    <lastmod>2020-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/imagemagick.html</loc>
-    <lastmod>2020-04-21</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/spacemacs.html</loc>
-    <lastmod>2020-04-17</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/find.html</loc>
-    <lastmod>2020-04-15</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io</loc>
-    <lastmod>2021-02-04</lastmod>
-  </url>
-  <url>
-    <loc>https://seorenn.github.io/note/</loc>
-    <lastmod>2021-02-04</lastmod>
-  </url>
+<url><loc>https://seorenn.github.io/note/mdutil.html</loc><lastmod>2021-02-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/spotlight.html</loc><lastmod>2021-02-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/gccemacs.html</loc><lastmod>2021-02-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2021-02-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2021-02-02</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc><lastmod>2021-02-01</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-02-01</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2021-02-01</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-01-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2021-01-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple.html</loc><lastmod>2021-01-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2021-01-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2021-01-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/vim.html</loc><lastmod>2020-09-25</lastmod></url>
+<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2020-09-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2020-09-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2020-09-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/twitter.html</loc><lastmod>2020-09-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/etc-dev-links.html</loc><lastmod>2020-09-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-09-06</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2020-09-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc><lastmod>2020-09-01</lastmod></url>
+<url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2020-08-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2020-08-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-08-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-08-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-08-06</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2020-08-05</lastmod></url>
+<url><loc>https://seorenn.github.io/note/special-char-name.html</loc><lastmod>2020-08-05</lastmod></url>
+<url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2020-08-04</lastmod></url>
+<url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2020-07-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/life-helpful.html</loc><lastmod>2020-07-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/html.html</loc><lastmod>2020-07-27</lastmod></url>
+<url><loc>https://seorenn.github.io/note/poetry.html</loc><lastmod>2020-07-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2020-07-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-map.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/lru.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust-module-system.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-object-as-dictionary.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2020-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/sh-scripting.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/shell.html</loc><lastmod>2020-07-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-compose-devenv.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/grep.html</loc><lastmod>2020-07-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-multi-container-devenv.html</loc><lastmod>2020-07-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/curl-special-usage.html</loc><lastmod>2020-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2020-07-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-troubleshooting.html</loc><lastmod>2020-07-06</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2020-07-06</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2020-07-06</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2020-07-04</lastmod></url>
+<url><loc>https://seorenn.github.io/note/pyenv-virtualenv.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/pyenv-manage-python-version.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/pyenv.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/pyenv-installation.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python3-manual-migration.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-bitstring.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-regular-expression.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-list-comprehension.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/npm.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/npx.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/killer-application.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/flake8.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/homebrew.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/afplay.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/caffeinate.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-syntax.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-table-spreadsheet.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/org-publish.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-file-dir-tips.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-3-8-updates.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-dictionary.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-bytes-and-bytearray.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/crud.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/annotation-vs-comment.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2020-07-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-equality.html</loc><lastmod>2020-07-02</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2020-07-02</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rsvp.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2020-06-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/mozjpeg.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/mozjpeg-compress-jpeg-images.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/seo-strategy.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/celery.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2020-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/celery-dist-async-tasks.html</loc><lastmod>2020-06-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/italian-note.html</loc><lastmod>2020-06-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/seo.html</loc><lastmod>2020-06-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/spa.html</loc><lastmod>2020-06-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/csso.html</loc><lastmod>2020-06-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/uglify-js.html</loc><lastmod>2020-06-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/namespace.html</loc><lastmod>2020-06-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/json.html</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/dockerfile.html</loc><lastmod>2020-06-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/arc.html</loc><lastmod>2020-06-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/appkit.html</loc><lastmod>2020-06-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/uikit.html</loc><lastmod>2020-06-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/html-minifier.html</loc><lastmod>2020-06-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/lithum-ion-battery.html</loc><lastmod>2020-06-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/magit.html</loc><lastmod>2020-06-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ielm.html</loc><lastmod>2020-06-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/version.html</loc><lastmod>2020-06-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/boilerplate.html</loc><lastmod>2020-06-06</lastmod></url>
+<url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2020-06-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/facebook.html</loc><lastmod>2020-06-03</lastmod></url>
+<url><loc>https://seorenn.github.io/note/definition.html</loc><lastmod>2020-05-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/implementation.html</loc><lastmod>2020-05-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/userdefaults.html</loc><lastmod>2020-05-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/pip.html</loc><lastmod>2020-05-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2020-05-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/mongodb.html</loc><lastmod>2020-05-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2020-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/date.html</loc><lastmod>2020-05-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/emacs-lisp-functions.html</loc><lastmod>2020-05-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/coffee.html</loc><lastmod>2020-05-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2020-05-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/carthage.html</loc><lastmod>2020-05-09</lastmod></url>
+<url><loc>https://seorenn.github.io/note/cafe-latte.html</loc><lastmod>2020-05-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/temp-name.html</loc><lastmod>2020-05-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/seorenn.html</loc><lastmod>2020-05-01</lastmod></url>
+<url><loc>https://seorenn.github.io/note/pngquant.html</loc><lastmod>2020-05-01</lastmod></url>
+<url><loc>https://seorenn.github.io/note/fcpx.html</loc><lastmod>2020-04-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/motion.html</loc><lastmod>2020-04-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/gitignore.html</loc><lastmod>2020-04-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2020-04-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2020-04-25</lastmod></url>
+<url><loc>https://seorenn.github.io/note/svg.html</loc><lastmod>2020-04-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-02-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-02-08</lastmod></url>
 </urlset>

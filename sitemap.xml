@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2021-03-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-03-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2021-03-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/any-helpful-links.html</loc><lastmod>2021-02-24</lastmod></url>
@@ -112,7 +113,6 @@
 <url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2020-06-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2020-06-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg-compress-jpeg-images.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/seo-strategy.html</loc><lastmod>2020-06-23</lastmod></url>
@@ -169,6 +169,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-03-09</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-03-09</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-03-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-03-10</lastmod></url>
 </urlset>

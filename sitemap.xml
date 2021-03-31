@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-03-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2021-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2021-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/etc-dev-links.html</loc><lastmod>2021-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-03-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-03-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-03-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2021-03-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2021-03-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-03-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/grex.html</loc><lastmod>2021-03-22</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-03-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-03-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2021-03-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gh.html</loc><lastmod>2021-03-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2021-03-10</lastmod></url>
@@ -15,12 +19,10 @@
 <url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2021-02-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2021-02-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-datetime-tips.html</loc><lastmod>2021-02-19</lastmod></url>
-<url><loc>https://seorenn.github.io/note/etc-dev-links.html</loc><lastmod>2021-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/store-food.html</loc><lastmod>2021-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2021-02-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sos.html</loc><lastmod>2021-02-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-strings.html</loc><lastmod>2021-02-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2021-02-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mdutil.html</loc><lastmod>2021-02-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spotlight.html</loc><lastmod>2021-02-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gccemacs.html</loc><lastmod>2021-02-03</lastmod></url>
@@ -122,7 +124,6 @@
 <url><loc>https://seorenn.github.io/note/nextstep.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/celery.html</loc><lastmod>2020-06-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/celery-dist-async-tasks.html</loc><lastmod>2020-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/italian-note.html</loc><lastmod>2020-06-21</lastmod></url>
@@ -171,6 +172,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-03-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-03-29</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-03-31</lastmod></url>
 </urlset>

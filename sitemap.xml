@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-04-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-04-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2021-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-vi.html</loc><lastmod>2021-04-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-04-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-04-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etc-dev-links.html</loc><lastmod>2021-04-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-indexes.html</loc><lastmod>2021-04-09</lastmod></url>
@@ -87,7 +88,6 @@
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python3-manual-migration.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-bitstring.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-regular-expression.html</loc><lastmod>2020-07-03</lastmod></url>

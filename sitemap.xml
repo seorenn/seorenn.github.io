@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/durian-code.html</loc><lastmod>2021-04-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2021-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-vi.html</loc><lastmod>2021-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-04-13</lastmod></url>
@@ -174,6 +175,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-04-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-04-13</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-04-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-04-19</lastmod></url>
 </urlset>

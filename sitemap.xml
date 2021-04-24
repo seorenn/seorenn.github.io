@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2021-04-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-color.html</loc><lastmod>2021-04-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-04-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-04-22</lastmod></url>
@@ -149,7 +150,6 @@
 <url><loc>https://seorenn.github.io/note/ielm.html</loc><lastmod>2020-06-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/version.html</loc><lastmod>2020-06-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/boilerplate.html</loc><lastmod>2020-06-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2020-06-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/facebook.html</loc><lastmod>2020-06-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/definition.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/implementation.html</loc><lastmod>2020-05-30</lastmod></url>
@@ -176,6 +176,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2020-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-04-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-04-23</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-04-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-04-24</lastmod></url>
 </urlset>

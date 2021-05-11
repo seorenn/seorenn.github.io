@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2021-05-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-05-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc><lastmod>2021-05-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2021-05-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2021-05-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-05-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/svg.html</loc><lastmod>2021-05-10</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-datetime-tips.html</loc><lastmod>2021-05-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-5-4.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrapper-tips.html</loc><lastmod>2021-05-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-05-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-05-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lsof.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
@@ -42,7 +47,6 @@
 <url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2021-03-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2021-02-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2021-02-19</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python-datetime-tips.html</loc><lastmod>2021-02-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/store-food.html</loc><lastmod>2021-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2021-02-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sos.html</loc><lastmod>2021-02-11</lastmod></url>
@@ -51,7 +55,6 @@
 <url><loc>https://seorenn.github.io/note/gccemacs.html</loc><lastmod>2021-02-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2021-02-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2021-02-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc><lastmod>2021-02-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-01-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2021-01-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple.html</loc><lastmod>2021-01-22</lastmod></url>
@@ -86,7 +89,6 @@
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2020-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-special-usage.html</loc><lastmod>2020-07-09</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2020-07-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-troubleshooting.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2020-07-06</lastmod></url>
@@ -176,11 +178,10 @@
 <url><loc>https://seorenn.github.io/note/gitignore.html</loc><lastmod>2020-04-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2020-04-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2020-04-25</lastmod></url>
-<url><loc>https://seorenn.github.io/note/svg.html</loc><lastmod>2020-04-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2020-04-15</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-05-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-05-08</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-05-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-05-11</lastmod></url>
 </urlset>

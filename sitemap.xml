@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swift-howto-run-shell-command.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/version.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ielm.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/npx.html</loc><lastmod>2021-05-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swift-howto-run-shell-command.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/short-selling.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2021-05-11</lastmod></url>
@@ -14,7 +15,6 @@
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2021-05-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2021-05-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-05-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/svg.html</loc><lastmod>2021-05-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-datetime-tips.html</loc><lastmod>2021-05-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2021-05-08</lastmod></url>

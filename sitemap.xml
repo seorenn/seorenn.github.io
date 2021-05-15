@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/osascript.html</loc><lastmod>2021-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-script.html</loc><lastmod>2021-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-05-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2021-05-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/calc.html</loc><lastmod>2021-05-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-howto-run-shell-command.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-05-13</lastmod></url>
@@ -41,7 +46,6 @@
 <url><loc>https://seorenn.github.io/note/durian-code.html</loc><lastmod>2021-04-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2021-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-vi.html</loc><lastmod>2021-04-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-04-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-indexes.html</loc><lastmod>2021-04-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2021-04-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2021-03-31</lastmod></url>
@@ -113,7 +117,6 @@
 <url><loc>https://seorenn.github.io/note/npm.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dsl.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/killer-application.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flake8.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/homebrew.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/afplay.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -183,6 +186,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-05-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-05-13</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-05-15</lastmod></url>
 </urlset>

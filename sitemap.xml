@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-indexes.html</loc><lastmod>2021-05-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2021-05-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/c-pointer.html</loc><lastmod>2021-05-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-05-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-05-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2021-05-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-05-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-indexes.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/calc.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2021-05-18</lastmod></url>
@@ -9,12 +15,10 @@
 <url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2021-05-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gccemacs.html</loc><lastmod>2021-05-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/osascript.html</loc><lastmod>2021-05-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-script.html</loc><lastmod>2021-05-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-05-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-howto-run-shell-command.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/version.html</loc><lastmod>2021-05-13</lastmod></url>
@@ -32,7 +36,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-5-4.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrapper-tips.html</loc><lastmod>2021-05-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lsof.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2021-05-05</lastmod></url>
@@ -44,10 +47,8 @@
 <url><loc>https://seorenn.github.io/note/vim.html</loc><lastmod>2021-04-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-errors.html</loc><lastmod>2021-04-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-strings.html</loc><lastmod>2021-04-24</lastmod></url>
-<url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2021-04-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-color.html</loc><lastmod>2021-04-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/any-helpful-links.html</loc><lastmod>2021-04-22</lastmod></url>
-<url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-04-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etc-dev-links.html</loc><lastmod>2021-04-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/durian-code.html</loc><lastmod>2021-04-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sync-dirs-with-rsync.html</loc><lastmod>2021-04-13</lastmod></url>
@@ -186,6 +187,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-05-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-05-18</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-05-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-05-31</lastmod></url>
 </urlset>

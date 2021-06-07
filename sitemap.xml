@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2021-06-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-06-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/lsof.html</loc><lastmod>2021-06-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-06-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-effects.html</loc><lastmod>2021-06-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2021-06-05</lastmod></url>
@@ -23,7 +26,6 @@
 <url><loc>https://seorenn.github.io/note/apple-script.html</loc><lastmod>2021-05-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-05-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-howto-run-shell-command.html</loc><lastmod>2021-05-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/version.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/find.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ielm.html</loc><lastmod>2021-05-13</lastmod></url>
@@ -38,7 +40,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-5-4.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrapper-tips.html</loc><lastmod>2021-05-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/lsof.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2021-05-04</lastmod></url>
@@ -59,7 +60,6 @@
 <url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2021-03-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/grex.html</loc><lastmod>2021-03-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gh.html</loc><lastmod>2021-03-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2021-03-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2021-03-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2021-02-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2021-02-19</lastmod></url>
@@ -189,6 +189,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-06</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-07</lastmod></url>
 </urlset>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2021-06-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-06-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2021-06-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-06-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lsof.html</loc><lastmod>2021-06-07</lastmod></url>
@@ -8,7 +10,6 @@
 <url><loc>https://seorenn.github.io/note/c-language.html</loc><lastmod>2021-06-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-06-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-xcode-playground-preview.html</loc><lastmod>2021-06-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-06-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/c-pointer.html</loc><lastmod>2021-05-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-05-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/fundamental-terms.html</loc><lastmod>2021-05-20</lastmod></url>
@@ -140,7 +141,6 @@
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsvp.html</loc><lastmod>2020-06-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2020-06-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg-compress-jpeg-images.html</loc><lastmod>2020-06-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/seo-strategy.html</loc><lastmod>2020-06-23</lastmod></url>
@@ -189,6 +189,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-07</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-08</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-08</lastmod></url>
 </urlset>

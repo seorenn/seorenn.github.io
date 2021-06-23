@@ -9,7 +9,7 @@
 </pre></div><p>이렇게 하면 <code>do_what()</code> 에서 <code>ValueError</code> 를 제외한 예외는 <code>except</code> 로 진입하지 않는다.</p><p>만약 예외사항의 메시지를 알고 싶다면 그대로 출력해 보는 방법이 있다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">try</span>:
     do_what()
 <span style="color:#51afef">except</span> <span style="color:#ecbe7b">ValueError</span> <span style="color:#51afef">as</span> e:
-    <span style="color:#51afef">print</span>(f<span style="color:#98be65">"Value Error: </span>{e}<span style="color:#98be65">"</span>)
+    <span style="color:#51afef">print</span>(f<span style="color:#98be65">"Value Error: {e}"</span>)
 </pre></div><p>위의 경우 <code>ValueError</code> 라는 예외에서 넘겨주는 문자열이 있을 경우 화면에 표시가 된다. 다만 이 부분은 예외 클래스에 따라 좀 더 적합한 방식이 있을 수도 있다.</p><p>만약 한 예외가 아니라 여러 예외를 처리하고 싶다면 아래와 같이 <code>except</code> 를 계속 나열하면 된다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">try</span>:
     do_what()
 <span style="color:#51afef">except</span> <span style="color:#ecbe7b">ValueError</span>:
@@ -23,7 +23,7 @@
 </pre></div><p>이 경우 <code>ValueError</code> 혹은 <code>AttributeError</code> 둘 중 하나의 예외가 발생하면 <code>except</code> 안의 구문이 실행된다.</p><p>위의 경우도 당연히 상세한 내용을 찍어볼 수 있다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">try</span>:
     do_what()
 <span style="color:#51afef">except</span> (<span style="color:#ecbe7b">ValueError</span>, <span style="color:#ecbe7b">AttributeError</span>) <span style="color:#51afef">as</span> e:
-    <span style="color:#51afef">print</span>(f<span style="color:#98be65">"Something Error: </span>{e}<span style="color:#98be65">"</span>)
+    <span style="color:#51afef">print</span>(f<span style="color:#98be65">"Something Error: {e}"</span>)
 </pre></div><p>물론 이건 예외 클래스에서 출력을 지원할 때의 이야기지만 말이다. 대부분의 기본 예외 오류는 메시지를 다 알려주긴 한다.</p></div></div><div id="outline-container-c2a6c01f"class="outline-2"><h2 id="c2a6c01f">예외 발생시키기</h2><div class="outline-text-2"id="text-c2a6c01f"><p>예외는 <code>raise</code> 커맨드로 발생시킬 수 있다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">raise</span> <span style="color:#ecbe7b">ValueError</span>()
 </pre></div><p>보통은 첫 인자로 문자열 메시지를 넣을 수 있다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">raise</span> <span style="color:#ecbe7b">ValueError</span>(<span style="color:#98be65">"The value is invalid"</span>)
 </pre></div></div></div><div id="outline-container-b19ffe43"class="outline-2"><h2 id="b19ffe43">사용자 예외 클래스</h2><div class="outline-text-2"id="text-b19ffe43"><p>개인이 만든 기능에는 당연히 개인이 정의한 오류가 발생할 수 있다. 따라서 당연하게도 예외 클래스 또한 원하는 대로 별도로 디자인할 수 있다.</p><p>아래는 <code>TestException</code> 이라는 예외를 만들고 이를 일부러 발생시키는 예제다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">class</span> <span style="color:#ecbe7b">TestException</span>(<span style="color:#ecbe7b">Exception</span>):
@@ -35,7 +35,7 @@
 <span style="color:#51afef">try</span>:
     test()
 <span style="color:#51afef">except</span> <span style="color:#ecbe7b">Exception</span> <span style="color:#51afef">as</span> e:
-    <span style="color:#51afef">print</span>(f<span style="color:#98be65">'Exception: </span>{e}<span style="color:#98be65">'</span>)
+    <span style="color:#51afef">print</span>(f<span style="color:#98be65">'Exception: {e}'</span>)
 </pre></div><p><code>TestException</code> 이 직접 만든 예외이다. 보다시피 <code>Exception</code> 이라는 클래스를 상속받은 클래스다.</p><p>위 예제를 실행하면 예외가 발생하면서 하단의 print 문이 그대로 실행된다. <code>except</code> 에서 굳이 <code>TestException</code> 이 아닌 <code>Exception</code> 을 잡은 것은 이 커스텀 예외도 다른 일반 예외와 별 다른 것이 없다는 것을 알 수 있게 하기 위함이다.</p><p>그런데 위 코드는 아래 처럼 정확히 무슨 예외인지 표시되지는 않는다.</p><div class="org-src-container"><pre class="src src-text">Exception:
 </pre></div><p>이건 <code>TestException</code> 클래스에서 특별한 정보를 알려주지 않아서이다.</p><p>만약 발생한 예외의 정보를 문자열로 찍어야 하는 경우라면 <code>__str__</code> 메서드를 구현하면 어느 정도 해결할 수 있다. 이 메서드는 문자열 변환 요구 시 호출된다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">class</span> <span style="color:#ecbe7b">TestException</span>(<span style="color:#ecbe7b">Exception</span>):
     <span style="color:#51afef">def</span> <span style="color:#c678dd">__str__</span>(<span style="color:#51afef">self</span>):
@@ -45,7 +45,7 @@
     <span style="color:#51afef">def</span> <span style="color:#c678dd">__init__</span>(<span style="color:#51afef">self</span>, message=<span style="color:#98be65">""</span>):
         <span style="color:#51afef">self</span>.message = message
     <span style="color:#51afef">def</span> <span style="color:#c678dd">__str__</span>(<span style="color:#51afef">self</span>):
-        <span style="color:#51afef">return</span> f<span style="color:#98be65">"TestException </span>{<span style="color:#51afef">self</span>.message}<span style="color:#98be65">"</span>
+        <span style="color:#51afef">return</span> f<span style="color:#98be65">"TestException {self.message}"</span>
 
 <span style="color:#51afef">def</span> <span style="color:#c678dd">test</span>():
     <span style="color:#51afef">raise</span> TestException(<span style="color:#98be65">"Some Error"</span>)
@@ -53,7 +53,7 @@
 <span style="color:#51afef">try</span>:
     test()
 <span style="color:#51afef">except</span> <span style="color:#ecbe7b">Exception</span> <span style="color:#51afef">as</span> e:
-    <span style="color:#51afef">print</span>(f<span style="color:#98be65">'Exception: </span>{e}<span style="color:#98be65">'</span>)
+    <span style="color:#51afef">print</span>(f<span style="color:#98be65">'Exception: {e}'</span>)
 </pre></div><p>이제 이 코드는 아래와 같은 메시지를 출력한다.</p><div class="org-src-container"><pre class="src src-text">Exception: TestException Some Error
 </pre></div><p>단순하게 만든 예제이지만 이 정도만 알아도 왠만한 오류 내용을 만들 수 있다.</p></div></div><div id="outline-container-c43d9526"class="outline-2"><h2 id="c43d9526">예외 상황의 메시지를 그대로 출력하기</h2><div class="outline-text-2"id="text-c43d9526"><p>일반적으로 예외 처리가 완벽하지 않은 <a href="python.html">Python</a> 스크립트에서 에러가 나면 스크립트가 죽으면서 Traceback이라 불리우는 메시지가 화면에 뿌려지는 것을 볼 수 있다.</p><div class="org-src-container"><pre class="src src-text">Traceback (most recent call last):
   File "foo.py", line 13, in &lt;module&gt;
@@ -72,6 +72,6 @@ Exception: QuxException: Foobar
 <span style="color:#51afef">try</span>:
     do_what()
 <span style="color:#51afef">except</span>:
-    stacktrace = traceback.format_exc()
+    <span style="color:#dcaeea">stacktrace</span> = traceback.format_exc()
     log(stacktrace)
 </pre></div><p>이렇게 하면 대부분의 Traceback을 로그로도 그대로 볼 수 있게 된다. 물론 스크립트는 당연히 죽지도 않고 말이다.</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/python.html">Python</a></h2><span class="article-description">Python(파이썬)에 관한 간략한 설명 및 자료 정리</span><span class="article-link-date"> Updated on 2021년 2월 19일</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-44534026-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44534026-1")</script></body></html>

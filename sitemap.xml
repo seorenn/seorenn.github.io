@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2021-06-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-06-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/vscode.html</loc><lastmod>2021-06-15</lastmod></url>
@@ -46,7 +48,6 @@
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2021-05-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/html.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2021-05-02</lastmod></url>
@@ -115,7 +116,6 @@
 <url><loc>https://seorenn.github.io/note/pyenv.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-installation.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc2020.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-exception-handling.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python3-manual-migration.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-bitstring.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -191,6 +191,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-18</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-23</lastmod></url>
 </urlset>

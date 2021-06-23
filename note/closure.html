@@ -15,13 +15,13 @@
 </pre></div><p><code>setTimeout()</code> 함수는 특정 시간 뒤 특정 명령을 실행시키는 함수다. 여기서 첫 매개변수로 이름 없는 함수를 넘기는데 이것도 클로저다.</p><p>이 외에 화살표 함수(Arrow Function)의 경우도 동적으로 생성되는 이름 없는 함수이기 때문에 클로저로 볼 수 있다.</p><div class="org-src-container"><pre class="src src-javascript">&gt; <span style="color:#51afef">let</span> <span style="color:#dcaeea">adder</span> = (x, y) =&gt; x + y;
 &gt; adder(<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>)
 <span style="color:#da8548;font-weight:700">3</span>
-</pre></div></div></div><div id="outline-container-aa905561"class="outline-2"><h2 id="aa905561">Swift의 클로저</h2><div class="outline-text-2"id="text-aa905561"><p><a href="swift.html">Swift</a>의 클로저도 위의 개념적인 부분은 거의 동일하다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">let</span> adder: (Int, <span style="color:#c678dd">Int</span>) -&gt; Int = {
-    (<span style="color:#c678dd">x</span>, y) <span style="color:#51afef">in</span>
+</pre></div></div></div><div id="outline-container-aa905561"class="outline-2"><h2 id="aa905561">Swift의 클로저</h2><div class="outline-text-2"id="text-aa905561"><p><a href="swift.html">Swift</a>의 클로저도 위의 개념적인 부분은 거의 동일하다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">let</span> adder: (<span style="color:#c678dd">Int</span>, <span style="color:#c678dd">Int</span>) -&gt; <span style="color:#c678dd">Int</span> = {
+    (x, y) <span style="color:#51afef">in</span>
     <span style="color:#51afef">return</span> x + y
 }
-</pre></div><p>문법의 차이만 있을 뿐이지 이름도 없고 동적으로 생성되는 데다 주변 환경을 복제하는 것은 거의 동일하다.</p><p>하지만 차이도 있다.</p><p>Swift의 메모리 관리 체계인 <a href="arc.html">ARC</a>의 특징으로 인해 주변 환경 복제 뿐만 아니라 납치(Capture) 문제도 발생하게 된다. 값(value) 타입이 아닌 인스턴스의 경우 리테인 카운드를 증가시키게 되어서 메모리 해제를 제때 하지 못 하는 등의 문제를 발생시킬 수도 있다.</p><p>그래서 납치 규칙(capture rule) 같은 것도 정의할 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">let</span> selfAdder: (Int) -&gt; <span style="color:#c678dd">Int</span> = {
+</pre></div><p>문법의 차이만 있을 뿐이지 이름도 없고 동적으로 생성되는 데다 주변 환경을 복제하는 것은 거의 동일하다.</p><p>하지만 차이도 있다.</p><p>Swift의 메모리 관리 체계인 <a href="arc.html">ARC</a>의 특징으로 인해 주변 환경 복제 뿐만 아니라 납치(Capture) 문제도 발생하게 된다. 값(value) 타입이 아닌 인스턴스의 경우 리테인 카운드를 증가시키게 되어서 메모리 해제를 제때 하지 못 하는 등의 문제를 발생시킬 수도 있다.</p><p>그래서 납치 규칙(capture rule) 같은 것도 정의할 수 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">let</span> selfAdder: (<span style="color:#c678dd">Int</span>) -&gt; <span style="color:#c678dd">Int</span> = {
     [<span style="color:#51afef">unowned</span> <span style="color:#51afef">self</span>] (y) <span style="color:#51afef">in</span>
-    <span style="color:#51afef">return</span> <span style="color:#51afef">self</span>.x + <span style="color:#c678dd">y</span>
+    <span style="color:#51afef">return</span> <span style="color:#51afef">self</span>.<span style="color:#c678dd">x</span> + y
 }
 </pre></div><p>위의 코드는 <code>unowned</code> 를 통해 <code>self</code> 에 대해 <code>weak</code> 참조를 하도록 하는 예이다. 이렇게 하면 위의 클로저의 메모리가 해제되지 않으면 <code>self</code> 도 해제되지 않는 문제를 해결할 수 있다.</p></div></div><div id="outline-container-88ff6f04"class="outline-2"><h2 id="88ff6f04">Objective-C 블록</h2><div class="outline-text-2"id="text-88ff6f04"><p><a href="objective-c.html">Objective-C</a>의 경우 블록 문법이라는 클로저와 비슷한 기능이 제공된다.</p><div class="org-src-container"><pre class="src src-objective-c">int (^adder)(int, int) = ^int(int x, int y) {
     return x + y;

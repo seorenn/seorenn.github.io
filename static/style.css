@@ -497,6 +497,13 @@ footer {
   text-align: center;
   font-size: 10pt;
   color: #999;
+
+  /* iOS 15 Safari Bottom Additional Safearea */
+  position: sticky;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
 /* dark-mode */

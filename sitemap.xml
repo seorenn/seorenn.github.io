@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2021-06-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2021-06-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-effects.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2021-06-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-effects.html</loc><lastmod>2021-06-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2021-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-06-17</lastmod></url>
@@ -186,8 +188,6 @@
 <url><loc>https://seorenn.github.io/note/fcpx.html</loc><lastmod>2020-04-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/motion.html</loc><lastmod>2020-04-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gitignore.html</loc><lastmod>2020-04-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2020-04-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2020-04-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/swift-async-await.html</loc><lastmod>2021-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/count-day-in-korean.html</loc><lastmod>2021-07-04</lastmod></url>
+<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-effects.html</loc><lastmod>2021-06-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2021-06-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2021-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-06-22</lastmod></url>
@@ -82,7 +85,6 @@
 <url><loc>https://seorenn.github.io/note/twitter.html</loc><lastmod>2020-09-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc><lastmod>2020-09-01</lastmod></url>
-<url><loc>https://seorenn.github.io/note/javascript.html</loc><lastmod>2020-08-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-08-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-08-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2020-08-05</lastmod></url>
@@ -191,6 +193,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-06-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-06-29</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-07-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-07-07</lastmod></url>
 </urlset>

@@ -12,12 +12,8 @@
 <span style="color:#51afef">for</span> <span style="color:#51afef">try</span> await line <span style="color:#51afef">in</span> handle.<span style="color:#c678dd">bytes</span>.<span style="color:#dcaeea">lines</span> {
     <span style="color:#c678dd">print</span>(line)
 }
-</pre></div><p>아마도 <code>handle.bytes.lines</code> 는 비동기 Getter인 모양이다.</p></div></div><div id="outline-container-87c31f87"class="outline-2"><h2 id="87c31f87">동기 코드 안에서의 비동기</h2><div class="outline-text-2"id="text-87c31f87"><p><code>async</code> 는 함수 뿐만 아니라 아니라 블럭 자체에 마크할 수도 있다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">func</span> <span style="color:#c678dd">someSyncFunc</span>() {
-    ...
-    async {
-        <span style="color:#51afef">try</span>? await <span style="color:#c678dd">someWork</span>()
-    }
-    ...
+</pre></div><p>아마도 <code>handle.bytes.lines</code> 는 비동기 Getter인 모양이다.</p></div></div><div id="outline-container-87c31f87"class="outline-2"><h2 id="87c31f87">동기 코드 안에서의 비동기</h2><div class="outline-text-2"id="text-87c31f87"><p><code>async</code> 는 함수 뿐만 아니라 아니라 블럭 자체에 마크할 수도 있다.</p><div class="org-src-container"><pre class="src src-swift">async {
+    <span style="color:#51afef">try</span>? await <span style="color:#c678dd">someWork</span>()
 }
 </pre></div><p>읽기는 쉬운 편이라 따로 설명은 필요 없을 것 같다.</p><p>단, 엄밀하게 말해서 이 블록은 사실 <a href="closure.html">클로저</a>다. 즉 이 문법은 비동기 <a href="closure.html">클로저</a>(async closure)를 구현하는 문법이다.</p></div></div><div id="outline-container-8349f597"class="outline-2"><h2 id="8349f597">병렬 실행</h2><div class="outline-text-2"id="text-8349f597"><p>한 번에 여러 작업을 동시에 실행하고자 할 때는 아래와 같은 async-let 문법의 코드를 작성할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">async <span style="color:#51afef">let</span> james = <span style="color:#c678dd">someWork</span>(name: <span style="color:#98be65">"James"</span>)
 async <span style="color:#51afef">let</span> conrad = <span style="color:#c678dd">someWork</span>(name: <span style="color:#98be65">"Conrad"</span>)

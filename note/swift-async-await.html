@@ -26,7 +26,7 @@ async <span style="color:#51afef">let</span> michael = <span style="color:#c678d
         taskGroup.<span style="color:#dcaeea">async</span> { await <span style="color:#c678dd">downloadPhoto</span>(named: name) }
     }
 }
-</pre></div><p>동적으로 병렬 태스크를 구성해야 한다면 유용한 방식인 것 같다. 이 외에도 부모-자식 태스크를 구성하는 등 다양한 용도로 사용되니 일단 이름은 알아두면 좋을 것 같다.</p></div></div><div id="outline-container-02ca17e8"class="outline-2"><h2 id="02ca17e8">액터(Actors)</h2><div class="outline-text-2"id="text-02ca17e8"><p>동시성 지원과 함께 액터라 불리는 새로운 타입이 추가되었다. Class와 비슷하게 특수 구조체를 설계할 수 있는 기능으로 액터 인스턴스 역시 동일하게 레퍼런스 타입이다.</p><p>그런데 액터의 특수성으로 스레드 안정성을 보장하기 위해 동시에 하나의 Task 에서만 접근을 보장한다는 점이 있다.</p><div class="org-src-container"><pre class="src src-swift">actor TemperatureLogger {
+</pre></div><p>동적으로 병렬 태스크를 구성해야 한다면 유용한 방식인 것 같다. 이 외에도 부모-자식 태스크를 구성하는 등 다양한 용도로 사용되니 일단 이름은 알아두면 좋을 것 같다.</p></div></div><div id="outline-container-02ca17e8"class="outline-2"><h2 id="02ca17e8">액터(Actors)</h2><div class="outline-text-2"id="text-02ca17e8"><p>동시성 지원과 함께 액터라 불리는 새로운 타입이 추가되었다. Class와 비슷하게 특수 구조체를 설계할 수 있는 기능으로 액터의 <a href="instance.html">인스턴스</a> 역시 동일하게 레퍼런스 타입이다.</p><p>그런데 액터의 특수성으로 스레드 안정성을 보장하기 위해 동시에 하나의 Task 에서만 접근을 보장한다는 점이 있다.</p><div class="org-src-container"><pre class="src src-swift">actor TemperatureLogger {
     <span style="color:#51afef">let</span> label: <span style="color:#c678dd">String</span>
     <span style="color:#51afef">var</span> measurements: [<span style="color:#c678dd">Int</span>]
     <span style="color:#51afef">private</span>(<span style="color:#51afef">set</span>) <span style="color:#51afef">var</span> max: <span style="color:#c678dd">Int</span>

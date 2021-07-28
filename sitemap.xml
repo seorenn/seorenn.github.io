@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/swift-async-await.html</loc><lastmod>2021-07-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-07-27</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui-alert.html</loc><lastmod>2021-07-27</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui-actionsheet.html</loc><lastmod>2021-07-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-07-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui-actionsheet.html</loc><lastmod>2021-07-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/arc.html</loc><lastmod>2021-07-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/c-pointer.html</loc><lastmod>2021-07-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/korea-stock-market-opening.html</loc><lastmod>2021-07-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2021-07-22</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swift-async-await.html</loc><lastmod>2021-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-continuation.html</loc><lastmod>2021-07-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2021-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2021-07-14</lastmod></url>
@@ -29,7 +31,6 @@
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2021-06-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appstore-guideline-hints.html</loc><lastmod>2021-06-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-xcode-playground-preview.html</loc><lastmod>2021-06-09</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-06-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2021-06-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/kubectl.html</loc><lastmod>2021-06-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rsync.html</loc><lastmod>2021-06-07</lastmod></url>
@@ -196,6 +197,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-07-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-07-26</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-07-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-07-28</lastmod></url>
 </urlset>

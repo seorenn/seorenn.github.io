@@ -94,6 +94,9 @@ nav a:active {
   box-sizing: border-box;
   border: 1px dashed #ddd;
   border-radius: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 input::placeholder {
@@ -101,12 +104,15 @@ input::placeholder {
 }
 
 #search-button {
-  font-size: 14pt;
+  font-size: 13pt;
   color: #666;
-  padding: 8px 24px 8px 24px;
+  padding: 8px 16px 8px 16px;
   background: #f4f4f4;
   border: 1px dashed #ddd;
   border-radius: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 /* content */

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/crud.html</loc><lastmod>2021-07-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-config-tips.html</loc><lastmod>2021-07-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2021-07-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appstore-guideline-hints.html</loc><lastmod>2021-07-28</lastmod></url>
@@ -146,7 +147,6 @@
 <url><loc>https://seorenn.github.io/note/python-3-8-updates.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-dictionary.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-bytes-and-bytearray.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/crud.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/annotation-vs-comment.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -198,6 +198,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-07-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-07-28</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-07-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-07-30</lastmod></url>
 </urlset>

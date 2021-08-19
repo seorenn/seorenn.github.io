@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/swiftui-navigationview.html</loc><lastmod>2021-08-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui-app-controller-components.html</loc><lastmod>2021-08-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-08-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-alert.html</loc><lastmod>2021-08-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ps.html</loc><lastmod>2021-08-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/grep.html</loc><lastmod>2021-08-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-basic-view-component.html</loc><lastmod>2021-08-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-tips.html</loc><lastmod>2021-08-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-08-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-animation.html</loc><lastmod>2021-08-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-view-lifecycle-attributes.html</loc><lastmod>2021-08-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-scroll-view-component.html</loc><lastmod>2021-08-14</lastmod></url>
@@ -15,7 +17,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-control-components.html</loc><lastmod>2021-08-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-drawing-components.html</loc><lastmod>2021-08-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-list-components.html</loc><lastmod>2021-08-12</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui-app-controller-components.html</loc><lastmod>2021-08-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-layout-components.html</loc><lastmod>2021-08-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-08-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-async-await.html</loc><lastmod>2021-08-03</lastmod></url>

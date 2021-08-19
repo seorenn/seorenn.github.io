@@ -2,7 +2,7 @@
     <span style="color:#c678dd">SidebarView</span>()
     <span style="color:#c678dd">CurrentContentView</span>()
 }
-</pre></div><p>이 중 첫 번째가 메뉴 화면 혹은 사이드바 UI가 된다. 그리고 그 이후에 등장하는 뷰들은 모두 컨텐츠에 해당한다.</p><p>컨텐츠 뷰는 두 개 이상 정의하는 것도 가능하며 이 경우 사이드바에 붙어있는 구분선(splitter)과 비슷한 것이 붙는다.</p></div></div><div id="outline-container-74129b45"class="outline-2"><h2 id="74129b45">사이드바</h2><div class="outline-text-2"id="text-74129b45"><p>사이드바의 메뉴는 <code>NavigationLink</code> 라는 컴포넌트를 통해 정의할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
+</pre></div><p>이 중 첫 번째가 메뉴 화면 혹은 사이드바 UI가 된다. 그리고 그 이후에 등장하는 뷰들은 모두 컨텐츠에 해당한다.</p><p>컨텐츠 뷰는 두 개 이상 정의하는 것도 가능하며 <a href="macos.html">macOS</a>에서는 이 경우 컨텐츠 뷰 사이에 구분선(splitter)이 붙는다.</p></div></div><div id="outline-container-74129b45"class="outline-2"><h2 id="74129b45">사이드바</h2><div class="outline-text-2"id="text-74129b45"><p>사이드바의 메뉴는 <code>NavigationLink</code> 라는 컴포넌트를 통해 정의할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
     <span style="color:#c678dd">NavigationLink</span>(<span style="color:#98be65">"First Content"</span>, destination: <span style="color:#c678dd">FirstContentView</span>())
 }
 </pre></div><p>이 컴포넌트는 여러 생성자가 준비되어 있으니 원하는 방식을 골라서 구현할 수 있다.</p><p>대응하는 뷰를 연결할 목적이 아니라면 수동으로 라벨을 나열하는 방법도 있다.</p><div class="org-src-container"><pre class="src src-swift">List {

@@ -2,7 +2,7 @@
     <span style="color:#c678dd">SidebarView</span>()
     <span style="color:#c678dd">CurrentContentView</span>()
 }
-</pre></div><p>이 중 첫 번째가 메뉴 화면 혹은 사이드바 UI가 된다. 그리고 그 이후에 등장하는 뷰들은 모두 컨텐츠에 해당한다.</p><p>컨텐츠 뷰는 두 개 이상 정의하는 것도 가능하며 <a href="macos.html">macOS</a>에서는 이 경우 컨텐츠 뷰 사이에 구분선(splitter)이 붙는다.</p></div></div><div id="outline-container-74129b45"class="outline-2"><h2 id="74129b45">사이드바</h2><div class="outline-text-2"id="text-74129b45"><p>사이드바의 메뉴는 <code>NavigationLink</code> 라는 컴포넌트를 통해 정의할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
+</pre></div><p>이 중 첫 번째가 첫 메뉴 화면 혹은 사이드바 UI가 된다. 그리고 그 이후에 등장하는 뷰들은 다만 <a href="macos.html">macOS</a>의 경우 기본 컨텐츠로 표시된다.</p><p>컨텐츠 뷰는 두 개 이상 정의하는 것도 가능하며 <a href="macos.html">macOS</a>에서는 이 경우 컨텐츠 뷰 사이에 구분선(splitter)이 붙는다.</p></div></div><div id="outline-container-74129b45"class="outline-2"><h2 id="74129b45">사이드바</h2><div class="outline-text-2"id="text-74129b45"><p>사이드바의 메뉴는 <code>NavigationLink</code> 라는 컴포넌트를 통해 정의할 수 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
     <span style="color:#c678dd">NavigationLink</span>(<span style="color:#98be65">"First Content"</span>, destination: <span style="color:#c678dd">FirstContentView</span>())
 }
 </pre></div><p>이 컴포넌트는 여러 생성자가 준비되어 있으니 원하는 방식을 골라서 구현할 수 있다.</p><p>대응하는 뷰를 연결할 목적이 아니라면 수동으로 라벨을 나열하는 방법도 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
@@ -10,19 +10,17 @@
     <span style="color:#c678dd">Label</span>(<span style="color:#98be65">"Item 2"</span>, systemImage: <span style="color:#98be65">"pencil"</span>)
     ...
 }
-</pre></div><p><a href="macos.html">macOS</a> 스타일을 살리기 위해 몇 가지 속성이나 사이드바에 툴바(Toolbar)를 붙여줄 수도 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
-    <span style="color:#c678dd">Label</span>(<span style="color:#98be65">"Item 1"</span>, systemImage: <span style="color:#98be65">"folder"</span>)
-    <span style="color:#c678dd">Label</span>(<span style="color:#98be65">"Item 2"</span>, systemImage: <span style="color:#98be65">"pencil"</span>)
-    ...
-}
-.<span style="color:#c678dd">listStyle</span>(<span style="color:#c678dd">SidebarListStyle</span>())
-.<span style="color:#c678dd">frame</span>(minWidth: <span style="color:#da8548;font-weight:700">100</span>, idealWidth: <span style="color:#da8548;font-weight:700">150</span>, maxWidth: <span style="color:#da8548;font-weight:700">200</span>, maxHeight: .<span style="color:#c678dd">infinity</span>)
-.<span style="color:#dcaeea">toolbar</span> {
-    <span style="color:#c678dd">ToolbarItem</span>(placement: .<span style="color:#dcaeea">navigation</span>) {
-        <span style="color:#c678dd">Button</span>()
+</pre></div><p>메뉴를 그룹으로 묶기를 원할 때는 <code>Section</code> 으로 묶어줄 수 있다.</p><div class="org-src-container"><pre class="src src-swift">List {
+    <span style="color:#c678dd">Section</span>(header: <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"First Group"</span>)) {
+        <span style="color:#c678dd">NavigationLink</span>(<span style="color:#98be65">"First Content"</span>, destination: <span style="color:#c678dd">FirstContentView</span>())
+        <span style="color:#c678dd">NavigationLink</span>(<span style="color:#98be65">"Second Content"</span>, destination: <span style="color:#c678dd">SecondContentView</span>())
+    }
+    <span style="color:#c678dd">Section</span>(header: <span style="color:#c678dd">Text</span>(<span style="color:#98be65">"Second Group"</span>)) {
+        <span style="color:#c678dd">NavigationLink</span>(<span style="color:#98be65">"Third Content"</span>, destination: <span style="color:#c678dd">ThirdContentView</span>())
+        <span style="color:#c678dd">NavigationLink</span>(<span style="color:#98be65">"Fourth Content"</span>, destination: <span style="color:#c678dd">FourthContentView</span>())
     }
 }
-</pre></div></div></div><div id="outline-container-3955bd03"class="outline-2"><h2 id="3955bd03">타이틀</h2><div class="outline-text-2"id="text-3955bd03"><p>타이틀은 Content에 해당하는 뷰에서 세팅하는 형태다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">FirstContentView</span>: View {
+</pre></div><p>물론 그룹 부분은 <a href="swiftui-list-components.html">SwiftUI 리스트 컴포넌트</a> 쪽과 관련이 있겠지만 말이다.</p></div></div><div id="outline-container-3955bd03"class="outline-2"><h2 id="3955bd03">타이틀</h2><div class="outline-text-2"id="text-3955bd03"><p>타이틀은 Content에 해당하는 뷰에서 세팅하는 형태다.</p><div class="org-src-container"><pre class="src src-swift"><span style="color:#51afef">struct</span> <span style="color:#c678dd">FirstContentView</span>: View {
     <span style="color:#51afef">var</span> body: <span style="color:#51afef">some</span> View {
         VStack {
             ...

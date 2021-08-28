@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2021-08-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2021-08-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tree.html</loc><lastmod>2021-08-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-08-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objc-for-swift.html</loc><lastmod>2021-08-25</lastmod></url>
@@ -115,7 +117,6 @@
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc><lastmod>2020-09-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-08-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2020-08-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2020-08-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/special-char-name.html</loc><lastmod>2020-08-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-python-env.html</loc><lastmod>2020-07-29</lastmod></url>
@@ -142,7 +143,6 @@
 <url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-troubleshooting.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2020-07-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-virtualenv.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-manage-python-version.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -215,6 +215,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-08-27</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-08-27</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-08-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-08-28</lastmod></url>
 </urlset>

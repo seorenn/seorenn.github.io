@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/swiftui-layout-attributes.html</loc><lastmod>2021-10-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2021-10-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-10-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-10-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/userdefaults.html</loc><lastmod>2021-09-30</lastmod></url>
@@ -39,7 +41,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-scroll-view-component.html</loc><lastmod>2021-08-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-action-attributes.html</loc><lastmod>2021-08-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-style-attributes.html</loc><lastmod>2021-08-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swiftui-layout-attributes.html</loc><lastmod>2021-08-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-control-components.html</loc><lastmod>2021-08-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-drawing-components.html</loc><lastmod>2021-08-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-layout-components.html</loc><lastmod>2021-08-12</lastmod></url>
@@ -140,7 +141,6 @@
 <url><loc>https://seorenn.github.io/note/docker-compose-devenv.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tmux.html</loc><lastmod>2020-07-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2020-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-multi-container-devenv.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2020-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2020-07-09</lastmod></url>

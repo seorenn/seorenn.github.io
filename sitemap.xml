@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2021-10-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-10-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode-simulator-tips.html</loc><lastmod>2021-10-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2021-10-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/caffeinate.html</loc><lastmod>2021-10-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2021-10-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-layout-attributes.html</loc><lastmod>2021-10-20</lastmod></url>
@@ -19,8 +23,6 @@
 <url><loc>https://seorenn.github.io/note/swift-protocols.html</loc><lastmod>2021-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2021-09-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2021-09-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-09-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2021-09-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-basic-view-component.html</loc><lastmod>2021-09-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-08-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-08-29</lastmod></url>
@@ -82,7 +84,6 @@
 <url><loc>https://seorenn.github.io/note/economic-indexes.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/calc.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/homebrew.html</loc><lastmod>2021-05-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2021-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gccemacs.html</loc><lastmod>2021-05-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/osascript.html</loc><lastmod>2021-05-15</lastmod></url>
@@ -218,6 +219,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-10-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-10-28</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-10-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-10-31</lastmod></url>
 </urlset>

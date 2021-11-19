@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2021-11-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/carthage.html</loc><lastmod>2021-11-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-style-attributes.html</loc><lastmod>2021-11-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/carthage.html</loc><lastmod>2021-11-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-tabview.html</loc><lastmod>2021-11-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2021-11-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-view-lifecycle-attributes.html</loc><lastmod>2021-11-05</lastmod></url>
@@ -176,7 +177,6 @@
 <url><loc>https://seorenn.github.io/note/python-bytes-and-bytearray.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/annotation-vs-comment.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-equality.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>

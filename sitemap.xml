@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-11-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/html.html</loc><lastmod>2021-11-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-simulator-tips.html</loc><lastmod>2021-11-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2021-11-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/carthage.html</loc><lastmod>2021-11-19</lastmod></url>
@@ -13,7 +15,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-layout-components.html</loc><lastmod>2021-11-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-navigationview.html</loc><lastmod>2021-11-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2021-10-31</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-10-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2021-10-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/caffeinate.html</loc><lastmod>2021-10-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-config.html</loc><lastmod>2021-10-25</lastmod></url>
@@ -106,7 +107,6 @@
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2021-05-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/html.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2021-05-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-errors.html</loc><lastmod>2021-04-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-strings.html</loc><lastmod>2021-04-24</lastmod></url>
@@ -220,6 +220,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-11-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-11-21</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-11-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-11-24</lastmod></url>
 </urlset>

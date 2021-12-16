@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-12-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2021-12-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2021-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/objc-for-swift.html</loc><lastmod>2021-12-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-terms.html</loc><lastmod>2021-12-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2021-12-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-color.html</loc><lastmod>2021-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/npm.html</loc><lastmod>2021-11-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron.html</loc><lastmod>2021-11-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-11-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-11-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/html.html</loc><lastmod>2021-11-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-simulator-tips.html</loc><lastmod>2021-11-21</lastmod></url>
@@ -42,9 +45,7 @@
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2021-09-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2021-08-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2021-08-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2021-08-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tree.html</loc><lastmod>2021-08-27</lastmod></url>
-<url><loc>https://seorenn.github.io/note/objc-for-swift.html</loc><lastmod>2021-08-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2021-08-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/vim.html</loc><lastmod>2021-08-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-alert.html</loc><lastmod>2021-08-23</lastmod></url>
@@ -73,7 +74,6 @@
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2021-07-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/vscode.html</loc><lastmod>2021-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2021-07-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2021-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/promise.html</loc><lastmod>2021-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/any-helpful-links.html</loc><lastmod>2021-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/count-day-in-korean.html</loc><lastmod>2021-07-08</lastmod></url>
@@ -221,6 +221,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-12-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-12-08</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-12-16</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-12-16</lastmod></url>
 </urlset>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2021-12-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/css.html</loc><lastmod>2021-12-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2021-12-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2021-12-12</lastmod></url>
@@ -120,7 +121,6 @@
 <url><loc>https://seorenn.github.io/note/economic-vi.html</loc><lastmod>2021-04-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/grex.html</loc><lastmod>2021-03-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gh.html</loc><lastmod>2021-03-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2021-03-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/store-food.html</loc><lastmod>2021-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2021-02-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sos.html</loc><lastmod>2021-02-11</lastmod></url>
@@ -221,6 +221,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-12-16</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-12-16</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-12-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-12-22</lastmod></url>
 </urlset>

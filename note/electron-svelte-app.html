@@ -4,21 +4,21 @@ yarn  <span style="color:#5b6268"># </span><span style="color:#5b6268">or npm in
 </pre></div></div></div><div id="outline-container-9a055a8b"class="outline-2"><h2 id="9a055a8b">Electron 추가하기</h2><div class="outline-text-2"id="text-9a055a8b"><p>의존성 추가는 <a href="electron-basic-setup.html">Electron 셋업하기</a> 글을 참고하자. 의존성을 추가하고 <code>index.js</code> 파일을 추가하고 <code>start</code> 스크립트를 수정하는 모든 부분이 필요하다.</p><p>의존성을 추가한 후 Svelte 템플릿을 설치할 때 생긴 <code>public/index.html</code> 파일을 열어서 각 리소스 및 스크립트 파일들 경로를 상대 경로로 수정해주자. <code>globa.css</code>, <code>build.css</code>, <code>bundle.js</code> 파일의 경로에서 제일 앞의 <code>/</code> 를 빼주기만 하면 된다. 수정된 내용은 아래와 같은 식이다.</p><div class="org-src-container"><pre class="src src-html">&lt;<span style="color:#51afef">!DOCTYPE</span> html&gt;
 &lt;<span style="color:#c678dd">html</span> <span style="color:#dcaeea">lang</span>=<span style="color:#98be65">"ko"</span>&gt;
 &lt;<span style="color:#c678dd">head</span>&gt;
-    &lt;<span style="color:#c678dd">meta</span> <span style="color:#dcaeea">charset</span>=<span style="color:#98be65">'utf-8'</span>&gt;
-    &lt;<span style="color:#c678dd">meta</span> <span style="color:#dcaeea">name</span>=<span style="color:#98be65">'viewport'</span> <span style="color:#dcaeea">content</span>=<span style="color:#98be65">'width=device-width,initial-scale=1'</span>&gt;
+  &lt;<span style="color:#c678dd">meta</span> <span style="color:#dcaeea">charset</span>=<span style="color:#98be65">'utf-8'</span>&gt;
+  &lt;<span style="color:#c678dd">meta</span> <span style="color:#dcaeea">name</span>=<span style="color:#98be65">'viewport'</span> <span style="color:#dcaeea">content</span>=<span style="color:#98be65">'width=device-width,initial-scale=1'</span>&gt;
 
-    &lt;<span style="color:#c678dd">title</span>&gt;<span style="font-weight:700;text-decoration:underline">Seonews</span>&lt;/<span style="color:#c678dd">title</span>&gt;
+  &lt;<span style="color:#c678dd">title</span>&gt;<span style="font-weight:700;text-decoration:underline">Seonews</span>&lt;/<span style="color:#c678dd">title</span>&gt;
 
-    &lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">rel</span>=<span style="color:#98be65">'icon'</span> <span style="color:#dcaeea">type</span>=<span style="color:#98be65">'image/png'</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">'/favicon.png'</span>&gt;
+  &lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">rel</span>=<span style="color:#98be65">'icon'</span> <span style="color:#dcaeea">type</span>=<span style="color:#98be65">'image/png'</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">'/favicon.png'</span>&gt;
 
   <span style="color:#5b6268">&lt;!-- </span><span style="color:#5b6268">&#49688;&#51221;&#46108; &#53076;&#46300; 1 </span><span style="color:#5b6268">--&gt;</span>
-    &lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">rel</span>=<span style="color:#98be65">'stylesheet'</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">'global.css'</span>&gt;
+  &lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">rel</span>=<span style="color:#98be65">'stylesheet'</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">'global.css'</span>&gt;
 
   <span style="color:#5b6268">&lt;!-- </span><span style="color:#5b6268">&#49688;&#51221;&#46108; &#53076;&#46300; 2 </span><span style="color:#5b6268">--&gt;</span>
-    &lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">rel</span>=<span style="color:#98be65">'stylesheet'</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">'build/bundle.css'</span>&gt;
+  &lt;<span style="color:#c678dd">link</span> <span style="color:#dcaeea">rel</span>=<span style="color:#98be65">'stylesheet'</span> <span style="color:#dcaeea">href</span>=<span style="color:#98be65">'build/bundle.css'</span>&gt;
 
   <span style="color:#5b6268">&lt;!-- </span><span style="color:#5b6268">&#49688;&#51221;&#46108; &#53076;&#46300; 3 </span><span style="color:#5b6268">--&gt;</span>
-    &lt;<span style="color:#c678dd">script</span> defer <span style="color:#dcaeea">src</span>=<span style="color:#98be65">'build/bundle.js'</span>&gt;&lt;/<span style="color:#c678dd">script</span>&gt;
+  &lt;<span style="color:#c678dd">script</span> defer <span style="color:#dcaeea">src</span>=<span style="color:#98be65">'build/bundle.js'</span>&gt;&lt;/<span style="color:#c678dd">script</span>&gt;
 &lt;/<span style="color:#c678dd">head</span>&gt;
 
 &lt;<span style="color:#c678dd">body</span>&gt;
@@ -27,7 +27,7 @@ yarn  <span style="color:#5b6268"># </span><span style="color:#5b6268">or npm in
 </pre></div></div></div><div id="outline-container-2bbdb230"class="outline-2"><h2 id="2bbdb230">시험해보기</h2><div class="outline-text-2"id="text-2bbdb230"><p>가장 기본적인 부분이 셋업되었기 때문에 이제 실행이 가능하다. 아래 커맨드로 실행시켜보자.</p><div class="org-src-container"><pre class="src src-bash">yarn run start
 <span style="color:#5b6268"># </span><span style="color:#5b6268">or</span>
 npm run start
-</pre></div><p>안 되면 Inspector를 열어서 콘솔을 살펴보면 도움이 될 때가 있다.</p></div></div><div id="outline-container-095426f7"class="outline-2"><h2 id="095426f7">electron-reload 지원해보기</h2><div class="outline-text-2"id="text-095426f7"><p>파일을 수정할 때마다 <a href="electron.html">Electron</a>을 띄우는 것은 귀찮다. 물론 <code>Command+R</code> 이나 <code>F5</code> 키로 리프레시가 가능하다지만 이조차도 귀찮다면 <code>electron-reload</code> 를 설정하는 것도 한 방법이다.</p><div class="org-src-container"><pre class="src src-bash">yarn add -D electron-reload
+</pre></div><p>Hello World 느낌이 나는 화면이 뜨면 정상이다. 혹시나 빈 화면이 뜨면 Inspector(<code>Command+Option+I</code>)를 열어서 콘솔의 메시지를 살펴보면 도움이 될 때가 있다.</p></div></div><div id="outline-container-095426f7"class="outline-2"><h2 id="095426f7">electron-reload 지원해보기</h2><div class="outline-text-2"id="text-095426f7"><p>파일을 수정할 때마다 <a href="electron.html">Electron</a>을 띄우는 것은 귀찮다. 물론 <code>Command+R</code> 이나 <code>F5</code> 키로 리프레시가 가능하다지만 이조차도 귀찮다면 <code>electron-reload</code> 를 설정하는 것도 한 방법이다.</p><div class="org-src-container"><pre class="src src-bash">yarn add -D electron-reload
 <span style="color:#5b6268"># </span><span style="color:#5b6268">or</span>
 npm install --save-dev electron-reload
 </pre></div><p>당연하겠지만 개발시에만 사용하므로 프로던션 의존성에는 들어가지 않도록 설치하는 명령이다.</p><p>이제 이를 로드하도록 <code>index.js</code> 를 열어서 코딩해보자. 아래 코드를 상단 적절한 위치에 넣어두자. 개인적으로는 import(require) 이후에 넣는걸 선호한다.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#51afef">var</span> <span style="color:#dcaeea">devMode</span> = process.env.DEV_MODE ? (process.env.DEV_MODE.trim() == <span style="color:#98be65">"true"</span>) : <span style="color:#a9a1e1">false</span>;
@@ -37,8 +37,8 @@ npm install --save-dev electron-reload
         electron: upath.toUnix(upath.join(__dirname, <span style="color:#98be65">'node_modules'</span>, <span style="color:#98be65">'.bin'</span>, <span style="color:#98be65">'electron'</span>))
     });
 }
-</pre></div><p>이 코드는 <code>DEV_MODE</code> 라는 환경변수가 <code>true</code> 로 세팅되어야 작동하도록 하는 코드다. 따라서 이 부분도 적용되어야 할 것이다.</p><p>이제 <code>package.json</code> 을 열어서 <code>scripts</code> 항목의 <code>start</code> 부분을 수정해주자.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#98be65">"start"</span>: <span style="color:#98be65">"DEV_MODE=true electron ."</span>
-</pre></div><p>이러면 실행시킬 때 <code>electron-reload</code> 가 동작한다. 물론 원하는 이름의 스크립트에 넣어도 관계는 없다.</p></div></div><div id="outline-container-b1de21ea"class="outline-2"><h2 id="b1de21ea">자동 빌드 문제 해결하기</h2><div class="outline-text-2"id="text-b1de21ea"><p>불행히도 <code>electron-reload</code> 만으론 리로드가 완벽하게 되지 않는다. 일부 코드는 빌드된 것을 로드하기 때문이다. 그렇다면 자동으로 빌드가 되게 만들어야 한다.</p><p>우선 <code>wait-on</code> 과 <code>concurrently</code> 의존성을 개발 전용으로 설치한다.</p><div class="org-src-container"><pre class="src src-bash">yarn add -D wait-on concurrently
+</pre></div><p>이 코드는 <code>DEV_MODE</code> 라는 환경변수가 <code>true</code> 로 세팅되어야 <code>electron-reload</code> 가 작동하도록 하는 코드다. 따라서 이 부분도 적용되어야 할 것이다. <code>package.json</code> 을 열어서 <code>scripts</code> 항목의 <code>start</code> 부분을 수정해주자.</p><div class="org-src-container"><pre class="src src-javascript"><span style="color:#98be65">"start"</span>: <span style="color:#98be65">"DEV_MODE=true electron ."</span>
+</pre></div><p>이러면 실행시킬 때 <code>electron-reload</code> 가 동작한다. 물론 원하는 이름의 스크립트에 넣어도 관계는 없다.</p></div></div><div id="outline-container-b1de21ea"class="outline-2"><h2 id="b1de21ea">자동 빌드 문제 해결하기</h2><div class="outline-text-2"id="text-b1de21ea"><p>불행히도 <code>electron-reload</code> 만으론 리로드가 완벽하게 되지 않는다. 일부 코드는 빌드가 필요하기 때문이다. 그렇다면 자동으로 빌드가 되게 만들어야 한다. 기본적으로 <code>dev</code> 스크립트가 빌드를 하는 명령이니 이걸 호출할 수 있게 해야 한다.</p><p>우선 <code>wait-on</code> 과 <code>concurrently</code> 의존성을 개발 전용으로 설치한다.</p><div class="org-src-container"><pre class="src src-bash">yarn add -D wait-on concurrently
 <span style="color:#5b6268"># </span><span style="color:#5b6268">or</span>
 npm install --save-dev wait-on concurrently
 </pre></div><p>그리고 <code>package.json</code> 의 <code>scripts</code> 들에서 아래와 같은 항목들을 수정한다.</p><div class="org-src-container"><pre class="src src-bash"><span style="color:#98be65">"start"</span>: <span style="color:#98be65">"sirv public --no-clear"</span>,
@@ -47,7 +47,7 @@ npm install --save-dev wait-on concurrently
 </pre></div><p>이제 개발용으로 쓸 새로운 <code>electron-dev</code> 스크립트 명령을 만들었다. 아래와 같이 실행시켜서 시험해보자.</p><div class="org-src-container"><pre class="src src-bash">yarn run electron-dev
 <span style="color:#5b6268"># </span><span style="color:#5b6268">or</span>
 npm run electron-dev
-</pre></div></div></div><div id="outline-container-9bd0b725"class="outline-2"><h2 id="9bd0b725">vscode에서 간편하게 실행시키기</h2><div class="outline-text-2"id="text-9bd0b725"><p><code>launch.json</code> 파일을 생성해서 아래와 같이 코딩해 줄 수 있다.</p><div class="org-src-container"><pre class="src src-javascript">{
+</pre></div><p>개인적으론 대부분의 자동화가 잘 되었지만 간혹 뭔가 빠지는 느낌인데 그럴땐 어쩔 수 없이 <a href="electron.html">Electron</a> 창에서 <code>Command+R</code> 키 등을 눌러서 직접 리프레시를 해주어야 한다. 그래도 네이티브 앱 개발 시에 비하면 순식간에 재로딩이 되니 큰 불만은 없다.</p></div></div><div id="outline-container-9bd0b725"class="outline-2"><h2 id="9bd0b725">vscode에서 간편하게 실행시키기</h2><div class="outline-text-2"id="text-9bd0b725"><p><code>launch.json</code> 파일을 생성해서 아래와 같이 코딩해 줄 수 있다.</p><div class="org-src-container"><pre class="src src-javascript">{
     <span style="color:#98be65">"version"</span>: <span style="color:#98be65">"0.2.0"</span>,
     <span style="color:#98be65">"configurations"</span>: [{
         <span style="color:#98be65">"name"</span>: <span style="color:#98be65">"Debug Electron"</span>,

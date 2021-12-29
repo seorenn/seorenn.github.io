@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2021-12-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-svelte-app.html</loc><lastmod>2021-12-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron.html</loc><lastmod>2021-12-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-basic-setup.html</loc><lastmod>2021-12-24</lastmod></url>
@@ -83,7 +84,6 @@
 <url><loc>https://seorenn.github.io/note/instance.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/object.html</loc><lastmod>2021-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-effects.html</loc><lastmod>2021-06-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2021-06-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git.html</loc><lastmod>2021-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-xcode-playground-preview.html</loc><lastmod>2021-06-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/wwdc.html</loc><lastmod>2021-06-08</lastmod></url>
@@ -223,6 +223,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2021-12-27</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-12-27</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2021-12-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2021-12-29</lastmod></url>
 </urlset>

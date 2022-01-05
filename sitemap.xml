@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/mongodb.html</loc><lastmod>2022-01-05</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2022-01-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron.html</loc><lastmod>2022-01-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-troubleshooting.html</loc><lastmod>2022-01-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2021-12-31</lastmod></url>
@@ -115,7 +117,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrapper-tips.html</loc><lastmod>2021-05-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2021-05-05</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2021-05-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-errors.html</loc><lastmod>2021-04-27</lastmod></url>
@@ -212,7 +213,6 @@
 <url><loc>https://seorenn.github.io/note/definition.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/implementation.html</loc><lastmod>2020-05-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pip.html</loc><lastmod>2020-05-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/mongodb.html</loc><lastmod>2020-05-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/date.html</loc><lastmod>2020-05-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp-functions.html</loc><lastmod>2020-05-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/coffee.html</loc><lastmod>2020-05-09</lastmod></url>
@@ -225,6 +225,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-01-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-01-02</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-01-05</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-01-05</lastmod></url>
 </urlset>

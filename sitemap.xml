@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/spotlight.html</loc><lastmod>2022-01-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/mdfind.html</loc><lastmod>2022-01-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/mdutil.html</loc><lastmod>2022-01-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mongodb.html</loc><lastmod>2022-01-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2022-01-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron.html</loc><lastmod>2022-01-02</lastmod></url>
@@ -130,8 +133,6 @@
 <url><loc>https://seorenn.github.io/note/store-food.html</loc><lastmod>2021-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/english-note.html</loc><lastmod>2021-02-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sos.html</loc><lastmod>2021-02-11</lastmod></url>
-<url><loc>https://seorenn.github.io/note/mdutil.html</loc><lastmod>2021-02-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/spotlight.html</loc><lastmod>2021-02-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2021-02-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2021-01-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/twitter.html</loc><lastmod>2020-09-14</lastmod></url>
@@ -225,6 +226,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-01-05</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-01-05</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-01-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-01-07</lastmod></url>
 </urlset>

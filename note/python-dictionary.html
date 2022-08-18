@@ -12,17 +12,17 @@
 </pre></div><p>매개변수로 튜플 리스트를 사용할 수도 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = <span style="color:#c678dd">dict</span>([(<span style="color:#98be65">'key'</span>, <span style="color:#98be65">'value'</span>), (<span style="color:#98be65">'other'</span>, <span style="color:#da8548;font-weight:700">123</span>)])
 &gt;&gt;&gt; d
 {<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
-</pre></div><p>이 외에도 다양한 방법이 있을 수 있다.</p></div></div><div id="outline-container-f73af557"class="outline-2"><h2 id="f73af557">키 읽기, 쓰기, 수정, 삭제</h2><div class="outline-text-2"id="text-f73af557"><p>키의 값을 읽을 때는 배열 원소 참조하는 것과 비슷한 문법을 사용하지만 인덱스 대신 키를 사용한다는 점이 다르다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">print</span>(d[<span style="color:#98be65">'key'</span>])
+</pre></div><p>이 외에도 다양한 방법이 있을 수 있다.</p></div></div><div id="outline-container-f73af557"class="outline-2"><h2 id="f73af557">키 읽기, 쓰기, 수정, 삭제</h2><div class="outline-text-2"id="text-f73af557"><p>키의 값을 읽을 때는 배열 원소 참조하는 것과 비슷한 문법을 사용하지만 인덱스 대신 키를 사용한다는 점이 다르다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#c678dd">print</span>(d[<span style="color:#98be65">'key'</span>])
 value
-</pre></div><p>만약 없는 키를 읽으려고 하면 <code>KeyError</code> 예외가 발생한다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">print</span>(d[<span style="color:#98be65">'unknown'</span>])
+</pre></div><p>만약 없는 키를 읽으려고 하면 <code>KeyError</code> 예외가 발생한다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#c678dd">print</span>(d[<span style="color:#98be65">'unknown'</span>])
 Traceback (most recent call last):
   File <span style="color:#98be65">"&lt;stdin&gt;"</span>, line <span style="color:#da8548;font-weight:700">1</span>, <span style="color:#51afef">in</span> &lt;module&gt;
 <span style="color:#ecbe7b">KeyError</span>: <span style="color:#98be65">'unknown'</span>
-</pre></div><p>굳이 예외처리를 하고 싶지 않다면 키가 없을 때의 기본 값을 지정할 수 있는 <code>get()</code> 메서드를 활용해서 값을 읽는 것이 편하다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#51afef">print</span>(d.get(<span style="color:#98be65">'key'</span>))
+</pre></div><p>굳이 예외처리를 하고 싶지 않다면 키가 없을 때의 기본 값을 지정할 수 있는 <code>get()</code> 메서드를 활용해서 값을 읽는 것이 편하다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#c678dd">print</span>(d.get(<span style="color:#98be65">'key'</span>))
 value
-&gt;&gt;&gt; <span style="color:#51afef">print</span>(d.get(<span style="color:#98be65">'unknown'</span>, <span style="color:#98be65">'no key'</span>))
+&gt;&gt;&gt; <span style="color:#c678dd">print</span>(d.get(<span style="color:#98be65">'unknown'</span>, <span style="color:#98be65">'no key'</span>))
 no key
-&gt;&gt;&gt; <span style="color:#51afef">print</span>(d.get(<span style="color:#98be65">'another unknown'</span>))
+&gt;&gt;&gt; <span style="color:#c678dd">print</span>(d.get(<span style="color:#98be65">'another unknown'</span>))
 <span style="color:#a9a1e1">None</span>
 </pre></div><p><code>get()</code> 메서드의 두 번째 인자가 기본값이며 이 값이 지정되지 않은 경우는 <code>None</code> 이 기본값이 된다.</p><p>값을 쓰는 것은 제일 처음의 읽는 방법과 비슷하다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span>[<span style="color:#98be65">'a'</span>] = <span style="color:#98be65">'aaa'</span>
 &gt;&gt;&gt; d
@@ -49,7 +49,7 @@ no key
 {<span style="color:#98be65">'lee'</span>: <span style="color:#da8548;font-weight:700">98</span>, <span style="color:#98be65">'john'</span>: <span style="color:#da8548;font-weight:700">100</span>, <span style="color:#98be65">'james'</span>: <span style="color:#da8548;font-weight:700">50</span>, <span style="color:#98be65">'kim'</span>: <span style="color:#da8548;font-weight:700">99</span>}
 </pre></div><p>이건 사실 위의 합치기 두 번째 예제랑 다를 게 없다. 하지만 목적이 좀 다르게 느껴저서 별도의 항목으로 분리했다.</p></div></div><div id="outline-container-b83786de"class="outline-2"><h2 id="b83786de">순회하기</h2><div class="outline-text-2"id="text-b83786de"><p>보통은 아래처럼 모든 키의 리스트(혹은 리스트 제너레이터)를 돌려주는 <code>keys()</code> 메서드를 이용해 모든 키의 값을 읽을 수 있다.</p><div class="org-src-container"><pre class="src src-python">&gt;&gt;&gt; <span style="color:#dcaeea">d</span> = {<span style="color:#98be65">'key'</span>: <span style="color:#98be65">'value'</span>, <span style="color:#98be65">'other'</span>: <span style="color:#da8548;font-weight:700">123</span>}
 &gt;&gt;&gt; <span style="color:#51afef">for</span> k <span style="color:#51afef">in</span> d.keys():
-...     <span style="color:#51afef">print</span>(f<span style="color:#98be65">'{k} = {d.get(k)}'</span>)
+...     <span style="color:#c678dd">print</span>(f<span style="color:#98be65">'</span>{k}<span style="color:#98be65"> = </span>{d.get(k)}<span style="color:#98be65">'</span>)
 ...
 <span style="color:#dcaeea">key</span> = value
 <span style="color:#dcaeea">other</span> = <span style="color:#da8548;font-weight:700">123</span>
@@ -58,4 +58,4 @@ no key
 {<span style="color:#da8548;font-weight:700">1</span>: <span style="color:#da8548;font-weight:700">100</span>, <span style="color:#da8548;font-weight:700">2</span>: <span style="color:#da8548;font-weight:700">200</span>}
 &gt;&gt;&gt; a[<span style="color:#da8548;font-weight:700">1</span>]
 <span style="color:#da8548;font-weight:700">100</span>
-</pre></div><p>키를 정수로 지정하면 배열과 거의 같은 모습을 구경할 수 있기도 하다.</p><p>물론 문자열이 아무래도 활용성이 좋으니 문자열 외의 타입을 키로 사용하는 일은 흔하진 않을 것이다. 아마도&#x2026;</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/python.html">❏ Python</a></h2><span class="article-description">Python(파이썬)에 관한 간략한 설명 및 자료 정리</span><span class="article-link-date"> Updated on 2021년 9월 23일</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div></body></html>
+</pre></div><p>키를 정수로 지정하면 배열과 거의 같은 모습을 구경할 수 있기도 하다.</p><p>물론 문자열이 아무래도 활용성이 좋으니 문자열 외의 타입을 키로 사용하는 일은 흔하진 않을 것이다. 아마도&#x2026;</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h2>이 글을 링크하는 글들</h2><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/python.html">❏ Python</a></h2><span class="article-description">Python(파이썬)에 관한 간략한 설명 및 자료 정리</span><span class="article-link-date"> Updated on 2021년 9월 23일</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div></body></html>

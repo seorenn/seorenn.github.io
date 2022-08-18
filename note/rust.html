@@ -3,10 +3,10 @@
 </pre></div></div></div><div id="outline-container-ae954c39"class="outline-3"><h3 id="ae954c39">Floating Points</h3><div class="outline-text-3"id="text-ae954c39"><div class="org-src-container"><pre class="src src-rust"><span style="color:#ecbe7b">f32</span>, <span style="color:#ecbe7b">f64</span>
 </pre></div></div></div><div id="outline-container-3e82a5e5"class="outline-3"><h3 id="3e82a5e5">Booleans</h3><div class="outline-text-3"id="text-3e82a5e5"><div class="org-src-container"><pre class="src src-rust"><span style="color:#ecbe7b">bool</span>
 </pre></div></div></div><div id="outline-container-994d0662"class="outline-3"><h3 id="994d0662">Characters</h3><div class="outline-text-3"id="text-994d0662"><div class="org-src-container"><pre class="src src-rust"><span style="color:#ecbe7b">char</span>
-</pre></div><p><code>char</code> can be cast to ant integer type, but only <code>u8</code> can be cast to <code>char</code>.</p></div></div><div id="outline-container-27118326"class="outline-3"><h3 id="27118326">String</h3><div class="outline-text-3"id="text-27118326"><div class="org-src-container"><pre class="src src-rust"><span style="color:#ecbe7b">str</span>, &amp;<span style="color:#ecbe7b">str</span>
+</pre></div><p><code>char</code> can be cast to ant integer type, but only <code>u8</code> can be cast to <code>char</code>.</p></div></div><div id="outline-container-27118326"class="outline-3"><h3 id="27118326">String</h3><div class="outline-text-3"id="text-27118326"><div class="org-src-container"><pre class="src src-rust"><span style="color:#ecbe7b">str</span>, <span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#ecbe7b">str</span>
 </pre></div><p><code>&amp;str</code> is a pointer type, but actually means a string type.</p></div></div></div><div id="outline-container-a31ab112"class="outline-2"><h2 id="a31ab112">Variables and Constants</h2><div class="outline-text-2"id="text-a31ab112"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">decimal</span>: <span style="color:#ecbe7b">i32</span> = <span style="color:#da8548;font-weight:700">123</span>;
 <span style="color:#51afef">let</span> <span style="color:#dcaeea">immutable_variable</span> = <span style="color:#da8548;font-weight:700">10</span>;       <span style="color:#5b6268">// </span><span style="color:#5b6268">type inferences(i32)</span>
-<span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">mutable_variable</span> = 20i64;  <span style="color:#5b6268">// </span><span style="color:#5b6268">type inferences(i64), mutable</span>
+<span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">mutable_variable</span> = 20<span style="color:#ecbe7b">i64</span>;  <span style="color:#5b6268">// </span><span style="color:#5b6268">type inferences(i64), mutable</span>
 mutable_variable = <span style="color:#da8548;font-weight:700">30</span>;
 
 <span style="color:#5b6268">// </span><span style="color:#5b6268">Constants</span>
@@ -16,201 +16,201 @@ mutable_variable = <span style="color:#da8548;font-weight:700">30</span>;
 <span style="color:#51afef">let</span> <span style="color:#dcaeea">immutable_variable</span> = immutable_variable * <span style="color:#da8548;font-weight:700">2</span>;
 
 <span style="color:#5b6268">// </span><span style="color:#5b6268">Complex Initialization</span>
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">x</span> = {
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">x</span> = <span style="color:#51afef">{</span>
     <span style="color:#51afef">let</span> <span style="color:#dcaeea">y</span> = <span style="color:#da8548;font-weight:700">10</span>;
     y * <span style="color:#da8548;font-weight:700">2</span>   <span style="color:#5b6268">// </span><span style="color:#5b6268">expression (without return)</span>
-};
-</pre></div></div></div><div id="outline-container-93b4433d"class="outline-2"><h2 id="93b4433d">Option(Nullable, Optional)</h2><div class="outline-text-2"id="text-93b4433d"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">some_value</span> = <span style="color:#ecbe7b">Some</span>(<span style="color:#da8548;font-weight:700">5</span>);
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">another_some_value</span>: <span style="color:#ecbe7b">Option</span>&lt;<span style="color:#ecbe7b">i32</span>&gt; = <span style="color:#ecbe7b">None</span>;
+<span style="color:#51afef">}</span>;
+</pre></div></div></div><div id="outline-container-93b4433d"class="outline-2"><h2 id="93b4433d">Option(Nullable, Optional)</h2><div class="outline-text-2"id="text-93b4433d"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">some_value</span> = <span style="color:#ecbe7b">Some</span><span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">5</span><span style="color:#51afef">)</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">another_some_value</span>: <span style="color:#ecbe7b">Option</span><span style="color:#51afef">&lt;</span><span style="color:#ecbe7b">i32</span><span style="color:#51afef">&gt;</span> = <span style="color:#ecbe7b">None</span>;
 
-<span style="color:#51afef">if</span> some_value.is_some() { ... }
-<span style="color:#51afef">if</span> some_value.contains(&amp;<span style="color:#da8548;font-weight:700">5</span>) { ... }
-<span style="color:#51afef">if</span> another_some_value.is_none() { ... }
+<span style="color:#51afef">if</span> some_value.is_some<span style="color:#51afef">()</span> <span style="color:#51afef">{</span> ... <span style="color:#51afef">}</span>
+<span style="color:#51afef">if</span> some_value.contains<span style="color:#51afef">(</span><span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#da8548;font-weight:700">5</span><span style="color:#51afef">)</span> <span style="color:#51afef">{</span> ... <span style="color:#51afef">}</span>
+<span style="color:#51afef">if</span> another_some_value.is_none<span style="color:#51afef">()</span> <span style="color:#51afef">{</span> ... <span style="color:#51afef">}</span>
 
-<span style="color:#c678dd">println!</span>(<span style="color:#98be65">"some_value = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, some_value.unwrap());
+<span style="color:#c678dd">println!</span><span style="color:#51afef">(</span><span style="color:#98be65">"some_value = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, some_value.unwrap<span style="color:#c678dd">()</span><span style="color:#51afef">)</span>;
 
-<span style="color:#51afef">match</span> another_some_value {
-    <span style="color:#ecbe7b">None</span> =&gt; <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"another_some_value has no value!"</span>);
-    <span style="color:#ecbe7b">Some</span>(value) =&gt; {
-        <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"another_some_value * 2 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, value * <span style="color:#da8548;font-weight:700">2</span>);
-    }
-}
+<span style="color:#51afef">match</span> another_some_value <span style="color:#51afef">{</span>
+    <span style="color:#ecbe7b">None</span> =&gt; <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"another_some_value has no value!"</span><span style="color:#c678dd">)</span>;
+    <span style="color:#ecbe7b">Some</span><span style="color:#c678dd">(</span>value<span style="color:#c678dd">)</span> =&gt; <span style="color:#c678dd">{</span>
+        <span style="color:#c678dd">println!</span><span style="color:#98be65">(</span><span style="color:#98be65">"another_some_value * 2 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, value * <span style="color:#da8548;font-weight:700">2</span><span style="color:#98be65">)</span>;
+    <span style="color:#c678dd">}</span>
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">if</span> <span style="color:#51afef">let</span> <span style="color:#ecbe7b">Some</span>(v) = some_value {
-    <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"v = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, v);
-}
+<span style="color:#51afef">if</span> <span style="color:#51afef">let</span> <span style="color:#ecbe7b">Some</span><span style="color:#51afef">(</span>v<span style="color:#51afef">)</span> = some_value <span style="color:#51afef">{</span>
+    <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"v = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, v<span style="color:#c678dd">)</span>;
+<span style="color:#51afef">}</span>
 
 <span style="color:#5b6268">// </span><span style="color:#5b6268">function returns</span>
-<span style="color:#51afef">fn</span> <span style="color:#c678dd">get_position</span>() -&gt; <span style="color:#ecbe7b">Option</span>&lt;<span style="color:#ecbe7b">i32</span>&gt; {
-    <span style="color:#51afef">if</span> condition {
-        <span style="color:#ecbe7b">Some</span>(<span style="color:#da8548;font-weight:700">2</span>)
-    } <span style="color:#51afef">else</span> {
+<span style="color:#51afef">fn</span> <span style="color:#c678dd">get_position</span><span style="color:#51afef">()</span> -&gt; <span style="color:#ecbe7b">Option</span><span style="color:#51afef">&lt;</span><span style="color:#ecbe7b">i32</span><span style="color:#51afef">&gt;</span> <span style="color:#51afef">{</span>
+    <span style="color:#51afef">if</span> condition <span style="color:#c678dd">{</span>
+        <span style="color:#ecbe7b">Some</span><span style="color:#98be65">(</span><span style="color:#da8548;font-weight:700">2</span><span style="color:#98be65">)</span>
+    <span style="color:#c678dd">}</span> <span style="color:#51afef">else</span> <span style="color:#c678dd">{</span>
         <span style="color:#ecbe7b">None</span>
-    }
-}
-</pre></div></div></div><div id="outline-container-e93acb14"class="outline-2"><h2 id="e93acb14">Functions</h2><div class="outline-text-2"id="text-e93acb14"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">fn</span> <span style="color:#c678dd">function_name</span>(<span style="color:#dcaeea">x</span>: <span style="color:#ecbe7b">i32</span>, <span style="color:#dcaeea">y</span>: <span style="color:#ecbe7b">i64</span>) -&gt; <span style="color:#ecbe7b">u32</span> {
+    <span style="color:#c678dd">}</span>
+<span style="color:#51afef">}</span>
+</pre></div></div></div><div id="outline-container-e93acb14"class="outline-2"><h2 id="e93acb14">Functions</h2><div class="outline-text-2"id="text-e93acb14"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">fn</span> <span style="color:#c678dd">function_name</span><span style="color:#51afef">(</span><span style="color:#dcaeea">x</span>: <span style="color:#ecbe7b">i32</span>, <span style="color:#dcaeea">y</span>: <span style="color:#ecbe7b">i64</span><span style="color:#51afef">)</span> -&gt; <span style="color:#ecbe7b">u32</span> <span style="color:#51afef">{</span>
     ...
-    <span style="color:#51afef">loop</span> {
+    <span style="color:#51afef">loop</span> <span style="color:#c678dd">{</span>
         ...
         <span style="color:#51afef">return</span> <span style="color:#da8548;font-weight:700">10</span>;
-    }
+    <span style="color:#c678dd">}</span>
     <span style="color:#da8548;font-weight:700">20</span>  <span style="color:#5b6268">// </span><span style="color:#5b6268">expression (same with return 20)</span>
-}
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">r</span> = function_name(<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>);
-</pre></div></div></div><div id="outline-container-6a5ef0f4"class="outline-2"><h2 id="6a5ef0f4">Control Flow</h2><div class="outline-text-2"id="text-6a5ef0f4"></div><div id="outline-container-1a37fa72"class="outline-3"><h3 id="1a37fa72">if-else</h3><div class="outline-text-3"id="text-1a37fa72"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">if</span> n == <span style="color:#da8548;font-weight:700">100</span> {
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">r</span> = function_name<span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span><span style="color:#51afef">)</span>;
+</pre></div></div></div><div id="outline-container-6a5ef0f4"class="outline-2"><h2 id="6a5ef0f4">Control Flow</h2><div class="outline-text-2"id="text-6a5ef0f4"></div><div id="outline-container-1a37fa72"class="outline-3"><h3 id="1a37fa72">if-else</h3><div class="outline-text-3"id="text-1a37fa72"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">if</span> n == <span style="color:#da8548;font-weight:700">100</span> <span style="color:#51afef">{</span>
     ...
-} <span style="color:#51afef">else</span> <span style="color:#51afef">if</span> n &gt; <span style="color:#da8548;font-weight:700">100</span> {
+<span style="color:#51afef">}</span> <span style="color:#51afef">else</span> <span style="color:#51afef">if</span> n &gt; <span style="color:#da8548;font-weight:700">100</span> <span style="color:#51afef">{</span>
     ...
-} <span style="color:#51afef">else</span> <span style="color:#51afef">if</span> n &lt; <span style="color:#da8548;font-weight:700">100</span> &amp;&amp; n != <span style="color:#da8548;font-weight:700">0</span> {
+<span style="color:#51afef">}</span> <span style="color:#51afef">else</span> <span style="color:#51afef">if</span> n &lt; <span style="color:#da8548;font-weight:700">100</span> &amp;&amp; n != <span style="color:#da8548;font-weight:700">0</span> <span style="color:#51afef">{</span>
     ...
-} <span style="color:#51afef">else</span> {
+<span style="color:#51afef">}</span> <span style="color:#51afef">else</span> <span style="color:#51afef">{</span>
     ...
-}
+<span style="color:#51afef">}</span>
 
 <span style="color:#51afef">let</span> <span style="color:#dcaeea">number</span> = <span style="color:#da8548;font-weight:700">10</span>
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">even</span> = <span style="color:#51afef">if</span> number % <span style="color:#da8548;font-weight:700">2</span> == <span style="color:#da8548;font-weight:700">0</span> {
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">even</span> = <span style="color:#51afef">if</span> number % <span style="color:#da8548;font-weight:700">2</span> == <span style="color:#da8548;font-weight:700">0</span> <span style="color:#51afef">{</span>
     <span style="color:#51afef">true</span>
-} <span style="color:#51afef">else</span> {
+<span style="color:#51afef">}</span> <span style="color:#51afef">else</span> <span style="color:#51afef">{</span>
     <span style="color:#51afef">false</span>
-}
-</pre></div></div></div><div id="outline-container-e3cc92c1"class="outline-3"><h3 id="e3cc92c1">match</h3><div class="outline-text-3"id="text-e3cc92c1"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">r</span> = <span style="color:#51afef">match</span> v {
+<span style="color:#51afef">}</span>
+</pre></div></div></div><div id="outline-container-e3cc92c1"class="outline-3"><h3 id="e3cc92c1">match</h3><div class="outline-text-3"id="text-e3cc92c1"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">r</span> = <span style="color:#51afef">match</span> v <span style="color:#51afef">{</span>
     <span style="color:#da8548;font-weight:700">0</span> | <span style="color:#da8548;font-weight:700">1</span> =&gt; <span style="color:#98be65">"binary"</span>,
     <span style="color:#da8548;font-weight:700">2</span>..=9 =&gt; <span style="color:#98be65">"single integer"</span>,
     <span style="color:#da8548;font-weight:700">10</span> =&gt; <span style="color:#98be65">"ten"</span>,
     _ =&gt; <span style="color:#98be65">"unknown"</span>
-};
-</pre></div></div></div></div><div id="outline-container-4b2257cb"class="outline-2"><h2 id="4b2257cb">Loops</h2><div class="outline-text-2"id="text-4b2257cb"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">loop</span> {
+<span style="color:#51afef">}</span>;
+</pre></div></div></div></div><div id="outline-container-4b2257cb"class="outline-2"><h2 id="4b2257cb">Loops</h2><div class="outline-text-2"id="text-4b2257cb"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">loop</span> <span style="color:#51afef">{</span>
     <span style="color:#5b6268">// </span><span style="color:#5b6268">...</span>
-    <span style="color:#51afef">if</span> condition {
+    <span style="color:#51afef">if</span> condition <span style="color:#c678dd">{</span>
         <span style="color:#51afef">break</span>;
-    }
-}
+    <span style="color:#c678dd">}</span>
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">while</span> condition {
+<span style="color:#51afef">while</span> condition <span style="color:#51afef">{</span>
     <span style="color:#5b6268">// </span><span style="color:#5b6268">...</span>
-}
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">values</span> = [<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span>];
-<span style="color:#51afef">for</span> value <span style="color:#51afef">in</span> values.iter() {
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">values</span> = <span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span><span style="color:#51afef">]</span>;
+<span style="color:#51afef">for</span> <span style="color:#dcaeea">value</span> <span style="color:#51afef">in</span> values.iter<span style="color:#51afef">()</span> <span style="color:#51afef">{</span>
     ...
-}
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">for</span> i <span style="color:#51afef">in</span> <span style="color:#da8548;font-weight:700">0</span>..<span style="color:#da8548;font-weight:700">10</span> {
+<span style="color:#51afef">for</span> <span style="color:#dcaeea">i</span> <span style="color:#51afef">in</span> <span style="color:#da8548;font-weight:700">0</span>..<span style="color:#da8548;font-weight:700">10</span> <span style="color:#51afef">{</span>
     <span style="color:#5b6268">// </span><span style="color:#5b6268">i = 0 ~ 9</span>
-}
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">for</span> i <span style="color:#51afef">in</span> (<span style="color:#da8548;font-weight:700">0</span>..<span style="color:#da8548;font-weight:700">4</span>).rev() {
+<span style="color:#51afef">for</span> <span style="color:#dcaeea">i</span> <span style="color:#51afef">in</span> <span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">0</span>..<span style="color:#da8548;font-weight:700">4</span><span style="color:#51afef">)</span>.rev<span style="color:#51afef">()</span> <span style="color:#51afef">{</span>
     <span style="color:#5b6268">// </span><span style="color:#5b6268">i&#51032; &#44050;&#51008; 3, 2, 1, 0 &#49692;&#49436;</span>
-}
-</pre></div></div></div><div id="outline-container-0de4afda"class="outline-2"><h2 id="0de4afda">Ownership</h2><div class="outline-text-2"id="text-0de4afda"><p>다른 언어들과 비슷하게 포인터나 레퍼런스 개념이 사용되면 메모리 관리에 여러 문제가 생길 수 있는데 Rust는 소유권(ownership)이라는 좀 특이한 방식으로 메모리를 관리한다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s1</span> = <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"foo bar"</span>);
+<span style="color:#51afef">}</span>
+</pre></div></div></div><div id="outline-container-0de4afda"class="outline-2"><h2 id="0de4afda">Ownership</h2><div class="outline-text-2"id="text-0de4afda"><p>다른 언어들과 비슷하게 포인터나 레퍼런스 개념이 사용되면 메모리 관리에 여러 문제가 생길 수 있는데 Rust는 소유권(ownership)이라는 좀 특이한 방식으로 메모리를 관리한다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s1</span> = <span style="color:#ecbe7b">String</span>::from<span style="color:#51afef">(</span><span style="color:#98be65">"foo bar"</span><span style="color:#51afef">)</span>;
 <span style="color:#51afef">let</span> <span style="color:#dcaeea">s2</span> = s1;    <span style="color:#5b6268">// </span><span style="color:#5b6268">s2 owns s1</span>
-<span style="color:#51afef;font-weight:700">println!</span>(s1);   <span style="color:#5b6268">// </span><span style="color:#5b6268">Error!</span>
-</pre></div><p>위 코드 두 번째 라인은 s1 이 s2 로 이동(move)했다고 표현한다. 따라서 이 코드 이후 s1 을 액세스 하는 행위는 컴파일 에러로 막힌다.</p><p>소유권의 이전은 함수 호출의 매개변수로 넘어갈 경우도 동일하다.</p><div class="org-src-container"><pre class="src src-rust">some_function(s1);
-</pre></div><p>위 코드는 <code>some_function</code> 함수가 s1 을 소유하게 된다. 그리고 이 함수가 종료될 때 s1 도 같이 사라지게 된다.</p><p>대신 반환(return)은 소유권도 반환한다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s1</span> = another_function(s1);
-</pre></div><p>위 코드에서 s1 은 <code>another_function</code> 함수로 소유권이 넘어갔다가 반환되면서 다시 현재 스코프로 소유권이 반환된다. 물론 이 함수 내부에서 입력 받은 매개변수를 그대로 반환했을 경우이긴 하지만 말이다.</p><p>복제를 하지 않고 소유권을 빌려줄 수 있는 방법이 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s3</span> = &amp;s1;
-</pre></div><p>함수 매개변수로도 가능하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">fn</span> <span style="color:#c678dd">foo</span>(<span style="color:#dcaeea">s</span>: &amp;<span style="color:#ecbe7b">String</span>) {
+<span style="color:#c678dd">println!</span><span style="color:#51afef">(</span>s1<span style="color:#51afef">)</span>;   <span style="color:#5b6268">// </span><span style="color:#5b6268">Error!</span>
+</pre></div><p>위 코드 두 번째 라인은 s1 이 s2 로 이동(move)했다고 표현한다. 따라서 이 코드 이후 s1 을 액세스 하는 행위는 컴파일 에러로 막힌다.</p><p>소유권의 이전은 함수 호출의 매개변수로 넘어갈 경우도 동일하다.</p><div class="org-src-container"><pre class="src src-rust">some_function<span style="color:#51afef">(</span>s1<span style="color:#51afef">)</span>;
+</pre></div><p>위 코드는 <code>some_function</code> 함수가 s1 을 소유하게 된다. 그리고 이 함수가 종료될 때 s1 도 같이 사라지게 된다.</p><p>대신 반환(return)은 소유권도 반환한다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s1</span> = another_function<span style="color:#51afef">(</span>s1<span style="color:#51afef">)</span>;
+</pre></div><p>위 코드에서 s1 은 <code>another_function</code> 함수로 소유권이 넘어갔다가 반환되면서 다시 현재 스코프로 소유권이 반환된다. 물론 이 함수 내부에서 입력 받은 매개변수를 그대로 반환했을 경우이긴 하지만 말이다.</p><p>복제를 하지 않고 소유권을 빌려줄 수 있는 방법이 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s3</span> = <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>s1;
+</pre></div><p>함수 매개변수로도 가능하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">fn</span> <span style="color:#c678dd">foo</span><span style="color:#51afef">(</span><span style="color:#dcaeea">s</span>: <span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#ecbe7b">String</span><span style="color:#51afef">)</span> <span style="color:#51afef">{</span>
     ...
-}
-</pre></div><p>다만 빌려주기만 할 뿐 불변(immutable)이기 때문에 읽기 참조만 가능하다.</p><p>참조에서 쓰기까지 가능하게 하려면 이렇게 할 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s3</span> = &amp;<span style="color:#51afef">mut</span> s1;
-</pre></div><p>가변 참조는 한 변수 당 하나 씩만 쓸 수 있다. 즉 하나의 포인터를 여러 곳에서 쓸(write) 수 없도록 제한하고 있다. 친절하다.</p></div></div><div id="outline-container-dc4c7156"class="outline-2"><h2 id="dc4c7156">Structure</h2><div class="outline-text-2"id="text-dc4c7156"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">struct</span> <span style="color:#ecbe7b">Human</span> {
+<span style="color:#51afef">}</span>
+</pre></div><p>다만 빌려주기만 할 뿐 불변(immutable)이기 때문에 읽기 참조만 가능하다.</p><p>참조에서 쓰기까지 가능하게 하려면 이렇게 할 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s3</span> = <span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#51afef">mut</span> s1;
+</pre></div><p>가변 참조는 한 변수 당 하나 씩만 쓸 수 있다. 즉 하나의 포인터를 여러 곳에서 쓸(write) 수 없도록 제한하고 있다. 친절하다.</p></div></div><div id="outline-container-dc4c7156"class="outline-2"><h2 id="dc4c7156">Structure</h2><div class="outline-text-2"id="text-dc4c7156"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">struct</span> <span style="color:#ecbe7b">Human</span> <span style="color:#51afef">{</span>
     <span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>,
     <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span>,
     <span style="color:#dcaeea">age</span>: <span style="color:#ecbe7b">u16</span>
-}
-</pre></div><p>인스턴스 생성 시 초기화 하는 방법도 조금 생소하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">h</span> = <span style="color:#ecbe7b">Human</span> {
-    <span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"Conrad"</span>),
-    <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"Renn"</span>),
+<span style="color:#51afef">}</span>
+</pre></div><p>인스턴스 생성 시 초기화 하는 방법도 조금 생소하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">h</span> = <span style="color:#ecbe7b">Human</span> <span style="color:#51afef">{</span>
+    <span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"Conrad"</span><span style="color:#c678dd">)</span>,
+    <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"Renn"</span><span style="color:#c678dd">)</span>,
     <span style="color:#dcaeea">age</span>: <span style="color:#da8548;font-weight:700">20</span>
-};
-</pre></div><p>생성 시 필드와 변수 이름이 동일한 경우에 한해서 아래와 같이 필드 이름을 생략하는 트릭이 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">fn</span> <span style="color:#c678dd">create_human</span>(<span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">age</span>: <span style="color:#ecbe7b">u16</span>) -&gt; <span style="color:#ecbe7b">Human</span> {
-    <span style="color:#ecbe7b">Human</span> {
+<span style="color:#51afef">}</span>;
+</pre></div><p>생성 시 필드와 변수 이름이 동일한 경우에 한해서 아래와 같이 필드 이름을 생략하는 트릭이 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">fn</span> <span style="color:#c678dd">create_human</span><span style="color:#51afef">(</span><span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">age</span>: <span style="color:#ecbe7b">u16</span><span style="color:#51afef">)</span> -&gt; <span style="color:#ecbe7b">Human</span> <span style="color:#51afef">{</span>
+    <span style="color:#ecbe7b">Human</span> <span style="color:#c678dd">{</span>
         name,
         family_name,
         age
-    }
-}
-</pre></div><p>이 외에도 초기화 방법으로 동일하게 미리 할당된 변수의 값을 그대로 가져오는 방법이 제공된다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">h2</span> = <span style="color:#ecbe7b">Human</span> {
-    <span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"James"</span>),
+    <span style="color:#c678dd">}</span>
+<span style="color:#51afef">}</span>
+</pre></div><p>이 외에도 초기화 방법으로 동일하게 미리 할당된 변수의 값을 그대로 가져오는 방법이 제공된다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">h2</span> = <span style="color:#ecbe7b">Human</span> <span style="color:#51afef">{</span>
+    <span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"James"</span><span style="color:#c678dd">)</span>,
     ..h
-};
-</pre></div><p>이렇게 하면 <code>name</code> 을 제외한 나머지 데이터는 <code>h</code> 의 것을 이용해서 생성된다.</p><p>러스트의 구조체는 메서드 개념이 제공된다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">impl</span> <span style="color:#ecbe7b">Human</span> {
-    <span style="color:#51afef">fn</span> <span style="color:#c678dd">birthday</span>(&amp;<span style="color:#51afef">mut</span> <span style="color:#51afef">self</span>) {
+<span style="color:#51afef">}</span>;
+</pre></div><p>이렇게 하면 <code>name</code> 을 제외한 나머지 데이터는 <code>h</code> 의 것을 이용해서 생성된다.</p><p>러스트의 구조체는 메서드 개념이 제공된다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">impl</span> <span style="color:#ecbe7b">Human</span> <span style="color:#51afef">{</span>
+    <span style="color:#51afef">fn</span> <span style="color:#c678dd">birthday</span><span style="color:#c678dd">(</span><span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#51afef">mut</span> <span style="color:#51afef">self</span><span style="color:#c678dd">)</span> <span style="color:#c678dd">{</span>
         <span style="color:#51afef">self</span>.age += <span style="color:#da8548;font-weight:700">1</span>;
-    }
+    <span style="color:#c678dd">}</span>
 
     <span style="color:#5b6268">// </span><span style="color:#5b6268">like as static method</span>
-    <span style="color:#51afef">fn</span> <span style="color:#c678dd">birth</span>(<span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span>) -&gt; <span style="color:#ecbe7b">Human</span> {
-        <span style="color:#ecbe7b">Human</span> {
+    <span style="color:#51afef">fn</span> <span style="color:#c678dd">birth</span><span style="color:#c678dd">(</span><span style="color:#dcaeea">name</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">family_name</span>: <span style="color:#ecbe7b">String</span><span style="color:#c678dd">)</span> -&gt; <span style="color:#ecbe7b">Human</span> <span style="color:#c678dd">{</span>
+        <span style="color:#ecbe7b">Human</span> <span style="color:#98be65">{</span>
             name,
             family_name,
             <span style="color:#dcaeea">age</span>: <span style="color:#da8548;font-weight:700">0</span>
-        }
-    }
-}
-</pre></div></div></div><div id="outline-container-1b22e7dc"class="outline-2"><h2 id="1b22e7dc">Enums</h2><div class="outline-text-2"id="text-1b22e7dc"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">enum</span> <span style="color:#ecbe7b">Gender</span> {
+        <span style="color:#98be65">}</span>
+    <span style="color:#c678dd">}</span>
+<span style="color:#51afef">}</span>
+</pre></div></div></div><div id="outline-container-1b22e7dc"class="outline-2"><h2 id="1b22e7dc">Enums</h2><div class="outline-text-2"id="text-1b22e7dc"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">enum</span> <span style="color:#ecbe7b">Gender</span> <span style="color:#51afef">{</span>
     <span style="color:#ecbe7b">Male</span>,
     <span style="color:#ecbe7b">Female</span>,
-    <span style="color:#ecbe7b">Other</span>(<span style="color:#ecbe7b">String</span>),
-    <span style="color:#ecbe7b">Intersex</span>(<span style="color:#ecbe7b">String</span>, <span style="color:#ecbe7b">i32</span>),
-    <span style="color:#ecbe7b">Special</span> { <span style="color:#51afef">type</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">desc</span>: <span style="color:#ecbe7b">String</span> }
+    <span style="color:#ecbe7b">Other</span><span style="color:#c678dd">(</span><span style="color:#ecbe7b">String</span><span style="color:#c678dd">)</span>,
+    <span style="color:#ecbe7b">Intersex</span><span style="color:#c678dd">(</span><span style="color:#ecbe7b">String</span>, <span style="color:#ecbe7b">i32</span><span style="color:#c678dd">)</span>,
+    <span style="color:#ecbe7b">Special</span> <span style="color:#c678dd">{</span> <span style="color:#51afef">type</span>: <span style="color:#ecbe7b">String</span>, <span style="color:#dcaeea">desc</span>: <span style="color:#ecbe7b">String</span> <span style="color:#c678dd">}</span>
     <span style="color:#ecbe7b">Secret</span>
-}
+<span style="color:#51afef">}</span>
 </pre></div><p>사용할 때는 이런 식이다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">gender</span> = <span style="color:#ecbe7b">Gender</span>::<span style="color:#ecbe7b">Female</span>;
-</pre></div><p><code>match</code> 로 값에 해당하는 분기를 쉽게 만들 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">match</span> gender {
-    <span style="color:#ecbe7b">Male</span> =&gt; <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"He is male"</span>);
-    <span style="color:#ecbe7b">Female</span> =&gt; <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"She is female"</span>);
-    <span style="color:#ecbe7b">Other</span>(name) =&gt; <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"This is </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, name);
-    <span style="color:#ecbe7b">Intersex</span>(name, identifier) =&gt; <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"</span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65"> type identifier </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, name, identifier);
-    _ =&gt; <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"It is so difficult!"</span>);
-}
-</pre></div><p>만약 하나 정도의 케이스만 일치시킨다면 이것 보다는 <code>if let</code> 을 쓰는 편이 편할 것 같다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">if</span> <span style="color:#51afef">let</span> <span style="color:#ecbe7b">Other</span>(name) = gender { ... }
-</pre></div><p>개인적으로 익숙한 <a href="swift.html">Swift</a>랑 용도가 달라서 왠지 오해할 수도 있을 것 같다.</p></div></div><div id="outline-container-fd69c5cf"class="outline-2"><h2 id="fd69c5cf">Results</h2><div class="outline-text-2"id="text-fd69c5cf"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">enum</span> <span style="color:#ecbe7b">Result</span>&lt;<span style="color:#ecbe7b">T</span>, <span style="color:#ecbe7b">E</span>&gt; {
-    <span style="color:#ecbe7b">Ok</span>(<span style="color:#ecbe7b">T</span>),
-    <span style="color:#ecbe7b">Err</span>(<span style="color:#ecbe7b">E</span>)
-}
-</pre></div><p>아는 사람은 알겠지만, <a href="swift.html">Swift</a>의 Result 타입과 거의 동일하다.</p></div></div><div id="outline-container-b9e157d8"class="outline-2"><h2 id="b9e157d8">Complex and Collections</h2><div class="outline-text-2"id="text-b9e157d8"></div><div id="outline-container-afcbeb58"class="outline-3"><h3 id="afcbeb58">Tuple</h3><div class="outline-text-3"id="text-afcbeb58"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">tup</span>: (<span style="color:#ecbe7b">i32</span>, <span style="color:#ecbe7b">i64</span>, <span style="color:#ecbe7b">u8</span>) = (<span style="color:#da8548;font-weight:700">500</span>, <span style="color:#da8548;font-weight:700">6.4</span>, <span style="color:#da8548;font-weight:700">1</span>);
-<span style="color:#51afef">let</span> (x, y, z) = tup;
+</pre></div><p><code>match</code> 로 값에 해당하는 분기를 쉽게 만들 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">match</span> gender <span style="color:#51afef">{</span>
+    <span style="color:#ecbe7b">Male</span> =&gt; <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"He is male"</span><span style="color:#c678dd">)</span>;
+    <span style="color:#ecbe7b">Female</span> =&gt; <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"She is female"</span><span style="color:#c678dd">)</span>;
+    <span style="color:#ecbe7b">Other</span><span style="color:#c678dd">(</span>name<span style="color:#c678dd">)</span> =&gt; <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"This is </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, name<span style="color:#c678dd">)</span>;
+    <span style="color:#ecbe7b">Intersex</span><span style="color:#c678dd">(</span>name, identifier<span style="color:#c678dd">)</span> =&gt; <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"</span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65"> type identifier </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, name, identifier<span style="color:#c678dd">)</span>;
+    _ =&gt; <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"It is so difficult!"</span><span style="color:#c678dd">)</span>;
+<span style="color:#51afef">}</span>
+</pre></div><p>만약 하나 정도의 케이스만 일치시킨다면 이것 보다는 <code>if let</code> 을 쓰는 편이 편할 것 같다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">if</span> <span style="color:#51afef">let</span> <span style="color:#ecbe7b">Other</span><span style="color:#51afef">(</span>name<span style="color:#51afef">)</span> = gender <span style="color:#51afef">{</span> ... <span style="color:#51afef">}</span>
+</pre></div><p>개인적으로 익숙한 <a href="swift.html">Swift</a>랑 용도가 달라서 왠지 오해할 수도 있을 것 같다.</p></div></div><div id="outline-container-fd69c5cf"class="outline-2"><h2 id="fd69c5cf">Results</h2><div class="outline-text-2"id="text-fd69c5cf"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">enum</span> <span style="color:#ecbe7b">Result</span><span style="color:#51afef">&lt;</span><span style="color:#ecbe7b">T</span>, <span style="color:#ecbe7b">E</span><span style="color:#51afef">&gt;</span> <span style="color:#51afef">{</span>
+    <span style="color:#ecbe7b">Ok</span><span style="color:#c678dd">(</span><span style="color:#ecbe7b">T</span><span style="color:#c678dd">)</span>,
+    <span style="color:#ecbe7b">Err</span><span style="color:#c678dd">(</span><span style="color:#ecbe7b">E</span><span style="color:#c678dd">)</span>
+<span style="color:#51afef">}</span>
+</pre></div><p>아는 사람은 알겠지만, <a href="swift.html">Swift</a>의 Result 타입과 거의 동일하다.</p></div></div><div id="outline-container-b9e157d8"class="outline-2"><h2 id="b9e157d8">Complex and Collections</h2><div class="outline-text-2"id="text-b9e157d8"></div><div id="outline-container-afcbeb58"class="outline-3"><h3 id="afcbeb58">Tuple</h3><div class="outline-text-3"id="text-afcbeb58"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">tup</span>: <span style="color:#51afef">(</span><span style="color:#ecbe7b">i32</span>, <span style="color:#ecbe7b">i64</span>, <span style="color:#ecbe7b">u8</span><span style="color:#51afef">)</span> = <span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">500</span>, <span style="color:#da8548;font-weight:700">6.4</span>, <span style="color:#da8548;font-weight:700">1</span><span style="color:#51afef">)</span>;
+<span style="color:#51afef">let</span> <span style="color:#51afef">(</span>x, y, z<span style="color:#51afef">)</span> = tup;
 <span style="color:#51afef">let</span> <span style="color:#dcaeea">first</span> = tup.<span style="color:#da8548;font-weight:700">0</span>;
-</pre></div><p><a href="python.html">Python</a>에서 가능한 튜플을 이용한 임시 변수 없는 교환(swap)이 가능할까 시험해 봤는데 문법 오류가 발생한다. 안타깝다.</p></div></div><div id="outline-container-4410ec34"class="outline-3"><h3 id="4410ec34">Array</h3><div class="outline-text-3"id="text-4410ec34"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">list</span> = [<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span>];
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">second</span> = list[<span style="color:#da8548;font-weight:700">1</span>];
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">zeros</span> = [<span style="color:#da8548;font-weight:700">0</span>; <span style="color:#da8548;font-weight:700">100</span>];  <span style="color:#5b6268">// </span><span style="color:#5b6268">0 x 100 elements</span>
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">len_zeros</span> = zeros.len();
-</pre></div></div></div><div id="outline-container-57dea6f5"class="outline-3"><h3 id="57dea6f5">Vector</h3><div class="outline-text-3"id="text-57dea6f5"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">v1</span> = <span style="color:#51afef;font-weight:700">vec!</span>[<span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>];
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">v1second</span>: &amp;<span style="color:#ecbe7b">i32</span> = &amp;v1[<span style="color:#da8548;font-weight:700">1</span>];
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">v1third</span>: <span style="color:#ecbe7b">Option</span>&lt;<span style="color:#ecbe7b">i32</span>&gt; = v.get(<span style="color:#da8548;font-weight:700">2</span>);
-</pre></div><p>가변 벡터는 물론 추가로 다양한 가변 명령을 사용할 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">v2</span> = <span style="color:#ecbe7b">Vec</span>::new();
-v2.push(<span style="color:#da8548;font-weight:700">1</span>);
-v2.push(<span style="color:#da8548;font-weight:700">2</span>);
-v2.push(<span style="color:#da8548;font-weight:700">3</span>);
-</pre></div><p>반복문에서 참조 및 변경이 가능하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">for</span> i <span style="color:#51afef">in</span> &amp;v1 {
+</pre></div><p><a href="python.html">Python</a>에서 가능한 튜플을 이용한 임시 변수 없는 교환(swap)이 가능할까 시험해 봤는데 문법 오류가 발생한다. 안타깝다.</p></div></div><div id="outline-container-4410ec34"class="outline-3"><h3 id="4410ec34">Array</h3><div class="outline-text-3"id="text-4410ec34"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">list</span> = <span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span>, <span style="color:#da8548;font-weight:700">4</span>, <span style="color:#da8548;font-weight:700">5</span><span style="color:#51afef">]</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">second</span> = list<span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">1</span><span style="color:#51afef">]</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">zeros</span> = <span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">0</span>; <span style="color:#da8548;font-weight:700">100</span><span style="color:#51afef">]</span>;  <span style="color:#5b6268">// </span><span style="color:#5b6268">0 x 100 elements</span>
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">len_zeros</span> = zeros.len<span style="color:#51afef">()</span>;
+</pre></div></div></div><div id="outline-container-57dea6f5"class="outline-3"><h3 id="57dea6f5">Vector</h3><div class="outline-text-3"id="text-57dea6f5"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">v1</span> = <span style="color:#51afef;font-weight:700">vec!</span><span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">1</span>, <span style="color:#da8548;font-weight:700">2</span>, <span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">]</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">v1second</span>: <span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#ecbe7b">i32</span> = <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>v1<span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">1</span><span style="color:#51afef">]</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">v1third</span>: <span style="color:#ecbe7b">Option</span><span style="color:#51afef">&lt;</span><span style="color:#ecbe7b">i32</span><span style="color:#51afef">&gt;</span> = v.get<span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">2</span><span style="color:#51afef">)</span>;
+</pre></div><p>가변 벡터는 물론 추가로 다양한 가변 명령을 사용할 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">v2</span> = <span style="color:#ecbe7b">Vec</span>::new<span style="color:#51afef">()</span>;
+v2.push<span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">1</span><span style="color:#51afef">)</span>;
+v2.push<span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">2</span><span style="color:#51afef">)</span>;
+v2.push<span style="color:#51afef">(</span><span style="color:#da8548;font-weight:700">3</span><span style="color:#51afef">)</span>;
+</pre></div><p>반복문에서 참조 및 변경이 가능하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">for</span> <span style="color:#dcaeea">i</span> <span style="color:#51afef">in</span> <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>v1 <span style="color:#51afef">{</span>
     ...
-}
+<span style="color:#51afef">}</span>
 
-<span style="color:#51afef">for</span> i <span style="color:#51afef">in</span> &amp;<span style="color:#51afef">mut</span> v2 {
+<span style="color:#51afef">for</span> <span style="color:#dcaeea">i</span> <span style="color:#51afef">in</span> <span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#51afef">mut</span> v2 <span style="color:#51afef">{</span>
     ...
-}
+<span style="color:#51afef">}</span>
 </pre></div></div></div><div id="outline-container-75857fe7"class="outline-3"><h3 id="75857fe7">해시맵(Hash Map)</h3><div class="outline-text-3"id="text-75857fe7"><p>해시맵은 다른 언어들의 사전형(Dictionary)와 비슷하게 쓸 수 있는 Key - Value 콜렉션이다. 단지 기본 타입이 아니어서 모듈 임포트가 필요하다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">use</span> <span style="color:#a9a1e1">std</span>::<span style="color:#dcaeea">collections</span>:<span style="color:#ecbe7b">HashMap</span>;
-</pre></div><p>동적으로 해시맵을 생성하는 예는 이렇다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">dict</span> = <span style="color:#ecbe7b">HashMap</span>::new();
-dict.insert(<span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"apple"</span>), <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"&#49324;&#44284;"</span>));
-dict.insert(<span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"banana"</span>), <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"&#48260;&#45236;&#45320;"</span>));
-dict.insert(<span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"pear"</span>), <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"&#48176;"</span>));
-</pre></div><p>해시맵에 insert를 하는 과정에서 원시 타입 등은 복제가 진행되지 소유권 문제에서 자유로운 편이다.</p><p>값을 읽을 때는 Option 타입을 리턴함을 주의하자.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">if</span> <span style="color:#51afef">let</span> <span style="color:#ecbe7b">Some</span>(banana) = dict.get(&amp;<span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"banana"</span>)) {
-    <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"banana -&gt; </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, &amp;banana);
-}
-</pre></div><p>나열도 간단한 편이다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">for</span> (key, value) <span style="color:#51afef">in</span> &amp;dict {
-    <span style="color:#c678dd">println!</span>(<span style="color:#98be65">"</span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65"> -&gt; </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, key, value);
-}
-</pre></div></div></div><div id="outline-container-27118326"class="outline-3"><h3 id="27118326">String</h3><div class="outline-text-3"id="text-27118326"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s1</span> = <span style="color:#98be65">"C String"</span>.to_string();
-<span style="color:#c678dd">println!</span>(<span style="color:#98be65">"length of s1 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, &amp;s1.len());
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">s1substr</span> = &amp;s1[<span style="color:#da8548;font-weight:700">1</span>..<span style="color:#da8548;font-weight:700">4</span>];  <span style="color:#5b6268">// </span><span style="color:#5b6268">-&gt; " St"</span>
+</pre></div><p>동적으로 해시맵을 생성하는 예는 이렇다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">dict</span> = <span style="color:#ecbe7b">HashMap</span>::new<span style="color:#51afef">()</span>;
+dict.insert<span style="color:#51afef">(</span><span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"apple"</span><span style="color:#c678dd">)</span>, <span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"&#49324;&#44284;"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>;
+dict.insert<span style="color:#51afef">(</span><span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"banana"</span><span style="color:#c678dd">)</span>, <span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"&#48260;&#45236;&#45320;"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>;
+dict.insert<span style="color:#51afef">(</span><span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"pear"</span><span style="color:#c678dd">)</span>, <span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"&#48176;"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span>;
+</pre></div><p>해시맵에 insert를 하는 과정에서 원시 타입 등은 복제가 진행되지 소유권 문제에서 자유로운 편이다.</p><p>값을 읽을 때는 Option 타입을 리턴함을 주의하자.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">if</span> <span style="color:#51afef">let</span> <span style="color:#ecbe7b">Some</span><span style="color:#51afef">(</span>banana<span style="color:#51afef">)</span> = dict.get<span style="color:#51afef">(</span><span style="color:#bbc2cf;background-color:#282c34">&amp;</span><span style="color:#ecbe7b">String</span>::from<span style="color:#c678dd">(</span><span style="color:#98be65">"banana"</span><span style="color:#c678dd">)</span><span style="color:#51afef">)</span> <span style="color:#51afef">{</span>
+    <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"banana -&gt; </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>banana<span style="color:#c678dd">)</span>;
+<span style="color:#51afef">}</span>
+</pre></div><p>나열도 간단한 편이다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">for</span> <span style="color:#51afef">(</span>key, value<span style="color:#51afef">)</span> <span style="color:#51afef">in</span> <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>dict <span style="color:#51afef">{</span>
+    <span style="color:#c678dd">println!</span><span style="color:#c678dd">(</span><span style="color:#98be65">"</span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65"> -&gt; </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, key, value<span style="color:#c678dd">)</span>;
+<span style="color:#51afef">}</span>
+</pre></div></div></div><div id="outline-container-27118326"class="outline-3"><h3 id="27118326">String</h3><div class="outline-text-3"id="text-27118326"><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s1</span> = <span style="color:#98be65">"C String"</span>.to_string<span style="color:#51afef">()</span>;
+<span style="color:#c678dd">println!</span><span style="color:#51afef">(</span><span style="color:#98be65">"length of s1 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>s1.len<span style="color:#c678dd">()</span><span style="color:#51afef">)</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">s1substr</span> = <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>s1<span style="color:#51afef">[</span><span style="color:#da8548;font-weight:700">1</span>..<span style="color:#da8548;font-weight:700">4</span><span style="color:#51afef">]</span>;  <span style="color:#5b6268">// </span><span style="color:#5b6268">-&gt; " St"</span>
 
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">s2</span> = <span style="color:#ecbe7b">String</span>::from(<span style="color:#98be65">"Rust String"</span>);
-<span style="color:#51afef">let</span> <span style="color:#dcaeea">s4</span>: <span style="color:#ecbe7b">String</span> = <span style="color:#98be65">"Some Rust String"</span>.into();
-</pre></div><p>당연하겠지만 가변형도 지원된다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">s3</span> = <span style="color:#ecbe7b">String</span>::new();
-s3.push(<span style="color:#98be65">'f'</span>);       <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "f"</span>
-s3.push_str(<span style="color:#98be65">"oo"</span>);  <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "foo"</span>
-s3 += &amp;s1;          <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "fooC String"</span>
-s3 += &amp;s2;          <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "fooC StringRust String"</span>
-</pre></div><p>문자열 포맷은 <code>println!</code> 과 비슷하게 아래와 같은 식으로 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s4</span> = <span style="color:#c678dd">format!</span>(<span style="color:#98be65">"s1 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">, s2 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, s1, s2);
-</pre></div><p>마치 <a href="python.html">Python</a>의 <code>format()</code> 을 연상시키는 문법이다.</p></div></div></div><div id="outline-container-0bbb90e1"class="outline-2"><h2 id="0bbb90e1">외부 링크</h2><div class="outline-text-2"id="text-0bbb90e1"></div><div id="outline-container-59a8c5ae"class="outline-3"><h3 id="59a8c5ae">소개 및 팁</h3><div class="outline-text-3"id="text-59a8c5ae"><ul class="org-ul"><li><a target="_blank"href="https://rinthel.github.io/rust-lang-book-ko/foreword.html">🌏The Rust Programming Language (한국어)</a>: 러스트의 전반적인 가이드 글의 한국어 번역판이다.</li><li><a target="_blank"href="https://parksb.github.io/article/35.html">🌏🦀 러스트의 멋짐을 모르는 당신은 불쌍해요</a>: 러스트를 소개하는 글이다.</li><li><a target="_blank"href="https://abramov.io/rust-dropping-things-in-another-thread">🌏Rust: Dropping heavy things in another thread can make your code 10000 times faster</a>: 메모리 해제를 특정 스레드에서 하게 해서 레이턴시를 개선시키는 기술에 대한 이야기다. 10000배 빨라진다는 것은 그냥 해제로 발생하는 레이턴시 개선 수준 이야기지 그렇게 많이 빨라지는 것은 아닐 것 같다. 어쨌거나 러스트의 메모리 관리에서나 가능한 특수한 메모리 관리 기법이다.</li></ul></div></div><div id="outline-container-e8abaa4f"class="outline-3"><h3 id="e8abaa4f">사용기</h3><div class="outline-text-3"id="text-e8abaa4f"><ul class="org-ul"><li><a target="_blank"href="https://blog.tonari.no/why-we-love-rust">🌏3K, 60fps, 130ms: achieving it with Rust</a>: 러스트로 성능을 얼마나 개선했는지와 어떤 패키지가 유용했는지 등을 볼 수 있다.</li><li><a target="_blank"href="http://cliffle.com/p/dangerust/">🌏Learn Rust the Dangerous Way</a>: C 코드와 Rust 코드 비교로 Rust를 공부할 수 있는 사이트</li><li><a target="_blank"href="https://onesignal.com/blog/4-years-of-rust-at-onesignal/">🌏Four Years of Rust At OneSignal</a>: 어떤 기업의 러스트 사용기 및 장단점을 정리한 글이다.</li><li><a target="_blank"href="https://stu2b50.dev/posts/rust-is-surpris76171">🌏Rust is Surprisingly Good as a Server Language</a>: 그냥 러스트를 찬양(?)하는 글이다.</li></ul></div></div><div id="outline-container-ff674f42"class="outline-3"><h3 id="ff674f42">Written by Rust</h3><div class="outline-text-3"id="text-ff674f42"><ul class="org-ul"><li><a target="_blank"href="https://github.com/extrawurst/gitui">🌏GitUI</a>: Blazing 💥 fast terminal-ui for git written in rust 🦀</li></ul></div></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h1>이 글을 링크하는 글들</h1><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/grex.html">❏ grex</a></h2><span class="article-description">정규표현식 작성을 도와주는 라이브러리 겸 도구</span><span class="article-link-date"> Updated on 2021년 3월 22일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/cargo.html">❏ Cargo</a></h2><span class="article-description">러스트(Rust) 빌드 시스템 및 패키지 매니저 Cargo에 대한 글 모음</span><span class="article-link-date"> Updated on 2020년 8월 10일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/rust-module-system.html">❏ Rust의 모듈 시스템</a></h2><span class="article-description">Rust의 모듈 사용법 및 관련된 내용을 정리해보자</span><span class="article-link-date"> Updated on 2020년 7월 20일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/rust-main-function.html">❏ Rust의 시작점 main 함수</a></h2><span class="article-description">Rust의 엔트리포인트가 되는 main 함수에 대해 정리해보자</span><span class="article-link-date"> Updated on 2020년 7월 20일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/install-rust-on-macos.html">❏ macOS에서 Rust 설치하기</a></h2><span class="article-description">공식 매뉴얼에도 친절하게 설치 방법 설명하고 있지만 굳이 써보는 Rust 툴체인 설치 방법</span><span class="article-link-date"> Updated on 2020년 7월 19일</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div></body></html>
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">s2</span> = <span style="color:#ecbe7b">String</span>::from<span style="color:#51afef">(</span><span style="color:#98be65">"Rust String"</span><span style="color:#51afef">)</span>;
+<span style="color:#51afef">let</span> <span style="color:#dcaeea">s4</span>: <span style="color:#ecbe7b">String</span> = <span style="color:#98be65">"Some Rust String"</span>.into<span style="color:#51afef">()</span>;
+</pre></div><p>당연하겠지만 가변형도 지원된다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#51afef">mut</span> <span style="color:#dcaeea">s3</span> = <span style="color:#ecbe7b">String</span>::new<span style="color:#51afef">()</span>;
+s3.push<span style="color:#51afef">(</span><span style="color:#98be65">'f'</span><span style="color:#51afef">)</span>;       <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "f"</span>
+s3.push_str<span style="color:#51afef">(</span><span style="color:#98be65">"oo"</span><span style="color:#51afef">)</span>;  <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "foo"</span>
+s3 += <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>s1;          <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "fooC String"</span>
+s3 += <span style="color:#bbc2cf;background-color:#282c34">&amp;</span>s2;          <span style="color:#5b6268">// </span><span style="color:#5b6268">s3 -&gt; "fooC StringRust String"</span>
+</pre></div><p>문자열 포맷은 <code>println!</code> 과 비슷하게 아래와 같은 식으로 쓸 수 있다.</p><div class="org-src-container"><pre class="src src-rust"><span style="color:#51afef">let</span> <span style="color:#dcaeea">s4</span> = <span style="color:#c678dd">format!</span><span style="color:#51afef">(</span><span style="color:#98be65">"s1 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">, s2 = </span><span style="color:#98be65;font-style:italic">{}</span><span style="color:#98be65">"</span>, s1, s2<span style="color:#51afef">)</span>;
+</pre></div><p>마치 <a href="python.html">Python</a>의 <code>format()</code> 을 연상시키는 문법이다.</p></div></div></div><div id="outline-container-0bbb90e1"class="outline-2"><h2 id="0bbb90e1">외부 링크</h2><div class="outline-text-2"id="text-0bbb90e1"></div><div id="outline-container-59a8c5ae"class="outline-3"><h3 id="59a8c5ae">소개 및 팁</h3><div class="outline-text-3"id="text-59a8c5ae"><ul class="org-ul"><li><a target="_blank"href="https://rinthel.github.io/rust-lang-book-ko/foreword.html">🌏The Rust Programming Language (한국어)</a>: 러스트의 전반적인 가이드 글의 한국어 번역판이다.</li><li><a target="_blank"href="https://parksb.github.io/article/35.html">🌏🦀 러스트의 멋짐을 모르는 당신은 불쌍해요</a>: 러스트를 소개하는 글이다.</li><li><a target="_blank"href="https://abramov.io/rust-dropping-things-in-another-thread">🌏Rust: Dropping heavy things in another thread can make your code 10000 times faster</a>: 메모리 해제를 특정 스레드에서 하게 해서 레이턴시를 개선시키는 기술에 대한 이야기다. 10000배 빨라진다는 것은 그냥 해제로 발생하는 레이턴시 개선 수준 이야기지 그렇게 많이 빨라지는 것은 아닐 것 같다. 어쨌거나 러스트의 메모리 관리에서나 가능한 특수한 메모리 관리 기법이다.</li></ul></div></div><div id="outline-container-e8abaa4f"class="outline-3"><h3 id="e8abaa4f">사용기</h3><div class="outline-text-3"id="text-e8abaa4f"><ul class="org-ul"><li><a target="_blank"href="https://blog.tonari.no/why-we-love-rust">🌏3K, 60fps, 130ms: achieving it with Rust</a>: 러스트로 성능을 얼마나 개선했는지와 어떤 패키지가 유용했는지 등을 볼 수 있다.</li><li><a target="_blank"href="http://cliffle.com/p/dangerust/">🌏Learn Rust the Dangerous Way</a>: C 코드와 Rust 코드 비교로 Rust를 공부할 수 있는 사이트</li><li><a target="_blank"href="https://onesignal.com/blog/4-years-of-rust-at-onesignal/">🌏Four Years of Rust At OneSignal</a>: 어떤 기업의 러스트 사용기 및 장단점을 정리한 글이다.</li><li><a target="_blank"href="https://stu2b50.dev/posts/rust-is-surpris76171">🌏Rust is Surprisingly Good as a Server Language</a>: 그냥 러스트를 찬양(?)하는 글이다.</li></ul></div></div><div id="outline-container-ff674f42"class="outline-3"><h3 id="ff674f42">Written by Rust</h3><div class="outline-text-3"id="text-ff674f42"><ul class="org-ul"><li><a target="_blank"href="https://github.com/extrawurst/gitui">🌏GitUI</a>: Blazing 💥 fast terminal-ui for git written in rust 🦀</li></ul></div></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h2>이 글을 링크하는 글들</h2><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/grex.html">❏ grex</a></h2><span class="article-description">정규표현식 작성을 도와주는 라이브러리 겸 도구</span><span class="article-link-date"> Updated on 2021년 3월 22일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/cargo.html">❏ Cargo</a></h2><span class="article-description">러스트(Rust) 빌드 시스템 및 패키지 매니저 Cargo에 대한 글 모음</span><span class="article-link-date"> Updated on 2020년 8월 10일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/rust-module-system.html">❏ Rust의 모듈 시스템</a></h2><span class="article-description">Rust의 모듈 사용법 및 관련된 내용을 정리해보자</span><span class="article-link-date"> Updated on 2020년 7월 20일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/rust-main-function.html">❏ Rust의 시작점 main 함수</a></h2><span class="article-description">Rust의 엔트리포인트가 되는 main 함수에 대해 정리해보자</span><span class="article-link-date"> Updated on 2020년 7월 20일</span></div></div><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/install-rust-on-macos.html">❏ macOS에서 Rust 설치하기</a></h2><span class="article-description">공식 매뉴얼에도 친절하게 설치 방법 설명하고 있지만 굳이 써보는 Rust 툴체인 설치 방법</span><span class="article-link-date"> Updated on 2020년 7월 19일</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div></body></html>

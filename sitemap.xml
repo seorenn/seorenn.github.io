@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2022-09-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-viewmodifier.html</loc><lastmod>2022-09-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2022-09-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-shortcuts.html</loc><lastmod>2022-09-06</lastmod></url>
@@ -18,7 +19,6 @@
 <url><loc>https://seorenn.github.io/note/nspasteboard.html</loc><lastmod>2022-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/lithum-ion-battery.html</loc><lastmod>2022-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker.html</loc><lastmod>2022-04-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2022-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/yaml.html</loc><lastmod>2022-04-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose-devenv.html</loc><lastmod>2022-01-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2022-01-08</lastmod></url>
@@ -228,6 +228,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-09-16</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-09-16</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-09-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-09-20</lastmod></url>
 </urlset>

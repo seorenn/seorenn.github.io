@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-10-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-10-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-10-25</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-10-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2022-10-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/naming-convention.html</loc><lastmod>2022-10-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/argon2.html</loc><lastmod>2022-10-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2022-10-20</lastmod></url>
@@ -86,7 +87,6 @@
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2021-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-protocols.html</loc><lastmod>2021-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2021-09-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2021-09-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2021-08-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tree.html</loc><lastmod>2021-08-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2021-08-25</lastmod></url>
@@ -239,6 +239,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-10-23</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-10-23</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-10-25</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-10-25</lastmod></url>
 </urlset>

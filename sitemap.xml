@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-10-25</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-10-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-10-29</lastmod></url>
+<url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2022-10-27</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2022-10-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2022-10-25</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-10-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2022-10-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2022-10-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/naming-convention.html</loc><lastmod>2022-10-22</lastmod></url>
@@ -16,7 +18,6 @@
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2022-10-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-os-releases.html</loc><lastmod>2022-10-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/etf.html</loc><lastmod>2022-10-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2022-10-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/annotation-vs-comment.html</loc><lastmod>2022-09-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2022-09-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-for-loops.html</loc><lastmod>2022-09-26</lastmod></url>
@@ -157,7 +158,6 @@
 <url><loc>https://seorenn.github.io/note/store-food.html</loc><lastmod>2021-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sos.html</loc><lastmod>2021-02-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode-config-tips.html</loc><lastmod>2021-02-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2021-01-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/twitter.html</loc><lastmod>2020-09-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2020-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cargo.html</loc><lastmod>2020-08-10</lastmod></url>
@@ -239,6 +239,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-10-26</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-10-26</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-10-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-10-30</lastmod></url>
 </urlset>

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/daylight-saving-time.html</loc><lastmod>2022-11-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-11-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2022-11-05</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-11-05</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-11-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode-simulator-tips.html</loc><lastmod>2022-11-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2022-11-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode-simctl-push-notification.html</loc><lastmod>2022-11-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2022-11-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-layout-components.html</loc><lastmod>2022-11-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2022-11-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrapper-tips.html</loc><lastmod>2022-11-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2022-11-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mac-app-dev-tips.html</loc><lastmod>2022-11-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-tips.html</loc><lastmod>2022-10-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2022-10-30</lastmod></url>
@@ -67,7 +70,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-color.html</loc><lastmod>2021-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/npm.html</loc><lastmod>2021-11-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-tips.html</loc><lastmod>2021-11-24</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode-simulator-tips.html</loc><lastmod>2021-11-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-package-manager.html</loc><lastmod>2021-11-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/carthage.html</loc><lastmod>2021-11-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-style-attributes.html</loc><lastmod>2021-11-18</lastmod></url>

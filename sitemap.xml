@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-11-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-11-11</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-11-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-11-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2022-11-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2022-11-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2022-11-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2022-11-10</lastmod></url>
@@ -10,7 +11,6 @@
 <url><loc>https://seorenn.github.io/note/daylight-saving-time.html</loc><lastmod>2022-11-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cds-premium.html</loc><lastmod>2022-11-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-simulator-tips.html</loc><lastmod>2022-11-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/xcode.html</loc><lastmod>2022-11-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/xcode-simctl-push-notification.html</loc><lastmod>2022-11-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-layout-components.html</loc><lastmod>2022-11-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui.html</loc><lastmod>2022-11-02</lastmod></url>
@@ -244,6 +244,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-11-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-11-13</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-11-14</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-11-14</lastmod></url>
 </urlset>

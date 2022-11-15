@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2022-11-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-11-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2022-11-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-11-14</lastmod></url>
@@ -18,7 +19,6 @@
 <url><loc>https://seorenn.github.io/note/mac-app-dev-tips.html</loc><lastmod>2022-11-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-tips.html</loc><lastmod>2022-10-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2022-10-30</lastmod></url>
-<url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2022-10-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2022-10-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/naming-convention.html</loc><lastmod>2022-10-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/argon2.html</loc><lastmod>2022-10-21</lastmod></url>
@@ -244,6 +244,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-11-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-11-14</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-11-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-11-15</lastmod></url>
 </urlset>

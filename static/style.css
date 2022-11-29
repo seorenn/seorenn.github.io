@@ -387,6 +387,11 @@ ol {
   margin-bottom: 1.8rem;
 }
 
+.content .org-ul li {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 .content img {
   width: 100%;
   height: auto;

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/real-estate-tax.html</loc><lastmod>2022-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2022-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2022-12-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2022-12-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2022-12-11</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2022-12-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2022-12-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-simple-tips.html</loc><lastmod>2022-12-11</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rate.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/fomc.html</loc><lastmod>2022-12-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-news.html</loc><lastmod>2022-12-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2022-12-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2022-12-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2022-12-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cds-premium.html</loc><lastmod>2022-12-02</lastmod></url>
@@ -255,6 +256,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2022-12-11</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-12-11</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2022-12-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2022-12-12</lastmod></url>
 </urlset>

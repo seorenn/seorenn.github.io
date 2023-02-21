@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-02-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-02-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-datetime-tips.html</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-f-string.html</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/adr.html</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-02-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/refusal-to-receive-securities-notice.html</loc><lastmod>2023-02-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2023-02-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2023-02-19</lastmod></url>
@@ -125,13 +130,11 @@
 <url><loc>https://seorenn.github.io/note/liquidity.html</loc><lastmod>2021-10-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/web-dev-links.html</loc><lastmod>2021-10-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/resource-links.html</loc><lastmod>2021-09-30</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2021-09-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2021-09-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-array.html</loc><lastmod>2021-09-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-strings.html</loc><lastmod>2021-09-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-protocols.html</loc><lastmod>2021-09-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/x86.html</loc><lastmod>2021-09-04</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python-list.html</loc><lastmod>2021-08-28</lastmod></url>
 <url><loc>https://seorenn.github.io/note/tree.html</loc><lastmod>2021-08-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/vim.html</loc><lastmod>2021-08-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-alert.html</loc><lastmod>2021-08-23</lastmod></url>
@@ -178,7 +181,6 @@
 <url><loc>https://seorenn.github.io/note/short-selling.html</loc><lastmod>2021-05-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs-troubleshooting.html</loc><lastmod>2021-05-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/svg.html</loc><lastmod>2021-05-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python-datetime-tips.html</loc><lastmod>2021-05-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-5-4.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
@@ -273,6 +275,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2023-02-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-02-20</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2023-02-21</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-02-21</lastmod></url>
 </urlset>

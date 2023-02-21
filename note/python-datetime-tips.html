@@ -6,7 +6,7 @@ now = datetime.now(KST)
 <span style="color:#51afef">from</span> datetime <span style="color:#51afef">import</span> datetime
 
 datetime.now().astimezone(pytz.UTC)
-</pre></div><p>물론 <code>astimezone()</code> 및 <code>pytz.UTC</code> 를 위한 억지 예제일 뿐, 위와 같은 경우는 그냥 <code>utcnow()</code> 를 쓰는게 나을 것 같다.</p></div></div><div id="outline-container-ddb6e75e"class="outline-2"><h2 id="ddb6e75e">ISO 포맷 파싱하기</h2><div class="outline-text-2"id="text-ddb6e75e"><p>두 가지 방법을 사용할 수 있다. 하나는 <code>datetime</code> 모듈의 메서드다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">from</span> datetime <span style="color:#51afef">import</span> datetime
+</pre></div><p>물론 <code>astimezone()</code> 및 <code>pytz.UTC</code> 를 위한 억지 예제일 뿐, 위와 같은 경우는 그냥 <code>utcnow()</code> 를 쓰는게 나을 것 같다.</p><p><code>pytz</code> 는 기본 패키지가 아니기 때문에 별도로 의존성을 추가해야 한다는 점을 잊지 말자.</p></div></div><div id="outline-container-ddb6e75e"class="outline-2"><h2 id="ddb6e75e">ISO 포맷 파싱하기</h2><div class="outline-text-2"id="text-ddb6e75e"><p>두 가지 방법을 사용할 수 있다. 하나는 <code>datetime</code> 모듈의 메서드다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">from</span> datetime <span style="color:#51afef">import</span> datetime
 datetime.fromisoformat(<span style="color:#98be65">'2021-05-10T10:16:00+00:00'</span>)
 </pre></div><p>다른 하나는 <code>dateutil</code> 의 <code>parse</code> 다.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">from</span> dateutil.parser <span style="color:#51afef">import</span> parse
 parse(<span style="color:#98be65">'2021-05-10T10:16:00+00:00'</span>)

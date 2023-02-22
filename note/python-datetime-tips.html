@@ -21,11 +21,6 @@ datetime.now().isoformat()
 </pre></div><p>타임존을 얻으려면 아래와 같이 할 수 있따.</p><div class="org-src-container"><pre class="src src-python"><span style="color:#51afef">from</span> datetime <span style="color:#51afef">import</span> datetime, timezone
 datetime.now(timezone.utc).isoformat()
 </pre></div><p>설마 <a href="python.html">Python</a> 2.x를 아직도 쓰는 사람은 없으리라 믿는다.</p></div></div><div id="outline-container-1320aaf9"class="outline-2"><h2 id="1320aaf9">offset-naive와 offset-aware 간의 비교</h2><div class="outline-text-2"id="text-1320aaf9"><p>두 <code>datetime</code> 오브젝트끼리 비교하는 경우, 예를 들어 아래와 같은 경우</p><div class="org-src-container"><pre class="src src-python">dt_a &gt;= dt_b
-<span style="color:#5b6268">#</span><span style="color:#5b6268">+end_sr</span>
-
-&#53945;&#51221;&#54620; &#49345;&#54889;&#50640;&#49436; &#50500;&#47000;&#50752; &#44057;&#51008; &#50724;&#47448;&#47484; &#44202;&#51012; &#49688;&#46020; &#51080;&#45796;.
-
-<span style="color:#5b6268">#</span><span style="color:#5b6268">+begin_src text</span>
-<span style="color:#ecbe7b">TypeError</span>: can<span style="color:#98be65">'t compare offset-naive and offset-aware datetimes</span>
+</pre></div><p>특정한 상황에서 아래와 같은 오류를 겪을 수도 있다.</p><div class="org-src-container"><pre class="src src-text">TypeError: can't compare offset-naive and offset-aware datetimes
 </pre></div><p>보통 이런 경우 두 오브젝트 중 하나는 <code>timedelta</code> 를 이용해 시각 정보가 바뀐 경우나, 혹은 타임존이 명확하지 않거나 다른 경우 등에 발생할 수 있다.</p><p>쉽게 해결하려면 그냥 타임존을 똑같이 맞추면 된다. 아래와 같은 식으로 말이다.</p><div class="org-src-container"><pre class="src src-python">dt_a.replace(tzinfo=pytz.UTC) &gt;= dt_b.replace(tzinfo=pytz.UTC)
 </pre></div><p>물론 필요한 객체만 replace 해도 된다.</p></div></div><div class="mid-ad-container"><ins class="adsbygoogle mid-ad"style="display:block"data-ad-client="ca-pub-1071465863344332"data-ad-slot="4306465772"data-ad-format="auto"data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class="backlinks-container"><hr><h2>이 글을 링크하는 글들</h2><div class="article-link"><div class="article-link-title-block"><h2><a class="article-link-title"href="/note/python.html">❏ Python</a></h2><span class="article-description">Python(파이썬)에 관한 간략한 설명 및 자료 정리</span><span class="article-link-date"> Updated on 2023년 2월 21일</span></div></div></div></section></div><div class="footer-content"><footer>Copyright 2019 ~ 2020. Seorenn all rights reserved.</footer></div></body></html>

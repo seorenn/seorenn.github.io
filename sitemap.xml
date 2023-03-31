@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-02-24</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-02-24</lastmod></url>
-<url><loc>https://seorenn.github.io/note/health-logs.html</loc><lastmod>2023-02-24</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-03-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-03-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/health-logs.html</loc><lastmod>2023-03-27</lastmod></url>
+<url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-03-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2023-03-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2023-03-23</lastmod></url>
+<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2023-03-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2023-03-07</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-02-26</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-02-26</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cd.html</loc><lastmod>2023-02-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple.html</loc><lastmod>2023-02-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/fcpx.html</loc><lastmod>2023-02-23</lastmod></url>
@@ -17,7 +24,6 @@
 <url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2023-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mts-review.html</loc><lastmod>2023-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2023-02-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-02-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs-2022.html</loc><lastmod>2023-02-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-logs-2022.html</loc><lastmod>2023-02-16</lastmod></url>
@@ -26,13 +32,9 @@
 <url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-news-2022.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-simple-tips.html</loc><lastmod>2023-02-16</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-02-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-02-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2023-01-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-collection-tips.html</loc><lastmod>2023-01-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ppi.html</loc><lastmod>2023-01-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cpi.html</loc><lastmod>2023-01-12</lastmod></url>
-<url><loc>https://seorenn.github.io/note/objective-c.html</loc><lastmod>2023-01-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objc-troubleshootings.html</loc><lastmod>2023-01-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/fomc.html</loc><lastmod>2023-01-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-json.html</loc><lastmod>2023-01-06</lastmod></url>
@@ -107,10 +109,8 @@
 <url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2022-01-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron.html</loc><lastmod>2022-01-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-troubleshooting.html</loc><lastmod>2022-01-02</lastmod></url>
-<url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2021-12-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/magit.html</loc><lastmod>2021-12-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-tips.html</loc><lastmod>2021-12-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2021-12-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2021-12-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-basic-setup.html</loc><lastmod>2021-12-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appstore-guideline-hints.html</loc><lastmod>2021-12-22</lastmod></url>
@@ -276,6 +276,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2023-02-24</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-02-24</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2023-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-03-31</lastmod></url>
 </urlset>

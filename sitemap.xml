@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-03-28</lastmod></url>
-<url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-03-28</lastmod></url>
+<url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2023-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2023-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2023-05-12</lastmod></url>
+<url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-05-04</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-dictionary.html</loc><lastmod>2023-05-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/health-logs.html</loc><lastmod>2023-03-27</lastmod></url>
-<url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-03-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chrome.html</loc><lastmod>2023-03-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/safari.html</loc><lastmod>2023-03-23</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift.html</loc><lastmod>2023-03-15</lastmod></url>
@@ -54,7 +58,6 @@
 <url><loc>https://seorenn.github.io/note/rate.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-news.html</loc><lastmod>2022-12-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/rust.html</loc><lastmod>2022-12-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cds-premium.html</loc><lastmod>2022-12-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pce.html</loc><lastmod>2022-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2022-12-01</lastmod></url>
@@ -80,7 +83,6 @@
 <url><loc>https://seorenn.github.io/note/macos-special-tips.html</loc><lastmod>2022-10-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/naming-convention.html</loc><lastmod>2022-10-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/argon2.html</loc><lastmod>2022-10-21</lastmod></url>
-<url><loc>https://seorenn.github.io/note/dart.html</loc><lastmod>2022-10-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/doom-emacs.html</loc><lastmod>2022-10-11</lastmod></url>
 <url><loc>https://seorenn.github.io/note/annotation-vs-comment.html</loc><lastmod>2022-09-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl-usage.html</loc><lastmod>2022-09-29</lastmod></url>
@@ -185,7 +187,6 @@
 <url><loc>https://seorenn.github.io/note/swiftui-property-wrappers.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-5-4.html</loc><lastmod>2021-05-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sh.html</loc><lastmod>2021-05-05</lastmod></url>
-<url><loc>https://seorenn.github.io/note/imagemagick.html</loc><lastmod>2021-05-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/curl.html</loc><lastmod>2021-05-04</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cli.html</loc><lastmod>2021-05-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-errors.html</loc><lastmod>2021-04-27</lastmod></url>
@@ -237,7 +238,6 @@
 <url><loc>https://seorenn.github.io/note/org-publish.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-file-dir-tips.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-3-8-updates.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python-dictionary.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-equality.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
@@ -276,6 +276,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2023-03-31</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-03-31</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2023-05-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-05-15</lastmod></url>
 </urlset>

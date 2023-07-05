@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2023-06-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2023-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-06-15</lastmod></url>
 <url><loc>https://seorenn.github.io/note/health-logs.html</loc><lastmod>2023-05-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-05-19</lastmod></url>
@@ -209,7 +211,6 @@
 <url><loc>https://seorenn.github.io/note/lru.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust-module-system.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-object-as-dictionary.html</loc><lastmod>2020-07-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/docker-cli-commands.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rust-main-function.html</loc><lastmod>2020-07-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/install-rust-on-macos.html</loc><lastmod>2020-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/shell.html</loc><lastmod>2020-07-17</lastmod></url>
@@ -218,7 +219,6 @@
 <url><loc>https://seorenn.github.io/note/curl-special-usage.html</loc><lastmod>2020-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-howto-connect-host-port.html</loc><lastmod>2020-07-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-troubleshooting.html</loc><lastmod>2020-07-06</lastmod></url>
-<url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2020-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-virtualenv.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv-manage-python-version.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pyenv.html</loc><lastmod>2020-07-03</lastmod></url>
@@ -276,6 +276,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2023-06-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-06-15</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2023-07-05</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-07-05</lastmod></url>
 </urlset>

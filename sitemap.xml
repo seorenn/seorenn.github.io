@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/doom-emacs-org-mode-snippets.html</loc><lastmod>2023-07-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/doom-emacs-org-mode-snippets.html</loc><lastmod>2023-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/health-logs.html</loc><lastmod>2023-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/coffee.html</loc><lastmod>2023-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ai-industry-futures.html</loc><lastmod>2023-07-19</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-macos-dev-links.html</loc><lastmod>2023-07-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios.html</loc><lastmod>2023-07-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mac-app-dev-tips.html</loc><lastmod>2023-07-18</lastmod></url>
@@ -11,13 +14,11 @@
 <url><loc>https://seorenn.github.io/note/good-gitz-bath.html</loc><lastmod>2023-07-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/seorenn.html</loc><lastmod>2023-07-14</lastmod></url>
 <url><loc>https://seorenn.github.io/note/org-mode.html</loc><lastmod>2023-07-14</lastmod></url>
-<url><loc>https://seorenn.github.io/note/health-logs.html</loc><lastmod>2023-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/haemorrhoids.html</loc><lastmod>2023-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/sitz-bath.html</loc><lastmod>2023-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-07-13</lastmod></url>
-<url><loc>https://seorenn.github.io/note/ai-industry-futures.html</loc><lastmod>2023-07-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-compose.html</loc><lastmod>2023-07-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/monthly-div-stocks.html</loc><lastmod>2023-07-06</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-insufficient-volume.html</loc><lastmod>2023-06-22</lastmod></url>
@@ -275,7 +276,6 @@
 <url><loc>https://seorenn.github.io/note/pip.html</loc><lastmod>2020-05-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/date.html</loc><lastmod>2020-05-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs-lisp-functions.html</loc><lastmod>2020-05-11</lastmod></url>
-<url><loc>https://seorenn.github.io/note/coffee.html</loc><lastmod>2020-05-09</lastmod></url>
 <url><loc>https://seorenn.github.io/note/temp-name.html</loc><lastmod>2020-05-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pngquant.html</loc><lastmod>2020-05-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/motion.html</loc><lastmod>2020-04-30</lastmod></url>
@@ -283,6 +283,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2023-07-18</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-07-18</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2023-07-19</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-07-19</lastmod></url>
 </urlset>

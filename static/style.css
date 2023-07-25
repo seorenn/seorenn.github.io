@@ -345,7 +345,7 @@ h6 {
 
 .content i {
   font-size: 0.96rem;
-  color: #444;
+  color: #666;
 }
 
 .content .org-src-container {
@@ -581,7 +581,7 @@ footer {
   }
 
   .content i {
-    color: #cfcfcf;
+    color: #aaa;
   }
 
   .article-description {

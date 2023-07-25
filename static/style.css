@@ -344,8 +344,8 @@ h6 {
 }
 
 .content i {
-  font-size: 0.9rem;
-  font-color: #444;
+  font-size: 0.96rem;
+  color: #444;
 }
 
 .content .org-src-container {

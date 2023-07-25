@@ -343,6 +343,11 @@ h6 {
   margin-bottom: 1.8rem;
 }
 
+.content i {
+  font-size: 0.9rem;
+  font-color: #444;
+}
+
 .content .org-src-container {
 }
 
@@ -573,6 +578,10 @@ footer {
   .content a:hover,
   .content a:active {
     color: #51afef;
+  }
+
+  .content i {
+    color: #cfcfcf;
   }
 
   .article-description {

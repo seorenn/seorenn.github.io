@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2023-07-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-logs-2023.html</loc><lastmod>2023-07-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-07-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-07-31</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-osong-tunnel-disastro-202307.html</loc><lastmod>2023-07-30</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-logs-2023.html</loc><lastmod>2023-07-30</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-07-30</lastmod></url>
+<url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2023-07-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-osong-tunnel-disastro-202307.html</loc><lastmod>2023-07-31</lastmod></url>
+<url><loc>https://seorenn.github.io/note/emacs-news.html</loc><lastmod>2023-07-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-07-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/chizil-exp.html</loc><lastmod>2023-07-25</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-07-25</lastmod></url>
@@ -58,7 +61,6 @@
 <url><loc>https://seorenn.github.io/note/economic-logs-2022.html</loc><lastmod>2023-02-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-logs-2022.html</loc><lastmod>2023-02-16</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-logs.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-news.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-news-2022.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-simple-tips.html</loc><lastmod>2023-02-16</lastmod></url>
@@ -82,7 +84,6 @@
 <url><loc>https://seorenn.github.io/note/macos.html</loc><lastmod>2022-12-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/rate.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/emacs.html</loc><lastmod>2022-12-10</lastmod></url>
-<url><loc>https://seorenn.github.io/note/emacs-news.html</loc><lastmod>2022-12-10</lastmod></url>
 <url><loc>https://seorenn.github.io/note/cds-premium.html</loc><lastmod>2022-12-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/pce.html</loc><lastmod>2022-12-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/docker-development-environment.html</loc><lastmod>2022-12-01</lastmod></url>
@@ -253,7 +254,6 @@
 <url><loc>https://seorenn.github.io/note/org-publish.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-file-dir-tips.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/python-3-8-updates.html</loc><lastmod>2020-07-03</lastmod></url>
-<url><loc>https://seorenn.github.io/note/python-simple-web-server.html</loc><lastmod>2020-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-equality.html</loc><lastmod>2020-07-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-spreads-operator.html</loc><lastmod>2020-06-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/javascript-arrow-function.html</loc><lastmod>2020-06-30</lastmod></url>

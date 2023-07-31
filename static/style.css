@@ -391,6 +391,10 @@ h6 {
   font-style: italic;
 }
 
+.content ul {
+  padding-left: 24px;
+}
+
 .content ul,
 ol {
   margin-top: 1.8rem;

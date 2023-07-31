@@ -351,6 +351,11 @@ h6 {
 .content .org-src-container {
 }
 
+.content .external-link {
+  font-size: 0.9rem;
+  padding: 1px 1px 1px 1px;
+}
+
 .content pre {
   max-width: 100%;
   margin-top: 1.8rem;

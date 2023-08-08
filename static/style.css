@@ -259,16 +259,17 @@ div.outline-text-2 > hr {
 
 .mid-ad-container {
   width: 100vw;
-  max-width: 1024px;
+  /* max-width: 1024px; */
   padding: 0;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 48px;
   margin-bottom: 48px;
   text-align: center;
 }
 
 .mid-ad {
-  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .bottom-ad-container {

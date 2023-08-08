@@ -268,10 +268,21 @@ div.outline-text-2 > hr {
   text-align: center;
 }
 
-.mid-ad {
+.adsbygoogle {
   /* width: 100%; */
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.ad {
+  width: 100vw;
+  padding: 0;
+  margin: 48px 0 48px 0;
+  /* margin: 0 auto; */
+  /* margin-top: 48px; */
+  /* margin-bottom: 48px; */
+  margin-left: calc(50% - 50vw);
+  text-align: center;
 }
 
 .bottom-ad-container {

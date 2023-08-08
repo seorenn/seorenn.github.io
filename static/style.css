@@ -260,7 +260,7 @@ div.outline-text-2 > hr {
 .mid-ad-container {
   width: 100vw;
   padding: 0;
-  margin: 48px 0 4px 0;
+  margin: 48px 0 48px 0;
   /* margin: 0 auto; */
   /* margin-top: 48px; */
   /* margin-bottom: 48px; */
@@ -269,7 +269,9 @@ div.outline-text-2 > hr {
 }
 
 .mid-ad {
-  width: 100%;
+  /* width: 100%; */
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .bottom-ad-container {

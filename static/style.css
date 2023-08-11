@@ -4,9 +4,10 @@ body {
   background-color: #fff;
   color: #333;
   font-family: sans-serif;
+  font-weight: 400;
   word-break: keep-all;
-  line-height: 1.8rem;
-  font-size: 18px;
+  line-height: 2;
+  font-size: 1em;
 
   /* readability */
   text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
@@ -401,7 +402,7 @@ h6 {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-style: italic;
 }
 
@@ -416,8 +417,8 @@ ol {
 }
 
 .content .org-ul li {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
 }
 
 .content img {

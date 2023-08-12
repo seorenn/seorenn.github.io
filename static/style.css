@@ -242,6 +242,7 @@ div.outline-text-2 > hr {
   margin-bottom: 6px !important;
   border-top: none !important;
   padding: 0 !important;
+  line-height: 1.2;
 }
 
 .article-link-title {

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-09-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-09-17</lastmod></url>
+<url><loc>https://seorenn.github.io/note/economic-logs-2023.html</loc><lastmod>2023-09-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2023-09-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2023-09-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-09-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-logs-2023.html</loc><lastmod>2023-09-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-jamboree-2023.html</loc><lastmod>2023-09-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-osong-tunnel-disastro-202307.html</loc><lastmod>2023-09-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flutter-forms.html</loc><lastmod>2023-09-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/flutter.html</loc><lastmod>2023-09-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-09-08</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-09-08</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-logs-2023.html</loc><lastmod>2023-09-01</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ai-industry-futures.html</loc><lastmod>2023-08-31</lastmod></url>
 <url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2023-08-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swift-for-loops.html</loc><lastmod>2023-08-11</lastmod></url>
@@ -132,12 +134,10 @@
 <url><loc>https://seorenn.github.io/note/spotlight.html</loc><lastmod>2022-01-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mdutil.html</loc><lastmod>2022-01-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mongodb.html</loc><lastmod>2022-01-05</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git-special-usage.html</loc><lastmod>2022-01-03</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron.html</loc><lastmod>2022-01-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-troubleshooting.html</loc><lastmod>2022-01-02</lastmod></url>
 <url><loc>https://seorenn.github.io/note/magit.html</loc><lastmod>2021-12-30</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-tips.html</loc><lastmod>2021-12-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/git-basic-usage.html</loc><lastmod>2021-12-29</lastmod></url>
 <url><loc>https://seorenn.github.io/note/electron-basic-setup.html</loc><lastmod>2021-12-24</lastmod></url>
 <url><loc>https://seorenn.github.io/note/appstore-guideline-hints.html</loc><lastmod>2021-12-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon-mac.html</loc><lastmod>2021-12-12</lastmod></url>
@@ -289,6 +289,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2023-09-17</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-09-17</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2023-09-18</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2023-09-18</lastmod></url>
 </urlset>

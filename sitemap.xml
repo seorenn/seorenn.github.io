@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/note/news-jamboree-2023.html</loc><lastmod>2024-02-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/news-osong-tunnel-disastro-202307.html</loc><lastmod>2024-02-15</lastmod></url>
-<url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2024-02-01</lastmod></url>
-<url><loc>https://seorenn.github.io/note/ai-industry-futures.html</loc><lastmod>2024-01-29</lastmod></url>
-<url><loc>https://seorenn.github.io/note/mts-review.html</loc><lastmod>2024-01-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-osong-tunnel-disastro-202307.html</loc><lastmod>2024-03-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/ai-industry-futures.html</loc><lastmod>2024-03-15</lastmod></url>
+<url><loc>https://seorenn.github.io/note/mts-review.html</loc><lastmod>2024-03-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/base-rate.html</loc><lastmod>2024-03-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/news-jamboree-2023.html</loc><lastmod>2024-03-13</lastmod></url>
+<url><loc>https://seorenn.github.io/note/homebrew.html</loc><lastmod>2024-03-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/macos-releases-note.html</loc><lastmod>2023-12-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/ios-releases-note.html</loc><lastmod>2023-12-13</lastmod></url>
 <url><loc>https://seorenn.github.io/note/objective-c-block-syntax.html</loc><lastmod>2023-11-02</lastmod></url>
@@ -12,7 +13,6 @@
 <url><loc>https://seorenn.github.io/note/apple-news-2023.html</loc><lastmod>2023-10-27</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-logs-2023.html</loc><lastmod>2023-10-20</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-silicon.html</loc><lastmod>2023-10-19</lastmod></url>
-<url><loc>https://seorenn.github.io/note/homebrew.html</loc><lastmod>2023-10-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/gh.html</loc><lastmod>2023-10-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/swiftui-drawing-components.html</loc><lastmod>2023-10-12</lastmod></url>
 <url><loc>https://seorenn.github.io/note/apple-script.html</loc><lastmod>2023-10-12</lastmod></url>
@@ -290,6 +290,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2024-02-20</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2024-02-20</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2024-03-20</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2024-03-20</lastmod></url>
 </urlset>

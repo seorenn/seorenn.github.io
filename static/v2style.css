@@ -350,6 +350,30 @@ td.org-left {
     height: 100%;
 }
 
+/* AD */
+
+.mid-ad-container {
+    width: 100vw;
+    padding: 0;
+    margin: 48px 0 48px 0;
+    margin-left: calc(50% - 50vw);
+    text-align: center;
+}
+
+.adsbygoogle {
+    /* width: 100%; */
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.ad {
+    width: 100vw;
+    padding: 0;
+    margin: 48px 0 48px 0;
+    margin-left: calc(50% - 50vw);
+    text-align: center;
+}
+
 /* refinfo and navinfo */
 
 .refinfo-container {

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://seorenn.github.io</id>
   <title>Seorenn: All Feeds</title>
-  <updated>2024-05-28T07:43:18.151266+00:00</updated>
+  <updated>2024-05-28T12:51:37.871807+00:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -62,27 +62,6 @@ server.serve_forever()
     <published>2024-04-16T21:00:00+09:00</published>
   </entry>
   <entry>
-    <id>https://seorenn.github.io/subject/python.html</id>
-    <title>Python</title>
-    <updated>2024-05-21T16:30:33.341216+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬(Python)은 네덜란드 출신의 귀도 반 로썸(Guide van Rossum)에 의해 탄생한 프로그래밍 언어다. 동적 타이핑을 사용하는 인터프리터 언어라는 점도 특징이지만, 역시 들여쓰기를 블록 구분으로 사용하는 것을 문법으로 강제하는 언어라는 점이 가장 큰 특징이다.</p>
-<h2>파이썬 관련 일반적인 글들</h2>
-<ul>
-<li><a href="../article/python-simple-web-server.html">간단한 파이썬 웹 서버</a></li>
-<li><a href="../article/python-filter-and-map.html">파이썬의 Filter와 Map 그리고 List Comprehension</a></li>
-<li><a href="../article/python-f-string.html">파이썬의 F-String 간단 정리</a></li>
-</ul>
-<h2>파이썬 패키지 관련 글들</h2>
-<ul>
-<li><a href="../article/python-bitstring.html">파이썬 bitstring 패키지 소개</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/subject/python.html"/>
-    <summary type="text">파이썬(Python)과 관련된 글들을 모은는 주제</summary>
-    <published>2024-05-16T20:24:00+09:00</published>
-  </entry>
-  <entry>
     <id>https://seorenn.github.io/article/python-filter-and-map.html</id>
     <title>파이썬의 Filter와 Map 그리고 List Comprehension</title>
     <updated>2024-05-19T23:32:44.006043+09:00</updated>
@@ -113,20 +92,6 @@ server.serve_forever()
     <link href="https://seorenn.github.io/article/python-filter-and-map.html"/>
     <summary type="text">파이썬(Python)의 filter와 map 사용법 및 이와 비슷한 List Comprehension을 소개하는 글</summary>
     <published>2024-05-19T17:22:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/subject/economic-term.html</id>
-    <title>경제용어</title>
-    <updated>2024-05-20T10:51:58.056722+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><h2>경제용어 관련글</h2>
-<ul>
-<li><a href="../article/soft-landing-and-hard-landing.html">연착륙과 경착륙</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/subject/economic-term.html"/>
-    <summary type="text">경제용어를 정리하는 주제</summary>
-    <published>2024-05-20T10:43:00+09:00</published>
   </entry>
   <entry>
     <id>https://seorenn.github.io/article/soft-landing-and-hard-landing.html</id>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>파이썬의 Filter와 Map 그리고 List Comprehension - Seorenn</title>
+    <meta name="twitter:title" content="파이썬의 Filter와 Map 그리고 List Comprehension" />
+    <meta name="og:title" content="파이썬의 Filter와 Map 그리고 List Comprehension" />
+    <meta name="description" content="파이썬(Python)의 filter와 map 사용법 및 이와 비슷한 List Comprehension을 소개하는 글" />
+    <meta name="twitter:description" content="파이썬(Python)의 filter와 map 사용법 및 이와 비슷한 List Comprehension을 소개하는 글" />
+    <meta name="og:description" content="파이썬(Python)의 filter와 map 사용법 및 이와 비슷한 List Comprehension을 소개하는 글" />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-filter-and-map.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-filter-and-map.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">LOGS</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>파이썬의 Filter와 Map 그리고 List Comprehension</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/python.html">Python</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 05월 19일 17:22 작성</span>
+            
+            
+              <span>//</span>
+            
+            
+              <span>2024년 05월 19일 23:32 업데이트</span>
+            
+          </div>
+        </header>
+        <p>파이썬에도 보통 함수형 언어들의 핵심 일꾼(?)으로 불리는 fillter와 map이 당연히 있다. 하지만 파이썬에서는 이 둘 보다는 다른 방법의 문법을 사용하는 경우도 자주 보이는데 이에 대해 간단히 정리해 보자.</p>
+<h2>filter와 map</h2>
+<p><code>filter</code>는 여타 언어들 처럼 리스트에서 불필요한 부분을 걸러내기 위한 용도로 사용된다. 예를 들자면 아래와 같은 식이다.</p>
+<pre><code class="language-python">result = filter(lambda x: iswhat(x), somelist)
+</code></pre>
+<p>여기서 lambda 함수의 결과가 <code>True</code>이면 리스트에 남고 <code>False</code>이면 리스트에서 제외된 채로 result로 반환된다.</p>
+<p><code>map</code>의 경우는 입력된 리스트를 가공하여 다른 형태의 리스트로 만들고 싶을 때 사용한다. 예를 들어 다음과 같은 식이다.</p>
+<pre><code class="language-python">result = map(lambda x: dowhat(x), somelist)
+</code></pre>
+<p>여기서 lambda 함수의 결과를 이용해 리스트가 새로 구성되어서 result로 반환된다.</p>
+<h2>List Comprehension</h2>
+<p>한국어로는 뭐라고 표현해야 할 지를 잘 모르겠다. 어쨌든 이 문법을 이용하면 filter와 map 코드를 파이썬에 어울리는 방식으로 표현할 수 있다.</p>
+<p>예를 들어 위의 filter 예제는 아래와 같은 식으로 바꿔서 쓸 수 있다.</p>
+<pre><code class="language-python">[x for x in somelist if iswhat(x)]
+</code></pre>
+<p>보다시피 파이썬의 여러 문법이 한 번에 쓰여지고 있는데 생각보다 가독성이 나쁘지는 않다.</p>
+<p>map 예제의 경우도 비슷하게 아래와 같은 식으로 바꿔 쓸 수 있다.</p>
+<pre><code class="language-python">[dowhat(x) for x in somelist]
+</code></pre>
+<p>이런 식으로 풀어서 쓸 수 있다. 이런 방식이 코드도 약간은 줄어드는 느낌이다.</p>
+<h2>사족</h2>
+<p>reduce는 어디 갔다고 물어볼 사람이 있을 지도 모르겠는데, 개인적으로 reduce는 코드 읽기 측면에서 상당히 난해하고 가독성이 나쁜 코드를 만들어 낸다고 생각해서 안 쓰는 것이 좋지 않을까 생각된다. 정 필요하다면 루프를 동원해서 풀어서 쓰는 게 훨씬 낫지 않을까?</p>
+      </section>
+    </div>
+    <!-- RefInfos -->
+    <div class="refinfo-container">
+      <div class="navinfo-container">
+        
+        
+      </div>
+    </div>
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

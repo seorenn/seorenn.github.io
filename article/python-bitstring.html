@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>파이썬 bitstring 패키지 소개 - Seorenn</title>
+    <meta name="twitter:title" content="파이썬 bitstring 패키지 소개" />
+    <meta name="og:title" content="파이썬 bitstring 패키지 소개" />
+    <meta name="description" content="Python 이진 데이터 처리 패키지인 bitstring을 소개하는 글" />
+    <meta name="twitter:description" content="Python 이진 데이터 처리 패키지인 bitstring을 소개하는 글" />
+    <meta name="og:description" content="Python 이진 데이터 처리 패키지인 bitstring을 소개하는 글" />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-bitstring.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-bitstring.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-note-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">LOGS</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>파이썬 bitstring 패키지 소개</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/python.html">Python</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 05월 21일 16:21 작성</span>
+            
+            
+              <span>//</span>
+            
+            
+              <span>2024년 05월 21일 16:25 업데이트</span>
+            
+          </div>
+        </header>
+        <p>bitstring은 파이썬에서 이진 데이터를 생성하거나 분석하기 쉽게 해주는 도구다. 특히 문자열 데이터 표현을 실제 이진 데이터로 바꾸거나 혹은 그 반대의 작업을 하기에 유용하다.</p>
+<h2>설치 및 임포트</h2>
+<p>설치는 당연하게도 pip를 이용해 쉽게 설치할 수 있다.</p>
+<pre><code class="language-bash">pip install bitstring
+</code></pre>
+<p>임포트도 그냥 통채로 해도 된다.</p>
+<pre><code class="language-python">import bitstring
+</code></pre>
+<p>물론 주요 클래스 중 필요한 것만 골라서 할 수도 있다.</p>
+<pre><code class="language-python">from bitstring import Bits, BitArray, BitStream
+</code></pre>
+<h2>Bits</h2>
+<p><code>Bits</code>는 bitstring의 근간이 되는 기본 클래스다. 그리고 불변(Immutable) 클래스다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; Bits(0x01)
+Bits('0b0')
+&gt;&gt;&gt; Bits('0x01')
+Bits('0x01')
+</code></pre>
+<p>데이터 표현에 사용되는 클래스로 보이며 개인적으로는 직접 사용할 일은 별로 없을 것 같다.</p>
+<h2>BitArray</h2>
+<p><code>BitArray</code>는 하나 이상의 Bit로 구성된 데이터를 구성하기 위한 용도의 클래스다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; ba = BitArray('0xff')
+&gt;&gt;&gt; ba
+BitArray('0xff')
+&gt;&gt;&gt; ba.append('0xaa')
+&gt;&gt;&gt; ba
+BitArray('0xffaa')
+&gt;&gt;&gt; ba.bin
+'1111111110101010'
+&gt;&gt;&gt; ba.hex
+'ffaa'
+&gt;&gt;&gt; ba.bytes
+b'\xff\xaa'
+</code></pre>
+<p>여러 타입으로 변환도 지원하기 때문에 활용도는 높을 것 같다.</p>
+<h2>ConstBitStream, BitStream</h2>
+<p><code>ConstBitStream</code>는 바이트 스트림에서 위치를 이동해가며 원하는 타입으로 읽기 편하게 구성되어 있다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; cbs = ConstBitStream('0x01020304')
+&gt;&gt;&gt; cbs.pos
+0
+&gt;&gt;&gt; cbs.read('int:8')
+1
+&gt;&gt;&gt; cbs.pos
+8
+&gt;&gt;&gt; cbs.bytepos
+1
+</code></pre>
+<p><code>pos</code>와 <code>bytepos</code>의 차이점을 잘 보자. <code>pos</code>는 비트 단위다. 즉 비트 단위로 데이터를 읽을 수 있다는 말이다.</p>
+<p><code>ConstBitStream</code>은 <code>BitStream</code>의 불변(Immutable) 타입 클래스다. 메서드 등은 거의 동일하지만 <code>BitStream</code>은 <code>append()</code>같은 가변(Mutable) 메서드를 사용할 수 있다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; bs = BitStream('0x0102')
+&gt;&gt;&gt; bs.append('0x0304')
+&gt;&gt;&gt; bs
+BitStream('0x01020304')
+</code></pre>
+<h2>외부 링크</h2>
+<ul>
+<li><a href="https://github.com/scott-griffiths/bitstring" target="_blank">bitstring 프로젝트 저장소📎</a></li>
+</ul>
+      </section>
+    </div>
+    <!-- RefInfos -->
+    <div class="refinfo-container">
+      <div class="navinfo-container">
+        
+        
+      </div>
+    </div>
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

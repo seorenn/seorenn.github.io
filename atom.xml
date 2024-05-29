@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://seorenn.github.io</id>
   <title>Seorenn: All Feeds</title>
-  <updated>2024-05-29T00:52:02.646627+00:00</updated>
+  <updated>2024-05-29T02:41:53.393634+00:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -257,6 +257,59 @@ BitStream('0x01020304')
     <link href="https://seorenn.github.io/log/20240528-00.html"/>
     <summary type="text">seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.</summary>
     <published>2024-05-28T15:22:00+09:00</published>
+  </entry>
+  <entry>
+    <id>https://seorenn.github.io/article/python-path-tips.html</id>
+    <title>파이썬으로 파일이나 디렉터리 경로 다루기</title>
+    <updated>2024-05-29T11:40:49.865388+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.</p>
+<h2>경로 조합하기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.join('/foo/bar', 'qwer', 'test.txt')
+'/foo/bar/qwer/test.txt'
+</code></pre>
+<p><code>os.path.join</code>의 입력 갯수는 자유로운 편이다.</p>
+<h2>경로에서 파일명만 얻기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.basename('/foo/bar/test.txt')
+'test.txt'
+</code></pre>
+<p>참고로 아래의 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급할 <code>os.path.split</code>을 이용해도 된다.</p>
+<h2>경로에서 디렉터리만 얻기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.dirname('/foo/bar/test.txt')
+'/foo/bar'
+</code></pre>
+<p>해당 파일이 위치하는 디렉터리를 알아낼 때 유용하다.</p>
+<p>아래 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급된 <code>os.path.split</code>을 사용할 수도 있다.</p>
+<h2>파일명이나 경로에서 확장자를 제거하거나 알아내기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.splitext('test.txt')
+('test', '.txt')
+&gt;&gt;&gt; os.path.splitext('/foo/bar/test.txt')
+('/foo/bar/test', '.txt')
+</code></pre>
+<p>입력된 경로에서 파일명의 확장자를 바꿔서 출력해야 되는 경우, 혹은 특정 파일의 확장자만 얻어내야 할 경우 등에서 유용하게 쓸 수 있다.</p>
+<p>반환되는 확장자에 <code>.</code>이 앞에 붙어있다는 점은 주의하자.</p>
+<h2>경로에서 디렉터리와 파일명을 분리하기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.split('/foo/bar/sample.txt')
+('/foo/bar', 'sample.txt')
+&gt;&gt;&gt; os.path.split('/foo/bar')
+('/foo', 'bar')
+</code></pre>
+<p>두 번째 예제에서 볼 수 있듯이 <code>os.path.split</code>은 경로에서 마지막 컴포넌트만 분리해주는 기능이기 때문에 파일이 아니라 마지막 디렉터리를 떼어내는 용도로도 쓸 수 있다.</p>
+<h2>상대경로 얻기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
+'qwer/test.txt'
+</code></pre>
+<p>첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/python-path-tips.html"/>
+    <summary type="text">파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자.</summary>
+    <published>2024-05-29T11:24:00+09:00</published>
   </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240529-00.html</id>

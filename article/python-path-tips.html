@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>파이썬으로 파일이나 디렉터리 경로 다루기 - Seorenn</title>
+    <meta name="twitter:title" content="파이썬으로 파일이나 디렉터리 경로 다루기" />
+    <meta name="og:title" content="파이썬으로 파일이나 디렉터리 경로 다루기" />
+    <meta name="description" content="파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자." />
+    <meta name="twitter:description" content="파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자." />
+    <meta name="og:description" content="파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-path-tips.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-path-tips.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">LOGS</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>파이썬으로 파일이나 디렉터리 경로 다루기</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/python.html">Python</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 05월 29일 11:24 작성</span>
+            
+            
+              <span>//</span>
+            
+            
+              <span>2024년 05월 29일 11:40 업데이트</span>
+            
+          </div>
+        </header>
+        <p>파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.</p>
+<h2>경로 조합하기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.join('/foo/bar', 'qwer', 'test.txt')
+'/foo/bar/qwer/test.txt'
+</code></pre>
+<p><code>os.path.join</code>의 입력 갯수는 자유로운 편이다.</p>
+<h2>경로에서 파일명만 얻기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.basename('/foo/bar/test.txt')
+'test.txt'
+</code></pre>
+<p>참고로 아래의 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급할 <code>os.path.split</code>을 이용해도 된다.</p>
+<h2>경로에서 디렉터리만 얻기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.dirname('/foo/bar/test.txt')
+'/foo/bar'
+</code></pre>
+<p>해당 파일이 위치하는 디렉터리를 알아낼 때 유용하다.</p>
+<p>아래 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급된 <code>os.path.split</code>을 사용할 수도 있다.</p>
+<h2>파일명이나 경로에서 확장자를 제거하거나 알아내기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.splitext('test.txt')
+('test', '.txt')
+&gt;&gt;&gt; os.path.splitext('/foo/bar/test.txt')
+('/foo/bar/test', '.txt')
+</code></pre>
+<p>입력된 경로에서 파일명의 확장자를 바꿔서 출력해야 되는 경우, 혹은 특정 파일의 확장자만 얻어내야 할 경우 등에서 유용하게 쓸 수 있다.</p>
+<p>반환되는 확장자에 <code>.</code>이 앞에 붙어있다는 점은 주의하자.</p>
+<h2>경로에서 디렉터리와 파일명을 분리하기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.split('/foo/bar/sample.txt')
+('/foo/bar', 'sample.txt')
+&gt;&gt;&gt; os.path.split('/foo/bar')
+('/foo', 'bar')
+</code></pre>
+<p>두 번째 예제에서 볼 수 있듯이 <code>os.path.split</code>은 경로에서 마지막 컴포넌트만 분리해주는 기능이기 때문에 파일이 아니라 마지막 디렉터리를 떼어내는 용도로도 쓸 수 있다.</p>
+<h2>상대경로 얻기</h2>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
+'qwer/test.txt'
+</code></pre>
+<p>첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.</p>
+      </section>
+    </div>
+    <!-- RefInfos -->
+    <div class="refinfo-container">
+      <div class="navinfo-container">
+        
+        
+      </div>
+    </div>
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

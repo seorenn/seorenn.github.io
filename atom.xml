@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://seorenn.github.io</id>
   <title>Seorenn: All Feeds</title>
-  <updated>2024-05-29T08:00:52.956072+00:00</updated>
+  <updated>2024-05-29T12:43:47.602389+00:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -10,6 +10,7 @@
   <link href="https://seorenn.github.io/atom.xml" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
+  <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
     <id>https://seorenn.github.io/article/python-simple-web-server.html</id>
     <title>간단한 파이썬 웹 서버</title>

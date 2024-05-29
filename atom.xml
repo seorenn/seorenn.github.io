@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://seorenn.github.io</id>
   <title>Seorenn: All Feeds</title>
-  <updated>2024-05-29T12:46:57.334842+00:00</updated>
+  <updated>2024-05-29T15:24:42.191874+00:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -323,5 +323,38 @@ BitStream('0x01020304')
     <link href="https://seorenn.github.io/log/20240529-00.html"/>
     <summary type="text">애플이 iOS 17.5의 서명을 중지했다.</summary>
     <published>2024-05-29T21:44:00+09:00</published>
+  </entry>
+  <entry>
+    <id>https://seorenn.github.io/article/python-file-dir-exists.html</id>
+    <title>파이썬에서 파일이나 디렉터리 구분 및 존재 확인하기</title>
+    <updated>2024-05-30T00:24:05.946600+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.</p>
+<p>사실 이 모두 간단한 <code>os.path</code>의 두 함수를 통해 가능하다.</p>
+<h2>isfile</h2>
+<p><code>isfile</code>, 정확히 말해 <code>os.path.isfile</code> 함수는 경로가 파일인지 혹은 존재하는지를 알려준다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; os.path.isfile('/Users/seorenn/.zshrc')
+True
+&gt;&gt;&gt; os.path.isfile('/Users/seorenn')
+False
+&gt;&gt;&gt; os.path.isfile('/Users/seorenn/not_existing_file')
+False
+</code></pre>
+<p>보다시피 <code>isfile</code>을 이용하면 경로가 파일인지 아니면 존재하지 않는지를 확인할 수 있다.</p>
+<h2>isdir</h2>
+<p><code>isfile</code>을 봤다면 이름만 보면 감이 바로 올 만한 함수다. 이름처럼 <code>isdir</code>, 정확히 말해 <code>os.path.isdir</code> 함수는 경로가 디렉터리인지 그리고 실제로 존재하는지를 알려준다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.isdir('/Users/seorenn')
+True
+&gt;&gt;&gt; os.path.isdir('/Users/seorenn/.zsshrc')
+False
+&gt;&gt;&gt; os.path.isdir('/Users/seorenn/not_existing_dir/')
+False
+</code></pre>
+<p>아주 쉽고 간단한 기능이지만 개인적으로 자주 까먹는 편이다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/python-file-dir-exists.html"/>
+    <summary type="text">파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.</summary>
+    <published>2024-05-30T00:17:00+09:00</published>
   </entry>
 </feed>

@@ -206,6 +206,7 @@ div.outline-text-2 > hr {
 .content header h1 {
     font-size: 1.6rem;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .content a,
@@ -232,17 +233,17 @@ h6 {
 
 .content h2 {
     font-size: 1.5rem;
-    margin-top: 3.6rem;
-    margin-bottom: 1rem;
-    padding-top: 16px;
+    margin-top: 2.8rem;
+    margin-bottom: 0.8rem;
+    padding-top: 8px;
     padding-bottom: 0;
     border-top: 0.5px #ddd dashed;
 }
 
 .content h3 {
     font-size: 1.3rem;
-    margin-top: 3rem;
-    margin-bottom: 0.8rem;
+    margin-top: 2.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .content h4 {
@@ -260,9 +261,6 @@ h6 {
 .content i {
     font-size: 0.96rem;
     color: #666;
-}
-
-.content .org-src-container {
 }
 
 .content .external-link {

@@ -350,6 +350,24 @@ td.org-left {
     height: 100%;
 }
 
+/* logarch - Blog Archives */
+
+.logarch-container small {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.logarch-desc {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.logarch-container li {
+    font-size: 1.0rem;
+    line-height: 1.4;
+    margin: 6px 0 6px 0;
+}
+
 /* AD */
 
 .mid-ad-container {

@@ -118,7 +118,7 @@ input::placeholder {
 .content-container {
     max-width: 752px;
     margin: 0 auto;
-    padding: 44px 16px 32px 16px;
+    padding: 44px 16px 0px 16px;
 }
 
 .content {

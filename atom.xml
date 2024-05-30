@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-05-30T14:55:31.549995+09:00</updated>
+  <updated>2024-05-30T16:44:58.293337+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,52 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/python-get-file-infomations.html</id>
+    <title>파이썬에서 파일 정보 얻기</title>
+    <updated>2024-05-30T16:41:43.379570+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬에서 파일의 정보, 예를 들어 파일 사이즈나 수정 일자를 얻는 방법을 알아보자. 여러 방법이 있을 수 있지만 이 글에서는 가장 진보된(?) 형태인 <code>pathlib.Path</code> 클래스를 활용한다.</p>
+<h2>Path.stat()</h2>
+<p><code>stat()</code> 메서드를 활용하면 파일의 메타 정보를 얻을 수 있다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; from pathlib import Path
+&gt;&gt;&gt; Path("/Users/seorenn/.zshrc").stat()
+os.stat_result(st_mode=33188, st_ino=247065795, st_dev=16777225, st_nlink=1, st_uid=501, st_gid=20, st_size=1699, st_atime=1713253280, st_mtime=1713253242, st_ctime=1713253242)
+</code></pre>
+<p>반환되는 값은 <code>os.stat_result</code> 타입의 값이다. 이 값은 <code>os.stat()</code> 함수의 결과와 완전히 동일하다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.stat("/Users/seorenn/.zshrc")
+os.stat_result(st_mode=33188, st_ino=247065795, st_dev=16777225, st_nlink=1, st_uid=501, st_gid=20, st_size=1699, st_atime=1713253280, st_mtime=1713253242, st_ctime=1713253242)
+</code></pre>
+<p>둘 중 원하는 것을 사용하면 된다. 단지 <code>Path</code>는 좀 더 풍부한 기능이 있다는 차이가 있을 뿐이다.</p>
+<h2>예제: 파일 크기 알아내기</h2>
+<p><code>os.stat_result</code> 인스턴스에서 파일 크기는 <code>st_size</code>를 통해 알 수 있다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; from pathlib import Path
+&gt;&gt;&gt; Path("/Users/seorenn/.zshrc").stat().st_size
+1699
+</code></pre>
+<p>이 값은 당연하게도 <code>ls -l</code> 등을 통해 알 수 있는 수치와 동일하다.</p>
+<pre><code class="language-bash">$ ls -l ~/
+...
+-rw-r--r--    1 seorenn  staff    1699 Apr 16 16:40 .zshrc
+...
+</code></pre>
+<p>단위는 바이트 단위이므로 1000 혹은 1024 단위로 나누어가면 좀 더 인간 친화적(?) 수치를 얻을 수 있다.</p>
+<p>다만 파일이 심볼릭 링크 등 실제 파일이 아닐 경우 링크된 파일의 크기가 아닌 경로 전체의 길이 크기를 돌려줄 수도 있으므로 주의하자.</p>
+<h2>예제: 파일 수정 시간 알아내기</h2>
+<p><code>os.stat_result</code> 인스턴스에서 파일 생성 시간은 <code>st_mtime</code> 값을 통해 알 수 있다. 단지 이 값이 UNIX Timestamp 형식으로 표현되어 있어서 사람이 보기엔 그다지 효율적이지 못하다는 문제가 있다.</p>
+<p>따라서 좀 더 읽기 편하게 바꾸면 이런 식이다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; from pathlib import Path
+&gt;&gt;&gt; from datetime import datetime
+&gt;&gt;&gt; datetime.fromtimestamp(Path("/Users/seorenn/.zshrc").stat().st_mtime)
+datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
+</code></pre>
+<p>흔하게 사용하는 <code>datetime</code>에서 <code>fromtimestamp()</code>가 지원되서 간단히 변환할 수 있따.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/python-get-file-infomations.html"/>
+    <summary type="text">파이썬에서 파일의 정보, 예를 들어 파일 사이즈나 수정 일자를 얻는 방법을 알아보자.</summary>
+    <published>2024-05-30T16:17:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240530-00.html</id>
     <title>드디어 피드가 동작한다</title>
@@ -152,7 +198,14 @@ False
 &gt;&gt;&gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
 'qwer/test.txt'
 </code></pre>
-<p>첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.</p></div>
+<p>첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.</p>
+<h2>경로에서 홈 디렉토리 확장하기</h2>
+<p>UNIX 등의 셸에서는 <code>~</code>라는 기호를 홈 디렉토리를 표현하는 용도로 종종 사용한다. 하지만 파이썬에서는 기본적으로 큰 의미를 가지지 않는 심볼일 뿐이다. 따라서 이를 홈 디렉토리로 바꿔줄 필요가 있다. 이럴 때 <code>os.path.expanduser</code> 함수를 이용할 수 있다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.expanduser("~/.zshrc")
+'/Users/seorenn/.zshrc'
+</code></pre>
+<p>셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.</p></div>
     </content>
     <link href="https://seorenn.github.io/article/python-path-tips.html"/>
     <summary type="text">파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자.</summary>

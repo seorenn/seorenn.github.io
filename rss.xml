@@ -13,7 +13,85 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 May 2024 14:55:31 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 16:44:58 +0900</lastBuildDate>
+    <item>
+      <title>파이썬에서 파일 정보 얻기</title>
+      <link>https://seorenn.github.io/article/python-get-file-infomations.html</link>
+      <description>&lt;p&gt;파이썬에서 파일의 정보, 예를 들어 파일 사이즈나 수정 일자를 얻는 방법을 알아보자. 여러 방법이 있을 수 있지만 이 글에서는 가장 진보된(?) 형태인 &lt;code&gt;pathlib.Path&lt;/code&gt; 클래스를 활용한다.&lt;/p&gt;
+&lt;h2&gt;Path.stat()&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;stat()&lt;/code&gt; 메서드를 활용하면 파일의 메타 정보를 얻을 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
+&amp;gt;&amp;gt;&amp;gt; Path(&amp;quot;/Users/seorenn/.zshrc&amp;quot;).stat()
+os.stat_result(st_mode=33188, st_ino=247065795, st_dev=16777225, st_nlink=1, st_uid=501, st_gid=20, st_size=1699, st_atime=1713253280, st_mtime=1713253242, st_ctime=1713253242)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;반환되는 값은 &lt;code&gt;os.stat_result&lt;/code&gt; 타입의 값이다. 이 값은 &lt;code&gt;os.stat()&lt;/code&gt; 함수의 결과와 완전히 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.stat(&amp;quot;/Users/seorenn/.zshrc&amp;quot;)
+os.stat_result(st_mode=33188, st_ino=247065795, st_dev=16777225, st_nlink=1, st_uid=501, st_gid=20, st_size=1699, st_atime=1713253280, st_mtime=1713253242, st_ctime=1713253242)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;둘 중 원하는 것을 사용하면 된다. 단지 &lt;code&gt;Path&lt;/code&gt;는 좀 더 풍부한 기능이 있다는 차이가 있을 뿐이다.&lt;/p&gt;
+&lt;h2&gt;예제: 파일 크기 알아내기&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;os.stat_result&lt;/code&gt; 인스턴스에서 파일 크기는 &lt;code&gt;st_size&lt;/code&gt;를 통해 알 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
+&amp;gt;&amp;gt;&amp;gt; Path(&amp;quot;/Users/seorenn/.zshrc&amp;quot;).stat().st_size
+1699
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 값은 당연하게도 &lt;code&gt;ls -l&lt;/code&gt; 등을 통해 알 수 있는 수치와 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ ls -l ~/
+...
+-rw-r--r--    1 seorenn  staff    1699 Apr 16 16:40 .zshrc
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;단위는 바이트 단위이므로 1000 혹은 1024 단위로 나누어가면 좀 더 인간 친화적(?) 수치를 얻을 수 있다.&lt;/p&gt;
+&lt;p&gt;다만 파일이 심볼릭 링크 등 실제 파일이 아닐 경우 링크된 파일의 크기가 아닌 경로 전체의 길이 크기를 돌려줄 수도 있으므로 주의하자.&lt;/p&gt;
+&lt;h2&gt;예제: 파일 수정 시간 알아내기&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;os.stat_result&lt;/code&gt; 인스턴스에서 파일 생성 시간은 &lt;code&gt;st_mtime&lt;/code&gt; 값을 통해 알 수 있다. 단지 이 값이 UNIX Timestamp 형식으로 표현되어 있어서 사람이 보기엔 그다지 효율적이지 못하다는 문제가 있다.&lt;/p&gt;
+&lt;p&gt;따라서 좀 더 읽기 편하게 바꾸면 이런 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
+&amp;gt;&amp;gt;&amp;gt; from datetime import datetime
+&amp;gt;&amp;gt;&amp;gt; datetime.fromtimestamp(Path(&amp;quot;/Users/seorenn/.zshrc&amp;quot;).stat().st_mtime)
+datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;흔하게 사용하는 &lt;code&gt;datetime&lt;/code&gt;에서 &lt;code&gt;fromtimestamp()&lt;/code&gt;가 지원되서 간단히 변환할 수 있따.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;파이썬에서 파일의 정보, 예를 들어 파일 사이즈나 수정 일자를 얻는 방법을 알아보자. 여러 방법이 있을 수 있지만 이 글에서는 가장 진보된(?) 형태인 &lt;code&gt;pathlib.Path&lt;/code&gt; 클래스를 활용한다.&lt;/p&gt;
+&lt;h2&gt;Path.stat()&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;stat()&lt;/code&gt; 메서드를 활용하면 파일의 메타 정보를 얻을 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
+&amp;gt;&amp;gt;&amp;gt; Path(&amp;quot;/Users/seorenn/.zshrc&amp;quot;).stat()
+os.stat_result(st_mode=33188, st_ino=247065795, st_dev=16777225, st_nlink=1, st_uid=501, st_gid=20, st_size=1699, st_atime=1713253280, st_mtime=1713253242, st_ctime=1713253242)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;반환되는 값은 &lt;code&gt;os.stat_result&lt;/code&gt; 타입의 값이다. 이 값은 &lt;code&gt;os.stat()&lt;/code&gt; 함수의 결과와 완전히 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.stat(&amp;quot;/Users/seorenn/.zshrc&amp;quot;)
+os.stat_result(st_mode=33188, st_ino=247065795, st_dev=16777225, st_nlink=1, st_uid=501, st_gid=20, st_size=1699, st_atime=1713253280, st_mtime=1713253242, st_ctime=1713253242)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;둘 중 원하는 것을 사용하면 된다. 단지 &lt;code&gt;Path&lt;/code&gt;는 좀 더 풍부한 기능이 있다는 차이가 있을 뿐이다.&lt;/p&gt;
+&lt;h2&gt;예제: 파일 크기 알아내기&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;os.stat_result&lt;/code&gt; 인스턴스에서 파일 크기는 &lt;code&gt;st_size&lt;/code&gt;를 통해 알 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
+&amp;gt;&amp;gt;&amp;gt; Path(&amp;quot;/Users/seorenn/.zshrc&amp;quot;).stat().st_size
+1699
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 값은 당연하게도 &lt;code&gt;ls -l&lt;/code&gt; 등을 통해 알 수 있는 수치와 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ ls -l ~/
+...
+-rw-r--r--    1 seorenn  staff    1699 Apr 16 16:40 .zshrc
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;단위는 바이트 단위이므로 1000 혹은 1024 단위로 나누어가면 좀 더 인간 친화적(?) 수치를 얻을 수 있다.&lt;/p&gt;
+&lt;p&gt;다만 파일이 심볼릭 링크 등 실제 파일이 아닐 경우 링크된 파일의 크기가 아닌 경로 전체의 길이 크기를 돌려줄 수도 있으므로 주의하자.&lt;/p&gt;
+&lt;h2&gt;예제: 파일 수정 시간 알아내기&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;os.stat_result&lt;/code&gt; 인스턴스에서 파일 생성 시간은 &lt;code&gt;st_mtime&lt;/code&gt; 값을 통해 알 수 있다. 단지 이 값이 UNIX Timestamp 형식으로 표현되어 있어서 사람이 보기엔 그다지 효율적이지 못하다는 문제가 있다.&lt;/p&gt;
+&lt;p&gt;따라서 좀 더 읽기 편하게 바꾸면 이런 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
+&amp;gt;&amp;gt;&amp;gt; from datetime import datetime
+&amp;gt;&amp;gt;&amp;gt; datetime.fromtimestamp(Path(&amp;quot;/Users/seorenn/.zshrc&amp;quot;).stat().st_mtime)
+datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;흔하게 사용하는 &lt;code&gt;datetime&lt;/code&gt;에서 &lt;code&gt;fromtimestamp()&lt;/code&gt;가 지원되서 간단히 변환할 수 있따.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/python-get-file-infomations.html</guid>
+      <pubDate>Thu, 30 May 2024 16:17:00 +0900</pubDate>
+    </item>
     <item>
       <title>드디어 피드가 동작한다</title>
       <link>https://seorenn.github.io/log/20240530-00.html</link>
@@ -191,7 +269,14 @@ False
 &amp;gt;&amp;gt;&amp;gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
 'qwer/test.txt'
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;</description>
+&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;
+&lt;h2&gt;경로에서 홈 디렉토리 확장하기&lt;/h2&gt;
+&lt;p&gt;UNIX 등의 셸에서는 &lt;code&gt;~&lt;/code&gt;라는 기호를 홈 디렉토리를 표현하는 용도로 종종 사용한다. 하지만 파이썬에서는 기본적으로 큰 의미를 가지지 않는 심볼일 뿐이다. 따라서 이를 홈 디렉토리로 바꿔줄 필요가 있다. 이럴 때 &lt;code&gt;os.path.expanduser&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.expanduser(&amp;quot;~/.zshrc&amp;quot;)
+'/Users/seorenn/.zshrc'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.&lt;/p&gt;
 &lt;h2&gt;경로 조합하기&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
@@ -234,7 +319,14 @@ False
 &amp;gt;&amp;gt;&amp;gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
 'qwer/test.txt'
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;</content:encoded>
+&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;
+&lt;h2&gt;경로에서 홈 디렉토리 확장하기&lt;/h2&gt;
+&lt;p&gt;UNIX 등의 셸에서는 &lt;code&gt;~&lt;/code&gt;라는 기호를 홈 디렉토리를 표현하는 용도로 종종 사용한다. 하지만 파이썬에서는 기본적으로 큰 의미를 가지지 않는 심볼일 뿐이다. 따라서 이를 홈 디렉토리로 바꿔줄 필요가 있다. 이럴 때 &lt;code&gt;os.path.expanduser&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.expanduser(&amp;quot;~/.zshrc&amp;quot;)
+'/Users/seorenn/.zshrc'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/python-path-tips.html</guid>
       <pubDate>Wed, 29 May 2024 11:24:00 +0900</pubDate>
     </item>

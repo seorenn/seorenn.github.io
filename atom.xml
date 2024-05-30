@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-05-30T10:59:36.045932+09:00</updated>
+  <updated>2024-05-30T14:44:12.273054+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,20 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240530-00.html</id>
+    <title>드디어 피드가 동작한다</title>
+    <updated>2024-05-30T14:44:05.224965+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>seorenn-publish를 만들면서 나름 순조롭게 RSS와 ATOM 피드를 뽑는 스크립트를 만들어서 시험해 보고 있었다. 그런데 Feedly와 같은 RSS 리더에서 최초 피드 리스트는 잘 받아오는데, 이후 업데이트 되는 내역은 전혀 받아오지 못 하였다. 느낌적인 느낌으로 말해서 그냥 리프레시를 안 하는 느낌이었다.</p>
+<p>이것저것 시도해 봤지만 원인이 무엇인지 정확하게 알 수는 없었다. 결국 다른 유명 사이트의 RSS와 내가 만든 RSS의 차이를 비교해보며 feedgen을 기준으로 lastBuildDate나 엔트리에 description 등등을 추가할 수 있었다.</p>
+<p>추측으론 아마도 lastBuildDate 즉 피드 업데이트 시간을 기록한 것이 주요하지 않았나 생각된다. 아니면 피드 안의 엔트리 정렬이 문제였을 지도 모른다. 엔트리가 시간순으로 정렬되어 들어가 있었는데 이걸 역순으로 바꿔주기도 했다.</p>
+<p>뭐가 답이었든 간에 동작하는 걸 확인했으니 일단은 안심이다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240530-00.html"/>
+    <summary type="text">드디어 사이트 업데이트가 Feedly에 나타났다.</summary>
+    <published>2024-05-30T14:30:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/python-list-dir.html</id>
     <title>파이썬으로 파일 및 디렉터리 목록 구하기</title>

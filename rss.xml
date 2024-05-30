@@ -13,7 +13,21 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 May 2024 10:59:36 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 14:44:12 +0900</lastBuildDate>
+    <item>
+      <title>드디어 피드가 동작한다</title>
+      <link>https://seorenn.github.io/log/20240530-00.html</link>
+      <description>&lt;p&gt;seorenn-publish를 만들면서 나름 순조롭게 RSS와 ATOM 피드를 뽑는 스크립트를 만들어서 시험해 보고 있었다. 그런데 Feedly와 같은 RSS 리더에서 최초 피드 리스트는 잘 받아오는데, 이후 업데이트 되는 내역은 전혀 받아오지 못 하였다. 느낌적인 느낌으로 말해서 그냥 리프레시를 안 하는 느낌이었다.&lt;/p&gt;
+&lt;p&gt;이것저것 시도해 봤지만 원인이 무엇인지 정확하게 알 수는 없었다. 결국 다른 유명 사이트의 RSS와 내가 만든 RSS의 차이를 비교해보며 feedgen을 기준으로 lastBuildDate나 엔트리에 description 등등을 추가할 수 있었다.&lt;/p&gt;
+&lt;p&gt;추측으론 아마도 lastBuildDate 즉 피드 업데이트 시간을 기록한 것이 주요하지 않았나 생각된다. 아니면 피드 안의 엔트리 정렬이 문제였을 지도 모른다. 엔트리가 시간순으로 정렬되어 들어가 있었는데 이걸 역순으로 바꿔주기도 했다.&lt;/p&gt;
+&lt;p&gt;뭐가 답이었든 간에 동작하는 걸 확인했으니 일단은 안심이다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;seorenn-publish를 만들면서 나름 순조롭게 RSS와 ATOM 피드를 뽑는 스크립트를 만들어서 시험해 보고 있었다. 그런데 Feedly와 같은 RSS 리더에서 최초 피드 리스트는 잘 받아오는데, 이후 업데이트 되는 내역은 전혀 받아오지 못 하였다. 느낌적인 느낌으로 말해서 그냥 리프레시를 안 하는 느낌이었다.&lt;/p&gt;
+&lt;p&gt;이것저것 시도해 봤지만 원인이 무엇인지 정확하게 알 수는 없었다. 결국 다른 유명 사이트의 RSS와 내가 만든 RSS의 차이를 비교해보며 feedgen을 기준으로 lastBuildDate나 엔트리에 description 등등을 추가할 수 있었다.&lt;/p&gt;
+&lt;p&gt;추측으론 아마도 lastBuildDate 즉 피드 업데이트 시간을 기록한 것이 주요하지 않았나 생각된다. 아니면 피드 안의 엔트리 정렬이 문제였을 지도 모른다. 엔트리가 시간순으로 정렬되어 들어가 있었는데 이걸 역순으로 바꿔주기도 했다.&lt;/p&gt;
+&lt;p&gt;뭐가 답이었든 간에 동작하는 걸 확인했으니 일단은 안심이다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20240530-00.html</guid>
+      <pubDate>Thu, 30 May 2024 14:30:00 +0900</pubDate>
+    </item>
     <item>
       <title>파이썬으로 파일 및 디렉터리 목록 구하기</title>
       <link>https://seorenn.github.io/article/python-list-dir.html</link>

@@ -1,22 +1,48 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
-    <title>Seorenn: All Feeds</title>
-    <link>https://seorenn.github.io/atom.xml</link>
+    <title>Seorenn</title>
+    <link>https://seorenn.github.io</link>
     <description>Seorenn Notes and Logs</description>
-    <atom:link href="https://seorenn.github.io/atom.xml" rel="self"/>
+    <atom:link href="https://seorenn.github.io" rel="self" type="application/rss+xml"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
-    <generator>python-feedgen</generator>
+    <generator>https://seorenn.github.io</generator>
     <image>
       <url>https://seorenn.github.io/static/seorenn-symbol.png</url>
-      <title>Seorenn: All Feeds</title>
-      <link>https://seorenn.github.io/atom.xml</link>
+      <title>Seorenn</title>
+      <link>https://seorenn.github.io</link>
     </image>
-    <lastBuildDate>Wed, 29 May 2024 15:24:42 +0000</lastBuildDate>
+    <language>ko</language>
+    <lastBuildDate>Thu, 30 May 2024 09:42:53 +0900</lastBuildDate>
     <item>
       <title>간단한 파이썬 웹 서버</title>
       <link>https://seorenn.github.io/article/python-simple-web-server.html</link>
-      <description>파이썬으로 디버깅 용도로 쓸 간단한 HTTP 웹 서버를 띄우는 방법 정리</description>
+      <description>&lt;p&gt;간단한 HTML 파일 디버깅을 위해 정적 웹 서버를 띄워야 할 일이 있을 수 있다. 이럴 때는 별도의 웹 서버 설치 필요 없이 파이썬을 이용해 간단한 웹 서버를 띄울 수 있다. &lt;/p&gt;
+&lt;h2&gt;http.server&lt;/h2&gt;
+&lt;p&gt;아래 커맨드 한 줄이면 현재 디렉터리의 파일을 서빙하는 HTTP 웹 서버를 띄울 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;python -m http.server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이후 웹 브라우저에서 &lt;code&gt;http://localhost:8000&lt;/code&gt; 주소로 접속하면 파일 목록이 보이거나 혹은 HTML 파일을 볼 수 있다.&lt;/p&gt;
+&lt;h2&gt;추가 옵션 예제들&lt;/h2&gt;
+&lt;p&gt;아래와 같이 포트 번호나 &lt;code&gt;--bind&lt;/code&gt; 옵션을 이용해 바인딩 할 IP 주소를 지정할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;python -m http.server 3000 --bind 127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;현재 디렉터리가 아닌 다른 디렉터리를 서빙 루트로 삼고 싶다면 &lt;code&gt;--directory&lt;/code&gt; 옵션을 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;python -m http.server --directory /foo/bar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;다양한 옵션이 있지만 사실 별 다른 옵션 없이 현재 디렉터리에 기본 설정으로 띄우는 것만 해도 개발 용도로는 무리가 없는 것 같다.&lt;/p&gt;
+&lt;h2&gt;코드에서 띄우기&lt;/h2&gt;
+&lt;p&gt;위 명령은 파이썬 패키지를 이용한 것이기 때문에 CLI 커맨드로 별도로 웹 서버를 띄우는 것뿐만 아니라 자신의 스크립트에서 웹 서버를 띄우는 것도 당연히 가능하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+server = HTTPServer(('0.0.0.0', 8000), SimpleHTTPRequestHandler)
+server.serve_forever()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;앞서 제일 처음 소개한 커맨드를 스크립트로 작성하면 이런 식이다.&lt;/p&gt;
+&lt;h2&gt;외부 링크&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/library/http.server.html" target="_blank"&gt;http.server - HTTP Server📎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;간단한 HTML 파일 디버깅을 위해 정적 웹 서버를 띄워야 할 일이 있을 수 있다. 이럴 때는 별도의 웹 서버 설치 필요 없이 파이썬을 이용해 간단한 웹 서버를 띄울 수 있다. &lt;/p&gt;
 &lt;h2&gt;http.server&lt;/h2&gt;
 &lt;p&gt;아래 커맨드 한 줄이면 현재 디렉터리의 파일을 서빙하는 HTTP 웹 서버를 띄울 수 있다.&lt;/p&gt;
@@ -49,7 +75,11 @@ server.serve_forever()
     <item>
       <title>seorenn-publish의 새로운 시작</title>
       <link>https://seorenn.github.io/log/20240416-00.html</link>
-      <description>새로운 개인용 노트 및 블로그 출력 시스템을 만들기 시작했다.</description>
+      <description>&lt;p&gt;새로운 개인용 노트 및 블로그 출력 시스템을 만들기 시작했다.&lt;/p&gt;
+&lt;p&gt;기존 Emacs 상에서 구축했던 Seorenn Note 시스템이 나쁘진 않았지만 - 아니 사실 Org Mode라는 걸출한 시스템은 마음에 들었지만 - Doom Emacs 상에서 구축되어 있어서 이를 업그레이드 할 때마다 종종 망가지는 치명적인 결함에 시달려 왔다.&lt;/p&gt;
+&lt;p&gt;결국 Emacs와 의존성을 완전히 떼어내는 개인 노트 시스템이 필요해졌다. 그래서 아예 Python을 이용해 새롭게 마음대로 만들어 버렸다. &lt;/p&gt;
+&lt;p&gt;다만 글 문법은 Org Mode에서 Markdown으로 바꾼다는 큰 차이가 있다. 따라서 이 시스템을 완성해도 기존의 글을 그대로 쓸 수가 없고 결국 수기로든 자동화 툴로든 바꿔야 한다는 큰 일이 남아있게 된다.&lt;/p&gt;
+&lt;p&gt;거기다 이제 블로그를 통합하려는 계획까지 갖추고 있어서 갈 길이 험난하다. 과연 성공적으로 이 개인 프로젝트를 완성할 수 있을까?&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;새로운 개인용 노트 및 블로그 출력 시스템을 만들기 시작했다.&lt;/p&gt;
 &lt;p&gt;기존 Emacs 상에서 구축했던 Seorenn Note 시스템이 나쁘진 않았지만 - 아니 사실 Org Mode라는 걸출한 시스템은 마음에 들었지만 - Doom Emacs 상에서 구축되어 있어서 이를 업그레이드 할 때마다 종종 망가지는 치명적인 결함에 시달려 왔다.&lt;/p&gt;
 &lt;p&gt;결국 Emacs와 의존성을 완전히 떼어내는 개인 노트 시스템이 필요해졌다. 그래서 아예 Python을 이용해 새롭게 마음대로 만들어 버렸다. &lt;/p&gt;
@@ -61,7 +91,28 @@ server.serve_forever()
     <item>
       <title>파이썬의 Filter와 Map 그리고 List Comprehension</title>
       <link>https://seorenn.github.io/article/python-filter-and-map.html</link>
-      <description>파이썬(Python)의 filter와 map 사용법 및 이와 비슷한 List Comprehension을 소개하는 글</description>
+      <description>&lt;p&gt;파이썬에도 보통 함수형 언어들의 핵심 일꾼(?)으로 불리는 fillter와 map이 당연히 있다. 하지만 파이썬에서는 이 둘 보다는 다른 방법의 문법을 사용하는 경우도 자주 보이는데 이에 대해 간단히 정리해 보자.&lt;/p&gt;
+&lt;h2&gt;filter와 map&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;filter&lt;/code&gt;는 여타 언어들 처럼 리스트에서 불필요한 부분을 걸러내기 위한 용도로 사용된다. 예를 들자면 아래와 같은 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;result = filter(lambda x: iswhat(x), somelist)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;여기서 lambda 함수의 결과가 &lt;code&gt;True&lt;/code&gt;이면 리스트에 남고 &lt;code&gt;False&lt;/code&gt;이면 리스트에서 제외된 채로 result로 반환된다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;map&lt;/code&gt;의 경우는 입력된 리스트를 가공하여 다른 형태의 리스트로 만들고 싶을 때 사용한다. 예를 들어 다음과 같은 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;result = map(lambda x: dowhat(x), somelist)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;여기서 lambda 함수의 결과를 이용해 리스트가 새로 구성되어서 result로 반환된다.&lt;/p&gt;
+&lt;h2&gt;List Comprehension&lt;/h2&gt;
+&lt;p&gt;한국어로는 뭐라고 표현해야 할 지를 잘 모르겠다. 어쨌든 이 문법을 이용하면 filter와 map 코드를 파이썬에 어울리는 방식으로 표현할 수 있다.&lt;/p&gt;
+&lt;p&gt;예를 들어 위의 filter 예제는 아래와 같은 식으로 바꿔서 쓸 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;[x for x in somelist if iswhat(x)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;보다시피 파이썬의 여러 문법이 한 번에 쓰여지고 있는데 생각보다 가독성이 나쁘지는 않다.&lt;/p&gt;
+&lt;p&gt;map 예제의 경우도 비슷하게 아래와 같은 식으로 바꿔 쓸 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;[dowhat(x) for x in somelist]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이런 식으로 풀어서 쓸 수 있다. 이런 방식이 코드도 약간은 줄어드는 느낌이다.&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;reduce는 어디 갔다고 물어볼 사람이 있을 지도 모르겠는데, 개인적으로 reduce는 코드 읽기 측면에서 상당히 난해하고 가독성이 나쁜 코드를 만들어 낸다고 생각해서 안 쓰는 것이 좋지 않을까 생각된다. 정 필요하다면 루프를 동원해서 풀어서 쓰는 게 훨씬 낫지 않을까?&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;파이썬에도 보통 함수형 언어들의 핵심 일꾼(?)으로 불리는 fillter와 map이 당연히 있다. 하지만 파이썬에서는 이 둘 보다는 다른 방법의 문법을 사용하는 경우도 자주 보이는데 이에 대해 간단히 정리해 보자.&lt;/p&gt;
 &lt;h2&gt;filter와 map&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;filter&lt;/code&gt;는 여타 언어들 처럼 리스트에서 불필요한 부분을 걸러내기 위한 용도로 사용된다. 예를 들자면 아래와 같은 식이다.&lt;/p&gt;
@@ -90,7 +141,17 @@ server.serve_forever()
     <item>
       <title>연착륙과 경착륙</title>
       <link>https://seorenn.github.io/article/soft-landing-and-hard-landing.html</link>
-      <description>연착륙과 경착륙이라는 경제용어를 정리하는 글</description>
+      <description>&lt;h2&gt;연착륙과 경착륙&lt;/h2&gt;
+&lt;p&gt;연착륙은 '軟착륙' 즉 부드러운(soft, 軟, 무를 연) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 부드럽게 착륙했다는 의미다.&lt;/p&gt;
+&lt;p&gt;경착륙은 '硬착륙' 즉 단단한(hard, 硬, 굳을 경) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 강하게 착륙하며 탑승객이나 화물에 큰 충격이 가해질 수 있는 상황이다.&lt;/p&gt;
+&lt;h2&gt;경제적인 측면&lt;/h2&gt;
+&lt;p&gt;경착륙이나 연착륙은 일단은 착륙하는 상황, 즉 경기가 하강하는 국면에서 결과가 어떻게 날 것인지를 비유적으로 표현하기 위해 사용한다.&lt;/p&gt;
+&lt;p&gt;즉 연착륙의 경우는 경기 침체가 오긴 했지만 깊지 않고 짧게 잘 넘어갔다 정도로 이해할 수 있을 것 같다.&lt;/p&gt;
+&lt;p&gt;경착륙의 경우는 일반적으론 변동성이 높아지는 것 자체를 의미하기도 하지만, 최근에 쓰이는 의미로는 경제에 상당히 부정적인 즉 '심한 경기 침체 상태이고 회복에 오래 걸린다'라는 의미로 해석할 수 있다. 기업의 실적도 떨어지고 적자나 파산 기업도 늘어나며 실업률도 치솟는 상태가 오래 지속되는 상태다&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;개인적으로 '경착륙'과 같은 한자 조합어는 오해를 일으킬 수 있다고 생각된다. 왜냐하면 '경'이라는 한자에는 딱딱한 것과 다르게 '가벼운'이라는 의미도 동일한 발음으로 존재하고 심지어 자주 사용하기 때문이다.&lt;/p&gt;
+&lt;p&gt;그래서 '경착륙'이나 '연착륙'이라는 단어는 발음 때문에 오해하기 쉬운 용어라 하루 빨리 사라져야 할 용어라 생각된다. 차라리 영어 외래어를 그대로 받아들여 소프트랜딩이나 하드랜딩이라 쓰는게 차라리 정확한 의미 전달 면에서 더 낫다고 생각된다.&lt;/p&gt;
+&lt;p&gt;다만 어디까지나 개인적인 의견이다.&lt;/p&gt;</description>
       <content:encoded>&lt;h2&gt;연착륙과 경착륙&lt;/h2&gt;
 &lt;p&gt;연착륙은 '軟착륙' 즉 부드러운(soft, 軟, 무를 연) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 부드럽게 착륙했다는 의미다.&lt;/p&gt;
 &lt;p&gt;경착륙은 '硬착륙' 즉 단단한(hard, 硬, 굳을 경) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 강하게 착륙하며 탑승객이나 화물에 큰 충격이 가해질 수 있는 상황이다.&lt;/p&gt;
@@ -108,7 +169,57 @@ server.serve_forever()
     <item>
       <title>파이썬의 F-String 간단 정리</title>
       <link>https://seorenn.github.io/article/python-f-string.html</link>
-      <description>Python의 String Interpolation 기능 중 하나인 F-String에 대해 간단히 정리하는 글</description>
+      <description>&lt;p&gt;F-string은 &lt;a href="https://peps.python.org/pep-0498/" target="_blank"&gt;PEP-498📎&lt;/a&gt; 제안을 통해 파이썬 3.6 부터 지원되기 시작한 문자열 포매팅 기능으로 정식 명칭은 Literal String Interpolation 이다.&lt;/p&gt;
+&lt;h2&gt;F-String 기본&lt;/h2&gt;
+&lt;p&gt;기능 이름 답게 문자열 제일 앞에 &lt;code&gt;f&lt;/code&gt; 를 붙이면 F-String이 된다. 그리고 문자열 내용에 중괄호(&lt;code&gt;{...}&lt;/code&gt;)로 대체할 내용을 넣을 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; name = &amp;quot;Conrad&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;My name is {name}&amp;quot;)
+My name is Conrad
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;F-String의 런타임 표현식&lt;/h2&gt;
+&lt;p&gt;중괄호 내부에는 런타임에서 동적으로 작동하는 코드를 넣어도 원하는대로 동작한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; f&amp;quot;1 + 2 = {1+2}&amp;quot;
+'1 + 2 = 3'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;당연히 함수 호출을 명시하는 것도 가능하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; def makeDouble(v):
+...     return v * 2
+...
+&amp;gt;&amp;gt;&amp;gt; f&amp;quot;This is doubler! If you enter 10, it returns {makeDouble(10)}&amp;quot;
+'This is doubler! If you enter 10, it returns 20'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;C언어 스타일의 포매팅&lt;/h2&gt;
+&lt;p&gt;C 언어의 printf 류의 함수에서 많이 쓰이는 포맷 지시 문자도 비슷하게 쓸 수 있다. 예를 들어 &lt;code&gt;%04d&lt;/code&gt;는 F-String에서는 &lt;code&gt;#04d&lt;/code&gt; 로 쓸 수 있다. &lt;code&gt;%&lt;/code&gt;가 아니라 &lt;code&gt;#&lt;/code&gt;이 쓰인다는 점에 주의하면 상당히 비슷하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; value = 12
+&amp;gt;&amp;gt;&amp;gt; f&amp;quot;the value is {value:#04d}&amp;quot;
+'the value is 0012'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;디버깅에 유리한 표현 방식&lt;/h2&gt;
+&lt;p&gt;파이썬 3.8에서 추가된 F-String 기능으로 자신의 이름과 값을 좀 더 편하게 로깅하는 스타일을 쓸 수 있다. 아래와 같은 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; value = 100
+&amp;gt;&amp;gt;&amp;gt; f&amp;quot;{value=}&amp;quot;
+'value=100'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;필요하다면 앞에서 언급한 C언어 스타일의 포맷을 지정할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; value = 100
+&amp;gt;&amp;gt;&amp;gt; f'{value=:#10d}'
+'value=       100'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;주의사항&lt;/h2&gt;
+&lt;p&gt;F-String의 치환 문법 내부에는 백슬래시(&lt;code&gt;\&lt;/code&gt;)를 사용할 수 없다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; &amp;quot;the \&amp;quot;back-slash\&amp;quot; string&amp;quot;
+'the &amp;quot;back-slash&amp;quot; string'
+&amp;gt;&amp;gt;&amp;gt; f'the \'back-slash\' string'
+&amp;quot;the 'back-slash' string&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; f'the {\'back-slash\'} string'
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1
+SyntaxError: f-string expression part cannot include a backslash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;필요하다면 별도의 문자열로 뽑은(?) 다음 이를 활용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; bsstr = &amp;quot;'back-slash'&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; f&amp;quot;the {bsstr} string&amp;quot;
+&amp;quot;the 'back-slash' string&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
       <content:encoded>&lt;p&gt;F-string은 &lt;a href="https://peps.python.org/pep-0498/" target="_blank"&gt;PEP-498📎&lt;/a&gt; 제안을 통해 파이썬 3.6 부터 지원되기 시작한 문자열 포매팅 기능으로 정식 명칭은 Literal String Interpolation 이다.&lt;/p&gt;
 &lt;h2&gt;F-String 기본&lt;/h2&gt;
 &lt;p&gt;기능 이름 답게 문자열 제일 앞에 &lt;code&gt;f&lt;/code&gt; 를 붙이면 F-String이 된다. 그리고 문자열 내용에 중괄호(&lt;code&gt;{...}&lt;/code&gt;)로 대체할 내용을 넣을 수 있다.&lt;/p&gt;
@@ -166,7 +277,64 @@ SyntaxError: f-string expression part cannot include a backslash
     <item>
       <title>파이썬 bitstring 패키지 소개</title>
       <link>https://seorenn.github.io/article/python-bitstring.html</link>
-      <description>Python 이진 데이터 처리 패키지인 bitstring을 소개하는 글</description>
+      <description>&lt;p&gt;bitstring은 파이썬에서 이진 데이터를 생성하거나 분석하기 쉽게 해주는 도구다. 특히 문자열 데이터 표현을 실제 이진 데이터로 바꾸거나 혹은 그 반대의 작업을 하기에 유용하다.&lt;/p&gt;
+&lt;h2&gt;설치 및 임포트&lt;/h2&gt;
+&lt;p&gt;설치는 당연하게도 pip를 이용해 쉽게 설치할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;pip install bitstring
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;임포트도 그냥 통채로 해도 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import bitstring
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;물론 주요 클래스 중 필요한 것만 골라서 할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;from bitstring import Bits, BitArray, BitStream
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Bits&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Bits&lt;/code&gt;는 bitstring의 근간이 되는 기본 클래스다. 그리고 불변(Immutable) 클래스다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; Bits(0x01)
+Bits('0b0')
+&amp;gt;&amp;gt;&amp;gt; Bits('0x01')
+Bits('0x01')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;데이터 표현에 사용되는 클래스로 보이며 개인적으로는 직접 사용할 일은 별로 없을 것 같다.&lt;/p&gt;
+&lt;h2&gt;BitArray&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;BitArray&lt;/code&gt;는 하나 이상의 Bit로 구성된 데이터를 구성하기 위한 용도의 클래스다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; ba = BitArray('0xff')
+&amp;gt;&amp;gt;&amp;gt; ba
+BitArray('0xff')
+&amp;gt;&amp;gt;&amp;gt; ba.append('0xaa')
+&amp;gt;&amp;gt;&amp;gt; ba
+BitArray('0xffaa')
+&amp;gt;&amp;gt;&amp;gt; ba.bin
+'1111111110101010'
+&amp;gt;&amp;gt;&amp;gt; ba.hex
+'ffaa'
+&amp;gt;&amp;gt;&amp;gt; ba.bytes
+b'\xff\xaa'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;여러 타입으로 변환도 지원하기 때문에 활용도는 높을 것 같다.&lt;/p&gt;
+&lt;h2&gt;ConstBitStream, BitStream&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ConstBitStream&lt;/code&gt;는 바이트 스트림에서 위치를 이동해가며 원하는 타입으로 읽기 편하게 구성되어 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; cbs = ConstBitStream('0x01020304')
+&amp;gt;&amp;gt;&amp;gt; cbs.pos
+0
+&amp;gt;&amp;gt;&amp;gt; cbs.read('int:8')
+1
+&amp;gt;&amp;gt;&amp;gt; cbs.pos
+8
+&amp;gt;&amp;gt;&amp;gt; cbs.bytepos
+1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;pos&lt;/code&gt;와 &lt;code&gt;bytepos&lt;/code&gt;의 차이점을 잘 보자. &lt;code&gt;pos&lt;/code&gt;는 비트 단위다. 즉 비트 단위로 데이터를 읽을 수 있다는 말이다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ConstBitStream&lt;/code&gt;은 &lt;code&gt;BitStream&lt;/code&gt;의 불변(Immutable) 타입 클래스다. 메서드 등은 거의 동일하지만 &lt;code&gt;BitStream&lt;/code&gt;은 &lt;code&gt;append()&lt;/code&gt;같은 가변(Mutable) 메서드를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; bs = BitStream('0x0102')
+&amp;gt;&amp;gt;&amp;gt; bs.append('0x0304')
+&amp;gt;&amp;gt;&amp;gt; bs
+BitStream('0x01020304')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;외부 링크&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/scott-griffiths/bitstring" target="_blank"&gt;bitstring 프로젝트 저장소📎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;bitstring은 파이썬에서 이진 데이터를 생성하거나 분석하기 쉽게 해주는 도구다. 특히 문자열 데이터 표현을 실제 이진 데이터로 바꾸거나 혹은 그 반대의 작업을 하기에 유용하다.&lt;/p&gt;
 &lt;h2&gt;설치 및 임포트&lt;/h2&gt;
 &lt;p&gt;설치는 당연하게도 pip를 이용해 쉽게 설치할 수 있다.&lt;/p&gt;
@@ -231,7 +399,11 @@ BitStream('0x01020304')
     <item>
       <title>이제 어느 정도 완성된 것일까?</title>
       <link>https://seorenn.github.io/log/20240528-00.html</link>
-      <description>seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.</description>
+      <description>&lt;p&gt;seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.&lt;/p&gt;
+&lt;p&gt;기본적으로 블로그의 로그를 시간 순으로 정렬하고, 기존 노트에 해당하던 글들은 위키 스타일이 아니라 태그와 비슷한 주제별 관리를 통해 정리하기로 했다.&lt;/p&gt;
+&lt;p&gt;결과적으로 글을 쓸 때 구태여 위키와 같은 링크를 많이 만들 필요가 없어졌고 그래서 글 내용 자체에 집중할 수 있는 여력은 약간 늘어날 것 같다. 어차피 주제와 비슷하게 글을 모으기 위한 글도 기존에는 수작업으로 정리하고 있었는데 여기에 약간의 자동화를 추가한 개념이기 기존보다는 분명 더 편해지리라 생각한다.&lt;/p&gt;
+&lt;p&gt;물론 아직 문제가 많은 것 같다. 시험용 로그를 지웠더니 또 오류가 난다. 덕분에 안정성이 약간 증가했다는 결론으로 이어진 점은 긍정적이다.&lt;/p&gt;
+&lt;p&gt;당분간은 써보면서 판단해 봐야겠다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.&lt;/p&gt;
 &lt;p&gt;기본적으로 블로그의 로그를 시간 순으로 정렬하고, 기존 노트에 해당하던 글들은 위키 스타일이 아니라 태그와 비슷한 주제별 관리를 통해 정리하기로 했다.&lt;/p&gt;
 &lt;p&gt;결과적으로 글을 쓸 때 구태여 위키와 같은 링크를 많이 만들 필요가 없어졌고 그래서 글 내용 자체에 집중할 수 있는 여력은 약간 늘어날 것 같다. 어차피 주제와 비슷하게 글을 모으기 위한 글도 기존에는 수작업으로 정리하고 있었는데 여기에 약간의 자동화를 추가한 개념이기 기존보다는 분명 더 편해지리라 생각한다.&lt;/p&gt;
@@ -243,7 +415,49 @@ BitStream('0x01020304')
     <item>
       <title>파이썬으로 파일이나 디렉터리 경로 다루기</title>
       <link>https://seorenn.github.io/article/python-path-tips.html</link>
-      <description>파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자.</description>
+      <description>&lt;p&gt;파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.&lt;/p&gt;
+&lt;h2&gt;경로 조합하기&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.join('/foo/bar', 'qwer', 'test.txt')
+'/foo/bar/qwer/test.txt'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;os.path.join&lt;/code&gt;의 입력 갯수는 자유로운 편이다.&lt;/p&gt;
+&lt;h2&gt;경로에서 파일명만 얻기&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.basename('/foo/bar/test.txt')
+'test.txt'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;참고로 아래의 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급할 &lt;code&gt;os.path.split&lt;/code&gt;을 이용해도 된다.&lt;/p&gt;
+&lt;h2&gt;경로에서 디렉터리만 얻기&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.dirname('/foo/bar/test.txt')
+'/foo/bar'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;해당 파일이 위치하는 디렉터리를 알아낼 때 유용하다.&lt;/p&gt;
+&lt;p&gt;아래 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급된 &lt;code&gt;os.path.split&lt;/code&gt;을 사용할 수도 있다.&lt;/p&gt;
+&lt;h2&gt;파일명이나 경로에서 확장자를 제거하거나 알아내기&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.splitext('test.txt')
+('test', '.txt')
+&amp;gt;&amp;gt;&amp;gt; os.path.splitext('/foo/bar/test.txt')
+('/foo/bar/test', '.txt')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;입력된 경로에서 파일명의 확장자를 바꿔서 출력해야 되는 경우, 혹은 특정 파일의 확장자만 얻어내야 할 경우 등에서 유용하게 쓸 수 있다.&lt;/p&gt;
+&lt;p&gt;반환되는 확장자에 &lt;code&gt;.&lt;/code&gt;이 앞에 붙어있다는 점은 주의하자.&lt;/p&gt;
+&lt;h2&gt;경로에서 디렉터리와 파일명을 분리하기&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.split('/foo/bar/sample.txt')
+('/foo/bar', 'sample.txt')
+&amp;gt;&amp;gt;&amp;gt; os.path.split('/foo/bar')
+('/foo', 'bar')
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;두 번째 예제에서 볼 수 있듯이 &lt;code&gt;os.path.split&lt;/code&gt;은 경로에서 마지막 컴포넌트만 분리해주는 기능이기 때문에 파일이 아니라 마지막 디렉터리를 떼어내는 용도로도 쓸 수 있다.&lt;/p&gt;
+&lt;h2&gt;상대경로 얻기&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
+'qwer/test.txt'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.&lt;/p&gt;
 &lt;h2&gt;경로 조합하기&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
@@ -291,9 +505,10 @@ BitStream('0x01020304')
       <pubDate>Wed, 29 May 2024 11:24:00 +0900</pubDate>
     </item>
     <item>
-      <title>애플 iOS 17.5의 서명을 중지</title>
+      <title>애플 iOS 17.5의 서명 중지</title>
       <link>https://seorenn.github.io/log/20240529-00.html</link>
-      <description>애플이 iOS 17.5의 서명을 중지했다.</description>
+      <description>&lt;p&gt;애플이 iOS 17.5의 서명을 중지했다. 이제 iOS 17.5에서 최신 버전인 iOS 17.5.1로 올리면 더이상 17.5로 다운그레이드가 불가능하다는 말이다.&lt;/p&gt;
+&lt;p&gt;서명 중지는 늘상 있는 일이다. 그리고 어차피 버그 픽스 버전이 안정성이 더 좋으므로 굳이 iOS 17.5로 돌아갈 이유도 없다. 안 그래도 지운 사진이 자꾸 부활하는 등 버그로 유명한 버전인데 말이다. 뭐 그냥 그렇다는 소식이다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;애플이 iOS 17.5의 서명을 중지했다. 이제 iOS 17.5에서 최신 버전인 iOS 17.5.1로 올리면 더이상 17.5로 다운그레이드가 불가능하다는 말이다.&lt;/p&gt;
 &lt;p&gt;서명 중지는 늘상 있는 일이다. 그리고 어차피 버그 픽스 버전이 안정성이 더 좋으므로 굳이 iOS 17.5로 돌아갈 이유도 없다. 안 그래도 지운 사진이 자꾸 부활하는 등 버그로 유명한 버전인데 말이다. 뭐 그냥 그렇다는 소식이다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240529-00.html</guid>
@@ -302,7 +517,29 @@ BitStream('0x01020304')
     <item>
       <title>파이썬에서 파일이나 디렉터리 구분 및 존재 확인하기</title>
       <link>https://seorenn.github.io/article/python-file-dir-exists.html</link>
-      <description>파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.</description>
+      <description>&lt;p&gt;파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.&lt;/p&gt;
+&lt;p&gt;사실 이 모두 간단한 &lt;code&gt;os.path&lt;/code&gt;의 두 함수를 통해 가능하다.&lt;/p&gt;
+&lt;h2&gt;isfile&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;isfile&lt;/code&gt;, 정확히 말해 &lt;code&gt;os.path.isfile&lt;/code&gt; 함수는 경로가 파일인지 혹은 존재하는지를 알려준다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn/.zshrc')
+True
+&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn')
+False
+&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn/not_existing_file')
+False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;보다시피 &lt;code&gt;isfile&lt;/code&gt;을 이용하면 경로가 파일인지 아니면 존재하지 않는지를 확인할 수 있다.&lt;/p&gt;
+&lt;h2&gt;isdir&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;isfile&lt;/code&gt;을 봤다면 이름만 보면 감이 바로 올 만한 함수다. 이름처럼 &lt;code&gt;isdir&lt;/code&gt;, 정확히 말해 &lt;code&gt;os.path.isdir&lt;/code&gt; 함수는 경로가 디렉터리인지 그리고 실제로 존재하는지를 알려준다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn')
+True
+&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn/.zsshrc')
+False
+&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn/not_existing_dir/')
+False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;아주 쉽고 간단한 기능이지만 개인적으로 자주 까먹는 편이다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.&lt;/p&gt;
 &lt;p&gt;사실 이 모두 간단한 &lt;code&gt;os.path&lt;/code&gt;의 두 함수를 통해 가능하다.&lt;/p&gt;
 &lt;h2&gt;isfile&lt;/h2&gt;

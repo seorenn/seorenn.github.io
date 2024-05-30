@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
-  <title>Seorenn: All Feeds</title>
-  <updated>2024-05-29T15:24:42.191874+00:00</updated>
+  <title>Seorenn</title>
+  <updated>2024-05-30T09:42:53.594810+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
   </author>
-  <link href="https://seorenn.github.io/atom.xml" rel="self"/>
-  <generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator>
+  <link href="https://seorenn.github.io" rel="self" type="application/rss+xml"/>
+  <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
@@ -314,7 +314,7 @@ BitStream('0x01020304')
   </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240529-00.html</id>
-    <title>애플 iOS 17.5의 서명을 중지</title>
+    <title>애플 iOS 17.5의 서명 중지</title>
     <updated>2024-05-29T09:46:40.436745+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>애플이 iOS 17.5의 서명을 중지했다. 이제 iOS 17.5에서 최신 버전인 iOS 17.5.1로 올리면 더이상 17.5로 다운그레이드가 불가능하다는 말이다.</p>

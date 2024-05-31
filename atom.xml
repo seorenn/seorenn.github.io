@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-05-31T15:47:19.572078+09:00</updated>
+  <updated>2024-05-31T20:25:48.236849+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,40 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/pngquant-usage.html</id>
+    <title>pngquant로 PNG 이미지 압축하기</title>
+    <updated>2024-05-31T17:08:52.525987+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자. 이 글은 macOS를 기준으로 작성되었다.</p>
+<h2>설치</h2>
+<p>macOS를 기준으로 Homebrew를 이용해 쉽게 설치할 수 있다.</p>
+<pre><code class="language-bash">brew install pngquant
+</code></pre>
+<p>다른 OS도 각자의 방법에 맞게 어렵지 않게 설치할 수 있을 것 같다.</p>
+<h2>기본 사용법</h2>
+<p>pngquant는 다짜고짜 PNG 이미지 파일의 경로를 입력으로 줘서 실행시켜 보면 그냥 돌아간다.</p>
+<pre><code class="language-bash">pngquant filename.png
+</code></pre>
+<p>이런 식으로 호출하면 <code>filename-fs8.png</code> 식의 파일로 압축된 결과물이 저장된다. 이 파일을 원하는 용도로 그대로 사용하면 된다. </p>
+<p>압축된 이미지는 당연하게도 실행시킨 디렉터리에 저장되는데, 만약 압축되어 출력되는 파일 이름을 다르게 하거나 다른 디렉터리에 저장하고 싶다면 아래와 같이 <code>-o</code> 혹은 <code>--output</code> 옵션을 사용해 출력될 경로를 지정할 수 있다.</p>
+<pre><code class="language-bash">pngquant -o /foo/bar/output_filename.png input_filename.png
+</code></pre>
+<h2>최적화</h2>
+<p>이미지 압축인 만큼 최적화 수준을 결정할 수 있다. 특히 PNG 포맷의 경우 GIF와 비슷하게 정해진 색상 수를 이용해 표현하는데 따라서 이 색상 수를 조절하면 압축률을 조절할 수도 있다. 예를 들자면 아래와 같다.</p>
+<pre><code class="language-bash">pngquant 64 filename.png
+</code></pre>
+<p>이렇게 압축 시 사용할 색상 수를 결정할 수 있다. 수를 줄이면 더욱 압축이 되지만 그만큼 디더링이 발생하는 등 퀄리티가 처참해지니 잘 조절해야 한다. 개인적으로는 굳이 최적화 옵션을 주지 않아도 마음에 드는 수준으로 압축되는 것 같다.</p>
+<h2>특수한 사용법</h2>
+<p>UNIX 철학에 맞게 pngquant도 stdin 및 stdout을 파이프로 적극적으로 사용할 수 있다. 예를 들자면 아래와 같은 식으로 쓸 수도 있다.</p>
+<pre><code class="language-bash">convert foo | pngquant | foobar
+</code></pre>
+<p>즉 Imagemagick의 convert 커맨드로 뭔가를 하고 파이프로 그 결과를 받아서 pngquant로 압축한 뒤 출력을 foobar 와 같이 아무런 커맨드에 파이프로 넘겨서 뭔가 마무리 하는 식의 UNIX 철학에 어울리는 커맨드를 사용할 수 있다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/pngquant-usage.html"/>
+    <summary type="text">PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자.</summary>
+    <published>2024-05-31T17:08:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/python-home-dir.html</id>
     <title>파이썬에서 홈 디렉토리 경로 처리하기</title>

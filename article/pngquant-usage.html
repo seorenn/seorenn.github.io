@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>pngquant로 PNG 이미지 압축하기 - Seorenn</title>
+    <meta name="twitter:title" content="pngquant로 PNG 이미지 압축하기" />
+    <meta name="og:title" content="pngquant로 PNG 이미지 압축하기" />
+    <meta name="description" content="PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자." />
+    <meta name="twitter:description" content="PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자." />
+    <meta name="og:description" content="PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/pngquant-usage.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/pngquant-usage.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>pngquant로 PNG 이미지 압축하기</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/cli.html">CLI</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 05월 31일 17:08 작성</span>
+            
+            
+              <span>//</span>
+            
+            
+              <span>2024년 05월 31일 17:08 업데이트</span>
+            
+          </div>
+        </header>
+        <p>PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자. 이 글은 macOS를 기준으로 작성되었다.</p>
+<h2>설치</h2>
+<p>macOS를 기준으로 Homebrew를 이용해 쉽게 설치할 수 있다.</p>
+<pre><code class="language-bash">brew install pngquant
+</code></pre>
+<p>다른 OS도 각자의 방법에 맞게 어렵지 않게 설치할 수 있을 것 같다.</p>
+<h2>기본 사용법</h2>
+<p>pngquant는 다짜고짜 PNG 이미지 파일의 경로를 입력으로 줘서 실행시켜 보면 그냥 돌아간다.</p>
+<pre><code class="language-bash">pngquant filename.png
+</code></pre>
+<p>이런 식으로 호출하면 <code>filename-fs8.png</code> 식의 파일로 압축된 결과물이 저장된다. 이 파일을 원하는 용도로 그대로 사용하면 된다. </p>
+<p>압축된 이미지는 당연하게도 실행시킨 디렉터리에 저장되는데, 만약 압축되어 출력되는 파일 이름을 다르게 하거나 다른 디렉터리에 저장하고 싶다면 아래와 같이 <code>-o</code> 혹은 <code>--output</code> 옵션을 사용해 출력될 경로를 지정할 수 있다.</p>
+<pre><code class="language-bash">pngquant -o /foo/bar/output_filename.png input_filename.png
+</code></pre>
+<h2>최적화</h2>
+<p>이미지 압축인 만큼 최적화 수준을 결정할 수 있다. 특히 PNG 포맷의 경우 GIF와 비슷하게 정해진 색상 수를 이용해 표현하는데 따라서 이 색상 수를 조절하면 압축률을 조절할 수도 있다. 예를 들자면 아래와 같다.</p>
+<pre><code class="language-bash">pngquant 64 filename.png
+</code></pre>
+<p>이렇게 압축 시 사용할 색상 수를 결정할 수 있다. 수를 줄이면 더욱 압축이 되지만 그만큼 디더링이 발생하는 등 퀄리티가 처참해지니 잘 조절해야 한다. 개인적으로는 굳이 최적화 옵션을 주지 않아도 마음에 드는 수준으로 압축되는 것 같다.</p>
+<h2>특수한 사용법</h2>
+<p>UNIX 철학에 맞게 pngquant도 stdin 및 stdout을 파이프로 적극적으로 사용할 수 있다. 예를 들자면 아래와 같은 식으로 쓸 수도 있다.</p>
+<pre><code class="language-bash">convert foo | pngquant | foobar
+</code></pre>
+<p>즉 Imagemagick의 convert 커맨드로 뭔가를 하고 파이프로 그 결과를 받아서 pngquant로 압축한 뒤 출력을 foobar 와 같이 아무런 커맨드에 파이프로 넘겨서 뭔가 마무리 하는 식의 UNIX 철학에 어울리는 커맨드를 사용할 수 있다.</p>
+      </section>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

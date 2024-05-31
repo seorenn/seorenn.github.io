@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>pngquant로 PNG 이미지 압축하기 - Seorenn</title>
-    <meta name="twitter:title" content="pngquant로 PNG 이미지 압축하기" />
-    <meta name="og:title" content="pngquant로 PNG 이미지 압축하기" />
-    <meta name="description" content="PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자." />
-    <meta name="twitter:description" content="PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자." />
-    <meta name="og:description" content="PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자." />
-    <link rel="canonical" href="https://seorenn.github.io/article/pngquant-usage.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/pngquant-usage.html" />
+    <title>MozJPEG으로 JPEG 이미지 압축하기 - Seorenn</title>
+    <meta name="twitter:title" content="MozJPEG으로 JPEG 이미지 압축하기" />
+    <meta name="og:title" content="MozJPEG으로 JPEG 이미지 압축하기" />
+    <meta name="description" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="og:description" content="" />
+    <link rel="canonical" href="https://seorenn.github.io/article/mozjpeg-usage.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/mozjpeg-usage.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>pngquant로 PNG 이미지 압축하기</h1>
+          <h1>MozJPEG으로 JPEG 이미지 압축하기</h1>
           <div class="title-date">
             
               
@@ -73,43 +73,46 @@
               <span>//</spans>
             
             
-              <span>2024년 05월 31일 17:08 작성</span>
+              <span>2024년 05월 31일 20:26 작성</span>
             
             
               <span>//</span>
             
             
-              <span>2024년 05월 31일 17:08 업데이트</span>
+              <span>2024년 05월 31일 20:42 업데이트</span>
             
           </div>
         </header>
-        <p>PNG 이미지 압축 도구인 pngquant의 사용법을 간단히 알아보자. 이 글은 macOS를 기준으로 작성되었다.</p>
-<h2>설치</h2>
-<p>macOS를 기준으로 Homebrew를 이용해 쉽게 설치할 수 있다.</p>
-<pre><code class="language-bash">brew install pngquant
+        <p>JPEG 이미지 압축 관련 도구 모음인 MozJPEG 사용 방법을 간단히 알아보자. 이 글은 macOS를 기준으로 정리되었다.</p>
+<h2>MozJPEG 설치하기</h2>
+<p>macOS에서는 역시나 Homebrew를 통해 MozJPEG을 쉽게 설치할 수 있다.</p>
+<pre><code class="language-bash">brew install mozjpeg
 </code></pre>
-<p>다른 OS도 각자의 방법에 맞게 어렵지 않게 설치할 수 있을 것 같다.</p>
+<p>설치 후 mozjpeg 이라는 바이너리가 없어서 헤멜 수도 있는데, 실제로 설치되는 바이너리 이름은 <code>cjpeg</code>, <code>djpeg</code>, <code>jpegtran</code> 등등 다양하다.</p>
 <h2>기본 사용법</h2>
-<p>pngquant는 다짜고짜 PNG 이미지 파일의 경로를 입력으로 줘서 실행시켜 보면 그냥 돌아간다.</p>
-<pre><code class="language-bash">pngquant filename.png
+<p>기본적으로 아래와 같은 사용 방법을 찾을 수 있다.</p>
+<pre><code class="language-bash">cjpeg -quality 75 input.jpg &gt; output.jpg
 </code></pre>
-<p>이런 식으로 호출하면 <code>filename-fs8.png</code> 식의 파일로 압축된 결과물이 저장된다. 이 파일을 원하는 용도로 그대로 사용하면 된다. </p>
-<p>압축된 이미지는 당연하게도 실행시킨 디렉터리에 저장되는데, 만약 압축되어 출력되는 파일 이름을 다르게 하거나 다른 디렉터리에 저장하고 싶다면 아래와 같이 <code>-o</code> 혹은 <code>--output</code> 옵션을 사용해 출력될 경로를 지정할 수 있다.</p>
-<pre><code class="language-bash">pngquant -o /foo/bar/output_filename.png input_filename.png
+<p>이렇게 실행하면 75% 압축률로 input.jpg 파일이 output.jpg로 압축이 잘 되...지는 않고 개인적으로는 아래와 같은 오류가 발생하며 비정상 종료되어 버렸다.</p>
+<pre><code>Unrecognized input file format --- perhaps you need -targa
 </code></pre>
-<h2>최적화</h2>
-<p>이미지 압축인 만큼 최적화 수준을 결정할 수 있다. 특히 PNG 포맷의 경우 GIF와 비슷하게 정해진 색상 수를 이용해 표현하는데 따라서 이 색상 수를 조절하면 압축률을 조절할 수도 있다. 예를 들자면 아래와 같다.</p>
-<pre><code class="language-bash">pngquant 64 filename.png
+<p>cjpeg이 타입을 인식하지 못 하는 것으로 추정되는데 메시지와 같은 옵션을 추가해도 해결이 안 되었다.</p>
+<p>어쨌든 글 내용이 좀 이상해졌는데 이제 본론으로 들어가보자.</p>
+<h2>조금 복잡하지만 어쨌든 되는 방법</h2>
+<p>MozJPEG을 통해 같이 설치되는 <code>djpeg</code>을 이용하면 JPEG 이미지의 압축을 해제할 수 있으니 위처럼 파일 타입을 인식하지 못 하는 경우 이걸 같이 사용할 수 있다.</p>
+<pre><code class="language-bash">djpeg input.jpg | cjpeg -quality 75 &gt; output.jpg
 </code></pre>
-<p>이렇게 압축 시 사용할 색상 수를 결정할 수 있다. 수를 줄이면 더욱 압축이 되지만 그만큼 디더링이 발생하는 등 퀄리티가 처참해지니 잘 조절해야 한다. 개인적으로는 굳이 최적화 옵션을 주지 않아도 마음에 드는 수준으로 압축되는 것 같다.</p>
-<h2>특수한 사용법</h2>
-<p>UNIX 철학에 맞게 pngquant도 stdin 및 stdout을 파이프로 적극적으로 사용할 수 있다. 예를 들자면 아래와 같은 식으로 쓸 수도 있다.</p>
-<pre><code class="language-bash">convert foo | pngquant | foobar
+<p>이렇게 하면 input.jpg 파일을 75% 수준으로 압축된 output.jpg 파일을 얻을 수 있다.</p>
+<h2>프로그레시브 압축</h2>
+<p>조금 더 욕심을 내고자 한다면 아래처럼 프로그레시브하게 최적화를 거치는 방법도 있다.</p>
+<pre><code class="language-bash">djpeg input.jpg | cjpeg -quality 75 -progressive -optimize &gt; output.jpg
 </code></pre>
-<p>즉 Imagemagick의 convert 커맨드로 뭔가를 하고 파이프로 그 결과를 받아서 pngquant로 압축한 뒤 출력을 foobar 와 같이 아무런 커맨드에 파이프로 넘겨서 뭔가 마무리 하는 식의 UNIX 철학에 어울리는 커맨드를 사용할 수 있다.</p>
+<p>이 경우 압축 효율이 좀 더 좋아지며 점진적 로딩이 되는 프로그레시브 이미지를 얻을 수 있다. 물론 압축 효율이 높다는 말은 처리에 시간이 걸린다는 말이기에 많은 이미지를 한 번에 압축하기엔 좀 부담될 수도 있다.</p>
+<h2>사족</h2>
+<p>이 글에서는 손실(lossy) 압축을 하는 <code>cjpeg</code>이라는 도구를 다뤘는데, 만약 무손실 압축을 원한다면 <code>jpegtran</code>의 사용을 고려해보자. 옵션 등 사용 방법은 비슷하다. 단지, 애초에 JPEG 자체가 손실압축 포맷인데 무손실로 뭔가를 한다는 것이 어떤 의미가 있는지는 좀 생각해 볼 필요가 있을 것 같다.</p>
 <h2>관련된 글들</h2>
 <ul>
-<li><a href="../article/mozjpeg-usage.html">MozJPEG으로 JPEG 이미지 압축하기</a></li>
+<li><a href="../article/pngquant-usage.html">pngquant로 PNG 이미지 압축하기</a></li>
 </ul>
       </section>
     </div>
@@ -123,7 +126,7 @@
               <ul>
                 
                   <li>
-                    <a href="../article/mozjpeg-usage.html">MozJPEG으로 JPEG 이미지 압축하기</a>
+                    <a href="../article/pngquant-usage.html">pngquant로 PNG 이미지 압축하기</a>
                   </li>
                 
               </ul>
@@ -135,7 +138,7 @@
               <ul>
                 
                   <li>
-                    <a href="../article/mozjpeg-usage.html">MozJPEG으로 JPEG 이미지 압축하기</a>
+                    <a href="../article/pngquant-usage.html">pngquant로 PNG 이미지 압축하기</a>
                   </li>
                 
               </ul>

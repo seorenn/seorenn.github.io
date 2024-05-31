@@ -13,7 +13,49 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 May 2024 16:44:58 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2024 09:56:04 +0900</lastBuildDate>
+    <item>
+      <title>파이썬에서 홈 디렉토리 경로 처리하기</title>
+      <link>https://seorenn.github.io/article/python-home-dir.html</link>
+      <description>&lt;p&gt;파이썬에서 경로(path)로 입력받은 문자열 중 시작이 &lt;code&gt;~&lt;/code&gt;로 시작하는 경우 제대로 처리하지 못 하는 경우가 있는데 이럴 때 해결 방법을 간단히 정리해 보자.&lt;/p&gt;
+&lt;p&gt;굳이 정리하자면, POSIX 운영체제의 특징...이라고는 할 수는 없겠지만, 적어도 유닉스나 리눅스, macOS 등에서 사용하는 셸들은 &lt;code&gt;~&lt;/code&gt;을 홈 디렉터리라는 의미로 사용한다. 예를 들어 아래의 경우가 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 경로는 운영체제 등에 따라 &lt;code&gt;/home/username/.zshrc&lt;/code&gt; 혹은 &lt;code&gt;/Users/username/.zshrc&lt;/code&gt; 등으로 내부적으로 변경되어 동작한다. 즉 &lt;code&gt;~&lt;/code&gt;을 홈 디렉토리로 인식한다는 말이다.&lt;/p&gt;
+&lt;p&gt;하지만 파이썬도 그렇고 Emacs Lisp의 경우도 그렇고 다양한 OS에 호환성이 있는 언어들의 경우 &lt;code&gt;~&lt;/code&gt;를 홈 디렉터리로 자동으로 바꿔주지 않는다.&lt;/p&gt;
+&lt;h2&gt;expanduser - 경로에서 홈 디렉토리 확장하기&lt;/h2&gt;
+&lt;p&gt;이럴 때를 위해 파이썬에서는 &lt;code&gt;os.path.expanduser&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.expanduser(&amp;quot;~/.zshrc&amp;quot;)
+'/Users/seorenn/.zshrc'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위의 경우는 macOS에서 구동 중인 REPL에서 사용한 예제다. &lt;/p&gt;
+&lt;p&gt;쓸 데 없이 글이 길어진 것 같다. 어쨌든 셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/python-path-tips.html"&gt;파이썬으로 파일이나 디렉터리 경로 다루기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;파이썬에서 경로(path)로 입력받은 문자열 중 시작이 &lt;code&gt;~&lt;/code&gt;로 시작하는 경우 제대로 처리하지 못 하는 경우가 있는데 이럴 때 해결 방법을 간단히 정리해 보자.&lt;/p&gt;
+&lt;p&gt;굳이 정리하자면, POSIX 운영체제의 특징...이라고는 할 수는 없겠지만, 적어도 유닉스나 리눅스, macOS 등에서 사용하는 셸들은 &lt;code&gt;~&lt;/code&gt;을 홈 디렉터리라는 의미로 사용한다. 예를 들어 아래의 경우가 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 경로는 운영체제 등에 따라 &lt;code&gt;/home/username/.zshrc&lt;/code&gt; 혹은 &lt;code&gt;/Users/username/.zshrc&lt;/code&gt; 등으로 내부적으로 변경되어 동작한다. 즉 &lt;code&gt;~&lt;/code&gt;을 홈 디렉토리로 인식한다는 말이다.&lt;/p&gt;
+&lt;p&gt;하지만 파이썬도 그렇고 Emacs Lisp의 경우도 그렇고 다양한 OS에 호환성이 있는 언어들의 경우 &lt;code&gt;~&lt;/code&gt;를 홈 디렉터리로 자동으로 바꿔주지 않는다.&lt;/p&gt;
+&lt;h2&gt;expanduser - 경로에서 홈 디렉토리 확장하기&lt;/h2&gt;
+&lt;p&gt;이럴 때를 위해 파이썬에서는 &lt;code&gt;os.path.expanduser&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
+&amp;gt;&amp;gt;&amp;gt; os.path.expanduser(&amp;quot;~/.zshrc&amp;quot;)
+'/Users/seorenn/.zshrc'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위의 경우는 macOS에서 구동 중인 REPL에서 사용한 예제다. &lt;/p&gt;
+&lt;p&gt;쓸 데 없이 글이 길어진 것 같다. 어쨌든 셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/python-path-tips.html"&gt;파이썬으로 파일이나 디렉터리 경로 다루기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/python-home-dir.html</guid>
+      <pubDate>Fri, 31 May 2024 09:49:00 +0900</pubDate>
+    </item>
     <item>
       <title>파이썬에서 파일 정보 얻기</title>
       <link>https://seorenn.github.io/article/python-get-file-infomations.html</link>
@@ -270,13 +312,10 @@ False
 'qwer/test.txt'
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;
-&lt;h2&gt;경로에서 홈 디렉토리 확장하기&lt;/h2&gt;
-&lt;p&gt;UNIX 등의 셸에서는 &lt;code&gt;~&lt;/code&gt;라는 기호를 홈 디렉토리를 표현하는 용도로 종종 사용한다. 하지만 파이썬에서는 기본적으로 큰 의미를 가지지 않는 심볼일 뿐이다. 따라서 이를 홈 디렉토리로 바꿔줄 필요가 있다. 이럴 때 &lt;code&gt;os.path.expanduser&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.expanduser(&amp;quot;~/.zshrc&amp;quot;)
-'/Users/seorenn/.zshrc'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.&lt;/p&gt;</description>
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/python-home-dir.html"&gt;파이썬에서 홈 디렉토리 경로 처리하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.&lt;/p&gt;
 &lt;h2&gt;경로 조합하기&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
@@ -320,13 +359,10 @@ False
 'qwer/test.txt'
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;
-&lt;h2&gt;경로에서 홈 디렉토리 확장하기&lt;/h2&gt;
-&lt;p&gt;UNIX 등의 셸에서는 &lt;code&gt;~&lt;/code&gt;라는 기호를 홈 디렉토리를 표현하는 용도로 종종 사용한다. 하지만 파이썬에서는 기본적으로 큰 의미를 가지지 않는 심볼일 뿐이다. 따라서 이를 홈 디렉토리로 바꿔줄 필요가 있다. 이럴 때 &lt;code&gt;os.path.expanduser&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.expanduser(&amp;quot;~/.zshrc&amp;quot;)
-'/Users/seorenn/.zshrc'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;셸 스크립팅 목적이라면 자주 사용하게 될 함수 같다.&lt;/p&gt;</content:encoded>
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/python-home-dir.html"&gt;파이썬에서 홈 디렉토리 경로 처리하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/python-path-tips.html</guid>
       <pubDate>Wed, 29 May 2024 11:24:00 +0900</pubDate>
     </item>

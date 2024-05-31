@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-05-31T20:43:00.337493+09:00</updated>
+  <updated>2024-05-31T20:44:06.716123+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -49,7 +49,7 @@
 </ul></div>
     </content>
     <link href="https://seorenn.github.io/article/mozjpeg-usage.html"/>
-    <summary type="text"/>
+    <summary type="text">JPEG 이미지 압축 관련 도구 모음인 MozJPEG 사용 방법을 간단히 알아보자.</summary>
     <published>2024-05-31T20:26:00+09:00</published>
   </entry>
   <entry>

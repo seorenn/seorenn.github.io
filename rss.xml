@@ -13,7 +13,37 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 01 Jun 2024 14:45:30 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2024 23:30:17 +0900</lastBuildDate>
+    <item>
+      <title>은행과 NIM과 NIS</title>
+      <link>https://seorenn.github.io/article/bank-nim-nis.html</link>
+      <description>&lt;p&gt;간혹 경제지 기사를 읽다 보면 은행과 관련된 기사에서 NIM이나 NIS라는 단어를 볼 수 있는데 도대체 무슨 의미일까? '님'이니 '니스'니 뭐 말 장난 하는 것 같기도 하고 말이다. 그래서 대충 찾아보고 적당히 정리해 본다.&lt;/p&gt;
+&lt;h2&gt;NIM&lt;/h2&gt;
+&lt;p&gt;NIM(Net Interest Margin)은 '순이자마진' 인데 간단히 설명하자면 '이자 장사로 남긴 순수익'이라고 해도 될 것 같다. 좀 딱딱하게 설명하자면 '은행이 자산을 운용해 얻은 수익에서 조달 비용을 뺀 나머지를 운용자산 총액으로 나눈 값'이다.&lt;/p&gt;
+&lt;h2&gt;NIS&lt;/h2&gt;
+&lt;p&gt;NIS(Net Interest Spread)는 '예대금리차' 즉 대출금리에서 예금금리를 뺀 값으로 볼 수 있다. 이 값은 NIM을 결정하는 중요한 값이기도 하다.&lt;/p&gt;
+&lt;h2&gt;의외로 쉬운 용어였다&lt;/h2&gt;
+&lt;p&gt;이 글을 쓰게 된 건 어떤 증권사 리포트의 한 문구는 이래서여다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;경쟁은행들과 달리 이자 이익이 높아진 이유는 NIM 상승 때문이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;결과적으로 NIM과 NIS는 '은행이 이자 장사를 얼마나 잘 하나, 잘 할 수 있나'를 나타내는 지표일 뿐이었다.&lt;/p&gt;
+&lt;p&gt;왜 쉬운 한국어 한글 놔두고 영문축약어를 쓰냐고 비판할 수는 있겠지만 그건 사람이나 의도에 따라 좀 다르게 판단할 수도 있는 문제라 여기서는 언급하진 않는다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;간혹 경제지 기사를 읽다 보면 은행과 관련된 기사에서 NIM이나 NIS라는 단어를 볼 수 있는데 도대체 무슨 의미일까? '님'이니 '니스'니 뭐 말 장난 하는 것 같기도 하고 말이다. 그래서 대충 찾아보고 적당히 정리해 본다.&lt;/p&gt;
+&lt;h2&gt;NIM&lt;/h2&gt;
+&lt;p&gt;NIM(Net Interest Margin)은 '순이자마진' 인데 간단히 설명하자면 '이자 장사로 남긴 순수익'이라고 해도 될 것 같다. 좀 딱딱하게 설명하자면 '은행이 자산을 운용해 얻은 수익에서 조달 비용을 뺀 나머지를 운용자산 총액으로 나눈 값'이다.&lt;/p&gt;
+&lt;h2&gt;NIS&lt;/h2&gt;
+&lt;p&gt;NIS(Net Interest Spread)는 '예대금리차' 즉 대출금리에서 예금금리를 뺀 값으로 볼 수 있다. 이 값은 NIM을 결정하는 중요한 값이기도 하다.&lt;/p&gt;
+&lt;h2&gt;의외로 쉬운 용어였다&lt;/h2&gt;
+&lt;p&gt;이 글을 쓰게 된 건 어떤 증권사 리포트의 한 문구는 이래서여다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;경쟁은행들과 달리 이자 이익이 높아진 이유는 NIM 상승 때문이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;결과적으로 NIM과 NIS는 '은행이 이자 장사를 얼마나 잘 하나, 잘 할 수 있나'를 나타내는 지표일 뿐이었다.&lt;/p&gt;
+&lt;p&gt;왜 쉬운 한국어 한글 놔두고 영문축약어를 쓰냐고 비판할 수는 있겠지만 그건 사람이나 의도에 따라 좀 다르게 판단할 수도 있는 문제라 여기서는 언급하진 않는다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/bank-nim-nis.html</guid>
+      <pubDate>Sat, 01 Jun 2024 21:49:00 +0900</pubDate>
+    </item>
     <item>
       <title>미국의 4월 PCE는 예상대로</title>
       <link>https://seorenn.github.io/log/20240531-00.html</link>
@@ -313,6 +343,17 @@ datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
 ['foo.a', 'bar.b', 'somedir', ...]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;당연하겠지만 입력으로 사용한 &lt;code&gt;'.'&lt;/code&gt;은 현재 디렉터리를 의미한다. 여기다 원하는 경로를 넣을 수 있다.&lt;/p&gt;
+&lt;h2&gt;glob - 패턴 기반 특정 디렉터리 탐색&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;glob&lt;/code&gt;로 &lt;code&gt;os.listdir&lt;/code&gt;과 비슷하게 특저 디렉터리의 디렉터리나 파일 리스트를 구하는 용도로 사용할 수 있는데 특징으로는 패턴을 이용할 수 있다는 점이 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from glob import glob
+&amp;gt;&amp;gt;&amp;gt; for path in glob(&amp;quot;/foo/bar/*.txt&amp;quot;):
+...     print(path)
+/foo/bar/qwer.txt
+/foo/bar/tyui.txt
+/foo/bar/asdf.txt
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위와 같은 코드로 &lt;code&gt;/foo/bar&lt;/code&gt; 디렉터리 아래에서 패턴으로 &lt;code&gt;*.txt&lt;/code&gt; 즉 확장자가 &lt;code&gt;txt&lt;/code&gt;인 파일의 목록을 구할 수 있다.&lt;/p&gt;
 &lt;h2&gt;rglob - 특정 디렉터리 및 그 아래의 모든 서브 디렉터리 탐색&lt;/h2&gt;
 &lt;p&gt;특정 디렉터리 안의 내용물을 서브(자식) 디렉터리까지 다 포함해서 목록을 구할려면 여러 방법이 있겠지만 이번에는 Python 3.4 에서 추가된 &lt;code&gt;pathlib&lt;/code&gt; 모듈의 &lt;code&gt;Path&lt;/code&gt; 클래스의 &lt;code&gt;rglob()&lt;/code&gt; 메서드를 이용해보자.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
@@ -320,7 +361,7 @@ datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
 [PosixPath('/foo/bar/dir/a'), PosixPath('/foo/bar/dir/a/test.txt'), ...]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;PosixPath&lt;/code&gt; 라는 새로운 타입이 등장하는데 이름처럼 경로를 표기하는데 적합한 타입이다. 이 타입은 별로 어려울 것 없이 &lt;code&gt;str()&lt;/code&gt; 로 문자열로 변환이 되니 익숙한 방법을 사용하면 된다.&lt;/p&gt;
-&lt;p&gt;어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다.&lt;/p&gt;
+&lt;p&gt;어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다. 거기다 &lt;code&gt;glob&lt;/code&gt;와 비슷하게 패턴까지 사용할 수도 있다.&lt;/p&gt;
 &lt;p&gt;굳이 &lt;code&gt;list()&lt;/code&gt; 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 generator가 리턴된 것이기 때문에 굳이 &lt;code&gt;list()&lt;/code&gt; 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; for p in Path(&amp;quot;/Users/seorenn/tmp/a&amp;quot;).rglob(&amp;quot;*&amp;quot;):
 ...     print(p)
@@ -338,6 +379,17 @@ datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
 ['foo.a', 'bar.b', 'somedir', ...]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;당연하겠지만 입력으로 사용한 &lt;code&gt;'.'&lt;/code&gt;은 현재 디렉터리를 의미한다. 여기다 원하는 경로를 넣을 수 있다.&lt;/p&gt;
+&lt;h2&gt;glob - 패턴 기반 특정 디렉터리 탐색&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;glob&lt;/code&gt;로 &lt;code&gt;os.listdir&lt;/code&gt;과 비슷하게 특저 디렉터리의 디렉터리나 파일 리스트를 구하는 용도로 사용할 수 있는데 특징으로는 패턴을 이용할 수 있다는 점이 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from glob import glob
+&amp;gt;&amp;gt;&amp;gt; for path in glob(&amp;quot;/foo/bar/*.txt&amp;quot;):
+...     print(path)
+/foo/bar/qwer.txt
+/foo/bar/tyui.txt
+/foo/bar/asdf.txt
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위와 같은 코드로 &lt;code&gt;/foo/bar&lt;/code&gt; 디렉터리 아래에서 패턴으로 &lt;code&gt;*.txt&lt;/code&gt; 즉 확장자가 &lt;code&gt;txt&lt;/code&gt;인 파일의 목록을 구할 수 있다.&lt;/p&gt;
 &lt;h2&gt;rglob - 특정 디렉터리 및 그 아래의 모든 서브 디렉터리 탐색&lt;/h2&gt;
 &lt;p&gt;특정 디렉터리 안의 내용물을 서브(자식) 디렉터리까지 다 포함해서 목록을 구할려면 여러 방법이 있겠지만 이번에는 Python 3.4 에서 추가된 &lt;code&gt;pathlib&lt;/code&gt; 모듈의 &lt;code&gt;Path&lt;/code&gt; 클래스의 &lt;code&gt;rglob()&lt;/code&gt; 메서드를 이용해보자.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; from pathlib import Path
@@ -345,7 +397,7 @@ datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
 [PosixPath('/foo/bar/dir/a'), PosixPath('/foo/bar/dir/a/test.txt'), ...]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;PosixPath&lt;/code&gt; 라는 새로운 타입이 등장하는데 이름처럼 경로를 표기하는데 적합한 타입이다. 이 타입은 별로 어려울 것 없이 &lt;code&gt;str()&lt;/code&gt; 로 문자열로 변환이 되니 익숙한 방법을 사용하면 된다.&lt;/p&gt;
-&lt;p&gt;어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다.&lt;/p&gt;
+&lt;p&gt;어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다. 거기다 &lt;code&gt;glob&lt;/code&gt;와 비슷하게 패턴까지 사용할 수도 있다.&lt;/p&gt;
 &lt;p&gt;굳이 &lt;code&gt;list()&lt;/code&gt; 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 generator가 리턴된 것이기 때문에 굳이 &lt;code&gt;list()&lt;/code&gt; 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; for p in Path(&amp;quot;/Users/seorenn/tmp/a&amp;quot;).rglob(&amp;quot;*&amp;quot;):
 ...     print(p)

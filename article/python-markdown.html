@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>파이썬으로 파일 및 디렉터리 목록 구하기 - Seorenn</title>
-    <meta name="twitter:title" content="파이썬으로 파일 및 디렉터리 목록 구하기" />
-    <meta name="og:title" content="파이썬으로 파일 및 디렉터리 목록 구하기" />
-    <meta name="description" content="파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다." />
-    <meta name="twitter:description" content="파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다." />
-    <meta name="og:description" content="파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다." />
-    <link rel="canonical" href="https://seorenn.github.io/article/python-list-dir.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/python-list-dir.html" />
+    <title>파이썬으로 마크다운 문서를 HTML로 변환하기 - Seorenn</title>
+    <meta name="twitter:title" content="파이썬으로 마크다운 문서를 HTML로 변환하기" />
+    <meta name="og:title" content="파이썬으로 마크다운 문서를 HTML로 변환하기" />
+    <meta name="description" content="파이썬으로 마크다운(markdnwo) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자." />
+    <meta name="twitter:description" content="파이썬으로 마크다운(markdnwo) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자." />
+    <meta name="og:description" content="파이썬으로 마크다운(markdnwo) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-markdown.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-markdown.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>파이썬으로 파일 및 디렉터리 목록 구하기</h1>
+          <h1>파이썬으로 마크다운 문서를 HTML로 변환하기</h1>
           <div class="title-date">
             
               
@@ -73,52 +73,61 @@
               <span>//</spans>
             
             
-              <span>2024년 05월 30일 10:50 작성</span>
+              <span>2024년 06월 02일 17:23 작성</span>
             
             
               <span>//</span>
             
             
-              <span>2024년 05월 30일 10:59 업데이트</span>
+              <span>2024년 06월 02일 17:23 업데이트</span>
             
           </div>
         </header>
-        <p>파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다.</p>
-<h2>listdir - 특정 디렉터리 탐색</h2>
-<p>단순하게 특정 디렉터리의 목록만 구하고 싶다면 <code>os.listdir()</code> 함수를 이용할 수 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.listdir('.')
-['foo.a', 'bar.b', 'somedir', ...]
+        <p>파이썬으로 마크다운(markdnwo) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자.</p>
+<h2>Python-Markdown 패키지 설치</h2>
+<p>단순하게 늘 하던 대로(?) <code>pip</code>로 <code>markdown</code> 패키지를 설치하면 된다.</p>
+<pre><code class="language-bash">pip install markdown
 </code></pre>
-<p>당연하겠지만 입력으로 사용한 <code>'.'</code>은 현재 디렉터리를 의미한다. 여기다 원하는 경로를 넣을 수 있다.</p>
-<h2>glob - 패턴 기반 특정 디렉터리 탐색</h2>
-<p><code>glob</code>로 <code>os.listdir</code>과 비슷하게 특저 디렉터리의 디렉터리나 파일 리스트를 구하는 용도로 사용할 수 있는데 특징으로는 패턴을 이용할 수 있다는 점이 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; from glob import glob
-&gt;&gt;&gt; for path in glob(&quot;/foo/bar/*.txt&quot;):
-...     print(path)
-/foo/bar/qwer.txt
-/foo/bar/tyui.txt
-/foo/bar/asdf.txt
-...
+<h2>마크다운 문서를 HTML로 변환하기</h2>
+<p>예를 들어 마크다운 텍스트 문서를 읽어들여 <code>text</code>라는 변수에 담아놨다면 아래와 같이 호출할 수 있다.</p>
+<pre><code class="language-python">import markdown
+
+html = markdown.Markdown(text)
 </code></pre>
-<p>위와 같은 코드로 <code>/foo/bar</code> 디렉터리 아래에서 패턴으로 <code>*.txt</code> 즉 확장자가 <code>txt</code>인 파일의 목록을 구할 수 있다.</p>
-<h2>rglob - 특정 디렉터리 및 그 아래의 모든 서브 디렉터리 탐색</h2>
-<p>특정 디렉터리 안의 내용물을 서브(자식) 디렉터리까지 다 포함해서 목록을 구할려면 여러 방법이 있겠지만 이번에는 Python 3.4 에서 추가된 <code>pathlib</code> 모듈의 <code>Path</code> 클래스의 <code>rglob()</code> 메서드를 이용해보자.</p>
-<pre><code class="language-python">&gt;&gt;&gt; from pathlib import Path
-&gt;&gt;&gt; list(Path(&quot;/foo/bar/dir&quot;).rglob(&quot;*&quot;))
-[PosixPath('/foo/bar/dir/a'), PosixPath('/foo/bar/dir/a/test.txt'), ...]
+<p>이런 식으로 하면 HTML로 변환된 결과물이 <code>html</code> 변수에 담기게 된다.</p>
+<p>이 방법 말고 아래와 같은 식으로도 할 수 있다.</p>
+<pre><code class="language-python">import markdown
+
+md = markdown.Markdown()
+html = md.convert(text)
 </code></pre>
-<p><code>PosixPath</code> 라는 새로운 타입이 등장하는데 이름처럼 경로를 표기하는데 적합한 타입이다. 이 타입은 별로 어려울 것 없이 <code>str()</code> 로 문자열로 변환이 되니 익숙한 방법을 사용하면 된다.</p>
-<p>어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다. 거기다 <code>glob</code>와 비슷하게 패턴까지 사용할 수도 있다.</p>
-<p>굳이 <code>list()</code> 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 generator가 리턴된 것이기 때문에 굳이 <code>list()</code> 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; for p in Path(&quot;/Users/seorenn/tmp/a&quot;).rglob(&quot;*&quot;):
-...     print(p)
-...
-/foo/bar/dir/a
-/foo/bar/dir/a/test.txt
-...
+<p>이렇게 하면 하나의 마크다운 인스턴스로 여러 번 변환시키는 것도 가능하다. 다만 마크다운 인스턴스에 특정한 정보를 쌓아서 사용하는 경우 연속 변환 시 사이드이펙트가 있을 수도 있으므로 리셋 시키면서 사용할 수도 있다.</p>
+<pre><code class="language-python">import markdown
+
+md = markdown.Markdown()
+html1 = md.convert(text1)
+md.reset()
+html2 = md.convert(text2)
 </code></pre>
-<p>참고로 <code>rglob()</code>의 파일 이름 패턴은 이 외의 다양한 패턴을 지원하므로 궁금하다면 매뉴얼을 찾아보자.</p>
+<h2>마크다운 파일에서 바로 불러들여서 HTML로 변환한 후 바로 파일로 저장하기</h2>
+<p><code>markdownFromFile</code>이라는 함수를 사용하면 마크다운 파일에서 내용을 바로 로드한 후 변환한 HTML 텍스트를 얻을 수 있다.</p>
+<pre><code class="language-python">import markdown
+
+html = markdown.markdownFromFile(input=input_path)
+</code></pre>
+<p>이름과는 다르게 이 함수는 출력 기능도 제공한다. 아래와 같이 <code>output</code>을 명시하면 해당 파일 경로로 HTML 파일을 출력해 준다.</p>
+<pre><code class="language-python">import markdown
+
+html = markdown.markdownFromFile(input=input_path, output=output_path)
+</code></pre>
+<p>필요하다면 <code>encoding</code>도 명시할 수 있지만 <code>utf-8</code>이 기본 값이니 이외의 인코딩이 필요한 경우가 아니라면 굳이 명시할 필요는 없다.</p>
+<p>참고로 이 외에 <code>Markdown</code> 인스턴스에서 <code>convertFile</code>이라는 메서드도 사용할 수 있다.</p>
+<pre><code class="language-python">import markdown
+
+md = markdown.Markdown()
+md.convertFile(input=input_path, output=output_path)
+</code></pre>
+<p>전달하는 파라미터 구성은 앞서 살펴본 <code>markdownFromFile</code>과 동일하다.</p>
       </section>
     </div>
     <!-- RefInfos -->
@@ -132,15 +141,15 @@
               <ul>
                 
                   <li>
-                    <a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a>
-                  </li>
-                
-                  <li>
                     <a href="../article/python-home-dir.html">파이썬에서 홈 디렉토리 경로 처리하기</a>
                   </li>
                 
                   <li>
                     <a href="../article/python-get-file-infomations.html">파이썬에서 파일 정보 얻기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-list-dir.html">파이썬으로 파일 및 디렉터리 목록 구하기</a>
                   </li>
                 
                   <li>

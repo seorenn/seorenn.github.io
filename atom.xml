@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-02T23:07:26.412555+09:00</updated>
+  <updated>2024-06-03T10:14:12.694756+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -51,7 +51,7 @@
     <title>파이썬으로 마크다운 문서를 HTML로 변환하기</title>
     <updated>2024-06-02T17:23:35.665437+09:00</updated>
     <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬으로 마크다운(markdnwo) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자.</p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬으로 마크다운(markdown) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자.</p>
 <h2>Python-Markdown 패키지 설치</h2>
 <p>단순하게 늘 하던 대로(?) <code>pip</code>로 <code>markdown</code> 패키지를 설치하면 된다.</p>
 <pre><code class="language-bash">pip install markdown

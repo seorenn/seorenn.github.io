@@ -390,6 +390,18 @@ td.org-left {
     text-align: center;
 }
 
+/* spliter */
+
+.splitter-container {
+    width: 100%;
+    padding: 0 0 32px 0;
+}
+
+.splitter-container hr {
+    border: 0px;
+    border-top: 1px solid #ddd;
+}
+
 /* refinfo and navinfo */
 
 .refinfo-container {

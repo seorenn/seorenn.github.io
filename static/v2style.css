@@ -30,7 +30,7 @@ body {
 }
 
 .top-header {
-    max-width: 752px;
+    max-width: 728px;
     margin: 0 auto;
     padding: 0 16px 0 16px;
     height: 100%;
@@ -116,7 +116,7 @@ input::placeholder {
 /* content */
 
 .content-container {
-    max-width: 752px;
+    max-width: 728px;
     margin: 0 auto;
     padding: 44px 16px 0px 16px;
 }
@@ -394,7 +394,7 @@ td.org-left {
 
 .splitter-container {
     width: 100%;
-    padding: 0 0 32px 0;
+    padding: 8px 0 36px 0;
 }
 
 .splitter-container hr {
@@ -405,7 +405,7 @@ td.org-left {
 /* refinfo and navinfo */
 
 .refinfo-container {
-    max-width: 752px;
+    max-width: 728px;
     margin: 0 auto;
     padding: 0 16px 32px 16px;
     /* dispay: flex; */
@@ -506,7 +506,7 @@ td.org-left {
 }
 
 footer {
-    max-width: 752px;
+    max-width: 728px;
     margin: 0 auto;
     padding: 16px 16px 20px 16px;
     text-align: center;

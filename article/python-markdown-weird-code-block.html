@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>파이썬으로 파일 및 디렉터리 목록 구하기 - Seorenn</title>
-    <meta name="twitter:title" content="파이썬으로 파일 및 디렉터리 목록 구하기" />
-    <meta name="og:title" content="파이썬으로 파일 및 디렉터리 목록 구하기" />
-    <meta name="description" content="파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다." />
-    <meta name="twitter:description" content="파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다." />
-    <meta name="og:description" content="파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다." />
-    <link rel="canonical" href="https://seorenn.github.io/article/python-list-dir.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/python-list-dir.html" />
+    <title>Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기 - Seorenn</title>
+    <meta name="twitter:title" content="Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기" />
+    <meta name="og:title" content="Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기" />
+    <meta name="description" content="Python-Markdown 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자." />
+    <meta name="twitter:description" content="Python-Markdown 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자." />
+    <meta name="og:description" content="Python-Markdown 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-markdown-weird-code-block.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-markdown-weird-code-block.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>파이썬으로 파일 및 디렉터리 목록 구하기</h1>
+          <h1>Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기</h1>
           <div class="title-date">
             
               
@@ -73,52 +73,65 @@
               <span>//</spans>
             
             
-              <span>2024년 05월 30일 10:50 작성</span>
+              <span>2024년 06월 05일 21:46 작성</span>
             
             
               <span>//</span>
             
             
-              <span>2024년 05월 30일 10:59 업데이트</span>
+              <span>2024년 06월 05일 21:46 업데이트</span>
             
           </div>
         </header>
-        <p>파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다.</p>
-<h2>listdir - 특정 디렉터리 탐색</h2>
-<p>단순하게 특정 디렉터리의 목록만 구하고 싶다면 <code>os.listdir()</code> 함수를 이용할 수 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.listdir('.')
-['foo.a', 'bar.b', 'somedir', ...]
+        <p><a href="../article/python-markdown.html">Python-Markdown</a> 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자.</p>
+<p>코드 블럭은 예를 들어 아래와 같이 역따옴표(back-quote) 3개를 붙여쓴 표식을 위아래로 둘러싸면 그 안의 내용은 코드 블럭으로 렌더링된다.</p>
+<pre><code>```
+code block
+```
 </code></pre>
-<p>당연하겠지만 입력으로 사용한 <code>'.'</code>은 현재 디렉터리를 의미한다. 여기다 원하는 경로를 넣을 수 있다.</p>
-<h2>glob - 패턴 기반 특정 디렉터리 탐색</h2>
-<p><code>glob</code>로 <code>os.listdir</code>과 비슷하게 특저 디렉터리의 디렉터리나 파일 리스트를 구하는 용도로 사용할 수 있는데 특징으로는 패턴을 이용할 수 있다는 점이 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; from glob import glob
-&gt;&gt;&gt; for path in glob(&quot;/foo/bar/*.txt&quot;):
-...     print(path)
-/foo/bar/qwer.txt
-/foo/bar/tyui.txt
-/foo/bar/asdf.txt
+<p>역따옴표 3개가 아니라 틸트(<code>~</code>) 3개를 붙인 표식도 동일하게 쓸 수 있다.</p>
+<pre><code>~~~
+code block
+~~~
+</code></pre>
+<p>문제는 이를 파이썬의 마크다운 모듈로 렌더링하면 이상하게 코드 블럭을 위한 <code>&lt;pre&gt;</code> 태그가 아닌 <code>&lt;code&gt;</code> 태그로만 둘러쌓이는 형태로 렌더링 된다는 점이다. 아래는 실제 REPL 예제다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import markdown
+&gt;&gt;&gt; input = &quot;&quot;&quot;Test Code:
+...
+... ~~~
+... def some_func():
+...     pass
+... ~~~
+... &quot;&quot;&quot;
+&gt;&gt;&gt; markdown.markdown(input)
+'&lt;p&gt;Test Code:&lt;/p&gt;\n&lt;p&gt;&lt;code&gt;def some_func():\n    pass&lt;/code&gt;&lt;/p&gt;'
+</code></pre>
+<p>의도대로라면 인라인 코드를 표시하는 <code>&lt;code&gt;</code>가 아닌 <code>&lt;pre&gt;</code>로 둘러쌓여야 하는데 Python-Markdown 모듈이 좀 이상한 것일까?</p>
+<h2>문제 해결하기</h2>
+<p>다행히도 이게 딱히 Python-Markdown 모듈 구현이 잘못되어 있다거나 하는 문제는 아니었다. 다만 기본적으로 비활성화 되어 있는데, 이는 Fenced Code Blocks라는 확장을 이용하면 원하는 대로 쓸 수 있다. </p>
+<p>이 확장은 별도의 설치 필요 없이 렌더링 시 익스텐션(extensions)에 <code>fenced_code</code>를 추가해 주면 동작한다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import markdown
+&gt;&gt;&gt; input = &quot;&quot;&quot;Test Code:
+...
+... ~~~
+... def some_func():
+...     pass
+... ~~~
+... &quot;&quot;&quot;
+&gt;&gt;&gt; markdown.markdown(input, extensions=[&quot;fenced_code&quot;])
+'&lt;p&gt;Test Code:&lt;/p&gt;\n&lt;pre&gt;&lt;code&gt;def some_func():\n    pass\n&lt;/code&gt;&lt;/pre&gt;'
+</code></pre>
+<p>Fenced Code Blocks 확장을 사용하면 보다시피 코드 블럭이 <code>&lt;pre&gt;</code> 태그로 둘러쌓이는 모습을 볼 수 있다.</p>
+<p>여기서는 바로 렌더링 하는 코드를 썼는데 별도로 <code>Markdown</code> 인스턴스를 생성해서 쓰는 경우에도 동일한 인터페이스로 쓸 수 있으니 참고하자.</p>
+<pre><code class="language-python">...
+md = markdown.Markdown(extensions=[&quot;fenced_code&quot;])
+html = md.convert(input)
 ...
 </code></pre>
-<p>위와 같은 코드로 <code>/foo/bar</code> 디렉터리 아래에서 패턴으로 <code>*.txt</code> 즉 확장자가 <code>txt</code>인 파일의 목록을 구할 수 있다.</p>
-<h2>rglob - 특정 디렉터리 및 그 아래의 모든 서브 디렉터리 탐색</h2>
-<p>특정 디렉터리 안의 내용물을 서브(자식) 디렉터리까지 다 포함해서 목록을 구할려면 여러 방법이 있겠지만 이번에는 Python 3.4 에서 추가된 <code>pathlib</code> 모듈의 <code>Path</code> 클래스의 <code>rglob()</code> 메서드를 이용해보자.</p>
-<pre><code class="language-python">&gt;&gt;&gt; from pathlib import Path
-&gt;&gt;&gt; list(Path(&quot;/foo/bar/dir&quot;).rglob(&quot;*&quot;))
-[PosixPath('/foo/bar/dir/a'), PosixPath('/foo/bar/dir/a/test.txt'), ...]
-</code></pre>
-<p><code>PosixPath</code> 라는 새로운 타입이 등장하는데 이름처럼 경로를 표기하는데 적합한 타입이다. 이 타입은 별로 어려울 것 없이 <code>str()</code> 로 문자열로 변환이 되니 익숙한 방법을 사용하면 된다.</p>
-<p>어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다. 거기다 <code>glob</code>와 비슷하게 패턴까지 사용할 수도 있다.</p>
-<p>굳이 <code>list()</code> 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 generator가 리턴된 것이기 때문에 굳이 <code>list()</code> 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; for p in Path(&quot;/Users/seorenn/tmp/a&quot;).rglob(&quot;*&quot;):
-...     print(p)
-...
-/foo/bar/dir/a
-/foo/bar/dir/a/test.txt
-...
-</code></pre>
-<p>참고로 <code>rglob()</code>의 파일 이름 패턴은 이 외의 다양한 패턴을 지원하므로 궁금하다면 매뉴얼을 찾아보자.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a></li>
+</ul>
       </section>
     </div>
     <div class="splitter-container">
@@ -129,14 +142,21 @@
       <div class="refinfo-container">
         <div class="navinfo-container">
           
+            <div class="refinfo-cluster">
+              <h2>이 글을 연결한 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
           
             <div class="refinfo-cluster">
               <h2>비슷한 주제의 글들</h2>
               <ul>
-                
-                  <li>
-                    <a href="../article/python-markdown-weird-code-block.html">Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기</a>
-                  </li>
                 
                   <li>
                     <a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a>
@@ -148,6 +168,10 @@
                 
                   <li>
                     <a href="../article/python-get-file-infomations.html">파이썬에서 파일 정보 얻기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-list-dir.html">파이썬으로 파일 및 디렉터리 목록 구하기</a>
                   </li>
                 
                   <li>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-07T16:17:14.467490+09:00</updated>
+  <updated>2024-06-07T22:05:49.301451+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,24 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240607-00.html</id>
+    <title>실업률 콤보를 시간당임금과 비농업고용지수가 캔슬</title>
+    <updated>2024-06-07T22:05:38.724380+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>오늘은 미국의 시간당임금, 비농업고용지수, 실업률 등 중요한 지표가 여럿 발표 되었다. 간단히 정리하면 이렇다.</p>
+<ul>
+<li>미국 5월 평균 시간당 임금 YoY 4.1% (+0.1%) 예상치 상회, MoM 0.4% (+0.2%) 예상치 상회</li>
+<li><strong>미국 5월 비농업고용지수 272K (+107K) 예상치를 바보로 만들 만큼 크게 상회</strong></li>
+<li>미국 5월 실업률 4.0% (+0.1%) 예상치 상회</li>
+</ul>
+<p>실업률이 올랐는데 어째서 고용지수가 크게 오르냐는 모순스러운 상황을 또 만났다. 이젠 첫 경험(?)이 아니기에 그렇게까지 당황스럽진 않다. 실업률은 퍼센테이지고 고용지수는 절대수치라는 점과 함께 모수가 늘어나는 경우 등 몇 가지 가능한 시나리오가 있다.</p>
+<p>지표가 발표된 한국의 오후 9시 30분 경 미국 지수 선물 차트에 갑자기 절벽이 나타나는 것으로 보아 저 비농업고용지수에 많은 관심이 쏠린 모양이다. 그런데 실업률에도 관심을 좀 가져야 하는 게 아닐까. 이렇게 고용이 많아졌는데도 실업률이 늘었다는 것은 불안정한 취업이 늘었다는 의미도 있다고 보이고 실질 실업률은 더 심할 지도 모르는 일이다. 물론 신빙성 따위 없는 한 인간의 뇌피셜 소설일 수도 있고 말이다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240607-00.html"/>
+    <summary type="text">오늘은 미국의 시간당임금, 비농업고용지수, 실업률 등 중요한 지표가 여럿 발표 되었다.</summary>
+    <published>2024-06-07T22:05:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/jamboree-discredit.html</id>
     <title>잼버리 국제 망신 사건 정리</title>

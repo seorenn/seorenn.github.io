@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-08T20:18:24.071158+09:00</updated>
+  <updated>2024-06-08T20:41:09.514017+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -767,6 +767,10 @@ html = md.convert(input)
 <h2>2024년 5월 31일</h2>
 <ul>
 <li>참사와 관련해 사고의 직접적인 원인으로 지목된 미호강 부실 제방 공사의 책임자인 현장소장이 1심에서 법정최고형을 선고받았다. (<a href="https://www.yna.co.kr/view/AKR20240530061600064" target="_blank">출처📎</a>)</li>
+</ul>
+<h2>2024년 6월 5일</h2>
+<ul>
+<li>오송참사 관련 1심에서 징역형을 선고받은 시공사 현장소장과 감리단장이 판결에 불복하며 항소했다. 검찰도 판결에서 사실 오인이 있었다며 항소했다. (<a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=7981153" target="_blank">출처📎</a>)</li>
 </ul></div>
     </content>
     <link href="https://seorenn.github.io/article/osong-tunnel-disaster.html"/>

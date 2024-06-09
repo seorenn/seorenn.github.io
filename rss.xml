@@ -13,7 +13,57 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 08 Jun 2024 20:41:09 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jun 2024 21:44:19 +0900</lastBuildDate>
+    <item>
+      <title>한 주 간의 애플 소식들 24-06-09</title>
+      <link>https://seorenn.github.io/log/20240609-00.html</link>
+      <description>&lt;p&gt;바로 다음주로 다가온 WWDC 관련 소식 등 한 주 동안 알려진 여러 애플 관련 소식들을 모아봤다.&lt;/p&gt;
+&lt;h2&gt;소프트웨어 업데이트&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;iPadOS 17.5.1: 10세대 아이패드용 전용 빌드 업데이트&lt;/li&gt;
+&lt;li&gt;Safari Technology Preview 196&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;WWDC24에서는 과연 무엇이?&lt;/h2&gt;
+&lt;p&gt;iOS 18에서는 컨트롤 센터가 개선될 예정인데 음악 위젯과 홈킷 관련 개선 및 페이징 지원 등이 있을 것 같다. 메시지 앱에서는 이모티콘 반응 기능이 추가될 것 같다. 다크모드 시 홈 화면의 시인성 개선도 이뤄질 것 같고 앱 잠금 기능도 새로 들어올 것 같다. macOS 15 및 iOS 18 공통적으로 새로운 패스워드 관리 앱이 도입될 것 같다.&lt;/p&gt;
+&lt;p&gt;그 밖에 이번 WWDC에서는 별도의 신형 하드웨어 발표는 없을 것 같다. M4 탑재 맥 정도는 발표될 수 있을 거라 생각했는데 정말일까?&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;M2 아이패드 에어의 스펙 다운 사건(?)에 대해 애플은 "그럼에도 성능은 발표 때의 내용에서 바뀐 게 없다"고 주장했다.&lt;/li&gt;
+&lt;li&gt;애플은 M4 아이패드 프로의 한국 정발이 6월 19일이 될 것이라고 밝혔다.&lt;/li&gt;
+&lt;li&gt;애플은 스크린타임을 이용한 웹 브라우저 콘텐츠 제한을 우회하는 오래된 버그를 드디어 수정했다고 밝혔다. 딱히 업데이트 내역에는 없었지만 iOS 17.5에 포함된 듯하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;여러 루머들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;신형 애플TV 출시 소식은 당분간 보기 힘들 것이라는 소문이 있다. 설마 접는 걸까?&lt;/li&gt;
+&lt;li&gt;폴더블 아이폰은 2027년은 되어야 볼 수 있을 것 같다.&lt;/li&gt;
+&lt;li&gt;아이폰 16 프로의 얇은 베젤은 새로운 기록을 세울 지도 모르겠다.&lt;/li&gt;
+&lt;li&gt;애플이 중국에서 애플TV+를 런칭하기 위해 협의를 진행 중인 것 같다. 성공한다면 중국에서 공식 서비스 되는 유일한 미제(?) OTT가 될 거 같다.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;바로 다음주로 다가온 WWDC 관련 소식 등 한 주 동안 알려진 여러 애플 관련 소식들을 모아봤다.&lt;/p&gt;
+&lt;h2&gt;소프트웨어 업데이트&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;iPadOS 17.5.1: 10세대 아이패드용 전용 빌드 업데이트&lt;/li&gt;
+&lt;li&gt;Safari Technology Preview 196&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;WWDC24에서는 과연 무엇이?&lt;/h2&gt;
+&lt;p&gt;iOS 18에서는 컨트롤 센터가 개선될 예정인데 음악 위젯과 홈킷 관련 개선 및 페이징 지원 등이 있을 것 같다. 메시지 앱에서는 이모티콘 반응 기능이 추가될 것 같다. 다크모드 시 홈 화면의 시인성 개선도 이뤄질 것 같고 앱 잠금 기능도 새로 들어올 것 같다. macOS 15 및 iOS 18 공통적으로 새로운 패스워드 관리 앱이 도입될 것 같다.&lt;/p&gt;
+&lt;p&gt;그 밖에 이번 WWDC에서는 별도의 신형 하드웨어 발표는 없을 것 같다. M4 탑재 맥 정도는 발표될 수 있을 거라 생각했는데 정말일까?&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;M2 아이패드 에어의 스펙 다운 사건(?)에 대해 애플은 "그럼에도 성능은 발표 때의 내용에서 바뀐 게 없다"고 주장했다.&lt;/li&gt;
+&lt;li&gt;애플은 M4 아이패드 프로의 한국 정발이 6월 19일이 될 것이라고 밝혔다.&lt;/li&gt;
+&lt;li&gt;애플은 스크린타임을 이용한 웹 브라우저 콘텐츠 제한을 우회하는 오래된 버그를 드디어 수정했다고 밝혔다. 딱히 업데이트 내역에는 없었지만 iOS 17.5에 포함된 듯하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;여러 루머들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;신형 애플TV 출시 소식은 당분간 보기 힘들 것이라는 소문이 있다. 설마 접는 걸까?&lt;/li&gt;
+&lt;li&gt;폴더블 아이폰은 2027년은 되어야 볼 수 있을 것 같다.&lt;/li&gt;
+&lt;li&gt;아이폰 16 프로의 얇은 베젤은 새로운 기록을 세울 지도 모르겠다.&lt;/li&gt;
+&lt;li&gt;애플이 중국에서 애플TV+를 런칭하기 위해 협의를 진행 중인 것 같다. 성공한다면 중국에서 공식 서비스 되는 유일한 미제(?) OTT가 될 거 같다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20240609-00.html</guid>
+      <pubDate>Sun, 09 Jun 2024 21:43:00 +0900</pubDate>
+    </item>
     <item>
       <title>ETF는 기술적 분석이 의미가 있을까?</title>
       <link>https://seorenn.github.io/log/20240608-00.html</link>

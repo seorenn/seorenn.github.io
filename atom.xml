@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-09T21:44:19.067874+09:00</updated>
+  <updated>2024-06-10T11:21:55.607391+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,52 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/python-markdown-meta.html</id>
+    <title>Python-Markdown에서 문서의 메타 데이터 추출하기</title>
+    <updated>2024-06-10T11:20:41.359249+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>마크다운 문서에 제목이나 실제로는 표시되지 않는 여러 정보를 표기하고 싶을 때 Meta-Data라는 확장을 이용해 볼 수 있다. 간단한 소개와 사용법을 알아보자.</p>
+<h2>Meta-Data</h2>
+<p>Python-Markdown의 Meta-Data 확장은 문서에 메타 데이터를 읽을 수 있게 지원하는 확장으로 MultiMarkdown에서 쓰이는 메타 데이터 표기 방식을 비슷하게 구현한 확장이다. 예를 들어 아래와 같은 마크다운 문서 예제를 보자.</p>
+<pre><code>Title: 문서의 제목
+Description: 문서의 대략적인 설명
+Date: 2024-06-07 12:34:56
+-----
+
+이 문서는 메타 정보가 포함된 마크다운 문서입니다.
+</code></pre>
+<p>여기서 상단에 Title, Description, Date 세 가지 정보를 적어놨는데 이게 메타 데이터다. 메타 데이터 구역 하단에 <code>-----</code>로 줄을 그어서 그 다음부터 본문이 이어진다는 것을 표시해 놨는데 이 줄은 꼭 그을 필요는 없지만 개인적으로는 이게 더 읽기에 쉬운 것 같아서 쓰고 있다.</p>
+<h2>메타 데이터 추출하기</h2>
+<p>메타 데이터는 마크다운 문서를 변환할 때 <code>meta</code>라는 확장을 명시해 주면 바로 추출할 수 있다. 다만 바로 변환하는 코드의 경우는 정보에 접근할 인터페이스가 없으니 별도로 <code>Markdown</code> 인스턴스를 생성해서 변환해 줘야 한다는 점에 주의하자. 아래와 같은 식이다.</p>
+<pre><code class="language-python">import markdown
+
+md = markdown.Markdown(extensions=["meta"])
+html = md.convert(text)
+</code></pre>
+<p>이런 식으로 구현하면 변환(convert) 작업이 수행된 후 메타 데이터가 인스턴스의 <code>Meta</code>라는 사전형 프로퍼티로 저장되기 때문에 이 프로퍼티를 바로 액세스 할 수 있다.</p>
+<pre><code class="language-python">print(f"title = {md.Meta['title']}")
+print(f"description = {md.Meta['description']}")
+print(f"date = {md.Meta['date']}")
+</code></pre>
+<p><strong>필드 이름이 전부 소문자로 바뀐다</strong>는 점에 주의하자. 어쨌든 실제로 REPL에서 실행시켜 보면 아래와 같은 결과를 얻을 수 있다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; md = markdown.Markdown(extensions=["meta"])
+&gt;&gt;&gt; html = md.convert(text)
+&gt;&gt;&gt;
+&gt;&gt;&gt; print(f"title = {md.Meta['title']}")
+title = ['문서의 제목']
+&gt;&gt;&gt; print(f"description = {md.Meta['description']}")
+description = ['문서의 대략적인 설명']
+&gt;&gt;&gt; print(f"date = {md.Meta['date']}")
+date = ['2024-06-07 12:34']
+</code></pre>
+<p>좀 특이하게 리스트로 저장되어 있는데 굳이 사용에 어려울 건 없다. 이제 남은 일은 리스트의 첫 데이터를 끄집어내서 적절히 가공하는 일 뿐일 테니 말이다.</p>
+<p>더 상세한 사용법은 <a href="https://python-markdown.github.io/extensions/meta_data/" target="_blank">공식 사이트의 레퍼런스 매뉴얼📎</a>을 읽어볼 순 있겠지만 여기서 더 특수한 기능에 관한 정보는 없을 것 같다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/python-markdown-meta.html"/>
+    <summary type="text">마크다운 문서에 제목이나 실제로는 표시되지 않는 여러 정보를 표기하고 싶을 때 Meta-Data라는 확장을 이용해 볼 수 있다.</summary>
+    <published>2024-06-10T11:20:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240609-00.html</id>
     <title>한 주 간의 애플 소식들 24-06-09</title>
@@ -1002,7 +1048,8 @@ html = md.convert(input)
 <h2>2024년 6월</h2>
 <p><strong>2024년 6월 1일</strong>: 야당은 윤 대통령이 거부하고 국회에서 재의가 부결된 채상병 특검법을 더 강화해서 다시 <a href="https://www.hani.co.kr/arti/politics/politics_general/1142850.html" target="_blank">발의📎</a>했다.</p>
 <p><strong>2024년 6월 3일</strong>: 사건을 국방부 조사본부에서 재검토하기로 결정하기 전날 이종섭 당시 국방부 장관의 비서실장 격인 박진희 군사보좌관이 대통령실 국가안보실 소속 행정관과 하루에만 13차례 연락한 <a href="https://www.hani.co.kr/arti/society/society_general/1143299.html" target="_blank">사실📎</a>이 드러났다.</p>
-<p><strong>2024년 6월 4일</strong>: 박 전 수사단장을 항명 혐의로 기소한 군 검사가 '구속영장 허위 사실 기재' 혐의로 <a href="https://m.khan.co.kr/politics/defense-diplomacy/article/202406041331001" target="_blank">피의자 조사📎</a>를 받았다.</p></div>
+<p><strong>2024년 6월 4일</strong>: 박 전 수사단장을 항명 혐의로 기소한 군 검사가 '구속영장 허위 사실 기재' 혐의로 <a href="https://m.khan.co.kr/politics/defense-diplomacy/article/202406041331001" target="_blank">피의자 조사📎</a>를 받았다.</p>
+<p><strong>2024년 6월 9일</strong>: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (<a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank">출처📎</a>)</p></div>
     </content>
     <link href="https://seorenn.github.io/article/dead-of-chae-corporal.html"/>
     <summary type="text">2023년 7월 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.</summary>

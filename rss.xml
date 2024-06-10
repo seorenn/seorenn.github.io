@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 10 Jun 2024 11:21:55 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 11:28:35 +0900</lastBuildDate>
     <item>
       <title>Python-Markdown에서 문서의 메타 데이터 추출하기</title>
       <link>https://seorenn.github.io/article/python-markdown-meta.html</link>
@@ -28,6 +28,7 @@ Date: 2024-06-07 12:34:56
 이 문서는 메타 정보가 포함된 마크다운 문서입니다.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;여기서 상단에 Title, Description, Date 세 가지 정보를 적어놨는데 이게 메타 데이터다. 메타 데이터 구역 하단에 &lt;code&gt;-----&lt;/code&gt;로 줄을 그어서 그 다음부터 본문이 이어진다는 것을 표시해 놨는데 이 줄은 꼭 그을 필요는 없지만 개인적으로는 이게 더 읽기에 쉬운 것 같아서 쓰고 있다.&lt;/p&gt;
+&lt;p&gt;참고로 메타 데이터 종류는 그냥 정의하기 나름이다. 위의 세 가지 필드도 개인적으로 정의해서 사용하는 것이지 원래 저렇게 쓰라고 정해진 건 하나도 없다.&lt;/p&gt;
 &lt;h2&gt;메타 데이터 추출하기&lt;/h2&gt;
 &lt;p&gt;메타 데이터는 마크다운 문서를 변환할 때 &lt;code&gt;meta&lt;/code&gt;라는 확장을 명시해 주면 바로 추출할 수 있다. 다만 바로 변환하는 코드의 경우는 정보에 접근할 인터페이스가 없으니 별도로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 변환해 줘야 한다는 점에 주의하자. 아래와 같은 식이다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;import markdown
@@ -49,7 +50,7 @@ title = ['문서의 제목']
 &amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;description = {md.Meta['description']}&amp;quot;)
 description = ['문서의 대략적인 설명']
 &amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;date = {md.Meta['date']}&amp;quot;)
-date = ['2024-06-07 12:34']
+date = ['2024-06-07 12:34:56']
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;좀 특이하게 리스트로 저장되어 있는데 굳이 사용에 어려울 건 없다. 이제 남은 일은 리스트의 첫 데이터를 끄집어내서 적절히 가공하는 일 뿐일 테니 말이다.&lt;/p&gt;
 &lt;p&gt;더 상세한 사용법은 &lt;a href="https://python-markdown.github.io/extensions/meta_data/" target="_blank"&gt;공식 사이트의 레퍼런스 매뉴얼📎&lt;/a&gt;을 읽어볼 순 있겠지만 여기서 더 특수한 기능에 관한 정보는 없을 것 같다.&lt;/p&gt;</description>
@@ -64,6 +65,7 @@ Date: 2024-06-07 12:34:56
 이 문서는 메타 정보가 포함된 마크다운 문서입니다.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;여기서 상단에 Title, Description, Date 세 가지 정보를 적어놨는데 이게 메타 데이터다. 메타 데이터 구역 하단에 &lt;code&gt;-----&lt;/code&gt;로 줄을 그어서 그 다음부터 본문이 이어진다는 것을 표시해 놨는데 이 줄은 꼭 그을 필요는 없지만 개인적으로는 이게 더 읽기에 쉬운 것 같아서 쓰고 있다.&lt;/p&gt;
+&lt;p&gt;참고로 메타 데이터 종류는 그냥 정의하기 나름이다. 위의 세 가지 필드도 개인적으로 정의해서 사용하는 것이지 원래 저렇게 쓰라고 정해진 건 하나도 없다.&lt;/p&gt;
 &lt;h2&gt;메타 데이터 추출하기&lt;/h2&gt;
 &lt;p&gt;메타 데이터는 마크다운 문서를 변환할 때 &lt;code&gt;meta&lt;/code&gt;라는 확장을 명시해 주면 바로 추출할 수 있다. 다만 바로 변환하는 코드의 경우는 정보에 접근할 인터페이스가 없으니 별도로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 변환해 줘야 한다는 점에 주의하자. 아래와 같은 식이다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-python"&gt;import markdown
@@ -85,7 +87,7 @@ title = ['문서의 제목']
 &amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;description = {md.Meta['description']}&amp;quot;)
 description = ['문서의 대략적인 설명']
 &amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;date = {md.Meta['date']}&amp;quot;)
-date = ['2024-06-07 12:34']
+date = ['2024-06-07 12:34:56']
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;좀 특이하게 리스트로 저장되어 있는데 굳이 사용에 어려울 건 없다. 이제 남은 일은 리스트의 첫 데이터를 끄집어내서 적절히 가공하는 일 뿐일 테니 말이다.&lt;/p&gt;
 &lt;p&gt;더 상세한 사용법은 &lt;a href="https://python-markdown.github.io/extensions/meta_data/" target="_blank"&gt;공식 사이트의 레퍼런스 매뉴얼📎&lt;/a&gt;을 읽어볼 순 있겠지만 여기서 더 특수한 기능에 관한 정보는 없을 것 같다.&lt;/p&gt;</content:encoded>

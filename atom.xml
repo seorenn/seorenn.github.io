@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-10T11:28:35.178150+09:00</updated>
+  <updated>2024-06-10T14:26:57.542953+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,29 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240610-00.html</id>
+    <title>이열치열</title>
+    <updated>2024-06-10T14:26:50.216715+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><blockquote>
+<p>이열치열(以熱治熱): 열을 열로 다스린다.</p>
+</blockquote>
+<p>시기를 앞선 듯한 무더위가 왔다. 작년에 고장난 선풍기를 아직 마련하지 않았다. 에어컨을 켜기엔 뭔가 미묘한 것 같다.</p>
+<p>그리고 80도 이상의 뜨거운 정수기 물에 블랙 커피 믹스 두 개를 탄다. 뜨거운 커피다. 마신다. 땀이 흥건해진다.</p>
+<p>이열치열.</p>
+<p>이 정도 땀이면 조금만 바람이 불어도 이 더위를 이겨낼 수 있을 것 같다. 이열치열은 분명 조상의 오랜 경험으로 만들어진 전략일 것이다.</p>
+<p>...</p>
+<p>바람이 안 분다.</p>
+<p>사람 살려.</p>
+<p>...</p>
+<p>에어컨을 틀어 놓은 아기 방으로 피신한다.</p>
+<p>'이열치열'은 절대로 '더위는 에어컨으로 잡아 병신아'라는 의미일 것이다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240610-00.html"/>
+    <summary type="text">이열치열. 열을 열로 다스린다. 뜨거운 커피를 마신다.</summary>
+    <published>2024-06-10T14:26:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/python-markdown-meta.html</id>
     <title>Python-Markdown에서 문서의 메타 데이터 추출하기</title>

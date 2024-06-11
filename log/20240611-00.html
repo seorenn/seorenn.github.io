@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>애플 WWDC24 간단 정리 및 감상 - Seorenn</title>
+    <meta name="twitter:title" content="애플 WWDC24 간단 정리 및 감상" />
+    <meta name="og:title" content="애플 WWDC24 간단 정리 및 감상" />
+    <meta name="description" content="WWDC24가 순조롭게(?) 끝난 것 같지만 애플 주가는 하락했다. 시장의 분위기가 느껴지는 한 문구다." />
+    <meta name="twitter:description" content="WWDC24가 순조롭게(?) 끝난 것 같지만 애플 주가는 하락했다. 시장의 분위기가 느껴지는 한 문구다." />
+    <meta name="og:description" content="WWDC24가 순조롭게(?) 끝난 것 같지만 애플 주가는 하락했다. 시장의 분위기가 느껴지는 한 문구다." />
+    <link rel="canonical" href="https://seorenn.github.io/log/20240611-00.html" />
+    <meta property="og:url" content="https://seorenn.github.io/log/20240611-00.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>애플 WWDC24 간단 정리 및 감상</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/apple.html">Apple</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 06월 11일 13:50 작성</span>
+            
+            
+              <span>//</span>
+            
+            
+              <span>2024년 06월 11일 13:50 업데이트</span>
+            
+          </div>
+        </header>
+        <p>WWDC24가 순조롭게(?) 끝난 것 같지만 애플 주가는 하락했다. 시장의 분위기가 느껴지는 한 문구다. 어쨌든 기대를 크게 모은 WWDC24를 간단히 정리해 보고 감상 및 사족을 정리해 보자.</p>
+<h2>각종 OS 차기 메이저 버전 미리보기</h2>
+<p>늘 WWDC가 그랬듯 각 OS들의 차기 메이저 업데이트 미리보기가 이번에도 키노트로 정리되었다.</p>
+<p>시작은 애플TV+ 자랑 및 광고로 부터 시작했다. WWDC는 개발자 행사인데 이런 것으로 시작했다는 것에는 좀 실망스러웠다.</p>
+<p>진짜 시작점은 비전프로의 OS인 visionOS로 그만큼 중요하다는 의미였을 것 같다. visionOS 2의 변경점은 크게 바뀌거나 추가되는 건 없고 기존 기능들의 개선에 가깝다는 느낌이다. 다만 Volumetric API, TabvletopKit, Enterprise APIs 등 개선의 기능고 맞물려 개발자 들을 지원하기 위한 다양한 개선은 눈의 띄인다. 불행히도 한국이 정발 목록에 빠져 있다는 것은 상당히 아쉬운 부분이었다. <em>어차피 난 안(못) 살거지만.</em></p>
+<p>iOS 18은 여러 기능이 소개되었지만 상당수 부분은 AI와 관련된 부분이고, 아이콘 색상 강조 및 이를 이용한 홈스크린 다크모드 개선과 컨트롤 센터 개선 및 API 지원, 사진 보관함 개선을 제외하면 크게 바뀐 건 없다는 느낌이다. 지도도 Tap to Cash도 한국에선 무쓸모니 말이다.</p>
+<p>Airpods가 Siri와의 상호작용 개선으로 보여준 기능은 제법 괜찮아 보였다. 말로 하기 힘든 경우가 많은 상황에서 머리 제스처를 인식하는 것은 쓸 만한 기능 같다. 그밖에 음성분리가 더 강화되는 것 같은데 이제는 에어팟이 아이폰의 필수 악세서리가 되어가는 느낌이다.</p>
+<p>tvOS, watchOS는 쓰질 않으니 잘 모르겠다.</p>
+<p>iPadOS 18은 특히 계산기가 충격을 좀 줬다. 별 거 아닌 앱이 왜 이제서야 들어오나 이런 생각들이 많았었으니 말이다. 특히 계산기 안의 수학메모 기능이 아이패드용으로 새롭게 개발된 계산기 앱을 킬러 앱으로 만들어 줬다. 엄밀히 이야기하자면 플랫폼의 AI 기능이긴 하지만, 어쨌든 수학공식은 키보드로 입력하기 지랄같고 애플펜슬이 필요한 몇 안 되는 특수한 경우라 생각하는데 이걸 아주 제대로 자동화로 융합시켜 아이패드에 적합한 좋은 기능으로 만들었다.</p>
+<p>macOS 15의 경우는 아이폰 미러링 기능이 제대로 대박이었다. 다른 미러링과는 다르게 아예 아이폰을 맥 안으로 넣어버리는 듯한 기능이니 말이다. 심지어 아이폰과 미러링 되는 아이폰을 따로 사용하는 것조차 가능했으니 미러링 수준은 한참 넘어섰다. 그 외에는 다른 플랫폼과의 연속성에 집중이 된 모습이었다. 새로운 패스워드 앱은 예상대로 모든 플랫폼에 도입되는 것 같다. Game Porting Toolkit 2의 경우는 좋은 지원 임에는 분명하나 그보다 애플 자체에서 게임 개발사의 이식을 직접적으로 지원하는 모습을 보여주는 것도 필요하다고 생각된다.</p>
+<h2>AI = Apple Intelligence</h2>
+<p>어찌보면 이번 WWDC의 핵심이 바로 이 AI다. 다만 말장난인지 의도한 브랜드인지 하여간 애플은 AI를 Artificial Intelligence가 아닌 Apple Intelligence라고 부른다.</p>
+<p>AI를 활용하는 모습은 루머로 상당히 많이 언급된 형태라 크게 신선한 느낌은 없었다. '수학메모' 같은 무시무시한 것도 있었고 '동작 자동화' 라는 미래가 기대되는 기능과 '필체 흉내' 같은 재미있는 기능도 있긴 했지만 요약, 사진 인식, 이모티콘 조합, 프롬프트 기반 이미지 생성, 사진 찾기 등등은 흔한 기능이라 생각된다.</p>
+<p>물론 애플 답게 <strong>가장 강조했던 것은 이번에도 Privacy</strong>였다. 거의 모든 AI 활용 기능에서 이 개인정보 보호를 꼭 덧붙였다. 대부분의 AI 기능이 온 디바이스로 구동되니 당연하기도 했지만, 심지어 클라우드가 필요한 부분에서도 이 프라이버시를 강조했다. 다만 여기서의 클라우드는 애플 자체 서버로 구축된 클라우드 한정이다.</p>
+<p>화제를 모았던 OpenAI와의 협업도 결국 Siri의 일부분으로서만 동작하는 형태로 밝혀졌다. 물론 상당수의 사람들이 이런 수준일 거라고 예상했는데 모든 것을 맡기기에는 애플이 강조하는 Privacy를 스스로 포기하는 일이 될 테니 말이다. 아마도 시장이 가장 실망한 부분이 이 부분인 것 같다.</p>
+<p>여기까지만 보면 시장의 반응이 실망으로 표현된 것이 이해가 된다. 킬러 기능으로 와닿는 것은 몇 없었고 대부분 흔한 기능들이었으니 말이다. 다만 흔하긴 해도 쓸만한 기능들이라 주가 폭락 까지는 아니었던 것 같고 여기까지 기대를 쌓은 부분을 이익 실현하는 형태의 조정이라고 생각된다. 하지만 실망감이 있다는 것은 분명하다.</p>
+<h2>소감</h2>
+<p>개인적으로는 애플지능(?)은 이제부터 시작인데 왜 벌서 실망하느냐는 생각만 든다. 거의 막바지에 등장하긴 했지만 애플의 AI 기능들은 모두 <strong>애플의 SDK를 활용하면 대부분 개발자가 별 짓(?)을 안 해도 바로 접목</strong>이 될 수 있다. 예를 들어 TextKit 혹은 이를 기반으로 만들어진 프레임워크를 사용해 개발한 앱은 AI 요약 기능을 거의 바로 사용할 수 있게 된다. 이 부분은 굉장히 중요하다. 향후 애플 생태계가 AI와의 융합에서도 그대로 이어진다는 말이 되니 말이다. 이건 그 어느 곳에서도 아직 제대로 해내지 못 한 부분이다. 따라서 제대로만 제공된다면 개인적인 평가로 <strong>One more thing 급의 혁신 자질은 충분</strong>하다고 본다.</p>
+<p>단지 소개된 모든 AI 기능들을 활용하려면 아이폰 15 프로나 M 시리즈가 탑재된 기기가 필요하다는 점에서 좀 실망했다. 뉴럴엔진이 탑재된 모든 구형 기기에서도 사용할 수 있게 해야 더 빠르게 써트파티 콘텐츠 공급이 될 수 있을 텐데.... 아 아니다. 신형 아이폰이나 맥, 아이패드를 더 팔아먹어야 하니 뭐 당연한 선택일 수도 있겠다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../log/20240609-00.html">한 주 간의 애플 소식들 24-06-09</a>
+                  </li>
+                
+                  <li>
+                    <a href="../log/20240604-00.html">WWDC24 드디어 다음주</a>
+                  </li>
+                
+                  <li>
+                    <a href="../log/20240602-00.html">한 주 간의 애플 소식들 24-06-02</a>
+                  </li>
+                
+                  <li>
+                    <a href="../log/20240529-00.html">애플 iOS 17.5의 서명 중지</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+          
+            <div class="refinfo-cluster">
+              <h2>블로그 목록</h2>
+              <ul>
+                
+                  <li>
+                    
+                      <b>애플 WWDC24 간단 정리 및 감상</b>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240610-00.html">이열치열</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240609-00.html">한 주 간의 애플 소식들 24-06-09</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240608-00.html">ETF는 기술적 분석이 의미가 있을까?</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240607-00.html">실업률 콤보를 시간당임금과 비농업고용지수가 캔슬</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240606-01.html">ECB 금리인하와 실업수당의 더블 콤보가... 아닌가?</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240606-00.html">미장은 왜 이렇게 불이 붙었었나?</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240605-00.html">꺾이는 JOLTs 미지근한 주식시장</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240604-01.html">민주당은 역시나 여론을 무시할 순 없을 거다</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240604-00.html">WWDC24 드디어 다음주</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="../log/20240602-00.html">한 주 간의 애플 소식들 24-06-02</a>
+                    
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

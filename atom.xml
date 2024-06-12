@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-12T23:07:22.431404+09:00</updated>
+  <updated>2024-06-12T23:10:53.139837+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -13,7 +13,7 @@
   <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
     <id>https://seorenn.github.io/log/20240612-01.html</id>
-    <title>FOMC를 앞둔 CPI가 불을 지피다</title>
+    <title>FOMC를 앞두고 CPI가 불을 지피다</title>
     <updated>2024-06-12T23:07:14.112790+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>FOMC가 열리는 날 (미국 시각 기준) 아침에 미국의 5월 CPI가 발표되었다. 아무래도 FOMC에 영향을 크게 미칠 수도 있을 타이밍이라 관심이 집중되었는데 대충 이런 식으로 나왔다.</p>

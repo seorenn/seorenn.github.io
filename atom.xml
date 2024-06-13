@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-13T10:21:14.187695+09:00</updated>
+  <updated>2024-06-13T10:27:22.432047+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -35,7 +35,7 @@
 </blockquote></div>
     </content>
     <link href="https://seorenn.github.io/log/20240613-00.html"/>
-    <summary type="text"/>
+    <summary type="text">연준이 기준금리를 또 동결했는데 언제 인하할까?</summary>
     <published>2024-06-13T10:21:00+09:00</published>
   </entry>
   <entry>
@@ -1030,6 +1030,10 @@ html = md.convert(input)
 <h2>2024년 6월 5일</h2>
 <ul>
 <li>오송참사 관련 1심에서 징역형을 선고받은 시공사 현장소장과 감리단장이 판결에 불복하며 항소했다. 검찰도 판결에서 사실 오인이 있었다며 항소했다. (<a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=7981153" target="_blank">출처📎</a>)</li>
+</ul>
+<h2>2024년 6월 12일</h2>
+<ul>
+<li>참사 당시 119 상황보고서를 조작한 소방관들이 첫 재판에서 혐의를 모두 인정했다. (<a href="https://imnews.imbc.com/news/2024/society/article/6607124_36438.html" target="_blank">출처📎</a>)</li>
 </ul></div>
     </content>
     <link href="https://seorenn.github.io/article/osong-tunnel-disaster.html"/>

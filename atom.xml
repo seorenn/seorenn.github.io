@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-17T11:17:10.923755+09:00</updated>
+  <updated>2024-06-17T14:41:21.430133+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -12,8 +12,25 @@
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
+    <id>https://seorenn.github.io/log/20240617-00.html</id>
+    <title>참으로 오랜만에 토스에 실망했다</title>
+    <updated>2024-06-17T14:41:12.719897+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p><img alt="토스증권은 사파리를 지원하지 않는댄다" src="../upload/202406171431-82d78ad2.png"/></p>
+<p>토스증권은 사파리를 지원하지 않는댄다. 허탈하다. 실망스럽다.</p>
+<p>프라이버시를 제1의 가치로 내걸고 있는 애플의 행보를 생각해보면 토스 측의 대응은 좀 이해하기 어렵다. 가장 안전하게 사용하기 위해 크로미움 기반의 브라우저를 써야 한다라니 납득하기 어렵다. 크로미움에 얼마나 위험한 확장이 난립하고 있는지 생각해 보면 말도 안 되는 말이다.</p>
+<p>오픈소스로 개발되는 브라우저라서 더 안전할 수도 있다는 말도 논리적으로 맞지는 않다. 애초에 애플의 사파리 브라우징 엔진인 웹킷(WebKit)도 오픈소스로 개발되고 있고 지금은 그저 사파리에서만 주로 사용되고 있다는 점이 다를 뿐이다. 거기다 사파리는 확장도 감시가 심한 편이라 위험한 확장은 사실상 없다고 봐도 된다.</p>
+<p>그럼에도 토스증권은 어째서 사파리를 지원하지 않는 것일까?</p>
+<p>개인적으로 생각하기엔 사파리의 느린 속도의 HTML5 지원이 문제지 않을까 싶기도 하다. 하지만 토스 모바일이 애초에 웹뷰 기반에서 동작하는 것을 보면 굳이 사파리에서 못 돌릴 스펙적인 이슈가 있을까 싶기는 하다. 물론 모바일 앱과는 다르긴 하니 분리해서 생각하는 게 맞을 거다. </p>
+<p>무슨 사유가 있든 사파리를 배제한다면 그건 차별이다. 그리고 브라우저를 차별한다는 것은 토스 측의 명백한 잘못이고 명백한 실수다. 토스 측의 현명한 대처가 있기를 바랄 뿐이다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240617-00.html"/>
+    <summary type="text">토스증권은 사파리를 지원하지 않는댄다.</summary>
+    <published>2024-06-17T14:41:00+09:00</published>
+  </entry>
+  <entry>
     <id>https://seorenn.github.io/article/vehicle-abbrev.html</id>
-    <title>자동차 축약어 정리</title>
+    <title>자동차 종류 축약어 정리</title>
     <updated>2024-06-17T11:16:33.256582+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>자동차 축약어로 쓰이는 ICE, EV, HEV, MHEV, PHEV, BEV, FCEV 등의 용어의 의미를 정리해 보자.</p>

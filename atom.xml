@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-16T23:18:01.500788+09:00</updated>
+  <updated>2024-06-17T11:17:10.923755+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,34 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/vehicle-abbrev.html</id>
+    <title>자동차 축약어 정리</title>
+    <updated>2024-06-17T11:16:33.256582+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>자동차 축약어로 쓰이는 ICE, EV, HEV, MHEV, PHEV, BEV, FCEV 등의 용어의 의미를 정리해 보자.</p>
+<h2>ICE: Internal Combustion Engine</h2>
+<p>용어 자체는 "석유 등의 화석연료를 태워서 회전운동을 얻는 내연기관 엔진"을 의미하지만 자동차 분류에서는 지금까지 가장 흔하게 볼 수 있는 '<strong>동력원으로 내연기관을 사용하는 차량</strong>'의 의미로 사용하기도 한다. 아마도 차량으로 칭하려면 ICEV로 불러야 할 것 같지만 이러면 또 EV라는 중첩되는 반대 의미의 축약어가 붙는 것 같아서 그냥 ICE로 칭하는 걸지도 모르겠다. 특징으로 자주 사용되지는 않는 것 같다.</p>
+<h2>EV: Electronic Vehicle</h2>
+<p>전기자동차를 포함하는 '<strong>동력원으로 전기 모터를 사용하는 차량</strong>'을 통칭하는 의미다. 다만 이 축약어에서는 전기 공급원을 정의하지는 않고 있어서 광범위한 종류의 전기 모터를 탑재하는 자동차를 의미하는 용도로 쓰인다. 참고로 일반적으로 판매되는 순수 전기자동차는 BEV라 부른다. 트렌드 상 ICE와는 상대되는 의미로도 볼 수 있다.</p>
+<p>요즘은 느슨하게 BEV를 그냥 EV라고 부르는 경우도 많은 듯하다. 어딘가에선 전기자동차 브랜드 이름으로 사용하고 있기도 하고 말이다.</p>
+<h2>HEV: Hybrid Electronic Vehicle</h2>
+<p>보통 <strong>하이브리드</strong>라 부르는 차량으로 내연기관과 전기 모터를 동시에 사용하는 형태의 모든 차량을 의미한다. 구조나 부품 등에 따라 여러 세부 분류가 나눠지지만 MHEV를 제외하고는 구동용 전기모터를 별도로 탑재해서 저출력 시 모터를 쓰고 고출력이 필요할 때 내연기관엔진을 함께 이용하는 형식으로 볼 수 있다. 차량 내부에서 회생제동이나 내장 발전기를 이용해 배터리를 충전하는 방식이며 구조에 따라 내연기관을 충전용으로만 쓰거나 구동용으로도 쓰는 등의 차이가 있을 수 있다.</p>
+<p>최근에는 일반 전기차에 수소연료전지까지 쓸 수 있는 하이브리드 형태도 등장하고 있으니 하이브리드 차량이라도 정확한 동력원이 무엇인지는 파악을 잘해야 할 것 같다.</p>
+<p>충전 방식이나 동력 배분 구조, 회생제동 및 발전기 구조에 따라 직렬혈 혹은 병렬형 두 가지 카테고리로 구분하기도 한다.</p>
+<h2>MHEV: Mild Hybrid Electronic Vehicle</h2>
+<p>시동용 모터를 구동 보조로 사용하는 형태의 '<strong>마일드 하이브리드</strong>'라 불리는 HEV의 한 종류다. 구조 상 HEV와 비슷한 형태로 볼 수도 있지만 설계상 내연기관차량과 거의 동일하며 그래서 아예 하이브리드 차량이라고 표현하지 않는 경우도 많다.</p>
+<h2>PHEV: Plug-in Hybrid Electronic Vehicle</h2>
+<p>보통 '<strong>플러그인 하이브리드</strong>'라 불리며 순수 전기차 구조와 내연기관차의 형태가 합쳐진 HEV 차량이다. HEV와 비슷해 보이지만 충전 플러그를 이용해 배터리를 외부로부터 직접 충전해서 모터 만으로도 달릴 수도 있고 내연기관을 함께 혹은 독자적으로 이용해 달릴 수도 있다는 차이가 있다. 배터리 충전만 잘한다면 순수 전기차와 거의 동급으로 볼 수는 있으나 배터리 용량이 전기차에 비해 상대적으로 적어서 현실적으로는 하이브리드로 볼 수밖에 없다. 하지만 하이브리드 중에선 배터리 용량이 가장 큰 편으로 볼 수 있다. 덕분에 차량 가격도 하이브리드 중에선 비싼 편이다.</p>
+<h2>BEV: Battery Electronic Vehicle</h2>
+<p>대용량 배터리가 탑재된 전기자동차다. 일반적으로 <strong>순수 전기자동차</strong>를 칭하는 축약어가 바로 이 BEV다. 당연하지만 화석연료를 사용하는 내연기관엔진을 탑재하지 않고 전기 모터만 동력원으로 탑재한다. 내연기관 차량만큼 복잡한 설계가 필요하지 않고 덕분에 내구성도 좋고 전기 모터의 미세 컨트롤 특성을 이용할 수 있는 큰 장점이 있지만, 배터리가 비싸고 무겁고 상대적으로 충전에 시간이 많이 든다는 단점이 있다. 다만 배터리 가격은 점점 저렴해지고 있어서 큰 문제는 아니게 될 것 같다.</p>
+<h2>FCEV: Fuel Cell Electronic Vehicle</h2>
+<p><strong>연료전지 자동차</strong>를 의미한다. 현실적으로는 상용화된 수소연료전지 자동차, 축약해서 수소자동차를 의미한다고 볼 수 있다. 일반 전기차와 구조적으로 동일하지만 배터리 대신 수소연료전지가 탑재된다는 점만 다르다. 따라서 배터리의 가격이나 무게, 충전 시간 등의 단점을 획기적으로 개선하는 것도 가능하지만, 수소는 가연성 물질로 일반적으로 위험한 물질로 인식되는 터라 차량이나 충전소를 꺼리는 경향도 있다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/vehicle-abbrev.html"/>
+    <summary type="text">자동차 축약어로 쓰이는 ICE, EV, HEV, MHEV, PHEV, BEV, FCEV 등의 용어의 의미를 정리해 보자.</summary>
+    <published>2024-06-17T11:16:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240616-00.html</id>
     <title>WWDC로 뜨거웠던 한 주간의 애플 소식 모음 24-06-16</title>

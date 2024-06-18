@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-17T14:41:21.430133+09:00</updated>
+  <updated>2024-06-18T16:02:10.147222+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,24 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240618-00.html</id>
+    <title>라인 강탈 사건, 결국 한국 정부는 구경만 하다 끝날 듯</title>
+    <updated>2024-06-18T16:02:04.303051+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><blockquote>
+<p>라인야후가 정기 주주총회에서 '탈네이버' 방침을 재확인했다. 연내 네이버 클라우드와 시스템 분리를 완료하고, 자회사는 당초계획인 2026년보다 앞당겨 시스템을 분리한다. - (<a href="https://www.etnews.com/20240618000282" target="_blank">출처📎</a>)</p>
+</blockquote>
+<p>언제는 한일정부 양측에서 입을 맞추어 "지분 매각 명령이 아니라 그냥 행정지도"라더니 이게 도대체 무엇일까? 한국 정부는 도대체 뭐 하는 곳일까? 외교 분야에서 아무리 일본이나 미국과의 관계 개선이 우선시 된다 해도 자국 기업의 피해를 구경만 하고 있는 행위는 좋게 봐줄 수가 없다.</p>
+<p>이제 정말 얼마 안 남았다. 일본 정부의 라인 강탈 완료까지 말이다. 그리고 네이버는 동남아 시장에의 영향력을 강탈당한다.</p>
+<p>국가가 해야 할 가장 중요한 일이 도대체 무엇일까? 아무리 생각해도 라인 강탈을 막는 게 일본과의 관계 개선보다 더 중요하고 시급한 일인데 이해가 안 된다. 그런데 오히려 한국 정부의 태도를 보면 국민들 모르게 그냥 조용히 끝나기만을 기다리는 것 같다.</p>
+<p>어쨌든 그렇다면 네이버에게 남는 국제적인 사업은 이제 웹툰 뿐인 것일까? 대한민국 최고의 IT 기업이?</p>
+<p>기왕 이렇게 된 거 매각 대금이라도 좀 크게 뜯어내지 않으면 당사자가 아님에도 정말 기분 더러울 것 같다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240618-00.html"/>
+    <summary type="text">라인야후가 정기 주주총회에서 탈네이버 방침을 재확인했다고 한다.</summary>
+    <published>2024-06-18T16:00:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240617-00.html</id>
     <title>참으로 오랜만에 토스에 실망했다</title>

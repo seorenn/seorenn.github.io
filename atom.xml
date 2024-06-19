@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-19T16:03:52.763936+09:00</updated>
+  <updated>2024-06-19T16:15:22.274691+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,27 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240619-00.html</id>
+    <title>엔비디아 시총 1위 달성을 배아파하며</title>
+    <updated>2024-06-19T16:10:47.003113+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>장 중 엔비디아가 마이크로소프트와 애플을 밟고 전 세계 시가총액 1위가 되었을 때 '정말 이런 일이 현실이 될까'하며 반신반의했는데 결국 종가 기준으로도 1위가 되면서 진짜 현실이 되어버렸다.</p>
+<blockquote>
+<p>엔비디아의 시총 1위 달성을 축하...는 못 하겠고 배아프다. 가장 큰 문제는 내가 엔비디아가 없다니 훌쩍</p>
+</blockquote>
+<p>엔비디아의 주가가 오르면서 늘 주가가 폭등하던 종목에 따라붙던 '버블'이라는 단어가 계속 보인다. 그런데 버블? 거품이야 터져도 그냥 "뿅" 하고 귀여운 소리를 내며 터질 것이다. 주식 종목에서 버블이 터지면 많은 이들이 돈을 잃을 테지만 그래도 참 귀여운 느낌의 단어다.</p>
+<p>이제 버블이라는 단어를 써도 되는 시기는 지나지 않았을까? 개인적으로는 '폭탄'이 적절하다고 본다. 안에 TNT를 계속 채울 수 있는 버블폭탄이다. 그리고 폭탄이 점점 커진다. 터지면 주변을 날려버리는 폭탄이 점점 더 커지고 있다. 터지는 소리는 상상도 하기 싫을 거다.</p>
+<p>아무리 매출이 실제로 좋다 한들 도대체 몇 년 치 매출을 미리 다 끌어다 써버리는 건지 이해가 안 될 뿐이다.</p>
+<p>어쨌든 엔비디아가 없는 사람은 터지든 말든 속편한 세상이 될 리는 없잖아! 엔비디아가 이끌던 AI 섹터 전체가 그 폭탄에 휩쓸릴 게 뻔하니 말이다. 애플과 마이크로소프트는 물론 나스닥 전체가 무너질 지도 모르는 일이니 말이다.</p>
+<blockquote>
+<p>결론: 언제든 팔 준비는 하고 살아야 할 듯하다.</p>
+</blockquote></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240619-00.html"/>
+    <summary type="text"/>
+    <published>2024-06-19T16:10:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240618-00.html</id>
     <title>라인 강탈 사건, 결국 한국 정부는 구경만 하다 끝날 듯</title>

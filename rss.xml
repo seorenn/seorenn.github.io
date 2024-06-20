@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 20 Jun 2024 23:34:55 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2024 23:40:02 +0900</lastBuildDate>
     <item>
       <title>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</title>
       <link>https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</link>
@@ -31,7 +31,8 @@
 &lt;p&gt;여기서 &lt;strong&gt;포인터(마우스 커서) 항목의 포인터 크기 슬라이더를 움직여서 최대로 키웠다가 다시 원하는 크기로 조절&lt;/strong&gt;해 보자.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="손쉬운 사용 - 디스플레이" src="../upload/202406150044-b2554065.png" /&gt;&lt;/p&gt;
 &lt;p&gt;이후 사파리에서 문제가 재현되는지 확인해 보자. 개인적으론는 넷플릭스를 시청해 봤는데 정말 문제가 해결되었다. 상당히 충격적(?)이고 만족스러운 결과다.&lt;/p&gt;
-&lt;p&gt;참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.&lt;/p&gt;</description>
+&lt;p&gt;참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.&lt;/p&gt;
+&lt;p&gt;그나저나 어째서 마우스 커서 크기 조절이 깜빡임과 연관이 있는 것일까? 참으로 신기한 일일 따름이지만, 어쨌든 사이드이펙트가 이렇게나 무서운(?) 일이라는 것도 다시금 깨닫게 된다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.&lt;/p&gt;
 &lt;h2&gt;증상 설명&lt;/h2&gt;
 &lt;p&gt;꽤 오래 전부터 macOS의 사파리에서 전체화면으로 영상을 틀 경우 깜빡임 증상이 나타났다. 유튜브와 넷플릭스 두 군데에서만 확인했지만 사실상 모든 영상 소스에서 증상이 발생할 것으로 보인다.&lt;/p&gt;
@@ -46,7 +47,8 @@
 &lt;p&gt;여기서 &lt;strong&gt;포인터(마우스 커서) 항목의 포인터 크기 슬라이더를 움직여서 최대로 키웠다가 다시 원하는 크기로 조절&lt;/strong&gt;해 보자.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="손쉬운 사용 - 디스플레이" src="../upload/202406150044-b2554065.png" /&gt;&lt;/p&gt;
 &lt;p&gt;이후 사파리에서 문제가 재현되는지 확인해 보자. 개인적으론는 넷플릭스를 시청해 봤는데 정말 문제가 해결되었다. 상당히 충격적(?)이고 만족스러운 결과다.&lt;/p&gt;
-&lt;p&gt;참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.&lt;/p&gt;</content:encoded>
+&lt;p&gt;참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.&lt;/p&gt;
+&lt;p&gt;그나저나 어째서 마우스 커서 크기 조절이 깜빡임과 연관이 있는 것일까? 참으로 신기한 일일 따름이지만, 어쨌든 사이드이펙트가 이렇게나 무서운(?) 일이라는 것도 다시금 깨닫게 된다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</guid>
       <pubDate>Thu, 20 Jun 2024 23:33:00 +0900</pubDate>
     </item>

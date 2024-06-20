@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-20T23:34:55.079531+09:00</updated>
+  <updated>2024-06-20T23:40:02.315531+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -30,7 +30,8 @@
 <p>여기서 <strong>포인터(마우스 커서) 항목의 포인터 크기 슬라이더를 움직여서 최대로 키웠다가 다시 원하는 크기로 조절</strong>해 보자.</p>
 <p><img alt="손쉬운 사용 - 디스플레이" src="../upload/202406150044-b2554065.png"/></p>
 <p>이후 사파리에서 문제가 재현되는지 확인해 보자. 개인적으론는 넷플릭스를 시청해 봤는데 정말 문제가 해결되었다. 상당히 충격적(?)이고 만족스러운 결과다.</p>
-<p>참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.</p></div>
+<p>참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.</p>
+<p>그나저나 어째서 마우스 커서 크기 조절이 깜빡임과 연관이 있는 것일까? 참으로 신기한 일일 따름이지만, 어쨌든 사이드이펙트가 이렇게나 무서운(?) 일이라는 것도 다시금 깨닫게 된다.</p></div>
     </content>
     <link href="https://seorenn.github.io/article/macos-safari-fix-video-blinks.html"/>
     <summary type="text">macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.</summary>

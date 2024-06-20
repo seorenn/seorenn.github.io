@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-19T16:15:22.274691+09:00</updated>
+  <updated>2024-06-20T23:34:55.079531+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,31 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</id>
+    <title>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</title>
+    <updated>2024-06-20T23:33:45.034094+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.</p>
+<h2>증상 설명</h2>
+<p>꽤 오래 전부터 macOS의 사파리에서 전체화면으로 영상을 틀 경우 깜빡임 증상이 나타났다. 유튜브와 넷플릭스 두 군데에서만 확인했지만 사실상 모든 영상 소스에서 증상이 발생할 것으로 보인다.</p>
+<p>깜빡임은 1초에 1~2회 정도 굉장히 짧게 나타나기 때문에 의식하지 않는다면 딱히 시청에 지장을 줄 수준은 아니다. 하지만 의식하기 시작하면 굉장히 신경쓰이고 껄끄로운 증상임은 분명했다.</p>
+<p>당연하겠지만 사파리에서만 증상이 발생하며 크롬이나 파이어폭스 등에서는 별 문제가 없었다. 그래서 기본 브라우저를 사파리 외의 것으로 바꾸는 주요 원인이었다.</p>
+<p>개인적으로는 구형 인텔 맥프로에서 증상이 나타났으나 애플실리콘 M 시리즈를 탑재한 최신 맥에서도 증상을 느끼는 유저가 있는 모양이다. 따라서 모든 맥 시리즈를 대상으로 발생할 수 있는 문제로 추측된다.</p>
+<h2>해결하기</h2>
+<p>이 문제를 겪기 시작한 것이 수 년 전으로 굉장히 오래 되었기에 자포자기 하고 있었는데 의외의 자료를 발견하여 그대로 따라해 보기로 했다. 방법은 아주 간단하다. 설정을 열어 아래 루트로 들어가는 것으로 시작한다.</p>
+<blockquote>
+<p>시스템 설정 - 손쉬운 사용 - 디스플레이</p>
+</blockquote>
+<p>여기서 <strong>포인터(마우스 커서) 항목의 포인터 크기 슬라이더를 움직여서 최대로 키웠다가 다시 원하는 크기로 조절</strong>해 보자.</p>
+<p><img alt="손쉬운 사용 - 디스플레이" src="../upload/202406150044-b2554065.png"/></p>
+<p>이후 사파리에서 문제가 재현되는지 확인해 보자. 개인적으론는 넷플릭스를 시청해 봤는데 정말 문제가 해결되었다. 상당히 충격적(?)이고 만족스러운 결과다.</p>
+<p>참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/macos-safari-fix-video-blinks.html"/>
+    <summary type="text">macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.</summary>
+    <published>2024-06-20T23:33:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240619-00.html</id>
     <title>엔비디아 시총 1위 달성을 배아파하며</title>
@@ -1407,7 +1432,8 @@ html = md.convert(input)
 <p><strong>2024년 6월 1일</strong>: 야당은 윤 대통령이 거부하고 국회에서 재의가 부결된 채상병 특검법을 더 강화해서 다시 <a href="https://www.hani.co.kr/arti/politics/politics_general/1142850.html" target="_blank">발의📎</a>했다.</p>
 <p><strong>2024년 6월 3일</strong>: 사건을 국방부 조사본부에서 재검토하기로 결정하기 전날 이종섭 당시 국방부 장관의 비서실장 격인 박진희 군사보좌관이 대통령실 국가안보실 소속 행정관과 하루에만 13차례 연락한 <a href="https://www.hani.co.kr/arti/society/society_general/1143299.html" target="_blank">사실📎</a>이 드러났다.</p>
 <p><strong>2024년 6월 4일</strong>: 박 전 수사단장을 항명 혐의로 기소한 군 검사가 '구속영장 허위 사실 기재' 혐의로 <a href="https://m.khan.co.kr/politics/defense-diplomacy/article/202406041331001" target="_blank">피의자 조사📎</a>를 받았다.</p>
-<p><strong>2024년 6월 9일</strong>: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (<a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank">출처📎</a>)</p></div>
+<p><strong>2024년 6월 9일</strong>: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (<a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank">출처📎</a>)</p>
+<p><strong>2024년 6월 19일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank">출처📎</a>)</p></div>
     </content>
     <link href="https://seorenn.github.io/article/dead-of-chae-corporal.html"/>
     <summary type="text">2023년 7월 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.</summary>

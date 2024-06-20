@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기 - Seorenn</title>
+    <meta name="twitter:title" content="macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기" />
+    <meta name="og:title" content="macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기" />
+    <meta name="description" content="macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자." />
+    <meta name="twitter:description" content="macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자." />
+    <meta name="og:description" content="macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/macos-safari-fix-video-blinks.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/macos-safari-fix-video-blinks.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/macos.html">macOS</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 06월 20일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.</p>
+<h2>증상 설명</h2>
+<p>꽤 오래 전부터 macOS의 사파리에서 전체화면으로 영상을 틀 경우 깜빡임 증상이 나타났다. 유튜브와 넷플릭스 두 군데에서만 확인했지만 사실상 모든 영상 소스에서 증상이 발생할 것으로 보인다.</p>
+<p>깜빡임은 1초에 1~2회 정도 굉장히 짧게 나타나기 때문에 의식하지 않는다면 딱히 시청에 지장을 줄 수준은 아니다. 하지만 의식하기 시작하면 굉장히 신경쓰이고 껄끄로운 증상임은 분명했다.</p>
+<p>당연하겠지만 사파리에서만 증상이 발생하며 크롬이나 파이어폭스 등에서는 별 문제가 없었다. 그래서 기본 브라우저를 사파리 외의 것으로 바꾸는 주요 원인이었다.</p>
+<p>개인적으로는 구형 인텔 맥프로에서 증상이 나타났으나 애플실리콘 M 시리즈를 탑재한 최신 맥에서도 증상을 느끼는 유저가 있는 모양이다. 따라서 모든 맥 시리즈를 대상으로 발생할 수 있는 문제로 추측된다.</p>
+<h2>해결하기</h2>
+<p>이 문제를 겪기 시작한 것이 수 년 전으로 굉장히 오래 되었기에 자포자기 하고 있었는데 의외의 자료를 발견하여 그대로 따라해 보기로 했다. 방법은 아주 간단하다. 설정을 열어 아래 루트로 들어가는 것으로 시작한다.</p>
+<blockquote>
+<p>시스템 설정 - 손쉬운 사용 - 디스플레이</p>
+</blockquote>
+<p>여기서 <strong>포인터(마우스 커서) 항목의 포인터 크기 슬라이더를 움직여서 최대로 키웠다가 다시 원하는 크기로 조절</strong>해 보자.</p>
+<p><img alt="손쉬운 사용 - 디스플레이" src="../upload/202406150044-b2554065.png" /></p>
+<p>이후 사파리에서 문제가 재현되는지 확인해 보자. 개인적으론는 넷플릭스를 시청해 봤는데 정말 문제가 해결되었다. 상당히 충격적(?)이고 만족스러운 결과다.</p>
+<p>참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

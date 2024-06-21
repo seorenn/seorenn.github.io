@@ -13,7 +13,65 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 20 Jun 2024 23:40:02 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jun 2024 23:32:51 +0900</lastBuildDate>
+    <item>
+      <title>Python-Markdown으로 마크다운 문서의 모든 링크 주소 추출하기</title>
+      <link>https://seorenn.github.io/article/python-markdown-extract-links.html</link>
+      <description>&lt;p&gt;&lt;a href="../article/python-markdown.html"&gt;Python-Markdown&lt;/a&gt; 패키지를 이용해 마크다운 문서에서 모든 링크의 URL 주소를 추출하는 방법을 직접 확장을 만들어서 구현해 보자.&lt;/p&gt;
+&lt;p&gt;여러 방법이 있을 거라 생각되지만 이번에는 트리프로세서(Treeprocessor) 확장을 구현하는 방식을 보자. 트리프로세서 방식은 마크다운 문서를 파싱해서 HTML로 출력하기 전에 XML 트리 형태로 구축한 데이터를 직접 건드리는 방식을 의미한다.&lt;/p&gt;
+&lt;p&gt;두 개의 클래스 구현이 필요한데 하나는 &lt;code&gt;Extension&lt;/code&gt;을 상속한 확장 클래스, 다른 하나는 &lt;code&gt;Treeprocessor&lt;/code&gt;를 상속받은 실제로 일을 하는 클래스다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class _LinkExtractor(Treeprocessor):
+    def run(self, root):
+        self.md.links = []
+        for link in root.findall(&amp;quot;.//a&amp;quot;):
+            href = link.get(&amp;quot;href&amp;quot;)
+            if href not in self.md.links:
+                self.md.links.append(href)
+
+
+class LinkExtractorExtension(Extension):
+    def extendMarkdown(self, md):
+        link_ext = _LinkExtractor(md)
+        md.treeprocessors.register(link_ext, &amp;quot;link_ext&amp;quot;, 20)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;_LinkExtractor&lt;/code&gt;가 실제로 트리프로세서를 건드리는 클래스다. 여기서 &lt;code&gt;findall&lt;/code&gt;을 통해 트리에서 모든 &lt;code&gt;a&lt;/code&gt; 태그를 찾아서 &lt;code&gt;href&lt;/code&gt; 속성 즉 URL 텍스트를 추출해서 리스트로 정리하는 방식이다. 다만 패턴이 조금 특이할 수도 있는데 이 글에서 언급하긴 양이 많기에 직접 관련 레퍼런스 문서를 찾아보자.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;LinkExtractorExtension&lt;/code&gt;은 &lt;code&gt;_LinkExtractor&lt;/code&gt;를 Python-Markdown 확장으로 감싸주는 역할의 클래스다. 참고로 설명을 보면 알 수 있겠지만 트리 프로세서에 등록(register)하는 부분에서 20이라는 숫자가 표기되어 있는데 이 숫자는 우선순위다. 자체적으로 개발하는 확장의 처리 순서를 고려해야 한다면 이 우선순위도 주의 깊게 설정해야 할 것이다. 다만 확장이 많지 않다면 별 의미 없는 숫자일 수도 있다.&lt;/p&gt;
+&lt;p&gt;이렇게 만들어진 확장을 이용해 마크다운 문서를 HTML로 변환하면 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스의 &lt;code&gt;links&lt;/code&gt; 프로퍼티에 원하는 내용이 들어가게 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;md = markdown.Markdown(extensions=[LinkExtractorExtension()])
+html = md.convert(text)
+print(f&amp;quot;links = {md.links})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;당연하겠지만 &lt;code&gt;links&lt;/code&gt; 프로퍼티에 들어있는 내용은 URL 주소들의 문자열 리스트다.&lt;/p&gt;
+&lt;p&gt;이런 식으로 트리프로세서 확장을 이용하면 마크다운 문서를 HTML로 해석한 뒤의 특수한 처리를 어느 정도는 자유롭게 구현할 수 있다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;&lt;a href="../article/python-markdown.html"&gt;Python-Markdown&lt;/a&gt; 패키지를 이용해 마크다운 문서에서 모든 링크의 URL 주소를 추출하는 방법을 직접 확장을 만들어서 구현해 보자.&lt;/p&gt;
+&lt;p&gt;여러 방법이 있을 거라 생각되지만 이번에는 트리프로세서(Treeprocessor) 확장을 구현하는 방식을 보자. 트리프로세서 방식은 마크다운 문서를 파싱해서 HTML로 출력하기 전에 XML 트리 형태로 구축한 데이터를 직접 건드리는 방식을 의미한다.&lt;/p&gt;
+&lt;p&gt;두 개의 클래스 구현이 필요한데 하나는 &lt;code&gt;Extension&lt;/code&gt;을 상속한 확장 클래스, 다른 하나는 &lt;code&gt;Treeprocessor&lt;/code&gt;를 상속받은 실제로 일을 하는 클래스다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;class _LinkExtractor(Treeprocessor):
+    def run(self, root):
+        self.md.links = []
+        for link in root.findall(&amp;quot;.//a&amp;quot;):
+            href = link.get(&amp;quot;href&amp;quot;)
+            if href not in self.md.links:
+                self.md.links.append(href)
+
+
+class LinkExtractorExtension(Extension):
+    def extendMarkdown(self, md):
+        link_ext = _LinkExtractor(md)
+        md.treeprocessors.register(link_ext, &amp;quot;link_ext&amp;quot;, 20)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;_LinkExtractor&lt;/code&gt;가 실제로 트리프로세서를 건드리는 클래스다. 여기서 &lt;code&gt;findall&lt;/code&gt;을 통해 트리에서 모든 &lt;code&gt;a&lt;/code&gt; 태그를 찾아서 &lt;code&gt;href&lt;/code&gt; 속성 즉 URL 텍스트를 추출해서 리스트로 정리하는 방식이다. 다만 패턴이 조금 특이할 수도 있는데 이 글에서 언급하긴 양이 많기에 직접 관련 레퍼런스 문서를 찾아보자.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;LinkExtractorExtension&lt;/code&gt;은 &lt;code&gt;_LinkExtractor&lt;/code&gt;를 Python-Markdown 확장으로 감싸주는 역할의 클래스다. 참고로 설명을 보면 알 수 있겠지만 트리 프로세서에 등록(register)하는 부분에서 20이라는 숫자가 표기되어 있는데 이 숫자는 우선순위다. 자체적으로 개발하는 확장의 처리 순서를 고려해야 한다면 이 우선순위도 주의 깊게 설정해야 할 것이다. 다만 확장이 많지 않다면 별 의미 없는 숫자일 수도 있다.&lt;/p&gt;
+&lt;p&gt;이렇게 만들어진 확장을 이용해 마크다운 문서를 HTML로 변환하면 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스의 &lt;code&gt;links&lt;/code&gt; 프로퍼티에 원하는 내용이 들어가게 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;md = markdown.Markdown(extensions=[LinkExtractorExtension()])
+html = md.convert(text)
+print(f&amp;quot;links = {md.links})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;당연하겠지만 &lt;code&gt;links&lt;/code&gt; 프로퍼티에 들어있는 내용은 URL 주소들의 문자열 리스트다.&lt;/p&gt;
+&lt;p&gt;이런 식으로 트리프로세서 확장을 이용하면 마크다운 문서를 HTML로 해석한 뒤의 특수한 처리를 어느 정도는 자유롭게 구현할 수 있다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/python-markdown-extract-links.html</guid>
+      <pubDate>Fri, 21 Jun 2024 23:32:00 +0900</pubDate>
+    </item>
     <item>
       <title>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</title>
       <link>https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</link>
@@ -2350,7 +2408,7 @@ html = md.convert(input)
 &lt;p&gt;&lt;strong&gt;2024년 6월 3일&lt;/strong&gt;: 사건을 국방부 조사본부에서 재검토하기로 결정하기 전날 이종섭 당시 국방부 장관의 비서실장 격인 박진희 군사보좌관이 대통령실 국가안보실 소속 행정관과 하루에만 13차례 연락한 &lt;a href="https://www.hani.co.kr/arti/society/society_general/1143299.html" target="_blank"&gt;사실📎&lt;/a&gt;이 드러났다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2024년 6월 4일&lt;/strong&gt;: 박 전 수사단장을 항명 혐의로 기소한 군 검사가 '구속영장 허위 사실 기재' 혐의로 &lt;a href="https://m.khan.co.kr/politics/defense-diplomacy/article/202406041331001" target="_blank"&gt;피의자 조사📎&lt;/a&gt;를 받았다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2024년 6월 9일&lt;/strong&gt;: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (&lt;a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2024년 6월 19일&lt;/strong&gt;: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (&lt;a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;2024년 6월 19일&lt;/strong&gt;: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (&lt;a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank"&gt;출처📎&lt;/a&gt;) 외압 의혹의 핵심 피의자인 유재은 국방부 법무관리관이 박정훈 전 해병대수사단장(대령)이 압수수색을 당한 날 대통령실 법률비서관실 행정관과도 통화했던 것으로 확인됐다. 윤석열 대통령과 대통령실 공직기강비서관실, 국가안보실에 이어 법률비서관실까지 채 상병 순직 사건에 관여한 것으로 의심되는 정황이다. (&lt;a href="https://www.hani.co.kr/arti/society/society_general/1145590.html" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;2023년 7월 19일 오전 9시 10분경 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.&lt;/p&gt;
 &lt;h2&gt;2023년 7월&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;2023년 7월 19일&lt;/strong&gt;: 2023년 7월 19일 오전 9시 10분쯤 경북 예천군 호명면 석관천 일대에서 수색 작업을 하던 해병대 1사단 포병대대 소속 채 일병이 급류에 휩쓸려 &lt;a href="https://news.kbs.co.kr/news/view.do?ncd=7727287" target="_blank"&gt;실종📎&lt;/a&gt;되었다. 예천에서 실종된 해병대원은 &lt;a href="https://www.hani.co.kr/arti/area/area_general/1100921.html" target="_blank"&gt;아직📎&lt;/a&gt; 발견되지 않았다.&lt;/p&gt;
@@ -2490,7 +2548,7 @@ html = md.convert(input)
 &lt;p&gt;&lt;strong&gt;2024년 6월 3일&lt;/strong&gt;: 사건을 국방부 조사본부에서 재검토하기로 결정하기 전날 이종섭 당시 국방부 장관의 비서실장 격인 박진희 군사보좌관이 대통령실 국가안보실 소속 행정관과 하루에만 13차례 연락한 &lt;a href="https://www.hani.co.kr/arti/society/society_general/1143299.html" target="_blank"&gt;사실📎&lt;/a&gt;이 드러났다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2024년 6월 4일&lt;/strong&gt;: 박 전 수사단장을 항명 혐의로 기소한 군 검사가 '구속영장 허위 사실 기재' 혐의로 &lt;a href="https://m.khan.co.kr/politics/defense-diplomacy/article/202406041331001" target="_blank"&gt;피의자 조사📎&lt;/a&gt;를 받았다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2024년 6월 9일&lt;/strong&gt;: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (&lt;a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2024년 6월 19일&lt;/strong&gt;: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (&lt;a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/p&gt;</content:encoded>
+&lt;p&gt;&lt;strong&gt;2024년 6월 19일&lt;/strong&gt;: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (&lt;a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank"&gt;출처📎&lt;/a&gt;) 외압 의혹의 핵심 피의자인 유재은 국방부 법무관리관이 박정훈 전 해병대수사단장(대령)이 압수수색을 당한 날 대통령실 법률비서관실 행정관과도 통화했던 것으로 확인됐다. 윤석열 대통령과 대통령실 공직기강비서관실, 국가안보실에 이어 법률비서관실까지 채 상병 순직 사건에 관여한 것으로 의심되는 정황이다. (&lt;a href="https://www.hani.co.kr/arti/society/society_general/1145590.html" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/dead-of-chae-corporal.html</guid>
       <pubDate>Tue, 04 Jun 2024 10:12:00 +0900</pubDate>
     </item>

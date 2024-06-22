@@ -13,7 +13,49 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 22 Jun 2024 23:07:48 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jun 2024 23:08:33 +0900</lastBuildDate>
+    <item>
+      <title>Emacs Lisp에서 setq와 setq-default의 차이</title>
+      <link>https://seorenn.github.io/article/emacs-lisp-setq-default.html</link>
+      <description>&lt;p&gt;Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 &lt;code&gt;setq&lt;/code&gt;와 &lt;code&gt;setq-default&lt;/code&gt;의 차이에 대해 알아보자.&lt;/p&gt;
+&lt;h2&gt;버퍼 로컬 변수 개념&lt;/h2&gt;
+&lt;p&gt;Emacs에는 '버퍼 로컬(buffer-local) 변수'라는 특별한 개념이 있다. 마치 해당 버퍼에 종속되는 전역 변수와 비슷한 느낌으로 설명할 수 있다.&lt;/p&gt;
+&lt;p&gt;예를 들자면 &lt;code&gt;tab-width&lt;/code&gt; 가 대표적이다. 이 변수는 들여쓰기의 크기를 설정하는 변수로 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수 있다. 버퍼에 속한 로컬 변수이기 때문이다. 하지만 기초 값으로 사용되는 전역 변수도 따로 있다.&lt;/p&gt;
+&lt;p&gt;이 '버퍼 로컬 변수' 개념만 이해하고 있다면 둘의 차이는 쉽게 구분할 수 있다.&lt;/p&gt;
+&lt;h2&gt;setq&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;setq&lt;/code&gt;명령어는 Set eQual의 약자로 다른 언어에선 대입(assign)과 비슷한 의미의 명령이다. 이 명령은 만약 로컬 변수가 있다면 해당 변수의 값을 지정하고, 로컬 변수가 없다면 전역 변수에 지정하는 방식으로 동작한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq tab-width 8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 코드는 현재 버퍼의 들여쓰기 레벨을 8로 설정하는 명령이다. 하지만 다른 메이저모드 버퍼에는 적용되지 않는다. 왜냐하면 &lt;code&gt;tab-width&lt;/code&gt;는 앞서 이야기 했다시피 버퍼 로컬 변수라는 특수한 변수이기 때문이다.&lt;/p&gt;
+&lt;h2&gt;setq-default&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;setq-default&lt;/code&gt;는 버퍼 로컬 변수를 생략하고 무조건 전역 변수의 값을 지정하는 용도로 사용된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq-default tab-width 8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 코드는 현재 버퍼가 아니라 모든 버퍼에서 참고하는 기본 들여쓰기 레벨을 설정하는 코드다. 따라서 새롭게 만들어지는 버퍼는 모두 이 값을 참조하여 들여쓰기 레벨을 결정한다. 물론 이후 &lt;code&gt;setq&lt;/code&gt;로 해당 버퍼 로컬 변수의 값이 바뀔 수는 있겠지만 말이다.&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;default라는 이름에 집중하면 왠지 조금은 더 이해가 잘 되는 것 같다. 즉 기본값(default value)을 설정하기 위한 용도로 &lt;code&gt;setq-default&lt;/code&gt;가 쓰이는 것 같다. 뭔가 대단한 일을 하는 함수 같다.&lt;/p&gt;
+&lt;p&gt;그렇다고 해도 보통 Lisp 코딩에서는 &lt;code&gt;setq&lt;/code&gt;가 압도적으로 많이 쓰인다. 로컬 변수에서도 사용하니 당연하다. 오히려 &lt;code&gt;setq-default&lt;/code&gt;를 쓸 일은 그다지 많지 않을 수도 있다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 &lt;code&gt;setq&lt;/code&gt;와 &lt;code&gt;setq-default&lt;/code&gt;의 차이에 대해 알아보자.&lt;/p&gt;
+&lt;h2&gt;버퍼 로컬 변수 개념&lt;/h2&gt;
+&lt;p&gt;Emacs에는 '버퍼 로컬(buffer-local) 변수'라는 특별한 개념이 있다. 마치 해당 버퍼에 종속되는 전역 변수와 비슷한 느낌으로 설명할 수 있다.&lt;/p&gt;
+&lt;p&gt;예를 들자면 &lt;code&gt;tab-width&lt;/code&gt; 가 대표적이다. 이 변수는 들여쓰기의 크기를 설정하는 변수로 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수 있다. 버퍼에 속한 로컬 변수이기 때문이다. 하지만 기초 값으로 사용되는 전역 변수도 따로 있다.&lt;/p&gt;
+&lt;p&gt;이 '버퍼 로컬 변수' 개념만 이해하고 있다면 둘의 차이는 쉽게 구분할 수 있다.&lt;/p&gt;
+&lt;h2&gt;setq&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;setq&lt;/code&gt;명령어는 Set eQual의 약자로 다른 언어에선 대입(assign)과 비슷한 의미의 명령이다. 이 명령은 만약 로컬 변수가 있다면 해당 변수의 값을 지정하고, 로컬 변수가 없다면 전역 변수에 지정하는 방식으로 동작한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq tab-width 8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 코드는 현재 버퍼의 들여쓰기 레벨을 8로 설정하는 명령이다. 하지만 다른 메이저모드 버퍼에는 적용되지 않는다. 왜냐하면 &lt;code&gt;tab-width&lt;/code&gt;는 앞서 이야기 했다시피 버퍼 로컬 변수라는 특수한 변수이기 때문이다.&lt;/p&gt;
+&lt;h2&gt;setq-default&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;setq-default&lt;/code&gt;는 버퍼 로컬 변수를 생략하고 무조건 전역 변수의 값을 지정하는 용도로 사용된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq-default tab-width 8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 코드는 현재 버퍼가 아니라 모든 버퍼에서 참고하는 기본 들여쓰기 레벨을 설정하는 코드다. 따라서 새롭게 만들어지는 버퍼는 모두 이 값을 참조하여 들여쓰기 레벨을 결정한다. 물론 이후 &lt;code&gt;setq&lt;/code&gt;로 해당 버퍼 로컬 변수의 값이 바뀔 수는 있겠지만 말이다.&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;default라는 이름에 집중하면 왠지 조금은 더 이해가 잘 되는 것 같다. 즉 기본값(default value)을 설정하기 위한 용도로 &lt;code&gt;setq-default&lt;/code&gt;가 쓰이는 것 같다. 뭔가 대단한 일을 하는 함수 같다.&lt;/p&gt;
+&lt;p&gt;그렇다고 해도 보통 Lisp 코딩에서는 &lt;code&gt;setq&lt;/code&gt;가 압도적으로 많이 쓰인다. 로컬 변수에서도 사용하니 당연하다. 오히려 &lt;code&gt;setq-default&lt;/code&gt;를 쓸 일은 그다지 많지 않을 수도 있다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-setq-default.html</guid>
+      <pubDate>Sat, 22 Jun 2024 23:08:00 +0900</pubDate>
+    </item>
     <item>
       <title>Python-Markdown으로 마크다운 문서의 모든 링크 주소 추출하기</title>
       <link>https://seorenn.github.io/article/python-markdown-extract-links.html</link>

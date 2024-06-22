@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-22T23:07:48.735992+09:00</updated>
+  <updated>2024-06-22T23:08:33.081758+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,34 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/emacs-lisp-setq-default.html</id>
+    <title>Emacs Lisp에서 setq와 setq-default의 차이</title>
+    <updated>2024-06-22T23:08:16.710320+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 <code>setq</code>와 <code>setq-default</code>의 차이에 대해 알아보자.</p>
+<h2>버퍼 로컬 변수 개념</h2>
+<p>Emacs에는 '버퍼 로컬(buffer-local) 변수'라는 특별한 개념이 있다. 마치 해당 버퍼에 종속되는 전역 변수와 비슷한 느낌으로 설명할 수 있다.</p>
+<p>예를 들자면 <code>tab-width</code> 가 대표적이다. 이 변수는 들여쓰기의 크기를 설정하는 변수로 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수 있다. 버퍼에 속한 로컬 변수이기 때문이다. 하지만 기초 값으로 사용되는 전역 변수도 따로 있다.</p>
+<p>이 '버퍼 로컬 변수' 개념만 이해하고 있다면 둘의 차이는 쉽게 구분할 수 있다.</p>
+<h2>setq</h2>
+<p><code>setq</code>명령어는 Set eQual의 약자로 다른 언어에선 대입(assign)과 비슷한 의미의 명령이다. 이 명령은 만약 로컬 변수가 있다면 해당 변수의 값을 지정하고, 로컬 변수가 없다면 전역 변수에 지정하는 방식으로 동작한다.</p>
+<pre><code class="language-lisp">(setq tab-width 8)
+</code></pre>
+<p>위 코드는 현재 버퍼의 들여쓰기 레벨을 8로 설정하는 명령이다. 하지만 다른 메이저모드 버퍼에는 적용되지 않는다. 왜냐하면 <code>tab-width</code>는 앞서 이야기 했다시피 버퍼 로컬 변수라는 특수한 변수이기 때문이다.</p>
+<h2>setq-default</h2>
+<p><code>setq-default</code>는 버퍼 로컬 변수를 생략하고 무조건 전역 변수의 값을 지정하는 용도로 사용된다.</p>
+<pre><code class="language-lisp">(setq-default tab-width 8)
+</code></pre>
+<p>위 코드는 현재 버퍼가 아니라 모든 버퍼에서 참고하는 기본 들여쓰기 레벨을 설정하는 코드다. 따라서 새롭게 만들어지는 버퍼는 모두 이 값을 참조하여 들여쓰기 레벨을 결정한다. 물론 이후 <code>setq</code>로 해당 버퍼 로컬 변수의 값이 바뀔 수는 있겠지만 말이다.</p>
+<h2>사족</h2>
+<p>default라는 이름에 집중하면 왠지 조금은 더 이해가 잘 되는 것 같다. 즉 기본값(default value)을 설정하기 위한 용도로 <code>setq-default</code>가 쓰이는 것 같다. 뭔가 대단한 일을 하는 함수 같다.</p>
+<p>그렇다고 해도 보통 Lisp 코딩에서는 <code>setq</code>가 압도적으로 많이 쓰인다. 로컬 변수에서도 사용하니 당연하다. 오히려 <code>setq-default</code>를 쓸 일은 그다지 많지 않을 수도 있다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/emacs-lisp-setq-default.html"/>
+    <summary type="text">Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자.</summary>
+    <published>2024-06-22T23:08:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/python-markdown-extract-links.html</id>
     <title>Python-Markdown으로 마크다운 문서의 모든 링크 주소 추출하기</title>

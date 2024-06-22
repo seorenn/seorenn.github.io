@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Emacs Lisp에서 setq와 setq-default의 차이 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs Lisp에서 setq와 setq-default의 차이" />
+    <meta name="og:title" content="Emacs Lisp에서 setq와 setq-default의 차이" />
+    <meta name="description" content="Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자." />
+    <meta name="twitter:description" content="Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자." />
+    <meta name="og:description" content="Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-setq-default.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-setq-default.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Emacs Lisp에서 setq와 setq-default의 차이</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/emacs.html">Emacs</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 06월 22일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 <code>setq</code>와 <code>setq-default</code>의 차이에 대해 알아보자.</p>
+<h2>버퍼 로컬 변수 개념</h2>
+<p>Emacs에는 '버퍼 로컬(buffer-local) 변수'라는 특별한 개념이 있다. 마치 해당 버퍼에 종속되는 전역 변수와 비슷한 느낌으로 설명할 수 있다.</p>
+<p>예를 들자면 <code>tab-width</code> 가 대표적이다. 이 변수는 들여쓰기의 크기를 설정하는 변수로 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수 있다. 버퍼에 속한 로컬 변수이기 때문이다. 하지만 기초 값으로 사용되는 전역 변수도 따로 있다.</p>
+<p>이 '버퍼 로컬 변수' 개념만 이해하고 있다면 둘의 차이는 쉽게 구분할 수 있다.</p>
+<h2>setq</h2>
+<p><code>setq</code>명령어는 Set eQual의 약자로 다른 언어에선 대입(assign)과 비슷한 의미의 명령이다. 이 명령은 만약 로컬 변수가 있다면 해당 변수의 값을 지정하고, 로컬 변수가 없다면 전역 변수에 지정하는 방식으로 동작한다.</p>
+<pre><code class="language-lisp">(setq tab-width 8)
+</code></pre>
+<p>위 코드는 현재 버퍼의 들여쓰기 레벨을 8로 설정하는 명령이다. 하지만 다른 메이저모드 버퍼에는 적용되지 않는다. 왜냐하면 <code>tab-width</code>는 앞서 이야기 했다시피 버퍼 로컬 변수라는 특수한 변수이기 때문이다.</p>
+<h2>setq-default</h2>
+<p><code>setq-default</code>는 버퍼 로컬 변수를 생략하고 무조건 전역 변수의 값을 지정하는 용도로 사용된다.</p>
+<pre><code class="language-lisp">(setq-default tab-width 8)
+</code></pre>
+<p>위 코드는 현재 버퍼가 아니라 모든 버퍼에서 참고하는 기본 들여쓰기 레벨을 설정하는 코드다. 따라서 새롭게 만들어지는 버퍼는 모두 이 값을 참조하여 들여쓰기 레벨을 결정한다. 물론 이후 <code>setq</code>로 해당 버퍼 로컬 변수의 값이 바뀔 수는 있겠지만 말이다.</p>
+<h2>사족</h2>
+<p>default라는 이름에 집중하면 왠지 조금은 더 이해가 잘 되는 것 같다. 즉 기본값(default value)을 설정하기 위한 용도로 <code>setq-default</code>가 쓰이는 것 같다. 뭔가 대단한 일을 하는 함수 같다.</p>
+<p>그렇다고 해도 보통 Lisp 코딩에서는 <code>setq</code>가 압도적으로 많이 쓰인다. 로컬 변수에서도 사용하니 당연하다. 오히려 <code>setq-default</code>를 쓸 일은 그다지 많지 않을 수도 있다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

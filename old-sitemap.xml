@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2024-06-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-jamboree-2023.html</loc><lastmod>2024-06-07</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-osong-tunnel-disastro-202307.html</loc><lastmod>2024-06-05</lastmod></url>
 <url><loc>https://seorenn.github.io/note/mozjpeg-compress-jpeg-images.html</loc><lastmod>2024-05-31</lastmod></url>
@@ -76,7 +77,6 @@
 <url><loc>https://seorenn.github.io/note/python.html</loc><lastmod>2023-02-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/adr.html</loc><lastmod>2023-02-21</lastmod></url>
 <url><loc>https://seorenn.github.io/note/closure.html</loc><lastmod>2023-02-19</lastmod></url>
-<url><loc>https://seorenn.github.io/note/emacs-lisp.html</loc><lastmod>2023-02-18</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs-2022.html</loc><lastmod>2023-02-17</lastmod></url>
 <url><loc>https://seorenn.github.io/note/economic-logs.html</loc><lastmod>2023-02-16</lastmod></url>
 <url><loc>https://seorenn.github.io/note/news-logs-2022.html</loc><lastmod>2023-02-16</lastmod></url>
@@ -290,6 +290,6 @@
 <url><loc>https://seorenn.github.io/note/diskutil.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/dd.html</loc><lastmod>2020-04-22</lastmod></url>
 <url><loc>https://seorenn.github.io/note/spacemacs.html</loc><lastmod>2020-04-17</lastmod></url>
-<url><loc>https://seorenn.github.io</loc><lastmod>2024-06-07</lastmod></url>
-<url><loc>https://seorenn.github.io/note/</loc><lastmod>2024-06-07</lastmod></url>
+<url><loc>https://seorenn.github.io</loc><lastmod>2024-06-22</lastmod></url>
+<url><loc>https://seorenn.github.io/note/</loc><lastmod>2024-06-22</lastmod></url>
 </urlset>

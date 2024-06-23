@@ -13,7 +13,71 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 22 Jun 2024 23:08:33 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2024 21:34:15 +0900</lastBuildDate>
+    <item>
+      <title>한 주간의 애플 소식 모음 24-06-23</title>
+      <link>https://seorenn.github.io/log/20240623-00.html</link>
+      <description>&lt;h2&gt;소프트웨어 릴리즈 소식&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 14.6 developer beta&lt;/li&gt;
+&lt;li&gt;iOS 17.6 developer beta: TV 앱에 Catch Up 기능 도입 등&lt;/li&gt;
+&lt;li&gt;iPadOS 17.6 developer beta&lt;/li&gt;
+&lt;li&gt;visionOS 1.3 developer beta&lt;/li&gt;
+&lt;li&gt;watchOS 10.6 developer beta&lt;/li&gt;
+&lt;li&gt;tvOS 17.6 developer beta&lt;/li&gt;
+&lt;li&gt;Final Cut Pro 10.8 for macOS&lt;/li&gt;
+&lt;li&gt;Final Cut Pro 2 for iPad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;전반적으로 무슨 변화가 있었는지 알려지지는 않았다.&lt;/p&gt;
+&lt;h2&gt;애플 플랫폼 OS 차기 버전의 새로운 소식&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;watchOS 11: 낮잠 감지 기능을 지원한다고 한다.&lt;/li&gt;
+&lt;li&gt;iOS 18: 앱 개발 시 iOS의 번역 기능을 앱 내에 통합할 수 있게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;제품 루머들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;애플 워치 시리즈 10은 디스플레이가 전작에 비해 더 커지고 전체적인 두께도 더 얇아질 것 같다.&lt;/li&gt;
+&lt;li&gt;애플은 비전프로의 차세대판 보다는 염가판 개발에 주력하는 모양이다. 비싼 가격이 가장 큰 단점으로 지적된 만큼 당연한 처사로 보인다.&lt;/li&gt;
+&lt;li&gt;비전프로의 염가판은 아이폰이나 맥과의 연결을 필수로 할 지도 모르겠다. 즉 자체적으로 모든 기능을 구동하기엔 성능이 부족할 수도 있다는 말이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;기타&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;애플의 선구매 후불결제 서비스인 Apple Pay Later의 신규 서비스가 중단된다. 대안으로 Apple Pay 할부 대출을 사용할 수 있다고 한다. 미국 한정 이야기 같다.&lt;/li&gt;
+&lt;li&gt;애플지능의 중국 내 서비스가 불투명한 모양이다. 아마도 애플 자체 클라우드 인프라 접근을 중국이 불허할 가능성이 높을 것 같다. 이에 애플은 중국 기업 AI 서비스와의 통합을 추진 중으로 알려졌지만 기능적 제한은 어쩔 수 없을 것 같다.&lt;/li&gt;
+&lt;li&gt;유럽에서도 애플지능이나 미러링, 쉐어플레이 등등 몇몇 기능 지원이 불투명한 모양이다. 어처구니 없게도 유럽의 DMA 규제가 발목을 잡고 있는 듯하다.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;h2&gt;소프트웨어 릴리즈 소식&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 14.6 developer beta&lt;/li&gt;
+&lt;li&gt;iOS 17.6 developer beta: TV 앱에 Catch Up 기능 도입 등&lt;/li&gt;
+&lt;li&gt;iPadOS 17.6 developer beta&lt;/li&gt;
+&lt;li&gt;visionOS 1.3 developer beta&lt;/li&gt;
+&lt;li&gt;watchOS 10.6 developer beta&lt;/li&gt;
+&lt;li&gt;tvOS 17.6 developer beta&lt;/li&gt;
+&lt;li&gt;Final Cut Pro 10.8 for macOS&lt;/li&gt;
+&lt;li&gt;Final Cut Pro 2 for iPad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;전반적으로 무슨 변화가 있었는지 알려지지는 않았다.&lt;/p&gt;
+&lt;h2&gt;애플 플랫폼 OS 차기 버전의 새로운 소식&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;watchOS 11: 낮잠 감지 기능을 지원한다고 한다.&lt;/li&gt;
+&lt;li&gt;iOS 18: 앱 개발 시 iOS의 번역 기능을 앱 내에 통합할 수 있게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;제품 루머들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;애플 워치 시리즈 10은 디스플레이가 전작에 비해 더 커지고 전체적인 두께도 더 얇아질 것 같다.&lt;/li&gt;
+&lt;li&gt;애플은 비전프로의 차세대판 보다는 염가판 개발에 주력하는 모양이다. 비싼 가격이 가장 큰 단점으로 지적된 만큼 당연한 처사로 보인다.&lt;/li&gt;
+&lt;li&gt;비전프로의 염가판은 아이폰이나 맥과의 연결을 필수로 할 지도 모르겠다. 즉 자체적으로 모든 기능을 구동하기엔 성능이 부족할 수도 있다는 말이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;기타&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;애플의 선구매 후불결제 서비스인 Apple Pay Later의 신규 서비스가 중단된다. 대안으로 Apple Pay 할부 대출을 사용할 수 있다고 한다. 미국 한정 이야기 같다.&lt;/li&gt;
+&lt;li&gt;애플지능의 중국 내 서비스가 불투명한 모양이다. 아마도 애플 자체 클라우드 인프라 접근을 중국이 불허할 가능성이 높을 것 같다. 이에 애플은 중국 기업 AI 서비스와의 통합을 추진 중으로 알려졌지만 기능적 제한은 어쩔 수 없을 것 같다.&lt;/li&gt;
+&lt;li&gt;유럽에서도 애플지능이나 미러링, 쉐어플레이 등등 몇몇 기능 지원이 불투명한 모양이다. 어처구니 없게도 유럽의 DMA 규제가 발목을 잡고 있는 듯하다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20240623-00.html</guid>
+      <pubDate>Sun, 23 Jun 2024 21:32:00 +0900</pubDate>
+    </item>
     <item>
       <title>Emacs Lisp에서 setq와 setq-default의 차이</title>
       <link>https://seorenn.github.io/article/emacs-lisp-setq-default.html</link>

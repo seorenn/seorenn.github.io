@@ -116,6 +116,7 @@
 </code></pre>
 <p>이 코드에서 참조하는 <code>aaa</code>, <code>bbb</code>, <code>ccc</code>는 정의되지 않은 심볼이다. 따라서 실행시키면 오류가 나야 할 것 같다. </p>
 <p>하지만 위 코드는 <code>(aaa bbb ccc)</code>를 그대로 출력할 뿐 오류가 나지 않는다. 왜냐하면 해당 리스트의 각 요소는 아직 실체화되지 않았기 때문이다.</p>
+<p>결과적으로 <code>list</code> 함수를 이용해 생성한 순수 데이터 리스트와 작은따옴표를 이용해 생성한 인용(quote)된 리스트는 결과적으로는 동일하게 사용할 수 있지만 <strong>본질적으로는 다르다</strong>는 말이다.</p>
 <p>참고로 작은따옴표나 <code>quote</code>로 인용된 리스트는 <code>eval</code>로 일반 리스트화 하는 것도 가능하다.</p>
 <pre><code class="language-lisp">(eval '(1 2 3))
 </code></pre>

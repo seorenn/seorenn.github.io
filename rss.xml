@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 24 Jun 2024 23:03:13 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2024 23:10:15 +0900</lastBuildDate>
     <item>
       <title>Emacs Lisp에서 작은따옴표의 의미</title>
       <link>https://seorenn.github.io/article/emacs-lisp-single-quote.html</link>
@@ -54,6 +54,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이 코드에서 참조하는 &lt;code&gt;aaa&lt;/code&gt;, &lt;code&gt;bbb&lt;/code&gt;, &lt;code&gt;ccc&lt;/code&gt;는 정의되지 않은 심볼이다. 따라서 실행시키면 오류가 나야 할 것 같다. &lt;/p&gt;
 &lt;p&gt;하지만 위 코드는 &lt;code&gt;(aaa bbb ccc)&lt;/code&gt;를 그대로 출력할 뿐 오류가 나지 않는다. 왜냐하면 해당 리스트의 각 요소는 아직 실체화되지 않았기 때문이다.&lt;/p&gt;
+&lt;p&gt;결과적으로 &lt;code&gt;list&lt;/code&gt; 함수를 이용해 생성한 순수 데이터 리스트와 작은따옴표를 이용해 생성한 인용(quote)된 리스트는 결과적으로는 동일하게 사용할 수 있지만 &lt;strong&gt;본질적으로는 다르다&lt;/strong&gt;는 말이다.&lt;/p&gt;
 &lt;p&gt;참고로 작은따옴표나 &lt;code&gt;quote&lt;/code&gt;로 인용된 리스트는 &lt;code&gt;eval&lt;/code&gt;로 일반 리스트화 하는 것도 가능하다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(eval '(1 2 3))
 &lt;/code&gt;&lt;/pre&gt;
@@ -95,6 +96,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이 코드에서 참조하는 &lt;code&gt;aaa&lt;/code&gt;, &lt;code&gt;bbb&lt;/code&gt;, &lt;code&gt;ccc&lt;/code&gt;는 정의되지 않은 심볼이다. 따라서 실행시키면 오류가 나야 할 것 같다. &lt;/p&gt;
 &lt;p&gt;하지만 위 코드는 &lt;code&gt;(aaa bbb ccc)&lt;/code&gt;를 그대로 출력할 뿐 오류가 나지 않는다. 왜냐하면 해당 리스트의 각 요소는 아직 실체화되지 않았기 때문이다.&lt;/p&gt;
+&lt;p&gt;결과적으로 &lt;code&gt;list&lt;/code&gt; 함수를 이용해 생성한 순수 데이터 리스트와 작은따옴표를 이용해 생성한 인용(quote)된 리스트는 결과적으로는 동일하게 사용할 수 있지만 &lt;strong&gt;본질적으로는 다르다&lt;/strong&gt;는 말이다.&lt;/p&gt;
 &lt;p&gt;참고로 작은따옴표나 &lt;code&gt;quote&lt;/code&gt;로 인용된 리스트는 &lt;code&gt;eval&lt;/code&gt;로 일반 리스트화 하는 것도 가능하다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(eval '(1 2 3))
 &lt;/code&gt;&lt;/pre&gt;

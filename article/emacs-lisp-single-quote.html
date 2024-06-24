@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Emacs Lisp에서 작은따옴표의 의미 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs Lisp에서 작은따옴표의 의미" />
+    <meta name="og:title" content="Emacs Lisp에서 작은따옴표의 의미" />
+    <meta name="description" content="Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰이는데 도대체 무슨 의미일까?" />
+    <meta name="twitter:description" content="Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰이는데 도대체 무슨 의미일까?" />
+    <meta name="og:description" content="Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰이는데 도대체 무슨 의미일까?" />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-single-quote.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-single-quote.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Emacs Lisp에서 작은따옴표의 의미</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/emacs.html">Emacs</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 06월 24일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>Emacs Lisp 코드를 보면 작은따옴표가 종종 보이는데 유독 한 쌍이 아니라 한 개씩만 보여서 상당히 혼란스러웠었다. 왜냐하면 다른 언어에서 작은따옴표는 문자 혹은 문자열을 둘러싸는 특수 기호로 쓰이니 말이다.</p>
+<p>즉 Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰인다. 도대체 이 작은따옴표는 무슨 의미일까?</p>
+<h2>Emacs Lisp에서 순수한 데이터 리스트 표현하기</h2>
+<p>Common Lisp을 포함하여 Emacs Lisp에서 모든 요소는 리스트로 표현된다. 그리고 리스트의 특징 중 하나로 첫 요소는 바로 함수여야 한다는 점이 있다.</p>
+<p>그래서 순수한 데이터 리스트를 표현할 때는 약간의 문제가 있다. 아래의 예를 보자.</p>
+<pre><code class="language-lisp">(print (1 2 3))
+</code></pre>
+<p>위 코드의 의도는 <code>(1 2 3)</code>이라는 리스트를 콘솔에 표시하고 싶은 것인데, 블행히도 '1이라는 함수는 없다'는 식의 오류가 발생하는 코드다. 앞서 이야기 했다시피 Lisp에서 리스트의 첫 요소는 함수여야 하기 때문이다.</p>
+<p>만약 순수한 데이터 리스트로 <code>(1 2 3)</code>을 표현하려면 어떻게 해야 할까? </p>
+<p>대략 두 가지 방법이 있는데 하나는 <code>list</code>라는 함수를 이용해 인스턴스를 생성하는 것이다.</p>
+<pre><code class="language-lisp">(print (list 1 2 3))
+</code></pre>
+<p>위와 같이 하면 의도대로 동작하는 것을 확인할 수 있다. </p>
+<p>두가지라고 했으니 나머지 하나가 남았다. 그 나머지가 이 글의 주제와 관련이 있다.</p>
+<h2>Emacs Lisp에서 작은따옴표의 용도</h2>
+<p>리스트 데이터를 표현하기 위해 <code>list</code> 함수를 이용하는 것보다 더 직관적인 방법이 있는데 바로 이번 글의 주제인 작은따옴표를 써서 할 수 있다. 아래와 같은 식으로 말이다.</p>
+<pre><code class="language-lisp">(print '(1 2 3))
+</code></pre>
+<p>이렇게 하면 <code>list</code> 함수를 이용한 경우와 동일하게 동작하면서도 코드 자체는 더 간결하게 느껴진다. 이게 바로 작은따옴표가 자주 쓰이는 용도다.</p>
+<p>사실 작은따옴표는 <code>quote</code>라는 함수라고 이해하면 된다. 위와 코드는 아래 코드와 동일하다.</p>
+<pre><code class="language-lisp">(print (quote 1 2 3))
+</code></pre>
+<p>그렇다면 "작은따옴표는 데이터 리스트를 표현하기 위해 사용하는구나"라고 이해하면 될까? 틀린 건 아니겠지만 원칙적으로 맞지는 않는 설명이다.</p>
+<h2>Emacs Lisp에서 작은따옴표의 의미</h2>
+<p>Emacs Lisp에서 작은따옴표(<code>'</code>, single quote)는 사실은 "실행시키지 않는다"는 의미로 대충 둘러대는 게 맞을 것 같다. 이 작은따옴표로 인용된 리스트는 리스트 자체를 그대로 표현하는 것이기 때문이다.</p>
+<p>약간 비슷하지만 다른 예를 보자. </p>
+<pre><code class="language-lisp">(defun doubled (x)
+  (+ x x))
+
+(print '(doubled 2))
+</code></pre>
+<p>이 코드가 실행되면 어떻게 될까? 별로 생각할 필요 없이 그대로 <code>(doubled 2)</code>가 출력된다. 작은따옴표로 인용된 리스트는 별도의 처리가 없으면 그대로 표현될 뿐이다.</p>
+<p>이번에는 아예 이상한(?) 영단어를 요소로 리스트를 구성해 봤다.</p>
+<pre><code class="language-lisp">(print '(aaa bbb ccc))
+</code></pre>
+<p>이 코드에서 참조하는 <code>aaa</code>, <code>bbb</code>, <code>ccc</code>는 정의되지 않은 심볼이다. 따라서 실행시키면 오류가 나야 할 것 같다. </p>
+<p>하지만 위 코드는 <code>(aaa bbb ccc)</code>를 그대로 출력할 뿐 오류가 나지 않는다. 왜냐하면 해당 리스트의 각 요소는 아직 실체화되지 않았기 때문이다.</p>
+<p>참고로 작은따옴표나 <code>quote</code>로 인용된 리스트는 <code>eval</code>로 일반 리스트화 하는 것도 가능하다.</p>
+<pre><code class="language-lisp">(eval '(1 2 3))
+</code></pre>
+<p>'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

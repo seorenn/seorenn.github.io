@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-23T22:06:20.567500+09:00</updated>
+  <updated>2024-06-24T23:03:13.655202+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,57 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/emacs-lisp-single-quote.html</id>
+    <title>Emacs Lisp에서 작은따옴표의 의미</title>
+    <updated>2024-06-24T23:02:50.314595+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs Lisp 코드를 보면 작은따옴표가 종종 보이는데 유독 한 쌍이 아니라 한 개씩만 보여서 상당히 혼란스러웠었다. 왜냐하면 다른 언어에서 작은따옴표는 문자 혹은 문자열을 둘러싸는 특수 기호로 쓰이니 말이다.</p>
+<p>즉 Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰인다. 도대체 이 작은따옴표는 무슨 의미일까?</p>
+<h2>Emacs Lisp에서 순수한 데이터 리스트 표현하기</h2>
+<p>Common Lisp을 포함하여 Emacs Lisp에서 모든 요소는 리스트로 표현된다. 그리고 리스트의 특징 중 하나로 첫 요소는 바로 함수여야 한다는 점이 있다.</p>
+<p>그래서 순수한 데이터 리스트를 표현할 때는 약간의 문제가 있다. 아래의 예를 보자.</p>
+<pre><code class="language-lisp">(print (1 2 3))
+</code></pre>
+<p>위 코드의 의도는 <code>(1 2 3)</code>이라는 리스트를 콘솔에 표시하고 싶은 것인데, 블행히도 '1이라는 함수는 없다'는 식의 오류가 발생하는 코드다. 앞서 이야기 했다시피 Lisp에서 리스트의 첫 요소는 함수여야 하기 때문이다.</p>
+<p>만약 순수한 데이터 리스트로 <code>(1 2 3)</code>을 표현하려면 어떻게 해야 할까? </p>
+<p>대략 두 가지 방법이 있는데 하나는 <code>list</code>라는 함수를 이용해 인스턴스를 생성하는 것이다.</p>
+<pre><code class="language-lisp">(print (list 1 2 3))
+</code></pre>
+<p>위와 같이 하면 의도대로 동작하는 것을 확인할 수 있다. </p>
+<p>두가지라고 했으니 나머지 하나가 남았다. 그 나머지가 이 글의 주제와 관련이 있다.</p>
+<h2>Emacs Lisp에서 작은따옴표의 용도</h2>
+<p>리스트 데이터를 표현하기 위해 <code>list</code> 함수를 이용하는 것보다 더 직관적인 방법이 있는데 바로 이번 글의 주제인 작은따옴표를 써서 할 수 있다. 아래와 같은 식으로 말이다.</p>
+<pre><code class="language-lisp">(print '(1 2 3))
+</code></pre>
+<p>이렇게 하면 <code>list</code> 함수를 이용한 경우와 동일하게 동작하면서도 코드 자체는 더 간결하게 느껴진다. 이게 바로 작은따옴표가 자주 쓰이는 용도다.</p>
+<p>사실 작은따옴표는 <code>quote</code>라는 함수라고 이해하면 된다. 위와 코드는 아래 코드와 동일하다.</p>
+<pre><code class="language-lisp">(print (quote 1 2 3))
+</code></pre>
+<p>그렇다면 "작은따옴표는 데이터 리스트를 표현하기 위해 사용하는구나"라고 이해하면 될까? 틀린 건 아니겠지만 원칙적으로 맞지는 않는 설명이다.</p>
+<h2>Emacs Lisp에서 작은따옴표의 의미</h2>
+<p>Emacs Lisp에서 작은따옴표(<code>'</code>, single quote)는 사실은 "실행시키지 않는다"는 의미로 대충 둘러대는 게 맞을 것 같다. 이 작은따옴표로 인용된 리스트는 리스트 자체를 그대로 표현하는 것이기 때문이다.</p>
+<p>약간 비슷하지만 다른 예를 보자. </p>
+<pre><code class="language-lisp">(defun doubled (x)
+  (+ x x))
+
+(print '(doubled 2))
+</code></pre>
+<p>이 코드가 실행되면 어떻게 될까? 별로 생각할 필요 없이 그대로 <code>(doubled 2)</code>가 출력된다. 작은따옴표로 인용된 리스트는 별도의 처리가 없으면 그대로 표현될 뿐이다.</p>
+<p>이번에는 아예 이상한(?) 영단어를 요소로 리스트를 구성해 봤다.</p>
+<pre><code class="language-lisp">(print '(aaa bbb ccc))
+</code></pre>
+<p>이 코드에서 참조하는 <code>aaa</code>, <code>bbb</code>, <code>ccc</code>는 정의되지 않은 심볼이다. 따라서 실행시키면 오류가 나야 할 것 같다. </p>
+<p>하지만 위 코드는 <code>(aaa bbb ccc)</code>를 그대로 출력할 뿐 오류가 나지 않는다. 왜냐하면 해당 리스트의 각 요소는 아직 실체화되지 않았기 때문이다.</p>
+<p>참고로 작은따옴표나 <code>quote</code>로 인용된 리스트는 <code>eval</code>로 일반 리스트화 하는 것도 가능하다.</p>
+<pre><code class="language-lisp">(eval '(1 2 3))
+</code></pre>
+<p>'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/emacs-lisp-single-quote.html"/>
+    <summary type="text">Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰이는데 도대체 무슨 의미일까?</summary>
+    <published>2024-06-24T23:02:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240623-00.html</id>
     <title>한 주간의 애플 소식 모음 24-06-23</title>
@@ -2204,41 +2255,5 @@ SyntaxError: f-string expression part cannot include a backslash
     <link href="https://seorenn.github.io/log/20240416-00.html"/>
     <summary type="text">새로운 개인용 노트 및 블로그 출력 시스템을 만들기 시작했다.</summary>
     <published>2024-04-16T21:00:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/python-simple-web-server.html</id>
-    <title>간단한 파이썬 웹 서버</title>
-    <updated>2024-05-20T15:17:03.934776+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>간단한 HTML 파일 디버깅을 위해 정적 웹 서버를 띄워야 할 일이 있을 수 있다. 이럴 때는 별도의 웹 서버 설치 필요 없이 파이썬을 이용해 간단한 웹 서버를 띄울 수 있다. </p>
-<h2>http.server</h2>
-<p>아래 커맨드 한 줄이면 현재 디렉터리의 파일을 서빙하는 HTTP 웹 서버를 띄울 수 있다.</p>
-<pre><code class="language-bash">python -m http.server
-</code></pre>
-<p>이후 웹 브라우저에서 <code>http://localhost:8000</code> 주소로 접속하면 파일 목록이 보이거나 혹은 HTML 파일을 볼 수 있다.</p>
-<h2>추가 옵션 예제들</h2>
-<p>아래와 같이 포트 번호나 <code>--bind</code> 옵션을 이용해 바인딩 할 IP 주소를 지정할 수 있다.</p>
-<pre><code class="language-bash">python -m http.server 3000 --bind 127.0.0.1
-</code></pre>
-<p>현재 디렉터리가 아닌 다른 디렉터리를 서빙 루트로 삼고 싶다면 <code>--directory</code> 옵션을 사용할 수 있다.</p>
-<pre><code class="language-bash">python -m http.server --directory /foo/bar
-</code></pre>
-<p>다양한 옵션이 있지만 사실 별 다른 옵션 없이 현재 디렉터리에 기본 설정으로 띄우는 것만 해도 개발 용도로는 무리가 없는 것 같다.</p>
-<h2>코드에서 띄우기</h2>
-<p>위 명령은 파이썬 패키지를 이용한 것이기 때문에 CLI 커맨드로 별도로 웹 서버를 띄우는 것뿐만 아니라 자신의 스크립트에서 웹 서버를 띄우는 것도 당연히 가능하다.</p>
-<pre><code class="language-python">from http.server import HTTPServer, SimpleHTTPRequestHandler
-
-server = HTTPServer(('0.0.0.0', 8000), SimpleHTTPRequestHandler)
-server.serve_forever()
-</code></pre>
-<p>앞서 제일 처음 소개한 커맨드를 스크립트로 작성하면 이런 식이다.</p>
-<h2>외부 링크</h2>
-<ul>
-<li><a href="https://docs.python.org/3/library/http.server.html" target="_blank">http.server - HTTP Server📎</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/python-simple-web-server.html"/>
-    <summary type="text">파이썬으로 디버깅 용도로 쓸 간단한 HTTP 웹 서버를 띄우는 방법 정리</summary>
-    <published>2020-06-30T21:50:00+09:00</published>
   </entry>
 </feed>

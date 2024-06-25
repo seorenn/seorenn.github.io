@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-25T21:46:50.660471+09:00</updated>
+  <updated>2024-06-25T21:48:19.014564+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -104,7 +104,11 @@
 <p>참고로 작은따옴표나 <code>quote</code>로 인용된 리스트는 <code>eval</code>로 일반 리스트화 하는 것도 가능하다.</p>
 <pre><code class="language-lisp">(eval '(1 2 3))
 </code></pre>
-<p>'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.</p></div>
+<p>'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/emacs-lisp-eval-quoted-list-elements.html">Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</a></li>
+</ul></div>
     </content>
     <link href="https://seorenn.github.io/article/emacs-lisp-single-quote.html"/>
     <summary type="text">Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰이는데 도대체 무슨 의미일까?</summary>

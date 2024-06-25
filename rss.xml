@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Tue, 25 Jun 2024 21:46:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2024 21:48:19 +0900</lastBuildDate>
     <item>
       <title>Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</title>
       <link>https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html</link>
@@ -138,7 +138,11 @@
 &lt;p&gt;참고로 작은따옴표나 &lt;code&gt;quote&lt;/code&gt;로 인용된 리스트는 &lt;code&gt;eval&lt;/code&gt;로 일반 리스트화 하는 것도 가능하다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(eval '(1 2 3))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.&lt;/p&gt;</description>
+&lt;p&gt;'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-eval-quoted-list-elements.html"&gt;Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;Emacs Lisp 코드를 보면 작은따옴표가 종종 보이는데 유독 한 쌍이 아니라 한 개씩만 보여서 상당히 혼란스러웠었다. 왜냐하면 다른 언어에서 작은따옴표는 문자 혹은 문자열을 둘러싸는 특수 기호로 쓰이니 말이다.&lt;/p&gt;
 &lt;p&gt;즉 Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰인다. 도대체 이 작은따옴표는 무슨 의미일까?&lt;/p&gt;
 &lt;h2&gt;Emacs Lisp에서 순수한 데이터 리스트 표현하기&lt;/h2&gt;
@@ -180,7 +184,11 @@
 &lt;p&gt;참고로 작은따옴표나 &lt;code&gt;quote&lt;/code&gt;로 인용된 리스트는 &lt;code&gt;eval&lt;/code&gt;로 일반 리스트화 하는 것도 가능하다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(eval '(1 2 3))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.&lt;/p&gt;</content:encoded>
+&lt;p&gt;'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-eval-quoted-list-elements.html"&gt;Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-single-quote.html</guid>
       <pubDate>Mon, 24 Jun 2024 23:02:00 +0900</pubDate>
     </item>

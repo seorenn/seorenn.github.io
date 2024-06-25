@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Tue, 25 Jun 2024 21:48:19 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2024 21:50:42 +0900</lastBuildDate>
     <item>
       <title>Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</title>
       <link>https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html</link>
@@ -28,7 +28,7 @@
 &lt;p&gt;이 경우 예시 하단의 주석에서 처럼 mylist에는 &lt;code&gt;(2 4 8)&lt;/code&gt;과 같은 값으로 구성된 리스트가 아니라 각 요소로 지정된 함수가 실행되기 전 상태로 그대로 구성되어 있는 모습을 볼 수 있다.&lt;/p&gt;
 &lt;p&gt;의도에 따라 다르겠지만, 만약 각 요소에 배정된 명령이 실행된 값으로 리스트를 구성하고자 한다면 어떻게 해야 할까? 왜냐하면 이런 리스트의 요소들은 하나씩 꺼내서 &lt;code&gt;eval&lt;/code&gt;로 돌려보지 않으면 실제 값을 알 수가 없으니 말이다.&lt;/p&gt;
 &lt;h2&gt;해결하기&lt;/h2&gt;
-&lt;p&gt;이럴 때를 위해 역따옴표(&lt;code&gt;`&lt;/code&gt;)와 쉼표(&lt;code&gt;,&lt;/code&gt;) 기호를 활용할 수 있다. 역따옴표도 작은따옴표과 같이 인용(quote) 용도이며 리스트를 구성할 때 사용할 수 있으나 쉼표와 조합되면 조금 특수한 능력을 발휘할 수 있다.&lt;/p&gt;
+&lt;p&gt;이럴 때를 위해 역따옴표(&lt;code&gt;`&lt;/code&gt;)와 쉼표(&lt;code&gt;,&lt;/code&gt;) 기호를 활용할 수 있다. 역따옴표도 작은따옴표과 같이 인용(quote) 용도이며 리스트를 구성할 때 작은따옴표 대신 동일하게 사용할 수 있으나 쉼표와 조합되면 조금 특수한 능력을 발휘할 수 있다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(defun doubled (v)
   (* v 2))
 
@@ -36,7 +36,7 @@
 
 ;; mylist = (4 8 16)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이렇게 역따옴표로 구성되는 각 요소들은 앞에 쉼표가 붙어있는 경우 입력된 값이 아닌 그 값이 실행(eval)된 형태로 구성된다. &lt;/p&gt;
+&lt;p&gt;이렇게 역따옴표로 구성되는 각 요소들은 앞에 쉼표가 붙어있는 경우 원본 코드가 아닌 그 코드가 실행(eval)된 형태로 구성된다. &lt;/p&gt;
 &lt;p&gt;앞서 이야기 했다시피 쉼표가 앞에 붙은 요소만 실행되며 따라서 일부만 실행되기 전의 값으로 구성하는 것도 가능하다. 예를 들어 아래와 같이 가운데 요소에서만 쉼표를 빼보자.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mylist `(,(doubled 2) (doubled 4) ,(doubled 8)))
 
@@ -65,7 +65,7 @@
 &lt;p&gt;이 경우 예시 하단의 주석에서 처럼 mylist에는 &lt;code&gt;(2 4 8)&lt;/code&gt;과 같은 값으로 구성된 리스트가 아니라 각 요소로 지정된 함수가 실행되기 전 상태로 그대로 구성되어 있는 모습을 볼 수 있다.&lt;/p&gt;
 &lt;p&gt;의도에 따라 다르겠지만, 만약 각 요소에 배정된 명령이 실행된 값으로 리스트를 구성하고자 한다면 어떻게 해야 할까? 왜냐하면 이런 리스트의 요소들은 하나씩 꺼내서 &lt;code&gt;eval&lt;/code&gt;로 돌려보지 않으면 실제 값을 알 수가 없으니 말이다.&lt;/p&gt;
 &lt;h2&gt;해결하기&lt;/h2&gt;
-&lt;p&gt;이럴 때를 위해 역따옴표(&lt;code&gt;`&lt;/code&gt;)와 쉼표(&lt;code&gt;,&lt;/code&gt;) 기호를 활용할 수 있다. 역따옴표도 작은따옴표과 같이 인용(quote) 용도이며 리스트를 구성할 때 사용할 수 있으나 쉼표와 조합되면 조금 특수한 능력을 발휘할 수 있다.&lt;/p&gt;
+&lt;p&gt;이럴 때를 위해 역따옴표(&lt;code&gt;`&lt;/code&gt;)와 쉼표(&lt;code&gt;,&lt;/code&gt;) 기호를 활용할 수 있다. 역따옴표도 작은따옴표과 같이 인용(quote) 용도이며 리스트를 구성할 때 작은따옴표 대신 동일하게 사용할 수 있으나 쉼표와 조합되면 조금 특수한 능력을 발휘할 수 있다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(defun doubled (v)
   (* v 2))
 
@@ -73,7 +73,7 @@
 
 ;; mylist = (4 8 16)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이렇게 역따옴표로 구성되는 각 요소들은 앞에 쉼표가 붙어있는 경우 입력된 값이 아닌 그 값이 실행(eval)된 형태로 구성된다. &lt;/p&gt;
+&lt;p&gt;이렇게 역따옴표로 구성되는 각 요소들은 앞에 쉼표가 붙어있는 경우 원본 코드가 아닌 그 코드가 실행(eval)된 형태로 구성된다. &lt;/p&gt;
 &lt;p&gt;앞서 이야기 했다시피 쉼표가 앞에 붙은 요소만 실행되며 따라서 일부만 실행되기 전의 값으로 구성하는 것도 가능하다. 예를 들어 아래와 같이 가운데 요소에서만 쉼표를 빼보자.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mylist `(,(doubled 2) (doubled 4) ,(doubled 8)))
 

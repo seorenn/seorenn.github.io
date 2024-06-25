@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기" />
+    <meta name="og:title" content="Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기" />
+    <meta name="description" content="Emacs Lisp에서 인용된 리스트의 각 값들은 입력된 그대로 들어가 있는데 역따옴표와 쉼표를 이용해 이를 값으로 구성하는 방법을 알아보자." />
+    <meta name="twitter:description" content="Emacs Lisp에서 인용된 리스트의 각 값들은 입력된 그대로 들어가 있는데 역따옴표와 쉼표를 이용해 이를 값으로 구성하는 방법을 알아보자." />
+    <meta name="og:description" content="Emacs Lisp에서 인용된 리스트의 각 값들은 입력된 그대로 들어가 있는데 역따옴표와 쉼표를 이용해 이를 값으로 구성하는 방법을 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/emacs.html">Emacs</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 06월 25일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p><a href="../article/emacs-lisp-single-quote.html">작은따옴표</a> 글에서 정리했다시피 Emacs Lisp에서 인용(quote) 즉 작은따옴표(<code>'</code>) 등을 이용해 리스트를 표현하면 내부의 값들이 입력된 그대로 들어가 있게 된다. 예를 들자면 아래와 같다.</p>
+<pre><code class="language-lisp">(defun doubled (v)
+  (* v 2))
+
+(setq mylist '((doubled 2) (doubled 4) (doubled 8)))
+
+;; mylist = ((doubled 2) (doubled 4) (doubled 8))
+</code></pre>
+<p>이 경우 예시 하단의 주석에서 처럼 mylist에는 <code>(2 4 8)</code>과 같은 값으로 구성된 리스트가 아니라 각 요소로 지정된 함수가 실행되기 전 상태로 그대로 구성되어 있는 모습을 볼 수 있다.</p>
+<p>의도에 따라 다르겠지만, 만약 각 요소에 배정된 명령이 실행된 값으로 리스트를 구성하고자 한다면 어떻게 해야 할까? 왜냐하면 이런 리스트의 요소들은 하나씩 꺼내서 <code>eval</code>로 돌려보지 않으면 실제 값을 알 수가 없으니 말이다.</p>
+<h2>해결하기</h2>
+<p>이럴 때를 위해 역따옴표(<code>`</code>)와 쉼표(<code>,</code>) 기호를 활용할 수 있다. 역따옴표도 작은따옴표과 같이 인용(quote) 용도이며 리스트를 구성할 때 사용할 수 있으나 쉼표와 조합되면 조금 특수한 능력을 발휘할 수 있다.</p>
+<pre><code class="language-lisp">(defun doubled (v)
+  (* v 2))
+
+(setq mylist `(,(doubled 2) ,(doubled 4) ,(doubled 8)))
+
+;; mylist = (4 8 16)
+</code></pre>
+<p>이렇게 역따옴표로 구성되는 각 요소들은 앞에 쉼표가 붙어있는 경우 입력된 값이 아닌 그 값이 실행(eval)된 형태로 구성된다. </p>
+<p>앞서 이야기 했다시피 쉼표가 앞에 붙은 요소만 실행되며 따라서 일부만 실행되기 전의 값으로 구성하는 것도 가능하다. 예를 들어 아래와 같이 가운데 요소에서만 쉼표를 빼보자.</p>
+<pre><code class="language-lisp">(setq mylist `(,(doubled 2) (doubled 4) ,(doubled 8)))
+
+;; mylist = (4 (doubled 4) 16)
+</code></pre>
+<p>이런 식으로 역따옴표로 구성한 리스트에서 쉼표가 빠진 요소는 실행되기 전의 코드로 그대로 리스트에 포함된다. 즉 역따옴표는 쉼표를 안 쓰면 기존 작은따옴표를 이용한 인용과 동일하게 동작한다.</p>
+<h2>대안</h2>
+<p>인용(quote)과 리스트 함수(<code>list</code>)가 무엇이 다른지 알고 있다면 다른 선택지를 선택할 수도 있다. 인용 형식이 아니라 <code>list</code> 함수를 이용해 구성하면 알아서 실행된 값을 리스트 구성에 그대로 이용할 수 있기 때문이다.</p>
+<pre><code class="language-lisp">(setq mylist (list (doubled 2) (doubled 4) (doubled 8)))
+
+;; mylist = (4 8 16)
+</code></pre>
+<p>다만 이 경우는 직접 리스트를 구성할 수 있는 경우일 테고 다른 함수의 결과에서 리스트를 받아와야 할 때는 이런 경우가 아닐 수도 있다. 따라서 역따옴표와 쉼표를 활용하는 방법은 꼭 알아둬야 할 지도 모른다.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
+</ul>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

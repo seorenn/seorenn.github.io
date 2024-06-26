@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-25T21:50:42.085416+09:00</updated>
+  <updated>2024-06-26T23:13:01.688929+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,45 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/emacs-lisp-plist.html</id>
+    <title>Emacs Lisp의 plist 사용법 간단 정리</title>
+    <updated>2024-06-26T23:12:14.152491+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>plist</h2>
+<p>Emacs Lisp에서 plist는 'Property List'의 축약어로 다른 언어의 사전형(dictionary type)과 비슷한 기능의 자료구조를 제공한다. 참고로 Common Lisp에도 동일한 자료형은 있으나 사용법은 조금 다른 것 같다.</p>
+<p>기본적으로 plist 자료구조는 단순 리스트에 키와 값이 연속으로 나열되는 구조라 표현에서 상당히 간결한 편이다.</p>
+<h2>plist 인스턴스 생성</h2>
+<p>plist 데이터를 생성하는 방법은 일반 리스트와 동일하다. 단지 요소 배치를 키와 값 순서대로 나열해야 한다는 특징이 있다.</p>
+<pre><code class="language-lisp">(setq mycard
+      '(name "Conrad"
+        age 20
+        phone "82-10-1234-5678"
+        address "Earth, Milkyway, Laniakea Supercluster"
+        :memo "Lazy Human"))
+</code></pre>
+<p>이렇게 키와 값을 나열하면 plist 형식의 인스턴스가 생성된다.</p>
+<p>위의 예에서 약간 특이하게 <code>:memo</code>만 앞에 콜론(<code>:</code>)이 붙어있는데 Emacs Lisp에서 심볼을 표현하는 문법이며 이런 형식도 쓸 수 있다는 것을 알려주기 위함이지 다른 의미가 있는 것은 아니다.</p>
+<h2>plist에서 키의 값 읽기</h2>
+<p>plist 데이터에서 특정 키의 값을 읽을 때는 <code>plist-get</code> 함수를 사용할 수 있다.</p>
+<pre><code class="language-lisp">(plist-get mycard 'name)
+;; -&gt; "Conrad"
+(plist-get mycard :memo)
+;; -&gt; "Lazy Human"
+</code></pre>
+<h2>plist에서 키의 값 쓰기</h2>
+<p>plist 데이터에 키와 값을 추가로 쓰거나 업데이트하기 위해서는 <code>plist-put</code> 함수를 사용할 수 있다.</p>
+<pre><code class="language-lisp">(plist-put mycard 'gender "etc")
+</code></pre>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/article/emacs-lisp-plist.html"/>
+    <summary type="text">Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자.</summary>
+    <published>2024-06-26T23:12:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html</id>
     <title>Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</title>
@@ -2260,37 +2299,5 @@ SyntaxError: f-string expression part cannot include a backslash
     <link href="https://seorenn.github.io/article/soft-landing-and-hard-landing.html"/>
     <summary type="text">연착륙과 경착륙이라는 경제용어를 정리하는 글</summary>
     <published>2024-05-20T10:45:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/python-filter-and-map.html</id>
-    <title>파이썬의 Filter와 Map 그리고 List Comprehension</title>
-    <updated>2024-05-19T23:32:44.006043+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬에도 보통 함수형 언어들의 핵심 일꾼(?)으로 불리는 fillter와 map이 당연히 있다. 하지만 파이썬에서는 이 둘 보다는 다른 방법의 문법을 사용하는 경우도 자주 보이는데 이에 대해 간단히 정리해 보자.</p>
-<h2>filter와 map</h2>
-<p><code>filter</code>는 여타 언어들 처럼 리스트에서 불필요한 부분을 걸러내기 위한 용도로 사용된다. 예를 들자면 아래와 같은 식이다.</p>
-<pre><code class="language-python">result = filter(lambda x: iswhat(x), somelist)
-</code></pre>
-<p>여기서 lambda 함수의 결과가 <code>True</code>이면 리스트에 남고 <code>False</code>이면 리스트에서 제외된 채로 result로 반환된다.</p>
-<p><code>map</code>의 경우는 입력된 리스트를 가공하여 다른 형태의 리스트로 만들고 싶을 때 사용한다. 예를 들어 다음과 같은 식이다.</p>
-<pre><code class="language-python">result = map(lambda x: dowhat(x), somelist)
-</code></pre>
-<p>여기서 lambda 함수의 결과를 이용해 리스트가 새로 구성되어서 result로 반환된다.</p>
-<h2>List Comprehension</h2>
-<p>한국어로는 뭐라고 표현해야 할 지를 잘 모르겠다. 어쨌든 이 문법을 이용하면 filter와 map 코드를 파이썬에 어울리는 방식으로 표현할 수 있다.</p>
-<p>예를 들어 위의 filter 예제는 아래와 같은 식으로 바꿔서 쓸 수 있다.</p>
-<pre><code class="language-python">[x for x in somelist if iswhat(x)]
-</code></pre>
-<p>보다시피 파이썬의 여러 문법이 한 번에 쓰여지고 있는데 생각보다 가독성이 나쁘지는 않다.</p>
-<p>map 예제의 경우도 비슷하게 아래와 같은 식으로 바꿔 쓸 수 있다.</p>
-<pre><code class="language-python">[dowhat(x) for x in somelist]
-</code></pre>
-<p>이런 식으로 풀어서 쓸 수 있다. 이런 방식이 코드도 약간은 줄어드는 느낌이다.</p>
-<h2>사족</h2>
-<p>reduce는 어디 갔다고 물어볼 사람이 있을 지도 모르겠는데, 개인적으로 reduce는 코드 읽기 측면에서 상당히 난해하고 가독성이 나쁜 코드를 만들어 낸다고 생각해서 안 쓰는 것이 좋지 않을까 생각된다. 정 필요하다면 루프를 동원해서 풀어서 쓰는 게 훨씬 낫지 않을까?</p></div>
-    </content>
-    <link href="https://seorenn.github.io/article/python-filter-and-map.html"/>
-    <summary type="text">파이썬(Python)의 filter와 map 사용법 및 이와 비슷한 List Comprehension을 소개하는 글</summary>
-    <published>2024-05-19T17:22:00+09:00</published>
   </entry>
 </feed>

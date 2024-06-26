@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>Emacs Lisp에서 setq와 setq-default의 차이 - Seorenn</title>
-    <meta name="twitter:title" content="Emacs Lisp에서 setq와 setq-default의 차이" />
-    <meta name="og:title" content="Emacs Lisp에서 setq와 setq-default의 차이" />
-    <meta name="description" content="Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자." />
-    <meta name="twitter:description" content="Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자." />
-    <meta name="og:description" content="Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 setq와 setq-default의 차이에 대해 알아보자." />
-    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-setq-default.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-setq-default.html" />
+    <title>Emacs Lisp의 plist 사용법 간단 정리 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs Lisp의 plist 사용법 간단 정리" />
+    <meta name="og:title" content="Emacs Lisp의 plist 사용법 간단 정리" />
+    <meta name="description" content="Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자." />
+    <meta name="twitter:description" content="Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자." />
+    <meta name="og:description" content="Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-plist.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-plist.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>Emacs Lisp에서 setq와 setq-default의 차이</h1>
+          <h1>Emacs Lisp의 plist 사용법 간단 정리</h1>
           <div class="title-date">
             
               
@@ -73,30 +73,41 @@
               <span>//</spans>
             
             
-              <span>2024년 06월 22일 작성</span>
+              <span>2024년 06월 26일 작성</span>
             
             
             
           </div>
         </header>
-        <p>Emacs를 세팅하다 보면 생소한 느낌의 단어를 자주 사용하게 되는데 그 중에 <code>setq</code>와 <code>setq-default</code>의 차이에 대해 알아보자.</p>
-<h2>버퍼 로컬 변수 개념</h2>
-<p>Emacs에는 '버퍼 로컬(buffer-local) 변수'라는 특별한 개념이 있다. 마치 해당 버퍼에 종속되는 전역 변수와 비슷한 느낌으로 설명할 수 있다.</p>
-<p>예를 들자면 <code>tab-width</code> 가 대표적이다. 이 변수는 들여쓰기의 크기를 설정하는 변수로 각 버퍼의 메이저 모드마다 이 변수의 값이 다 다를 수 있다. 버퍼에 속한 로컬 변수이기 때문이다. 하지만 기초 값으로 사용되는 전역 변수도 따로 있다.</p>
-<p>이 '버퍼 로컬 변수' 개념만 이해하고 있다면 둘의 차이는 쉽게 구분할 수 있다.</p>
-<h2>setq</h2>
-<p><code>setq</code>명령어는 Set eQual의 약자로 다른 언어에선 대입(assign)과 비슷한 의미의 명령이다. 이 명령은 만약 로컬 변수가 있다면 해당 변수의 값을 지정하고, 로컬 변수가 없다면 전역 변수에 지정하는 방식으로 동작한다.</p>
-<pre><code class="language-lisp">(setq tab-width 8)
+        <h2>plist</h2>
+<p>Emacs Lisp에서 plist는 'Property List'의 축약어로 다른 언어의 사전형(dictionary type)과 비슷한 기능의 자료구조를 제공한다. 참고로 Common Lisp에도 동일한 자료형은 있으나 사용법은 조금 다른 것 같다.</p>
+<p>기본적으로 plist 자료구조는 단순 리스트에 키와 값이 연속으로 나열되는 구조라 표현에서 상당히 간결한 편이다.</p>
+<h2>plist 인스턴스 생성</h2>
+<p>plist 데이터를 생성하는 방법은 일반 리스트와 동일하다. 단지 요소 배치를 키와 값 순서대로 나열해야 한다는 특징이 있다.</p>
+<pre><code class="language-lisp">(setq mycard
+      '(name &quot;Conrad&quot;
+        age 20
+        phone &quot;82-10-1234-5678&quot;
+        address &quot;Earth, Milkyway, Laniakea Supercluster&quot;
+        :memo &quot;Lazy Human&quot;))
 </code></pre>
-<p>위 코드는 현재 버퍼의 들여쓰기 레벨을 8로 설정하는 명령이다. 하지만 다른 메이저모드 버퍼에는 적용되지 않는다. 왜냐하면 <code>tab-width</code>는 앞서 이야기 했다시피 버퍼 로컬 변수라는 특수한 변수이기 때문이다.</p>
-<h2>setq-default</h2>
-<p><code>setq-default</code>는 버퍼 로컬 변수를 생략하고 무조건 전역 변수의 값을 지정하는 용도로 사용된다.</p>
-<pre><code class="language-lisp">(setq-default tab-width 8)
+<p>이렇게 키와 값을 나열하면 plist 형식의 인스턴스가 생성된다.</p>
+<p>위의 예에서 약간 특이하게 <code>:memo</code>만 앞에 콜론(<code>:</code>)이 붙어있는데 Emacs Lisp에서 심볼을 표현하는 문법이며 이런 형식도 쓸 수 있다는 것을 알려주기 위함이지 다른 의미가 있는 것은 아니다.</p>
+<h2>plist에서 키의 값 읽기</h2>
+<p>plist 데이터에서 특정 키의 값을 읽을 때는 <code>plist-get</code> 함수를 사용할 수 있다.</p>
+<pre><code class="language-lisp">(plist-get mycard 'name)
+;; -&gt; &quot;Conrad&quot;
+(plist-get mycard :memo)
+;; -&gt; &quot;Lazy Human&quot;
 </code></pre>
-<p>위 코드는 현재 버퍼가 아니라 모든 버퍼에서 참고하는 기본 들여쓰기 레벨을 설정하는 코드다. 따라서 새롭게 만들어지는 버퍼는 모두 이 값을 참조하여 들여쓰기 레벨을 결정한다. 물론 이후 <code>setq</code>로 해당 버퍼 로컬 변수의 값이 바뀔 수는 있겠지만 말이다.</p>
-<h2>사족</h2>
-<p>default라는 이름에 집중하면 왠지 조금은 더 이해가 잘 되는 것 같다. 즉 기본값(default value)을 설정하기 위한 용도로 <code>setq-default</code>가 쓰이는 것 같다. 뭔가 대단한 일을 하는 함수 같다.</p>
-<p>그렇다고 해도 보통 Lisp 코딩에서는 <code>setq</code>가 압도적으로 많이 쓰인다. 로컬 변수에서도 사용하니 당연하다. 오히려 <code>setq-default</code>를 쓸 일은 그다지 많지 않을 수도 있다.</p>
+<h2>plist에서 키의 값 쓰기</h2>
+<p>plist 데이터에 키와 값을 추가로 쓰거나 업데이트하기 위해서는 <code>plist-put</code> 함수를 사용할 수 있다.</p>
+<pre><code class="language-lisp">(plist-put mycard 'gender &quot;etc&quot;)
+</code></pre>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
+</ul>
       </section>
     </div>
     <div class="splitter-container">
@@ -113,15 +124,15 @@
               <ul>
                 
                   <li>
-                    <a href="../article/emacs-lisp-plist.html">Emacs Lisp의 plist 사용법 간단 정리</a>
-                  </li>
-                
-                  <li>
                     <a href="../article/emacs-lisp-eval-quoted-list-elements.html">Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</a>
                   </li>
                 
                   <li>
                     <a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a>
                   </li>
                 
               </ul>

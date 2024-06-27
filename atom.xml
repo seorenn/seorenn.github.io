@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-27T10:26:20.359093+09:00</updated>
+  <updated>2024-06-27T10:27:11.087585+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -107,7 +107,7 @@
 <h2>마무리 및 관련된 글들</h2>
 <p>사실 소개 수준의 짧은 글을 쓰려고 했는데 예제가 생각보다 길어졌다. alist는 사전형이나 해시테이블과는 다르게 '연관된 데이터 묶음'에 가깝기 때문에 그 부분을 더 설명할 수밖에 없었던 것 같다. 그래서인지 이 외애도 많은 내용이 존재한다. 예를 들자면 테스트 함수 같은 개념도 있다. 상당히 많은 기능이 더 있으니 궁금하다면 링크된 관련글에서 내용을 더 찾아보자.</p>
 <ul>
-<li>Association Lists](https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html)</li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html" target="_blank">Association Lists📎</a></li>
 <li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a> </li>
 </ul></div>
     </content>

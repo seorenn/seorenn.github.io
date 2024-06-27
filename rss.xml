@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 27 Jun 2024 10:26:20 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 10:27:11 +0900</lastBuildDate>
     <item>
       <title>Emacs Lisp의 alist 사용법 간단 정리</title>
       <link>https://seorenn.github.io/article/emacs-lisp-alist.html</link>
@@ -108,7 +108,7 @@
 &lt;h2&gt;마무리 및 관련된 글들&lt;/h2&gt;
 &lt;p&gt;사실 소개 수준의 짧은 글을 쓰려고 했는데 예제가 생각보다 길어졌다. alist는 사전형이나 해시테이블과는 다르게 '연관된 데이터 묶음'에 가깝기 때문에 그 부분을 더 설명할 수밖에 없었던 것 같다. 그래서인지 이 외애도 많은 내용이 존재한다. 예를 들자면 테스트 함수 같은 개념도 있다. 상당히 많은 기능이 더 있으니 궁금하다면 링크된 관련글에서 내용을 더 찾아보자.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Association Lists](https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html" target="_blank"&gt;Association Lists📎&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt; &lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;h2&gt;alist&lt;/h2&gt;
@@ -202,7 +202,7 @@
 &lt;h2&gt;마무리 및 관련된 글들&lt;/h2&gt;
 &lt;p&gt;사실 소개 수준의 짧은 글을 쓰려고 했는데 예제가 생각보다 길어졌다. alist는 사전형이나 해시테이블과는 다르게 '연관된 데이터 묶음'에 가깝기 때문에 그 부분을 더 설명할 수밖에 없었던 것 같다. 그래서인지 이 외애도 많은 내용이 존재한다. 예를 들자면 테스트 함수 같은 개념도 있다. 상당히 많은 기능이 더 있으니 궁금하다면 링크된 관련글에서 내용을 더 찾아보자.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Association Lists](https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html" target="_blank"&gt;Association Lists📎&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt; &lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-alist.html</guid>

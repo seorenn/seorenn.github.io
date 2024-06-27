@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-27T10:24:40.737200+09:00</updated>
+  <updated>2024-06-27T10:26:20.359093+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -148,6 +148,7 @@
 <h2>관련된 글들</h2>
 <ul>
 <li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
+<li><a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a></li>
 </ul></div>
     </content>
     <link href="https://seorenn.github.io/article/emacs-lisp-plist.html"/>

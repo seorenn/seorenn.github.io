@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 27 Jun 2024 10:24:40 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 10:26:20 +0900</lastBuildDate>
     <item>
       <title>Emacs Lisp의 alist 사용법 간단 정리</title>
       <link>https://seorenn.github.io/article/emacs-lisp-alist.html</link>
@@ -239,6 +239,7 @@
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-alist.html"&gt;Emacs Lisp의 alist 사용법 간단 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;h2&gt;plist&lt;/h2&gt;
 &lt;p&gt;Emacs Lisp에서 plist는 'Property List'의 축약어로 다른 언어의 사전형(dictionary type)과 비슷한 기능의 자료구조를 제공한다. 참고로 Common Lisp에도 동일한 자료형은 있으나 사용법은 조금 다른 것 같다.&lt;/p&gt;
@@ -268,6 +269,7 @@
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-alist.html"&gt;Emacs Lisp의 alist 사용법 간단 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-plist.html</guid>
       <pubDate>Wed, 26 Jun 2024 23:12:00 +0900</pubDate>

@@ -13,7 +13,201 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Wed, 26 Jun 2024 23:13:01 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 10:24:40 +0900</lastBuildDate>
+    <item>
+      <title>Emacs Lisp의 alist 사용법 간단 정리</title>
+      <link>https://seorenn.github.io/article/emacs-lisp-alist.html</link>
+      <description>&lt;h2&gt;alist&lt;/h2&gt;
+&lt;p&gt;Emacs Lisp에서 alist는 Association List의 축약어로, 한국어로 직역하면 '연관 목록' 정도로 표현할 수 있는 자료구조다. 다른 언어에서 자주 취급되는 가장 비슷한 자료구조를 들자면 사전형(dictionary)가 비슷할 것 같고, Emacs Lisp 내에서는 용도 면에서 &lt;a href="../article/emacs-lisp-plist.html"&gt;plist&lt;/a&gt;와도 좀 비슷한 편이다. 참고로 plist와는 다르게 alist는 Common Lisp과 사용법이 비슷한 편이다.&lt;/p&gt;
+&lt;p&gt;alist의 데이터는 키와 값이 점(&lt;code&gt;.&lt;/code&gt;)으로 구분되는 형식으로 표현된다. 혹은 &lt;code&gt;cons&lt;/code&gt;라는 함수를 이용해 키와 값을 연속으로 배열하기도 한다. 예제로 아래의 두 줄은 같은 키와 문자열 값을 표현하는 두 가지 방식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;'(key . &amp;quot;value&amp;quot;)
+(cons ('key &amp;quot;value'))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이런 키와 값의 쌍 데이터는 &lt;code&gt;car&lt;/code&gt; 혹은 &lt;code&gt;cdr&lt;/code&gt; 같은 함수를 이용해 키와 값을 분리해 낼 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(cdr '(name . &amp;quot;Conrad&amp;quot;))
+;; =&amp;gt; Conrad
+(car '(name . &amp;quot;Conrad&amp;quot;))
+;; =&amp;gt; name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;사실 좀 미묘한게 앞과 뒤 어떤 게 키일까 정의할 수는 없다. 왜냐하면 alist는 키나 값 개념 자체가 없고 둘 다 기준으로 사용할 수 있기 때문이다. 다만 &lt;strong&gt;일반적으로 키-값(key-value) 순서가 많이 쓰여서 여기에 맞춰지는 경우가 많을 뿐&lt;/strong&gt;이다. 이 글의 예시에서도 키-값 순서로 사용함에 주의하자.&lt;/p&gt;
+&lt;h2&gt;alist 생성&lt;/h2&gt;
+&lt;p&gt;alist를 생성하는 방법 중 자주 사용되는 방법으로 &lt;a href="../article/emacs-lisp-single-quote.html"&gt;인용(quote)&lt;/a&gt;을 이용한 축약 표현이 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mycard
+      '((name . &amp;quot;Conrad&amp;quot;)
+        (age . 20)
+        (phone . &amp;quot;82-10-1234-5678&amp;quot;)
+        (address . &amp;quot;Earth, Milkyway, Laniakea Supercluster&amp;quot;)
+        (:memo . &amp;quot;Lazy Human&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 외에 &lt;code&gt;cons&lt;/code&gt;를 이용할 경우는 아래와 같은 식으로도 표현할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mycard
+      (list (cons 'name &amp;quot;Conrad&amp;quot;)
+            (cons 'age 20)
+            (cons 'phone &amp;quot;82-10-1234-5678&amp;quot;)
+            (cons 'address &amp;quot;Earth, Milkyway, Laniakea Supercluster&amp;quot;)
+            (cons :memo &amp;quot;Lazy Human&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;둘 다 동일한 데이터를 생성하기 때문에 원하는 방식을 사용하면 된다.&lt;/p&gt;
+&lt;p&gt;이 외에 약간 독특하게 키 리스트와 값 리스트를 이용해 alist를 생성하고 싶다면 &lt;code&gt;cl-pairlis&lt;/code&gt; 함수를 사용해보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(cl-pairlis '(key1 key2 key3) '(&amp;quot;value1&amp;quot; &amp;quot;value2&amp;quot; &amp;quot;value3&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Common Lisp의 함수이기 때문에 Common Lisp에서는 'cl-' 접두어를 때어내고 &lt;code&gt;pairlis&lt;/code&gt; 함수를 쓰면 될 거라 예상된다.&lt;/p&gt;
+&lt;h2&gt;특정 키의 데이터 쌍 및 값 얻기&lt;/h2&gt;
+&lt;p&gt;특정 키의 데이터를 읽기 위해서는 &lt;code&gt;assoc&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(assoc 'name mycard)
+;; =&amp;gt; (name . Conrad)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;assoc&lt;/code&gt;의 경우 다른 언어와는 다르게 값 만을 읽는게 아니라 키와 값이 연결된 데이터 한 쌍을 얻을 수 있다. 그래서 값 만을 얻기 위해서 앞서 언급한 &lt;code&gt;cdr&lt;/code&gt; 함수를 추가로 이용해야 한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(cdr (assoc 'name mycard))
+;; =&amp;gt; Conrad
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;그런데 &lt;code&gt;cdr&lt;/code&gt;과 &lt;code&gt;assoc&lt;/code&gt;의 조합은 사실 &lt;code&gt;alist-get&lt;/code&gt;이라는 함수 하나로 해결하는 것도 가능하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(alist-get 'name mycard)
+;; =&amp;gt; Conrad
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 외에도 &lt;code&gt;assoc&lt;/code&gt;와 비슷하지만 비교 함수가 다른 &lt;code&gt;assq&lt;/code&gt; 등도 있으니 필요하다면 레퍼런스를 찾아보자.&lt;/p&gt;
+&lt;h2&gt;특정 값으로 데이터 쌍 및 키 얻기&lt;/h2&gt;
+&lt;p&gt;보통 사전형 자료구조에선 쉽게(?) 허용하지 않는 alist의 특수한 기능으로 값을 이용해 데이터 쌍을 얻을 수 있는 방법을 제공한다. &lt;code&gt;assoc&lt;/code&gt;의 뒤집어진(reversed?) 형태인 &lt;code&gt;rassoc&lt;/code&gt; 함수를 사용한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(rassoc 20 mycard)
+;; =&amp;gt; (age . 20)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이번에도 키와 값 쌍을 얻을 수 있는데 여기서 키를 분리해 내고 싶다면 앞서 언급한 &lt;code&gt;car&lt;/code&gt; 함수를 이용해 뽑아낼 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(car (rassoc 20 mycard))
+;; =&amp;gt; age
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;하지만 키-값 기반의 데이터를 운용할 때는 아무래도 키 기준을 사용하는 경우가 대부분이라 이 기능을 쓰게 될 일이 있을지는 잘 모르겠다.&lt;/p&gt;
+&lt;h2&gt;alist에 데이터 쌍 추가하기&lt;/h2&gt;
+&lt;p&gt;이미 만들어진 alist 인스턴스에 새로운 키-값 쌍을 추가하는 대표적인 방법으로 Emacs 설정 중 자주 볼 수 있는 &lt;code&gt;add-to-list&lt;/code&gt; 함수를 사용할 수 있다. 예를 들어 아래는 mycard라는 alist를 생성하고 여기에 nick과 job이라는 두 개의 키와 값을 추가하는 예제다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mycard
+      '((name . &amp;quot;Conrad&amp;quot;)
+        (age . 20)
+        (phone . &amp;quot;82-10-1234-5678&amp;quot;)
+        (address . &amp;quot;Earth, Milkyway, Laniakea Supercluster&amp;quot;)
+        (:memo . &amp;quot;Lazy Human&amp;quot;)))
+(add-to-list 'mycard (cons 'nick &amp;quot;Seorenn&amp;quot;))
+(add-to-list 'mycard '(job &amp;quot;Untitled&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;그밖에 &lt;code&gt;push&lt;/code&gt; 함수를 사용할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(push (cons 'nick &amp;quot;Seorenn&amp;quot;) mycard)
+(push '(job . &amp;quot;Untitled&amp;quot;) mycard)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;참고로 &lt;code&gt;add-to-list&lt;/code&gt;나 &lt;code&gt;push&lt;/code&gt; 함수는 리스트에 끼워 넣기만 하기 때문에 해당 키의 값을 변경하는 용도로는 사용할 수 없다. 애초에 alist는 키 개념이 없기도 하고 따라서 키를 중복시키는 것도 가능하다.&lt;/p&gt;
+&lt;p&gt;이 외에 일반 리스트처럼 &lt;code&gt;append&lt;/code&gt;도 쓸 수 있지 않을까 예상된다.&lt;/p&gt;
+&lt;h2&gt;alist에서 데이터 쌍 삭제하기&lt;/h2&gt;
+&lt;p&gt;alist에서 특정 키를 가진 데이터 쌍을 모두 삭제하기 위해서 &lt;code&gt;assq-delete-all&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(assq-delete-all 'job mycard)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;왜 -all이라는 접미어가 붙어있을까는 유니크 키 개념이 없다는 점 때문이라고 생각하면 된다. 중복되는 키가 있을 수 있기 때문에 몽땅 지워버린다는 의미 또한 충분히 있을 수 있다.&lt;/p&gt;
+&lt;h2&gt;alist에서 특정 키의 값 수정하기&lt;/h2&gt;
+&lt;p&gt;가장 간단한 방법으로 &lt;code&gt;setf&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;;; (setf (alist-get KEY ALIST) NEW-VALUE)
+(setf (alist-get 'nick mycard) &amp;quot;another nick name&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;사용법은 주석에 적은 대로다. 약간 복잡한 것 같지만 키의 데이터 쌍을 다 삭제하고 다시 추가하는 것보다는 간단할 것 같다.&lt;/p&gt;
+&lt;p&gt;코드 상으론 동작이 약간 이해되지 않는데, 아마도 &lt;code&gt;setf&lt;/code&gt;는 레퍼런스 혹은 포인터가 가 가리키는 메모리의 값을 갱신하는 것 같은 느낌이다.&lt;/p&gt;
+&lt;h2&gt;마무리 및 관련된 글들&lt;/h2&gt;
+&lt;p&gt;사실 소개 수준의 짧은 글을 쓰려고 했는데 예제가 생각보다 길어졌다. alist는 사전형이나 해시테이블과는 다르게 '연관된 데이터 묶음'에 가깝기 때문에 그 부분을 더 설명할 수밖에 없었던 것 같다. 그래서인지 이 외애도 많은 내용이 존재한다. 예를 들자면 테스트 함수 같은 개념도 있다. 상당히 많은 기능이 더 있으니 궁금하다면 링크된 관련글에서 내용을 더 찾아보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Association Lists](https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html)&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;h2&gt;alist&lt;/h2&gt;
+&lt;p&gt;Emacs Lisp에서 alist는 Association List의 축약어로, 한국어로 직역하면 '연관 목록' 정도로 표현할 수 있는 자료구조다. 다른 언어에서 자주 취급되는 가장 비슷한 자료구조를 들자면 사전형(dictionary)가 비슷할 것 같고, Emacs Lisp 내에서는 용도 면에서 &lt;a href="../article/emacs-lisp-plist.html"&gt;plist&lt;/a&gt;와도 좀 비슷한 편이다. 참고로 plist와는 다르게 alist는 Common Lisp과 사용법이 비슷한 편이다.&lt;/p&gt;
+&lt;p&gt;alist의 데이터는 키와 값이 점(&lt;code&gt;.&lt;/code&gt;)으로 구분되는 형식으로 표현된다. 혹은 &lt;code&gt;cons&lt;/code&gt;라는 함수를 이용해 키와 값을 연속으로 배열하기도 한다. 예제로 아래의 두 줄은 같은 키와 문자열 값을 표현하는 두 가지 방식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;'(key . &amp;quot;value&amp;quot;)
+(cons ('key &amp;quot;value'))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이런 키와 값의 쌍 데이터는 &lt;code&gt;car&lt;/code&gt; 혹은 &lt;code&gt;cdr&lt;/code&gt; 같은 함수를 이용해 키와 값을 분리해 낼 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(cdr '(name . &amp;quot;Conrad&amp;quot;))
+;; =&amp;gt; Conrad
+(car '(name . &amp;quot;Conrad&amp;quot;))
+;; =&amp;gt; name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;사실 좀 미묘한게 앞과 뒤 어떤 게 키일까 정의할 수는 없다. 왜냐하면 alist는 키나 값 개념 자체가 없고 둘 다 기준으로 사용할 수 있기 때문이다. 다만 &lt;strong&gt;일반적으로 키-값(key-value) 순서가 많이 쓰여서 여기에 맞춰지는 경우가 많을 뿐&lt;/strong&gt;이다. 이 글의 예시에서도 키-값 순서로 사용함에 주의하자.&lt;/p&gt;
+&lt;h2&gt;alist 생성&lt;/h2&gt;
+&lt;p&gt;alist를 생성하는 방법 중 자주 사용되는 방법으로 &lt;a href="../article/emacs-lisp-single-quote.html"&gt;인용(quote)&lt;/a&gt;을 이용한 축약 표현이 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mycard
+      '((name . &amp;quot;Conrad&amp;quot;)
+        (age . 20)
+        (phone . &amp;quot;82-10-1234-5678&amp;quot;)
+        (address . &amp;quot;Earth, Milkyway, Laniakea Supercluster&amp;quot;)
+        (:memo . &amp;quot;Lazy Human&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 외에 &lt;code&gt;cons&lt;/code&gt;를 이용할 경우는 아래와 같은 식으로도 표현할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mycard
+      (list (cons 'name &amp;quot;Conrad&amp;quot;)
+            (cons 'age 20)
+            (cons 'phone &amp;quot;82-10-1234-5678&amp;quot;)
+            (cons 'address &amp;quot;Earth, Milkyway, Laniakea Supercluster&amp;quot;)
+            (cons :memo &amp;quot;Lazy Human&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;둘 다 동일한 데이터를 생성하기 때문에 원하는 방식을 사용하면 된다.&lt;/p&gt;
+&lt;p&gt;이 외에 약간 독특하게 키 리스트와 값 리스트를 이용해 alist를 생성하고 싶다면 &lt;code&gt;cl-pairlis&lt;/code&gt; 함수를 사용해보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(cl-pairlis '(key1 key2 key3) '(&amp;quot;value1&amp;quot; &amp;quot;value2&amp;quot; &amp;quot;value3&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Common Lisp의 함수이기 때문에 Common Lisp에서는 'cl-' 접두어를 때어내고 &lt;code&gt;pairlis&lt;/code&gt; 함수를 쓰면 될 거라 예상된다.&lt;/p&gt;
+&lt;h2&gt;특정 키의 데이터 쌍 및 값 얻기&lt;/h2&gt;
+&lt;p&gt;특정 키의 데이터를 읽기 위해서는 &lt;code&gt;assoc&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(assoc 'name mycard)
+;; =&amp;gt; (name . Conrad)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;assoc&lt;/code&gt;의 경우 다른 언어와는 다르게 값 만을 읽는게 아니라 키와 값이 연결된 데이터 한 쌍을 얻을 수 있다. 그래서 값 만을 얻기 위해서 앞서 언급한 &lt;code&gt;cdr&lt;/code&gt; 함수를 추가로 이용해야 한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(cdr (assoc 'name mycard))
+;; =&amp;gt; Conrad
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;그런데 &lt;code&gt;cdr&lt;/code&gt;과 &lt;code&gt;assoc&lt;/code&gt;의 조합은 사실 &lt;code&gt;alist-get&lt;/code&gt;이라는 함수 하나로 해결하는 것도 가능하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(alist-get 'name mycard)
+;; =&amp;gt; Conrad
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 외에도 &lt;code&gt;assoc&lt;/code&gt;와 비슷하지만 비교 함수가 다른 &lt;code&gt;assq&lt;/code&gt; 등도 있으니 필요하다면 레퍼런스를 찾아보자.&lt;/p&gt;
+&lt;h2&gt;특정 값으로 데이터 쌍 및 키 얻기&lt;/h2&gt;
+&lt;p&gt;보통 사전형 자료구조에선 쉽게(?) 허용하지 않는 alist의 특수한 기능으로 값을 이용해 데이터 쌍을 얻을 수 있는 방법을 제공한다. &lt;code&gt;assoc&lt;/code&gt;의 뒤집어진(reversed?) 형태인 &lt;code&gt;rassoc&lt;/code&gt; 함수를 사용한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(rassoc 20 mycard)
+;; =&amp;gt; (age . 20)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이번에도 키와 값 쌍을 얻을 수 있는데 여기서 키를 분리해 내고 싶다면 앞서 언급한 &lt;code&gt;car&lt;/code&gt; 함수를 이용해 뽑아낼 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(car (rassoc 20 mycard))
+;; =&amp;gt; age
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;하지만 키-값 기반의 데이터를 운용할 때는 아무래도 키 기준을 사용하는 경우가 대부분이라 이 기능을 쓰게 될 일이 있을지는 잘 모르겠다.&lt;/p&gt;
+&lt;h2&gt;alist에 데이터 쌍 추가하기&lt;/h2&gt;
+&lt;p&gt;이미 만들어진 alist 인스턴스에 새로운 키-값 쌍을 추가하는 대표적인 방법으로 Emacs 설정 중 자주 볼 수 있는 &lt;code&gt;add-to-list&lt;/code&gt; 함수를 사용할 수 있다. 예를 들어 아래는 mycard라는 alist를 생성하고 여기에 nick과 job이라는 두 개의 키와 값을 추가하는 예제다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(setq mycard
+      '((name . &amp;quot;Conrad&amp;quot;)
+        (age . 20)
+        (phone . &amp;quot;82-10-1234-5678&amp;quot;)
+        (address . &amp;quot;Earth, Milkyway, Laniakea Supercluster&amp;quot;)
+        (:memo . &amp;quot;Lazy Human&amp;quot;)))
+(add-to-list 'mycard (cons 'nick &amp;quot;Seorenn&amp;quot;))
+(add-to-list 'mycard '(job &amp;quot;Untitled&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;그밖에 &lt;code&gt;push&lt;/code&gt; 함수를 사용할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(push (cons 'nick &amp;quot;Seorenn&amp;quot;) mycard)
+(push '(job . &amp;quot;Untitled&amp;quot;) mycard)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;참고로 &lt;code&gt;add-to-list&lt;/code&gt;나 &lt;code&gt;push&lt;/code&gt; 함수는 리스트에 끼워 넣기만 하기 때문에 해당 키의 값을 변경하는 용도로는 사용할 수 없다. 애초에 alist는 키 개념이 없기도 하고 따라서 키를 중복시키는 것도 가능하다.&lt;/p&gt;
+&lt;p&gt;이 외에 일반 리스트처럼 &lt;code&gt;append&lt;/code&gt;도 쓸 수 있지 않을까 예상된다.&lt;/p&gt;
+&lt;h2&gt;alist에서 데이터 쌍 삭제하기&lt;/h2&gt;
+&lt;p&gt;alist에서 특정 키를 가진 데이터 쌍을 모두 삭제하기 위해서 &lt;code&gt;assq-delete-all&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(assq-delete-all 'job mycard)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;왜 -all이라는 접미어가 붙어있을까는 유니크 키 개념이 없다는 점 때문이라고 생각하면 된다. 중복되는 키가 있을 수 있기 때문에 몽땅 지워버린다는 의미 또한 충분히 있을 수 있다.&lt;/p&gt;
+&lt;h2&gt;alist에서 특정 키의 값 수정하기&lt;/h2&gt;
+&lt;p&gt;가장 간단한 방법으로 &lt;code&gt;setf&lt;/code&gt; 함수를 이용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;;; (setf (alist-get KEY ALIST) NEW-VALUE)
+(setf (alist-get 'nick mycard) &amp;quot;another nick name&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;사용법은 주석에 적은 대로다. 약간 복잡한 것 같지만 키의 데이터 쌍을 다 삭제하고 다시 추가하는 것보다는 간단할 것 같다.&lt;/p&gt;
+&lt;p&gt;코드 상으론 동작이 약간 이해되지 않는데, 아마도 &lt;code&gt;setf&lt;/code&gt;는 레퍼런스 혹은 포인터가 가 가리키는 메모리의 값을 갱신하는 것 같은 느낌이다.&lt;/p&gt;
+&lt;h2&gt;마무리 및 관련된 글들&lt;/h2&gt;
+&lt;p&gt;사실 소개 수준의 짧은 글을 쓰려고 했는데 예제가 생각보다 길어졌다. alist는 사전형이나 해시테이블과는 다르게 '연관된 데이터 묶음'에 가깝기 때문에 그 부분을 더 설명할 수밖에 없었던 것 같다. 그래서인지 이 외애도 많은 내용이 존재한다. 예를 들자면 테스트 함수 같은 개념도 있다. 상당히 많은 기능이 더 있으니 궁금하다면 링크된 관련글에서 내용을 더 찾아보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Association Lists](https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html)&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-alist.html</guid>
+      <pubDate>Thu, 27 Jun 2024 10:24:00 +0900</pubDate>
+    </item>
     <item>
       <title>Emacs Lisp의 plist 사용법 간단 정리</title>
       <link>https://seorenn.github.io/article/emacs-lisp-plist.html</link>
@@ -3863,34 +4057,6 @@ SyntaxError: f-string expression part cannot include a backslash
 &lt;/code&gt;&lt;/pre&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/python-f-string.html</guid>
       <pubDate>Tue, 21 May 2024 16:08:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>연착륙과 경착륙</title>
-      <link>https://seorenn.github.io/article/soft-landing-and-hard-landing.html</link>
-      <description>&lt;h2&gt;연착륙과 경착륙&lt;/h2&gt;
-&lt;p&gt;연착륙은 '軟착륙' 즉 부드러운(soft, 軟, 무를 연) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 부드럽게 착륙했다는 의미다.&lt;/p&gt;
-&lt;p&gt;경착륙은 '硬착륙' 즉 단단한(hard, 硬, 굳을 경) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 강하게 착륙하며 탑승객이나 화물에 큰 충격이 가해질 수 있는 상황이다.&lt;/p&gt;
-&lt;h2&gt;경제적인 측면&lt;/h2&gt;
-&lt;p&gt;경착륙이나 연착륙은 일단은 착륙하는 상황, 즉 경기가 하강하는 국면에서 결과가 어떻게 날 것인지를 비유적으로 표현하기 위해 사용한다.&lt;/p&gt;
-&lt;p&gt;즉 연착륙의 경우는 경기 침체가 오긴 했지만 깊지 않고 짧게 잘 넘어갔다 정도로 이해할 수 있을 것 같다.&lt;/p&gt;
-&lt;p&gt;경착륙의 경우는 일반적으론 변동성이 높아지는 것 자체를 의미하기도 하지만, 최근에 쓰이는 의미로는 경제에 상당히 부정적인 즉 '심한 경기 침체 상태이고 회복에 오래 걸린다'라는 의미로 해석할 수 있다. 기업의 실적도 떨어지고 적자나 파산 기업도 늘어나며 실업률도 치솟는 상태가 오래 지속되는 상태다&lt;/p&gt;
-&lt;h2&gt;사족&lt;/h2&gt;
-&lt;p&gt;개인적으로 '경착륙'과 같은 한자 조합어는 오해를 일으킬 수 있다고 생각된다. 왜냐하면 '경'이라는 한자에는 딱딱한 것과 다르게 '가벼운'이라는 의미도 동일한 발음으로 존재하고 심지어 자주 사용하기 때문이다.&lt;/p&gt;
-&lt;p&gt;그래서 '경착륙'이나 '연착륙'이라는 단어는 발음 때문에 오해하기 쉬운 용어라 하루 빨리 사라져야 할 용어라 생각된다. 차라리 영어 외래어를 그대로 받아들여 소프트랜딩이나 하드랜딩이라 쓰는게 차라리 정확한 의미 전달 면에서 더 낫다고 생각된다.&lt;/p&gt;
-&lt;p&gt;다만 어디까지나 개인적인 의견이다.&lt;/p&gt;</description>
-      <content:encoded>&lt;h2&gt;연착륙과 경착륙&lt;/h2&gt;
-&lt;p&gt;연착륙은 '軟착륙' 즉 부드러운(soft, 軟, 무를 연) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 부드럽게 착륙했다는 의미다.&lt;/p&gt;
-&lt;p&gt;경착륙은 '硬착륙' 즉 단단한(hard, 硬, 굳을 경) 착륙이라는 의미다. 말 그대로 비행기가 지면에 아주 강하게 착륙하며 탑승객이나 화물에 큰 충격이 가해질 수 있는 상황이다.&lt;/p&gt;
-&lt;h2&gt;경제적인 측면&lt;/h2&gt;
-&lt;p&gt;경착륙이나 연착륙은 일단은 착륙하는 상황, 즉 경기가 하강하는 국면에서 결과가 어떻게 날 것인지를 비유적으로 표현하기 위해 사용한다.&lt;/p&gt;
-&lt;p&gt;즉 연착륙의 경우는 경기 침체가 오긴 했지만 깊지 않고 짧게 잘 넘어갔다 정도로 이해할 수 있을 것 같다.&lt;/p&gt;
-&lt;p&gt;경착륙의 경우는 일반적으론 변동성이 높아지는 것 자체를 의미하기도 하지만, 최근에 쓰이는 의미로는 경제에 상당히 부정적인 즉 '심한 경기 침체 상태이고 회복에 오래 걸린다'라는 의미로 해석할 수 있다. 기업의 실적도 떨어지고 적자나 파산 기업도 늘어나며 실업률도 치솟는 상태가 오래 지속되는 상태다&lt;/p&gt;
-&lt;h2&gt;사족&lt;/h2&gt;
-&lt;p&gt;개인적으로 '경착륙'과 같은 한자 조합어는 오해를 일으킬 수 있다고 생각된다. 왜냐하면 '경'이라는 한자에는 딱딱한 것과 다르게 '가벼운'이라는 의미도 동일한 발음으로 존재하고 심지어 자주 사용하기 때문이다.&lt;/p&gt;
-&lt;p&gt;그래서 '경착륙'이나 '연착륙'이라는 단어는 발음 때문에 오해하기 쉬운 용어라 하루 빨리 사라져야 할 용어라 생각된다. 차라리 영어 외래어를 그대로 받아들여 소프트랜딩이나 하드랜딩이라 쓰는게 차라리 정확한 의미 전달 면에서 더 낫다고 생각된다.&lt;/p&gt;
-&lt;p&gt;다만 어디까지나 개인적인 의견이다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/soft-landing-and-hard-landing.html</guid>
-      <pubDate>Mon, 20 May 2024 10:45:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

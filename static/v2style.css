@@ -328,6 +328,11 @@ ol {
     margin-bottom: 1.8rem;
 }
 
+.content em {
+    font-size: 0.9rem;
+    color: #777;
+}
+
 th.org-left {
     padding: 0.8rem 1rem 0.8rem 1rem;
 }

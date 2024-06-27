@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-27T10:29:56.783366+09:00</updated>
+  <updated>2024-06-27T15:36:23.130877+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,38 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240627-00.html</id>
+    <title>의존성 실타래 풀다가 화병 나겠네</title>
+    <updated>2024-06-27T15:36:15.795756+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p><img alt="불어터진 자장면 코드" src="../upload/202406271528-56066a1e.jpg"/>
+<em>파스타 코드 보다는 불어터진 자장면 코드가 더 어울릴 듯 (태경 김/Pixabay)</em></p>
+<p>한 회사의 오래된 프로젝트가 너무 오래된 SDK를 참조하고 있는데 계속 놔두면 자른다(?)고 해서 이걸 업그레이드 하려고 여럿 건드려 보고 있는 중이다.</p>
+<p>그런데 이 과정에서 큰 지뢰를 밟아버렸다. 사용하던 의존성이 구버전 SDK와 엮여 있던 것이 많아서였다. 그래도 이왕 밟은 거 죽기는 싫으니 지뢰를 하나씩 해체해 나간다.</p>
+<p>우선은 SDK 버전을 올린 후 부족한 부분을 따라가 본다. 의존성들의 버전을 하나씩 올려보면서 문제가 해결되는지 확인해본다. 문제는 이 과정에서 연달아서 버전이 안 맞아서 꼬이는 현상들이 하나 둘 계속 얽혀져 뽑혀나온다.</p>
+<p>불행히도 지뢰를 해체해 나가던 도중 거기에 연결된 또다른 폭탄을 하나 발견한다. 겨우 의존성 문제를 풀어가나 싶더니 거기서 누군가 버전업이 안 되던 패키지를 직접 뜯어고친 비공식 저장소의 의존성이 튀어나왔다.</p>
+<p>여기에 얽힌 의존성의 버전 꼬임을 또 하나하나 해결해 간다. 의존성 버전 체크는 한 번에 하나씩 밖에 안 되기 때문에 지속적으로 체크하고 수정하고를 반복해 나가야 했다. 심각하게 스트레스를 받았다. 그래도 어떻게 해결을 하긴 했댜.</p>
+<p>이제 다 해결 되었을까 싶었지만 불행히도 지뢰에 또다른 폭탄이 연결된 것을 발견한다. 을까. 그런데 이번에 발견된 폭탄에는 워낙 옛날에 만들어서 어떻게 해체해야 할지 알 수 없는 부품이 하나 연결되어 있었다. 2년이나 넘게 방치된 패키지였다.</p>
+<p>어쩔 수 없이 그 부품을 복제해서 직접 뜯어고쳐야 되게 생겼다. 하지만 그 부품 안에는 또 오래되어서 관리가 안 되는 부품이 또 들어있었다.</p>
+<blockquote>
+<p>아 모르겠다. 하기 싫다. 살려줘. 사람 살려.</p>
+</blockquote>
+<p>...</p>
+<p>과거 어떤 회사 면접에서 '써드파티 의존성을 늘리는 것을 경계하는 편'이라고 이야기했다가 좀 둘러서 까인 적이 있었다. 그때 내가 잘못된 것일까 라고 생각하며 조금씩 써드파티 패키지에의 의존을 조금씩 늘려가보고 있기는 하다.</p>
+<p>하지만 이런 지뢰를 밟아 보면 '빨리 만들 수 있다고 써드파티 의존성을 늘려가는 게 과연 정답일까?'라고 좀 심각하게 고민해 봐야 할 것 같다. 특히 그 프로젝트가 내가 참여하지 않더라도 오히려 더 고민해 보라고 권하고 싶다. 유지보수라는 것도 상당히 중요한 일인데 의존성 옹호론자들은 너무 안일한 것이 아닐까.</p>
+<p>물론 지속적으로 관리되어온 프로젝트는 별 지장 없이 여전히 잘 관리될 수는 있다. 내가 처음부터 지금까지 계속 관리하는 코드들은 별 문제가 없다. 써드파티 패키지를 안 쓰는 것도 아님에도 말이다. SDK든 개발툴이든 뭐든 최신버전으로 바로 올려서 문제가 보이면 바로 수정하고 있으니 말이다.</p>
+<p>하지만 내가 처음부터 끝까지 지속적으로 꾸준히 관리되어 올 수 있는 일은 극수소일 뿐일 것이다.</p>
+<p>그러니까 하고 싶은 말은 </p>
+<blockquote>
+<p>불가피한 경우를 제외하곤 써드파티 의존성은 자제하는 편이 정신건강에 더 나을 것이다.</p>
+</blockquote>
+<p>정도일 것 같다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240627-00.html"/>
+    <summary type="text">한 회사의 오래된 프로젝트가 너무 오래된 SDK를 참조하고 있는데 계속 놔두면 자른다(?)고 해서 이걸 업그레이드 하려고 여럿 건드려 보고 있는 중이다.</summary>
+    <published>2024-06-27T15:29:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-alist.html</id>
     <title>Emacs Lisp의 alist 사용법 간단 정리</title>
@@ -2323,66 +2355,5 @@ BitStream('0x01020304')
     <link href="https://seorenn.github.io/article/python-bitstring.html"/>
     <summary type="text">Python 이진 데이터 처리 패키지인 bitstring을 소개하는 글</summary>
     <published>2024-05-21T16:21:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/python-f-string.html</id>
-    <title>파이썬의 F-String 간단 정리</title>
-    <updated>2024-05-21T16:26:31.120351+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>F-string은 <a href="https://peps.python.org/pep-0498/" target="_blank">PEP-498📎</a> 제안을 통해 파이썬 3.6 부터 지원되기 시작한 문자열 포매팅 기능으로 정식 명칭은 Literal String Interpolation 이다.</p>
-<h2>F-String 기본</h2>
-<p>기능 이름 답게 문자열 제일 앞에 <code>f</code> 를 붙이면 F-String이 된다. 그리고 문자열 내용에 중괄호(<code>{...}</code>)로 대체할 내용을 넣을 수 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; name = "Conrad"
-&gt;&gt;&gt; print(f"My name is {name}")
-My name is Conrad
-</code></pre>
-<h2>F-String의 런타임 표현식</h2>
-<p>중괄호 내부에는 런타임에서 동적으로 작동하는 코드를 넣어도 원하는대로 동작한다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; f"1 + 2 = {1+2}"
-'1 + 2 = 3'
-</code></pre>
-<p>당연히 함수 호출을 명시하는 것도 가능하다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; def makeDouble(v):
-...     return v * 2
-...
-&gt;&gt;&gt; f"This is doubler! If you enter 10, it returns {makeDouble(10)}"
-'This is doubler! If you enter 10, it returns 20'
-</code></pre>
-<h2>C언어 스타일의 포매팅</h2>
-<p>C 언어의 printf 류의 함수에서 많이 쓰이는 포맷 지시 문자도 비슷하게 쓸 수 있다. 예를 들어 <code>%04d</code>는 F-String에서는 <code>#04d</code> 로 쓸 수 있다. <code>%</code>가 아니라 <code>#</code>이 쓰인다는 점에 주의하면 상당히 비슷하다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; value = 12
-&gt;&gt;&gt; f"the value is {value:#04d}"
-'the value is 0012'
-</code></pre>
-<h2>디버깅에 유리한 표현 방식</h2>
-<p>파이썬 3.8에서 추가된 F-String 기능으로 자신의 이름과 값을 좀 더 편하게 로깅하는 스타일을 쓸 수 있다. 아래와 같은 식이다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; value = 100
-&gt;&gt;&gt; f"{value=}"
-'value=100'
-</code></pre>
-<p>필요하다면 앞에서 언급한 C언어 스타일의 포맷을 지정할 수도 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; value = 100
-&gt;&gt;&gt; f'{value=:#10d}'
-'value=       100'
-</code></pre>
-<h2>주의사항</h2>
-<p>F-String의 치환 문법 내부에는 백슬래시(<code>\</code>)를 사용할 수 없다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; "the \"back-slash\" string"
-'the "back-slash" string'
-&gt;&gt;&gt; f'the \'back-slash\' string'
-"the 'back-slash' string"
-&gt;&gt;&gt; f'the {\'back-slash\'} string'
-  File "&lt;stdin&gt;", line 1
-SyntaxError: f-string expression part cannot include a backslash
-</code></pre>
-<p>필요하다면 별도의 문자열로 뽑은(?) 다음 이를 활용할 수 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; bsstr = "'back-slash'"
-&gt;&gt;&gt; f"the {bsstr} string"
-"the 'back-slash' string"
-</code></pre></div>
-    </content>
-    <link href="https://seorenn.github.io/article/python-f-string.html"/>
-    <summary type="text">Python의 String Interpolation 기능 중 하나인 F-String에 대해 간단히 정리하는 글</summary>
-    <published>2024-05-21T16:08:00+09:00</published>
   </entry>
 </feed>

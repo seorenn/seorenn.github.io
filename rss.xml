@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 27 Jun 2024 10:27:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 10:29:56 +0900</lastBuildDate>
     <item>
       <title>Emacs Lisp의 alist 사용법 간단 정리</title>
       <link>https://seorenn.github.io/article/emacs-lisp-alist.html</link>
@@ -110,6 +110,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html" target="_blank"&gt;Association Lists📎&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-plist.html"&gt;Emacs Lisp의 plist 사용법 간단 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;h2&gt;alist&lt;/h2&gt;
 &lt;p&gt;Emacs Lisp에서 alist는 Association List의 축약어로, 한국어로 직역하면 '연관 목록' 정도로 표현할 수 있는 자료구조다. 다른 언어에서 자주 취급되는 가장 비슷한 자료구조를 들자면 사전형(dictionary)가 비슷할 것 같고, Emacs Lisp 내에서는 용도 면에서 &lt;a href="../article/emacs-lisp-plist.html"&gt;plist&lt;/a&gt;와도 좀 비슷한 편이다. 참고로 plist와는 다르게 alist는 Common Lisp과 사용법이 비슷한 편이다.&lt;/p&gt;
@@ -204,6 +205,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Association-Lists.html" target="_blank"&gt;Association Lists📎&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-plist.html"&gt;Emacs Lisp의 plist 사용법 간단 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-alist.html</guid>
       <pubDate>Thu, 27 Jun 2024 10:24:00 +0900</pubDate>

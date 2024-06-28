@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-28T17:05:08.884512+09:00</updated>
+  <updated>2024-06-28T23:33:47.839774+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,28 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240628-00.html</id>
+    <title>미국 5월 PCE도 잘 나온 듯</title>
+    <updated>2024-06-28T23:32:33.031321+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>오늘은 대명절(?)인 PCE가 발표되는 날이다. 물론 미국이고 5월달 지표다. 대충 요렇게 나왔다.</p>
+<ul>
+<li>헤드라인 PCE MoM 0% (-0.3%), YoY 2.6% (-0.1%)</li>
+<li>근원 PCE MoM 0.1% (-0.2%), YoY 2.6% (-0.2%)</li>
+</ul>
+<p>전부 예상에 부합했다. 심지어 근원 PCE MoM의 전달 수치가 상향 조정되면서 더 극적인 연출이 이뤄진 느낌이다. 물론 완전히 0은 아니고 반올림이 이뤄지면서 0으로 표시된 것 뿐이겠지만 말이다.</p>
+<p>이와중에 개인지출이나 개인소득도 전달 대비 더 늘어나서 미묘하면서도 좋은 분위기를 만들어 줄 것 같은 느낌적인 느낌이다.</p>
+<p>현재로써는 주식시장 선물시장도 나쁘지 않은 반응이 나타나는 것 같다.</p>
+<p><img alt="FedWatch" src="../upload/202406282329-f3e07644.png"/>
+<em>FedWatch</em></p>
+<p>일단 7월이나 9월 인하 확률이 살짝 높아진 것 같은 느낌이 드는데 이전 수치를 저장을 안 해놨더니 확실하진 않다. </p>
+<p>어쨌든 좋은 느낌이다. 연준에게도 딱히 나쁜 느낌은 아닐 것 같기도 하다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240628-00.html"/>
+    <summary type="text">미국 5월 PCE, 개인지출, 개인소득 등의 지표가 발표되었다.</summary>
+    <published>2024-06-28T23:32:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html</id>
     <title>Emacs Lisp에서 funcall과 apply의 차이</title>
@@ -2303,20 +2325,5 @@ False
     <link href="https://seorenn.github.io/article/python-path-tips.html"/>
     <summary type="text">파이썬으로 파일이나 디렉터리 경로를 다루는 몇 가지 방법을 정리해보자.</summary>
     <published>2024-05-29T11:24:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240528-00.html</id>
-    <title>이제 어느 정도 완성된 것일까?</title>
-    <updated>2024-05-28T15:25:02.444365+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.</p>
-<p>기본적으로 블로그의 로그를 시간 순으로 정렬하고, 기존 노트에 해당하던 글들은 위키 스타일이 아니라 태그와 비슷한 주제별 관리를 통해 정리하기로 했다.</p>
-<p>결과적으로 글을 쓸 때 구태여 위키와 같은 링크를 많이 만들 필요가 없어졌고 그래서 글 내용 자체에 집중할 수 있는 여력은 약간 늘어날 것 같다. 어차피 주제와 비슷하게 글을 모으기 위한 글도 기존에는 수작업으로 정리하고 있었는데 여기에 약간의 자동화를 추가한 개념이기 기존보다는 분명 더 편해지리라 생각한다.</p>
-<p>물론 아직 문제가 많은 것 같다. 시험용 로그를 지웠더니 또 오류가 난다. 덕분에 안정성이 약간 증가했다는 결론으로 이어진 점은 긍정적이다.</p>
-<p>당분간은 써보면서 판단해 봐야겠다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240528-00.html"/>
-    <summary type="text">seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.</summary>
-    <published>2024-05-28T15:22:00+09:00</published>
   </entry>
 </feed>

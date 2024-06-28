@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>Emacs Lisp의 plist 사용법 간단 정리 - Seorenn</title>
-    <meta name="twitter:title" content="Emacs Lisp의 plist 사용법 간단 정리" />
-    <meta name="og:title" content="Emacs Lisp의 plist 사용법 간단 정리" />
-    <meta name="description" content="Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자." />
-    <meta name="twitter:description" content="Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자." />
-    <meta name="og:description" content="Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자." />
-    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-plist.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-plist.html" />
+    <title>Emacs Lisp에서 funcall과 apply의 차이 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs Lisp에서 funcall과 apply의 차이" />
+    <meta name="og:title" content="Emacs Lisp에서 funcall과 apply의 차이" />
+    <meta name="description" content="Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 funcall과 apply가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자." />
+    <meta name="twitter:description" content="Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 funcall과 apply가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자." />
+    <meta name="og:description" content="Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 funcall과 apply가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>Emacs Lisp의 plist 사용법 간단 정리</h1>
+          <h1>Emacs Lisp에서 funcall과 apply의 차이</h1>
           <div class="title-date">
             
               
@@ -73,41 +73,31 @@
               <span>//</spans>
             
             
-              <span>2024년 06월 26일 작성</span>
+              <span>2024년 06월 28일 작성</span>
             
             
             
           </div>
         </header>
-        <h2>plist</h2>
-<p>Emacs Lisp에서 plist는 'Property List'의 축약어로 다른 언어의 사전형(dictionary type)과 비슷한 기능의 자료구조를 제공한다. 참고로 Common Lisp에도 동일한 자료형은 있으나 사용법은 조금 다른 것 같다.</p>
-<p>기본적으로 plist 자료구조는 단순 리스트에 키와 값이 연속으로 나열되는 구조라 표현에서 상당히 간결한 편이다.</p>
-<h2>plist 인스턴스 생성</h2>
-<p>plist 데이터를 생성하는 방법은 일반 리스트와 동일하다. 단지 요소 배치를 키와 값 순서대로 나열해야 한다는 특징이 있다.</p>
-<pre><code class="language-lisp">(setq mycard
-      '(name &quot;Conrad&quot;
-        age 20
-        phone &quot;82-10-1234-5678&quot;
-        address &quot;Earth, Milkyway, Laniakea Supercluster&quot;
-        :memo &quot;Lazy Human&quot;))
+        <p>Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 <code>funcall</code>과 <code>apply</code>가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자. </p>
+<p>이 둘은 사실 용도는 동일하고 그저 사용법만 다르다고 봐도 될 것 같다.</p>
+<h2>funcall</h2>
+<p><code>funcall</code>은 첫 매개변수로 입력된 함수를 나머지 매개변수를 이용해 호출시키고 결과를 반환하는 함수다. 예를 들자면 아래와 같이 호출할 수 있다.</p>
+<pre><code class="language-lisp">(funcall #'+ 1 2 3)
+;; =&gt; 6
 </code></pre>
-<p>이렇게 키와 값을 나열하면 plist 형식의 인스턴스가 생성된다.</p>
-<p>위의 예에서 약간 특이하게 <code>:memo</code>만 앞에 콜론(<code>:</code>)이 붙어있는데 Emacs Lisp에서 심볼을 표현하는 문법이며 이런 형식도 쓸 수 있다는 것을 알려주기 위함이지 다른 의미가 있는 것은 아니다.</p>
-<h2>plist에서 키의 값 읽기</h2>
-<p>plist 데이터에서 특정 키의 값을 읽을 때는 <code>plist-get</code> 함수를 사용할 수 있다.</p>
-<pre><code class="language-lisp">(plist-get mycard 'name)
-;; -&gt; &quot;Conrad&quot;
-(plist-get mycard :memo)
-;; -&gt; &quot;Lazy Human&quot;
+<p>위 코드는 <code>(+ 1 2 3)</code>을 호출하는 것과 동일하다.</p>
+<h2>apply</h2>
+<p><code>apply</code>도 첫 매개변수로 입력된 함수를 호출하는데 여기에 전달될 매개변수를 리스트로 전달 받는다는 차이가 있다. 예를 들자면 아래와 같이 호출할 수 있다.</p>
+<pre><code class="language-lisp">(apply #'+ '(1 2 3))
+;; =&gt; 6
 </code></pre>
-<h2>plist에서 키의 값 쓰기</h2>
-<p>plist 데이터에 키와 값을 추가로 쓰거나 업데이트하기 위해서는 <code>plist-put</code> 함수를 사용할 수 있다.</p>
-<pre><code class="language-lisp">(plist-put mycard 'gender &quot;etc&quot;)
-</code></pre>
+<p>이 코드도 <code>(+ 1 2 3)</code>을 호출하는 것과 동일하다.</p>
+<h2>정리</h2>
+<p>즉 <code>funcall</code>과 <code>apply</code>의 결정적 차이는 매개변수(parameters)를 매개변수 리스트로 넘길 것이냐 아니면 별도의 순수 리스트 인스턴스로 넘길 것이냐 정도로 정리할 수 있을 것 같다.</p>
 <h2>관련된 글들</h2>
 <ul>
 <li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
-<li><a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a></li>
 </ul>
       </section>
     </div>
@@ -119,28 +109,17 @@
       <div class="refinfo-container">
         <div class="navinfo-container">
           
-            <div class="refinfo-cluster">
-              <h2>이 글을 연결한 글들</h2>
-              <ul>
-                
-                  <li>
-                    <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
           
             <div class="refinfo-cluster">
               <h2>비슷한 주제의 글들</h2>
               <ul>
                 
                   <li>
-                    <a href="../article/emacs-lisp-funcall-and-apply.html">Emacs Lisp에서 funcall과 apply의 차이</a>
+                    <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a>
                   </li>
                 
                   <li>
-                    <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a>
+                    <a href="../article/emacs-lisp-plist.html">Emacs Lisp의 plist 사용법 간단 정리</a>
                   </li>
                 
                   <li>

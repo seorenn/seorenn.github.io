@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-27T22:06:44.936039+09:00</updated>
+  <updated>2024-06-28T15:45:17.540016+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,36 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html</id>
+    <title>Emacs Lisp에서 funcall과 apply의 차이</title>
+    <updated>2024-06-28T15:44:57.474601+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 <code>funcall</code>과 <code>apply</code>가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자. </p>
+<p>이 둘은 사실 용도는 동일하고 그저 사용법만 다르다고 봐도 될 것 같다.</p>
+<h2>funcall</h2>
+<p><code>funcall</code>은 첫 매개변수로 입력된 함수를 나머지 매개변수를 이용해 호출시키고 결과를 반환하는 함수다. 예를 들자면 아래와 같이 호출할 수 있다.</p>
+<pre><code class="language-lisp">(funcall #'+ 1 2 3)
+;; =&gt; 6
+</code></pre>
+<p>위 코드는 <code>(+ 1 2 3)</code>을 호출하는 것과 동일하다.</p>
+<h2>apply</h2>
+<p><code>apply</code>도 첫 매개변수로 입력된 함수를 호출하는데 여기에 전달될 매개변수를 리스트로 전달 받는다는 차이가 있다. 예를 들자면 아래와 같이 호출할 수 있다.</p>
+<pre><code class="language-lisp">(apply #'+ '(1 2 3))
+;; =&gt; 6
+</code></pre>
+<p>이 코드도 <code>(+ 1 2 3)</code>을 호출하는 것과 동일하다.</p>
+<h2>정리</h2>
+<p>즉 <code>funcall</code>과 <code>apply</code>의 결정적 차이는 매개변수(parameters)를 매개변수 리스트로 넘길 것이냐 아니면 별도의 순수 리스트 인스턴스로 넘길 것이냐 정도로 정리할 수 있을 것 같다.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html"/>
+    <summary type="text">Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 funcall과 apply가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자.</summary>
+    <published>2024-06-28T15:44:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240627-00.html</id>
     <title>의존성 실타래 풀다가 화병 나겠네</title>
@@ -1817,7 +1847,8 @@ html = md.convert(input)
 <p><strong>2024년 6월 3일</strong>: 사건을 국방부 조사본부에서 재검토하기로 결정하기 전날 이종섭 당시 국방부 장관의 비서실장 격인 박진희 군사보좌관이 대통령실 국가안보실 소속 행정관과 하루에만 13차례 연락한 <a href="https://www.hani.co.kr/arti/society/society_general/1143299.html" target="_blank">사실📎</a>이 드러났다.</p>
 <p><strong>2024년 6월 4일</strong>: 박 전 수사단장을 항명 혐의로 기소한 군 검사가 '구속영장 허위 사실 기재' 혐의로 <a href="https://m.khan.co.kr/politics/defense-diplomacy/article/202406041331001" target="_blank">피의자 조사📎</a>를 받았다.</p>
 <p><strong>2024년 6월 9일</strong>: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (<a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank">출처📎</a>)</p>
-<p><strong>2024년 6월 19일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank">출처📎</a>) 외압 의혹의 핵심 피의자인 유재은 국방부 법무관리관이 박정훈 전 해병대수사단장(대령)이 압수수색을 당한 날 대통령실 법률비서관실 행정관과도 통화했던 것으로 확인됐다. 윤석열 대통령과 대통령실 공직기강비서관실, 국가안보실에 이어 법률비서관실까지 채 상병 순직 사건에 관여한 것으로 의심되는 정황이다. (<a href="https://www.hani.co.kr/arti/society/society_general/1145590.html" target="_blank">출처📎</a>)</p></div>
+<p><strong>2024년 6월 19일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank">출처📎</a>) 외압 의혹의 핵심 피의자인 유재은 국방부 법무관리관이 박정훈 전 해병대수사단장(대령)이 압수수색을 당한 날 대통령실 법률비서관실 행정관과도 통화했던 것으로 확인됐다. 윤석열 대통령과 대통령실 공직기강비서관실, 국가안보실에 이어 법률비서관실까지 채 상병 순직 사건에 관여한 것으로 의심되는 정황이다. (<a href="https://www.hani.co.kr/arti/society/society_general/1145590.html" target="_blank">출처📎</a>)</p>
+<p><strong>2024년 6월 26일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 신범철 당시 국방부 차관에게 통화한 기록이 2건 더 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6611609_36438.html" target="_blank">출처📎</a>)</p></div>
     </content>
     <link href="https://seorenn.github.io/article/dead-of-chae-corporal.html"/>
     <summary type="text">2023년 7월 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.</summary>
@@ -2287,73 +2318,5 @@ False
     <link href="https://seorenn.github.io/log/20240528-00.html"/>
     <summary type="text">seorenn-publish를 느긋하게 구축하기 시작한 지 한 달이 지났는데 이제서야 뭔가 쓸 수 있을 만한 물건이 된 것 같다.</summary>
     <published>2024-05-28T15:22:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/python-bitstring.html</id>
-    <title>파이썬 bitstring 패키지 소개</title>
-    <updated>2024-05-21T16:25:36.062263+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>bitstring은 파이썬에서 이진 데이터를 생성하거나 분석하기 쉽게 해주는 도구다. 특히 문자열 데이터 표현을 실제 이진 데이터로 바꾸거나 혹은 그 반대의 작업을 하기에 유용하다.</p>
-<h2>설치 및 임포트</h2>
-<p>설치는 당연하게도 pip를 이용해 쉽게 설치할 수 있다.</p>
-<pre><code class="language-bash">pip install bitstring
-</code></pre>
-<p>임포트도 그냥 통채로 해도 된다.</p>
-<pre><code class="language-python">import bitstring
-</code></pre>
-<p>물론 주요 클래스 중 필요한 것만 골라서 할 수도 있다.</p>
-<pre><code class="language-python">from bitstring import Bits, BitArray, BitStream
-</code></pre>
-<h2>Bits</h2>
-<p><code>Bits</code>는 bitstring의 근간이 되는 기본 클래스다. 그리고 불변(Immutable) 클래스다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; Bits(0x01)
-Bits('0b0')
-&gt;&gt;&gt; Bits('0x01')
-Bits('0x01')
-</code></pre>
-<p>데이터 표현에 사용되는 클래스로 보이며 개인적으로는 직접 사용할 일은 별로 없을 것 같다.</p>
-<h2>BitArray</h2>
-<p><code>BitArray</code>는 하나 이상의 Bit로 구성된 데이터를 구성하기 위한 용도의 클래스다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; ba = BitArray('0xff')
-&gt;&gt;&gt; ba
-BitArray('0xff')
-&gt;&gt;&gt; ba.append('0xaa')
-&gt;&gt;&gt; ba
-BitArray('0xffaa')
-&gt;&gt;&gt; ba.bin
-'1111111110101010'
-&gt;&gt;&gt; ba.hex
-'ffaa'
-&gt;&gt;&gt; ba.bytes
-b'\xff\xaa'
-</code></pre>
-<p>여러 타입으로 변환도 지원하기 때문에 활용도는 높을 것 같다.</p>
-<h2>ConstBitStream, BitStream</h2>
-<p><code>ConstBitStream</code>는 바이트 스트림에서 위치를 이동해가며 원하는 타입으로 읽기 편하게 구성되어 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; cbs = ConstBitStream('0x01020304')
-&gt;&gt;&gt; cbs.pos
-0
-&gt;&gt;&gt; cbs.read('int:8')
-1
-&gt;&gt;&gt; cbs.pos
-8
-&gt;&gt;&gt; cbs.bytepos
-1
-</code></pre>
-<p><code>pos</code>와 <code>bytepos</code>의 차이점을 잘 보자. <code>pos</code>는 비트 단위다. 즉 비트 단위로 데이터를 읽을 수 있다는 말이다.</p>
-<p><code>ConstBitStream</code>은 <code>BitStream</code>의 불변(Immutable) 타입 클래스다. 메서드 등은 거의 동일하지만 <code>BitStream</code>은 <code>append()</code>같은 가변(Mutable) 메서드를 사용할 수 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; bs = BitStream('0x0102')
-&gt;&gt;&gt; bs.append('0x0304')
-&gt;&gt;&gt; bs
-BitStream('0x01020304')
-</code></pre>
-<h2>외부 링크</h2>
-<ul>
-<li><a href="https://github.com/scott-griffiths/bitstring" target="_blank">bitstring 프로젝트 저장소📎</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/python-bitstring.html"/>
-    <summary type="text">Python 이진 데이터 처리 패키지인 bitstring을 소개하는 글</summary>
-    <published>2024-05-21T16:21:00+09:00</published>
   </entry>
 </feed>

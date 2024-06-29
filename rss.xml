@@ -13,7 +13,79 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Fri, 28 Jun 2024 23:34:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jun 2024 15:45:38 +0900</lastBuildDate>
+    <item>
+      <title>Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</title>
+      <link>https://seorenn.github.io/article/emacs-lisp-sharp-quote-sign.md.html</link>
+      <description>&lt;p&gt;Emacs Lisp 코드에서 샤프(&lt;code&gt;#&lt;/code&gt;, sharpsign)와 작은따옴표(&lt;code&gt;'&lt;/code&gt;, single-quote)를 붙인 기호가 종종 쓰이는데 무슨 의미인지 대충 알아보자.&lt;/p&gt;
+&lt;h2&gt;많이 쓰이는 예&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;#'&lt;/code&gt; 기호는 보통 함수 핸들러를 전달할 때 많이 보인다. 아래의 예는 개인적으로 사용하는 설정 코드에서의 예인데 Doom Emacs 전용 코드도 일부 포함되어 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(add-to-list 'treemacs-ignored-file-predicates #'treemacs-ignore-local-cache))
+(add-hook 'kill-emacs-hook #'my-exit-function)
+
+;; Doom Emacs config.el
+(add-hook! 'markdown-mode-hook #'my-text-styles)
+(map! &amp;quot;C-c a l&amp;quot; #'my-miracle-function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;여기서 &lt;code&gt;#'&lt;/code&gt;가 붙어있는 심볼들이 모두 함수일 것 같은 기분이라면 바로 정답이다.&lt;/p&gt;
+&lt;h2&gt;Function Abbreviation&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;#'&lt;/code&gt;로 샤프와 작은따옴표를 붙여 쓰면 Function Quote 즉 함수 인용이라는 기능이 된다. 다른 말로 Function Abbreviation이라다 표현하기도 한다. 다른 언어에선 콜백 혹은 핸들러 정도의 의미와 비슷하다. 예를 들자면 이런 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(defun do-what (f)
+  (funcall f &amp;quot;This is the what!&amp;quot;))
+
+(do-what #'message)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 예에서 &lt;code&gt;do-what&lt;/code&gt;이라는 함수의 첫번째 인자로 함수를 전달하기 위해 &lt;code&gt;#'&lt;/code&gt;가 함수 이름 앞에 붙어있다. 이렇게 함수를 어딘가 전달해야 할 때 &lt;code&gt;#'&lt;/code&gt;가 종종 사용된다.&lt;/p&gt;
+&lt;h2&gt;그래서 무슨 차이일까?&lt;/h2&gt;
+&lt;p&gt;사실 위 모든 예제에서 &lt;code&gt;#'&lt;/code&gt;을 그냥 &lt;code&gt;'&lt;/code&gt;으로 바꿔도 아무 문제 없이 동작한다. 함수 인용이든 인용이든 둘 다 인용이니 말이다.&lt;/p&gt;
+&lt;p&gt;그렇다면 &lt;code&gt;#'&lt;/code&gt;는 도대체 왜 쓰는 걸까?&lt;/p&gt;
+&lt;p&gt;개인적인 추측이지만 &lt;strong&gt;명시적인 표현&lt;/strong&gt; 때문에 쓴다고 생각된다. 즉 여기에는 반드시 함수 인용이 들어와야 할 자리이고 그래서 함수를 인용해서 넘긴다는 의미로 &lt;code&gt;#'&lt;/code&gt;을 명확하게 표기한다고 생각한다. &lt;/p&gt;
+&lt;p&gt;다르게 말해서 &lt;code&gt;#'&lt;/code&gt;를 표시한 자리에 함수가 아닌 다른 심볼이나 리스트 등을 넣으면 안 된다는 말이 된다. 실제로 여기에 함수가 아닌 것을 넣으면 호출 시점에서 에러가 발생한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(funcall #'(1 2 3) &amp;quot;parameter&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;함수가 와야 할 자리에 리스트가 들어가 있으니 "Invalid Function"이라는 오류가 발생한다.&lt;/p&gt;
+&lt;p&gt;결국 &lt;code&gt;#'&lt;/code&gt;는 가독성을 좋게 만들기 위한 Lisp 만의 특수한 꾸밈 요소라고 생각된다. 물론 다른 언어에만 익숙한 사람이 보면 &lt;code&gt;'&lt;/code&gt;든 &lt;code&gt;#'&lt;/code&gt;든 암호 같은 건 마찬가지 겠지만 말이다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-funcall-and-apply.html"&gt;Emacs Lisp에서 funcall과 apply의 차이&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;Emacs Lisp 코드에서 샤프(&lt;code&gt;#&lt;/code&gt;, sharpsign)와 작은따옴표(&lt;code&gt;'&lt;/code&gt;, single-quote)를 붙인 기호가 종종 쓰이는데 무슨 의미인지 대충 알아보자.&lt;/p&gt;
+&lt;h2&gt;많이 쓰이는 예&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;#'&lt;/code&gt; 기호는 보통 함수 핸들러를 전달할 때 많이 보인다. 아래의 예는 개인적으로 사용하는 설정 코드에서의 예인데 Doom Emacs 전용 코드도 일부 포함되어 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(add-to-list 'treemacs-ignored-file-predicates #'treemacs-ignore-local-cache))
+(add-hook 'kill-emacs-hook #'my-exit-function)
+
+;; Doom Emacs config.el
+(add-hook! 'markdown-mode-hook #'my-text-styles)
+(map! &amp;quot;C-c a l&amp;quot; #'my-miracle-function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;여기서 &lt;code&gt;#'&lt;/code&gt;가 붙어있는 심볼들이 모두 함수일 것 같은 기분이라면 바로 정답이다.&lt;/p&gt;
+&lt;h2&gt;Function Abbreviation&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;#'&lt;/code&gt;로 샤프와 작은따옴표를 붙여 쓰면 Function Quote 즉 함수 인용이라는 기능이 된다. 다른 말로 Function Abbreviation이라다 표현하기도 한다. 다른 언어에선 콜백 혹은 핸들러 정도의 의미와 비슷하다. 예를 들자면 이런 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(defun do-what (f)
+  (funcall f &amp;quot;This is the what!&amp;quot;))
+
+(do-what #'message)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 예에서 &lt;code&gt;do-what&lt;/code&gt;이라는 함수의 첫번째 인자로 함수를 전달하기 위해 &lt;code&gt;#'&lt;/code&gt;가 함수 이름 앞에 붙어있다. 이렇게 함수를 어딘가 전달해야 할 때 &lt;code&gt;#'&lt;/code&gt;가 종종 사용된다.&lt;/p&gt;
+&lt;h2&gt;그래서 무슨 차이일까?&lt;/h2&gt;
+&lt;p&gt;사실 위 모든 예제에서 &lt;code&gt;#'&lt;/code&gt;을 그냥 &lt;code&gt;'&lt;/code&gt;으로 바꿔도 아무 문제 없이 동작한다. 함수 인용이든 인용이든 둘 다 인용이니 말이다.&lt;/p&gt;
+&lt;p&gt;그렇다면 &lt;code&gt;#'&lt;/code&gt;는 도대체 왜 쓰는 걸까?&lt;/p&gt;
+&lt;p&gt;개인적인 추측이지만 &lt;strong&gt;명시적인 표현&lt;/strong&gt; 때문에 쓴다고 생각된다. 즉 여기에는 반드시 함수 인용이 들어와야 할 자리이고 그래서 함수를 인용해서 넘긴다는 의미로 &lt;code&gt;#'&lt;/code&gt;을 명확하게 표기한다고 생각한다. &lt;/p&gt;
+&lt;p&gt;다르게 말해서 &lt;code&gt;#'&lt;/code&gt;를 표시한 자리에 함수가 아닌 다른 심볼이나 리스트 등을 넣으면 안 된다는 말이 된다. 실제로 여기에 함수가 아닌 것을 넣으면 호출 시점에서 에러가 발생한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(funcall #'(1 2 3) &amp;quot;parameter&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;함수가 와야 할 자리에 리스트가 들어가 있으니 "Invalid Function"이라는 오류가 발생한다.&lt;/p&gt;
+&lt;p&gt;결국 &lt;code&gt;#'&lt;/code&gt;는 가독성을 좋게 만들기 위한 Lisp 만의 특수한 꾸밈 요소라고 생각된다. 물론 다른 언어에만 익숙한 사람이 보면 &lt;code&gt;'&lt;/code&gt;든 &lt;code&gt;#'&lt;/code&gt;든 암호 같은 건 마찬가지 겠지만 말이다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-funcall-and-apply.html"&gt;Emacs Lisp에서 funcall과 apply의 차이&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-sharp-quote-sign.md.html</guid>
+      <pubDate>Sat, 29 Jun 2024 15:44:00 +0900</pubDate>
+    </item>
     <item>
       <title>미국 5월 PCE도 잘 나온 듯</title>
       <link>https://seorenn.github.io/log/20240628-00.html</link>
@@ -66,6 +138,7 @@
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-sharp-quote-sign.md.html"&gt;Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 &lt;code&gt;funcall&lt;/code&gt;과 &lt;code&gt;apply&lt;/code&gt;가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자. &lt;/p&gt;
 &lt;p&gt;이 둘은 사실 용도는 동일하고 그저 사용법만 다르다고 봐도 될 것 같다.&lt;/p&gt;
@@ -86,6 +159,7 @@
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-sharp-quote-sign.md.html"&gt;Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html</guid>
       <pubDate>Fri, 28 Jun 2024 15:44:00 +0900</pubDate>
@@ -530,6 +604,7 @@
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-eval-quoted-list-elements.html"&gt;Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-sharp-quote-sign.md.html"&gt;Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;Emacs Lisp 코드를 보면 작은따옴표가 종종 보이는데 유독 한 쌍이 아니라 한 개씩만 보여서 상당히 혼란스러웠었다. 왜냐하면 다른 언어에서 작은따옴표는 문자 혹은 문자열을 둘러싸는 특수 기호로 쓰이니 말이다.&lt;/p&gt;
 &lt;p&gt;즉 Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰인다. 도대체 이 작은따옴표는 무슨 의미일까?&lt;/p&gt;
@@ -576,6 +651,7 @@
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/emacs-lisp-eval-quoted-list-elements.html"&gt;Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-sharp-quote-sign.md.html"&gt;Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-single-quote.html</guid>
       <pubDate>Mon, 24 Jun 2024 23:02:00 +0900</pubDate>
@@ -3843,106 +3919,6 @@ False
 &lt;p&gt;서명 중지는 늘상 있는 일이다. 그리고 어차피 버그 픽스 버전이 안정성이 더 좋으므로 굳이 iOS 17.5로 돌아갈 이유도 없다. 안 그래도 지운 사진이 자꾸 부활하는 등 버그로 유명한 버전인데 말이다. 뭐 그냥 그렇다는 소식이다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240529-00.html</guid>
       <pubDate>Wed, 29 May 2024 21:44:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>파이썬으로 파일이나 디렉터리 경로 다루기</title>
-      <link>https://seorenn.github.io/article/python-path-tips.html</link>
-      <description>&lt;p&gt;파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.&lt;/p&gt;
-&lt;h2&gt;경로 조합하기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.join('/foo/bar', 'qwer', 'test.txt')
-'/foo/bar/qwer/test.txt'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;os.path.join&lt;/code&gt;의 입력 갯수는 자유로운 편이다.&lt;/p&gt;
-&lt;h2&gt;경로에서 파일명만 얻기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.basename('/foo/bar/test.txt')
-'test.txt'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;참고로 아래의 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급할 &lt;code&gt;os.path.split&lt;/code&gt;을 이용해도 된다.&lt;/p&gt;
-&lt;h2&gt;경로에서 디렉터리만 얻기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.dirname('/foo/bar/test.txt')
-'/foo/bar'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;해당 파일이 위치하는 디렉터리를 알아낼 때 유용하다.&lt;/p&gt;
-&lt;p&gt;아래 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급된 &lt;code&gt;os.path.split&lt;/code&gt;을 사용할 수도 있다.&lt;/p&gt;
-&lt;h2&gt;파일명이나 경로에서 확장자를 제거하거나 알아내기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.splitext('test.txt')
-('test', '.txt')
-&amp;gt;&amp;gt;&amp;gt; os.path.splitext('/foo/bar/test.txt')
-('/foo/bar/test', '.txt')
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;입력된 경로에서 파일명의 확장자를 바꿔서 출력해야 되는 경우, 혹은 특정 파일의 확장자만 얻어내야 할 경우 등에서 유용하게 쓸 수 있다.&lt;/p&gt;
-&lt;p&gt;반환되는 확장자에 &lt;code&gt;.&lt;/code&gt;이 앞에 붙어있다는 점은 주의하자.&lt;/p&gt;
-&lt;h2&gt;경로에서 디렉터리와 파일명을 분리하기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.split('/foo/bar/sample.txt')
-('/foo/bar', 'sample.txt')
-&amp;gt;&amp;gt;&amp;gt; os.path.split('/foo/bar')
-('/foo', 'bar')
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;두 번째 예제에서 볼 수 있듯이 &lt;code&gt;os.path.split&lt;/code&gt;은 경로에서 마지막 컴포넌트만 분리해주는 기능이기 때문에 파일이 아니라 마지막 디렉터리를 떼어내는 용도로도 쓸 수 있다.&lt;/p&gt;
-&lt;h2&gt;상대경로 얻기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
-'qwer/test.txt'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/python-home-dir.html"&gt;파이썬에서 홈 디렉토리 경로 처리하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <content:encoded>&lt;p&gt;파이썬(Python)으로 파일이나 디렉터리 경로(path)를 다루는 몇 가지 방법을 정리해보자. 아마도 리눅스나 맥 등의 POSIX 호환 OS에서는 다 잘 작동할 것이지만 윈도우의 경우는 동작을 확인하지 못했다는 점에 주의하자.&lt;/p&gt;
-&lt;h2&gt;경로 조합하기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.join('/foo/bar', 'qwer', 'test.txt')
-'/foo/bar/qwer/test.txt'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;os.path.join&lt;/code&gt;의 입력 갯수는 자유로운 편이다.&lt;/p&gt;
-&lt;h2&gt;경로에서 파일명만 얻기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.basename('/foo/bar/test.txt')
-'test.txt'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;참고로 아래의 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급할 &lt;code&gt;os.path.split&lt;/code&gt;을 이용해도 된다.&lt;/p&gt;
-&lt;h2&gt;경로에서 디렉터리만 얻기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.dirname('/foo/bar/test.txt')
-'/foo/bar'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;해당 파일이 위치하는 디렉터리를 알아낼 때 유용하다.&lt;/p&gt;
-&lt;p&gt;아래 '경로에서 디렉터리와 파일명을 분리하기' 항목에서 언급된 &lt;code&gt;os.path.split&lt;/code&gt;을 사용할 수도 있다.&lt;/p&gt;
-&lt;h2&gt;파일명이나 경로에서 확장자를 제거하거나 알아내기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.splitext('test.txt')
-('test', '.txt')
-&amp;gt;&amp;gt;&amp;gt; os.path.splitext('/foo/bar/test.txt')
-('/foo/bar/test', '.txt')
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;입력된 경로에서 파일명의 확장자를 바꿔서 출력해야 되는 경우, 혹은 특정 파일의 확장자만 얻어내야 할 경우 등에서 유용하게 쓸 수 있다.&lt;/p&gt;
-&lt;p&gt;반환되는 확장자에 &lt;code&gt;.&lt;/code&gt;이 앞에 붙어있다는 점은 주의하자.&lt;/p&gt;
-&lt;h2&gt;경로에서 디렉터리와 파일명을 분리하기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.split('/foo/bar/sample.txt')
-('/foo/bar', 'sample.txt')
-&amp;gt;&amp;gt;&amp;gt; os.path.split('/foo/bar')
-('/foo', 'bar')
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;두 번째 예제에서 볼 수 있듯이 &lt;code&gt;os.path.split&lt;/code&gt;은 경로에서 마지막 컴포넌트만 분리해주는 기능이기 때문에 파일이 아니라 마지막 디렉터리를 떼어내는 용도로도 쓸 수 있다.&lt;/p&gt;
-&lt;h2&gt;상대경로 얻기&lt;/h2&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.relpath('/foo/bar/qwer/test.txt', '/foo/bar')
-'qwer/test.txt'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;첫 번째 인자가 절대경로이고 두 번째 인자는 첫 번째 인자의 절대경로를 상대경로로 표현할 기준 경로다.&lt;/p&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/python-home-dir.html"&gt;파이썬에서 홈 디렉토리 경로 처리하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/python-path-tips.html</guid>
-      <pubDate>Wed, 29 May 2024 11:24:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

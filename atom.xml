@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-06-29T15:45:38.629374+09:00</updated>
+  <updated>2024-06-30T21:59:00.597740+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,43 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240630-00.html</id>
+    <title>한 주간의 애플 소식 모음 24-06-30</title>
+    <updated>2024-06-30T21:58:32.923539+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발자 베타 릴리즈</h2>
+<ul>
+<li>macOS 15 (Sequoia) beta 2: 아이폰 미러링 지원 추가, 헤드폰 조정 기능 추가, 맥앱스토어 앱 설치 빈 공간 요구 개선 등</li>
+<li>iOS 18 beta 2: 아이폰 미러링 지원, SharePlay 지원 추가, 메시지 RCS 토글 추가, 비밀번호 앱 개선, 지도 검색 개선 등</li>
+<li>iPadOS 18 beta 2: EU DMA 지원 추가 등</li>
+<li>visionOS 2 beta 2: Bora Bora 환경 추가, 새로운 제스처 추가, 키보드 폐쇄 등</li>
+<li>watchOS 11 beta 2: Vitals 앱 추가, Fitness 앱 개선, Smart Stack 기능 개선 등</li>
+<li>tvOS 18 beta 2: 대화 및 자막 개선, InSight 기능 추가</li>
+<li>Safari Technology Preview 197</li>
+</ul>
+<h2>일반적인 소식들</h2>
+<ul>
+<li>애플의 AI 파트너십 대상 후보에 구글과 OpenAI에 이어 메타도 포함된 것으로 알려졌다. 하지만 곧 애플에 의해 거부되었다는 루머도 전해졌다.</li>
+<li>EU는 결국 애플이 DMA를 위반했다며 조사를 시작한 듯하다. 특히 사이드로딩이나 대체 앱스토어의 수수료 부과 문제를 크게 문제 삼는 듯하다.</li>
+<li>애플이 아이폰 생산 공정 자동화를 통해 인력을 절반으로 줄이는 방안을 추진 중이라 한다.</li>
+<li>애플의 비접촉 결제 서비스인 Tap to Pay가 독일에도 진출한다.</li>
+<li>애플이 대만에 데이터센터를 구축한다고 한다. 투자 금액은 4조 3천억 원 이상이 될 것으로 보인다. <em>지진과 중국은 괜찮을까?</em></li>
+<li>애플은 이제 유럽에서도 자가 수리 진단 서비스를 시작했다.</li>
+<li>헝가리에서 이상한 요금이 청구되는 등 애플페이가 무작위로 오작동하는 사례가 보고되었다.</li>
+<li>비전프로가 중국, 홍콩, 일본, 싱가포르에 출시되었다. 호주, 캐나다, 프랑스, 독일, 영국 등에선 비전프로의 사전 주문이 개시되었다.</li>
+</ul>
+<h2>루머들</h2>
+<ul>
+<li>애플이 아이폰 배터리 교체를 좀 더 쉽게 할 수 있는 방법을 개발 중이라는 보고서가 나왔다. 우선 대상 모델은 아이폰 16인 것 같다.</li>
+<li>iOS 19는 벌써 개발이 시작 되었는데 Luck이라는 코드네임을 가지는 것으로 보인다. 비슷하게 macOSS 16은 Cheer, watchOS 12는 Nepali, visionOS 3는 Discovery라는 코드네임을 가지는 것으로 보인다. 물론 코드네임은 실 사용에는 별 의미가 없다.</li>
+<li>카메라가 탑재된 에어팟 발패 가능성에 대한 소문이 있다. 2026년을 목표로 한다는 듯하다. 카메라는 적외선 카메라로 에어팟 사용성이나 공간감 개선을 위한 센서 역할을 하게 될 것 같은 느낌이다.</li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240630-00.html"/>
+    <summary type="text">개발자 베타 릴리즈, 루머 외 한 주간의 애플 소식을 모은 글</summary>
+    <published>2024-06-30T21:58:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-sharp-quote-sign.md.html</id>
     <title>Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</title>
@@ -2301,17 +2338,5 @@ False
     <link href="https://seorenn.github.io/article/python-file-dir-exists.html"/>
     <summary type="text">파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.</summary>
     <published>2024-05-30T00:17:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240529-00.html</id>
-    <title>애플 iOS 17.5의 서명 중지</title>
-    <updated>2024-05-29T09:46:40.436745+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>애플이 iOS 17.5의 서명을 중지했다. 이제 iOS 17.5에서 최신 버전인 iOS 17.5.1로 올리면 더이상 17.5로 다운그레이드가 불가능하다는 말이다.</p>
-<p>서명 중지는 늘상 있는 일이다. 그리고 어차피 버그 픽스 버전이 안정성이 더 좋으므로 굳이 iOS 17.5로 돌아갈 이유도 없다. 안 그래도 지운 사진이 자꾸 부활하는 등 버그로 유명한 버전인데 말이다. 뭐 그냥 그렇다는 소식이다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240529-00.html"/>
-    <summary type="text">애플이 iOS 17.5의 서명을 중지했다.</summary>
-    <published>2024-05-29T21:44:00+09:00</published>
   </entry>
 </feed>

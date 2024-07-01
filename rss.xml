@@ -13,7 +13,91 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sun, 30 Jun 2024 22:00:53 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2024 15:18:58 +0900</lastBuildDate>
+    <item>
+      <title>AI 산업의 미래</title>
+      <link>https://seorenn.github.io/article/future-of-ai-industry.html</link>
+      <description>&lt;p&gt;AI에 대한 관심과 투자가 한참인 지금, 과연 AI 산업의 미래는 밝기만 할까? 투자자 입장에서 그리고 엔지니어 입장에서 규제와 산업에 가해질 압력과 그 미래에 대해 상상해보자. 일부 근거는 사설 등을 기반으로 하지만 일부는 뇌피셜 이라는 점을 참고하자.&lt;/p&gt;
+&lt;h2&gt;부작용이 생길 수 있는 이슈들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;제대로 지켜지지 않는 저작권&lt;/strong&gt;&lt;br/&gt;
+지금도 크게 이슈가 되고 있는 부분으로 무단 학습 및 그 자료를 바탕으로 한 추론에서 저작권이 무시되고 있다는 점이다. 대기업이면 모르겠지만 중소기업으로까지 대상을 확대하면 규제가 아니고서는 제대로 지켜지긴 힘든 것이 현실이다. 개인적으로 가장 규제가 강하게 걸리리라 생각되는 부분이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI 하드웨어 독점&lt;/strong&gt;&lt;br/&gt;
+현재는 Nvidia 독점인 상태인데, 이 점도 추후 반독점법의 영향을 받을 수 있을까? 물론 후발주자들의 페이스에 따라 영향은 달라질 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI 플랫폼 독점&lt;/strong&gt;&lt;br/&gt;
+Nvidia가 하드웨어와 동시에 Nvidia는 CUDA 같은 플랫폼 역시도 독점 중인 상황인라 역시 반독점법의 영향에 관해 생각해야 할 것 같다. 이런 개발용 플랫폼은 후발 주자가 잘 따라와도 쉽게 교체하기 힘든 부분이기도 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;전성비&lt;/strong&gt;&lt;br/&gt;
+AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학적인 수준인데 이를 해결할 좋은 방법이 있을까? 전기 소모를 줄이거나 혹은 친환경발전의 비중을 크게 높여야 할 것이다. 물론 대규모 투자가 필요한 분야지만 제대로 극복을 못하면 규제의 대상이 될 수도 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;개인정보 유출 및 프라이버시 침해&lt;/strong&gt;&lt;br/&gt;
+민감한 개인정보가 사생활 정보를 어떻게 걸러낼 것인가 혹은 이에 관한 규제가 도입될 것인가? 지금도 벌어지고 있는 프라이버시 침해는 결국 규제가 아니면 후순위로 밀릴 주제일 수도 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;비리의 도구&lt;/strong&gt;&lt;br/&gt;
+편향된 학습 자료 혹은 추론 유도 등 AI를 이용한 비리나 범죄 가능성도 생각해 보자. 특히 AI의 신뢰도가 높아진다면 더더욱 AI로 만들어진 자료를 맹신하게 될 터라 범죄의 표적이 될 가능성도 높다고 보인다.&lt;/p&gt;
+&lt;h2&gt;현실은 어떨까?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://n.news.naver.com/article/025/0003287118" target="_blank"&gt;"수십억 달러 벌금 낼 수도"…세계 첫 AI 규제법, 유럽 초안 통과📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.etnews.com/20230623000193" target="_blank"&gt;AI규율 국제적 논의 본격화…개인정보위, 주요 정책방향 제시📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/297787" target="_blank"&gt;‘AI’와 관련된 잘못된 생각📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/297781" target="_blank"&gt;윈도우 코파일럿··· 아직은 혼란한 AI 비서📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/297991" target="_blank"&gt;AI 규제에 동조하는 마이크로소프트의 속내📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/298669" target="_blank"&gt;미 코미디언 사라 실버맨, 오픈AI와 메타에 저작권 침해 소송 제기📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://news.einfomax.co.kr/news/articleView.html?idxno=4274101" target="_blank"&gt;바 연준 금융당국 부의장 "AI, 불법 대출 관행 부추길 위험"📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/301939" target="_blank"&gt;높아지는 AI 규제 요청의 목소리··· “규제 없으면 솔루션 업체 아닌 기업이 책임질지도”📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/302215" target="_blank"&gt;영국, AI를 장기적 보안 위협으로 공식화📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/302239" target="_blank"&gt;허용과 권장? 금지와 모니터링?··· 4인의 CIO가 말하는 '셰도우 AI와 씨름하기'📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.khan.co.kr/national/national-general/article/202308311635001" target="_blank"&gt;온신협, “AI의 뉴스 무단 사용은 저작권 침해”📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.axios.com/2023/09/21/chatgpt-lawsuit-openai-writers" target="_blank"&gt;George R.R. Martin, John Grisham and other writers sue over ChatGPT📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/308569" target="_blank"&gt;어설픈 기사로 조롱거리 된 AI 기자 外··· 'AI 재난' 9선📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://seorenn.tistory.com/536" target="_blank"&gt;생성형 AI로 매출 증대?📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/311551" target="_blank"&gt;내 저작물을 지켜라··· 생성형 AI에 '독 푸는' 도구의 등장📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/312226" target="_blank"&gt;EU 이어 미국도 AI 규제 본격화··· 바이든 ‘AI 행정 명령’에 대한 업계 평가는?📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.infostockdaily.co.kr/news/articleView.html?idxno=196623" target="_blank"&gt;오픈AI(OpenAI)와 마이크로소프트(MSFT) 상대로 저작권 침해 집단 소송📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/323224" target="_blank"&gt;오픈AI의 논리는 결국 ‘복사, 절도, 붙여넣기’📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://v.daum.net/v/20240307134553826" target="_blank"&gt;주요 4개 AI 모델 중 GPT-4, 저작권 침해 최악📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.etnews.com/20240311000237" target="_blank"&gt;엔비디아도 저작권 소송… 작가들 “AI 모델 학습에 무단 이용”📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/329335" target="_blank"&gt;유럽의회, 세계 첫 AI 규제법 승인··· 기업에 미치는 영향은?📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://news.einfomax.co.kr/news/articleView.html?idxno=4315303" target="_blank"&gt;"데이터 무단 사용"…오픈AI, 저작권 소송 잇따라📎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;AI에 대한 관심과 투자가 한참인 지금, 과연 AI 산업의 미래는 밝기만 할까? 투자자 입장에서 그리고 엔지니어 입장에서 규제와 산업에 가해질 압력과 그 미래에 대해 상상해보자. 일부 근거는 사설 등을 기반으로 하지만 일부는 뇌피셜 이라는 점을 참고하자.&lt;/p&gt;
+&lt;h2&gt;부작용이 생길 수 있는 이슈들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;제대로 지켜지지 않는 저작권&lt;/strong&gt;&lt;br/&gt;
+지금도 크게 이슈가 되고 있는 부분으로 무단 학습 및 그 자료를 바탕으로 한 추론에서 저작권이 무시되고 있다는 점이다. 대기업이면 모르겠지만 중소기업으로까지 대상을 확대하면 규제가 아니고서는 제대로 지켜지긴 힘든 것이 현실이다. 개인적으로 가장 규제가 강하게 걸리리라 생각되는 부분이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI 하드웨어 독점&lt;/strong&gt;&lt;br/&gt;
+현재는 Nvidia 독점인 상태인데, 이 점도 추후 반독점법의 영향을 받을 수 있을까? 물론 후발주자들의 페이스에 따라 영향은 달라질 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI 플랫폼 독점&lt;/strong&gt;&lt;br/&gt;
+Nvidia가 하드웨어와 동시에 Nvidia는 CUDA 같은 플랫폼 역시도 독점 중인 상황인라 역시 반독점법의 영향에 관해 생각해야 할 것 같다. 이런 개발용 플랫폼은 후발 주자가 잘 따라와도 쉽게 교체하기 힘든 부분이기도 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;전성비&lt;/strong&gt;&lt;br/&gt;
+AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학적인 수준인데 이를 해결할 좋은 방법이 있을까? 전기 소모를 줄이거나 혹은 친환경발전의 비중을 크게 높여야 할 것이다. 물론 대규모 투자가 필요한 분야지만 제대로 극복을 못하면 규제의 대상이 될 수도 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;개인정보 유출 및 프라이버시 침해&lt;/strong&gt;&lt;br/&gt;
+민감한 개인정보가 사생활 정보를 어떻게 걸러낼 것인가 혹은 이에 관한 규제가 도입될 것인가? 지금도 벌어지고 있는 프라이버시 침해는 결국 규제가 아니면 후순위로 밀릴 주제일 수도 있다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;비리의 도구&lt;/strong&gt;&lt;br/&gt;
+편향된 학습 자료 혹은 추론 유도 등 AI를 이용한 비리나 범죄 가능성도 생각해 보자. 특히 AI의 신뢰도가 높아진다면 더더욱 AI로 만들어진 자료를 맹신하게 될 터라 범죄의 표적이 될 가능성도 높다고 보인다.&lt;/p&gt;
+&lt;h2&gt;현실은 어떨까?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://n.news.naver.com/article/025/0003287118" target="_blank"&gt;"수십억 달러 벌금 낼 수도"…세계 첫 AI 규제법, 유럽 초안 통과📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.etnews.com/20230623000193" target="_blank"&gt;AI규율 국제적 논의 본격화…개인정보위, 주요 정책방향 제시📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/297787" target="_blank"&gt;‘AI’와 관련된 잘못된 생각📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/297781" target="_blank"&gt;윈도우 코파일럿··· 아직은 혼란한 AI 비서📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/297991" target="_blank"&gt;AI 규제에 동조하는 마이크로소프트의 속내📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/298669" target="_blank"&gt;미 코미디언 사라 실버맨, 오픈AI와 메타에 저작권 침해 소송 제기📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://news.einfomax.co.kr/news/articleView.html?idxno=4274101" target="_blank"&gt;바 연준 금융당국 부의장 "AI, 불법 대출 관행 부추길 위험"📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/301939" target="_blank"&gt;높아지는 AI 규제 요청의 목소리··· “규제 없으면 솔루션 업체 아닌 기업이 책임질지도”📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/302215" target="_blank"&gt;영국, AI를 장기적 보안 위협으로 공식화📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/302239" target="_blank"&gt;허용과 권장? 금지와 모니터링?··· 4인의 CIO가 말하는 '셰도우 AI와 씨름하기'📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.khan.co.kr/national/national-general/article/202308311635001" target="_blank"&gt;온신협, “AI의 뉴스 무단 사용은 저작권 침해”📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.axios.com/2023/09/21/chatgpt-lawsuit-openai-writers" target="_blank"&gt;George R.R. Martin, John Grisham and other writers sue over ChatGPT📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/308569" target="_blank"&gt;어설픈 기사로 조롱거리 된 AI 기자 外··· 'AI 재난' 9선📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://seorenn.tistory.com/536" target="_blank"&gt;생성형 AI로 매출 증대?📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/311551" target="_blank"&gt;내 저작물을 지켜라··· 생성형 AI에 '독 푸는' 도구의 등장📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/312226" target="_blank"&gt;EU 이어 미국도 AI 규제 본격화··· 바이든 ‘AI 행정 명령’에 대한 업계 평가는?📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.infostockdaily.co.kr/news/articleView.html?idxno=196623" target="_blank"&gt;오픈AI(OpenAI)와 마이크로소프트(MSFT) 상대로 저작권 침해 집단 소송📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/323224" target="_blank"&gt;오픈AI의 논리는 결국 ‘복사, 절도, 붙여넣기’📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://v.daum.net/v/20240307134553826" target="_blank"&gt;주요 4개 AI 모델 중 GPT-4, 저작권 침해 최악📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.etnews.com/20240311000237" target="_blank"&gt;엔비디아도 저작권 소송… 작가들 “AI 모델 학습에 무단 이용”📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ciokorea.com/news/329335" target="_blank"&gt;유럽의회, 세계 첫 AI 규제법 승인··· 기업에 미치는 영향은?📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://news.einfomax.co.kr/news/articleView.html?idxno=4315303" target="_blank"&gt;"데이터 무단 사용"…오픈AI, 저작권 소송 잇따라📎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/future-of-ai-industry.html</guid>
+      <pubDate>Mon, 01 Jul 2024 15:12:00 +0900</pubDate>
+    </item>
     <item>
       <title>한 주간의 애플 소식 모음 24-06-30</title>
       <link>https://seorenn.github.io/log/20240630-00.html</link>
@@ -3917,58 +4001,6 @@ datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
 &lt;p&gt;참고로 &lt;code&gt;rglob()&lt;/code&gt;의 파일 이름 패턴은 이 외의 다양한 패턴을 지원하므로 궁금하다면 매뉴얼을 찾아보자.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/python-list-dir.html</guid>
       <pubDate>Thu, 30 May 2024 10:50:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>파이썬에서 파일이나 디렉터리 구분 및 존재 확인하기</title>
-      <link>https://seorenn.github.io/article/python-file-dir-exists.html</link>
-      <description>&lt;p&gt;파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.&lt;/p&gt;
-&lt;p&gt;사실 이 모두 간단한 &lt;code&gt;os.path&lt;/code&gt;의 두 함수를 통해 가능하다.&lt;/p&gt;
-&lt;h2&gt;isfile&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;isfile&lt;/code&gt;, 정확히 말해 &lt;code&gt;os.path.isfile&lt;/code&gt; 함수는 경로가 파일인지 혹은 존재하는지를 알려준다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn/.zshrc')
-True
-&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn')
-False
-&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn/not_existing_file')
-False
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;보다시피 &lt;code&gt;isfile&lt;/code&gt;을 이용하면 경로가 파일인지 아니면 존재하지 않는지를 확인할 수 있다.&lt;/p&gt;
-&lt;h2&gt;isdir&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;isfile&lt;/code&gt;을 봤다면 이름만 보면 감이 바로 올 만한 함수다. 이름처럼 &lt;code&gt;isdir&lt;/code&gt;, 정확히 말해 &lt;code&gt;os.path.isdir&lt;/code&gt; 함수는 경로가 디렉터리인지 그리고 실제로 존재하는지를 알려준다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn')
-True
-&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn/.zsshrc')
-False
-&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn/not_existing_dir/')
-False
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;아주 쉽고 간단한 기능이지만 개인적으로 자주 까먹는 편이다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;파이썬에서 특정 경로가 파일인지 아니면 디렉터리인지 구분하고 이 경로가 실제로 존재하는지 확인하는 방법을 정리해 보자.&lt;/p&gt;
-&lt;p&gt;사실 이 모두 간단한 &lt;code&gt;os.path&lt;/code&gt;의 두 함수를 통해 가능하다.&lt;/p&gt;
-&lt;h2&gt;isfile&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;isfile&lt;/code&gt;, 정확히 말해 &lt;code&gt;os.path.isfile&lt;/code&gt; 함수는 경로가 파일인지 혹은 존재하는지를 알려준다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn/.zshrc')
-True
-&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn')
-False
-&amp;gt;&amp;gt;&amp;gt; os.path.isfile('/Users/seorenn/not_existing_file')
-False
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;보다시피 &lt;code&gt;isfile&lt;/code&gt;을 이용하면 경로가 파일인지 아니면 존재하지 않는지를 확인할 수 있다.&lt;/p&gt;
-&lt;h2&gt;isdir&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;isfile&lt;/code&gt;을 봤다면 이름만 보면 감이 바로 올 만한 함수다. 이름처럼 &lt;code&gt;isdir&lt;/code&gt;, 정확히 말해 &lt;code&gt;os.path.isdir&lt;/code&gt; 함수는 경로가 디렉터리인지 그리고 실제로 존재하는지를 알려준다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import os
-&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn')
-True
-&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn/.zsshrc')
-False
-&amp;gt;&amp;gt;&amp;gt; os.path.isdir('/Users/seorenn/not_existing_dir/')
-False
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;아주 쉽고 간단한 기능이지만 개인적으로 자주 까먹는 편이다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/python-file-dir-exists.html</guid>
-      <pubDate>Thu, 30 May 2024 00:17:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

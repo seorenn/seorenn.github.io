@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon) - Seorenn</title>
+    <meta name="twitter:title" content="macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)" />
+    <meta name="og:title" content="macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)" />
+    <meta name="description" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="og:description" content="" />
+    <link rel="canonical" href="https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</h1>
+          <div class="title-date">
+            
+            
+              <span>2024년 07월 01일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>과거에는 좀 달랐지만 언제부턴가 macOS에서 한영전환키를 누르며 이 키 입력이 Emacs에 닿지 않게 되었다. 그래서 Emacs 내장 한글 입력기로 전환하기 위해서는 <code>C-\</code> 등 다른 단축키를 이용해야 했다. 하지만 헷갈려서 내장 입력기 전환은 거의 사용하지 않았고 macOS 자체 입력기를 쓰는 것도 그다지 무리는 없어서 쓰고는 있었다.</p>
+<p>그런데 최근 macOS의 한글입력기 문제인지 아니면 Emacs 29 최신 버전의 문제인지 아니면 Evil과의 환상 조합 오작동인지 하여간 한글 입력이 조합 도중 씹히거나 사라졌다가 나중에 다시 나타나는 등 요상한 문제를 겪기 시작했다.</p>
+<p>결국 근본적인 해결이 필요할 것 같아 방법을 찾아보다 기존에 종종 사용하던 Hammerspoon을 통해 해결할 수 있을 것 같아 약간의 삽질을 하다 겨우 성공하였다.</p>
+<h2>문제 해결하기</h2>
+<p>이 방법은 'Emacs를 쓸 때는 시스템의 한영전환키를 씹어버리고 Emacs 내장입력기 전환 키로 바꿔서 던지는 식'으로 동작하는 Hammerspoon용 LUA 코드로 구현했다.</p>
+<pre><code class="language-lua">local englishIMID = &quot;com.apple.keylayout.ABC&quot;
+
+function setEnglishInputMethod()
+    local source = hs.keycodes.currentSourceID()
+    if not (source == englishIMID) then
+        hs.keycodes.currentSourceID(englishIMID)
+    end
+end
+
+hs.eventtap.new({hs.eventtap.event.types.keyDown, hs.eventtap.event.types.systemDefined}, function(event)
+    local type = event:getType()
+    local flags = event:getFlags()
+    local keycode = event:getKeyCode()
+    local app = hs.application.frontmostApplication()
+    if type == hs.eventtap.event.types.keyDown and app:bundleID() == &quot;org.gnu.Emacs&quot; then
+        if flags.shift and keycode == hs.keycodes.map.space then
+            setEnglishInputMethod()
+            -- remap to C-\
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
+            hs.eventtap.event.newKeyEvent(&quot;\\&quot;, true):post()
+            hs.eventtap.event.newKeyEvent(&quot;\\&quot;, false):post()
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+            return true
+        else
+            return false
+        end
+    else
+        return false
+    end
+end):start()
+</code></pre>
+<p>bundle ID나 단축키 이름만 잘 바꾸면 어떤 앱이든 원하는 대로 단축키를 바꿀 수 있다. 그저 키 바꿔치기를 하는 경우에는 <code>return</code> 값에 주의하면 된다. <code>true</code>를 반환하며녀 기존에 입력된 키 스트로크를 무시시켜 버리기 때문이다.</p>
+<p><code>setEnglishInputMethod()</code> 함수는 주제에는 조금 벗어나 보이겠지만 중요한 문제를 예방하기 위해 사용한다. 예를 들어 macOS의 입력기가 한국어인 상태로 Emacs에 진입했다간 영문모드로 전환할 수 없는 불상사가 생기기 때문이 이를 막기 위해 시스템 입력기를 영어로 바꾸는 코드다. 만약 영문 입력기를 별도로 설치한 다른 것을 쓴다면 해당 입력기 ID로 고쳐주자.</p>
+<p>문제:조금만 쓰다보면 풀린다 씨디ㅏ</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

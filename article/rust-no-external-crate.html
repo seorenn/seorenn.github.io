@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Cargo로 빌드 시 no external crate 오류 해결하기 - Seorenn</title>
+    <meta name="twitter:title" content="Cargo로 빌드 시 no external crate 오류 해결하기" />
+    <meta name="og:title" content="Cargo로 빌드 시 no external crate 오류 해결하기" />
+    <meta name="description" content="Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자." />
+    <meta name="twitter:description" content="Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자." />
+    <meta name="og:description" content="Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/rust-no-external-crate.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/rust-no-external-crate.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Cargo로 빌드 시 no external crate 오류 해결하기</h1>
+          <div class="title-date">
+            
+            
+              <span>2024년 07월 02일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자.</p>
+<h2>문제</h2>
+<p>특수한 상황 때문에 빌드 스크립트를 써야 할 때가 있었다. 이럴 때는 <code>build.rs</code>라는 파일을 만들어 여기에 몇 가지 추가 빌드 스크립트를 작성할 수 있다. 그리고 이런 빌드 스크립트 작성에도 도움을 주는 여러 외부 패키지가 있다.</p>
+<p>어쨌든 다시 특수한 상황으로 빌드 스크립트를 작성해야 해서 빌드용으로 사용할 어떤 패키지 - 여기서는 임의로 somemod라고 이름 지은 패키지 - 를 설치했다.</p>
+<pre><code class="language-bash">$ cargo add somemod
+</code></pre>
+<p>물론 실제로 존재하지는 않는 패키지다. 어쨌든 이를 <code>build.rs</code>에서 쓰겠다고 명시해 줬다.</p>
+<pre><code class="language-rust">// build.rs
+use somemod;
+</code></pre>
+<p>그리고 빌드를 시도해 보니 오류가 떴다.</p>
+<pre><code class="language-bash">$ cargo build
+   Compiling myproject v0.1.0 (/foo/bar/project/myproject)
+error[E0432]: unresolved import `somemod`
+ --&gt; build.rs:1:5
+  |
+1 | use somemod;
+  |     ^^^^^ no external crate `somemod`
+</code></pre>
+<p>대략 두 가지 메시지가 뜬다. 하나는 'unresolved import'이고 다른 하나는 'no external crate' 오류다. 의미상으로 보면 어차피 같은 오류라고 봐도 될 것 같다.</p>
+<h2>해결하기</h2>
+<p>이 오류 때문에 좀 삽질을 했었는데 '빌드 의존성은 런타임 의존성과는 별도'라는 점을 모르고 있었다는 점이었다. 위의 경우 별도의 명시 없이 somemod라는 모듈을 add 명령으로 의존성으로 추가했더니 해당 패키지는 아래와 같이 <code>Cargo.toml</code>에 일반 의존성으로 기입되어 있었다.</p>
+<pre><code>[dependencies]
+somemod = &quot;1.0.0&quot;
+</code></pre>
+<p>그런데 예시로 든 somemod 패키지는 빌드할 때 필요한 의존성이다. 따라서 오류를 해결하려면 이 패키지를 다음과 같이 빌드 의존성(Build Dependencies) 쪽으로 옮겨서 확실하게 명시해 주면 될 것이다.</p>
+<pre><code>[build-dependencies]
+somemod = &quot;1.0.0&quot;
+</code></pre>
+<p><code>build-dependencies</code> 섹션은 없으면 그냥 만들면 된다.</p>
+<p>이후 <code>cargo build</code>를 실행시키니 별 문제 없이 잘 실행되었다.</p>
+<p>오늘도 이렇게 삽질을 하며 한 가지 사실을 배워간다. 빌드 의존성 문제는 어떤 언어든 어떤 프레임워크든 늘 겪는 문제인데 왜 이렇게 익숙해지지 않는지 모르겠다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

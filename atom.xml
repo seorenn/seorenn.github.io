@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-01T15:20:29.044867+09:00</updated>
+  <updated>2024-07-02T23:41:41.127989+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,97 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/rust-no-external-crate.html</id>
+    <title>Cargo로 빌드 시 no external crate 오류 해결하기</title>
+    <updated>2024-07-02T23:41:20.428210+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자.</p>
+<h2>문제</h2>
+<p>특수한 상황 때문에 빌드 스크립트를 써야 할 때가 있었다. 이럴 때는 <code>build.rs</code>라는 파일을 만들어 여기에 몇 가지 추가 빌드 스크립트를 작성할 수 있다. 그리고 이런 빌드 스크립트 작성에도 도움을 주는 여러 외부 패키지가 있다.</p>
+<p>어쨌든 다시 특수한 상황으로 빌드 스크립트를 작성해야 해서 빌드용으로 사용할 어떤 패키지 - 여기서는 임의로 somemod라고 이름 지은 패키지 - 를 설치했다.</p>
+<pre><code class="language-bash">$ cargo add somemod
+</code></pre>
+<p>물론 실제로 존재하지는 않는 패키지다. 어쨌든 이를 <code>build.rs</code>에서 쓰겠다고 명시해 줬다.</p>
+<pre><code class="language-rust">// build.rs
+use somemod;
+</code></pre>
+<p>그리고 빌드를 시도해 보니 오류가 떴다.</p>
+<pre><code class="language-bash">$ cargo build
+   Compiling myproject v0.1.0 (/foo/bar/project/myproject)
+error[E0432]: unresolved import `somemod`
+ --&gt; build.rs:1:5
+  |
+1 | use somemod;
+  |     ^^^^^ no external crate `somemod`
+</code></pre>
+<p>대략 두 가지 메시지가 뜬다. 하나는 'unresolved import'이고 다른 하나는 'no external crate' 오류다. 의미상으로 보면 어차피 같은 오류라고 봐도 될 것 같다.</p>
+<h2>해결하기</h2>
+<p>이 오류 때문에 좀 삽질을 했었는데 '빌드 의존성은 런타임 의존성과는 별도'라는 점을 모르고 있었다는 점이었다. 위의 경우 별도의 명시 없이 somemod라는 모듈을 add 명령으로 의존성으로 추가했더니 해당 패키지는 아래와 같이 <code>Cargo.toml</code>에 일반 의존성으로 기입되어 있었다.</p>
+<pre><code>[dependencies]
+somemod = "1.0.0"
+</code></pre>
+<p>그런데 예시로 든 somemod 패키지는 빌드할 때 필요한 의존성이다. 따라서 오류를 해결하려면 이 패키지를 다음과 같이 빌드 의존성(Build Dependencies) 쪽으로 옮겨서 확실하게 명시해 주면 될 것이다.</p>
+<pre><code>[build-dependencies]
+somemod = "1.0.0"
+</code></pre>
+<p><code>build-dependencies</code> 섹션은 없으면 그냥 만들면 된다.</p>
+<p>이후 <code>cargo build</code>를 실행시키니 별 문제 없이 잘 실행되었다.</p>
+<p>오늘도 이렇게 삽질을 하며 한 가지 사실을 배워간다. 빌드 의존성 문제는 어떤 언어든 어떤 프레임워크든 늘 겪는 문제인데 왜 이렇게 익숙해지지 않는지 모르겠다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/rust-no-external-crate.html"/>
+    <summary type="text">Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자.</summary>
+    <published>2024-07-02T23:41:00+09:00</published>
+  </entry>
+  <entry>
+    <id>https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html</id>
+    <title>macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</title>
+    <updated>2024-07-01T23:50:19.480920+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>과거에는 좀 달랐지만 언제부턴가 macOS에서 한영전환키를 누르며 이 키 입력이 Emacs에 닿지 않게 되었다. 그래서 Emacs 내장 한글 입력기로 전환하기 위해서는 <code>C-\</code> 등 다른 단축키를 이용해야 했다. 하지만 헷갈려서 내장 입력기 전환은 거의 사용하지 않았고 macOS 자체 입력기를 쓰는 것도 그다지 무리는 없어서 쓰고는 있었다.</p>
+<p>그런데 최근 macOS의 한글입력기 문제인지 아니면 Emacs 29 최신 버전의 문제인지 아니면 Evil과의 환상 조합 오작동인지 하여간 한글 입력이 조합 도중 씹히거나 사라졌다가 나중에 다시 나타나는 등 요상한 문제를 겪기 시작했다.</p>
+<p>결국 근본적인 해결이 필요할 것 같아 방법을 찾아보다 기존에 종종 사용하던 Hammerspoon을 통해 해결할 수 있을 것 같아 약간의 삽질을 하다 겨우 성공하였다.</p>
+<h2>문제 해결하기</h2>
+<p>이 방법은 'Emacs를 쓸 때는 시스템의 한영전환키를 씹어버리고 Emacs 내장입력기 전환 키로 바꿔서 던지는 식'으로 동작하는 Hammerspoon용 LUA 코드로 구현했다.</p>
+<pre><code class="language-lua">local englishIMID = "com.apple.keylayout.ABC"
+
+function setEnglishInputMethod()
+    local source = hs.keycodes.currentSourceID()
+    if not (source == englishIMID) then
+        hs.keycodes.currentSourceID(englishIMID)
+    end
+end
+
+hs.eventtap.new({hs.eventtap.event.types.keyDown, hs.eventtap.event.types.systemDefined}, function(event)
+    local type = event:getType()
+    local flags = event:getFlags()
+    local keycode = event:getKeyCode()
+    local app = hs.application.frontmostApplication()
+    if type == hs.eventtap.event.types.keyDown and app:bundleID() == "org.gnu.Emacs" then
+        if flags.shift and keycode == hs.keycodes.map.space then
+            setEnglishInputMethod()
+            -- remap to C-\
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
+            hs.eventtap.event.newKeyEvent("\\", true):post()
+            hs.eventtap.event.newKeyEvent("\\", false):post()
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+            return true
+        else
+            return false
+        end
+    else
+        return false
+    end
+end):start()
+</code></pre>
+<p>bundle ID나 단축키 이름만 잘 바꾸면 어떤 앱이든 원하는 대로 단축키를 바꿀 수 있다. 그저 키 바꿔치기를 하는 경우에는 <code>return</code> 값에 주의하면 된다. <code>true</code>를 반환하며녀 기존에 입력된 키 스트로크를 무시시켜 버리기 때문이다.</p>
+<p><code>setEnglishInputMethod()</code> 함수는 주제에는 조금 벗어나 보이겠지만 중요한 문제를 예방하기 위해 사용한다. 예를 들어 macOS의 입력기가 한국어인 상태로 Emacs에 진입했다간 영문모드로 전환할 수 없는 불상사가 생기기 때문이 이를 막기 위해 시스템 입력기를 영어로 바꾸는 코드다. 만약 영문 입력기를 별도로 설치한 다른 것을 쓴다면 해당 입력기 ID로 고쳐주자.</p>
+<p>문제:조금만 쓰다보면 풀린다 씨디ㅏ</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html"/>
+    <summary type="text"/>
+    <published>2024-07-01T23:32:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/future-of-ai-industry.html</id>
     <title>AI 산업의 미래</title>
@@ -2294,65 +2385,5 @@ datetime.datetime(2024, 4, 16, 16, 40, 42, 577873)
     <link href="https://seorenn.github.io/article/python-get-file-infomations.html"/>
     <summary type="text">파이썬에서 파일의 정보, 예를 들어 파일 사이즈나 수정 일자를 얻는 방법을 알아보자.</summary>
     <published>2024-05-30T16:17:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240530-00.html</id>
-    <title>드디어 피드가 동작한다</title>
-    <updated>2024-05-30T14:44:05.224965+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>seorenn-publish를 만들면서 나름 순조롭게 RSS와 ATOM 피드를 뽑는 스크립트를 만들어서 시험해 보고 있었다. 그런데 Feedly와 같은 RSS 리더에서 최초 피드 리스트는 잘 받아오는데, 이후 업데이트 되는 내역은 전혀 받아오지 못 하였다. 느낌적인 느낌으로 말해서 그냥 리프레시를 안 하는 느낌이었다.</p>
-<p>이것저것 시도해 봤지만 원인이 무엇인지 정확하게 알 수는 없었다. 결국 다른 유명 사이트의 RSS와 내가 만든 RSS의 차이를 비교해보며 feedgen을 기준으로 lastBuildDate나 엔트리에 description 등등을 추가할 수 있었다.</p>
-<p>추측으론 아마도 lastBuildDate 즉 피드 업데이트 시간을 기록한 것이 주요하지 않았나 생각된다. 아니면 피드 안의 엔트리 정렬이 문제였을 지도 모른다. 엔트리가 시간순으로 정렬되어 들어가 있었는데 이걸 역순으로 바꿔주기도 했다.</p>
-<p>뭐가 답이었든 간에 동작하는 걸 확인했으니 일단은 안심이다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240530-00.html"/>
-    <summary type="text">드디어 사이트 업데이트가 Feedly에 나타났다.</summary>
-    <published>2024-05-30T14:30:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/python-list-dir.html</id>
-    <title>파이썬으로 파일 및 디렉터리 목록 구하기</title>
-    <updated>2024-05-30T10:59:04.083570+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다.</p>
-<h2>listdir - 특정 디렉터리 탐색</h2>
-<p>단순하게 특정 디렉터리의 목록만 구하고 싶다면 <code>os.listdir()</code> 함수를 이용할 수 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.listdir('.')
-['foo.a', 'bar.b', 'somedir', ...]
-</code></pre>
-<p>당연하겠지만 입력으로 사용한 <code>'.'</code>은 현재 디렉터리를 의미한다. 여기다 원하는 경로를 넣을 수 있다.</p>
-<h2>glob - 패턴 기반 특정 디렉터리 탐색</h2>
-<p><code>glob</code>로 <code>os.listdir</code>과 비슷하게 특저 디렉터리의 디렉터리나 파일 리스트를 구하는 용도로 사용할 수 있는데 특징으로는 패턴을 이용할 수 있다는 점이 있다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; from glob import glob
-&gt;&gt;&gt; for path in glob("/foo/bar/*.txt"):
-...     print(path)
-/foo/bar/qwer.txt
-/foo/bar/tyui.txt
-/foo/bar/asdf.txt
-...
-</code></pre>
-<p>위와 같은 코드로 <code>/foo/bar</code> 디렉터리 아래에서 패턴으로 <code>*.txt</code> 즉 확장자가 <code>txt</code>인 파일의 목록을 구할 수 있다.</p>
-<h2>rglob - 특정 디렉터리 및 그 아래의 모든 서브 디렉터리 탐색</h2>
-<p>특정 디렉터리 안의 내용물을 서브(자식) 디렉터리까지 다 포함해서 목록을 구할려면 여러 방법이 있겠지만 이번에는 Python 3.4 에서 추가된 <code>pathlib</code> 모듈의 <code>Path</code> 클래스의 <code>rglob()</code> 메서드를 이용해보자.</p>
-<pre><code class="language-python">&gt;&gt;&gt; from pathlib import Path
-&gt;&gt;&gt; list(Path("/foo/bar/dir").rglob("*"))
-[PosixPath('/foo/bar/dir/a'), PosixPath('/foo/bar/dir/a/test.txt'), ...]
-</code></pre>
-<p><code>PosixPath</code> 라는 새로운 타입이 등장하는데 이름처럼 경로를 표기하는데 적합한 타입이다. 이 타입은 별로 어려울 것 없이 <code>str()</code> 로 문자열로 변환이 되니 익숙한 방법을 사용하면 된다.</p>
-<p>어쨌든 이런 식으로 해당 디렉터리 아래의 모든 파일과 디렉터리 목록을 1차원 리스트로 가공된 결과를 얻을 수 있다. 거기다 <code>glob</code>와 비슷하게 패턴까지 사용할 수도 있다.</p>
-<p>굳이 <code>list()</code> 를 이용해 리스트화를 한 이유는 결과를 바로 보기 위함이다. 보통 이런 경우 generator가 리턴된 것이기 때문에 굳이 <code>list()</code> 로 바로 풀어버릴 필요 없이 바로 for 루프를 돌면서 필요한 처리를 하는 게 성능과 메모리 효율이 더 좋을 것이다.</p>
-<pre><code class="language-python">&gt;&gt;&gt; for p in Path("/Users/seorenn/tmp/a").rglob("*"):
-...     print(p)
-...
-/foo/bar/dir/a
-/foo/bar/dir/a/test.txt
-...
-</code></pre>
-<p>참고로 <code>rglob()</code>의 파일 이름 패턴은 이 외의 다양한 패턴을 지원하므로 궁금하다면 매뉴얼을 찾아보자.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/article/python-list-dir.html"/>
-    <summary type="text">파이썬으로 파일과 디렉터리 목록을 구하는 방법은 여러 가지가 있겠지만 여기서는 listdir 및 rglob를 사용하는 방법을 정리한다.</summary>
-    <published>2024-05-30T10:50:00+09:00</published>
   </entry>
 </feed>

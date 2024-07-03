@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-03T14:54:08.037376+09:00</updated>
+  <updated>2024-07-03T14:55:51.784186+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -97,7 +97,7 @@ hs.eventtap.new({hs.eventtap.event.types.keyDown, hs.eventtap.event.types.system
     end
 end):start()
 </code></pre>
-<p>bundle ID나 단축키 이름만 잘 바꾸면 어떤 앱이든 원하는 대로 단축키를 바꿀 수 있다. 그저 키 바꿔치기를 하는 경우에는 <code>return</code> 값에 주의하면 된다. <code>true</code>를 반환하며녀 기존에 입력된 키 스트로크를 무시시켜 버리기 때문이다.</p>
+<p>bundle ID나 단축키 이름만 잘 바꾸면 어떤 앱이든 원하는 대로 단축키를 바꿀 수 있다. 그저 키 바꿔치기를 하는 경우에는 <code>return</code> 값에 주의하면 된다. <code>true</code>를 반환하면 기존에 입력된 키 스트로크를 무시시켜 버리기 때문이다.</p>
 <p><code>setEnglishInputMethod()</code> 함수는 주제에는 조금 벗어나 보이겠지만 중요한 문제를 예방하기 위해 사용한다. 예를 들어 macOS의 입력기가 한국어인 상태로 Emacs에 진입했다간 영문모드로 전환할 수 없는 불상사가 생기기 때문이 이를 막기 위해 시스템 입력기를 영어로 바꾸는 코드다. 만약 영문 입력기를 별도로 설치한 다른 것을 쓴다면 해당 입력기 ID로 고쳐주자.</p></div>
     </content>
     <link href="https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html"/>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Git에서 작업 내역을 임시로 저장하고 복원하기 - Seorenn</title>
+    <meta name="twitter:title" content="Git에서 작업 내역을 임시로 저장하고 복원하기" />
+    <meta name="og:title" content="Git에서 작업 내역을 임시로 저장하고 복원하기" />
+    <meta name="description" content="Git 저장소에서 작업 내용을 잠깐 어딘가 보관해 두거나 이를 다시 복원시키는 stash 커맨드에 대해 알아보자." />
+    <meta name="twitter:description" content="Git 저장소에서 작업 내용을 잠깐 어딘가 보관해 두거나 이를 다시 복원시키는 stash 커맨드에 대해 알아보자." />
+    <meta name="og:description" content="Git 저장소에서 작업 내용을 잠깐 어딘가 보관해 두거나 이를 다시 복원시키는 stash 커맨드에 대해 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/git-stash.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/git-stash.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Git에서 작업 내역을 임시로 저장하고 복원하기</h1>
+          <div class="title-date">
+            
+            
+              <span>2024년 07월 05일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>Git 저장소로 관리하는 프로젝트 작업 중 원래 소스를 참조해야 해서 현재의 작업 내용을 잠깐 어딘가 보관해 두고 수정된 내역을 다시 원래대로 돌리고 싶을 때가 있다. 이럴 때는 stash 커맨드를 사용할 수 있는데 어떻게 사용하는지 대충 정리해 보자.</p>
+<h2>Git Stash</h2>
+<p>Git의 Stash 기능은 이름처럼 임시 영역에 무언가를 넣어두는(stash) 명령이다. 넣는 것은 '변경 사항' 뿐이기 때문에 이 명령을 실행하면 현재 저장소의 브랜치는 수정하기 전 상태로 돌아간다는 것이 특징이다. 그 외에 임시 영역은 브랜치와 무관하게 보관된다는 특징 또한 가지고 있다. </p>
+<p>당연하겠지만 Stash는 작업 중(dirty)인 내역만 임시 영역으로 옮기고, 커밋된 부분이나 저장소에 포함되지 않은(untracked) 파일은 옮기지 않는다. 따라서 커밋하기 전에 수정 전의 코드를 사용해야 할 일이 있을 때 유용하게 사용할 수 있다.</p>
+<p>그 외에 여러 기능이 제공되지만 이 글에서는 기본적인 사용법과 개인적으로 종종 사용하는 방법에 대해서만 정리한다.</p>
+<h2>작업 내역을 임시 영역으로 옮기기</h2>
+<p>현재 작업 내역 중 커밋되지 않은 변경점들은 <code>stash</code> 명령을 이용해 임시 영역으로 옮길 수 있다. 이러면 마치 농땡이(?)를 피운 양 현재 브랜치의 작업 내역이 싹 초기화된다.</p>
+<pre><code class="language-bash">git stash
+</code></pre>
+<p><code>-m</code>으로 옵션으로 커밋과 비슷하게 메시지를 남길 수도 있으니 참고하자.</p>
+<pre><code class="language-bash">git stash -m &quot;is this correct way?&quot;
+</code></pre>
+<h2>특정 파일만 임시 영역에 옮기고 싶은 경우</h2>
+<p>Git 2.13 부터 <code>stash push</code> 명령이 새롭게 생겼다. 이 명령을 이용하면 파일 단위로 임시 영역으로 변경점들을 옮길 수 있다.</p>
+<pre><code class="language-bash">git stash push foo/bar/file
+</code></pre>
+<h2>임시 영역 목록 보기</h2>
+<p>임시 영역에 보관된 내역들은 <code>stash list</code> 커맨드로 대충 확인할 수 있다.</p>
+<pre><code class="language-bash">git stash list
+</code></pre>
+<h2>임시 영역의 내용물 보기</h2>
+<p>임시 영역에 보관된 변경 사항이 어떤지 대충 확인할 때는 <code>show</code> 커맨드를 사용할 수 있다.</p>
+<pre><code class="language-bash">git stash show [stash_name]
+</code></pre>
+<p>당연하겠지만 stash_nam을 생략하면 모든 사항이 표시된다.</p>
+<h2>임시 영역과 현재 브랜치와 비교하기</h2>
+<p>임시 영역의 들어간 내용들과 현재 브랜치와의 차이점(diff)을 보려면 <code>show</code> 커맨드에 <code>-p</code> 옵션을 붙여보자.</p>
+<pre><code class="language-bash">git stash show -p [stash_name]
+</code></pre>
+<p>역시 stash_name 부분은 생략할 수 있다.</p>
+<h2>임시 영역의 변경사항을 현재 브랜치에 적용하기</h2>
+<p>볼 일(?)이 다 끝나고 임시 영역의 내용을 현재 브랜치로 다시 가져오려면 <code>pop</code> 명령을 활용해보자. 이 경우 임시 영역의 내용은 사라진다.</p>
+<pre><code class="language-bash">git pop [stash_name]
+</code></pre>
+<p>stash_name을 생략하면 모든 임시 영역의 변경 사항들이 그대로 적용된다. 당연하겠지만 커밋 되기 전의 상태를 의미한다.</p>
+<h2>임시 영역을 초기화하지 않고 적용하기</h2>
+<p>만약 임시 영역의 내용을 현재 브랜치에 적용할 때 임시 영역에서 지우지 않길 원한다면 <code>apply</code> 커맨드를 활용해 보자.</p>
+<pre><code class="language-bash">git stash apply [stash_name]
+</code></pre>
+<p>자주 쓸 일은 없겠지만 여러 브랜치에 비슷한 변경 사항을 적용해서 커밋하기 전에 시험해 볼 때는 유용할 수도 있다.</p>
+<h2>임시 영역의 변경사항 버리기</h2>
+<p>임시로 보관된 변경사항들을 지워버릴 때는 <code>drop</code> 명령을 사용할 수 있다.</p>
+<pre><code class="language-bash">git stash drop [stash_name]
+</code></pre>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

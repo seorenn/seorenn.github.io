@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-05T23:35:44.068014+09:00</updated>
+  <updated>2024-07-06T23:04:15.551638+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,33 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/git-disable-pager.html</id>
+    <title>Git에서 페이저 비활성화 하기</title>
+    <updated>2024-07-06T23:04:10.719958+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자.</p>
+<h2>페이저(Pager)</h2>
+<p>페이저(pager)란 less나 more 같은 CLI 도구로 터미널에서 로그나 변경사항을 볼 때 내용을 끊어서 볼 수 있게 해주거나 스크롤을 할 수 있게 해주는 등 긴 내용의 텍스트를 터미널에서 편하게 볼 수 있게 해주는 도구다.</p>
+<p>Git에서는 브랜치 목록이나 변경사항(diff) 등 여러 부분에서 기본적으로 페이저를 사용하도록 동작한다.</p>
+<h2>페이저 임시로 비활성화 하기</h2>
+<p>페이저는 편한 도구이지만 특정 상황, 예를 들어 다른 UNIX 유틸리티로 파이프를 통해 내용을 넘기려 할 때는 오히려 방해가 되는 요소다. 이런 경우는 페이저를 비활성화 하면 오히려 도움이 된다.</p>
+<p>페이저 비활성화는 <code>--no-pager</code>라는 옵션으로 간단히 할 수 있다. 예를 들어 코드 변경 사항을 페이저 없이 보는 커맨드는 아래와 같다.</p>
+<pre><code class="language-bash">git --no-pager diff
+</code></pre>
+<p>참고로 <code>--no-pager</code> 옵션은 위치에 따라 동작하지 않거나 없는 옵션이라고 하기도 하니 순서에 주의하자. 어쨌거나 필요한 커맨드 마다 매번 이 옵션을 입력하는 것은 번거롭기는 하다.</p>
+<h2>페이저 비활성화 설정하기</h2>
+<p>아예 페이저를 안 쓰겠다면 설정에서 비활성화 하는 방법이 있다.</p>
+<p>예를 들어 변경사항(diff) 커맨드에서 페이저를 비활성화 하고 싶다면 아래와 같이 설정할 수 있다.</p>
+<pre><code class="language-bash">git config --global pager.diff false
+</code></pre>
+<p>이 외에도 다양한 설정이 있으므로 필요한 부분은 찾아보자.</p>
+<p>다만 Git을 터미널에서 쓰는 경우가 잦다면 추천하기는 좀 힘든 설정 같다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/git-disable-pager.html"/>
+    <summary type="text">Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자.</summary>
+    <published>2024-07-06T23:04:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240705-00.html</id>
     <title>미국 임금 및 고용 지표는 정말 뭔가를 가리키는 듯</title>
@@ -2202,7 +2229,8 @@ html = md.convert(input)
 <p><strong>2024년 6월 9일</strong>: 수사 외압 의혹을 수사 중인 공수처가 해병대수사단의 초동 수사 기록을 국방부검찰단에 인계한 경북경찰청 관계자들에 대한 수사에 착수했다. (<a href="https://www.seoul.co.kr/news/society/law/2024/06/09/20240609500057" target="_blank">출처📎</a>)</p>
 <p><strong>2024년 6월 19일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank">출처📎</a>) 외압 의혹의 핵심 피의자인 유재은 국방부 법무관리관이 박정훈 전 해병대수사단장(대령)이 압수수색을 당한 날 대통령실 법률비서관실 행정관과도 통화했던 것으로 확인됐다. 윤석열 대통령과 대통령실 공직기강비서관실, 국가안보실에 이어 법률비서관실까지 채 상병 순직 사건에 관여한 것으로 의심되는 정황이다. (<a href="https://www.hani.co.kr/arti/society/society_general/1145590.html" target="_blank">출처📎</a>)</p>
 <p><strong>2024년 6월 26일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 신범철 당시 국방부 차관에게 통화한 기록이 2건 더 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6611609_36438.html" target="_blank">출처📎</a>)</p>
-<p><strong>2024년 7월 2일</strong>: 대통령실은 그 간의 수많은 외압 근거에도 불구하고 여전히 수사 외압 자체가 아닌 수사 이첩 지시를 어긴 항명 자체가 문제의 본질이라고 주장하고 있다. (<a href="https://www.hani.co.kr/arti/politics/politics_general/1147276.html" target="_blank">출처📎</a>) 신원식 국방장관은 대정부질문에서 "수사 외압 의혹은 박정훈 대령의 일방적 주장"이라 주장했다. (<a href="https://imnews.imbc.com/news/2024/politics/article/6613402_36431.html" target="_blank">출처📎</a>)</p></div>
+<p><strong>2024년 7월 2일</strong>: 대통령실은 그 간의 수많은 외압 근거에도 불구하고 여전히 수사 외압 자체가 아닌 수사 이첩 지시를 어긴 항명 자체가 문제의 본질이라고 주장하고 있다. (<a href="https://www.hani.co.kr/arti/politics/politics_general/1147276.html" target="_blank">출처📎</a>) 신원식 국방장관은 대정부질문에서 "수사 외압 의혹은 박정훈 대령의 일방적 주장"이라 주장했다. (<a href="https://imnews.imbc.com/news/2024/politics/article/6613402_36431.html" target="_blank">출처📎</a>)</p>
+<p><strong>2024년 7월 5일</strong>: 거부권으로 사라진 채상병 특검법이 더 강화되어 국회를 통과했다. 대통령은 또 억지 사유를 들어 거부권을 쓸 것으로 보인다. (<a href="https://imnews.imbc.com/replay/2024/nwtoday/article/6614233_36523.html" target="_blank">출처📎</a>)</p></div>
     </content>
     <link href="https://seorenn.github.io/article/dead-of-chae-corporal.html"/>
     <summary type="text">2023년 7월 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.</summary>
@@ -2342,46 +2370,5 @@ md.convertFile(input=input_path, output=output_path)
     <link href="https://seorenn.github.io/log/20240531-00.html"/>
     <summary type="text">오늘은 매 달 찾아오는 대명절 바로 미국 PCE가 발표되는 날이다.</summary>
     <published>2024-05-31T21:46:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/mozjpeg-usage.html</id>
-    <title>MozJPEG으로 JPEG 이미지 압축하기</title>
-    <updated>2024-05-31T20:42:43.990502+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>JPEG 이미지 압축 관련 도구 모음인 MozJPEG 사용 방법을 간단히 알아보자. 이 글은 macOS를 기준으로 정리되었다.</p>
-<h2>MozJPEG 설치하기</h2>
-<p>macOS에서는 역시나 Homebrew를 통해 MozJPEG을 쉽게 설치할 수 있다.</p>
-<pre><code class="language-bash">brew install mozjpeg
-</code></pre>
-<p>설치 후 mozjpeg 이라는 바이너리가 없어서 헤멜 수도 있는데, 실제로 설치되는 바이너리 이름은 <code>cjpeg</code>, <code>djpeg</code>, <code>jpegtran</code> 등등 다양하다.</p>
-<h2>기본 사용법</h2>
-<p>기본적으로 아래와 같은 사용 방법을 찾을 수 있다.</p>
-<pre><code class="language-bash">cjpeg -quality 75 input.jpg &gt; output.jpg
-</code></pre>
-<p>이렇게 실행하면 75% 압축률로 input.jpg 파일이 output.jpg로 압축이 잘 되...지는 않고 개인적으로는 아래와 같은 오류가 발생하며 비정상 종료되어 버렸다.</p>
-<pre><code>Unrecognized input file format --- perhaps you need -targa
-</code></pre>
-<p>cjpeg이 타입을 인식하지 못 하는 것으로 추정되는데 메시지와 같은 옵션을 추가해도 해결이 안 되었다.</p>
-<p>어쨌든 글 내용이 좀 이상해졌는데 이제 본론으로 들어가보자.</p>
-<h2>조금 복잡하지만 어쨌든 되는 방법</h2>
-<p>MozJPEG을 통해 같이 설치되는 <code>djpeg</code>을 이용하면 JPEG 이미지의 압축을 해제할 수 있으니 위처럼 파일 타입을 인식하지 못 하는 경우 이걸 같이 사용할 수 있다.</p>
-<pre><code class="language-bash">djpeg input.jpg | cjpeg -quality 75 &gt; output.jpg
-</code></pre>
-<p>이렇게 하면 input.jpg 파일을 75% 수준으로 압축된 output.jpg 파일을 얻을 수 있다.</p>
-<h2>프로그레시브 압축</h2>
-<p>조금 더 욕심을 내고자 한다면 아래처럼 프로그레시브하게 최적화를 거치는 방법도 있다.</p>
-<pre><code class="language-bash">djpeg input.jpg | cjpeg -quality 75 -progressive -optimize &gt; output.jpg
-</code></pre>
-<p>이 경우 압축 효율이 좀 더 좋아지며 점진적 로딩이 되는 프로그레시브 이미지를 얻을 수 있다. 물론 압축 효율이 높다는 말은 처리에 시간이 걸린다는 말이기에 많은 이미지를 한 번에 압축하기엔 좀 부담될 수도 있다.</p>
-<h2>사족</h2>
-<p>이 글에서는 손실(lossy) 압축을 하는 <code>cjpeg</code>이라는 도구를 다뤘는데, 만약 무손실 압축을 원한다면 <code>jpegtran</code>의 사용을 고려해보자. 옵션 등 사용 방법은 비슷하다. 단지, 애초에 JPEG 자체가 손실압축 포맷인데 무손실로 뭔가를 한다는 것이 어떤 의미가 있는지는 좀 생각해 볼 필요가 있을 것 같다.</p>
-<h2>관련된 글들</h2>
-<ul>
-<li><a href="../article/pngquant-usage.html">pngquant로 PNG 이미지 압축하기</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/mozjpeg-usage.html"/>
-    <summary type="text">JPEG 이미지 압축 관련 도구 모음인 MozJPEG 사용 방법을 간단히 알아보자.</summary>
-    <published>2024-05-31T20:26:00+09:00</published>
   </entry>
 </feed>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Git에서 페이저 비활성화 하기 - Seorenn</title>
+    <meta name="twitter:title" content="Git에서 페이저 비활성화 하기" />
+    <meta name="og:title" content="Git에서 페이저 비활성화 하기" />
+    <meta name="description" content="Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자." />
+    <meta name="twitter:description" content="Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자." />
+    <meta name="og:description" content="Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/git-disable-pager.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/git-disable-pager.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Git에서 페이저 비활성화 하기</h1>
+          <div class="title-date">
+            
+            
+              <span>2024년 07월 06일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자.</p>
+<h2>페이저(Pager)</h2>
+<p>페이저(pager)란 less나 more 같은 CLI 도구로 터미널에서 로그나 변경사항을 볼 때 내용을 끊어서 볼 수 있게 해주거나 스크롤을 할 수 있게 해주는 등 긴 내용의 텍스트를 터미널에서 편하게 볼 수 있게 해주는 도구다.</p>
+<p>Git에서는 브랜치 목록이나 변경사항(diff) 등 여러 부분에서 기본적으로 페이저를 사용하도록 동작한다.</p>
+<h2>페이저 임시로 비활성화 하기</h2>
+<p>페이저는 편한 도구이지만 특정 상황, 예를 들어 다른 UNIX 유틸리티로 파이프를 통해 내용을 넘기려 할 때는 오히려 방해가 되는 요소다. 이런 경우는 페이저를 비활성화 하면 오히려 도움이 된다.</p>
+<p>페이저 비활성화는 <code>--no-pager</code>라는 옵션으로 간단히 할 수 있다. 예를 들어 코드 변경 사항을 페이저 없이 보는 커맨드는 아래와 같다.</p>
+<pre><code class="language-bash">git --no-pager diff
+</code></pre>
+<p>참고로 <code>--no-pager</code> 옵션은 위치에 따라 동작하지 않거나 없는 옵션이라고 하기도 하니 순서에 주의하자. 어쨌거나 필요한 커맨드 마다 매번 이 옵션을 입력하는 것은 번거롭기는 하다.</p>
+<h2>페이저 비활성화 설정하기</h2>
+<p>아예 페이저를 안 쓰겠다면 설정에서 비활성화 하는 방법이 있다.</p>
+<p>예를 들어 변경사항(diff) 커맨드에서 페이저를 비활성화 하고 싶다면 아래와 같이 설정할 수 있다.</p>
+<pre><code class="language-bash">git config --global pager.diff false
+</code></pre>
+<p>이 외에도 다양한 설정이 있으므로 필요한 부분은 찾아보자.</p>
+<p>다만 Git을 터미널에서 쓰는 경우가 잦다면 추천하기는 좀 힘든 설정 같다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

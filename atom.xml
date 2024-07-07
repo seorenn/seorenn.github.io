@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-06T23:05:18.761141+09:00</updated>
+  <updated>2024-07-07T21:11:21.415000+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,50 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240707-00.html</id>
+    <title>한 주 간의 애플 소식들 24-07-07</title>
+    <updated>2024-07-07T21:11:10.622719+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발자 베타 릴리즈 소식들</h2>
+<ul>
+<li>macOS 14.6 beta 2</li>
+<li>iOS 17.6 beta 2</li>
+<li>iPadOS 17.6 beta 2</li>
+<li>visionOS 1.3 beta 2</li>
+<li>watchOS 10.6 beta 2</li>
+<li>tvOS 17.6 beta 2</li>
+</ul>
+<p>모두 개발자 베타 형식으로 공개되어 수일 후 공공 베타로 전환되었다. 이전 베타와의 차이점은 버그 수정 외에 알려진 내역이 없다. 애초에 이 버전대는 마이너 업데이트 버전 형식을 띠고 있지만 사실상 버그 픽스 업데이트로 평가되고 있다.</p>
+<h2>일반적인 소식들</h2>
+<p><strong>AI 관련 소식들</strong><br/>
+애플지능이 비전프로에도 언젠가 지원될 것 같다. 하지만 의외로 가장 유용할 것으로 보이는 홈팟에는 지원 가능성이 보이지 않는다. 사유로는 너무 적은 RAM이 꼽히는 듯하다. 그보다 더 성능 좋은 아이폰 14 이하 제품도 지원 안 되니 당연할 지도 모르겠다. 한편 물 건너 간 것으로 평가되던 구글과의 협업설이 다시 나오기 시작했다. 그리고 애플은 OpenAI 이사회 참관인(Observer) 자격을 얻었다고 한다. 애플지능 일부 기능의 유료화 가능성도 제기되고 있다. <a href="../log/20240611-00.html">WWDC24</a>를 통해 소개된 애플지능 기능은 일제히 가을에 보기는 힘들 것 같고 일부는 내년에야 볼 수 있을 것 같다.</p>
+<p><strong>구형이 된 제품들</strong><br/>
+애플은 아이폰 X, 1세대 홈팟, 1세대 에어팟을 소위 '빈티지'로 분류했다. 빈티지의 경우 수리나 소프트웨어 지원이 끊기는 것은 아니지만 보통 2년 후에는 '구식' 제품으로 분류되어 공식 지원이 끝나게 된다.</p>
+<p><strong>NFC 확장 가능?</strong><br/>
+애플도 회원으로 있는 NFC 포럼에서는 여러 기능의 확장에 대해 의견이 오가고 있는 모양이다. 아직 애플은 아이폰이나 애플워치의 NFC를 개방하지도 않고 그래서 굉장히 제한적인 기능만 사용할 수 있는데, 유럽에서의 NFC 개방 움직임과 함께 이런 기능의 확장이 도입된다면 당연히 좋을 것이다. 애플도 회원사인 만큼 표준화가 된다면 애플도 이에 동의했다는 의미일 테고 말이다.</p>
+<p><strong>EU 파편화?</strong><br/>
+EU 내에서 visionOS 1.2부터 대체 결제 옵션을 사용할 수 있다고 한다. 다른 OS들은 이미 지원하고 있었고 visionOS가 좀 늦었을 뿐이었다. 외부 결제를 쓸 수 있다 하더라도 애플 측에 수수료를 내야 하는 것은 여전히 특이하긴 하다. 하여간 유럽은 뭔가가 많이 다르다.</p>
+<p><strong>macOS 15 Sequoia, iOS 18, iPadOS 18</strong><br/>
+macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재생을 위한 용도 같다. iOS 18의 날씨 앱도 조금씩 개선되는 듯하다. iPadOS 18에서는 이모티콘 입력이 개선된다.</p>
+<p><strong>수리용이성</strong><br/>
+뉴욕에서 수리권 준수 점검으로 애플의 제품 3개가 검사되었는데, 의외로 수리용이성에서 아이폰 15는 A 등급을 받았다. M3 맥북프로는 C 등급, 비전프로는 최악의 F 등급을 받았다. 다만 비전프로의 경우는 아직 수리 매뉴얼이나 부품 등을 구할 수 없다는 점이 최하 등급 받게 만든 이유인 듯하다.</p>
+<p><strong>뒤끝이 긴 애플?</strong><br/>
+에픽이 유럽 지역에서 자체 앱스토어를 통해 게임 업데이트를 제출했다는 소식이 얼마 전 전해졌었는데, 이제는 애플이 이를 고의로 지연시켰다고 에픽이 애플을 비난하는 소식이 알려졌다. 다만 현재 애플은 에픽의 대체 앱스토어 및 앱을 승인했다.</p>
+<h2>각종 루머 소식들</h2>
+<ul>
+<li>비전프로의 염가판에는 당연하겠지만 크기가 크고 (즉 집적도가 낮고) 낮은 해상도의 디스플레이가 지원될 것 같다.</li>
+<li>아이폰 16 프로의 디스플레이는 밝기와 수명 개선을 위해 삼성의 M14 OLED 패널을 채택할 것으로 보인다. 카메라에는 5배 광학 줌이 지원될 것으로 보인다.</li>
+<li>아이폰 16 시리즈의 카메라 센서 공급망 개편에 관한 루머가 나왔다. 소문으론 삼성전자의 부품이 추가되지 않을까 예상되는 듯하다.</li>
+<li>일부에서 M4를 탑재한 일명 애플 TV 프로 제품을 출시해야 한다고 주장하는 듯하다. 일종의 게임 콘솔을 겸해서다.</li>
+<li>M5는 칩을 3차원으로 쌓는 TSMC의 SoIC 기술을 사용할 것으로 보인다.</li>
+<li>신형 아이패드로 유추되는 기기 식별자 4종이 발견되었다고 한다.</li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240707-00.html"/>
+    <summary type="text">개발자 베타 릴리즈, 각종 루머 등 한 주 간의 애플 소식 모음</summary>
+    <published>2024-07-07T21:10:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/git-disable-pager.html</id>
     <title>Git에서 페이저 비활성화 하기</title>
@@ -2351,24 +2395,5 @@ md.convertFile(input=input_path, output=output_path)
     <link href="https://seorenn.github.io/article/bank-nim-nis.html"/>
     <summary type="text">간혹 경제지 기사를 읽다 보면 은행과 관련된 기사에서 NIM이나 NIS라는 단어를 볼 수 있는데 도대체 무슨 의미일까?</summary>
     <published>2024-06-01T21:49:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240531-00.html</id>
-    <title>미국의 4월 PCE는 예상대로</title>
-    <updated>2024-05-31T21:46:16.530380+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>오늘은 매 달 찾아오는 대명절 바로 미국 PCE가 발표되는 날이다. 다짜고짜 정리하자면 이렇다:</p>
-<ul>
-<li>미국 4월 헤드라인 PCE MoM 0.3% 예상 부합</li>
-<li>미국 4월 헤드라인 PCE YoY 2.7% 예상 부합</li>
-<li>미국 4월 근원 PCE MoM 0.2% (-0.1%) 예상치 하회</li>
-<li>미국 4월 근원 PCE YoY 2.8% 예상 부합</li>
-</ul>
-<p>참고로 근원 PCE의 MoM 수치가 예상치를 하회한 것처럼 보이는데, 실제로는 0.249%라서 이를 반올림해서 0.2%라는 닉 티미라오스의 알림이 있었다. 즉 예상치 하회라고 보기엔 무리고 부합 정도로 보는 게 맞을 것 같다는 말이다.</p>
-<p>어쨌든 예상대로 나왔다면 크게 나쁠 건 없을 거다. 지난 주부터 주식 시장은 눈치게임이 시작되며 옆으로 기어갔는데 드디어 옆으로 기어가기의 결승선이 나타난 셈이다. 과연 누가 1등일까?</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240531-00.html"/>
-    <summary type="text">오늘은 매 달 찾아오는 대명절 바로 미국 PCE가 발표되는 날이다.</summary>
-    <published>2024-05-31T21:46:00+09:00</published>
   </entry>
 </feed>

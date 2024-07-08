@@ -13,7 +13,103 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sun, 07 Jul 2024 21:19:23 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jul 2024 14:42:42 +0900</lastBuildDate>
+    <item>
+      <title>Emacs Lisp에서 비동기 호출 코드 작성하기</title>
+      <link>https://seorenn.github.io/article/emacs-lisp-async-call.html</link>
+      <description>&lt;p&gt;그렇게 자주 있는 일은 아니겠지만 이맥스의 UI를 얼려버릴 만큼 무거운 코드를 돌려야 할 일이 있다면 느낌이 어떨까. 이맥스가 얼어버리는 현상은 결코 유쾌하지는 못 할 것이다. 그동안 다른 작업도 못 하고 말이다.&lt;/p&gt;
+&lt;p&gt;그렇다면 비동기로 호출하면 이런 문제를 해결할 수 있지 않을까? 간단하게 이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.&lt;/p&gt;
+&lt;h2&gt;run-with-idle-timer&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(run-with-idle-timer 3 nil #'my-function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;run-with-idle-timer&lt;/code&gt; 함수는 지정된 시간이 지난 후 이맥스가 쉬는(idle) 도중에 지정한 함수를 비동기로 호출한다.&lt;/p&gt;
+&lt;p&gt;두 번째 인자는 반복 여부라 원하는 반복 횟수를 적어줄 수도 있다.&lt;/p&gt;
+&lt;h2&gt;run-with-timer&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(run-with-timer 3 nil #'my-function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;run-with-timer&lt;/code&gt; 함수도 지정된 시간이 지난 후 지정한 함수를 비동기로 호출한다. 다만 이맥스가 쉬든 말든 무작정 호출하는 듯하다.&lt;/p&gt;
+&lt;p&gt;역시나 두 번째 인자로 반복 횟수를 지정할 수 있다.&lt;/p&gt;
+&lt;h2&gt;async.el&lt;/h2&gt;
+&lt;p&gt;순수하게 비동기 호출만을 생각하고 외부 패키지에 대해 열려있다면(?) async.el 혹은 emacs-async라는 패키지를 사용할 수도 있다. 이 패키지 내의 &lt;code&gt;async-start&lt;/code&gt; 함수를 이용할 수 있다고 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;참고로 이 항목은 직접 돌려보진 않았고 그저 메모 목적으로 작성한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(async-start
+  (lambda () (my-function)) 
+  ;; callback
+  (lambda (result) 
+    (message &amp;quot;Result: %s&amp;quot; result)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 &lt;code&gt;async-start&lt;/code&gt; 함수는 두 개의 함수를 인자로 넘긴다. 첫 인자가 비동기로 호출할 함수이고 두 번째 인자는 비동기 실행 결과를 받아서 동작하는 함수다. 즉 위의 예의 경우 my-function이라는 함수가 비동기로 호출된 후 이 함수의 결과가 두 번째 인자의 함수에 첫 인자로 전달된다.&lt;/p&gt;
+&lt;p&gt;만약 결과를 받을 필요가 없다면 무시(ignore) 심볼을 남겨주자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(async-start
+  (lambda () (my-function)) 
+  'ignore)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;쉴 시간 주기&lt;/h2&gt;
+&lt;p&gt;이 항목은 비동기 처리 자체와는 관계가 없지만 약간의 덤이다. &lt;/p&gt;
+&lt;p&gt;단순 비동기 호출이라도 과도한 작업은 당연하게도 이맥스를 얼려버리는 현상이 나타날 수밖에 없다. 이를 피하기 위해선 비동기 코드의 루프에서 쉴 시간을 조금씩 주는 편이 좋다. 예를 들자면 &lt;code&gt;sleep-for&lt;/code&gt; 함수가 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(sleep-for 1)  ;; wait for 1 seconds
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;쉬게만 한다면 위의 코드로도 충분하겠지만 좀 더 깔끔하게(?) 쉬려면 &lt;code&gt;sit-for&lt;/code&gt;를 사용하는 편이 좋다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(sit-for 1)  ;; redisplay and wait for 1 seconds
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;sit-for&lt;/code&gt;는 &lt;code&gt;sleep-for&lt;/code&gt;와 비슷하지만 화면을 한번 갱신시켜 준다는 점이 특징이다.  그 외에 입력이 가능하게 되면 멈추는 등 비동기 작업 용도로는 &lt;code&gt;sleep-for&lt;/code&gt;에 비해 약간읜 전문적(?)인 느낌이다.&lt;/p&gt;
+&lt;p&gt;참고로 쉬는 시간은 초(seconds) 단위인데 소수점 단위도 된다. 즉 0.1초나 0.01초 정도로 짧게 쉬는 것도 가능하다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/jwiegley/emacs-async" target="_blank"&gt;emacs-async📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-sharp-quote-sign.md.html"&gt;Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;그렇게 자주 있는 일은 아니겠지만 이맥스의 UI를 얼려버릴 만큼 무거운 코드를 돌려야 할 일이 있다면 느낌이 어떨까. 이맥스가 얼어버리는 현상은 결코 유쾌하지는 못 할 것이다. 그동안 다른 작업도 못 하고 말이다.&lt;/p&gt;
+&lt;p&gt;그렇다면 비동기로 호출하면 이런 문제를 해결할 수 있지 않을까? 간단하게 이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.&lt;/p&gt;
+&lt;h2&gt;run-with-idle-timer&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(run-with-idle-timer 3 nil #'my-function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;run-with-idle-timer&lt;/code&gt; 함수는 지정된 시간이 지난 후 이맥스가 쉬는(idle) 도중에 지정한 함수를 비동기로 호출한다.&lt;/p&gt;
+&lt;p&gt;두 번째 인자는 반복 여부라 원하는 반복 횟수를 적어줄 수도 있다.&lt;/p&gt;
+&lt;h2&gt;run-with-timer&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(run-with-timer 3 nil #'my-function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;run-with-timer&lt;/code&gt; 함수도 지정된 시간이 지난 후 지정한 함수를 비동기로 호출한다. 다만 이맥스가 쉬든 말든 무작정 호출하는 듯하다.&lt;/p&gt;
+&lt;p&gt;역시나 두 번째 인자로 반복 횟수를 지정할 수 있다.&lt;/p&gt;
+&lt;h2&gt;async.el&lt;/h2&gt;
+&lt;p&gt;순수하게 비동기 호출만을 생각하고 외부 패키지에 대해 열려있다면(?) async.el 혹은 emacs-async라는 패키지를 사용할 수도 있다. 이 패키지 내의 &lt;code&gt;async-start&lt;/code&gt; 함수를 이용할 수 있다고 한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;참고로 이 항목은 직접 돌려보진 않았고 그저 메모 목적으로 작성한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(async-start
+  (lambda () (my-function)) 
+  ;; callback
+  (lambda (result) 
+    (message &amp;quot;Result: %s&amp;quot; result)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 &lt;code&gt;async-start&lt;/code&gt; 함수는 두 개의 함수를 인자로 넘긴다. 첫 인자가 비동기로 호출할 함수이고 두 번째 인자는 비동기 실행 결과를 받아서 동작하는 함수다. 즉 위의 예의 경우 my-function이라는 함수가 비동기로 호출된 후 이 함수의 결과가 두 번째 인자의 함수에 첫 인자로 전달된다.&lt;/p&gt;
+&lt;p&gt;만약 결과를 받을 필요가 없다면 무시(ignore) 심볼을 남겨주자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(async-start
+  (lambda () (my-function)) 
+  'ignore)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;쉴 시간 주기&lt;/h2&gt;
+&lt;p&gt;이 항목은 비동기 처리 자체와는 관계가 없지만 약간의 덤이다. &lt;/p&gt;
+&lt;p&gt;단순 비동기 호출이라도 과도한 작업은 당연하게도 이맥스를 얼려버리는 현상이 나타날 수밖에 없다. 이를 피하기 위해선 비동기 코드의 루프에서 쉴 시간을 조금씩 주는 편이 좋다. 예를 들자면 &lt;code&gt;sleep-for&lt;/code&gt; 함수가 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(sleep-for 1)  ;; wait for 1 seconds
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;쉬게만 한다면 위의 코드로도 충분하겠지만 좀 더 깔끔하게(?) 쉬려면 &lt;code&gt;sit-for&lt;/code&gt;를 사용하는 편이 좋다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-lisp"&gt;(sit-for 1)  ;; redisplay and wait for 1 seconds
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;sit-for&lt;/code&gt;는 &lt;code&gt;sleep-for&lt;/code&gt;와 비슷하지만 화면을 한번 갱신시켜 준다는 점이 특징이다.  그 외에 입력이 가능하게 되면 멈추는 등 비동기 작업 용도로는 &lt;code&gt;sleep-for&lt;/code&gt;에 비해 약간읜 전문적(?)인 느낌이다.&lt;/p&gt;
+&lt;p&gt;참고로 쉬는 시간은 초(seconds) 단위인데 소수점 단위도 된다. 즉 0.1초나 0.01초 정도로 짧게 쉬는 것도 가능하다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/jwiegley/emacs-async" target="_blank"&gt;emacs-async📎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/emacs-lisp-sharp-quote-sign.md.html"&gt;Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-async-call.html</guid>
+      <pubDate>Mon, 08 Jul 2024 14:41:00 +0900</pubDate>
+    </item>
     <item>
       <title>한 주 간의 애플 소식들 24-07-07</title>
       <link>https://seorenn.github.io/log/20240707-00.html</link>
@@ -4053,36 +4149,6 @@ md.convertFile(input=input_path, output=output_path)
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/python-markdown.html</guid>
       <pubDate>Sun, 02 Jun 2024 17:23:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>은행과 NIM과 NIS</title>
-      <link>https://seorenn.github.io/article/bank-nim-nis.html</link>
-      <description>&lt;p&gt;간혹 경제지 기사를 읽다 보면 은행과 관련된 기사에서 NIM이나 NIS라는 단어를 볼 수 있는데 도대체 무슨 의미일까? '님'이니 '니스'니 뭐 말 장난 하는 것 같기도 하고 말이다. 그래서 대충 찾아보고 적당히 정리해 본다.&lt;/p&gt;
-&lt;h2&gt;NIM&lt;/h2&gt;
-&lt;p&gt;NIM(Net Interest Margin)은 '순이자마진' 인데 간단히 설명하자면 '이자 장사로 남긴 순수익'이라고 해도 될 것 같다. 좀 딱딱하게 설명하자면 '은행이 자산을 운용해 얻은 수익에서 조달 비용을 뺀 나머지를 운용자산 총액으로 나눈 값'이다.&lt;/p&gt;
-&lt;h2&gt;NIS&lt;/h2&gt;
-&lt;p&gt;NIS(Net Interest Spread)는 '예대금리차' 즉 대출금리에서 예금금리를 뺀 값으로 볼 수 있다. 이 값은 NIM을 결정하는 중요한 값이기도 하다.&lt;/p&gt;
-&lt;h2&gt;의외로 쉬운 용어였다&lt;/h2&gt;
-&lt;p&gt;이 글을 쓰게 된 건 어떤 증권사 리포트의 한 문구는 이래서여다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;경쟁은행들과 달리 이자 이익이 높아진 이유는 NIM 상승 때문이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;결과적으로 NIM과 NIS는 '은행이 이자 장사를 얼마나 잘 하나, 잘 할 수 있나'를 나타내는 지표일 뿐이었다.&lt;/p&gt;
-&lt;p&gt;왜 쉬운 한국어 한글 놔두고 영문축약어를 쓰냐고 비판할 수는 있겠지만 그건 사람이나 의도에 따라 좀 다르게 판단할 수도 있는 문제라 여기서는 언급하진 않는다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;간혹 경제지 기사를 읽다 보면 은행과 관련된 기사에서 NIM이나 NIS라는 단어를 볼 수 있는데 도대체 무슨 의미일까? '님'이니 '니스'니 뭐 말 장난 하는 것 같기도 하고 말이다. 그래서 대충 찾아보고 적당히 정리해 본다.&lt;/p&gt;
-&lt;h2&gt;NIM&lt;/h2&gt;
-&lt;p&gt;NIM(Net Interest Margin)은 '순이자마진' 인데 간단히 설명하자면 '이자 장사로 남긴 순수익'이라고 해도 될 것 같다. 좀 딱딱하게 설명하자면 '은행이 자산을 운용해 얻은 수익에서 조달 비용을 뺀 나머지를 운용자산 총액으로 나눈 값'이다.&lt;/p&gt;
-&lt;h2&gt;NIS&lt;/h2&gt;
-&lt;p&gt;NIS(Net Interest Spread)는 '예대금리차' 즉 대출금리에서 예금금리를 뺀 값으로 볼 수 있다. 이 값은 NIM을 결정하는 중요한 값이기도 하다.&lt;/p&gt;
-&lt;h2&gt;의외로 쉬운 용어였다&lt;/h2&gt;
-&lt;p&gt;이 글을 쓰게 된 건 어떤 증권사 리포트의 한 문구는 이래서여다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;경쟁은행들과 달리 이자 이익이 높아진 이유는 NIM 상승 때문이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;결과적으로 NIM과 NIS는 '은행이 이자 장사를 얼마나 잘 하나, 잘 할 수 있나'를 나타내는 지표일 뿐이었다.&lt;/p&gt;
-&lt;p&gt;왜 쉬운 한국어 한글 놔두고 영문축약어를 쓰냐고 비판할 수는 있겠지만 그건 사람이나 의도에 따라 좀 다르게 판단할 수도 있는 문제라 여기서는 언급하진 않는다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/bank-nim-nis.html</guid>
-      <pubDate>Sat, 01 Jun 2024 21:49:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

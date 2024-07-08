@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Emacs Lisp에서 비동기 호출 코드 작성하기 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs Lisp에서 비동기 호출 코드 작성하기" />
+    <meta name="og:title" content="Emacs Lisp에서 비동기 호출 코드 작성하기" />
+    <meta name="description" content="이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자." />
+    <meta name="twitter:description" content="이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자." />
+    <meta name="og:description" content="이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-lisp-async-call.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-lisp-async-call.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Emacs Lisp에서 비동기 호출 코드 작성하기</h1>
+          <div class="title-date">
+            
+            
+              <span>2024년 07월 08일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>그렇게 자주 있는 일은 아니겠지만 이맥스의 UI를 얼려버릴 만큼 무거운 코드를 돌려야 할 일이 있다면 느낌이 어떨까. 이맥스가 얼어버리는 현상은 결코 유쾌하지는 못 할 것이다. 그동안 다른 작업도 못 하고 말이다.</p>
+<p>그렇다면 비동기로 호출하면 이런 문제를 해결할 수 있지 않을까? 간단하게 이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.</p>
+<h2>run-with-idle-timer</h2>
+<pre><code class="language-lisp">(run-with-idle-timer 3 nil #'my-function)
+</code></pre>
+<p><code>run-with-idle-timer</code> 함수는 지정된 시간이 지난 후 이맥스가 쉬는(idle) 도중에 지정한 함수를 비동기로 호출한다.</p>
+<p>두 번째 인자는 반복 여부라 원하는 반복 횟수를 적어줄 수도 있다.</p>
+<h2>run-with-timer</h2>
+<pre><code class="language-lisp">(run-with-timer 3 nil #'my-function)
+</code></pre>
+<p><code>run-with-timer</code> 함수도 지정된 시간이 지난 후 지정한 함수를 비동기로 호출한다. 다만 이맥스가 쉬든 말든 무작정 호출하는 듯하다.</p>
+<p>역시나 두 번째 인자로 반복 횟수를 지정할 수 있다.</p>
+<h2>async.el</h2>
+<p>순수하게 비동기 호출만을 생각하고 외부 패키지에 대해 열려있다면(?) async.el 혹은 emacs-async라는 패키지를 사용할 수도 있다. 이 패키지 내의 <code>async-start</code> 함수를 이용할 수 있다고 한다.</p>
+<blockquote>
+<p>참고로 이 항목은 직접 돌려보진 않았고 그저 메모 목적으로 작성한다.</p>
+</blockquote>
+<pre><code class="language-lisp">(async-start
+  (lambda () (my-function)) 
+  ;; callback
+  (lambda (result) 
+    (message &quot;Result: %s&quot; result)))
+</code></pre>
+<p>이 <code>async-start</code> 함수는 두 개의 함수를 인자로 넘긴다. 첫 인자가 비동기로 호출할 함수이고 두 번째 인자는 비동기 실행 결과를 받아서 동작하는 함수다. 즉 위의 예의 경우 my-function이라는 함수가 비동기로 호출된 후 이 함수의 결과가 두 번째 인자의 함수에 첫 인자로 전달된다.</p>
+<p>만약 결과를 받을 필요가 없다면 무시(ignore) 심볼을 남겨주자.</p>
+<pre><code class="language-lisp">(async-start
+  (lambda () (my-function)) 
+  'ignore)
+</code></pre>
+<h2>쉴 시간 주기</h2>
+<p>이 항목은 비동기 처리 자체와는 관계가 없지만 약간의 덤이다. </p>
+<p>단순 비동기 호출이라도 과도한 작업은 당연하게도 이맥스를 얼려버리는 현상이 나타날 수밖에 없다. 이를 피하기 위해선 비동기 코드의 루프에서 쉴 시간을 조금씩 주는 편이 좋다. 예를 들자면 <code>sleep-for</code> 함수가 있다.</p>
+<pre><code class="language-lisp">(sleep-for 1)  ;; wait for 1 seconds
+</code></pre>
+<p>쉬게만 한다면 위의 코드로도 충분하겠지만 좀 더 깔끔하게(?) 쉬려면 <code>sit-for</code>를 사용하는 편이 좋다.</p>
+<pre><code class="language-lisp">(sit-for 1)  ;; redisplay and wait for 1 seconds
+</code></pre>
+<p><code>sit-for</code>는 <code>sleep-for</code>와 비슷하지만 화면을 한번 갱신시켜 준다는 점이 특징이다.  그 외에 입력이 가능하게 되면 멈추는 등 비동기 작업 용도로는 <code>sleep-for</code>에 비해 약간읜 전문적(?)인 느낌이다.</p>
+<p>참고로 쉬는 시간은 초(seconds) 단위인데 소수점 단위도 된다. 즉 0.1초나 0.01초 정도로 짧게 쉬는 것도 가능하다.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="https://github.com/jwiegley/emacs-async" target="_blank">emacs-async📎</a></li>
+<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
+<li><a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a></li>
+</ul>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

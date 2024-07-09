@@ -13,7 +13,129 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 08 Jul 2024 14:42:42 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jul 2024 23:40:33 +0900</lastBuildDate>
+    <item>
+      <title>Poetry 소개 및 간단한 사용법 정리</title>
+      <link>https://seorenn.github.io/article/python-poetry.html</link>
+      <description>&lt;p&gt;Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.&lt;/p&gt;
+&lt;h2&gt;프로젝트 시작하기&lt;/h2&gt;
+&lt;p&gt;Poetry는 당연하겠지만 프로젝트 단위로 사용할 수 있다. 그래서 사용하기 위해선 아래와 같이 &lt;code&gt;new&lt;/code&gt; 커맨드로 프로젝트를 생성해야 한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry new PROJECT_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 하면 몇몇 확인 단계를 거쳐 새로운 파이썬 프로젝트를 생성할 수 있다.&lt;/p&gt;
+&lt;p&gt;만약 이미 존재하는 프로젝트에 Poetry 환경만 구성하고 싶다면 아래와 같이 &lt;code&gt;init&lt;/code&gt; 커맨드를 사용해 보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 두 커맨드 모두 핵심으로 프로젝트 루트에 &lt;code&gt;pyproject.toml&lt;/code&gt;이라는 파일을 생성한다. 이름대로 프로젝트 정의 및 의존성 목록을 담은 중요한 파일이다.&lt;/p&gt;
+&lt;h2&gt;의존성 관리하기&lt;/h2&gt;
+&lt;p&gt;프로젝트에 의존성을 추가하려면 아래와 같이 &lt;code&gt;add&lt;/code&gt; 커맨드를 사용하면 된다. 여기에 특정 버전을 명시할 수도 있고, 개발 모드 전용 의존성일 경우 &lt;code&gt;--dev&lt;/code&gt; 플래그도 추가해 줄 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry add PACKAGE_NAME
+poetry add ANOTHER_PACKAGE_NAME==x.y.z
+poetry add --dev PACKAGE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 명령들은 프로젝트의 virtualenv 환경에 자동으로 설치까지 진행된다.&lt;/p&gt;
+&lt;p&gt;의존성 패키지를 삭제하려면 &lt;code&gt;remove&lt;/code&gt; 커맨드를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;poetry remove PACKAGE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 외에 사용하는 의존성 패키지들의 버전을 일괄적으로 업데이트 하려면 &lt;code&gt;update&lt;/code&gt; 커맨드를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;물론 &lt;code&gt;pyproject.toml&lt;/code&gt; 스펙에 적힌 한도 내에서 최신 버전으로 업데이트 된다.&lt;/p&gt;
+&lt;h2&gt;수작업으로 의존성 관리하기&lt;/h2&gt;
+&lt;p&gt;CLI 커맨드 보다 수작업을 좋아한다면 &lt;code&gt;pyproject.toml&lt;/code&gt; 파일을 열어서 직접 명시해 주는 방법도 있다. 예를 들자면 이런 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-text"&gt;[tool.poetry.dependencies]
+python = &amp;quot;^3.8&amp;quot;
+somepackage = &amp;quot;^3.10.0&amp;quot;
+
+[tool.poetry.dev-dependencies]
+pytest = &amp;quot;^5.2&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;버전 앞에 붙인 꺽쇠(&lt;code&gt;^&lt;/code&gt;)의 의미는 '메이저 업데이트를 제외한 최신 버전' 이라는 의미이다. 즉 &lt;code&gt;^3.10.0&lt;/code&gt;이라는 의미는 &lt;code&gt;3.x.y&lt;/code&gt; 버전 중 가장 최신 버전을 사용한다는 의미다.&lt;/p&gt;
+&lt;p&gt;이렇게 작성한 후 &lt;code&gt;install&lt;/code&gt; 커맨드를 사용하면 프로젝트의 virtualenv 환경에 일괄 패키지 설치가 가능하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;poetry install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 커맨드를 보고 &lt;code&gt;pip install -r requirements.txt&lt;/code&gt;라는 커맨드가 떠오른다면 정답이다. 즉 이 커맨드를 &lt;code&gt;poetry install&lt;/code&gt; 커맨드로 완전히 대체할 수 있다.&lt;/p&gt;
+&lt;h2&gt;프로젝트 실행하기&lt;/h2&gt;
+&lt;p&gt;프로젝트를 실행시키기 위해서는 &lt;code&gt;run&lt;/code&gt; 커맨드를 사용하면 된다. 예를 들어 실행시킬 엔트리포인트 파일이 &lt;code&gt;main.py&lt;/code&gt;라면 아래와 같은 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python main.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 경우 해당 프로젝트의 virtualenv 환경에서 &lt;code&gt;run&lt;/code&gt; 뒤의 커맨드가 실행되는 식이다.&lt;/p&gt;
+&lt;h2&gt;virtualenv 셸 얻기&lt;/h2&gt;
+&lt;p&gt;프로젝트의 virtualenv 환경에서 여러 가지를 시험해 보기 위해 셸을 얻고 싶다면 단순하게 &lt;code&gt;shell&lt;/code&gt; 커맨드를 사용하면 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Docker와 Poetry&lt;/h2&gt;
+&lt;p&gt;Poetry의 특징은 virtualenv 환경을 자동으로 통합하는 것이다. 그리고 Docker 컨테이너는 프로젝트 단위로 독립된 환경을 구축하려는 의도가 있다. 결과적으로 해당 프로젝트를 Docker 컨테이너 내에서 돌린다면 Poetry의 virtualenv 환경 통합 기능은 불필요할 수도 있다.&lt;/p&gt;
+&lt;p&gt;그럴 때는 간단하게 아래 커맨드로 virtualenv 환경을 생성하지 않도록 설정해 줄 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry config virtualenvs.create false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 커맨드는 Poetry의 virtualenv를 비활성화 시키므로 &lt;code&gt;Dockerfile&lt;/code&gt; 등에 &lt;code&gt;poetry install&lt;/code&gt; 커맨드를 실행하기 전에 동작하도록 작성하면 될 것 같다.&lt;/p&gt;
+&lt;h2&gt;기타&lt;/h2&gt;
+&lt;p&gt;Poetry 자체를 업그레이드 하려면 &lt;code&gt;self update&lt;/code&gt; 커맨드를 사용해 보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;poetry self update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;다만 Homebrew 등의 다른 패키지 매니저를 통해 Poetry를 설치했다면 위 커맨드를 신경 쓸 필요는 없을 것 같다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.&lt;/p&gt;
+&lt;h2&gt;프로젝트 시작하기&lt;/h2&gt;
+&lt;p&gt;Poetry는 당연하겠지만 프로젝트 단위로 사용할 수 있다. 그래서 사용하기 위해선 아래와 같이 &lt;code&gt;new&lt;/code&gt; 커맨드로 프로젝트를 생성해야 한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry new PROJECT_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 하면 몇몇 확인 단계를 거쳐 새로운 파이썬 프로젝트를 생성할 수 있다.&lt;/p&gt;
+&lt;p&gt;만약 이미 존재하는 프로젝트에 Poetry 환경만 구성하고 싶다면 아래와 같이 &lt;code&gt;init&lt;/code&gt; 커맨드를 사용해 보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 두 커맨드 모두 핵심으로 프로젝트 루트에 &lt;code&gt;pyproject.toml&lt;/code&gt;이라는 파일을 생성한다. 이름대로 프로젝트 정의 및 의존성 목록을 담은 중요한 파일이다.&lt;/p&gt;
+&lt;h2&gt;의존성 관리하기&lt;/h2&gt;
+&lt;p&gt;프로젝트에 의존성을 추가하려면 아래와 같이 &lt;code&gt;add&lt;/code&gt; 커맨드를 사용하면 된다. 여기에 특정 버전을 명시할 수도 있고, 개발 모드 전용 의존성일 경우 &lt;code&gt;--dev&lt;/code&gt; 플래그도 추가해 줄 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry add PACKAGE_NAME
+poetry add ANOTHER_PACKAGE_NAME==x.y.z
+poetry add --dev PACKAGE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 명령들은 프로젝트의 virtualenv 환경에 자동으로 설치까지 진행된다.&lt;/p&gt;
+&lt;p&gt;의존성 패키지를 삭제하려면 &lt;code&gt;remove&lt;/code&gt; 커맨드를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;poetry remove PACKAGE_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 외에 사용하는 의존성 패키지들의 버전을 일괄적으로 업데이트 하려면 &lt;code&gt;update&lt;/code&gt; 커맨드를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;물론 &lt;code&gt;pyproject.toml&lt;/code&gt; 스펙에 적힌 한도 내에서 최신 버전으로 업데이트 된다.&lt;/p&gt;
+&lt;h2&gt;수작업으로 의존성 관리하기&lt;/h2&gt;
+&lt;p&gt;CLI 커맨드 보다 수작업을 좋아한다면 &lt;code&gt;pyproject.toml&lt;/code&gt; 파일을 열어서 직접 명시해 주는 방법도 있다. 예를 들자면 이런 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-text"&gt;[tool.poetry.dependencies]
+python = &amp;quot;^3.8&amp;quot;
+somepackage = &amp;quot;^3.10.0&amp;quot;
+
+[tool.poetry.dev-dependencies]
+pytest = &amp;quot;^5.2&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;버전 앞에 붙인 꺽쇠(&lt;code&gt;^&lt;/code&gt;)의 의미는 '메이저 업데이트를 제외한 최신 버전' 이라는 의미이다. 즉 &lt;code&gt;^3.10.0&lt;/code&gt;이라는 의미는 &lt;code&gt;3.x.y&lt;/code&gt; 버전 중 가장 최신 버전을 사용한다는 의미다.&lt;/p&gt;
+&lt;p&gt;이렇게 작성한 후 &lt;code&gt;install&lt;/code&gt; 커맨드를 사용하면 프로젝트의 virtualenv 환경에 일괄 패키지 설치가 가능하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;poetry install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 커맨드를 보고 &lt;code&gt;pip install -r requirements.txt&lt;/code&gt;라는 커맨드가 떠오른다면 정답이다. 즉 이 커맨드를 &lt;code&gt;poetry install&lt;/code&gt; 커맨드로 완전히 대체할 수 있다.&lt;/p&gt;
+&lt;h2&gt;프로젝트 실행하기&lt;/h2&gt;
+&lt;p&gt;프로젝트를 실행시키기 위해서는 &lt;code&gt;run&lt;/code&gt; 커맨드를 사용하면 된다. 예를 들어 실행시킬 엔트리포인트 파일이 &lt;code&gt;main.py&lt;/code&gt;라면 아래와 같은 식이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry run python main.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 경우 해당 프로젝트의 virtualenv 환경에서 &lt;code&gt;run&lt;/code&gt; 뒤의 커맨드가 실행되는 식이다.&lt;/p&gt;
+&lt;h2&gt;virtualenv 셸 얻기&lt;/h2&gt;
+&lt;p&gt;프로젝트의 virtualenv 환경에서 여러 가지를 시험해 보기 위해 셸을 얻고 싶다면 단순하게 &lt;code&gt;shell&lt;/code&gt; 커맨드를 사용하면 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry shell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Docker와 Poetry&lt;/h2&gt;
+&lt;p&gt;Poetry의 특징은 virtualenv 환경을 자동으로 통합하는 것이다. 그리고 Docker 컨테이너는 프로젝트 단위로 독립된 환경을 구축하려는 의도가 있다. 결과적으로 해당 프로젝트를 Docker 컨테이너 내에서 돌린다면 Poetry의 virtualenv 환경 통합 기능은 불필요할 수도 있다.&lt;/p&gt;
+&lt;p&gt;그럴 때는 간단하게 아래 커맨드로 virtualenv 환경을 생성하지 않도록 설정해 줄 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;poetry config virtualenvs.create false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 커맨드는 Poetry의 virtualenv를 비활성화 시키므로 &lt;code&gt;Dockerfile&lt;/code&gt; 등에 &lt;code&gt;poetry install&lt;/code&gt; 커맨드를 실행하기 전에 동작하도록 작성하면 될 것 같다.&lt;/p&gt;
+&lt;h2&gt;기타&lt;/h2&gt;
+&lt;p&gt;Poetry 자체를 업그레이드 하려면 &lt;code&gt;self update&lt;/code&gt; 커맨드를 사용해 보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;poetry self update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;다만 Homebrew 등의 다른 패키지 매니저를 통해 Poetry를 설치했다면 위 커맨드를 신경 쓸 필요는 없을 것 같다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/python-poetry.html</guid>
+      <pubDate>Tue, 09 Jul 2024 23:40:00 +0900</pubDate>
+    </item>
     <item>
       <title>Emacs Lisp에서 비동기 호출 코드 작성하기</title>
       <link>https://seorenn.github.io/article/emacs-lisp-async-call.html</link>
@@ -4045,110 +4167,6 @@ html = md.convert(input)
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240602-00.html</guid>
       <pubDate>Sun, 02 Jun 2024 21:43:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>파이썬으로 마크다운 문서를 HTML로 변환하기</title>
-      <link>https://seorenn.github.io/article/python-markdown.html</link>
-      <description>&lt;p&gt;파이썬으로 마크다운(markdown) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자. 이 글에서는 Python-Markdown 패키지를 이용한다.&lt;/p&gt;
-&lt;h2&gt;Python-Markdown 패키지 설치&lt;/h2&gt;
-&lt;p&gt;단순하게 늘 하던 대로(?) &lt;code&gt;pip&lt;/code&gt;로 &lt;code&gt;markdown&lt;/code&gt; 패키지를 설치하면 된다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-bash"&gt;pip install markdown
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;마크다운 문서를 HTML로 변환하기&lt;/h2&gt;
-&lt;p&gt;예를 들어 마크다운 텍스트 문서를 읽어들여 &lt;code&gt;text&lt;/code&gt;라는 변수에 담아놨다면 아래와 같이 호출할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-html = markdown.markdown(text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이런 식으로 하면 HTML로 변환된 결과물이 &lt;code&gt;html&lt;/code&gt; 변수에 담기게 된다.&lt;/p&gt;
-&lt;p&gt;이 방법 말고 아래와 같은 식으로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 변환할 수도 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown()
-html = md.convert(text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이렇게 하면 하나의 마크다운 인스턴스로 여러 번 변환시키는 것도 가능하다. 다만 마크다운 인스턴스에 특정한 정보를 쌓아서 사용하는 경우 연속 변환 시 사이드이펙트가 있을 수도 있으므로 리셋 시키면서 사용할 수도 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown()
-html1 = md.convert(text1)
-md.reset()
-html2 = md.convert(text2)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;마크다운 파일에서 바로 불러들여서 HTML로 변환한 후 바로 파일로 저장하기&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;markdownFromFile&lt;/code&gt;이라는 함수를 사용하면 마크다운 파일에서 내용을 바로 로드한 후 변환한 HTML 텍스트를 얻을 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-html = markdown.markdownFromFile(input=input_path)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이름과는 다르게 이 함수는 출력 기능도 제공한다. 아래와 같이 &lt;code&gt;output&lt;/code&gt;을 명시하면 해당 파일 경로로 HTML 파일을 출력해 준다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-html = markdown.markdownFromFile(input=input_path, output=output_path)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;필요하다면 &lt;code&gt;encoding&lt;/code&gt;도 명시할 수 있지만 &lt;code&gt;utf-8&lt;/code&gt;이 기본 값이니 이외의 인코딩이 필요한 경우가 아니라면 굳이 명시할 필요는 없다.&lt;/p&gt;
-&lt;p&gt;참고로 이 외에 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스에서 &lt;code&gt;convertFile&lt;/code&gt;이라는 메서드도 사용할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown()
-md.convertFile(input=input_path, output=output_path)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;전달하는 파라미터 구성은 앞서 살펴본 &lt;code&gt;markdownFromFile&lt;/code&gt;과 동일하다.&lt;/p&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/python-markdown-weird-code-block.html"&gt;Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <content:encoded>&lt;p&gt;파이썬으로 마크다운(markdown) 문서를 HTML로 변환하는 방법을 간단히 정리해 보자. 이 글에서는 Python-Markdown 패키지를 이용한다.&lt;/p&gt;
-&lt;h2&gt;Python-Markdown 패키지 설치&lt;/h2&gt;
-&lt;p&gt;단순하게 늘 하던 대로(?) &lt;code&gt;pip&lt;/code&gt;로 &lt;code&gt;markdown&lt;/code&gt; 패키지를 설치하면 된다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-bash"&gt;pip install markdown
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;마크다운 문서를 HTML로 변환하기&lt;/h2&gt;
-&lt;p&gt;예를 들어 마크다운 텍스트 문서를 읽어들여 &lt;code&gt;text&lt;/code&gt;라는 변수에 담아놨다면 아래와 같이 호출할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-html = markdown.markdown(text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이런 식으로 하면 HTML로 변환된 결과물이 &lt;code&gt;html&lt;/code&gt; 변수에 담기게 된다.&lt;/p&gt;
-&lt;p&gt;이 방법 말고 아래와 같은 식으로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 변환할 수도 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown()
-html = md.convert(text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이렇게 하면 하나의 마크다운 인스턴스로 여러 번 변환시키는 것도 가능하다. 다만 마크다운 인스턴스에 특정한 정보를 쌓아서 사용하는 경우 연속 변환 시 사이드이펙트가 있을 수도 있으므로 리셋 시키면서 사용할 수도 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown()
-html1 = md.convert(text1)
-md.reset()
-html2 = md.convert(text2)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;마크다운 파일에서 바로 불러들여서 HTML로 변환한 후 바로 파일로 저장하기&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;markdownFromFile&lt;/code&gt;이라는 함수를 사용하면 마크다운 파일에서 내용을 바로 로드한 후 변환한 HTML 텍스트를 얻을 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-html = markdown.markdownFromFile(input=input_path)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이름과는 다르게 이 함수는 출력 기능도 제공한다. 아래와 같이 &lt;code&gt;output&lt;/code&gt;을 명시하면 해당 파일 경로로 HTML 파일을 출력해 준다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-html = markdown.markdownFromFile(input=input_path, output=output_path)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;필요하다면 &lt;code&gt;encoding&lt;/code&gt;도 명시할 수 있지만 &lt;code&gt;utf-8&lt;/code&gt;이 기본 값이니 이외의 인코딩이 필요한 경우가 아니라면 굳이 명시할 필요는 없다.&lt;/p&gt;
-&lt;p&gt;참고로 이 외에 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스에서 &lt;code&gt;convertFile&lt;/code&gt;이라는 메서드도 사용할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown()
-md.convertFile(input=input_path, output=output_path)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;전달하는 파라미터 구성은 앞서 살펴본 &lt;code&gt;markdownFromFile&lt;/code&gt;과 동일하다.&lt;/p&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/python-markdown-weird-code-block.html"&gt;Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/python-markdown.html</guid>
-      <pubDate>Sun, 02 Jun 2024 17:23:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

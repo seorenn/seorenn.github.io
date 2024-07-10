@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-09T23:41:46.754727+09:00</updated>
+  <updated>2024-07-10T11:43:51.979602+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -16,7 +16,7 @@
     <title>Poetry 소개 및 간단한 사용법 정리</title>
     <updated>2024-07-09T23:40:19.762326+09:00</updated>
     <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.</p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 그리고 현대적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.</p>
 <h2>프로젝트 시작하기</h2>
 <p>Poetry는 당연하겠지만 프로젝트 단위로 사용할 수 있다. 그래서 사용하기 위해선 아래와 같이 <code>new</code> 커맨드로 프로젝트를 생성해야 한다.</p>
 <pre><code class="language-bash">poetry new PROJECT_NAME
@@ -2193,6 +2193,10 @@ html = md.convert(input)
 <h2>2024년 6월 12일</h2>
 <ul>
 <li>참사 당시 119 상황보고서를 조작한 소방관들이 첫 재판에서 혐의를 모두 인정했다. (<a href="https://imnews.imbc.com/news/2024/society/article/6607124_36438.html" target="_blank">출처📎</a>)</li>
+</ul>
+<h2>2024년 7월 8일</h2>
+<ul>
+<li>오송 참사 1주기를 앞두고 검찰이 오영환 충북지사의 중대재해법 위반 여부에 대한 수사결과 발표를 미루고 있다. 시민단체에서는 불기소를 염두에 두고 1주기 뒤로 발표를 고의로 지연시키려는 것이 아닌가 의심하고 있다. (<a href="https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003044552" target="_blank">출처📎</a>)</li>
 </ul></div>
     </content>
     <link href="https://seorenn.github.io/article/osong-tunnel-disaster.html"/>
@@ -2397,7 +2401,8 @@ html = md.convert(input)
 <p><strong>2024년 6월 19일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 임기훈 국가안보실 국방비서관과 신범철 국방차관에게도 개인 휴대전화로 전화를 건 것으로 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6609419_36438.html" target="_blank">출처📎</a>) 외압 의혹의 핵심 피의자인 유재은 국방부 법무관리관이 박정훈 전 해병대수사단장(대령)이 압수수색을 당한 날 대통령실 법률비서관실 행정관과도 통화했던 것으로 확인됐다. 윤석열 대통령과 대통령실 공직기강비서관실, 국가안보실에 이어 법률비서관실까지 채 상병 순직 사건에 관여한 것으로 의심되는 정황이다. (<a href="https://www.hani.co.kr/arti/society/society_general/1145590.html" target="_blank">출처📎</a>)</p>
 <p><strong>2024년 6월 26일</strong>: 해병대가 사건 조사 결과를 경북경찰청으로 넘긴 날 윤석열 대통령이 신범철 당시 국방부 차관에게 통화한 기록이 2건 더 확인되었다. (<a href="https://imnews.imbc.com/news/2024/society/article/6611609_36438.html" target="_blank">출처📎</a>)</p>
 <p><strong>2024년 7월 2일</strong>: 대통령실은 그 간의 수많은 외압 근거에도 불구하고 여전히 수사 외압 자체가 아닌 수사 이첩 지시를 어긴 항명 자체가 문제의 본질이라고 주장하고 있다. (<a href="https://www.hani.co.kr/arti/politics/politics_general/1147276.html" target="_blank">출처📎</a>) 신원식 국방장관은 대정부질문에서 "수사 외압 의혹은 박정훈 대령의 일방적 주장"이라 주장했다. (<a href="https://imnews.imbc.com/news/2024/politics/article/6613402_36431.html" target="_blank">출처📎</a>)</p>
-<p><strong>2024년 7월 5일</strong>: 거부권으로 사라진 채상병 특검법이 더 강화되어 국회를 통과했다. 대통령은 또 억지 사유를 들어 거부권을 쓸 것으로 보인다. (<a href="https://imnews.imbc.com/replay/2024/nwtoday/article/6614233_36523.html" target="_blank">출처📎</a>)</p></div>
+<p><strong>2024년 7월 5일</strong>: 거부권으로 사라진 채상병 특검법이 더 강화되어 국회를 통과했다. 대통령은 또 억지 사유를 들어 거부권을 쓸 것으로 보인다. (<a href="https://imnews.imbc.com/replay/2024/nwtoday/article/6614233_36523.html" target="_blank">출처📎</a>)</p>
+<p><strong>2024년 7월 8일</strong>: 경북경찰청은 채 상병 사건 수사 결과를 발표하고, 업무상 과실치사 혐의로 수사 중이던 해병대 관계자 9명 가운데 임성근 전 해병대 1사단장과 하급 간부 2명 등 3명에 대해선 혐의를 인정하기 어려워 불송치하기로 했다고 밝혔다. (<a href="https://imnews.imbc.com/news/2024/society/article/6615060_36438.html" target="_blank">출처📎</a>) 박 전 수사단장 측은 납득할 수 없다며 특검이 왜 필요한지 보여줬다고 주장했다. (<a href="https://www.pressian.com/pages/articles/2024070817332755198" target="_blank">출처📎</a>)</p></div>
     </content>
     <link href="https://seorenn.github.io/article/dead-of-chae-corporal.html"/>
     <summary type="text">2023년 7월 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.</summary>

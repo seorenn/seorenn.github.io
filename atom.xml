@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-10T11:57:43.956472+09:00</updated>
+  <updated>2024-07-10T23:11:34.584015+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -1883,7 +1883,7 @@ html = md.convert(input)
   <entry>
     <id>https://seorenn.github.io/article/osong-tunnel-disaster.html</id>
     <title>오송 지하차도 참사 정리</title>
-    <updated>2024-06-05T15:18:55.442472+09:00</updated>
+    <updated>2024-07-10T23:11:31.457433+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 2023년 7월의 대량 폭우로 발생한 오송 지하차도 참사 사태를 언론 기사 위주로 정리하는 글이다. 가급적 중복을 피하기 위해 특정 언론사의 기사가 많은데, 보수 언론의 경우 정부와 여당의 주장만 옮겨싣는 경향이 보여 가급적 반대 성향의 언론 기사 위주로 기록되었다. 최근 기록은 가급적 다양한 언론을 다룰 계획이다.</p>
 <h2>2023년 7월 15일 참사 발생</h2>
@@ -2257,7 +2257,7 @@ html = md.convert(input)
   <entry>
     <id>https://seorenn.github.io/article/dead-of-chae-corporal.html</id>
     <title>채 상병 사망 사건 및 수사 외압 관련 정리</title>
-    <updated>2024-06-04T10:15:48.694505+09:00</updated>
+    <updated>2024-07-10T23:11:24.397203+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>2023년 7월 19일 오전 9시 10분경 경북 예천군 호명면 석관천 일대에서 호우로 인한 실종자를 수색하기 위해 해병대원들이 투입되었다 한 해병대원이 사망한 사건과 사건 수사 외압과 관련된 기사들을 게재 일자 순서로 정리한다.</p>
 <h2>2023년 7월</h2>

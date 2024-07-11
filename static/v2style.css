@@ -395,6 +395,10 @@ td.org-left {
     text-align: center;
 }
 
+.google-auto-placed {
+    height: auto !important;
+}
+
 /* spliter */
 
 .splitter-container {

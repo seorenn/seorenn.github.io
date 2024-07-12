@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-12T10:31:21.867557+09:00</updated>
+  <updated>2024-07-12T10:33:38.747419+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -135,7 +135,7 @@
   <entry>
     <id>https://seorenn.github.io/article/python-poetry.html</id>
     <title>Poetry 소개 및 간단한 사용법 정리</title>
-    <updated>2024-07-09T23:40:19.762326+09:00</updated>
+    <updated>2024-07-09T23:51:57.493326+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 그리고 현대적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.</p>
 <h2>프로젝트 시작하기</h2>
@@ -203,7 +203,7 @@ pytest = "^5.2"
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-async-call.html</id>
     <title>Emacs Lisp에서 비동기 호출 코드 작성하기</title>
-    <updated>2024-07-08T14:41:58.581484+09:00</updated>
+    <updated>2024-07-08T14:43:09.496888+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>그렇게 자주 있는 일은 아니겠지만 이맥스의 UI를 얼려버릴 만큼 무거운 코드를 돌려야 할 일이 있다면 느낌이 어떨까. 이맥스가 얼어버리는 현상은 결코 유쾌하지는 못 할 것이다. 그동안 다른 작업도 못 하고 말이다.</p>
 <p>그렇다면 비동기로 호출하면 이런 문제를 해결할 수 있지 않을까? 간단하게 이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.</p>
@@ -258,7 +258,7 @@ pytest = "^5.2"
   <entry>
     <id>https://seorenn.github.io/log/20240707-00.html</id>
     <title>한 주 간의 애플 소식들 24-07-07</title>
-    <updated>2024-07-07T21:11:10.622719+09:00</updated>
+    <updated>2024-07-07T21:19:17.215353+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발자 베타 릴리즈 소식들</h2>
 <ul>
@@ -436,7 +436,7 @@ macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재
   <entry>
     <id>https://seorenn.github.io/article/rust-no-external-crate.html</id>
     <title>Cargo로 빌드 시 no external crate 오류 해결하기</title>
-    <updated>2024-07-02T23:41:20.428210+09:00</updated>
+    <updated>2024-07-02T23:44:19.614400+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Cargo로 Rust 프로젝트를 빌드할 때 특정 패키지를 사용하려는 코드에서 'unresolved import' 혹은 'no external crate' 오류가 발생했을 때의 원인과 해결 방법을 알아보자.</p>
 <h2>문제</h2>
@@ -478,7 +478,7 @@ somemod = "1.0.0"
   <entry>
     <id>https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html</id>
     <title>macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</title>
-    <updated>2024-07-01T23:50:19.480920+09:00</updated>
+    <updated>2024-07-03T14:54:27.299341+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><blockquote>
 <p>이 글의 해법은 어느 정도 시간이 지나면 먹통이 되는 문제가 있어 다른 방법을 연구 중입니다.</p>
@@ -578,7 +578,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/log/20240630-00.html</id>
     <title>한 주간의 애플 소식 모음 24-06-30</title>
-    <updated>2024-06-30T21:58:32.923539+09:00</updated>
+    <updated>2024-06-30T22:00:38.861409+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발자 베타 릴리즈</h2>
 <ul>
@@ -680,7 +680,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html</id>
     <title>Emacs Lisp에서 funcall과 apply의 차이</title>
-    <updated>2024-06-28T15:44:57.474601+09:00</updated>
+    <updated>2024-06-29T15:44:48.323677+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 <code>funcall</code>과 <code>apply</code>가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자. </p>
 <p>이 둘은 사실 용도는 동일하고 그저 사용법만 다르다고 봐도 될 것 같다.</p>
@@ -711,7 +711,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/log/20240627-00.html</id>
     <title>의존성 실타래 풀다가 화병 나겠네</title>
-    <updated>2024-06-27T15:36:15.795756+09:00</updated>
+    <updated>2024-06-27T22:06:41.397484+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p><img alt="불어터진 자장면 코드" src="../upload/202406271528-56066a1e.jpg"/>
 <em>파스타 코드 보다는 불어터진 자장면 코드가 더 어울릴 듯 (태경 김/Pixabay)</em></p>
@@ -743,7 +743,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-alist.html</id>
     <title>Emacs Lisp의 alist 사용법 간단 정리</title>
-    <updated>2024-06-27T10:24:25.136163+09:00</updated>
+    <updated>2024-06-27T10:29:39.712917+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>alist</h2>
 <p>Emacs Lisp에서 alist는 Association List의 축약어로, 한국어로 직역하면 '연관 목록' 정도로 표현할 수 있는 자료구조다. 다른 언어에서 자주 취급되는 가장 비슷한 자료구조를 들자면 사전형(dictionary)가 비슷할 것 같고, Emacs Lisp 내에서는 용도 면에서 <a href="../article/emacs-lisp-plist.html">plist</a>와도 좀 비슷한 편이다. 참고로 plist와는 다르게 alist는 Common Lisp과 사용법이 비슷한 편이다.</p>
@@ -848,7 +848,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-plist.html</id>
     <title>Emacs Lisp의 plist 사용법 간단 정리</title>
-    <updated>2024-06-26T23:12:14.152491+09:00</updated>
+    <updated>2024-06-27T10:26:02.498578+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>plist</h2>
 <p>Emacs Lisp에서 plist는 'Property List'의 축약어로 다른 언어의 사전형(dictionary type)과 비슷한 기능의 자료구조를 제공한다. 참고로 Common Lisp에도 동일한 자료형은 있으나 사용법은 조금 다른 것 같다.</p>
@@ -888,7 +888,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html</id>
     <title>Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</title>
-    <updated>2024-06-25T21:46:25.894272+09:00</updated>
+    <updated>2024-06-25T21:50:25.146374+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p><a href="../article/emacs-lisp-single-quote.html">작은따옴표</a> 글에서 정리했다시피 Emacs Lisp에서 인용(quote) 즉 작은따옴표(<code>'</code>) 등을 이용해 리스트를 표현하면 내부의 값들이 입력된 그대로 들어가 있게 된다. 예를 들자면 아래와 같다.</p>
 <pre><code class="language-lisp">(defun doubled (v)
@@ -935,7 +935,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-single-quote.html</id>
     <title>Emacs Lisp에서 작은따옴표의 의미</title>
-    <updated>2024-06-24T23:02:50.314595+09:00</updated>
+    <updated>2024-06-29T15:45:23.614382+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs Lisp 코드를 보면 작은따옴표가 종종 보이는데 유독 한 쌍이 아니라 한 개씩만 보여서 상당히 혼란스러웠었다. 왜냐하면 다른 언어에서 작은따옴표는 문자 혹은 문자열을 둘러싸는 특수 기호로 쓰이니 말이다.</p>
 <p>즉 Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰인다. 도대체 이 작은따옴표는 무슨 의미일까?</p>
@@ -992,7 +992,7 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
   <entry>
     <id>https://seorenn.github.io/log/20240623-00.html</id>
     <title>한 주간의 애플 소식 모음 24-06-23</title>
-    <updated>2024-06-23T21:33:33.461390+09:00</updated>
+    <updated>2024-06-23T22:06:17.114939+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈 소식</h2>
 <ul>
@@ -1095,7 +1095,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</id>
     <title>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</title>
-    <updated>2024-06-20T23:33:45.034094+09:00</updated>
+    <updated>2024-06-20T23:39:59.158153+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.</p>
 <h2>증상 설명</h2>
@@ -1142,7 +1142,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240618-00.html</id>
     <title>라인 강탈 사건, 결국 한국 정부는 구경만 하다 끝날 듯</title>
-    <updated>2024-06-18T16:02:04.303051+09:00</updated>
+    <updated>2024-06-18T16:03:24.743702+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><blockquote>
 <p>라인야후가 정기 주주총회에서 '탈네이버' 방침을 재확인했다. 연내 네이버 클라우드와 시스템 분리를 완료하고, 자회사는 당초계획인 2026년보다 앞당겨 시스템을 분리한다. (<a href="https://www.etnews.com/20240618000282" target="_blank">출처📎</a>)</p>
@@ -1177,7 +1177,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/article/vehicle-abbrev.html</id>
     <title>자동차 종류 축약어 정리</title>
-    <updated>2024-06-17T11:16:33.256582+09:00</updated>
+    <updated>2024-06-17T14:27:04.284739+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>자동차 축약어로 쓰이는 ICE, EV, HEV, MHEV, PHEV, BEV, FCEV 등의 용어의 의미를 정리해 보자.</p>
 <h2>ICE: Internal Combustion Engine</h2>
@@ -1272,7 +1272,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240613-01.html</id>
     <title>PPI는 또 왜이래?</title>
-    <updated>2024-06-13T23:38:45.012940+09:00</updated>
+    <updated>2024-06-13T23:39:22.210225+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>CPI가 나오고 다음 날은 PPI가 나온는 날이고 어김없이 또 PPI가 나왔다. CPI에 비하면 조금은 소외되는 지표지만 다음 CPI를 가늠하는 키 중 하나이기도 해서 요즘은 무시할 수가 없다.</p>
 <p>미국 5월 PPI(생산자물가지수)는 대충 요렇게 나왔다.</p>
@@ -1294,7 +1294,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240613-00.html</id>
     <title>모두가 예상했던 6월 FOMC 동결</title>
-    <updated>2024-06-13T10:21:06.793595+09:00</updated>
+    <updated>2024-06-13T10:27:14.680100+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>6월 FOMC가 열리기 전 <a href="../log/20240612-01.html">CPI가 좋게 나와서</a> 그런지 모르겠지만 이번에는 최소한 인상은 없을 것이라고 보는 시각이 절대 다수였던 것 같다. 그리고 그 시각이 틀리지 않았다는 듯 연준은 또 금리를 동결했다.</p>
 <blockquote>
@@ -1321,7 +1321,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240612-01.html</id>
     <title>FOMC를 앞두고 CPI가 불을 지피다</title>
-    <updated>2024-06-12T23:07:14.112790+09:00</updated>
+    <updated>2024-06-12T23:12:40.854907+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>FOMC가 열리는 날 (미국 시각 기준) 아침에 미국의 5월 CPI가 발표되었다. 아무래도 FOMC에 영향을 크게 미칠 수도 있을 타이밍이라 관심이 집중되었는데 대충 이런 식으로 나왔다.</p>
 <ul>
@@ -1341,7 +1341,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240612-00.html</id>
     <title>오늘도 부모 경험치를 쌓는다</title>
-    <updated>2024-06-12T15:44:14.366151+09:00</updated>
+    <updated>2024-06-12T16:00:22.501096+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>평소보단 약간 이른 아침, 아이와 함께 평화롭게 아침을 먹고 있었다. 사실 아이에게 휴대폰을 쥐어줬기에 가능한 평화로움이었을 지도 모르겠다. 그게 독이 되었을 수도 있겠지만 말이다.</p>
 <p>아침을 빨리 먹자며 재촉하는 사이에 갑자기 어디선가 굉음이 들린다.</p>
@@ -1366,7 +1366,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240611-02.html</id>
     <title>6월 FOMC를 앞두고 보는 연준 인사들의 발언들</title>
-    <updated>2024-06-11T21:37:28.513564+09:00</updated>
+    <updated>2024-06-11T21:52:24.400164+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>6월 FOMC를 앞두고 이번에도 그 사이의 연준 인사들의 발언들을 모아서 정리해 봤다.</p>
 <p><strong>제롬 파월 (연준 의장)</strong>: "고용시장은 조금씩 식고 있어, 다만 인플레이션 둔화에 자신은 없어, 다만 다음 회의에서 인상은 없을 것"</p>
@@ -1422,7 +1422,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/log/20240611-00.html</id>
     <title>애플 WWDC24 간단 정리 및 감상</title>
-    <updated>2024-06-11T13:50:25.102633+09:00</updated>
+    <updated>2024-06-11T23:48:14.351873+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>WWDC24가 순조롭게(?) 끝난 것 같지만 애플 주가는 하락했다. 시장의 분위기가 느껴지는 한 문구다. 어쨌든 기대를 크게 모은 WWDC24를 간단히 정리해 보고 감상 및 사족을 정리해 보자.</p>
 <h2>각종 OS 차기 메이저 버전 미리보기</h2>
@@ -1474,7 +1474,7 @@ print(f"links = {md.links})
   <entry>
     <id>https://seorenn.github.io/article/python-markdown-meta.html</id>
     <title>Python-Markdown에서 문서의 메타 데이터 추출하기</title>
-    <updated>2024-06-10T11:20:41.359249+09:00</updated>
+    <updated>2024-06-10T11:28:29.623040+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>마크다운 문서에 제목이나 실제로는 표시되지 않는 여러 정보를 표기하고 싶을 때 Meta-Data라는 확장을 이용해 볼 수 있다. 간단한 소개와 사용법을 알아보자.</p>
 <h2>Meta-Data</h2>
@@ -1589,7 +1589,7 @@ date = ['2024-06-07 12:34:56']
   <entry>
     <id>https://seorenn.github.io/article/jamboree-discredit.html</id>
     <title>잼버리 국제 망신 사건 정리</title>
-    <updated>2024-06-07T16:05:29.464442+09:00</updated>
+    <updated>2024-06-07T16:17:09.902616+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 대한민국 전라북도 새만금(부안군 하서면)에서 열린 제 25회 세계 스카우트 잼버리에서 발생한 사태 등을 기사 위주로 정리하는 글이다.</p>
 <h2>세계 스카우트 잼버리</h2>
@@ -1945,7 +1945,7 @@ date = ['2024-06-07 12:34:56']
   <entry>
     <id>https://seorenn.github.io/article/python-markdown-weird-code-block.html</id>
     <title>Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기</title>
-    <updated>2024-06-05T21:46:24.094664+09:00</updated>
+    <updated>2024-06-06T01:07:25.197393+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p><a href="../article/python-markdown.html">Python-Markdown</a> 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자.</p>
 <p>코드 블럭은 예를 들어 아래와 같이 역따옴표(back-quote) 3개를 붙여쓴 표식을 위아래로 둘러싸면 그 안의 내용은 코드 블럭으로 렌더링된다.</p>
@@ -2327,7 +2327,7 @@ html = md.convert(input)
   <entry>
     <id>https://seorenn.github.io/log/20240605-00.html</id>
     <title>꺾이는 JOLTs 미지근한 주식시장</title>
-    <updated>2024-06-05T10:02:51.748675+09:00</updated>
+    <updated>2024-06-05T10:20:37.433179+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>JOLTs, 그러니까 미국 정부가 공식 발표하는 노동부의 고용률 데이터 정도로 이해할 수 있는 지표가 나왔다.</p>
 <blockquote>

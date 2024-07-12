@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-12T10:26:31.653935+09:00</updated>
+  <updated>2024-07-12T10:31:21.867557+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20240712-00.html</id>
     <title>어쩌면 끔찍한 이야기</title>
-    <updated>2024-07-12T10:26:25.598813+09:00</updated>
+    <updated>2024-07-12T10:31:16.482646+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>아이가 어린이집에 가야 할 시간에 있었던 작고 사소하지만 끔찍한 이야기다.</p>
 <p>아이는 준비를 다 마쳤는데 오늘도 뭔가를 먹으면서 가고 싶다고 한다. 밖에서 뭔가 먹는 걸 굉장히 즐기는 시기 같다. 어쨌든 늘 그랬다시피 작은 비닐 지퍼백을 하나 꺼내서 여기다 늘 먹던 젤리를 3개만 담게 했다.</p>
@@ -44,7 +44,7 @@
 <p>'으앙.'</p></div>
     </content>
     <link href="https://seorenn.github.io/log/20240712-00.html"/>
-    <summary type="text">차에 어떤 일이 생겼고 해결하지 못 했다.</summary>
+    <summary type="text">아이가 어린이집에 가야 할 시간에 있었던 작고 사소하지만 끔찍한 이야기다.</summary>
     <published>2024-07-12T10:12:00+09:00</published>
   </entry>
   <entry>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>파이썬 예외 처리 정리 - Seorenn</title>
+    <meta name="twitter:title" content="파이썬 예외 처리 정리" />
+    <meta name="og:title" content="파이썬 예외 처리 정리" />
+    <meta name="description" content="Python의 예외(Exceptions) 처리의 가장 기초적인 내용을 정리해 보자." />
+    <meta name="twitter:description" content="Python의 예외(Exceptions) 처리의 가장 기초적인 내용을 정리해 보자." />
+    <meta name="og:description" content="Python의 예외(Exceptions) 처리의 가장 기초적인 내용을 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-exceptions.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-exceptions.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>파이썬 예외 처리 정리</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/python.html">Python</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 07월 13일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>이 글은 Python의 예외(Exceptions) 처리의 가장 기초적인 부분을 정리한다. 참고로 문법은 버전 3.x 이후이며 2.x 버전에서도 문법은 비슷하지만 약간 느슨(?)할 수도 있다.</p>
+<h2>예외 처리 기본 구조</h2>
+<p>파이썬의 예외 처리의 가장 기본 키워드는 <code>try</code>와 <code>except</code>다. 대충 아래와 같은 식으로 쓸 수 있다.</p>
+<pre><code class="language-python">try:
+    do_what()
+except:
+    print(&quot;ERROR: 뭔가 에러가 났어요!&quot;)
+</code></pre>
+<p><code>try</code> 블록 내부에서 예외가 발생할지도 모를 코드를 배치하면 여기 안에서 예와가 발생할 경우 그 아래의 <code>except</code> 블록으로 플로우가 넘어가면서 예외를 처리할 수 있다. 여기서 오류를 처리하던지 프로그램을 종료시키던지 아니면 그저 로그만 남기고 넘어갈 수도 있다.</p>
+<p>가장 기본적인 구조는 위와 같지만 요즘은 이렇게 쓰면 아마 누군가(?) 경고를 날려 줄 것이다. 정확히 말하자면 파이썬 커뮤니티에서는 명확한 예외의 이름을 명시하는 것을 추천하고 있다.</p>
+<pre><code class="language-python">try:
+    do_what()
+except ValueError:
+    print(&quot;Value Error!&quot;)
+</code></pre>
+<p>이렇게 하면 <code>do_what()</code>에서 발생되는 예외 중 <code>ValueError</code> 예외가 발생하면 <code>except</code> 블록으로 진입되어 처리할 수 있으나 이 외의 예외는 <code>except</code> 블록으로 진입되지 않는데 만약 더 상위에 따로 예외를 처리하는 코드가 없으면 프로그램 자체가 예외를 발생시키며 강제 종료된다.</p>
+<p>예외 이름을 명시하더라도 약간 부족할 수 있다. 좀 더 정확한 예외 원인을 알려주는 경우가 있으니 예외 인스턴스를 받아서 처리해보자.</p>
+<pre><code class="language-python">try:
+    do_what()
+except ValueError as e:
+    print(f&quot;Value Error: {e}&quot;)
+</code></pre>
+<p>위의 경우 <code>ValueError</code>라는 예외에서 넘겨주는 문자열이 있을 경우 화면에 표시가 된다. 다만 이 부분은 예외 클래스에 따라 좀 더 적합한 방식이 있을 수도 있다.</p>
+<p>만약 한 예외가 아니라 여러 예외를 처리하고 싶다면 아래와 같이 <code>except</code>를 계속 나열할 수 있다.</p>
+<pre><code class="language-python">try:
+    do_what()
+except ValueError:
+    print(&quot;Value Error!&quot;)
+except AttributeError:
+    print(&quot;Attribute Error!&quot;)
+</code></pre>
+<p>이렇게 하면 여러 예외를 처리하되 각각의 예외의 상황에 맞게 처리가 가능하다.</p>
+<p>아니면 여러 예외를 하나의 동일한 코드로 처리하고 싶다면 아래와 같이 여러 예외를 하나의 <code>except</code>로 처리할 수도 있다.</p>
+<pre><code class="language-python">try:
+    do_what()
+except (ValueError, AttributeError):
+    print(&quot;Value or Attribute Error!&quot;)
+</code></pre>
+<p>위의 경우 경우 <code>ValueError</code> 혹은 <code>AttributeError</code> 둘 중 하나의 예외가 발생하면 <code>except</code> 안의 구문이 실행된다. 만약 이 경우에서도 상세한 메시지를 구하는 등 예외 인스턴스를 얻고 싶다면 아래와 같이 좀 더 코드를 추가할 수 있다.</p>
+<pre><code class="language-python">try:
+    do_what()
+except (ValueError, AttributeError) as e:
+    print(f&quot;Something Error: {e}&quot;)
+</code></pre>
+<h2>예외 발생시키기</h2>
+<p>예외는 <code>raise</code> 커맨드로 발생시킬 수 있다.</p>
+<pre><code class="language-python">raise ValueError()
+</code></pre>
+<p>예외 클래스는 보통은 첫 인자로 문자열 메시지를 넣을 수 있게 구성된 경우가 많다.</p>
+<pre><code class="language-python">raise ValueError(&quot;The value is invalid&quot;)
+</code></pre>
+<h2>사용자 정의 예외</h2>
+<p>개인이 만든 기능에는 당연히 개인이 정의한 오류가 발생할 수 있다. 따라서 당연하게도 예외 클래스 또한 원하는 대로 별도로 디자인할 수 있다.</p>
+<p>아래는 <code>TestException</code> 이라는 예외를 만들고 이를 일부러 발생시키는 예제다.</p>
+<pre><code class="language-python">class TestException(Exception):
+    pass
+
+def test():
+    raise TestException()
+
+try:
+    test()
+except TestException as e:
+    print(f'TestException: {e}')
+</code></pre>
+<p><code>TestException</code> 클래스 정의에서 볼 수 있듯이 예외 클래스는 <code>Exception</code>을 상속 받은 클래스라 보면 된다.</p>
+<p>이 예외 클래스에 메시지 기능을 간단히 추가하고자 한다면 문자열 변환 메소드를 추가해 주는 방법이 있다.</p>
+<pre><code class="language-python">class TestException(Exception):
+    def __str__(self):
+        return &quot;TestException&quot;
+</code></pre>
+<p>물론 좀 더 예외 다운 예외 클래스로 만들고 싶다면 별도의 메시지를 전달 받을 수 있는 편이 좋을 것 같다.</p>
+<pre><code class="language-python">class TestException(Exception):
+    def __init__(self, message=&quot;&quot;):
+        self.message = message
+    def __str__(self):
+        return f&quot;TestException {self.message}&quot;
+
+def test():
+    raise TestException(&quot;Some Error&quot;)
+
+try:
+    test()
+except Exception as e:
+    print(f'Exception: {e}')
+</code></pre>
+<p>아마 기본적인 예외 클래스의 골격은 이런 형태면 될 것 같다.</p>
+<h2>예외 발생 시 트레이스백을 그대로 출력하기</h2>
+<p>예외가 발생할 경우 상세한 트레이스백(traceback) - 혹은 스택트레이스(stack trace) - 메시지를 콘솔에 표시해서 에러에 대처하는게 디버깅에 매우 유용하다. 이런 경우 <code>traceback</code> 모듈의 <code>print_exc()</code>함수를 이용할 수 있다. 예를 들자면 이런 식이다.</p>
+<pre><code class="language-python">import traceback
+
+try:
+    do_what()
+except Exception:
+    traceback.print_exc()
+</code></pre>
+<p>이렇게 구현하면 <code>try</code> 블록 안에서 예외가 발생할 경우 상세한 트레이스백이 콘솔에 표시된다.</p>
+<p>만약 이 트레이스백 등을 포함한 전체 예외 메시지를 로그로 남기기 위해 문자열로 받고 싶다면 <code>format_exc()</code> 함수를 사용할 수 있다.</p>
+<pre><code class="language-python">import traceback
+
+try:
+    do_what()
+except Exception:
+    stacktrace = traceback.format_exc()
+    log(stacktrace)
+</code></pre>
+<p>위 코드에서 <code>log()</code>라는 함수는 임의로 정의한 로그를 기록하는 함수다. 이런 식으로 상세한 예외 상황 메시지를 출력하거나 전달할 수 있다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/python-poetry.html">Poetry 소개 및 간단한 사용법 정리</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-markdown-extract-links.html">Python-Markdown으로 마크다운 문서의 모든 링크 주소 추출하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-markdown-meta.html">Python-Markdown에서 문서의 메타 데이터 추출하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-markdown-weird-code-block.html">Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-list-dir.html">파이썬으로 파일 및 디렉터리 목록 구하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-home-dir.html">파이썬에서 홈 디렉토리 경로 처리하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-path-tips.html">파이썬으로 파일이나 디렉터리 경로 다루기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-get-file-infomations.html">파이썬에서 파일 정보 얻기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-file-dir-exists.html">파이썬에서 파일이나 디렉터리 구분 및 존재 확인하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-f-string.html">파이썬의 F-String 간단 정리</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-bitstring.html">파이썬 bitstring 패키지 소개</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-simple-web-server.html">간단한 파이썬 웹 서버</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-filter-and-map.html">파이썬의 Filter와 Map 그리고 List Comprehension</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

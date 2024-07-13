@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/subject/python.html</loc><lastmod>2024-07-09</lastmod></url>
+<url><loc>https://seorenn.github.io/subject/python.html</loc><lastmod>2024-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/article/soft-landing-and-hard-landing.html</loc><lastmod>2024-05-20</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-f-string.html</loc><lastmod>2024-05-21</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-simple-web-server.html</loc><lastmod>2024-05-20</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-filter-and-map.html</loc><lastmod>2024-05-19</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-bitstring.html</loc><lastmod>2024-05-21</lastmod></url>
-<url><loc>https://seorenn.github.io/index.html</loc><lastmod>2024-07-12</lastmod></url>
+<url><loc>https://seorenn.github.io/index.html</loc><lastmod>2024-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240416-00.html</loc><lastmod>2024-05-29</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240528-00.html</loc><lastmod>2024-05-28</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240529-00.html</loc><lastmod>2024-05-30</lastmod></url>
@@ -25,7 +25,7 @@
 <url><loc>https://seorenn.github.io/log/20240602-00.html</loc><lastmod>2024-06-03</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-markdown.html</loc><lastmod>2024-06-05</lastmod></url>
 <url><loc>https://seorenn.github.io/subject/social-issues.html</loc><lastmod>2024-06-14</lastmod></url>
-<url><loc>https://seorenn.github.io/article/dead-of-chae-corporal.html</loc><lastmod>2024-07-11</lastmod></url>
+<url><loc>https://seorenn.github.io/article/dead-of-chae-corporal.html</loc><lastmod>2024-07-13</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240604-00.html</loc><lastmod>2024-06-04</lastmod></url>
 <url><loc>https://seorenn.github.io/upload/202406042153-cba1ed0d.png</loc><lastmod>2024-06-04</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240604-01.html</loc><lastmod>2024-06-04</lastmod></url>
@@ -75,7 +75,7 @@
 <url><loc>https://seorenn.github.io/log/20240628-00.html</loc><lastmod>2024-06-28</lastmod></url>
 <url><loc>https://seorenn.github.io/article/emacs-lisp-sharp-quote-sign.md.html</loc><lastmod>2024-06-29</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240630-00.html</loc><lastmod>2024-06-30</lastmod></url>
-<url><loc>https://seorenn.github.io/article/future-of-ai-industry.html</loc><lastmod>2024-07-01</lastmod></url>
+<url><loc>https://seorenn.github.io/article/future-of-ai-industry.html</loc><lastmod>2024-07-12</lastmod></url>
 <url><loc>https://seorenn.github.io/subject/etc.html</loc><lastmod>2024-07-01</lastmod></url>
 <url><loc>https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html</loc><lastmod>2024-07-03</lastmod></url>
 <url><loc>https://seorenn.github.io/article/rust-no-external-crate.html</loc><lastmod>2024-07-02</lastmod></url>
@@ -94,4 +94,5 @@
 <url><loc>https://seorenn.github.io/log/20240711-02.html</loc><lastmod>2024-07-11</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240712-00.html</loc><lastmod>2024-07-12</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240712-01.html</loc><lastmod>2024-07-12</lastmod></url>
+<url><loc>https://seorenn.github.io/article/python-exceptions.html</loc><lastmod>2024-07-13</lastmod></url>
 </urlset>

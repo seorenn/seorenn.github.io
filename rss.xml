@@ -13,7 +13,103 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 13 Jul 2024 17:48:36 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jul 2024 21:16:26 +0900</lastBuildDate>
+    <item>
+      <title>한 주간의 애플 소식들 24-07-14</title>
+      <link>https://seorenn.github.io/log/20240714-00.html</link>
+      <description>&lt;h2&gt;소프트웨어 릴리즈 소식들&lt;/h2&gt;
+&lt;p&gt;차세대 애플 플랫폼 OS 들의 세 번째 개발자 베타가 공개되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15 Sequoia beta 3: &lt;em&gt;macOS 15 beta 3는 명확한 이유는 알 수 없지만 홀로 수 일 늦게 공개되었다.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;iOS 18 beta 3: 써드파티 앱 아이콘의 다크모드 자동 적용, 동적 배경화면 색상 자동 변경 지원, RCS 지원 통신사 추가, Apple TV 앱에 InSight 기능 추가 등&lt;/li&gt;
+&lt;li&gt;iPadOS 18 beta 3: Apple TV 앱에 InSight 기능 추가, Freeform Scenes 추가 등&lt;/li&gt;
+&lt;li&gt;visionOS 2 beta 3&lt;/li&gt;
+&lt;li&gt;watchOS 11 beta 3&lt;/li&gt;
+&lt;li&gt;tvOS 18 beta 3: InSight 기능 추가 등&lt;/li&gt;
+&lt;li&gt;Xcode 16 beta 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;언급된 항목을 제외하곤 이전 베타와 비교해서 어떤 차이가 있는 지는 알려지지 않았다. 아마도 기능은 확정되었을 것 같고 이제는 버그 수정 위주로 개발이 진행되지 않을까 추측된다. &lt;/p&gt;
+&lt;p&gt;참고로 visionOS 2의 공개 베타는 나오지 않을 가능성도 있다고 한다.&lt;/p&gt;
+&lt;p&gt;그 외에 현재 안정 버전의 마이너 업데이트들도 세 번째 개발자 베타가 공개되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 14.6 beta 3&lt;/li&gt;
+&lt;li&gt;iOS 17.6 beta 3&lt;/li&gt;
+&lt;li&gt;iPadOS 17.6 beta 3&lt;/li&gt;
+&lt;li&gt;visionOS 1.3 beta 3&lt;/li&gt;
+&lt;li&gt;watchOS 10.6 beta 3&lt;/li&gt;
+&lt;li&gt;tvOS 17.6 beta 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 버전들도 명확한 업데이트 내역이 알려지지 않고 있다. 처음부터 예상되었던 '버그 패치 수준의 업데이트일 것'이라는 예측은 아직도 틀리지 않은 것 같다. 어쨌거나 이 버전들도 개발자 베타 공개 수 일 후 공공 베타가 공개되었다.&lt;/p&gt;
+&lt;p&gt;그 외에도 아래의 릴리즈 소식이 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AirPods Pro 2 Firmware 7A5244b Beta &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;AI&lt;/strong&gt;&lt;br/&gt;
+애플지능이 결합된 새로운 시리는 내년 봄은 되어야 볼 수 있을 것 같다. 한편 애플은 OpenAI의 참관인(observer) 지위를 포기했다고 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;맥 점유율 부활&lt;/strong&gt;&lt;br/&gt;
+맥 출하량이 전년비 6% 성장했다고 한다. 지난 실적에서 슬슬 PC 수요가 부활하는 듯한 모습이 보이더니 PC 부문엣서 가장 강한 성장세를 보이며 9%의 시장점유율을 달성했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone 관련 루머들&lt;/strong&gt;&lt;br/&gt;
+iPhone 16에서 Face ID 시스템이 대대적으로 개편될 가능성이 제기되었다. 그 외에 충전 시스템도 개선되어서 40W 유선 충전, 20W 무선 충전이 지원될 가능성이 있다. 카메라 광학줌은 프로맥스 급에서도 여전히 5배 줌이 탑재될 것 같고 테트라프리즘 카메라는 아이폰 17 프로맥스에나 탑재될 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18&lt;/strong&gt;&lt;br/&gt;
+iOS 18에는 집중이나 휴식 모드용 새로운 배경음이 추가되었다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NFC 개방?!&lt;/strong&gt;&lt;br/&gt;
+아이폰 교통카드 관련 이미지 정보가 유출되면서 아이폰의 한국 교통카드 지원이 머지 않았다는 루머가 돌았다. 유럽에서는 아이폰에 삼성페이가 들어오는 등 NFC 개방이 진행된다고 하며 동시에 EU의 애플페이 반독점 조사가 종결 되었다고 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;끝이 없는 반독점 규제&lt;/strong&gt;&lt;br/&gt;
+유럽에서 거액의 벌금을 내야 할 처지에 몰린 애플이 이제는 인도에서도 비슷한 규제로 압력을 받을 가능성이 보인다. 유럽을 따라 이런 흐름을 보이는 국가들이 점점 많아질 것으로 보이는데 애플의 한 발 빠른 대처가 필요해 보인다.&lt;/p&gt;
+&lt;h2&gt;기타 루머 소식들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;차세대 애플워치 SE는 가격을 낮추기 위해 플라스틱을 사용할 것이란 전만이 제기되었다.&lt;/li&gt;
+&lt;li&gt;애플지능을 결합한 테이블탑 로봇에 대한 루머가 나오기 시작했다.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;h2&gt;소프트웨어 릴리즈 소식들&lt;/h2&gt;
+&lt;p&gt;차세대 애플 플랫폼 OS 들의 세 번째 개발자 베타가 공개되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15 Sequoia beta 3: &lt;em&gt;macOS 15 beta 3는 명확한 이유는 알 수 없지만 홀로 수 일 늦게 공개되었다.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;iOS 18 beta 3: 써드파티 앱 아이콘의 다크모드 자동 적용, 동적 배경화면 색상 자동 변경 지원, RCS 지원 통신사 추가, Apple TV 앱에 InSight 기능 추가 등&lt;/li&gt;
+&lt;li&gt;iPadOS 18 beta 3: Apple TV 앱에 InSight 기능 추가, Freeform Scenes 추가 등&lt;/li&gt;
+&lt;li&gt;visionOS 2 beta 3&lt;/li&gt;
+&lt;li&gt;watchOS 11 beta 3&lt;/li&gt;
+&lt;li&gt;tvOS 18 beta 3: InSight 기능 추가 등&lt;/li&gt;
+&lt;li&gt;Xcode 16 beta 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;언급된 항목을 제외하곤 이전 베타와 비교해서 어떤 차이가 있는 지는 알려지지 않았다. 아마도 기능은 확정되었을 것 같고 이제는 버그 수정 위주로 개발이 진행되지 않을까 추측된다. &lt;/p&gt;
+&lt;p&gt;참고로 visionOS 2의 공개 베타는 나오지 않을 가능성도 있다고 한다.&lt;/p&gt;
+&lt;p&gt;그 외에 현재 안정 버전의 마이너 업데이트들도 세 번째 개발자 베타가 공개되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 14.6 beta 3&lt;/li&gt;
+&lt;li&gt;iOS 17.6 beta 3&lt;/li&gt;
+&lt;li&gt;iPadOS 17.6 beta 3&lt;/li&gt;
+&lt;li&gt;visionOS 1.3 beta 3&lt;/li&gt;
+&lt;li&gt;watchOS 10.6 beta 3&lt;/li&gt;
+&lt;li&gt;tvOS 17.6 beta 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 버전들도 명확한 업데이트 내역이 알려지지 않고 있다. 처음부터 예상되었던 '버그 패치 수준의 업데이트일 것'이라는 예측은 아직도 틀리지 않은 것 같다. 어쨌거나 이 버전들도 개발자 베타 공개 수 일 후 공공 베타가 공개되었다.&lt;/p&gt;
+&lt;p&gt;그 외에도 아래의 릴리즈 소식이 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AirPods Pro 2 Firmware 7A5244b Beta &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;AI&lt;/strong&gt;&lt;br/&gt;
+애플지능이 결합된 새로운 시리는 내년 봄은 되어야 볼 수 있을 것 같다. 한편 애플은 OpenAI의 참관인(observer) 지위를 포기했다고 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;맥 점유율 부활&lt;/strong&gt;&lt;br/&gt;
+맥 출하량이 전년비 6% 성장했다고 한다. 지난 실적에서 슬슬 PC 수요가 부활하는 듯한 모습이 보이더니 PC 부문엣서 가장 강한 성장세를 보이며 9%의 시장점유율을 달성했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone 관련 루머들&lt;/strong&gt;&lt;br/&gt;
+iPhone 16에서 Face ID 시스템이 대대적으로 개편될 가능성이 제기되었다. 그 외에 충전 시스템도 개선되어서 40W 유선 충전, 20W 무선 충전이 지원될 가능성이 있다. 카메라 광학줌은 프로맥스 급에서도 여전히 5배 줌이 탑재될 것 같고 테트라프리즘 카메라는 아이폰 17 프로맥스에나 탑재될 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18&lt;/strong&gt;&lt;br/&gt;
+iOS 18에는 집중이나 휴식 모드용 새로운 배경음이 추가되었다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NFC 개방?!&lt;/strong&gt;&lt;br/&gt;
+아이폰 교통카드 관련 이미지 정보가 유출되면서 아이폰의 한국 교통카드 지원이 머지 않았다는 루머가 돌았다. 유럽에서는 아이폰에 삼성페이가 들어오는 등 NFC 개방이 진행된다고 하며 동시에 EU의 애플페이 반독점 조사가 종결 되었다고 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;끝이 없는 반독점 규제&lt;/strong&gt;&lt;br/&gt;
+유럽에서 거액의 벌금을 내야 할 처지에 몰린 애플이 이제는 인도에서도 비슷한 규제로 압력을 받을 가능성이 보인다. 유럽을 따라 이런 흐름을 보이는 국가들이 점점 많아질 것으로 보이는데 애플의 한 발 빠른 대처가 필요해 보인다.&lt;/p&gt;
+&lt;h2&gt;기타 루머 소식들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;차세대 애플워치 SE는 가격을 낮추기 위해 플라스틱을 사용할 것이란 전만이 제기되었다.&lt;/li&gt;
+&lt;li&gt;애플지능을 결합한 테이블탑 로봇에 대한 루머가 나오기 시작했다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20240714-00.html</guid>
+      <pubDate>Sun, 14 Jul 2024 21:16:00 +0900</pubDate>
+    </item>
     <item>
       <title>파이썬 예외 처리 정리</title>
       <link>https://seorenn.github.io/article/python-exceptions.html</link>
@@ -3112,6 +3208,10 @@ date = ['2024-06-07 12:34:56']
 &lt;h2&gt;2024년 4월 26일&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;세계스카우트위원회가 발표한 보고서는 5명에 달하는 공동조직위원장이 난립한 점도 비효율의 원인이 됐다고 지목했다. 이른바 '감투 집착' 때문에 잼버리가 파행되었다는 결론이다. (&lt;a href="https://kjmbc.co.kr/article/G3aHkQwJwoAF2wSjUNici" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2024년 7월 12일&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;폐막 11개월 만에 드디어 잼버리 조직위가 해산되었다. (&lt;a href="https://m.khan.co.kr/national/national-general/article/202407121707001" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;이 글은 대한민국 전라북도 새만금(부안군 하서면)에서 열린 제 25회 세계 스카우트 잼버리에서 발생한 사태 등을 기사 위주로 정리하는 글이다.&lt;/p&gt;
 &lt;h2&gt;세계 스카우트 잼버리&lt;/h2&gt;
@@ -3420,6 +3520,10 @@ date = ['2024-06-07 12:34:56']
 &lt;h2&gt;2024년 4월 26일&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;세계스카우트위원회가 발표한 보고서는 5명에 달하는 공동조직위원장이 난립한 점도 비효율의 원인이 됐다고 지목했다. 이른바 '감투 집착' 때문에 잼버리가 파행되었다는 결론이다. (&lt;a href="https://kjmbc.co.kr/article/G3aHkQwJwoAF2wSjUNici" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2024년 7월 12일&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;폐막 11개월 만에 드디어 잼버리 조직위가 해산되었다. (&lt;a href="https://m.khan.co.kr/national/national-general/article/202407121707001" target="_blank"&gt;출처📎&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/jamboree-discredit.html</guid>
       <pubDate>Fri, 07 Jun 2024 16:05:00 +0900</pubDate>
@@ -3471,110 +3575,6 @@ date = ['2024-06-07 12:34:56']
 &lt;p&gt;그나저나 밤 사이에 엔비디아 시총이 3조 달러를 넘으며 동시에 애플을 추월해 버리는 역사적인 일이 일어났다. 다만 이번엔 애플이 못 해서가 아니라 엔비디아가 너무 잘(?) 해서 그런 거니 딱히 기분 나쁜 추월은 아닌 것 같다. 이대로 가다간 최근 좀 고전 중인 마이크로소프트를 추월해서 엔비디아의 시총 1위 달성이 불가능한 일은 아닌 것 같다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240606-00.html</guid>
       <pubDate>Thu, 06 Jun 2024 16:19:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기</title>
-      <link>https://seorenn.github.io/article/python-markdown-weird-code-block.html</link>
-      <description>&lt;p&gt;&lt;a href="../article/python-markdown.html"&gt;Python-Markdown&lt;/a&gt; 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자.&lt;/p&gt;
-&lt;p&gt;코드 블럭은 예를 들어 아래와 같이 역따옴표(back-quote) 3개를 붙여쓴 표식을 위아래로 둘러싸면 그 안의 내용은 코드 블럭으로 렌더링된다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```
-code block
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;역따옴표 3개가 아니라 틸트(&lt;code&gt;~&lt;/code&gt;) 3개를 붙인 표식도 동일하게 쓸 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;~~~
-code block
-~~~
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;문제는 이를 파이썬의 마크다운 모듈로 렌더링하면 이상하게 코드 블럭을 위한 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 태그가 아닌 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 태그로만 둘러싸이는 형태로 렌더링 된다는 점이다. 아래는 실제 REPL 예제다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import markdown
-&amp;gt;&amp;gt;&amp;gt; input = &amp;quot;&amp;quot;&amp;quot;Test Code:
-...
-... ~~~
-... def some_func():
-...     pass
-... ~~~
-... &amp;quot;&amp;quot;&amp;quot;
-&amp;gt;&amp;gt;&amp;gt; markdown.markdown(input)
-'&amp;lt;p&amp;gt;Test Code:&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;def some_func():\n    pass&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;의도대로라면 인라인 코드를 표시하는 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;가 아닌 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;로 둘러싸여야 하는데 Python-Markdown 모듈이 좀 이상한 것일까? 물론 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;로만 둘러싸여도 목적 대로 쓰는데 큰 무리는 없지만 원하는 스타일을 따로 지정하기는 쉽지는 않을 테니 말이다.&lt;/p&gt;
-&lt;h2&gt;문제 해결하기&lt;/h2&gt;
-&lt;p&gt;다행히도 이게 딱히 Python-Markdown 모듈 구현이 잘못되어 있다거나 하는 문제는 아니었다. 다만 기본적으로 비활성화 되어 있는데, 이는 Fenced Code Blocks라는 확장을 이용하면 원하는 대로 쓸 수 있다. &lt;/p&gt;
-&lt;p&gt;이 확장은 별도의 설치 필요 없이 렌더링 시 익스텐션(extensions)에 &lt;code&gt;fenced_code&lt;/code&gt;를 추가해 주면 동작한다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import markdown
-&amp;gt;&amp;gt;&amp;gt; input = &amp;quot;&amp;quot;&amp;quot;Test Code:
-...
-... ~~~
-... def some_func():
-...     pass
-... ~~~
-... &amp;quot;&amp;quot;&amp;quot;
-&amp;gt;&amp;gt;&amp;gt; markdown.markdown(input, extensions=[&amp;quot;fenced_code&amp;quot;])
-'&amp;lt;p&amp;gt;Test Code:&amp;lt;/p&amp;gt;\n&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;def some_func():\n    pass\n&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Fenced Code Blocks 확장을 사용하면 보다시피 코드 블럭이 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 태그로 둘러싸이는 모습을 볼 수 있다.&lt;/p&gt;
-&lt;p&gt;여기서는 바로 렌더링 하는 코드를 썼는데 별도로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 쓰는 경우에도 동일한 인터페이스로 쓸 수 있으니 참고하자.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;...
-md = markdown.Markdown(extensions=[&amp;quot;fenced_code&amp;quot;])
-html = md.convert(input)
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/python-markdown.html"&gt;파이썬으로 마크다운 문서를 HTML로 변환하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <content:encoded>&lt;p&gt;&lt;a href="../article/python-markdown.html"&gt;Python-Markdown&lt;/a&gt; 모듈은 기본적으로 코드 블럭 렌더링이 생각한 대로 안 나오는데 이를 바로 잡는 방법을 간단히 정리해 보자.&lt;/p&gt;
-&lt;p&gt;코드 블럭은 예를 들어 아래와 같이 역따옴표(back-quote) 3개를 붙여쓴 표식을 위아래로 둘러싸면 그 안의 내용은 코드 블럭으로 렌더링된다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```
-code block
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;역따옴표 3개가 아니라 틸트(&lt;code&gt;~&lt;/code&gt;) 3개를 붙인 표식도 동일하게 쓸 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;~~~
-code block
-~~~
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;문제는 이를 파이썬의 마크다운 모듈로 렌더링하면 이상하게 코드 블럭을 위한 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 태그가 아닌 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 태그로만 둘러싸이는 형태로 렌더링 된다는 점이다. 아래는 실제 REPL 예제다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import markdown
-&amp;gt;&amp;gt;&amp;gt; input = &amp;quot;&amp;quot;&amp;quot;Test Code:
-...
-... ~~~
-... def some_func():
-...     pass
-... ~~~
-... &amp;quot;&amp;quot;&amp;quot;
-&amp;gt;&amp;gt;&amp;gt; markdown.markdown(input)
-'&amp;lt;p&amp;gt;Test Code:&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;def some_func():\n    pass&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;의도대로라면 인라인 코드를 표시하는 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;가 아닌 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;로 둘러싸여야 하는데 Python-Markdown 모듈이 좀 이상한 것일까? 물론 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;로만 둘러싸여도 목적 대로 쓰는데 큰 무리는 없지만 원하는 스타일을 따로 지정하기는 쉽지는 않을 테니 말이다.&lt;/p&gt;
-&lt;h2&gt;문제 해결하기&lt;/h2&gt;
-&lt;p&gt;다행히도 이게 딱히 Python-Markdown 모듈 구현이 잘못되어 있다거나 하는 문제는 아니었다. 다만 기본적으로 비활성화 되어 있는데, 이는 Fenced Code Blocks라는 확장을 이용하면 원하는 대로 쓸 수 있다. &lt;/p&gt;
-&lt;p&gt;이 확장은 별도의 설치 필요 없이 렌더링 시 익스텐션(extensions)에 &lt;code&gt;fenced_code&lt;/code&gt;를 추가해 주면 동작한다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; import markdown
-&amp;gt;&amp;gt;&amp;gt; input = &amp;quot;&amp;quot;&amp;quot;Test Code:
-...
-... ~~~
-... def some_func():
-...     pass
-... ~~~
-... &amp;quot;&amp;quot;&amp;quot;
-&amp;gt;&amp;gt;&amp;gt; markdown.markdown(input, extensions=[&amp;quot;fenced_code&amp;quot;])
-'&amp;lt;p&amp;gt;Test Code:&amp;lt;/p&amp;gt;\n&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;def some_func():\n    pass\n&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Fenced Code Blocks 확장을 사용하면 보다시피 코드 블럭이 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 태그로 둘러싸이는 모습을 볼 수 있다.&lt;/p&gt;
-&lt;p&gt;여기서는 바로 렌더링 하는 코드를 썼는데 별도로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 쓰는 경우에도 동일한 인터페이스로 쓸 수 있으니 참고하자.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;...
-md = markdown.Markdown(extensions=[&amp;quot;fenced_code&amp;quot;])
-html = md.convert(input)
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/python-markdown.html"&gt;파이썬으로 마크다운 문서를 HTML로 변환하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/python-markdown-weird-code-block.html</guid>
-      <pubDate>Wed, 05 Jun 2024 21:46:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기 - Seorenn</title>
+    <meta name="twitter:title" content="SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기" />
+    <meta name="og:title" content="SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기" />
+    <meta name="description" content="Binding 타입의 값을 넘길 때 Swift의 기본 타입의 값을 이용해 간단히 넘기는 방법" />
+    <meta name="twitter:description" content="Binding 타입의 값을 넘길 때 Swift의 기본 타입의 값을 이용해 간단히 넘기는 방법" />
+    <meta name="og:description" content="Binding 타입의 값을 넘길 때 Swift의 기본 타입의 값을 이용해 간단히 넘기는 방법" />
+    <link rel="canonical" href="https://seorenn.github.io/article/swift-fix-cannot-convert-to-binding.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/swift-fix-cannot-convert-to-binding.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/swift.html">Swift</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 07월 16일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>SwiftUI로 뷰를 만들다 해당 뷰를 테스트 해야 할 일이 있을 수 있다. 예를 들자면 프리뷰(SwiftUI Preview)용 코드를 작성할 때 등등 말이다. 그래서 시험용으로 몇몇 변수의 값을 하드코딩으로 넘기는 경우도 허다할 것이다.</p>
+<p>그런데 이런 경우 아래와 같은 형식의 오류를 종종 볼 수 있다.</p>
+<blockquote>
+<p>Cannot convert value of type 'FooBar' to expected argument type 'Binding&lt;FooBar&gt;'</p>
+</blockquote>
+<p>직역하면 특정 타입의 값을 원하는 바인딩 타입으로 변환할 수 없다라는 의미다. 참고로 <code>FooBar</code>로 표기한 부분에는 실제로 사용된 타입이 표시되는 부분이니 오해하지 말자. 사용하는 타입에 따라 메시지는 당연히 바뀔 것이다.</p>
+<p>어쨌거나 이 오류의 원인은 <code>@Binding</code> 등으로 표기된 프로퍼티의 값으로 넘겨야 할 값을 그냥 정적인 값으로 넘겼기 때문에 발생한다.</p>
+<p>따라서 해결 방법 중 가장 직관적인(?) 방법은 넘기려는 값을 <code>@State</code> 등의 프로퍼티로 생성해서 바인딩 가능하게 넘기는 방법이 있을 것이다. 물론 그게 귀찮으니 이런 글이 탄생했지만 말이다.</p>
+<h2>그 외에 가장 간단한 해결 방법</h2>
+<p>이럴 때를 위해 <code>Binding.constant</code>가 제공된다. 어려울 것 없이 넘기려는 값을 매개변수로 넣어서 '바인딩 타입으로 값을 한번 감싸서 전달'하는 식이다.</p>
+<pre><code class="language-swift">MyViewController(name: .constant(&quot;Temporary Name&quot;))
+</code></pre>
+<p>그렇게 하면 간단하게 해결된다.</p>
+<p>물론 이렇게 하면 SwiftUI 특유의 바인딩의 제대로 된 기능을 활용하지 못 한다는 점을 기억하자. 단순히 테스트 혹은 프리뷰 용도로만 활용하기엔 괜찮은 방법 같다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

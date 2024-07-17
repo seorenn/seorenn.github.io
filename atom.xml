@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-16T13:48:52.376066+09:00</updated>
+  <updated>2024-07-17T16:06:51.561036+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -403,7 +403,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/log/20240711-00.html</id>
     <title>이번 청문회 파월의 발언은 어땠나</title>
-    <updated>2024-07-11T13:46:37.662385+09:00</updated>
+    <updated>2024-07-17T10:07:32.314446+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>연 이틀간 미 국회에서 열린 금융 관련 청문회가 화제를 모았다. 당연하게도 전 세계 경제에 막대한 영향을 끼치는 연준의 수장이 출석하기 때문이었다. 이미 잘 알려졌지만 그의 발언이 어땠는지 대충 정리해 보려고 한다.</p>
 <h2>첫째날 상원 청문회</h2>
@@ -436,7 +436,7 @@ except Exception:
 <p>마지막으로 올렸던 베팅표에서 9월 인하 확률이 많이 올라가긴 했다. 다만 최근의 피크에서는 좀 낮아졌다는 소리를 들었는데 뭐 그래도 거기서 거기 같다.</p></div>
     </content>
     <link href="https://seorenn.github.io/log/20240711-00.html"/>
-    <summary type="text"/>
+    <summary type="text">연 이틀간 열린 미국 국회 금융 청문회에서 파월이 한 발언들을 간략히 정리하는 글</summary>
     <published>2024-07-11T13:43:00+09:00</published>
   </entry>
   <entry>

@@ -85,7 +85,7 @@ nav a:active {
 
 #search-keyword {
     flex: 2;
-    font-size: 14pt;
+    font-size: 12pt;
     color: #666;
     padding: 8px 16px 8px 16px;
     margin-right: 16px;
@@ -102,7 +102,7 @@ input::placeholder {
 }
 
 #search-button {
-    font-size: 13pt;
+    font-size: 11pt;
     color: #666;
     padding: 8px 16px 8px 16px;
     background: #f4f4f4;
@@ -533,12 +533,14 @@ footer {
 
     #search-keyword {
         color: #bbb;
-        background-color: #5b6268;
+        background-color: #1e1e1e;
+        border: 1px dashed #2f2f2f;
     }
 
     #search-button {
-        background-color: #5b6268;
+        background-color: #1e1e1e;
         color: #bbb;
+        border: 1px dashed #2f2f2f;
     }
 
     .title-date {

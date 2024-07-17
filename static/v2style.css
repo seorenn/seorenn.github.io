@@ -237,7 +237,7 @@ h6 {
     margin-bottom: 0.8rem;
     padding-top: 8px;
     padding-bottom: 0;
-    border-top: 0.5px #ddd dashed;
+    border-top: 0.5px #2f2f2f dashed;
 }
 
 .content h3 {
@@ -472,6 +472,7 @@ td.org-left {
     border: none;
     margin: 0;
     padding: 0;
+    border-top: none;
 }
 
 .refinfo-cluster a,
@@ -521,13 +522,13 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #272c34;
+        background-color: #181818;
         color: #dfdfdf;
     }
 
     .header-content {
-        background-color: #272c34;
-        border-bottom: 1px solid #5b6268;
+        background-color: #1e1e1e;
+        border-bottom: 1px solid #2f2f2f;
     }
 
     #search-keyword {
@@ -591,7 +592,24 @@ footer {
         display: block;
     }
 
+    .splitter-container hr {
+        border: 0px;
+        border-top: 1px solid #2f2f2f;
+    }
+
+    .refinfo-cluster {
+        background: #1e1e1e;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 14px 8px 14px;
+        flex: 1;
+    }
+
+    .refinfo-cluster h2 {
+        border: none;
+    }
+
     .footer-content {
-        border-top: 1px solid #5b6268;
+        border-top: 1px solid #2f2f2f;
     }
 }

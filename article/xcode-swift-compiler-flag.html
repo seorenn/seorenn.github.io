@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기 - Seorenn</title>
+    <meta name="twitter:title" content="Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기" />
+    <meta name="og:title" content="Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기" />
+    <meta name="description" content="Xcode에서 Swift 프로젝트에서 인식할 수 있는 컴파일러 플래그를 추가하는 방법" />
+    <meta name="twitter:description" content="Xcode에서 Swift 프로젝트에서 인식할 수 있는 컴파일러 플래그를 추가하는 방법" />
+    <meta name="og:description" content="Xcode에서 Swift 프로젝트에서 인식할 수 있는 컴파일러 플래그를 추가하는 방법" />
+    <link rel="canonical" href="https://seorenn.github.io/article/xcode-swift-compiler-flag.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/xcode-swift-compiler-flag.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/swift.html">Swift</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 07월 17일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>하나의 소스 코드로 여러 일을 처리하고 싶은 욕심은 어떤 프로그래머나 가지고 있을 것 같다. 그 중 C 등의 컴파일 되는 언어에서 유래한 흔한 방식으로 바로 전처리기(Proprocessor)를 활용하는 방법이 있다. 코드가 아닌 빌드 도구 차원에서 빌드하는 코드가 어떻게 동작할 지를 결정할 수 있는 좋은 방법이니 말이다.</p>
+<p>그렇다면 Xcode에서 작업 중인 Swift 프로젝트에서는 이런 전처리기 플래그를 어떻게 추가하면 좋을까?</p>
+<p>물론 Xcode에서 쉽게 할 수 있게 방법은 갖춰 놓고 있다. 그저 직관적으로 쉽게 할 수 있는 방법이 없을 뿐이다. 그렇다고 어려운 건 절대로 아니다.</p>
+<h2>Swift 프로젝트에 컴파일러 플래그 추가하기</h2>
+<p>플래그를 추가하기 위해서 Xcode에서 해당 프로젝트의 Target을 선택한 후 Build Settings에서 아래와 같은 루트로 혹은 검색으로 Other Swift Flags 항목을 찾아보자.</p>
+<blockquote>
+<p>Build Settings - Swift Compiler - Custom Flags - Other Swift Flags</p>
+</blockquote>
+<p>여기에서 원하는 빌드 환경에서 <code>+</code> 버튼을 눌러서 원하는 플래그를 <code>-D</code> 옵션을 붙여서 추가해주자. 예를 들어 <code>SPECIAL_FEATURE</code>라는 플래그를 추가해 주고 싶다면 <code>-DSPECIAL_FEATURE</code>라고 적어주면 된다. 두 개 이상 추가하고 싶다면 각 플래그 이름마다 이렇게 <code>-D</code>를 앞에 붙여서 계속 추가해 주면 된다. <em>물론 <code>-D</code> 뿐만 아니라 다양한 컴파일러 옵션을 사용할 수도 있지만 이 글의 주제는 어디까지나 플래그 추가다.</em></p>
+<p>이후 Swift에서 <code>#if</code>를 이용해 이 플래그가 정의되었을 경우의 동작을 코딩할 수 있다. 예를 들어 위에서처럼 플래그에 <code>-DSPECIAL_FEATURE</code>를 추가한 경우 아래와 같은 식이다.</p>
+<pre><code class="language-swift">#if SPECIAL_FEATURE
+useSpecialFeature()
+#else
+useNormalFeature()
+#endif
+</code></pre>
+<p>C에 익숙하다면 왜 <code>#ifdef</code>나 <code>#if defined()</code>가 아닌가 고민할 수도 있겠지만 Swift에선 이렇게 하면 되니 괜히 고민하지 말자. 난이도도 한 번만 해보면 참 간단한 일이라고 느낄 것이다.</p>
+<h2>트러블슈팅</h2>
+<p>플래그를 추가하고 빌드하는데 아래와 같은 오류를 만날 수도 있다.</p>
+<blockquote>
+<p>Conditional compilation flags must be valid Swift identifiers (rather than ' FLAGNAME')</p>
+</blockquote>
+<p>이 오류는 뭔가를 잘못 적은 것 같다는 의미로 이해하면 된다. 혹시 플래그를 추가할 때 <code>-DNAME</code> 형식이 아닌 <code>-D NAME</code> 등 이상한 형식으로 입력되지 않았나 확인해 보자. 기본적으로 <code>-D</code> 옵션 뒤에 공백 없이 플래그 이름이 바로 나열되어야 한다.</p>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/swift-fix-cannot-convert-to-binding.html">SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

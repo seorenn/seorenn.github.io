@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-17T16:48:39.373327+09:00</updated>
+  <updated>2024-07-18T16:48:30.628338+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,24 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240718-00.html</id>
+    <title>체코 원전 잭팟이라더니 주가는 왜 비실거릴까?</title>
+    <updated>2024-07-18T16:47:57.122218+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>오랜만에 한국 원자력 수출에 좋은 소식이 떴다. 체코 원전 수주 소식이 들려온 것이다. 최소 15조 원 이상의 가치라며 말이다.</p>
+<p>그런데 정작 수주 소식이 들리자 관련 기업들의 주가는 호들갑은 커녕 차익실현 분위기가 강하다. 정확히 말해서 오전 까지는 분위기가 참 좋아 보였는데 오후가 되니 급격하게 사그라들었다고 보는 게 맞을 것 같다.</p>
+<p>일단 확실하게 알아야 할 것은 아직 '수주'가 아니라는 점이다. 정확히 말해 한국 기업들이 우선협상대상자가 되었다는 것이고 이제 체코 정부와 1:1로 협상해야 한다는 이야기다. 언론에서 24조 원 어치이니 최소 15조 원 이라니 뭐라니 하는 표현은 다 이유가 있는 것이었다. 물론 우선협상대상자가 되면 이후 별 문제 없으면 계약으로 진행된다고 볼 수는 있다. 뒤엎기에는 좀 멀리 간 것이니 말이다.</p>
+<p>또 한가지 문제는 바로 원전의 사이클이 너무 길다는 것이다. 원전 건설에는 4~5년 혹은 그 이상을 바라봐야 할 지도 모를 초장기 사업이다. 조선도 길다고 하는데 원전은 그 이상이니 실제로 돈이 되려면 오랜 시간이 걸릴 지도 모른다.</p>
+<p>따라서 이번 우선협상대상자 선정 소식 만으로 주가가 폭등하는 것 자체가 이상한 것이긴 하다. 그저 수주 가능성이 테마가 되었고 그 테마가 끝난 것이라 생각된다.</p>
+<p>물론 그렇다고 해도 모멘텀이 완전히 사라진 건 아닐 것이다. 그게 실적으로 나타나려면 오래 걸리니 조정이 왔을 때 담아놓고 기다리면 수익으로 이어질 가능성은 높을 것 같다. 중간에 별 삽질만 없다면 말이다.</p>
+<p>그런데 SMR은 과연 괜찮을까? 알려진 바로 모듈형의 경우 짧으면 1년 정도가 걸린다고 하니 SMR 쪽이 압도적으로 짧기는 하다. 문제가 있다면 아직 기술 개발 중이라는 점이겠지만 말이다.</p>
+<p>어쨌거나 체코 원전 사업이 잘 진행 되었으면 좋겠다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240718-00.html"/>
+    <summary type="text">오랜만에 한국 원자력 수출에 좋은 소식이 떴다. 체코 원전 수주 소식이 들려온 것이다. 그런데 정작 수주 소식이 들리자 관련 기업들의 주가는 호들갑은 커녕 차익실현 분위기가 강하다.</summary>
+    <published>2024-07-18T16:47:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/xcode-swift-compiler-flag.html</id>
     <title>Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기</title>
@@ -1908,23 +1926,5 @@ date = ['2024-06-07 12:34:56']
     <link href="https://seorenn.github.io/log/20240608-00.html"/>
     <summary type="text">ETF에 기술적 분석이라는 것을 하는 것이 과연 의미가 있을까?</summary>
     <published>2024-06-08T11:50:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240607-00.html</id>
-    <title>실업률 콤보를 시간당임금과 비농업고용지수가 캔슬</title>
-    <updated>2024-06-07T22:05:38.724380+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>오늘은 미국의 시간당임금, 비농업고용지수, 실업률 등 중요한 지표가 여럿 발표 되었다. 간단히 정리하면 이렇다.</p>
-<ul>
-<li>미국 5월 평균 시간당 임금 YoY 4.1% (+0.1%) 예상치 상회, MoM 0.4% (+0.2%) 예상치 상회</li>
-<li><strong>미국 5월 비농업고용지수 272K (+107K) 예상치를 바보로 만들 만큼 크게 상회</strong></li>
-<li>미국 5월 실업률 4.0% (+0.1%) 예상치 상회</li>
-</ul>
-<p>실업률이 올랐는데 어째서 고용지수가 크게 오르냐는 모순스러운 상황을 또 만났다. 이젠 첫 경험(?)이 아니기에 그렇게까지 당황스럽진 않다. 실업률은 퍼센테이지고 고용지수는 절대수치라는 점과 함께 모수가 늘어나는 경우 등 몇 가지 가능한 시나리오가 있다.</p>
-<p>지표가 발표된 한국의 오후 9시 30분 경 미국 지수 선물 차트에 갑자기 절벽이 나타나는 것으로 보아 저 비농업고용지수에 많은 관심이 쏠린 모양이다. 그런데 실업률에도 관심을 좀 가져야 하는 게 아닐까. 이렇게 고용이 많아졌는데도 실업률이 늘었다는 것은 불안정한 취업이 늘었다는 의미도 있다고 보이고 실질 실업률은 더 심할 지도 모르는 일이다. 물론 신빙성 따위 없는 한 인간의 뇌피셜 소설일 수도 있고 말이다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240607-00.html"/>
-    <summary type="text">오늘은 미국의 시간당임금, 비농업고용지수, 실업률 등 중요한 지표가 여럿 발표 되었다.</summary>
-    <published>2024-06-07T22:05:00+09:00</published>
   </entry>
 </feed>

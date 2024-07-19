@@ -13,7 +13,119 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 18 Jul 2024 16:51:45 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jul 2024 14:49:15 +0900</lastBuildDate>
+    <item>
+      <title>Swift에서 딜레이 후 코드 호출하기</title>
+      <link>https://seorenn.github.io/article/swift-run-after-delay.html</link>
+      <description>&lt;p&gt;이 글에서는 Swift에서 UI를 멈추지 않게 하면서 특정 시간 동안 기다린 후 비동기로 코드를 실행시키는 방법 일부를 정리한다. 모든 방법이 아닌 개인적인 선호로 골랐다는 점에 주의하자.&lt;/p&gt;
+&lt;h2&gt;타이머를 사용해 딜레이 후 호출하기&lt;/h2&gt;
+&lt;p&gt;어쩌면 가장 직관적인 방법으로 &lt;code&gt;Timer&lt;/code&gt;를 이용하는 방법이 있다. Objective-C에서는 &lt;code&gt;NSTimer&lt;/code&gt;라 불리는 클래스와 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+    print(&amp;quot;3 seconds have passed&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;타이머를 생성해서 돌리는 방법은 여러가지가 있지만 위의 방식이 가장 편한 것 같았다. 필요하다면 반복(repeats)도 지정할 수 있으니 딜레이 말고도 여러 용도로 쓸 수도 있다.&lt;/p&gt;
+&lt;h2&gt;GCD를 이용해 딜레이 후 호출하기&lt;/h2&gt;
+&lt;p&gt;GCD(Grand Central Dispatch)의 디스패치 큐에는 &lt;code&gt;asyncAfter&lt;/code&gt;라는 용도에 딱 맞는 메서드가 제공된다. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+    print(&amp;quot;3 seconds have passed&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;asyncAfter&lt;/code&gt;의 경우 딜레이 시간을 정의할 때 약간 난해할 수도 있는데 &lt;code&gt;DispatchTime.now()&lt;/code&gt;를 알고 있다면 크게 어려울 것 없이 쓸 수 있다.&lt;/p&gt;
+&lt;p&gt;다만 위 코드는 메인 스레드에서 동작하는 만큼 동작하는 코드에 따라 UI에 영향을 줄 수도 있으니 아래와 같이 글로벌 큐를 이용하는 방식이 적절하지 않을까 생각된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+    DispatchQueue.main.async {
+        print(&amp;quot;3 seconds have passed&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 하면 기다리는 동안 다른 일을 더 해도 UI에 큰 무리를 안 주면서 원하는 대로 동작한다. 다만 UI에 영향을 끼치는 코드는 메인 스레드에서 돌아가도록 주의해야 하는 점은 잊지 말자.&lt;/p&gt;
+&lt;p&gt;물론 위의 방식들이 정석에 가깝지만, 좀 더 단순하게 하려면 아래와 같이 그냥 쉬었다가(sleep) 하는 방법도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;DispatchQueue.global().async {
+    Thread.sleep(forTimeInterval: 3)
+    DispatchQueue.main.async {
+        print(&amp;quot;3 seconds have passed&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;글로벌 디스패치큐는 백그라운드 스레드에서 돌아가기 때문에 사용할 수 있는 단순한 코드다. 사람에 따라 '무식한' 방법이라고 평가할 수도 있겠지만 어떻게 보면 특징이나 용도를 잘 활용한 기능으로 볼 수도 있어서 '단순한' 방법이라 표현하는 게 맞을 것 같다. 어쨌든 잘 동작하고 별 문제도 없으니 말이다.&lt;/p&gt;
+&lt;h2&gt;Task&lt;/h2&gt;
+&lt;p&gt;Swift Concurrency 지원으로 추가된 비동기 루틴을 지원하는 &lt;code&gt;Task&lt;/code&gt;를 활용하면 역시 쉬었다가 처리하는 방식의 '단순한' 방법을 쓸 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;Task {
+    try await Task.sleep(nanoseconds: 3000000000)
+    print(&amp;quot;3 seconds have passed&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Task&lt;/code&gt; 기반은 취소가 가능하다는 장점이 있다. 태스크 취소를 하려면 아래와 같이 해당 태스크 인스턴스에서 &lt;code&gt;cancel()&lt;/code&gt; 메서드를 호출해 주면 된다. 다만 이 글의 주제에서 벗어나기 때문에 더 자세한 소개는 생략한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;let delayedTask = Task {
+    try await Task.sleep(nanoseconds: 300000000000)
+    print(&amp;quot;300 seconds have passed&amp;quot;)
+}
+
+...
+
+// 해당 태스크를 취소해야 할 필요가 있을 때
+delayedTask.cancel()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;태스크 내에서의 딜레이(sleep) 명령으로 &lt;code&gt;Thread.sleep()&lt;/code&gt;을 쓸 수 있는지는 잘 모르겠지만, 취소를 위해서는 반드시 &lt;code&gt;Task.sleep()&lt;/code&gt;을 써야 한다는 것 정도만 알아두자.&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;GCD를 이용할 수 있으니 당연히 Thread나 OperationQueue를 이용할 수도 있지 않겠나라고 할 수도 있는데 맞다. 사실 이 둘도 위의 예와 거의 동일한 동작을 만들 수 있다. 하지만 가장 심플한 예는 아무래도 위에서 거론한 방식들 같다. 즉 이 외에도 여러 방법이 있을 수도 있으니 상황에 맞는 특수한 방법은 직접 찾아보자.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;이 글에서는 Swift에서 UI를 멈추지 않게 하면서 특정 시간 동안 기다린 후 비동기로 코드를 실행시키는 방법 일부를 정리한다. 모든 방법이 아닌 개인적인 선호로 골랐다는 점에 주의하자.&lt;/p&gt;
+&lt;h2&gt;타이머를 사용해 딜레이 후 호출하기&lt;/h2&gt;
+&lt;p&gt;어쩌면 가장 직관적인 방법으로 &lt;code&gt;Timer&lt;/code&gt;를 이용하는 방법이 있다. Objective-C에서는 &lt;code&gt;NSTimer&lt;/code&gt;라 불리는 클래스와 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+    print(&amp;quot;3 seconds have passed&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;타이머를 생성해서 돌리는 방법은 여러가지가 있지만 위의 방식이 가장 편한 것 같았다. 필요하다면 반복(repeats)도 지정할 수 있으니 딜레이 말고도 여러 용도로 쓸 수도 있다.&lt;/p&gt;
+&lt;h2&gt;GCD를 이용해 딜레이 후 호출하기&lt;/h2&gt;
+&lt;p&gt;GCD(Grand Central Dispatch)의 디스패치 큐에는 &lt;code&gt;asyncAfter&lt;/code&gt;라는 용도에 딱 맞는 메서드가 제공된다. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+    print(&amp;quot;3 seconds have passed&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;asyncAfter&lt;/code&gt;의 경우 딜레이 시간을 정의할 때 약간 난해할 수도 있는데 &lt;code&gt;DispatchTime.now()&lt;/code&gt;를 알고 있다면 크게 어려울 것 없이 쓸 수 있다.&lt;/p&gt;
+&lt;p&gt;다만 위 코드는 메인 스레드에서 동작하는 만큼 동작하는 코드에 따라 UI에 영향을 줄 수도 있으니 아래와 같이 글로벌 큐를 이용하는 방식이 적절하지 않을까 생각된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+    DispatchQueue.main.async {
+        print(&amp;quot;3 seconds have passed&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 하면 기다리는 동안 다른 일을 더 해도 UI에 큰 무리를 안 주면서 원하는 대로 동작한다. 다만 UI에 영향을 끼치는 코드는 메인 스레드에서 돌아가도록 주의해야 하는 점은 잊지 말자.&lt;/p&gt;
+&lt;p&gt;물론 위의 방식들이 정석에 가깝지만, 좀 더 단순하게 하려면 아래와 같이 그냥 쉬었다가(sleep) 하는 방법도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;DispatchQueue.global().async {
+    Thread.sleep(forTimeInterval: 3)
+    DispatchQueue.main.async {
+        print(&amp;quot;3 seconds have passed&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;글로벌 디스패치큐는 백그라운드 스레드에서 돌아가기 때문에 사용할 수 있는 단순한 코드다. 사람에 따라 '무식한' 방법이라고 평가할 수도 있겠지만 어떻게 보면 특징이나 용도를 잘 활용한 기능으로 볼 수도 있어서 '단순한' 방법이라 표현하는 게 맞을 것 같다. 어쨌든 잘 동작하고 별 문제도 없으니 말이다.&lt;/p&gt;
+&lt;h2&gt;Task&lt;/h2&gt;
+&lt;p&gt;Swift Concurrency 지원으로 추가된 비동기 루틴을 지원하는 &lt;code&gt;Task&lt;/code&gt;를 활용하면 역시 쉬었다가 처리하는 방식의 '단순한' 방법을 쓸 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;Task {
+    try await Task.sleep(nanoseconds: 3000000000)
+    print(&amp;quot;3 seconds have passed&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Task&lt;/code&gt; 기반은 취소가 가능하다는 장점이 있다. 태스크 취소를 하려면 아래와 같이 해당 태스크 인스턴스에서 &lt;code&gt;cancel()&lt;/code&gt; 메서드를 호출해 주면 된다. 다만 이 글의 주제에서 벗어나기 때문에 더 자세한 소개는 생략한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-swift"&gt;let delayedTask = Task {
+    try await Task.sleep(nanoseconds: 300000000000)
+    print(&amp;quot;300 seconds have passed&amp;quot;)
+}
+
+...
+
+// 해당 태스크를 취소해야 할 필요가 있을 때
+delayedTask.cancel()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;태스크 내에서의 딜레이(sleep) 명령으로 &lt;code&gt;Thread.sleep()&lt;/code&gt;을 쓸 수 있는지는 잘 모르겠지만, 취소를 위해서는 반드시 &lt;code&gt;Task.sleep()&lt;/code&gt;을 써야 한다는 것 정도만 알아두자.&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;GCD를 이용할 수 있으니 당연히 Thread나 OperationQueue를 이용할 수도 있지 않겠나라고 할 수도 있는데 맞다. 사실 이 둘도 위의 예와 거의 동일한 동작을 만들 수 있다. 하지만 가장 심플한 예는 아무래도 위에서 거론한 방식들 같다. 즉 이 외에도 여러 방법이 있을 수도 있으니 상황에 맞는 특수한 방법은 직접 찾아보자.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/swift-run-after-delay.html</guid>
+      <pubDate>Fri, 19 Jul 2024 14:48:00 +0900</pubDate>
+    </item>
     <item>
       <title>체코 원전 잭팟이라더니 주가는 왜 비실거릴까?</title>
       <link>https://seorenn.github.io/log/20240718-00.html</link>
@@ -3123,28 +3235,6 @@ date = ['2024-06-07 12:34:56']
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240609-00.html</guid>
       <pubDate>Sun, 09 Jun 2024 21:43:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>ETF는 기술적 분석이 의미가 있을까?</title>
-      <link>https://seorenn.github.io/log/20240608-00.html</link>
-      <description>&lt;p&gt;ETF에 기술적 분석이라는 것을 하는 것이 과연 의미가 있을까? 지금까지는 ETF 매매 때에도 단일종목과 비슷하게 늘 차트를 보며 가격이 적당히 낮아졌다 싶을 때 분할매수로 진입하고 적당히 높은 가격에 분할매도로 나가는 게 당연하다고 생각했었는데 문득 이게 맞나 싶은 생각이 들었다.&lt;/p&gt;
-&lt;p&gt;기술적 분석에서 가장 대표적인 것은 지지선과 저항선이다. 이 두 선은 차트에 나타나는 심리를 분석하기 위한 개념이다. 지지선은 많은 사람들이 많이 산 가격대를 지키려고 하는 일종의 바닥으로 보고, 사람들이 많이 물린 가격대에서는 팔려고 혈안이라 일종의 천정 처럼 취급되는 저항선이 있다. 여기에 이동평균선이 지지나 저항선의 역할을 하기도 한다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="이평선에서 지지와 저항이 종종 보이는 QQQ" src="../upload/202406052350-55c805a0.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;ETF는 상장 지수 펀드다. 지수는 정확하진 않겠지만 대충 구성 종목들의 시가총액의 합을 어떤 식으로 평균내서 만들어진 것일 테다. 결국 ETF의 구성 종목들의 각각의 기술적 분석은 당연히 독립적인 의미를 가지게 된다. 따라서 각 종목의 지지와 저항은 분명 의미가 있을 것이다. &lt;/p&gt;
-&lt;p&gt;하지만 종목이 여럿 모여서 만들어지는 ETF의 차트는 과연 지지선과 저항선 그리고 이동평균선이 무슨 의미가 있을까. 어떤 한 종목에 거래대금이 몰려서 저항을 뚫고 올라가거나 지지를 뚫고 내려가도 그 종목이 포함된 ETF의 차트에는 해당 차트의 지지와 저항과는 관계 없는 모습이 나타날 것이다.&lt;/p&gt;
-&lt;p&gt;물론 SPY나 QQQ 같은 초대형 ETF라면 패시브 자금의 무지막지한 힘이 그 자체로 각 종목의 지지와 저항에 간섭하게 될 수는 분명이 있을 거다. 하지만 거기에 비하면 아주 초라한 국내 섹터 ETF나 테마형 ETF는 기술적 분석이 의미가 없다고 보는게 맞을 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;그래서 QQQ나 SPY를 제외한 ETF는 차트를 볼 필요가 없냐고 한다면 참 답하기 어려운 일이긴 하다. 솔직히 차트에서 가격이 낮게 나오면 사고 싶고 높아 보이면 안 들어가거나 팔고 싶기 마련이다.&lt;/p&gt;
-&lt;p&gt;의미가 있는지 답이 안 나온다. 포기했다. 그냥 ETF 거래는 QQQ 같은 큰 시장 위주로만 매매하면 의미가 있든 없든 괜찮지 않을까 싶다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;ETF에 기술적 분석이라는 것을 하는 것이 과연 의미가 있을까? 지금까지는 ETF 매매 때에도 단일종목과 비슷하게 늘 차트를 보며 가격이 적당히 낮아졌다 싶을 때 분할매수로 진입하고 적당히 높은 가격에 분할매도로 나가는 게 당연하다고 생각했었는데 문득 이게 맞나 싶은 생각이 들었다.&lt;/p&gt;
-&lt;p&gt;기술적 분석에서 가장 대표적인 것은 지지선과 저항선이다. 이 두 선은 차트에 나타나는 심리를 분석하기 위한 개념이다. 지지선은 많은 사람들이 많이 산 가격대를 지키려고 하는 일종의 바닥으로 보고, 사람들이 많이 물린 가격대에서는 팔려고 혈안이라 일종의 천정 처럼 취급되는 저항선이 있다. 여기에 이동평균선이 지지나 저항선의 역할을 하기도 한다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="이평선에서 지지와 저항이 종종 보이는 QQQ" src="../upload/202406052350-55c805a0.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;ETF는 상장 지수 펀드다. 지수는 정확하진 않겠지만 대충 구성 종목들의 시가총액의 합을 어떤 식으로 평균내서 만들어진 것일 테다. 결국 ETF의 구성 종목들의 각각의 기술적 분석은 당연히 독립적인 의미를 가지게 된다. 따라서 각 종목의 지지와 저항은 분명 의미가 있을 것이다. &lt;/p&gt;
-&lt;p&gt;하지만 종목이 여럿 모여서 만들어지는 ETF의 차트는 과연 지지선과 저항선 그리고 이동평균선이 무슨 의미가 있을까. 어떤 한 종목에 거래대금이 몰려서 저항을 뚫고 올라가거나 지지를 뚫고 내려가도 그 종목이 포함된 ETF의 차트에는 해당 차트의 지지와 저항과는 관계 없는 모습이 나타날 것이다.&lt;/p&gt;
-&lt;p&gt;물론 SPY나 QQQ 같은 초대형 ETF라면 패시브 자금의 무지막지한 힘이 그 자체로 각 종목의 지지와 저항에 간섭하게 될 수는 분명이 있을 거다. 하지만 거기에 비하면 아주 초라한 국내 섹터 ETF나 테마형 ETF는 기술적 분석이 의미가 없다고 보는게 맞을 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;그래서 QQQ나 SPY를 제외한 ETF는 차트를 볼 필요가 없냐고 한다면 참 답하기 어려운 일이긴 하다. 솔직히 차트에서 가격이 낮게 나오면 사고 싶고 높아 보이면 안 들어가거나 팔고 싶기 마련이다.&lt;/p&gt;
-&lt;p&gt;의미가 있는지 답이 안 나온다. 포기했다. 그냥 ETF 거래는 QQQ 같은 큰 시장 위주로만 매매하면 의미가 있든 없든 괜찮지 않을까 싶다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20240608-00.html</guid>
-      <pubDate>Sat, 08 Jun 2024 11:50:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

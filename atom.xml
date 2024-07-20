@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-19T16:13:02.161870+09:00</updated>
+  <updated>2024-07-20T23:44:10.300160+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,27 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240720-00.html</id>
+    <title>토스증권 VS KB증권, WTS 유사성 분쟁?</title>
+    <updated>2024-07-20T23:44:01.721464+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>뉴스 피드를 읽다 아주 익숙한 단어가 보였다. 제목이 무려 'KB증권 VS 토스증권, WTS 유사성 두고 법적분쟁'이다. 정말이지 군침이 도는 읽고 싶은 제목이다. 그러니 링크를 클릭해 볼 수밖에 없었다.</p>
+<blockquote>
+<p>KB증권 측은 19일 “토스증권 WTS의 사용자인터페이스(UI)와 사용자경험(UX)과 관련 부분이 자사 WTS인 ‘M-able와이드’와 유사한 면이 많다고 판단했다”며 가처분 신청을 제기했다고 밝혔다. (<a href="https://www.edaily.co.kr/News/Read?newsId=03079926638956160&amp;mediaCodeNo=257" target="_blank">출처📎</a>)</p>
+</blockquote>
+<p>둘 다 주력 WTS로 사용하는 입장에서는 KB증권에겐 좀 미안하지만 KB증권이 주장하는 바를 전혀 이해할 수가 없다. 이 둘은 추구하는 UX도 다르고 그래서 UI도 다르고 기능성 조차도 다르다. 닮았다고 해봤자 다크모드 색상 팔레트 정도가 비슷할 뿐이다.</p>
+<p><img alt="KB증권의 WTS인 마블와이드" src="../upload/202407202340-cfc6417e.png"/>
+<em>KB증권의 WTS인 마블와이드는 배치가 꽤 자유로운 편이지만 일부 불편하고 문제점도 많다.</em></p>
+<p>둘 중 선호하는 것 하나를 꼽으라면 고민할 것도 없이 토스증권의 WTS를 꼽고 싶다. 상대적으로 편하고 미려하고 빠르고 정보의 질도 더 좋다. 비교할 걸 비교해야 할 텐데 KB증권 측은 무슨 생각으로 이러는 것인가 개인적으로는 이해가 잘 안 될 정도다.</p>
+<p><img alt="토스증권 WTS" src="../upload/202407202341-acf345a9.png"/>
+<em>토스증권의 WTS는 자유도가 약간 떨어지지만 UX를 잘 따른 편리한 UI 구성을 갖추고 있다.</em></p>
+<p>물론 이 사건과는 별개로 토스증권이든 KB증권이든 모두 응원한다. WTS를 내놓았다는 것만으로도 충분히 호감가는 증권사다. 그저 좀 더 사이좋게 지냈으면 좋겠다. 물론 맥 앱을 내놓은 한국투자증권도 응원한다. 반쪽짜리 WTS만 제공하는 미래에셋증권이나 쓸 수 없는 쓰레기 같은 키움증권에 비하면 선녀 같은 증권사들이다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240720-00.html"/>
+    <summary type="text">뉴스 피드를 읽다 아주 익숙한 단어가 보였다. 제목이 무려 'KB증권 VS 토스증권, WTS 유사성 두고 법적분쟁'이다.</summary>
+    <published>2024-07-20T23:44:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/swift-run-after-delay.html</id>
     <title>Swift에서 딜레이 후 코드 호출하기</title>
@@ -1939,37 +1960,5 @@ date = ['2024-06-07 12:34:56']
     <link href="https://seorenn.github.io/article/python-markdown-meta.html"/>
     <summary type="text">마크다운 문서에 제목이나 실제로는 표시되지 않는 여러 정보를 표기하고 싶을 때 Meta-Data라는 확장을 이용해 볼 수 있다.</summary>
     <published>2024-06-10T11:20:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240609-00.html</id>
-    <title>한 주 간의 애플 소식들 24-06-09</title>
-    <updated>2024-06-09T21:43:24.069591+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>바로 다음주로 다가온 WWDC 관련 소식 등 한 주 동안 알려진 여러 애플 관련 소식들을 모아봤다.</p>
-<h2>소프트웨어 업데이트</h2>
-<ul>
-<li>iPadOS 17.5.1: 10세대 아이패드용 전용 빌드 업데이트</li>
-<li>Safari Technology Preview 196</li>
-</ul>
-<h2>WWDC24에서는 과연 무엇이?</h2>
-<p>iOS 18에서는 컨트롤 센터가 개선될 예정인데 음악 위젯과 홈킷 관련 개선 및 페이징 지원 등이 있을 것 같다. 메시지 앱에서는 이모티콘 반응 기능이 추가될 것 같다. 다크모드 시 홈 화면의 시인성 개선도 이뤄질 것 같고 앱 잠금 기능도 새로 들어올 것 같다. macOS 15 및 iOS 18 공통적으로 새로운 패스워드 관리 앱이 도입될 것 같다.</p>
-<p>그 밖에 이번 WWDC에서는 별도의 신형 하드웨어 발표는 없을 것 같다. M4 탑재 맥 정도는 발표될 수 있을 거라 생각했는데 정말일까?</p>
-<h2>일반적인 소식들</h2>
-<ul>
-<li>M2 아이패드 에어의 스펙 다운 사건(?)에 대해 애플은 "그럼에도 성능은 발표 때의 내용에서 바뀐 게 없다"고 주장했다.</li>
-<li>애플은 M4 아이패드 프로의 한국 정발이 6월 19일이 될 것이라고 밝혔다.</li>
-<li>애플은 스크린타임을 이용한 웹 브라우저 콘텐츠 제한을 우회하는 오래된 버그를 드디어 수정했다고 밝혔다. 딱히 업데이트 내역에는 없었지만 iOS 17.5에 포함된 듯하다.</li>
-</ul>
-<h2>여러 루머들</h2>
-<ul>
-<li>신형 애플TV 출시 소식은 당분간 보기 힘들 것이라는 소문이 있다. 설마 접는 걸까?</li>
-<li>폴더블 아이폰은 2027년은 되어야 볼 수 있을 것 같다.</li>
-<li>아이폰 16 프로의 얇은 베젤은 새로운 기록을 세울 지도 모르겠다.</li>
-<li>애플이 중국에서 애플TV+를 런칭하기 위해 협의를 진행 중인 것 같다. 성공한다면 중국에서 공식 서비스 되는 유일한 미제(?) OTT가 될 거 같다.</li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240609-00.html"/>
-    <summary type="text">WWDC 관련 소식 등 한 주 동안 알려진 여러 애플 관련 소식들을 모아봤다.</summary>
-    <published>2024-06-09T21:43:00+09:00</published>
   </entry>
 </feed>

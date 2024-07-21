@@ -13,7 +13,101 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 20 Jul 2024 23:45:29 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2024 21:19:10 +0900</lastBuildDate>
+    <item>
+      <title>한 주간의 애플 소식들 24-07-21</title>
+      <link>https://seorenn.github.io/log/20240721-00.html</link>
+      <description>&lt;h2&gt;소프트웨어 릴리즈&lt;/h2&gt;
+&lt;p&gt;차세대 OS들의 공개 베타가 슬슬 시작되고 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15 Sequoia public beta 1&lt;/li&gt;
+&lt;li&gt;iOS 18 public beta 1&lt;/li&gt;
+&lt;li&gt;iPadOS 18 public beta 1&lt;/li&gt;
+&lt;li&gt;watchOS 11 public beta 1&lt;/li&gt;
+&lt;li&gt;tvOS 18 public beta 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;앞서 공개되었던 개발자 베타 3에서 아래의 OS들은 빌드 번호가 갱신되어서 새로 올라왔다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15 Sequoia beta 3&lt;/li&gt;
+&lt;li&gt;iOS 18 beta 3&lt;/li&gt;
+&lt;li&gt;iPadOS 18 beta 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;위 버전들은 이모티콘 관련 기능에 문제가 있는지 최신 업데이트 사항이 제거되고 이전 beta 2 시절의 내용으로 돌아간 듯하다.&lt;/p&gt;
+&lt;p&gt;그 외에 현재 메이저 버전의 마이너 업데이트의 네 번째 개발자 베타 버전들도 공개되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 14.6 beta 4&lt;/li&gt;
+&lt;li&gt;iOS 17.6 beta 4&lt;/li&gt;
+&lt;li&gt;iPadOS 17.6 beta 4&lt;/li&gt;
+&lt;li&gt;visionOS 1.3 beta 4&lt;/li&gt;
+&lt;li&gt;watchOS 10.6 beta 4&lt;/li&gt;
+&lt;li&gt;tvOS 17.6 beta 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;그 외에 아래의 릴리즈 소식들이 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Safari Technology Preview 199&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;이제 게임 뿐만 아니라 에뮬도?&lt;/strong&gt;&lt;br/&gt;
+애플이 PC 에뮬레이터 앱을 승인했다. 지난 '저작권 사유로 거부되었다'는 소식이 전해진 이후로 이해할 수 없다는 평가가 많았었는데 그래서인지 애플이 자세를 바꾼 모양이다. 어쨌든 이제 게임 에뮬레이터 뿐만 아니라 PC 에뮬레이터도 앱스토어에 대거 진출할 듯하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18&lt;/strong&gt;&lt;br/&gt;
+iOS 18의 사진 앱에 '복구된 앨범' 기능이 생기는 듯하다. 여기에는 손실되거나 훼손된 사진이 복구되어 분류되는 것으로 추측된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI&lt;/strong&gt;&lt;br/&gt;
+애플이 최근 Youtube 자막 등의 콘텐츠를 무단으로 AI 학습에 사용했다는 의혹이 제기되었다. 이에 대해 애플은 OpenELM 학습은 연구 목적이며 자사의 애플지능(Apple Intelligence) 서비스와는 관련이 없다고 밝혔다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AAPL&lt;/strong&gt;&lt;br/&gt;
+애플의 인도 매출이 33% 가량 급증했다고 한다. 애플(AAPL)의 시가총액은 3.62조 달러를 돌파하며 다시 세계에서 가장 가치있는 기업이 되었다. 다만 iPhone의 매출 서프라이즈를 점치는 컨센서스가 많은 와중에 애플이 정작 iPhone 16 주문을 늘리지는 않을 것이라는 루머도 전해지고 있다.&lt;/p&gt;
+&lt;h2&gt;기타 루머 소식들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;iPhone 17에는 TSMC의 차세대 2nm 공정으로 제작된 칩이 사용될 가능성이 있다는 루머가 나왔다가 다시 가능성이 낮다는 루머도 나왔다.&lt;/li&gt;
+&lt;li&gt;M5가 탑재될 맥북 모델들에는 신형 컴팩트 카메라 모듈이 사용될 듯하다.&lt;/li&gt;
+&lt;li&gt;iPhone의 공간 절약형 내부 디자인 개발이 연기되어 iPhone 17에서나 적용될 가능성이 있는 모양이다.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;h2&gt;소프트웨어 릴리즈&lt;/h2&gt;
+&lt;p&gt;차세대 OS들의 공개 베타가 슬슬 시작되고 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15 Sequoia public beta 1&lt;/li&gt;
+&lt;li&gt;iOS 18 public beta 1&lt;/li&gt;
+&lt;li&gt;iPadOS 18 public beta 1&lt;/li&gt;
+&lt;li&gt;watchOS 11 public beta 1&lt;/li&gt;
+&lt;li&gt;tvOS 18 public beta 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;앞서 공개되었던 개발자 베타 3에서 아래의 OS들은 빌드 번호가 갱신되어서 새로 올라왔다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15 Sequoia beta 3&lt;/li&gt;
+&lt;li&gt;iOS 18 beta 3&lt;/li&gt;
+&lt;li&gt;iPadOS 18 beta 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;위 버전들은 이모티콘 관련 기능에 문제가 있는지 최신 업데이트 사항이 제거되고 이전 beta 2 시절의 내용으로 돌아간 듯하다.&lt;/p&gt;
+&lt;p&gt;그 외에 현재 메이저 버전의 마이너 업데이트의 네 번째 개발자 베타 버전들도 공개되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 14.6 beta 4&lt;/li&gt;
+&lt;li&gt;iOS 17.6 beta 4&lt;/li&gt;
+&lt;li&gt;iPadOS 17.6 beta 4&lt;/li&gt;
+&lt;li&gt;visionOS 1.3 beta 4&lt;/li&gt;
+&lt;li&gt;watchOS 10.6 beta 4&lt;/li&gt;
+&lt;li&gt;tvOS 17.6 beta 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;그 외에 아래의 릴리즈 소식들이 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Safari Technology Preview 199&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;이제 게임 뿐만 아니라 에뮬도?&lt;/strong&gt;&lt;br/&gt;
+애플이 PC 에뮬레이터 앱을 승인했다. 지난 '저작권 사유로 거부되었다'는 소식이 전해진 이후로 이해할 수 없다는 평가가 많았었는데 그래서인지 애플이 자세를 바꾼 모양이다. 어쨌든 이제 게임 에뮬레이터 뿐만 아니라 PC 에뮬레이터도 앱스토어에 대거 진출할 듯하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18&lt;/strong&gt;&lt;br/&gt;
+iOS 18의 사진 앱에 '복구된 앨범' 기능이 생기는 듯하다. 여기에는 손실되거나 훼손된 사진이 복구되어 분류되는 것으로 추측된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI&lt;/strong&gt;&lt;br/&gt;
+애플이 최근 Youtube 자막 등의 콘텐츠를 무단으로 AI 학습에 사용했다는 의혹이 제기되었다. 이에 대해 애플은 OpenELM 학습은 연구 목적이며 자사의 애플지능(Apple Intelligence) 서비스와는 관련이 없다고 밝혔다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AAPL&lt;/strong&gt;&lt;br/&gt;
+애플의 인도 매출이 33% 가량 급증했다고 한다. 애플(AAPL)의 시가총액은 3.62조 달러를 돌파하며 다시 세계에서 가장 가치있는 기업이 되었다. 다만 iPhone의 매출 서프라이즈를 점치는 컨센서스가 많은 와중에 애플이 정작 iPhone 16 주문을 늘리지는 않을 것이라는 루머도 전해지고 있다.&lt;/p&gt;
+&lt;h2&gt;기타 루머 소식들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;iPhone 17에는 TSMC의 차세대 2nm 공정으로 제작된 칩이 사용될 가능성이 있다는 루머가 나왔다가 다시 가능성이 낮다는 루머도 나왔다.&lt;/li&gt;
+&lt;li&gt;M5가 탑재될 맥북 모델들에는 신형 컴팩트 카메라 모듈이 사용될 듯하다.&lt;/li&gt;
+&lt;li&gt;iPhone의 공간 절약형 내부 디자인 개발이 연기되어 iPhone 17에서나 적용될 가능성이 있는 모양이다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20240721-00.html</guid>
+      <pubDate>Sun, 21 Jul 2024 21:18:00 +0900</pubDate>
+    </item>
     <item>
       <title>토스증권 VS KB증권, WTS 유사성 분쟁?</title>
       <link>https://seorenn.github.io/log/20240720-00.html</link>
@@ -3133,86 +3227,6 @@ print(f&amp;quot;links = {md.links})
 &lt;p&gt;'이열치열'은 절대로 '더위는 에어컨으로 잡아 병신아'라는 의미일 것이다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240610-00.html</guid>
       <pubDate>Mon, 10 Jun 2024 14:26:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>Python-Markdown에서 문서의 메타 데이터 추출하기</title>
-      <link>https://seorenn.github.io/article/python-markdown-meta.html</link>
-      <description>&lt;p&gt;마크다운 문서에 제목이나 실제로는 표시되지 않는 여러 정보를 표기하고 싶을 때 Meta-Data라는 확장을 이용해 볼 수 있다. 간단한 소개와 사용법을 알아보자.&lt;/p&gt;
-&lt;h2&gt;Meta-Data&lt;/h2&gt;
-&lt;p&gt;Python-Markdown의 Meta-Data 확장은 문서에 메타 데이터를 읽을 수 있게 지원하는 확장으로 MultiMarkdown에서 쓰이는 메타 데이터 표기 방식을 비슷하게 구현한 확장이다. 예를 들어 아래와 같은 마크다운 문서 예제를 보자.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Title: 문서의 제목
-Description: 문서의 대략적인 설명
-Date: 2024-06-07 12:34:56
------
-
-이 문서는 메타 정보가 포함된 마크다운 문서입니다.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;여기서 상단에 Title, Description, Date 세 가지 정보를 적어놨는데 이게 메타 데이터다. 메타 데이터 구역 하단에 &lt;code&gt;-----&lt;/code&gt;로 줄을 그어서 그 다음부터 본문이 이어진다는 것을 표시해 놨는데 이 줄은 꼭 그을 필요는 없지만 개인적으로는 이게 더 읽기에 쉬운 것 같아서 쓰고 있다.&lt;/p&gt;
-&lt;p&gt;참고로 메타 데이터 종류는 그냥 정의하기 나름이다. 위의 세 가지 필드도 개인적으로 정의해서 사용하는 것이지 원래 저렇게 쓰라고 정해진 건 하나도 없다.&lt;/p&gt;
-&lt;h2&gt;메타 데이터 추출하기&lt;/h2&gt;
-&lt;p&gt;메타 데이터는 마크다운 문서를 변환할 때 &lt;code&gt;meta&lt;/code&gt;라는 확장을 명시해 주면 바로 추출할 수 있다. 다만 바로 변환하는 코드의 경우는 정보에 접근할 인터페이스가 없으니 별도로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 변환해 줘야 한다는 점에 주의하자. 아래와 같은 식이다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown(extensions=[&amp;quot;meta&amp;quot;])
-html = md.convert(text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이런 식으로 구현하면 변환(convert) 작업이 수행된 후 메타 데이터가 인스턴스의 &lt;code&gt;Meta&lt;/code&gt;라는 사전형 프로퍼티로 저장되기 때문에 이 프로퍼티를 바로 액세스 할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;print(f&amp;quot;title = {md.Meta['title']}&amp;quot;)
-print(f&amp;quot;description = {md.Meta['description']}&amp;quot;)
-print(f&amp;quot;date = {md.Meta['date']}&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;필드 이름이 전부 소문자로 바뀐다&lt;/strong&gt;는 점에 주의하자. 어쨌든 실제로 REPL에서 실행시켜 보면 아래와 같은 결과를 얻을 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; md = markdown.Markdown(extensions=[&amp;quot;meta&amp;quot;])
-&amp;gt;&amp;gt;&amp;gt; html = md.convert(text)
-&amp;gt;&amp;gt;&amp;gt;
-&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;title = {md.Meta['title']}&amp;quot;)
-title = ['문서의 제목']
-&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;description = {md.Meta['description']}&amp;quot;)
-description = ['문서의 대략적인 설명']
-&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;date = {md.Meta['date']}&amp;quot;)
-date = ['2024-06-07 12:34:56']
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;좀 특이하게 리스트로 저장되어 있는데 굳이 사용에 어려울 건 없다. 이제 남은 일은 리스트의 첫 데이터를 끄집어내서 적절히 가공하는 일 뿐일 테니 말이다.&lt;/p&gt;
-&lt;p&gt;더 상세한 사용법은 &lt;a href="https://python-markdown.github.io/extensions/meta_data/" target="_blank"&gt;공식 사이트의 레퍼런스 매뉴얼📎&lt;/a&gt;을 읽어볼 순 있겠지만 여기서 더 특수한 기능에 관한 정보는 없을 것 같다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;마크다운 문서에 제목이나 실제로는 표시되지 않는 여러 정보를 표기하고 싶을 때 Meta-Data라는 확장을 이용해 볼 수 있다. 간단한 소개와 사용법을 알아보자.&lt;/p&gt;
-&lt;h2&gt;Meta-Data&lt;/h2&gt;
-&lt;p&gt;Python-Markdown의 Meta-Data 확장은 문서에 메타 데이터를 읽을 수 있게 지원하는 확장으로 MultiMarkdown에서 쓰이는 메타 데이터 표기 방식을 비슷하게 구현한 확장이다. 예를 들어 아래와 같은 마크다운 문서 예제를 보자.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Title: 문서의 제목
-Description: 문서의 대략적인 설명
-Date: 2024-06-07 12:34:56
------
-
-이 문서는 메타 정보가 포함된 마크다운 문서입니다.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;여기서 상단에 Title, Description, Date 세 가지 정보를 적어놨는데 이게 메타 데이터다. 메타 데이터 구역 하단에 &lt;code&gt;-----&lt;/code&gt;로 줄을 그어서 그 다음부터 본문이 이어진다는 것을 표시해 놨는데 이 줄은 꼭 그을 필요는 없지만 개인적으로는 이게 더 읽기에 쉬운 것 같아서 쓰고 있다.&lt;/p&gt;
-&lt;p&gt;참고로 메타 데이터 종류는 그냥 정의하기 나름이다. 위의 세 가지 필드도 개인적으로 정의해서 사용하는 것이지 원래 저렇게 쓰라고 정해진 건 하나도 없다.&lt;/p&gt;
-&lt;h2&gt;메타 데이터 추출하기&lt;/h2&gt;
-&lt;p&gt;메타 데이터는 마크다운 문서를 변환할 때 &lt;code&gt;meta&lt;/code&gt;라는 확장을 명시해 주면 바로 추출할 수 있다. 다만 바로 변환하는 코드의 경우는 정보에 접근할 인터페이스가 없으니 별도로 &lt;code&gt;Markdown&lt;/code&gt; 인스턴스를 생성해서 변환해 줘야 한다는 점에 주의하자. 아래와 같은 식이다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;import markdown
-
-md = markdown.Markdown(extensions=[&amp;quot;meta&amp;quot;])
-html = md.convert(text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이런 식으로 구현하면 변환(convert) 작업이 수행된 후 메타 데이터가 인스턴스의 &lt;code&gt;Meta&lt;/code&gt;라는 사전형 프로퍼티로 저장되기 때문에 이 프로퍼티를 바로 액세스 할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;print(f&amp;quot;title = {md.Meta['title']}&amp;quot;)
-print(f&amp;quot;description = {md.Meta['description']}&amp;quot;)
-print(f&amp;quot;date = {md.Meta['date']}&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;필드 이름이 전부 소문자로 바뀐다&lt;/strong&gt;는 점에 주의하자. 어쨌든 실제로 REPL에서 실행시켜 보면 아래와 같은 결과를 얻을 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-python"&gt;&amp;gt;&amp;gt;&amp;gt; md = markdown.Markdown(extensions=[&amp;quot;meta&amp;quot;])
-&amp;gt;&amp;gt;&amp;gt; html = md.convert(text)
-&amp;gt;&amp;gt;&amp;gt;
-&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;title = {md.Meta['title']}&amp;quot;)
-title = ['문서의 제목']
-&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;description = {md.Meta['description']}&amp;quot;)
-description = ['문서의 대략적인 설명']
-&amp;gt;&amp;gt;&amp;gt; print(f&amp;quot;date = {md.Meta['date']}&amp;quot;)
-date = ['2024-06-07 12:34:56']
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;좀 특이하게 리스트로 저장되어 있는데 굳이 사용에 어려울 건 없다. 이제 남은 일은 리스트의 첫 데이터를 끄집어내서 적절히 가공하는 일 뿐일 테니 말이다.&lt;/p&gt;
-&lt;p&gt;더 상세한 사용법은 &lt;a href="https://python-markdown.github.io/extensions/meta_data/" target="_blank"&gt;공식 사이트의 레퍼런스 매뉴얼📎&lt;/a&gt;을 읽어볼 순 있겠지만 여기서 더 특수한 기능에 관한 정보는 없을 것 같다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/python-markdown-meta.html</guid>
-      <pubDate>Mon, 10 Jun 2024 11:20:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

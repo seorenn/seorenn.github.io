@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>Poetry 소개 및 간단한 사용법 정리 - Seorenn</title>
-    <meta name="twitter:title" content="Poetry 소개 및 간단한 사용법 정리" />
-    <meta name="og:title" content="Poetry 소개 및 간단한 사용법 정리" />
-    <meta name="description" content="Poetry - Python용 패키징 겸 의존성 관리 도구의 간단한 사용법" />
-    <meta name="twitter:description" content="Poetry - Python용 패키징 겸 의존성 관리 도구의 간단한 사용법" />
-    <meta name="og:description" content="Poetry - Python용 패키징 겸 의존성 관리 도구의 간단한 사용법" />
-    <link rel="canonical" href="https://seorenn.github.io/article/python-poetry.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/python-poetry.html" />
+    <title>Python 모듈 이름 알아내기 - Seorenn</title>
+    <meta name="twitter:title" content="Python 모듈 이름 알아내기" />
+    <meta name="og:title" content="Python 모듈 이름 알아내기" />
+    <meta name="description" content="어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우 모듈 이름을 찾는 방법을 알아보자." />
+    <meta name="twitter:description" content="어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우 모듈 이름을 찾는 방법을 알아보자." />
+    <meta name="og:description" content="어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우 모듈 이름을 찾는 방법을 알아보자." />
+    <link rel="canonical" href="https://seorenn.github.io/article/python-find-out-module-name.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/python-find-out-module-name.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>Poetry 소개 및 간단한 사용법 정리</h1>
+          <h1>Python 모듈 이름 알아내기</h1>
           <div class="title-date">
             
               
@@ -73,70 +73,61 @@
               <span>//</spans>
             
             
-              <span>2024년 07월 09일 작성</span>
+              <span>2024년 07월 23일 작성</span>
             
             
             
           </div>
         </header>
-        <p>Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 그리고 현대적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.</p>
-<h2>프로젝트 시작하기</h2>
-<p>Poetry는 당연하겠지만 프로젝트 단위로 사용할 수 있다. 그래서 사용하기 위해선 아래와 같이 <code>new</code> 커맨드로 프로젝트를 생성해야 한다.</p>
-<pre><code class="language-bash">poetry new PROJECT_NAME
+        <p>혹시나 어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우가 있다면 어떻게 찾아야 할까? 간단히 알아보자.</p>
+<p>발단은 마크다운 모듈에서 매크로 기능을 알아보던 중 일어났다. <code>markdown_macros</code> 라는 모듈이 마음에 들어서 설치를 해봤다.</p>
+<pre><code class="language-bash">pip install markdown_macros
 </code></pre>
-<p>이렇게 하면 몇몇 확인 단계를 거쳐 새로운 파이썬 프로젝트를 생성할 수 있다.</p>
-<p>만약 이미 존재하는 프로젝트에 Poetry 환경만 구성하고 싶다면 아래와 같이 <code>init</code> 커맨드를 사용해 보자.</p>
-<pre><code class="language-bash">poetry init
+<p>설치는 잘 끝났다.</p>
+<p>문제는 공식 예제 코드를 거의 그대로 복사한 코드가 동작하지 않았다는 데 있다. 문제의 코드는 아래 부분이다.</p>
+<pre><code class="language-python">from markdown_macros import MacroExtension
 </code></pre>
-<p>위 두 커맨드 모두 핵심으로 프로젝트 루트에 <code>pyproject.toml</code>이라는 파일을 생성한다. 이름대로 프로젝트 정의 및 의존성 목록을 담은 중요한 파일이다.</p>
-<h2>의존성 관리하기</h2>
-<p>프로젝트에 의존성을 추가하려면 아래와 같이 <code>add</code> 커맨드를 사용하면 된다. 여기에 특정 버전을 명시할 수도 있고, 개발 모드 전용 의존성일 경우 <code>--dev</code> 플래그도 추가해 줄 수 있다.</p>
-<pre><code class="language-bash">poetry add PACKAGE_NAME
-poetry add ANOTHER_PACKAGE_NAME==x.y.z
-poetry add --dev PACKAGE_NAME
+<p>어처구니 없게도 모듈 사용의 시작점에 해당하는 import 단계에서 아래와 같은 오류가 발생하고 있었다.</p>
+<pre><code>ModuleNotFoundError: No module named 'markdown_macros'
 </code></pre>
-<p>이 명령들은 프로젝트의 virtualenv 환경에 자동으로 설치까지 진행된다.</p>
-<p>의존성 패키지를 삭제하려면 <code>remove</code> 커맨드를 사용할 수 있다.</p>
-<pre><code class="language-python">poetry remove PACKAGE_NAME
+<p>정말 어처구니가 없었다. 이건 공식 예제가 아니었던 걸까? 아니면 내가 뭔가 착각하고 있는 것일까? </p>
+<p>공식 사이트에서는 별다른 이슈나 언급이 없었다. 도대체 뭘까? 어떻게 된 일일까?</p>
+<h2>해답: 모듈의 정확한 이름 알아내기</h2>
+<p>혹시나 <code>markdown_macros</code>의 설치된 실제 모듈 이름을 알고 싶어한다면 답은 <code>mdx_macros</code>라는 좀 다른 것이라는 점을 먼저 밝힌다.</p>
+<p>이것을 찾는 과정은 순탄치 않았지만 결론적으로 아래 커맨드로 확인할 수 있었다.</p>
+<pre><code class="language-jsx">pydoc modules
 </code></pre>
-<p>이 외에 사용하는 의존성 패키지들의 버전을 일괄적으로 업데이트 하려면 <code>update</code> 커맨드를 사용할 수 있다.</p>
-<pre><code class="language-bash">poetry update
-</code></pre>
-<p>물론 <code>pyproject.toml</code> 스펙에 적힌 한도 내에서 최신 버전으로 업데이트 된다.</p>
-<h2>수작업으로 의존성 관리하기</h2>
-<p>CLI 커맨드 보다 수작업을 좋아한다면 <code>pyproject.toml</code> 파일을 열어서 직접 명시해 주는 방법도 있다. 예를 들자면 이런 식이다.</p>
-<pre><code class="language-text">[tool.poetry.dependencies]
-python = &quot;^3.8&quot;
-somepackage = &quot;^3.10.0&quot;
+<p>이 커맨드를 입력하면 방대한 모듈 목록이 나열된다. 아래는 실제 출력 결과의 내용들 중 불필요한 일부를 생략한 것이다.</p>
+<pre><code class="language-jsx">$ pydoc modules
 
-[tool.poetry.dev-dependencies]
-pytest = &quot;^5.2&quot;
+Please wait a moment while I gather a list of all available modules...
+
+test_sqlite3: testing with SQLite version 3.45.2
+__future__          _testmultiphase     graphlib            rlcompleter
+...
+_datetime           bisect              markdown            subprocess
+_dbm                builtins            markupsafe          sunau
+_decimal            bz2                 marshal             symtable
+_elementtree        cProfile            math                sys
+_functools          calendar            mdx_macros          sysconfig
+...
+_testinternalcapi   glob                resource
 </code></pre>
-<p>버전 앞에 붙인 꺽쇠(<code>^</code>)의 의미는 '메이저 업데이트를 제외한 최신 버전' 이라는 의미이다. 즉 <code>^3.10.0</code>이라는 의미는 <code>3.x.y</code> 버전 중 가장 최신 버전을 사용한다는 의미다.</p>
-<p>이렇게 작성한 후 <code>install</code> 커맨드를 사용하면 프로젝트의 virtualenv 환경에 일괄 패키지 설치가 가능하다.</p>
-<pre><code class="language-python">poetry install
+<p>결국 여기서 <code>mdx_macros</code>라는 이름을 찾았고 혹시나해서 import해서 <code>dir</code>로 확인해보니 원하는 모듈임을 확인할 수 있었다.</p>
+<pre><code class="language-python">&gt;&gt;&gt; import mdx_macros
+&gt;&gt;&gt; dir(mdx_macros)
+[ ... 'MacroExtension', ...]
 </code></pre>
-<p>위 커맨드를 보고 <code>pip install -r requirements.txt</code>라는 커맨드가 떠오른다면 정답이다. 즉 이 커맨드를 <code>poetry install</code> 커맨드로 완전히 대체할 수 있다.</p>
-<h2>프로젝트 실행하기</h2>
-<p>프로젝트를 실행시키기 위해서는 <code>run</code> 커맨드를 사용하면 된다. 예를 들어 실행시킬 엔트리포인트 파일이 <code>main.py</code>라면 아래와 같은 식이다.</p>
-<pre><code class="language-bash">poetry run python main.py
+<p><code>...</code>으로 표시한 부분은 불필요해서 생략했다는 것에 주의하자.</p>
+<p>어쨌든 이런 식으로 문제가 무엇이고 어떻게 해결할 수 있는지 알 수 있게 되었다.</p>
+<p>참고로 파이썬 패키지 목록을 구할 수 있는 방법은 여러가지지만, 패키지 이름이 아닌 실제로 import 해야 하는 모듈 명은 알아내는 것은 pydoc을 이용하는 방법이 유용했다. </p>
+<p>이 외에 다른 방법도 하나 있는데 help 커맨드를 이용하는 방법이다.</p>
+<pre><code class="language-bash">$ python -c 'help(&quot;modules&quot;)'
 </code></pre>
-<p>이 경우 해당 프로젝트의 virtualenv 환경에서 <code>run</code> 뒤의 커맨드가 실행되는 식이다.</p>
-<h2>virtualenv 셸 얻기</h2>
-<p>프로젝트의 virtualenv 환경에서 여러 가지를 시험해 보기 위해 셸을 얻고 싶다면 단순하게 <code>shell</code> 커맨드를 사용하면 된다.</p>
-<pre><code class="language-bash">poetry shell
-</code></pre>
-<h2>Docker와 Poetry</h2>
-<p>Poetry의 특징은 virtualenv 환경을 자동으로 통합하는 것이다. 그리고 Docker 컨테이너는 프로젝트 단위로 독립된 환경을 구축하려는 의도가 있다. 결과적으로 해당 프로젝트를 Docker 컨테이너 내에서 돌린다면 Poetry의 virtualenv 환경 통합 기능은 불필요할 수도 있다.</p>
-<p>그럴 때는 간단하게 아래 커맨드로 virtualenv 환경을 생성하지 않도록 설정해 줄 수 있다.</p>
-<pre><code class="language-bash">poetry config virtualenvs.create false
-</code></pre>
-<p>위 커맨드는 Poetry의 virtualenv를 비활성화 시키므로 <code>Dockerfile</code> 등에 <code>poetry install</code> 커맨드를 실행하기 전에 동작하도록 작성하면 될 것 같다.</p>
-<h2>기타</h2>
-<p>Poetry 자체를 업그레이드 하려면 <code>self update</code> 커맨드를 사용해 보자.</p>
-<pre><code class="language-python">poetry self update
-</code></pre>
-<p>다만 Homebrew 등의 다른 패키지 매니저를 통해 Poetry를 설치했다면 위 커맨드를 신경 쓸 필요는 없을 것 같다.</p>
+<p>위 커맨드는 위의 pydoc의 실행 결과와 동일한 내용을 출력한다. 단지 커맨드라인에서는 pydoc을 쓰는 방법이 명령어가 짧아서 편했다는 차이가 있을 것 같다. 하지만 만약 python REPL에서 확인하려면 help 커맨드를 쓰는 것이 더 편할 것 같다.</p>
+<h2>추신</h2>
+<p>참고로 이 <code>markdown_macros</code> 패키지는 이름이 비슷한 하지만 전혀 다른 두 모듈이 존재해서 착각해서 발생한 문제였다. pip에서 search 커맨드를 지원하지 않으니 이런 오해가 종종 발생할 수도 있는 듯하다.</p>
+<p>참고로 하나 더 말하자면 이 모듈과 이름이 비슷한 다른 모듈 둘 다 현재는 개인적으로 쓰지 않는다. 아무래도 더이상 유지보수 되지 않아써 뭔가 써먹기가 힘든 것 같아서 직접 다른 방식으로 구현했다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -154,11 +145,11 @@ pytest = &quot;^5.2&quot;
               <ul>
                 
                   <li>
-                    <a href="../article/python-find-out-module-name.html">Python 모듈 이름 알아내기</a>
+                    <a href="../article/python-exceptions.html">파이썬 예외 처리 정리</a>
                   </li>
                 
                   <li>
-                    <a href="../article/python-exceptions.html">파이썬 예외 처리 정리</a>
+                    <a href="../article/python-poetry.html">Poetry 소개 및 간단한 사용법 정리</a>
                   </li>
                 
                   <li>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Emacs의 evil-surround 확장 소개 및 기본 사용법 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs의 evil-surround 확장 소개 및 기본 사용법" />
+    <meta name="og:title" content="Emacs의 evil-surround 확장 소개 및 기본 사용법" />
+    <meta name="description" content="evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나 둘러싸인 문자를 건드리는 등의 기능을 제공한다." />
+    <meta name="twitter:description" content="evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나 둘러싸인 문자를 건드리는 등의 기능을 제공한다." />
+    <meta name="og:description" content="evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나 둘러싸인 문자를 건드리는 등의 기능을 제공한다." />
+    <link rel="canonical" href="https://seorenn.github.io/article/emacs-evil-surround.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/emacs-evil-surround.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Emacs의 evil-surround 확장 소개 및 기본 사용법</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/emacs.html">Emacs</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 07월 24일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나(surrounding) 둘러싸인 문자를 건드리는 등의 기능을 제공한다.</p>
+<p>설치 방법은 각자의 상황에 따라 다르니 일단 생략한다. 개인적으로는 Doom Emacs 설정 팩을 쓰고 있고 여기에는 기본 설정으로 들어있기 때문에 그대로 쓰고 있다. 당연하게도 관련 확장을 설치한 Vim에서도 동일한 방식으로 사용할 수 있을 것이다.</p>
+<p>이제 기본 사용법을 정리해 보자.</p>
+<h2>선택영역 둘러싸기</h2>
+<p>비주얼 모드에서 <code>S</code>를 누른 후 특정 문자를 입력하면 해당 문자가 좌우에 쌍(pair)으로 입력된다. 예를 들어 아래 예에서 <code>BOLD</code> 부분을 비주얼 모드로 선택했다고 치자.</p>
+<pre><code>This is BOLD style in Org Mode.
+</code></pre>
+<p>이렇게 영역으로 선택된 상태에서 <code>S=</code>을 입력하면 아래와 같이 바뀐다.</p>
+<pre><code>This is =BOLD= style in Org Mode.
+</code></pre>
+<p>보다시피 입력된 문자가 선택영역 좌우에 입력되는 것을 알 수 있다. 이게 바로 이 Surround의 가장 토대가 되는 기능이라고 볼 수 있다.</p>
+<h2>선택영역 둘러싸기 (2)</h2>
+<p>둘러싸기 기능에서 한가지 더 특수한 기능이 있는데 바로 짝이 있는 문자로 둘러싸기 기능이 있다. 예를 들자면 괄호 입력 등이 있다. 다만 특징이 한가지 있다면 짝 중에 닫는 문자와 여는 문자 어떤 걸 입력하느냐에 따라 동작이 약간 다르다는 점이 있다.</p>
+<p>예를 들어 아래와 같은 경우를 보자.</p>
+<pre><code>print &quot;Hello World&quot;
+</code></pre>
+<p>여기서 <code>"Hello World"</code> 부분을 비주얼 모드로 선택해 주고 <code>S)</code>를 입려해주면 아래와 같이 변한다.</p>
+<pre><code>print (&quot;Hello World&quot;)
+</code></pre>
+<p>조금 다르게 다시 원래 상태에서 똑같이 선택해 주고 <code>S(</code>를 입력하면 이번에는 이렇게 바뀐다.</p>
+<pre><code>print ( &quot;Hello World&quot; )
+</code></pre>
+<p>보다시피 짝 문자를 넣어주지만 공백을 한 칸 넣어주는 특이한 방식으로 동작한다.</p>
+<p>개인적으로는 닫는 문자를 입력하는 방식을 선호한다. 어쨌든 이런 식으로 중괄호나 대괄호 같이 짝이 있는 문자로 둘러싸기를 좀 더 쉽게 할 수 있다.</p>
+<h2>더 크게 둘러싸기(?)</h2>
+<p>부제를 정하는 데 좀 난감했는데, 예를 들자면 C언어 혹은 파생 언어에서 특정 코드를 블럭으로 만들 때 유용하게 쓸 수 있는 기능이 있다. 아래의 예제를 살펴보자.</p>
+<pre><code>int value = 0;
+</code></pre>
+<p>위 한 줄을 비주얼 모드로 선택해 주고 이번에는 <code>gS}</code>를 입력해 보자. 아래와 같이 바뀐다.</p>
+<pre><code>{
+int value = 0;
+
+}
+</code></pre>
+<p>이런 식으로 짝 문자로 둘러싸되 개행문자를 넣어서 둘러싸준다.</p>
+<p>사실 scratch 버퍼에서 테스트 했기 때문에 모양이 좀 이상한 것 같은데, 적절한 언어 메이저 모드로 동작 중이었다면 들여쓰기가 자연스럽게 적용되었을 것이다.</p>
+<h2>둘러싸는 문자 바꾸기</h2>
+<p>노멀 모드에서 원하는 라인에 커서를 놓고 <code>cs</code> 키 이후 바꾸려는 문자와 바꿀 문자를 연달아 입력하면 둘러싸는 문자가 원하는 문자로 바뀐다. 예를 들어 아래의 경우를 보자.</p>
+<pre><code>print(&quot;Hello World&quot;);
+</code></pre>
+<p>이 줄의 아무 곳에서 커서를 놓고 <code>cs"'</code>를 입력하면 아래와 같이 바뀐다.</p>
+<pre><code>print('Hello World');
+</code></pre>
+<p>즉 <code>"</code> 문자가 <code>'</code>로 바뀌였다.</p>
+<h2>페어 문자 삭제하기</h2>
+<p>둘러싸기가 있다면 삭제하기도 있기 마련이다. 이 기능도 딱히 선택영역 없이 커서가 위치하는 라인에서 <code>ds</code>를 누른 후 삭제하기 원하는 문자를 입력하면 된다. 예를 들어 아래의 같은 문자열의 라인에 커서를 놔뒀다고 가정하자.</p>
+<pre><code>value = object.get(&quot;DEFAULT_NAME&quot;)
+</code></pre>
+<p>이 상황에서 <code>ds"</code>를 눌러주면 아래와 같이 바뀐다.</p>
+<pre><code>value = object.get(DEFAULT_NAME)
+</code></pre>
+<p>자주 쓸 기능은 아닌 것 같지만 글을 쓸 때 종종 쓸 일이 있을 것 같기는 하다.</p>
+<h2>마무리 및 관련된 링크</h2>
+<p>공식 저장소에서 소개하는 기능 몇가지는 무슨 이유인지 제대로 동작하지 않는 게 있어서 확인하지는 못했다. 개인적으로 자주 사용하는 기능은 아니지만 확인하지 못 한 건 좀 아쉽다.</p>
+<p>어쨌거나 기본적인 사용법만 정리해 봤지만 이 정도만 해도 제법 사용처가 무궁무진하다. 물론 여기다 커스터마이징까지 가능하니 필요하다면 공식 사이트를 둘러보며 사용법을 알아보는 것도 나쁘지는 않을 것 같다. 다만 개인적으로는 딱히 커스터마이징이 필요 없을 정도로 기본 설정이 잘 되어 있어서 아주 잘 쓰고 있는 확장이다.</p>
+<ul>
+<li><a href="https://github.com/emacs-evil/evil-surround" target="_blank">evil-surround (GitHub)📎</a></li>
+<li><a href="https://github.com/tpope/vim-surround" target="_blank">surround.vim (GitHub)📎</a></li>
+</ul>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-run-cli-cmd-from-terminal-window.html">Emacs Lisp에서 셸 커맨드를 터미널을 통해 실행시키기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-async-call.html">Emacs Lisp에서 비동기 호출 코드 작성하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html">macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-funcall-and-apply.html">Emacs Lisp에서 funcall과 apply의 차이</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-plist.html">Emacs Lisp의 plist 사용법 간단 정리</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-eval-quoted-list-elements.html">Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

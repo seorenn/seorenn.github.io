@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-24T15:46:19.368745+09:00</updated>
+  <updated>2024-07-24T23:14:45.944912+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,75 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/emacs-evil-surround.html</id>
+    <title>Emacs의 evil-surround 확장 소개 및 기본 사용법</title>
+    <updated>2024-07-24T23:14:03.008316+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나(surrounding) 둘러싸인 문자를 건드리는 등의 기능을 제공한다.</p>
+<p>설치 방법은 각자의 상황에 따라 다르니 일단 생략한다. 개인적으로는 Doom Emacs 설정 팩을 쓰고 있고 여기에는 기본 설정으로 들어있기 때문에 그대로 쓰고 있다. 당연하게도 관련 확장을 설치한 Vim에서도 동일한 방식으로 사용할 수 있을 것이다.</p>
+<p>이제 기본 사용법을 정리해 보자.</p>
+<h2>선택영역 둘러싸기</h2>
+<p>비주얼 모드에서 <code>S</code>를 누른 후 특정 문자를 입력하면 해당 문자가 좌우에 쌍(pair)으로 입력된다. 예를 들어 아래 예에서 <code>BOLD</code> 부분을 비주얼 모드로 선택했다고 치자.</p>
+<pre><code>This is BOLD style in Org Mode.
+</code></pre>
+<p>이렇게 영역으로 선택된 상태에서 <code>S=</code>을 입력하면 아래와 같이 바뀐다.</p>
+<pre><code>This is =BOLD= style in Org Mode.
+</code></pre>
+<p>보다시피 입력된 문자가 선택영역 좌우에 입력되는 것을 알 수 있다. 이게 바로 이 Surround의 가장 토대가 되는 기능이라고 볼 수 있다.</p>
+<h2>선택영역 둘러싸기 (2)</h2>
+<p>둘러싸기 기능에서 한가지 더 특수한 기능이 있는데 바로 짝이 있는 문자로 둘러싸기 기능이 있다. 예를 들자면 괄호 입력 등이 있다. 다만 특징이 한가지 있다면 짝 중에 닫는 문자와 여는 문자 어떤 걸 입력하느냐에 따라 동작이 약간 다르다는 점이 있다.</p>
+<p>예를 들어 아래와 같은 경우를 보자.</p>
+<pre><code>print "Hello World"
+</code></pre>
+<p>여기서 <code>"Hello World"</code> 부분을 비주얼 모드로 선택해 주고 <code>S)</code>를 입려해주면 아래와 같이 변한다.</p>
+<pre><code>print ("Hello World")
+</code></pre>
+<p>조금 다르게 다시 원래 상태에서 똑같이 선택해 주고 <code>S(</code>를 입력하면 이번에는 이렇게 바뀐다.</p>
+<pre><code>print ( "Hello World" )
+</code></pre>
+<p>보다시피 짝 문자를 넣어주지만 공백을 한 칸 넣어주는 특이한 방식으로 동작한다.</p>
+<p>개인적으로는 닫는 문자를 입력하는 방식을 선호한다. 어쨌든 이런 식으로 중괄호나 대괄호 같이 짝이 있는 문자로 둘러싸기를 좀 더 쉽게 할 수 있다.</p>
+<h2>더 크게 둘러싸기(?)</h2>
+<p>부제를 정하는 데 좀 난감했는데, 예를 들자면 C언어 혹은 파생 언어에서 특정 코드를 블럭으로 만들 때 유용하게 쓸 수 있는 기능이 있다. 아래의 예제를 살펴보자.</p>
+<pre><code>int value = 0;
+</code></pre>
+<p>위 한 줄을 비주얼 모드로 선택해 주고 이번에는 <code>gS}</code>를 입력해 보자. 아래와 같이 바뀐다.</p>
+<pre><code>{
+int value = 0;
+
+}
+</code></pre>
+<p>이런 식으로 짝 문자로 둘러싸되 개행문자를 넣어서 둘러싸준다.</p>
+<p>사실 scratch 버퍼에서 테스트 했기 때문에 모양이 좀 이상한 것 같은데, 적절한 언어 메이저 모드로 동작 중이었다면 들여쓰기가 자연스럽게 적용되었을 것이다.</p>
+<h2>둘러싸는 문자 바꾸기</h2>
+<p>노멀 모드에서 원하는 라인에 커서를 놓고 <code>cs</code> 키 이후 바꾸려는 문자와 바꿀 문자를 연달아 입력하면 둘러싸는 문자가 원하는 문자로 바뀐다. 예를 들어 아래의 경우를 보자.</p>
+<pre><code>print("Hello World");
+</code></pre>
+<p>이 줄의 아무 곳에서 커서를 놓고 <code>cs"'</code>를 입력하면 아래와 같이 바뀐다.</p>
+<pre><code>print('Hello World');
+</code></pre>
+<p>즉 <code>"</code> 문자가 <code>'</code>로 바뀌였다.</p>
+<h2>페어 문자 삭제하기</h2>
+<p>둘러싸기가 있다면 삭제하기도 있기 마련이다. 이 기능도 딱히 선택영역 없이 커서가 위치하는 라인에서 <code>ds</code>를 누른 후 삭제하기 원하는 문자를 입력하면 된다. 예를 들어 아래의 같은 문자열의 라인에 커서를 놔뒀다고 가정하자.</p>
+<pre><code>value = object.get("DEFAULT_NAME")
+</code></pre>
+<p>이 상황에서 <code>ds"</code>를 눌러주면 아래와 같이 바뀐다.</p>
+<pre><code>value = object.get(DEFAULT_NAME)
+</code></pre>
+<p>자주 쓸 기능은 아닌 것 같지만 글을 쓸 때 종종 쓸 일이 있을 것 같기는 하다.</p>
+<h2>마무리 및 관련된 링크</h2>
+<p>공식 저장소에서 소개하는 기능 몇가지는 무슨 이유인지 제대로 동작하지 않는 게 있어서 확인하지는 못했다. 개인적으로 자주 사용하는 기능은 아니지만 확인하지 못 한 건 좀 아쉽다.</p>
+<p>어쨌거나 기본적인 사용법만 정리해 봤지만 이 정도만 해도 제법 사용처가 무궁무진하다. 물론 여기다 커스터마이징까지 가능하니 필요하다면 공식 사이트를 둘러보며 사용법을 알아보는 것도 나쁘지는 않을 것 같다. 다만 개인적으로는 딱히 커스터마이징이 필요 없을 정도로 기본 설정이 잘 되어 있어서 아주 잘 쓰고 있는 확장이다.</p>
+<ul>
+<li><a href="https://github.com/emacs-evil/evil-surround" target="_blank">evil-surround (GitHub)📎</a></li>
+<li><a href="https://github.com/tpope/vim-surround" target="_blank">surround.vim (GitHub)📎</a></li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/article/emacs-evil-surround.html"/>
+    <summary type="text">evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나 둘러싸인 문자를 건드리는 등의 기능을 제공한다.</summary>
+    <published>2024-07-24T23:14:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/python-find-out-module-name.html</id>
     <title>Python 모듈 이름 알아내기</title>
@@ -1974,35 +2043,5 @@ print(f"links = {md.links})
     <link href="https://seorenn.github.io/log/20240612-00.html"/>
     <summary type="text">갑작스러운 재난문자로 떠오른 짧은 생각들</summary>
     <published>2024-06-12T15:44:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240611-02.html</id>
-    <title>6월 FOMC를 앞두고 보는 연준 인사들의 발언들</title>
-    <updated>2024-06-11T21:52:24.400164+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>6월 FOMC를 앞두고 이번에도 그 사이의 연준 인사들의 발언들을 모아서 정리해 봤다.</p>
-<p><strong>제롬 파월 (연준 의장)</strong>: "고용시장은 조금씩 식고 있어, 다만 인플레이션 둔화에 자신은 없어, 다만 다음 회의에서 인상은 없을 것"</p>
-<p><strong>마이클 바 (연준 부의장)</strong>: "1분기 지표는 실망스러워, 목표 달성까지 좀 더 시간이 필요할 것"</p>
-<p><strong>필립 제퍼슨 (연준 부의장)</strong>: "현 정책은 충분히 제약적이며 최근 인플레이션 둔화와 주택 시장을 신중하게 평가할 것"</p>
-<p><strong>미셸 보먼 (연준 이사)</strong>: "인플레이션이 당분간 높은 수준을 유지할 것, 상황에 따라 금리 인상도 선택지", "현 통화정책은 충분히 제약적이며 현 금리를 유지하면 인플레이션은 하락할 것", "QT 종료를 기준금리 인하 신호로 보면 안 돼"</p>
-<p><strong>크리스토퍼 월러 (연준 이사)</strong>: "금융 제재가 달러의 위상에 악영향을 미쳐", "인플레이션이 가속화되지 않아 추가 금리 인상은 불필요", "3~5개월 내내 지표가 누그러지면 연말에나 금리 인하 가능할 것", "단정할 순 없지만 중립금리 오를 수 있어"</p>
-<p><strong>존 윌리엄스 (뉴욕 연방 총재)</strong>: "시간은 좀 더 필요하겠지만 금리는 결국 내릴 것", "긍정적 지표가 나오고 있지만 아직 충분하지는 않아, 다만 인상은 필요 없을 것", "인플레이션은 여전히 높지만 하반기로 갈 수록 둔화 속도는 빨라질 것"</p>
-<p><strong>토마스 바킨 (리치먼드 연은 총재)</strong>: "현 기준금리는 충분히 효과적이며 결국 인플레이션 목표를 달성시킬 것", "최근 지표는 긍정적이지만 연준의 목표에는 못 미쳐"</p>
-<p><strong>닐 카시카리 (미니애폴리스 연은 총재)</strong>: "기준금리 인상 시나리오를 배제할 수 없다", "좀 더 오래 금리를 동결해야", "금리 인하 전에 수개월간의 긍정적인 인플레이션 데이터가 필요", "누구도 금리 인상을 배제하지 않아", "미국인들은 인플레이션 보다는 경기침체를 원할 것"</p>
-<p><strong>수잔 콜린스 (보스턴 연은 총재)</strong>: "인플레이션 2% 대까지 돌아가는데 필요한 만큼 경제 활동이 둔화될 것"</p>
-<p><strong>메리 데일리 (샌프란시스코 연은 총재)</strong>: "향후 인플레이션의 움직임은 상당히 불확실" (물가와 노동시장의 움직임에 따라 금리 향방이 달라질 거라는 듯하다. 그냥 중립적인 듯하다.)</p>
-<p><strong>로리 로건 (댈러스 연은 총재)</strong>: "금리 인하를 생각하기에는 너무 이르다"</p>
-<p><strong>오스탄 굴스비 (시카고 연은 총재)</strong>: "올해 인플레이션이 계속 하락할 것, 하지만 금리의 방향이 정해진 것은 아니다", "주거비 인플레이션이 더 낮아져야"</p>
-<p><strong>로레타 메스터 (클리블랜드 연은 총재)</strong>: "금리를 다시 올리고 싶지는 않다", "목표 달성을 위해 현 금리를 더 유지해야"</p>
-<p><strong>제프리 슈미드 (캔자스시티 연은 총재)</strong>: "인플레이션에 진전이 있었지만 여전히 과제가 남아있어"</p>
-<p><strong>래피얼 보스틱 (애틀랜타 연은 총재)</strong>: "하나의 경제지표를 추세로 간주해서는 안 돼", "인플레이션은 하락하겠지만 좀 더딜 것", "고금리를 더 오랫동안 지속해야"</p>
-<h2>기타</h2>
-<p><strong>에릭 로젠그렌 (전 보스턴 연은 총재)</strong>: "중국 관세 조치가 인플레이션 목표 달성을 지연시킬 수도"</p>
-<h2>결론</h2>
-<p>6월 FOMC에서 비둘기적인 결과를 보기엔 좀 힘들 것 같은 분위기다. 점도표에서 올해 중 2회 인하가 찍혀 나오면 무조건 호재일 것 같다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240611-02.html"/>
-    <summary type="text">6월 FOMC를 앞두고 이번에도 그 사이의 연준 인사들의 발언들을 모아서 정리해 봤다.</summary>
-    <published>2024-06-11T21:37:00+09:00</published>
   </entry>
 </feed>

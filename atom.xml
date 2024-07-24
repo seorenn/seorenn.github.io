@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-23T23:43:10.969068+09:00</updated>
+  <updated>2024-07-24T15:46:19.368745+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,9 +14,10 @@
   <entry>
     <id>https://seorenn.github.io/article/python-find-out-module-name.html</id>
     <title>Python 모듈 이름 알아내기</title>
-    <updated>2024-07-23T23:42:31.383576+09:00</updated>
+    <updated>2024-07-24T15:46:13.574476+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>혹시나 어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우가 있다면 어떻게 찾아야 할까? 간단히 알아보자.</p>
+<h2>이 글을 적게 된 발단</h2>
 <p>발단은 마크다운 모듈에서 매크로 기능을 알아보던 중 일어났다. <code>markdown_macros</code> 라는 모듈이 마음에 들어서 설치를 해봤다.</p>
 <pre><code class="language-bash">pip install markdown_macros
 </code></pre>

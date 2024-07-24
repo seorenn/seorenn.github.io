@@ -13,11 +13,12 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Tue, 23 Jul 2024 23:43:10 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2024 15:46:19 +0900</lastBuildDate>
     <item>
       <title>Python 모듈 이름 알아내기</title>
       <link>https://seorenn.github.io/article/python-find-out-module-name.html</link>
       <description>&lt;p&gt;혹시나 어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우가 있다면 어떻게 찾아야 할까? 간단히 알아보자.&lt;/p&gt;
+&lt;h2&gt;이 글을 적게 된 발단&lt;/h2&gt;
 &lt;p&gt;발단은 마크다운 모듈에서 매크로 기능을 알아보던 중 일어났다. &lt;code&gt;markdown_macros&lt;/code&gt; 라는 모듈이 마음에 들어서 설치를 해봤다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;pip install markdown_macros
 &lt;/code&gt;&lt;/pre&gt;
@@ -67,6 +68,7 @@ _testinternalcapi   glob                resource
 &lt;p&gt;참고로 이 &lt;code&gt;markdown_macros&lt;/code&gt; 패키지는 이름이 비슷한 하지만 전혀 다른 두 모듈이 존재해서 착각해서 발생한 문제였다. pip에서 search 커맨드를 지원하지 않으니 이런 오해가 종종 발생할 수도 있는 듯하다.&lt;/p&gt;
 &lt;p&gt;참고로 하나 더 말하자면 이 모듈과 이름이 비슷한 다른 모듈 둘 다 현재는 개인적으로 쓰지 않는다. 아무래도 더이상 유지보수 되지 않아써 뭔가 써먹기가 힘든 것 같아서 직접 다른 방식으로 구현했다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;혹시나 어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우가 있다면 어떻게 찾아야 할까? 간단히 알아보자.&lt;/p&gt;
+&lt;h2&gt;이 글을 적게 된 발단&lt;/h2&gt;
 &lt;p&gt;발단은 마크다운 모듈에서 매크로 기능을 알아보던 중 일어났다. &lt;code&gt;markdown_macros&lt;/code&gt; 라는 모듈이 마음에 들어서 설치를 해봤다.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;pip install markdown_macros
 &lt;/code&gt;&lt;/pre&gt;

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-24T23:14:45.944912+09:00</updated>
+  <updated>2024-07-24T23:31:55.095941+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/article/emacs-evil-surround.html</id>
     <title>Emacs의 evil-surround 확장 소개 및 기본 사용법</title>
-    <updated>2024-07-24T23:14:03.008316+09:00</updated>
+    <updated>2024-07-24T23:31:43.695232+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나(surrounding) 둘러싸인 문자를 건드리는 등의 기능을 제공한다.</p>
 <p>설치 방법은 각자의 상황에 따라 다르니 일단 생략한다. 개인적으로는 Doom Emacs 설정 팩을 쓰고 있고 여기에는 기본 설정으로 들어있기 때문에 그대로 쓰고 있다. 당연하게도 관련 확장을 설치한 Vim에서도 동일한 방식으로 사용할 수 있을 것이다.</p>
@@ -70,7 +70,7 @@ int value = 0;
 <p>자주 쓸 기능은 아닌 것 같지만 글을 쓸 때 종종 쓸 일이 있을 것 같기는 하다.</p>
 <h2>마무리 및 관련된 링크</h2>
 <p>공식 저장소에서 소개하는 기능 몇가지는 무슨 이유인지 제대로 동작하지 않는 게 있어서 확인하지는 못했다. 개인적으로 자주 사용하는 기능은 아니지만 확인하지 못 한 건 좀 아쉽다.</p>
-<p>어쨌거나 기본적인 사용법만 정리해 봤지만 이 정도만 해도 제법 사용처가 무궁무진하다. 물론 여기다 커스터마이징까지 가능하니 필요하다면 공식 사이트를 둘러보며 사용법을 알아보는 것도 나쁘지는 않을 것 같다. 다만 개인적으로는 딱히 커스터마이징이 필요 없을 정도로 기본 설정이 잘 되어 있어서 아주 잘 쓰고 있는 확장이다.</p>
+<p>어쨌거나 기본적인 사용법만 정리해 봤지만 이 정도만 해도 제법 사용처가 무궁무진하다. 물론 여기다 커스터마이징까지 가능하니 필요하다면 공식 사이트를 둘러보며 사용법을 알아보는 것도 나쁘지는 않을 것 같다. 다만 개인적으로는 딱히 커스터마이징이 필요 없을 정도로 기본 설정이 잘 되어 있다고 생각하며 그래서 별다른 설정 없이 아주 잘 쓰고 있는 확장이다.</p>
 <ul>
 <li><a href="https://github.com/emacs-evil/evil-surround" target="_blank">evil-surround (GitHub)📎</a></li>
 <li><a href="https://github.com/tpope/vim-surround" target="_blank">surround.vim (GitHub)📎</a></li>

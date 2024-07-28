@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-27T23:42:03.178348+09:00</updated>
+  <updated>2024-07-28T23:27:25.456674+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,69 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240728-00.html</id>
+    <title>한 주간의 애플 소식들 24-07-28</title>
+    <updated>2024-07-28T23:26:59.418726+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈 소식</h2>
+<p>미국 시각 7월 23일 애플은 자사 플랫폼용 OS 및 소프트웨어들의 여러 업데이트를 공개했다.</p>
+<p>우선은 차세대 OS들의 개발자 베타들이다.</p>
+<ul>
+<li>macOS 14 Sequoia beta 4: iPhone Mirroring 윈도우 크기 옵션 추가 등</li>
+<li>iOS 18 beta 4: CarPlay 배경화면 추가, 카메라 컨트롤 메뉴 추가, 새로운 손전등 UI 지원 디바이스 추가, RCS 지원 통신사 추가, 설정 인터페이스 수정, 기타 사소한 UI 변경 등</li>
+<li>iPadOS 18 beta 4</li>
+<li>visionOS 2 beta 4</li>
+<li>watchOS 11 beta 4</li>
+<li>tvOS 18 beta 4</li>
+</ul>
+<p>참고로 iOS 18 beta 4는 공개된 이후 버전 변화 없이 새 빌드가 올라왔다.</p>
+<p>그 외에 현 안정버전의 버그픽스 급의 마이너 업데이트들은 RC(release candidate) 즉 정식 버전 후보 버전들이 공개되었다.</p>
+<ul>
+<li>macOS 14.6 RC</li>
+<li>iOS 17.6 RC</li>
+<li>iPadOS 17.6 RC</li>
+<li>visionOS 1.3 RC</li>
+<li>watchOS 10.6 RC</li>
+<li>tvOS 17.6 RC</li>
+</ul>
+<p>기타 이에 발맞추어 개발 도구들의 베타도 공개되었다.</p>
+<ul>
+<li>Xcode 16 beta 4</li>
+</ul>
+<h2>일반적인 소식들</h2>
+<p><strong>iPhone 17 Ultra Slim?</strong><br/>
+차세대 아이폰에 슬림 디자인이 적용될 것이라는 루머는 약간 와전 되었던 듯하다. 좀 더 상세한 내용으로 아이폰 17에는 '슬림'에 해당하는 해로운 모델이 추가될 것이라는 듯하다. 내부 설계도 바뀌고 티타늄 프레임에 A19 칩에 후면 카메라는 하나만 들어가는데 일단 기계식 조리개도 들어갈 것 같고 가격은 모델들 중 가장 비쌀 것 같다. 슬림 모델은 기존의 '플러스' 모델을 대체하기 위한 것으로 보이는데 포지션이 미묘할 것 같다.</p>
+<p><strong>iPhone SE 4</strong><br/>
+차세대 iPhone SE 4는 OLED 디스플레이, A18 칩셋, 6~8GB 램, 48메가픽셀 카메라 센서 등을 갖출 것으로 전망된다. 전반적인 디자인도 아이폰 14 Pro 부터 도입된 노치가 특색인 Dynamic Island 디자인이 도입될 것 같다. 덕분에 가격은 좀 더 비싸질 수 있다. 실제 생산은 10월 부터가 유력하게 점쳐지는 모양이다.</p>
+<p><strong>Apple Intelligence</strong><br/>
+Apple Music의 사용자 플레이리스트 아트워크(커버 이미지)를 AI를 이용해 만드는 기능이 도입될 것 같다. EU와 미국과 영국 정부는 AI 규제에 관한 공통 원칙을 채택하기로 합의하며 유럽 지역에서의 AI 기능 제공에 길이 열릴 수도 있어 보인다. Apple Intelligence의 실직적인 지원은 아직 늦어지는 모양인데 애플은 앞으로 나올 iOS 18 개발자 베타 등에서 지속적으로 추가될 것이라 밝혔다. 그 외에 애플이 바이든 행정부의 AI 안전 지침에 동의했다는 소식이 알려졌다.</p>
+<p><strong>Apple Maps</strong><br/>
+애플이 <a href="https://www.apple.com/maps/" target="_blank">애플 지도의 웹 버전📎</a> 베타를 공개했다. 웹 버전이기 때문에 딱히 브라우저나 플랫폼을 가리지 않고 사용할 수 있다. 언론을 통해 공개된 주소는 beta 딱지가 붙어 있었는데 실제 접속되는 URL에는 beta 표식이 없는 것이 특이하다.</p>
+<p><strong>퀄컴 (조금만) 안녕</strong><br/>
+애플이 2025년 출시될 iPhone 모델 중 일부에서 퀄컴의 5G 모뎀 칩 대신 자체 칩을 사용할 가능성이 알려졌다. 대상 모델은 iPhone SE 4와 iPhone 17의 일명 '슬림' 모델인 것으로 전해졌다. 물론 이 외의 모델은 여전히 퀄컴의 칩이 탑재될 것 같다는 이야기다. 어쨌든 애플이 모뎀 칩 개발에도 약간의 진전이 있었다고 볼 수 있다.</p>
+<p><strong>사건사고</strong><br/>
+iCloud Private Relay이 중단되며 일부 사용자가 불편을 겪는 일이 발생했다.</p>
+<h2>AAPL</h2>
+<ul>
+<li>애플의 2분기 중국 iPhone 출하량은 전년대비 6.7% 가량 감소했다고 한다. </li>
+<li>인도에서는 수입 관세 인하로 iPhone 가격을 인하했고, 인도에서의 iPad 조립을 고려하는 듯하다. </li>
+<li>웰스파고는 iPhone 매출이 전망치를 소폭 상회할 것이며 Apple Intelligence가 업그레이드 사이클을 견인할 것이라 전망하며 비중확대 의견 유지 및 목표가를 275달러로 상향 조정했다. </li>
+<li>바클레이스는 애플에 대해 비중축소 의견을 유지했지만 목표가를 187달러로 올렸다. </li>
+<li>JP모건은 긍정적 실적을 전망하며 애플 목표가를 265달러로 높였다.</li>
+<li>매릴랜드주 애플스토어 노조 파업은 협상이 잘 진행되어 면한 모양이다.</li>
+<li>스페인에서 애플 앱스토어에 대한 반경쟁적 관행을 조사하기 시작했다.</li>
+</ul>
+<h2>기타 루머 소식들</h2>
+<ul>
+<li>폴더블 iPhone은 2026년 플립 디자인 형태로 출시될 것이라는 소문이 돈다.</li>
+<li>iPhone 18의 카메라 센서에 삼성 부품이 추가되며 Sony의 독점이 깨질 것이라는 추측이 나오는 모양이다.</li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240728-00.html"/>
+    <summary type="text">애플 소프트웨어 릴리즈, 일반적인 소식, 투자 관련 소식, 루머 등 한 주간의 애플 소식 모음</summary>
+    <published>2024-07-28T23:26:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240727-00.html</id>
     <title>7월 FOMC를 앞두고 또 연준 인사들의 발언들을 모아봤다</title>
@@ -2030,27 +2093,5 @@ print(f"links = {md.links})
     <link href="https://seorenn.github.io/log/20240616-00.html"/>
     <summary type="text">WWDC24, 소프트웨어 릴리즈, 각종 루머 등 한 주간의 애플 소식을 모아본 글</summary>
     <published>2024-06-16T23:16:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240613-01.html</id>
-    <title>PPI는 또 왜이래?</title>
-    <updated>2024-06-13T23:39:22.210225+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>CPI가 나오고 다음 날은 PPI가 나온는 날이고 어김없이 또 PPI가 나왔다. CPI에 비하면 조금은 소외되는 지표지만 다음 CPI를 가늠하는 키 중 하나이기도 해서 요즘은 무시할 수가 없다.</p>
-<p>미국 5월 PPI(생산자물가지수)는 대충 요렇게 나왔다.</p>
-<ul>
-<li>헤드라인 PPI: MoM -0.2% (-0.7%), YoY 2.2% (-0.1%)</li>
-<li>근원 PPI: MoM 0.0% (-0.5%), YoY 2.3% (-0.2%)</li>
-</ul>
-<p>헤드라인 CPI MoM 지표가 0%가 나온 것도 놀랬지만 이번에는 아예 대놓고 마이너스가 나와버렸다. 물가상승률을 의미하는 인플레이션이 아닌 디플레이션 지표가 되어버리고 말았다. 굳이 언급할 필요도 없겠지만 예측치를 모두 하회한 것은 당연하다.</p>
-<p>CPI와 비슷하게 이번 PPI를 이렇게 꺽어버린 요인은 역시나 에너지 특히 유가 하락분이 컸던 것 같다.</p>
-<p>그래서 시장은 뭔가 반응이 좀 있을까? 잘은 모르겠지만 개장 때와 지금은 분위기가 좀 다른 것 같다.</p>
-<p><img alt="FedWatch" src="../upload/202406132327-9fa09f6f.png"/></p>
-<p>요즘은 FedWatch를 봐도 별 느낌이 안 온다. 아무래도 금리 인하가 없는 세상에 너무 익숙해진 것 같다. 그 덕분인지 아니면 이게 정상인지 모르겠지만 7월 기준금리 인하 가능성은 여전히 소외되고 있는 선택지다. 물론 개인적으로도 9월 인하 가능성이 높지 않을까 찍고(?) 있기도 하다.</p>
-<p>결론적으로 이걸 좋게 봐야되나 나쁘게 봐야 되나 이제는 아무 생각이 없다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240613-01.html"/>
-    <summary type="text">CPI가 나오고 다음 날은 PPI가 나온는 날이고 어김없이 또 PPI가 나왔다.</summary>
-    <published>2024-06-13T23:38:00+09:00</published>
   </entry>
 </feed>

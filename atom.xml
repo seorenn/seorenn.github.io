@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-30T00:17:15.545331+09:00</updated>
+  <updated>2024-07-30T00:23:53.551024+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/article/doom-emacs-shortcuts.html</id>
     <title>Doom Emacs 단축키 정리</title>
-    <updated>2024-07-30T00:15:42.165899+09:00</updated>
+    <updated>2024-07-30T00:23:50.173386+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키를 정리한다. 일부 단축키는 별도의 글로 분리하는 경우도 있으니 하단 관련글 항목을 참고하자.</p>
 <h2>설정(Configuration) 관련</h2>
@@ -368,37 +368,42 @@
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- 영역 선택 후 <code>R</code></td>
+<td style="text-align: left;">영역 선택 후 <code>R</code></td>
 <td style="text-align: left;">해당 단어 모두 선택</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- <code>R</code></td>
+<td style="text-align: left;"><code>R</code></td>
 <td style="text-align: left;">선택된 단어들을 덮어쓰기(Replace) 모드로 몽땅 편집하기</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- <code>I</code></td>
+<td style="text-align: left;"><code>I</code></td>
 <td style="text-align: left;">선택된 단어들을 삽입(Insert) 모드로 몽땅 편집하기</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- <code>D</code></td>
+<td style="text-align: left;"><code>D</code></td>
 <td style="text-align: left;">선택된 단어들을 삭제하기</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- <code>C-n</code> 혹은 <code>C-p</code></td>
-<td style="text-align: left;">선택중인 다음 혹은 이전 단어들로 점프</td>
+<td style="text-align: left;"><code>C-n</code></td>
+<td style="text-align: left;">선택중인 다음 단어들로 점프</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- <code>RET</code></td>
+<td style="text-align: left;"><code>C-p</code></td>
+<td style="text-align: left;">선택중인 이전 단어들로 점프</td>
+<td style="text-align: left;"/>
+</tr>
+<tr>
+<td style="text-align: left;"><code>RET</code></td>
 <td style="text-align: left;">선택 영역 토글</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;">- <code>ESC</code></td>
+<td style="text-align: left;"><code>ESC</code></td>
 <td style="text-align: left;">탈출(Exit evil-multiedit mode)</td>
 <td style="text-align: left;"/>
 </tr>
@@ -519,13 +524,13 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>g c</code> 영역을 주석처리(comment) 혹은 주석해제(uncomment) (Vim 스타일)</td>
-<td style="text-align: left;"/>
+<td style="text-align: left;"><code>g c</code></td>
+<td style="text-align: left;">영역을 주석처리(comment) 혹은 주석해제(uncomment) (Vim 스타일)</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>
-<td style="text-align: left;"><code>SPC a ;</code> 영역을 주석처리(comment) 혹은 주석해제(uncomment) (Doom Emacs 스타일)</td>
-<td style="text-align: left;"/>
+<td style="text-align: left;"><code>SPC a ;</code></td>
+<td style="text-align: left;">영역을 주석처리(comment) 혹은 주석해제(uncomment) (Doom Emacs 스타일)</td>
 <td style="text-align: left;"/>
 </tr>
 <tr>

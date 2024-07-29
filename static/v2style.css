@@ -271,21 +271,20 @@ h6 {
     max-width: 100%;
     margin-top: 1.8rem;
     margin-bottom: 1.8rem;
-    padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
     color: #bcc2ce;
     background-color: #292c33;
-    font-size: 0.9rem;
     font-family: Menlo, Monaco, monospace;
     overflow-x: auto;
     line-height: 1.2rem;
     /*white-space: pre-wrap;*/
 }
 
-.content p code {
+.content code {
     padding: 2px 4px 2px 4px;
     font-family: Menlo, Monaco, monospace;
     background: #f4f4f4;
-    font-size: 0.94rem;
+    font-size: 0.9rem;
 }
 
 .content blockquote {
@@ -321,10 +320,32 @@ h6 {
     height: auto;
 }
 
+/*
 .content table {
     margin: 0 auto;
     margin-top: 1.8rem;
     margin-bottom: 1.8rem;
+}
+ */
+
+.content table {
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.content table thead tr {
+    background-color: #fafafa;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.content table th {
+    padding: 4px 14px 4px 14px;
+}
+
+.content table td {
+    padding: 4px 14px 4px 14px;
 }
 
 .content em {
@@ -576,8 +597,8 @@ footer {
         background-color: #21252b; /* TODO */
     }
 
-    .content p code {
-        background: #2f353d; /* TODO */
+    .content code {
+        background-color: #21252b; /* TODO */
     }
 
     .content a,
@@ -590,6 +611,11 @@ footer {
 
     .content i {
         color: #aaa;
+    }
+
+    .content table thead tr {
+        background-color: #1e1e1e;
+        border-bottom: 1px solid #2f2f2f;
     }
 
     .article-description {

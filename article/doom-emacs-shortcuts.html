@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>Doom Emacs 단축키 정리 - Seorenn</title>
+    <meta name="twitter:title" content="Doom Emacs 단축키 정리" />
+    <meta name="og:title" content="Doom Emacs 단축키 정리" />
+    <meta name="description" content="Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키 정리" />
+    <meta name="twitter:description" content="Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키 정리" />
+    <meta name="og:description" content="Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키 정리" />
+    <link rel="canonical" href="https://seorenn.github.io/article/doom-emacs-shortcuts.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/doom-emacs-shortcuts.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>Doom Emacs 단축키 정리</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/emacs.html">Emacs</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 07월 29일 작성</span>
+            
+            
+              <span>//</span>
+            
+            
+              <span>2024년 07월 30일 업데이트</span>
+            
+          </div>
+        </header>
+        <p>이 글은 Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키를 정리한다. 일부 단축키는 별도의 글로 분리하는 경우도 있으니 하단 관련글 항목을 참고하자.</p>
+<h2>설정(Configuration) 관련</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC f p</code></td>
+<td style="text-align: left;">설정 파일 열기(즉 <code>~/.doom.d</code>에 있는 파일들 목록이 뜬다)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC h r r</code></td>
+<td style="text-align: left;">설정 싱크(sync) 및 리로드(<code>doom/reload</code>)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>파일, 프로젝트, 워크스페이스 관련</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC f f</code></td>
+<td style="text-align: left;">파일 열기</td>
+<td style="text-align: left;"><code>find-file</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC .</code></td>
+<td style="text-align: left;">현재 디렉토리에서 파일 열기</td>
+<td style="text-align: left;">생성하기도 가능</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC p p</code></td>
+<td style="text-align: left;">프로젝트 전환</td>
+<td style="text-align: left;">워크스페이스가 없으면 생성</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC SPC</code></td>
+<td style="text-align: left;">프로젝트 파일 열기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC TAB .</code></td>
+<td style="text-align: left;">워크스페이스(프로젝트) 목록 및 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC TAB NUM</code></td>
+<td style="text-align: left;">NUM 숫자에 해당하는 워크스페이스로 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>COMMAND NUM</code></td>
+<td style="text-align: left;">NUM 숫자에 해당하는 워크스페이스로 전환</td>
+<td style="text-align: left;">Mac 전용</td>
+</tr>
+</tbody>
+</table>
+<h2>버퍼(Buffer) 관련</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC ,</code></td>
+<td style="text-align: left;">워크스페이스(혹은 프로젝트) 버퍼 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC b b</code></td>
+<td style="text-align: left;">워크스페이스(혹은 프로젝트) 버퍼 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC `</code></td>
+<td style="text-align: left;">동일 워크스페이스의 이전 버퍼로 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC b B</code></td>
+<td style="text-align: left;">버퍼 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC b p</code></td>
+<td style="text-align: left;">이전 버퍼로 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC b n</code></td>
+<td style="text-align: left;">다음 버퍼로 전환</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC p x</code></td>
+<td style="text-align: left;">스크래치 버퍼를 작게 아래쪽에 띄우기</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>창(Window)</h2>
+<p>참고로 Emacs에서 창(window)이란 하나의 윈도를 여러 pane으로 분할해서 쓰는 것을 의미하지 용어에 주의하자.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC w s</code></td>
+<td style="text-align: left;">창을 위아래로 나누기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w v</code></td>
+<td style="text-align: left;">창을 좌우로 나누기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w w</code></td>
+<td style="text-align: left;">다음 창으로 포커스(커서) 이동</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w c</code> 혹은 <code>SPC w d</code></td>
+<td style="text-align: left;">창 닫기. 창이 하나 뿐이면 프로젝트 단기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w j</code> 혹은 <code>SPC w k</code></td>
+<td style="text-align: left;">아래쪽 창 혹은 윗쪽 창으로 이동하기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w h</code> 혹은 <code>SPC w l</code></td>
+<td style="text-align: left;">왼쪽 창 혹은 오른쪽쪽 창으로 이동하기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w o</code></td>
+<td style="text-align: left;">하나의 창을 많이 크게 만들기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w C-o</code></td>
+<td style="text-align: left;">현재 창만 남기고 다른 창 닫기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC w =</code></td>
+<td style="text-align: left;">모든 창의 크기를 비슷하게 맞추기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C-w C-w</code> 혹은 <code>C-x o</code></td>
+<td style="text-align: left;">지정된 캐릭터의 윈도로 스위칭</td>
+<td style="text-align: left;">ace-window</td>
+</tr>
+</tbody>
+</table>
+<p>창 이동은 Evil을 쓸 경우 <code>C-w</code>와 <code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>을 조합하는 Vim 방식을 동일하게 사용할 수도 있다.</p>
+<h2>폴딩(Folding)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>z f</code></td>
+<td style="text-align: left;">선택 영역 접기(폴딩)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z a</code></td>
+<td style="text-align: left;">폴딩 토글하기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z d</code></td>
+<td style="text-align: left;">폴딩 제거하기</td>
+<td style="text-align: left;">코드 삭제 아님</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z E</code></td>
+<td style="text-align: left;">모든 폴딩 제거</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z j</code></td>
+<td style="text-align: left;">다음 폴딩으로 이동</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z k</code></td>
+<td style="text-align: left;">이전 폴딩으로 이동</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>셸(Shell) 혹은 터미널(Terminal)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC o t</code></td>
+<td style="text-align: left;">터미널 열기</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>템플릿(Snippets)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC s /</code></td>
+<td style="text-align: left;">스니펫 목록 및 검색하기</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>검색(Search)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC s p</code></td>
+<td style="text-align: left;">프로젝트에서 검색(search in project)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC s d</code></td>
+<td style="text-align: left;">디렉터리에서 검색(search in directory)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C-c C-o</code></td>
+<td style="text-align: left;">검색 내용 버퍼를 별도의 창에 띄우기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC '</code></td>
+<td style="text-align: left;">계속 검색</td>
+<td style="text-align: left;">ivy-resume</td>
+</tr>
+</tbody>
+</table>
+<h2>점프(Jump)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>t [character]</code></td>
+<td style="text-align: left;">해당 문자로 점프</td>
+<td style="text-align: left;">evil-snipe</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>s [characters]</code></td>
+<td style="text-align: left;">문자 완성 형식으로 해당 문자열로 점프</td>
+<td style="text-align: left;">evil-snipe</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>S [characters]</code></td>
+<td style="text-align: left;">문자 완성 형식으로 해당 문자열로 역방향 점프</td>
+<td style="text-align: left;">evil-snipe</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g s j</code></td>
+<td style="text-align: left;">표시된 문자를 입력한 위치로 아래방향 점프</td>
+<td style="text-align: left;">evil-easymotion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g s k</code></td>
+<td style="text-align: left;">표시된 문자를 입력한 위치로 아래방향 점프</td>
+<td style="text-align: left;">evil-easymotion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g s SPC</code></td>
+<td style="text-align: left;">키보드로 입력하는 글자 위치로 점프</td>
+<td style="text-align: left;">avy</td>
+</tr>
+</tbody>
+</table>
+<h2>멀티 커서(Multiple Cursors) - evil-multiedit</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>M-d</code></td>
+<td style="text-align: left;">현재 커서 위치의 단어 혹은 선택영역 선택 혹은 아래 방향으로 같은 단어를 하나 검색해서 선택</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M-D</code></td>
+<td style="text-align: left;">현재 커서 위치의 단어 혹은 선택영역 선택 혹은 윗쪽 방향으로 같은 단어를 하나 검색해서 선택</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 영역 선택 후 <code>R</code></td>
+<td style="text-align: left;">해당 단어 모두 선택</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- <code>R</code></td>
+<td style="text-align: left;">선택된 단어들을 덮어쓰기(Replace) 모드로 몽땅 편집하기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- <code>I</code></td>
+<td style="text-align: left;">선택된 단어들을 삽입(Insert) 모드로 몽땅 편집하기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- <code>D</code></td>
+<td style="text-align: left;">선택된 단어들을 삭제하기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- <code>C-n</code> 혹은 <code>C-p</code></td>
+<td style="text-align: left;">선택중인 다음 혹은 이전 단어들로 점프</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- <code>RET</code></td>
+<td style="text-align: left;">선택 영역 토글</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- <code>ESC</code></td>
+<td style="text-align: left;">탈출(Exit evil-multiedit mode)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>멀티 커서(Multiple Cursors) - evil-mc</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>g z z</code></td>
+<td style="text-align: left;">현재 위치에 커서 만들기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g z j</code></td>
+<td style="text-align: left;">현재 커서 위치에서 서브커서를 만들고 아래로 이동 (<code>g z k</code> 는 위로)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g z m</code></td>
+<td style="text-align: left;">현재 커서 위치와 관련이 있는 모든 곳에 서브커서 생성</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g z d</code></td>
+<td style="text-align: left;">현재 커서의 단어 끝에 서브커서를 만들고 비슷한 다음 단어로 커서 이동</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>g z D</code></td>
+<td style="text-align: left;">현재 커서의 단어 끝에 서브커서를 만들고 비슷한 이전 단어로 커서 이동</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>특수 텍스트 변환</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>!</code></td>
+<td style="text-align: left;">연관 텍스트로 변환</td>
+<td style="text-align: left;">rotate-text</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>예를 들어 public - private - protected 와 비슷한 방식으로...</p>
+</blockquote>
+<h2>Emacs Lisp 관련</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC :</code></td>
+<td style="text-align: left;">함수 실행하기(Emacs 의 <code>M-x</code> 와 동일). 콜론 주의.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC ;</code></td>
+<td style="text-align: left;">명령 실행하기(eval expression). 세미콜론임에 주의</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC m e r</code></td>
+<td style="text-align: left;">Lisp Mode에서 선택 영역 실행하기(eval region).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC m e b</code></td>
+<td style="text-align: left;">Lisp Mode에서 버퍼 전체 실행하기(eval buffer).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>S b</code></td>
+<td style="text-align: left;">선택 영역을 괄호(braces)로 둘러싸기</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z M</code></td>
+<td style="text-align: left;">모든 헤드라인 폴딩</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>z R</code></td>
+<td style="text-align: left;">모든 헤드라인 폴딩 열기</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>프로그래밍 관련</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>g c</code> 영역을 주석처리(comment) 혹은 주석해제(uncomment) (Vim 스타일)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC a ;</code> 영역을 주석처리(comment) 혹은 주석해제(uncomment) (Doom Emacs 스타일)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC c d</code></td>
+<td style="text-align: left;">레퍼런스로 이동(Look up reference)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>=</code></td>
+<td style="text-align: left;">선택영역 들여쓰기(indentation) 정리 (Vim 스타일)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>]e</code></td>
+<td style="text-align: left;">Next Error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[e</code></td>
+<td style="text-align: left;">Previous Error</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC c x</code></td>
+<td style="text-align: left;">List Errors</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>Org Mode 공통</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC m t</code></td>
+<td style="text-align: left;">TODO 마크</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC m p</code></td>
+<td style="text-align: left;">우선순위(priority)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC n s</code></td>
+<td style="text-align: left;">노트(org) 검색</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SPC n r f</code></td>
+<td style="text-align: left;">Org Roam 문서 제목으로 파일 열기</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>Org Mode 테이블 스프레드시트</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC m b h</code></td>
+<td style="text-align: left;">테이블에서 커서 위치의 필드 정보</td>
+<td style="text-align: left;"><code>org-table-field-info</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C-c }</code></td>
+<td style="text-align: left;">테이블 필드 정보 오버레이 토글</td>
+<td style="text-align: left;"><code>org-table-toggle-coordinate-overlays</code></td>
+</tr>
+</tbody>
+</table>
+<h2>프로파일러(profiler)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">단축키</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">기타</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>SPC h T</code></td>
+<td style="text-align: left;">Toggle Profiler</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/emacs-evil-surround.html">Emacs의 evil-surround 확장 소개 및 기본 사용법</a></li>
+</ul>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/emacs-evil-surround.html">Emacs의 evil-surround 확장 소개 및 기본 사용법</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-run-cli-cmd-from-terminal-window.html">Emacs Lisp에서 셸 커맨드를 터미널을 통해 실행시키기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-async-call.html">Emacs Lisp에서 비동기 호출 코드 작성하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html">macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-funcall-and-apply.html">Emacs Lisp에서 funcall과 apply의 차이</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-plist.html">Emacs Lisp의 plist 사용법 간단 정리</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-eval-quoted-list-elements.html">Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

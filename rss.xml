@@ -13,7 +13,47 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Wed, 31 Jul 2024 15:29:19 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2024 16:47:39 +0900</lastBuildDate>
+    <item>
+      <title>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</title>
+      <link>https://seorenn.github.io/article/chrome-debug-color-scheme.html</link>
+      <description>&lt;p&gt;웹 페이지에서 CSS를 통해 다크 모드 혹은 라이트 모드를 지원하려 할 때는 물론 시스템의 설정을 바꿔서 간단하게 보면서 개발할 수는 있다. 하지만 웹 브라우저를 떠나서 계속 바꾸는 계 귀찮거나 시스템에 무리를 줄 가능성은 충분히 있다. 그래서 구글 크롬에서 이 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능이 있나 찾아봤고 실제로 존재하기에 그 방법을 정리해 본다.&lt;/p&gt;
+&lt;p&gt;참고로 이 글은 macOS에서 다크 모드를 설정해 둔 상태로 라이트 모드의 CSS를 테스트 해보려는 상황을 가정하고 있다.&lt;/p&gt;
+&lt;h2&gt;크롬에서 다크 모드 혹은 라이트 모드 시험해 보기&lt;/h2&gt;
+&lt;p&gt;우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png" /&gt;
+&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;*&lt;/p&gt;
+&lt;p&gt;이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png" /&gt;
+&lt;em&gt;CSS 미디어 기능 prefers-color-scheme 에뮬레이션&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png" /&gt;
+&lt;em&gt;컬러 스킴 선택 화면.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png" /&gt;
+&lt;em&gt;라이트 모드로 설정한 상태&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;컬러 스킴을 바꾸는 과정은 그다지 어렵거나 힘들진 않다. 하지만 좀 더 쉽게 할 수 있게 컬러 스킴 관련 부분만 접근성 좋은 위치에 배치해 줬으면 하는 바램도 없지는 않다. 안 그래도 렌더링 도구가 제법 크기를 잡아먹기 때문에 필요할 때마다 꺼내 쓰는 것도 좀 귀찮은 일인 것 같으니 말이다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;웹 페이지에서 CSS를 통해 다크 모드 혹은 라이트 모드를 지원하려 할 때는 물론 시스템의 설정을 바꿔서 간단하게 보면서 개발할 수는 있다. 하지만 웹 브라우저를 떠나서 계속 바꾸는 계 귀찮거나 시스템에 무리를 줄 가능성은 충분히 있다. 그래서 구글 크롬에서 이 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능이 있나 찾아봤고 실제로 존재하기에 그 방법을 정리해 본다.&lt;/p&gt;
+&lt;p&gt;참고로 이 글은 macOS에서 다크 모드를 설정해 둔 상태로 라이트 모드의 CSS를 테스트 해보려는 상황을 가정하고 있다.&lt;/p&gt;
+&lt;h2&gt;크롬에서 다크 모드 혹은 라이트 모드 시험해 보기&lt;/h2&gt;
+&lt;p&gt;우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png" /&gt;
+&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;*&lt;/p&gt;
+&lt;p&gt;이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png" /&gt;
+&lt;em&gt;CSS 미디어 기능 prefers-color-scheme 에뮬레이션&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png" /&gt;
+&lt;em&gt;컬러 스킴 선택 화면.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png" /&gt;
+&lt;em&gt;라이트 모드로 설정한 상태&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;사족&lt;/h2&gt;
+&lt;p&gt;컬러 스킴을 바꾸는 과정은 그다지 어렵거나 힘들진 않다. 하지만 좀 더 쉽게 할 수 있게 컬러 스킴 관련 부분만 접근성 좋은 위치에 배치해 줬으면 하는 바램도 없지는 않다. 안 그래도 렌더링 도구가 제법 크기를 잡아먹기 때문에 필요할 때마다 꺼내 쓰는 것도 좀 귀찮은 일인 것 같으니 말이다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/chrome-debug-color-scheme.html</guid>
+      <pubDate>Wed, 31 Jul 2024 16:46:00 +0900</pubDate>
+    </item>
     <item>
       <title>일본은행 기준금리 0.25%로 인상</title>
       <link>https://seorenn.github.io/log/20240731-00.html</link>
@@ -4625,34 +4665,6 @@ print(f&amp;quot;links = {md.links})
 &lt;p&gt;그나저나 어째서 마우스 커서 크기 조절이 깜빡임과 연관이 있는 것일까? 참으로 신기한 일일 따름이지만, 어쨌든 사이드이펙트가 이렇게나 무서운(?) 일이라는 것도 다시금 깨닫게 된다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</guid>
       <pubDate>Thu, 20 Jun 2024 23:33:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>엔비디아 시총 1위 달성을 배아파하며</title>
-      <link>https://seorenn.github.io/log/20240619-00.html</link>
-      <description>&lt;p&gt;장 중 엔비디아가 마이크로소프트와 애플을 밟고 전 세계 시가총액 1위가 되었을 때 '정말 이런 일이 현실이 될까'하며 반신반의했는데 결국 종가 기준으로도 1위가 되면서 진짜 현실이 되어버렸다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;엔비디아의 시총 1위 달성을 축하...는 못 하겠고 배아프다. 가장 큰 문제는 내가 엔비디아가 없다니 훌쩍&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;엔비디아의 주가가 오르면서 늘 주가가 폭등하던 종목에 따라붙던 '버블'이라는 단어가 계속 보인다. 그런데 버블? 거품이야 터져도 그냥 "뿅" 하고 귀여운 소리를 내며 터질 것이다. 주식 종목에서 버블이 터지면 많은 이들이 돈을 잃을 테지만 그래도 참 귀여운 느낌의 단어다.&lt;/p&gt;
-&lt;p&gt;이제 버블이라는 단어를 써도 되는 시기는 지나지 않았을까? 개인적으로는 '폭탄'이 적절하다고 본다. 안에 TNT를 계속 채울 수 있는 버블폭탄이다. 그리고 폭탄이 점점 커진다. 터지면 주변을 날려버리는 폭탄이 점점 더 커지고 있다. 터지는 소리는 상상도 하기 싫을 거다.&lt;/p&gt;
-&lt;p&gt;아무리 매출이 실제로 좋다 한들 도대체 몇 년 치 매출을 미리 다 끌어다 써버리는 건지 이해가 안 될 뿐이다.&lt;/p&gt;
-&lt;p&gt;어쨌든 엔비디아가 없는 사람은 터지든 말든 속편한 세상이 될 리는 없잖아! 엔비디아가 이끌던 AI 섹터 전체가 그 폭탄에 휩쓸릴 게 뻔하니 말이다. 애플과 마이크로소프트는 물론 나스닥 전체가 무너질 지도 모르는 일이니 말이다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;결론: 언제든 팔 준비는 하고 살아야 할 듯하다.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <content:encoded>&lt;p&gt;장 중 엔비디아가 마이크로소프트와 애플을 밟고 전 세계 시가총액 1위가 되었을 때 '정말 이런 일이 현실이 될까'하며 반신반의했는데 결국 종가 기준으로도 1위가 되면서 진짜 현실이 되어버렸다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;엔비디아의 시총 1위 달성을 축하...는 못 하겠고 배아프다. 가장 큰 문제는 내가 엔비디아가 없다니 훌쩍&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;엔비디아의 주가가 오르면서 늘 주가가 폭등하던 종목에 따라붙던 '버블'이라는 단어가 계속 보인다. 그런데 버블? 거품이야 터져도 그냥 "뿅" 하고 귀여운 소리를 내며 터질 것이다. 주식 종목에서 버블이 터지면 많은 이들이 돈을 잃을 테지만 그래도 참 귀여운 느낌의 단어다.&lt;/p&gt;
-&lt;p&gt;이제 버블이라는 단어를 써도 되는 시기는 지나지 않았을까? 개인적으로는 '폭탄'이 적절하다고 본다. 안에 TNT를 계속 채울 수 있는 버블폭탄이다. 그리고 폭탄이 점점 커진다. 터지면 주변을 날려버리는 폭탄이 점점 더 커지고 있다. 터지는 소리는 상상도 하기 싫을 거다.&lt;/p&gt;
-&lt;p&gt;아무리 매출이 실제로 좋다 한들 도대체 몇 년 치 매출을 미리 다 끌어다 써버리는 건지 이해가 안 될 뿐이다.&lt;/p&gt;
-&lt;p&gt;어쨌든 엔비디아가 없는 사람은 터지든 말든 속편한 세상이 될 리는 없잖아! 엔비디아가 이끌던 AI 섹터 전체가 그 폭탄에 휩쓸릴 게 뻔하니 말이다. 애플과 마이크로소프트는 물론 나스닥 전체가 무너질 지도 모르는 일이니 말이다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;결론: 언제든 팔 준비는 하고 살아야 할 듯하다.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20240619-00.html</guid>
-      <pubDate>Wed, 19 Jun 2024 16:10:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

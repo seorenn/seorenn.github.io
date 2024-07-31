@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Wed, 31 Jul 2024 16:47:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2024 16:49:24 +0900</lastBuildDate>
     <item>
       <title>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</title>
       <link>https://seorenn.github.io/article/chrome-debug-color-scheme.html</link>
@@ -22,13 +22,13 @@
 &lt;h2&gt;크롬에서 다크 모드 혹은 라이트 모드 시험해 보기&lt;/h2&gt;
 &lt;p&gt;우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png" /&gt;
-&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;*&lt;/p&gt;
+&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png" /&gt;
 &lt;em&gt;CSS 미디어 기능 prefers-color-scheme 에뮬레이션&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png" /&gt;
-&lt;em&gt;컬러 스킴 선택 화면.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;컬러 스킴 선택 화면&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png" /&gt;
 &lt;em&gt;라이트 모드로 설정한 상태&lt;/em&gt;&lt;/p&gt;
@@ -39,13 +39,13 @@
 &lt;h2&gt;크롬에서 다크 모드 혹은 라이트 모드 시험해 보기&lt;/h2&gt;
 &lt;p&gt;우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png" /&gt;
-&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;*&lt;/p&gt;
+&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png" /&gt;
 &lt;em&gt;CSS 미디어 기능 prefers-color-scheme 에뮬레이션&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png" /&gt;
-&lt;em&gt;컬러 스킴 선택 화면.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;컬러 스킴 선택 화면&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png" /&gt;
 &lt;em&gt;라이트 모드로 설정한 상태&lt;/em&gt;&lt;/p&gt;

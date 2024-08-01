@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-07-31T16:49:24.098381+09:00</updated>
+  <updated>2024-08-01T10:46:14.856026+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,30 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240801-00.html</id>
+    <title>미 연준 7월 FOMC에서 기준금리 5.50%로 동결 결정</title>
+    <updated>2024-08-01T10:46:04.941297+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>연준은 미국 시각 7월 31일 FOMC를 통해 미국의 기준금리를 종전과 동일한 5.25% ~ 5.50%로 동결 결정했다.</p>
+<p><img alt="연준 기준금리 추이" src="../upload/202408011026-1476323e.png"/>
+<em>연준 기준금리 추이</em></p>
+<p>2023년 7월 마지막으로 금리가 오른 이후 8회 연속 동결이다. 기준금리 자체는 만장일치로 동결 의견이 모인 모양이다. </p>
+<p>일부 유력 매체 등에서는 7월 인하가 주장되거나 예측되기도 했고, 회의 전날에 발표된 고용 지표들이 모두 둔화세를 보이면서 인하 가능성이 올라가는 듯했지만, 그래도 대다수가 예상한 대로의 결과였다.</p>
+<p>파월은 성명 및 인터뷰를 통해 고용 둔화에 대해 인정하지만 실업률이 아직은 위험하진 않은 수준으로 판단하는 것 같고 물가 추세에 대해서도 아직은 자신이 없다는 듯한 입장을 보이며 동결 이유를 설명했다.</p>
+<p>다만 이번 회의에서 금리 인하에 대한 논의가 오갔다는 것이 알려졌다. 그리고 <strong>9월 인하 가능성</strong>을 열어두는 발언도 이어졌다. 아마도 물가와 고용 지표가 현 추세에서 벗어나지만 않는다면 9월에는 인하할 것이라는 의미로 읽혀진다.</p>
+<blockquote>
+<p>결론: 연준은 선제적 조치 보다는 확실한 조치를 선호하는 것 같다.</p>
+</blockquote>
+<h2>여담</h2>
+<p>이번 동결에 대해 주식시장에선 긍정적인 반응인 것 같다. 그야 주식시장에선 예상대로 움직이는 것을 선호할 테니 말이다. 만약 갑작스런 금리 인하가 있었다면 오히려 침체 위기설을 부풀리게 될 위험성이 있기도 하다. 다행이라고 생각할까? 물론 9월에도 예상대로 움직여 준다면 다행일 거다.</p>
+<p>확률은 적겠지만 9월 FOMC 이전에 경기가 갑자기 확 꺾이면 오히려 연준 책임론이 불거지고 트럼프의 화살이 집중적으로 날아드는 무서운 광경을 목격할 수 있을 것 같다. 반대로 오히려 경기가 좋아지면 또 트럼프는 신나서 "금리 놔둬라"고 협박하는 끔찍한 광경을 목격할 수 있을 지도 모르겠다. 그럼 연준의 예측대로 되면... 그래도 트럼프는 "대선 전까진 금리 놔둬라"고 공격할 게 뻔하다. 사실 트럼프는 뭐가 어떻게 되든 연준을 공격할 거다. 파월이 그저 안쓰럽다.</p>
+<p>그러니 내가 파월이라면 9월에는 뭐가 어떻게 되든 금리 인하를 할 거다. 적장에 침이라도 뱉고 죽어야지 안 그러면 억울해서 어떻게 눈을 감을 수... 아 아니다 안 죽는 게 최고다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240801-00.html"/>
+    <summary type="text">연준은 미국 시각 7월 31일 FOMC를 통해 미국의 기준금리를 종전과 동일한 5.25% ~ 5.50%로 동결 결정했다.</summary>
+    <published>2024-08-01T10:45:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/chrome-debug-color-scheme.html</id>
     <title>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</title>
@@ -2660,31 +2684,5 @@ print(f"links = {md.links})
     <link href="https://seorenn.github.io/article/python-markdown-extract-links.html"/>
     <summary type="text">마크다운 문서에서 모든 링크의 URL 주소를 추출하는 방법을 직접 확장을 만들어서 구현해 보자.</summary>
     <published>2024-06-21T23:32:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/macos-safari-fix-video-blinks.html</id>
-    <title>macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</title>
-    <updated>2024-07-14T21:25:51.209882+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자. 참고로 macOS 14 Sonoma에서도 해당되는 것을 확인했다.</p>
-<h2>증상 설명</h2>
-<p>꽤 오래 전부터 macOS의 사파리에서 전체화면으로 영상을 틀 경우 깜빡임 증상이 나타났다. 유튜브와 넷플릭스 두 군데에서만 확인했지만 사실상 모든 영상 소스에서 증상이 발생할 것으로 보인다.</p>
-<p>깜빡임은 1초에 1~2회 정도 굉장히 짧게 나타나기 때문에 의식하지 않는다면 딱히 시청에 지장을 줄 수준은 아니다. 하지만 의식하기 시작하면 굉장히 신경쓰이고 껄끄로운 증상임은 분명했다.</p>
-<p>당연하겠지만 사파리에서만 증상이 발생하며 크롬이나 파이어폭스 등에서는 별 문제가 없었다. 그래서 기본 브라우저를 사파리 외의 것으로 바꾸는 주요 원인이었다.</p>
-<p>개인적으로는 구형 인텔 맥프로에서 증상이 나타났으나 애플실리콘 M 시리즈를 탑재한 최신 맥에서도 증상을 느끼는 유저가 있는 모양이다. 따라서 모든 맥 시리즈를 대상으로 발생할 수 있는 문제로 추측된다.</p>
-<h2>해결하기</h2>
-<p>이 문제를 겪기 시작한 것이 수 년 전으로 굉장히 오래 되었기에 자포자기 하고 있었는데 의외의 자료를 발견하여 그대로 따라해 보기로 했다. 방법은 아주 간단하다. 설정을 열어 아래 루트로 들어가는 것으로 시작한다.</p>
-<blockquote>
-<p>시스템 설정 - 손쉬운 사용 - 디스플레이</p>
-</blockquote>
-<p>여기서 <strong>포인터(마우스 커서) 항목의 포인터 크기 슬라이더를 움직여서 최대로 키웠다가 다시 원하는 크기로 조절</strong>해 보자.</p>
-<p><img alt="손쉬운 사용 - 디스플레이" src="../upload/202406150044-b2554065.png"/></p>
-<p>이후 사파리에서 문제가 재현되는지 확인해 보자. 개인적으론는 넷플릭스를 시청해 봤는데 정말 문제가 해결되었다. 상당히 충격적(?)이고 만족스러운 결과다.</p>
-<p>참고로 슬라이더를 움직이는 방향이 정해진 것은 아닌 것 같고 그저 마우스 커서 크기를 변경하는 행위가 영향을 끼치는 것이 아닐까 생각된다.</p>
-<p>그나저나 어째서 마우스 커서 크기 조절이 깜빡임과 연관이 있는 것일까? 참으로 신기한 일일 따름이지만, 어쨌든 사이드이펙트가 이렇게나 무서운(?) 일이라는 것도 다시금 깨닫게 된다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/article/macos-safari-fix-video-blinks.html"/>
-    <summary type="text">macOS 사파리에서 유튜브나 넷플릭스를 전체화면으로 볼 때 화면이 깜빡이는 증상을 고쳐보자.</summary>
-    <published>2024-06-20T23:33:00+09:00</published>
   </entry>
 </feed>

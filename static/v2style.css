@@ -233,17 +233,17 @@ h6 {
 
 .content h2 {
     font-size: 1.2rem;
-    margin-top: 2.8rem;
-    margin-bottom: 0.8rem;
-    padding-top: 8px;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+    padding-top: 0;
     padding-bottom: 0;
-    border-top: 0.5px #2f2f2f dashed;
+    border-top: none;
 }
 
 .content h3 {
     font-size: 1rem;
-    margin-top: 2.6rem;
-    margin-bottom: 0.6rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
 }
 
 .content h4 {
@@ -598,7 +598,7 @@ footer {
     }
 
     .content h2 {
-        border-top: 0.5px #5b6268 dashed;
+        border-top: none;
     }
 
     .content pre {

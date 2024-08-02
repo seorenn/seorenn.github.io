@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-02T16:22:52.645266+09:00</updated>
+  <updated>2024-08-02T16:31:34.749443+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -1920,8 +1920,8 @@ pytest = "^5.2"
   </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240707-00.html</id>
-    <title>한 주 간의 애플 소식들 24-07-07</title>
-    <updated>2024-07-07T21:19:17.215353+09:00</updated>
+    <title>한 주간의 애플 소식들 24-07-07</title>
+    <updated>2024-08-02T16:31:06.975404+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발자 베타 릴리즈 소식들</h2>
 <ul>

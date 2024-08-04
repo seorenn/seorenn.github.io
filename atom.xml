@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-02T23:34:11.438021+09:00</updated>
+  <updated>2024-08-04T23:39:55.762262+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,65 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20240804-00.html</id>
+    <title>macOS 14.6, iOS 17.6 등 안정 버전 공개 외 한 주간의 애플 소식들 2024-08-</title>
+    <updated>2024-08-04T23:39:51.889985+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈 소식들</h2>
+<p>애플은 미국 시각 7월 29일 아래의 애플 플랫폼 OS 안정 버전을 릴리즈 했다.</p>
+<ul>
+<li>macOS 14.6</li>
+<li>iOS 17.6</li>
+<li>iPadOS 17.6</li>
+<li>visionOS 1.3</li>
+<li>watchOS 10.6</li>
+<li>tvOS 17.6</li>
+</ul>
+<p>기존 대로라면 마이너 업데이트인 만큼 상황을 보고 설치하라고 하겠지만 이번의 경우는 신기능은 거의 없는 버그 픽스 급 업데이트로 평가되는 만큼 설치에 큰 부담은 없을 것 같다. 딱히 알려진 새로운 기능은 스포츠 관련 콘텐츠 추가와 함께  M3 14인치 맥북프로에서 macOS 듀얼 모니터 지원 정도다.</p>
+<p>동시에 외에 애플은 차세대 OS들의 다음 마이너 업데이트를 준비하기 시작했는지 아래의 개발자 베타들을 함께 공개했다.</p>
+<ul>
+<li>macOS 15.1 beta</li>
+<li>iOS 18.1 beta</li>
+<li>iPadOS 18.1 beta</li>
+</ul>
+<p>첫 마이너 업데이트는 AI 초기 지원이 주목적으로 보이기에 관련된 플랫폼만 우선적으로 베타가 공개된 것 같은 느낌적인 느낌이다. 특히 AI 기능 사용을 위한 사전신청 및 대기명단 기능이 추가된 것 같다. 당연하겠지만 이번 개발자 베타의 AI 지원은 이미 애플이 밝힌 AI 작동이 가능한 최신형 디바이스에서만 사용이 가능하다.</p>
+<p>다만 첫 베타에서는 AI 지원이 탑재되지 않은 것으로 알려지고 있다.</p>
+<p>이 외에 아래의 소프트웨어 공개 소식이 있다.</p>
+<ul>
+<li>Safari Technology Preview 200</li>
+</ul>
+<p>기타 앱 검토 가이드라인도 업데이트 되었다. 주로 최근에 반려 및 승인으로 화제가 되었던 PC 에뮬레이터 앱과 관련된 지침이다.</p>
+<h2>일반적인 애플 소식들</h2>
+<p><strong>공급망 다변화</strong><br/>
+iPhone의 주력 제품인 Pro 모델들도 인도에서 생산될 것 같다. 물론 여전히 중국은 iPhone의 최대 생산 국가일 테지만 적어도 중국 의존도를 일부 낮출 수는 있을 것이다. 중국 의존도가 높을 때 코로나 봉쇄로 피 맛을 크게 못 애플이라 공급망 다변화 속도를 늦출 이유도 없을 것 같다.</p>
+<p><strong>늦어지는 폴더블</strong><br/>
+2025년을 목표로 개발 중이라던 폴더블 iPad(혹은 폴더블 Mac 하이브리드)는 대량 생산 관련 문제로 2026년으로 지연될 것 같다는 모양이다. 그리고 2026년에 폴더블 iPhone도 함께 로드맵에 들어가게 된 것 같다. 개인적으론 폴더블 Mac은 여전히 바보같은 발상이라고 생각한다.</p>
+<p><strong>AAPL 설마 고점?</strong><br/>
+워렌 버핏의 버크셔 헤서웨이가 AAPL 지분을 거의 절반 가까이 매도한 것으로 확인되었다. 다만 애플 뿐만 아니라 BAC도 상당량의 지분을 매도한 것으로 보아 현금 확보가 주 목적인 것으로 보인다.</p>
+<h2>Apple Intelligence 관련 소식들</h2>
+<ul>
+<li>애플은 사용자 요청에 따라 AI 사용에 대한 개인 정보 보호 보고서를 공개한다고 한다.</li>
+<li>AI 통합 Siri는 올해 말 쯤 나올 iOS 18 버전 업데이트에서 지원될 것으로 보인다.</li>
+<li>덕분에 iPhone 16은 AI 지원이 개시되기 전에 출시될 가능성이 높아졌다. </li>
+<li>애플은 AI 학습에 Nvidia의 칩이 아닌 구글의 칩을 사용하는 것으로 알려져 눈길을 끌었다. Nvidia의 주가 하락에도 큰 영향을 끼친 것으로 보인다.</li>
+<li>macOS 15.1 베타가 외장저장장치에서 구동될 경우 프라이버시 보호 사유로 AI가 동작하지 않을 수도 있다고 한다.</li>
+<li>iOS 18.1에서 Safari에 요약 기능이 드디어 투입된다고 한다.</li>
+</ul>
+<h2>기타 루머 소식들</h2>
+<ul>
+<li>애플은 Apple TV의 광고 기반 구독 요금제 플랜을 계속 작업 중인 듯하다. <em>아마도 타사 OTT 광고 구독 요금제를 계속 벤치마크하는 모양이다.</em></li>
+<li>iOS 18.1에서 Apple Intelligence 지원이 본격화 될 모양인 듯하다. <em>이 말은 18.1 이전 버전에선 지원이 없다는 말 같은데 생각보다 좀 늦어진 모양이다.</em></li>
+<li>iPhone SE 4의 일부 OLED 패널은 LG디스플레이가 공급할 것 같다.</li>
+<li>iPad Pro에 탑재된 Tandem OLED 디스플레이 기술을 이용해 LG와 삼성이 마이크로 OLED 디스플레이 기술을 개발한 모양이고 추후 Vision Pro 차기 모델에 채택될 가능성이 있는 모양이다.</li>
+<li>iPhone 16에서 배터리 용량이 늘어날 것 같은데 특히 Pro 모델들에서 크게 늘어날 모양이다.</li>
+<li>iPhone 17에는 24메가픽셀의 전면 카메라 탑재 가능성 소문이 다시 돌고 있다.</li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20240804-00.html"/>
+    <summary type="text">각종 소프트웨어 릴리즈, AI, 각종 루머 등 한 주간의 애플 소식 모음</summary>
+    <published>2024-08-04T23:30:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240802-02.html</id>
     <title>주식시장엔 아포칼립스가 도래한 것 같다</title>
@@ -2616,62 +2675,5 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
     <link href="https://seorenn.github.io/article/emacs-lisp-eval-quoted-list-elements.html"/>
     <summary type="text">Emacs Lisp에서 인용된 리스트의 각 값들은 입력된 그대로 들어가 있는데 역따옴표와 쉼표를 이용해 이를 값으로 구성하는 방법을 알아보자.</summary>
     <published>2024-06-25T21:46:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/emacs-lisp-single-quote.html</id>
-    <title>Emacs Lisp에서 작은따옴표의 의미</title>
-    <updated>2024-06-29T15:45:23.614382+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs Lisp 코드를 보면 작은따옴표가 종종 보이는데 유독 한 쌍이 아니라 한 개씩만 보여서 상당히 혼란스러웠었다. 왜냐하면 다른 언어에서 작은따옴표는 문자 혹은 문자열을 둘러싸는 특수 기호로 쓰이니 말이다.</p>
-<p>즉 Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰인다. 도대체 이 작은따옴표는 무슨 의미일까?</p>
-<h2>Emacs Lisp에서 순수한 데이터 리스트 표현하기</h2>
-<p>Common Lisp을 포함하여 Emacs Lisp에서 모든 요소는 리스트로 표현된다. 그리고 리스트의 특징 중 하나로 첫 요소는 바로 함수여야 한다는 점이 있다.</p>
-<p>그래서 순수한 데이터 리스트를 표현할 때는 약간의 문제가 있다. 아래의 예를 보자.</p>
-<pre><code class="language-lisp">(print (1 2 3))
-</code></pre>
-<p>위 코드의 의도는 <code>(1 2 3)</code>이라는 리스트를 콘솔에 표시하고 싶은 것인데, 블행히도 '1이라는 함수는 없다'는 식의 오류가 발생하는 코드다. 앞서 이야기 했다시피 Lisp에서 리스트의 첫 요소는 함수여야 하기 때문이다.</p>
-<p>만약 순수한 데이터 리스트로 <code>(1 2 3)</code>을 표현하려면 어떻게 해야 할까? </p>
-<p>대략 두 가지 방법이 있는데 하나는 <code>list</code>라는 함수를 이용해 인스턴스를 생성하는 것이다.</p>
-<pre><code class="language-lisp">(print (list 1 2 3))
-</code></pre>
-<p>위와 같이 하면 의도대로 동작하는 것을 확인할 수 있다. </p>
-<p>두가지라고 했으니 나머지 하나가 남았다. 그 나머지가 이 글의 주제와 관련이 있다.</p>
-<h2>Emacs Lisp에서 작은따옴표의 용도</h2>
-<p>리스트 데이터를 표현하기 위해 <code>list</code> 함수를 이용하는 것보다 더 직관적인 방법이 있는데 바로 이번 글의 주제인 작은따옴표를 써서 할 수 있다. 아래와 같은 식으로 말이다.</p>
-<pre><code class="language-lisp">(print '(1 2 3))
-</code></pre>
-<p>이렇게 하면 <code>list</code> 함수를 이용한 경우와 동일하게 동작하면서도 코드 자체는 더 간결하게 느껴진다. 이게 바로 작은따옴표가 자주 쓰이는 용도다.</p>
-<p>사실 작은따옴표는 <code>quote</code>라는 함수라고 이해하면 된다. 위와 코드는 아래 코드와 동일하다.</p>
-<pre><code class="language-lisp">(print (quote 1 2 3))
-</code></pre>
-<p>그렇다면 "작은따옴표는 데이터 리스트를 표현하기 위해 사용하는구나"라고 이해하면 될까? 틀린 건 아니겠지만 원칙적으로 맞지는 않는 설명이다.</p>
-<h2>Emacs Lisp에서 작은따옴표의 의미</h2>
-<p>Emacs Lisp에서 작은따옴표(<code>'</code>, single quote)는 사실은 "실행시키지 않는다"는 의미로 대충 둘러대는 게 맞을 것 같다. 이 작은따옴표로 인용된 리스트는 리스트 자체를 그대로 표현하는 것이기 때문이다.</p>
-<p>약간 비슷하지만 다른 예를 보자. </p>
-<pre><code class="language-lisp">(defun doubled (x)
-  (+ x x))
-
-(print '(doubled 2))
-</code></pre>
-<p>이 코드가 실행되면 어떻게 될까? 별로 생각할 필요 없이 그대로 <code>(doubled 2)</code>가 출력된다. 작은따옴표로 인용된 리스트는 별도의 처리가 없으면 그대로 표현될 뿐이다.</p>
-<p>이번에는 아예 이상한(?) 영단어를 요소로 리스트를 구성해 봤다.</p>
-<pre><code class="language-lisp">(print '(aaa bbb ccc))
-</code></pre>
-<p>이 코드에서 참조하는 <code>aaa</code>, <code>bbb</code>, <code>ccc</code>는 정의되지 않은 심볼이다. 따라서 실행시키면 오류가 나야 할 것 같다. </p>
-<p>하지만 위 코드는 <code>(aaa bbb ccc)</code>를 그대로 출력할 뿐 오류가 나지 않는다. 왜냐하면 해당 리스트의 각 요소는 아직 실체화되지 않았기 때문이다.</p>
-<p>결과적으로 <code>list</code> 함수를 이용해 생성한 순수 데이터 리스트와 작은따옴표를 이용해 생성한 인용(quote)된 리스트는 결과적으로는 동일하게 사용할 수 있지만 <strong>본질적으로는 다르다</strong>는 말이다. 그저 작은따옴표를 데이터 리스트를 표현하는 데 자주 사용할 뿐이다.</p>
-<p>참고로 작은따옴표나 <code>quote</code>로 인용된 리스트는 <code>eval</code>로 일반 리스트화 하는 것도 가능하다.</p>
-<pre><code class="language-lisp">(eval '(1 2 3))
-</code></pre>
-<p>'1이라는 함수는 없다'는 오류가 발생한다. 제일 처음의 이야기다.</p>
-<h2>관련된 글들</h2>
-<ul>
-<li><a href="../article/emacs-lisp-eval-quoted-list-elements.html">Emacs Lisp에서 인용된 리스트 요소들 현실화(?) 하기</a></li>
-<li><a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/emacs-lisp-single-quote.html"/>
-    <summary type="text">Emacs Lisp에서 작은따옴표는 다른 언어들과는 다른 의미로 쓰이는데 도대체 무슨 의미일까?</summary>
-    <published>2024-06-24T23:02:00+09:00</published>
   </entry>
 </feed>

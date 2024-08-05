@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://seorenn.github.io/subject/python.html</loc><lastmod>2024-07-23</lastmod></url>
+<url><loc>https://seorenn.github.io/subject/python.html</loc><lastmod>2024-08-05</lastmod></url>
 <url><loc>https://seorenn.github.io/article/soft-landing-and-hard-landing.html</loc><lastmod>2024-05-20</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-f-string.html</loc><lastmod>2024-05-21</lastmod></url>
 <url><loc>https://seorenn.github.io/article/python-simple-web-server.html</loc><lastmod>2024-05-20</lastmod></url>
@@ -117,7 +117,7 @@
 <url><loc>https://seorenn.github.io/log/20240727-00.html</loc><lastmod>2024-07-27</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240728-00.html</loc><lastmod>2024-07-28</lastmod></url>
 <url><loc>https://seorenn.github.io/article/malaria.html</loc><lastmod>2024-07-30</lastmod></url>
-<url><loc>https://seorenn.github.io/article/doom-emacs-shortcuts.html</loc><lastmod>2024-07-30</lastmod></url>
+<url><loc>https://seorenn.github.io/article/doom-emacs-shortcuts.html</loc><lastmod>2024-08-05</lastmod></url>
 <url><loc>https://seorenn.github.io/upload/202407301422-5b696b8b.png</loc><lastmod>2024-07-30</lastmod></url>
 <url><loc>https://seorenn.github.io/upload/202407301420-8b62b531.png</loc><lastmod>2024-07-30</lastmod></url>
 <url><loc>https://seorenn.github.io/upload/202407301423-e4e04be3.png</loc><lastmod>2024-07-30</lastmod></url>
@@ -136,4 +136,5 @@
 <url><loc>https://seorenn.github.io/log/20240804-00.html</loc><lastmod>2024-08-04</lastmod></url>
 <url><loc>https://seorenn.github.io/upload/202408051418-8bb050ff.png</loc><lastmod>2024-08-05</lastmod></url>
 <url><loc>https://seorenn.github.io/log/20240805-00.html</loc><lastmod>2024-08-05</lastmod></url>
+<url><loc>https://seorenn.github.io/article/python-markdown-table.html</loc><lastmod>2024-08-05</lastmod></url>
 </urlset>

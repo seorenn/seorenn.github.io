@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-05T14:20:01.859082+09:00</updated>
+  <updated>2024-08-05T20:23:08.450452+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,76 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/python-markdown-table.html</id>
+    <title>Python-Markdown의 테이블 렌더링 지원</title>
+    <updated>2024-08-05T20:22:37.455824+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p><a href="../article/python-markdown.html">Python-Markdown</a>으로 마크다운 문서를 HTML로 렌더링 할 때는 뭔가 고급(?) 기능이 빠진 것 같이 렌더링이 된다. 예를 들어 테이블의 경우가 그렇다.</p>
+<p>다행히도 테이블 렌더링이 지원되지 않는 것은 아니다. 사실 아주 간단하다.</p>
+<h2>Python-Markdown에서 테이벌 렌더링 지원하기</h2>
+<p>테이블 렌더링을 지원하려면 간단히 <code>tables</code> 확장을 추가해 주면 된다. 예를 들자면 아래와 같은 식이다.</p>
+<pre><code>html = markdown.markdown(markdown_text, extensions=['tables'])
+</code></pre>
+<p>이 경우 테이블 문법으로 작성한 마크다운이 테이블 태그로 렌더링 된다.</p>
+<h2>정렬 속성 사용하기</h2>
+<p>위의 방식으로 테이블 확장을 사용할 경우 각 셀의 정렬(alignment)을 style 속성에 CSS를 적용하는 방식으로 적용된다. 만약 style이 아닌 align 속성을 쓰고 싶다면 별도의 옵션을 줄 수 있다. 이 경우 해당 확장 클래스 자체를 가져와서 매개변수를 전달해서 설정할 수 있다.</p>
+<pre><code>from markdown.extensions.tables import TableExtension
+
+...
+
+html = markdown.markdown(
+    markdown_text, 
+    extensions=[TableExtension(use_align_attribute=True)]
+)
+</code></pre>
+<p>위와 같은 식으로 확장을 추가할 경우 마크다운 문서에 정렬 방식을 설정할 경우 각 셀에 <code>align</code> 속성이 적용되는 것을 볼 수 있다.</p>
+<h2>실제 렌더링 결과물</h2>
+<p>이 렌더링 예시는 별도의 설정 없는 기본적인 확장을 사용한 경우다. 실제 HTML 태그는 소스보기로 확인해 보자.</p>
+<p>입력 마크다운 문서는 아래와 같다.</p>
+<pre><code>| 좌측 정렬 항목      | 기본 항목                          |      우측 정렬 항목 |
+|:--------------------|------------------------------------|--------------------:|
+| 왼쪽                | 기본                               |              오른쪽 |
+| 그냥 약간 긴 문자열 | 그냥 약간 아주 조금만 더 긴 문자열 | 그냥 약간 긴 문자열 |
+| **당연히**          | `다양한` *텍스트* 스타일을         |     쓸 수 있습니다. |
+</code></pre>
+<p>출력으로 렌더링 되는 결과는 아래와 같다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">좌측 정렬 항목</th>
+<th>기본 항목</th>
+<th style="text-align: right;">우측 정렬 항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">왼쪽</td>
+<td>기본</td>
+<td style="text-align: right;">오른쪽</td>
+</tr>
+<tr>
+<td style="text-align: left;">그냥 약간 긴 문자열</td>
+<td>그냥 약간 아주 조금만 더 긴 문자열</td>
+<td style="text-align: right;">그냥 약간 긴 문자열</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>당연히</strong></td>
+<td><code>다양한</code> <em>텍스트</em> 스타일을</td>
+<td style="text-align: right;">쓸 수 있습니다.</td>
+</tr>
+</tbody>
+</table>
+<p>위 테이블이 잘 보인다면 별 문제는 없는 것이다.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a></li>
+</ul></div>
+    </content>
+    <link href="https://seorenn.github.io/article/python-markdown-table.html"/>
+    <summary type="text">Python-Markdown에서는 기본적으로 테이블 렌더링이 되지 않는데 이를 지원하는 방법을 알아보자</summary>
+    <published>2024-08-05T20:22:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240805-00.html</id>
     <title>공포에 사라고 했다</title>
@@ -286,7 +356,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/article/doom-emacs-shortcuts.html</id>
     <title>Doom Emacs 단축키 정리</title>
-    <updated>2024-07-30T11:27:43.472689+09:00</updated>
+    <updated>2024-08-05T17:09:07.287118+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키를 정리한다. 일부 단축키는 별도의 글로 분리하는 경우도 있으니 하단 관련글 항목을 참고하자.</p>
 <h2>설정(Configuration) 관련</h2>
@@ -735,7 +805,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
 </tr>
 </tbody>
 </table>
-<p>연관 텍스트라는 것은 좀 특수항 경우인데, 예를 들어 C++에서 public - private - protected 등의 관계를 생각하면 될 것 같다.</p>
+<p>연관 텍스트라는 것은 좀 특수한 경우인데, 예를 들어 C++에서 <code>public</code> - <code>private</code> - <code>protected</code> 등의 관계를 생각하면 될 것 같다.</p>
 <h2>Emacs Lisp 관련</h2>
 <table>
 <thead>
@@ -2610,45 +2680,5 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
     <link href="https://seorenn.github.io/article/emacs-lisp-alist.html"/>
     <summary type="text">Emacs Lisp의 alist - Association List - 의 사용법을 간단히 정리해 보자.</summary>
     <published>2024-06-27T10:24:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/emacs-lisp-plist.html</id>
-    <title>Emacs Lisp의 plist 사용법 간단 정리</title>
-    <updated>2024-06-27T10:26:02.498578+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><h2>plist</h2>
-<p>Emacs Lisp에서 plist는 'Property List'의 축약어로 다른 언어의 사전형(dictionary type)과 비슷한 기능의 자료구조를 제공한다. 참고로 Common Lisp에도 동일한 자료형은 있으나 사용법은 조금 다른 것 같다.</p>
-<p>기본적으로 plist 자료구조는 단순 리스트에 키와 값이 연속으로 나열되는 구조라 표현에서 상당히 간결한 편이다.</p>
-<h2>plist 인스턴스 생성</h2>
-<p>plist 데이터를 생성하는 방법은 일반 리스트와 동일하다. 단지 요소 배치를 키와 값 순서대로 나열해야 한다는 특징이 있다.</p>
-<pre><code class="language-lisp">(setq mycard
-      '(name "Conrad"
-        age 20
-        phone "82-10-1234-5678"
-        address "Earth, Milkyway, Laniakea Supercluster"
-        :memo "Lazy Human"))
-</code></pre>
-<p>이렇게 키와 값을 나열하면 plist 형식의 인스턴스가 생성된다.</p>
-<p>위의 예에서 약간 특이하게 <code>:memo</code>만 앞에 콜론(<code>:</code>)이 붙어있는데 Emacs Lisp에서 심볼을 표현하는 문법이며 이런 형식도 쓸 수 있다는 것을 알려주기 위함이지 다른 의미가 있는 것은 아니다.</p>
-<h2>plist에서 키의 값 읽기</h2>
-<p>plist 데이터에서 특정 키의 값을 읽을 때는 <code>plist-get</code> 함수를 사용할 수 있다.</p>
-<pre><code class="language-lisp">(plist-get mycard 'name)
-;; -&gt; "Conrad"
-(plist-get mycard :memo)
-;; -&gt; "Lazy Human"
-</code></pre>
-<h2>plist에서 키의 값 쓰기</h2>
-<p>plist 데이터에 키와 값을 추가로 쓰거나 업데이트하기 위해서는 <code>plist-put</code> 함수를 사용할 수 있다.</p>
-<pre><code class="language-lisp">(plist-put mycard 'gender "etc")
-</code></pre>
-<h2>관련된 글들</h2>
-<ul>
-<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
-<li><a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/emacs-lisp-plist.html"/>
-    <summary type="text">Emacs Lisp의 plist - Property List - 의 사용법을 간단히 정리해 보자.</summary>
-    <published>2024-06-26T23:12:00+09:00</published>
   </entry>
 </feed>

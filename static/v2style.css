@@ -274,7 +274,7 @@ h6 {
     padding: 1.2rem 1.2rem 1.2rem 1.2rem;
     color: #bcc2ce;
     background-color: #292c33;
-    font-family: Menlo, Monaco, monospace;
+    font-family: monospace;
     overflow-x: auto;
     line-height: 1.2rem;
     /*white-space: pre-wrap;*/
@@ -282,7 +282,7 @@ h6 {
 
 .content code {
     padding: 2px 4px 2px 4px;
-    font-family: Menlo, Monaco, monospace;
+    font-family: monospace;
     background: #f4f4f4;
     font-size: 0.9rem;
 }

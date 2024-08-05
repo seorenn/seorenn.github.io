@@ -287,6 +287,10 @@ h6 {
     font-size: 0.9rem;
 }
 
+.content pre code {
+    padding: 0;
+}
+
 .content blockquote {
     margin: 1.8rem 0 1.8rem 0;
     padding-left: 24px;

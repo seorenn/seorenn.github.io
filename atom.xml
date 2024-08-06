@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-05T23:20:51.578469+09:00</updated>
+  <updated>2024-08-06T14:58:46.620721+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,47 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/objc-exceptions.html</id>
+    <title>Objective-C 예외 처리 정리</title>
+    <updated>2024-08-06T14:58:09.395653+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Objective-C에서도 예외(exceptions) 처리가 가능함을 이제서야 알게 되었다. 간단하게 정리해 보자.</p>
+<h2>Objective-C 예외 처리 기본</h2>
+<p>Objective-C에서 예외 처리 루틴은 아래와 같은 문법으로 작성할 수 있다.</p>
+<pre><code class="language-c">@try {
+    // 예외 발생을 감시할 코드들
+}
+@catch (SomeAnotherException *e) {
+    // 특정 예외 감시 가능
+}
+@catch (NSException *e) {
+    // 대부분의 예외가 발생할 경우 호출
+}
+@finally {
+    // 예외 발생 여부와 상관 없이 try 블럭이 끝나면 이 곳이 호출
+    // 메모리 해제 루틴을 넣기에 좋은 위치
+}
+</code></pre>
+<p>현대적인 언어에서 자주 볼 수 있는 예외 처리 방식이라 굳이 상세히 설명할 필요는 없을 것 같다.</p>
+<h2>예외 발생시키기</h2>
+<p>예외를 발생시킬 때는 <code>@throw</code>를 이용할 수 있다.</p>
+<pre><code class="language-c">@throw [NSException exceptionName:@"MyException" 
+                           reason:@"I have no money" 
+                         userInfo:nil];
+</code></pre>
+<h2>예외 토스하기</h2>
+<p>예외가 발생하면 이를 더 상위로 던져줘서 거기서 알아서 처리하라고 하고 싶을 때가 있는데 이럴 때는 그냥 <code>@throw</code>를 쓰기만 해도 된다.</p>
+<pre><code class="language-c">@catch (NSException *e) {
+    @throw;
+}
+</code></pre>
+<p>이렇게 하면 굳이 예외 인스턴스를 적어주지 않아도 알아서 동일한 예외가 발생되므로 상위 레벨에서 예외를 잡을 수 있다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/objc-exceptions.html"/>
+    <summary type="text">Objective-C의 예외(Exceptions) 처리와 관련된 부분을 정리하는 글</summary>
+    <published>2024-08-06T14:58:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240805-01.html</id>
     <title>서비스업 PMI는 시장을 살려줄 수 있을까?</title>
@@ -34,7 +75,7 @@
   <entry>
     <id>https://seorenn.github.io/article/python-markdown-table.html</id>
     <title>Python-Markdown의 테이블 렌더링 지원</title>
-    <updated>2024-08-05T20:22:37.455824+09:00</updated>
+    <updated>2024-08-05T23:30:05.545356+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p><a href="../article/python-markdown.html">Python-Markdown</a>으로 마크다운 문서를 HTML로 렌더링 할 때는 뭔가 고급(?) 기능이 빠진 것 같이 렌더링이 된다. 예를 들어 테이블의 경우가 그렇다.</p>
 <p>다행히도 테이블 렌더링이 지원되지 않는 것은 아니다. 사실 아주 간단하다.</p>
@@ -44,7 +85,7 @@
 </code></pre>
 <p>이 경우 테이블 문법으로 작성한 마크다운이 테이블 태그로 렌더링 된다.</p>
 <h2>정렬 속성 사용하기</h2>
-<p>위의 방식으로 테이블 확장을 사용할 경우 각 셀의 정렬(alignment)을 style 속성에 CSS를 적용하는 방식으로 적용된다. 만약 style이 아닌 align 속성을 쓰고 싶다면 별도의 옵션을 줄 수 있다. 이 경우 해당 확장 클래스 자체를 가져와서 매개변수를 전달해서 설정할 수 있다.</p>
+<p>위의 방식으로 테이블 확장을 사용할 경우 각 셀의 정렬(alignment)은 style 속성에 CSS가 명시되는 방식으로 적용된다. 만약 style이 아닌 align 속성으로 정렬되도록 하고 싶다면 별도의 옵션을 줄 수 있다. 이 경우 해당 확장 클래스 자체를 가져와서 매개변수를 전달해서 설정할 수 있다.</p>
 <pre><code>from markdown.extensions.tables import TableExtension
 
 ...
@@ -2563,37 +2604,5 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
     <link href="https://seorenn.github.io/article/emacs-lisp-funcall-and-apply.html"/>
     <summary type="text">Emacs Lisp에서 함수를 매개변수로 받아서 자유롭게 호출하기 위해 funcall과 apply가 쓰이는데 이 둘이 어떻게 다른지 간단히 정리해 보자.</summary>
     <published>2024-06-28T15:44:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240627-00.html</id>
-    <title>의존성 실타래 풀다가 화병 나겠네</title>
-    <updated>2024-06-27T22:06:41.397484+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p><img alt="불어터진 자장면 코드" src="../upload/202406271528-56066a1e.jpg"/>
-<em>파스타 코드 보다는 불어터진 자장면 코드가 더 어울릴 듯 (태경 김/Pixabay)</em></p>
-<p>한 회사의 오래된 프로젝트가 너무 오래된 SDK를 참조하고 있는데 계속 놔두면 자른다(?)고 해서 이걸 업그레이드 하려고 여럿 건드려 보고 있는 중이다.</p>
-<p>그런데 이 과정에서 큰 지뢰를 밟아버렸다. 사용하던 의존성이 구버전 SDK와 엮여 있던 것이 많아서였다. 그래도 이왕 밟은 거 죽기는 싫으니 지뢰를 하나씩 해체해 나간다.</p>
-<p>우선은 SDK 버전을 올린 후 부족한 부분을 따라가 본다. 의존성들의 버전을 하나씩 올려보면서 문제가 해결되는지 확인해본다. 문제는 이 과정에서 연달아서 버전이 안 맞아서 꼬이는 현상들이 하나 둘 계속 얽혀져 뽑혀나온다.</p>
-<p>불행히도 지뢰를 해체해 나가던 도중 거기에 연결된 또다른 폭탄을 하나 발견한다. 겨우 의존성 문제를 풀어가나 싶더니 거기서 누군가 버전업이 안 되던 패키지를 직접 뜯어고친 비공식 저장소의 의존성이 튀어나왔다.</p>
-<p>여기에 얽힌 의존성의 버전 꼬임을 또 하나하나 해결해 간다. 의존성 버전 체크는 한 번에 하나씩 밖에 안 되기 때문에 지속적으로 체크하고 수정하고를 반복해 나가야 했다. 심각하게 스트레스를 받았다. 그래도 어떻게 해결을 하긴 했댜.</p>
-<p>이제 다 해결 되었을까 싶었지만 불행히도 지뢰에 또다른 폭탄이 연결된 것을 발견한다. 그런데 이번에 발견된 폭탄에는 워낙 옛날에 만들어서 어떻게 해체해야 할지 알 수 없는 부품이 하나 연결되어 있었다. 2년이나 넘게 방치된 패키지였다.</p>
-<p>어쩔 수 없이 그 부품을 복제해서 직접 뜯어고쳐야 되게 생겼다. 하지만 그 부품 안에는 또 오래되어서 관리가 안 되는 부품이 또 들어있었다.</p>
-<blockquote>
-<p>아 모르겠다. 하기 싫다. 살려줘. 사람 살려.</p>
-</blockquote>
-<p>...</p>
-<p>과거 어떤 회사 면접에서 '써드파티 의존성을 늘리는 것을 경계하는 편'이라고 이야기했다가 좀 둘러서 까인 적이 있었다. 그때 내가 잘못된 것일까 라고 생각하며 조금씩 써드파티 패키지에의 의존을 조금씩 늘려가보고 있기는 하다.</p>
-<p>하지만 이런 지뢰를 밟아 보면 '빨리 만들 수 있다고 써드파티 의존성을 늘려가는 게 과연 정답일까?'라고 좀 심각하게 고민해 봐야 할 것 같다. 특히 그 프로젝트가 내가 참여하지 않더라도 오히려 더 고민해 보라고 권하고 싶다. 유지보수라는 것도 상당히 중요한 일인데 의존성 옹호론자들은 너무 안일한 것이 아닐까.</p>
-<p>물론 지속적으로 관리되어온 프로젝트는 별 지장 없이 여전히 잘 관리될 수는 있다. 내가 처음부터 지금까지 계속 관리하는 코드들은 별 문제가 없다. 써드파티 패키지를 안 쓰는 것도 아님에도 말이다. SDK든 개발툴이든 뭐든 최신버전으로 바로 올려서 문제가 보이면 바로 수정하고 있으니 말이다.</p>
-<p>하지만 내가 처음부터 끝까지 지속적으로 꾸준히 관리되어 올 수 있는 일은 극수소일 뿐일 것이다.</p>
-<p>그러니까 하고 싶은 말은 </p>
-<blockquote>
-<p>불가피한 경우를 제외하곤 써드파티 의존성은 자제하는 편이 정신건강에 더 나을 것이다.</p>
-</blockquote>
-<p>정도일 것 같다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240627-00.html"/>
-    <summary type="text">한 회사의 오래된 프로젝트가 너무 오래된 SDK를 참조하고 있는데 계속 놔두면 자른다(?)고 해서 이걸 업그레이드 하려고 여럿 건드려 보고 있는 중이다.</summary>
-    <published>2024-06-27T15:29:00+09:00</published>
   </entry>
 </feed>

@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기 - Seorenn</title>
-    <meta name="twitter:title" content="SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기" />
-    <meta name="og:title" content="SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기" />
-    <meta name="description" content="Binding 타입의 값을 넘길 때 Swift의 기본 타입의 값을 이용해 간단히 넘기는 방법" />
-    <meta name="twitter:description" content="Binding 타입의 값을 넘길 때 Swift의 기본 타입의 값을 이용해 간단히 넘기는 방법" />
-    <meta name="og:description" content="Binding 타입의 값을 넘길 때 Swift의 기본 타입의 값을 이용해 간단히 넘기는 방법" />
-    <link rel="canonical" href="https://seorenn.github.io/article/swift-fix-cannot-convert-to-binding.html" />
-    <meta property="og:url" content="https://seorenn.github.io/article/swift-fix-cannot-convert-to-binding.html" />
+    <title>Objective-C 예외 처리 정리 - Seorenn</title>
+    <meta name="twitter:title" content="Objective-C 예외 처리 정리" />
+    <meta name="og:title" content="Objective-C 예외 처리 정리" />
+    <meta name="description" content="Objective-C의 예외(Exceptions) 처리와 관련된 부분을 정리하는 글" />
+    <meta name="twitter:description" content="Objective-C의 예외(Exceptions) 처리와 관련된 부분을 정리하는 글" />
+    <meta name="og:description" content="Objective-C의 예외(Exceptions) 처리와 관련된 부분을 정리하는 글" />
+    <link rel="canonical" href="https://seorenn.github.io/article/objc-exceptions.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/objc-exceptions.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기</h1>
+          <h1>Objective-C 예외 처리 정리</h1>
           <div class="title-date">
             
               
@@ -73,26 +73,43 @@
               <span>//</spans>
             
             
-              <span>2024년 07월 16일 작성</span>
+              <span>2024년 08월 06일 작성</span>
             
             
             
           </div>
         </header>
-        <p>SwiftUI로 뷰를 만들다 해당 뷰를 테스트 해야 할 일이 있을 수 있다. 예를 들자면 프리뷰(SwiftUI Preview)용 코드를 작성할 때 등등 말이다. 그래서 시험용으로 몇몇 변수의 값을 하드코딩으로 넘기는 경우도 허다할 것이다.</p>
-<p>그런데 이런 경우 아래와 같은 형식의 오류를 종종 볼 수 있다.</p>
-<blockquote>
-<p>Cannot convert value of type 'FooBar' to expected argument type 'Binding&lt;FooBar&gt;'</p>
-</blockquote>
-<p>직역하면 특정 타입의 값을 원하는 바인딩 타입으로 변환할 수 없다라는 의미다. 참고로 <code>FooBar</code>로 표기한 부분에는 실제로 사용된 타입이 표시되는 부분이니 오해하지 말자. 사용하는 타입에 따라 메시지는 당연히 바뀔 것이다.</p>
-<p>어쨌거나 이 오류의 원인은 <code>@Binding</code> 등으로 표기된 프로퍼티의 값으로 넘겨야 할 값을 그냥 정적인 값으로 넘겼기 때문에 발생한다.</p>
-<p>따라서 해결 방법 중 가장 직관적인(?) 방법은 넘기려는 값을 <code>@State</code> 등의 프로퍼티로 생성해서 바인딩 가능하게 넘기는 방법이 있을 것이다. 물론 그게 귀찮으니 이런 글이 탄생했지만 말이다.</p>
-<h2>그 외에 가장 간단한 해결 방법</h2>
-<p>이럴 때를 위해 <code>Binding.constant</code>가 제공된다. 어려울 것 없이 넘기려는 값을 매개변수로 넣어서 '바인딩 타입으로 값을 한번 감싸서 전달'하는 식이다.</p>
-<pre><code class="language-swift">MyViewController(name: .constant(&quot;Temporary Name&quot;))
+        <p>Objective-C에서도 예외(exceptions) 처리가 가능함을 이제서야 알게 되었다. 간단하게 정리해 보자.</p>
+<h2>Objective-C 예외 처리 기본</h2>
+<p>Objective-C에서 예외 처리 루틴은 아래와 같은 문법으로 작성할 수 있다.</p>
+<pre><code class="language-c">@try {
+    // 예외 발생을 감시할 코드들
+}
+@catch (SomeAnotherException *e) {
+    // 특정 예외 감시 가능
+}
+@catch (NSException *e) {
+    // 대부분의 예외가 발생할 경우 호출
+}
+@finally {
+    // 예외 발생 여부와 상관 없이 try 블럭이 끝나면 이 곳이 호출
+    // 메모리 해제 루틴을 넣기에 좋은 위치
+}
 </code></pre>
-<p>그렇게 하면 간단하게 해결된다.</p>
-<p>물론 이렇게 하면 SwiftUI 특유의 바인딩의 제대로 된 기능을 활용하지 못 한다는 점을 기억하자. 단순히 테스트 혹은 프리뷰 용도로만 활용하기엔 괜찮은 방법 같다.</p>
+<p>현대적인 언어에서 자주 볼 수 있는 예외 처리 방식이라 굳이 상세히 설명할 필요는 없을 것 같다.</p>
+<h2>예외 발생시키기</h2>
+<p>예외를 발생시킬 때는 <code>@throw</code>를 이용할 수 있다.</p>
+<pre><code class="language-c">@throw [NSException exceptionName:@&quot;MyException&quot; 
+                           reason:@&quot;I have no money&quot; 
+                         userInfo:nil];
+</code></pre>
+<h2>예외 토스하기</h2>
+<p>예외가 발생하면 이를 더 상위로 던져줘서 거기서 알아서 처리하라고 하고 싶을 때가 있는데 이럴 때는 그냥 <code>@throw</code>를 쓰기만 해도 된다.</p>
+<pre><code class="language-c">@catch (NSException *e) {
+    @throw;
+}
+</code></pre>
+<p>이렇게 하면 굳이 예외 인스턴스를 적어주지 않아도 알아서 동일한 예외가 발생되므로 상위 레벨에서 예외를 잡을 수 있다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -110,15 +127,15 @@
               <ul>
                 
                   <li>
-                    <a href="../article/objc-exceptions.html">Objective-C 예외 처리 정리</a>
-                  </li>
-                
-                  <li>
                     <a href="../article/swift-run-after-delay.html">Swift에서 딜레이 후 코드 호출하기</a>
                   </li>
                 
                   <li>
                     <a href="../article/xcode-swift-compiler-flag.html">Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/swift-fix-cannot-convert-to-binding.html">SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기</a>
                   </li>
                 
               </ul>

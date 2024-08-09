@@ -13,7 +13,45 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Thu, 08 Aug 2024 16:56:03 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2024 17:03:00 +0900</lastBuildDate>
+    <item>
+      <title>사이드카와 서킷브레이커는 무엇일까?</title>
+      <link>https://seorenn.github.io/article/sidecar-and-circuit-breaker.html</link>
+      <description>&lt;p&gt;사이드카와 서킷브레이커는 주식투자를 하다 보면 종종 들을 수 있는 단어이지만 특히 서킷브레이커를 경험해 보는 일은 쉽지 않은 일이다. 어느날 이 서킷브레이커 실제로 겪어보니 이 조치가 무엇인지 조금 더 알고 싶어져서 사이드카와 서킷브레이커에 대해 정리해 본다.&lt;/p&gt;
+&lt;h2&gt;사이드카(side car)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;선물시장&lt;/strong&gt;이 전날에 비해 급등락 할 경우 &lt;strong&gt;현물시장의 프로그램 매매를 5분간 중단시키는 제도&lt;/strong&gt;다. 발동 기준이 선물이고 실제 발동 대상은 현물임에 주의하자.&lt;/p&gt;
+&lt;p&gt;좀 더 상세히는 KOSPI 200 선물이 5% 이상, KOSDAQ 150 선물이 6% 이상 전날에 비해 오르거나 내리는 상황이 1분간 이어질 경우 5분간 주식시장에서 프로그래 매매를 중단시키는 제도다.&lt;/p&gt;
+&lt;p&gt;사람의 직접적인 트레이딩에 비해 프로그램 매매는 대량의 물량이 순식간에 거래되기 때문에 일반적인 트레이딩을 막지 않고도 순간적인 급등락을 막는 데는 효과적이라고 볼 수 있다.&lt;/p&gt;
+&lt;h2&gt;서킷 브레이커(circuit breaker)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;주식시장이 큰 폭으로 상승 혹은 하락할 때&lt;/strong&gt; 모든 거래를 중단시키거나 심하면 아예 거래를 완전히 종료시키는 제도다.&lt;/p&gt;
+&lt;p&gt;좀 더 상세한 조건은 코스피나 코스닥 지수가 전일 기준 8%, 15%, 20% 이상의 오르거나 내리는 상황이 1분 이상 이어질 경우 발동된다. 수치가 세 단계이기 때문에 세 단계 중 하나가 발동되며 1단계 및 2단계는 20분간 거래 중지 후 10분간 동시호가를 접수받아 단일가 매매만 진행, 3단계는 당일 거래를 완전히 종료시켜 버리는 강력한 조치가 발동된다.&lt;/p&gt;
+&lt;p&gt;장 마감 40분 전까지만 발동 가능하기 때문에 한국 기준 2시 50분 이후에는 발동되지 않는다. 그리고 하루에 한 차례만 발동 가능하다.&lt;/p&gt;
+&lt;p&gt;특이하게도 발동되면 아예 호가 접수 조차 안 된다. 즉 거래 중지 정도가 아니라 아예 작동이 멈추게 만드는데 회로차단기(circuit breaker)라는 이름과 딱 맞아 떨어지는 조치 같다.&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="이 글을 쓰게 만든 2024년 8월 5일의 실제 스크린샷" src="../upload/202408091642-8bb050ff.png" /&gt;
+&lt;em&gt;이 글을 쓰게 만든 2024년 8월 5일의 실제 스크린샷(KB증권 마블와이드)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;실제로 겪어보니 과연 이게 공포를 막을 수 있나 회의적인 생각이 들었다. 오히려 이런 조치가 장이 심각하다는 의미이기 때문에 공포를 더 키우는 것이지 않을까? 다만 개인적으론 저가 매수를 시도하다 이 조치로 낭패가 된 경우를 겪어봤기에 의미는 좀 달랐긴 했다.&lt;/p&gt;
+&lt;p&gt;어쨌든 두 제도 모두 미국에서 먼저 생겨났고 한국이 이를 비슷하게 도입한 제도인데 특이한 점은 사이드카는 미국에선 폐지된 제도라는 점이다. 미국과 같은 거대한 시장에서는 사람에 의한 트레이딩도 프로그램 매매 급일 수도 있으니 프로그램 매매 정지는 무의미한 조치일 지도 모르겠다. 할 수 있다면 그냥 프로그램 매매 속도를 좀 느리게 한다거나 하는 방안도 있을 것 같은데 비슷하면서도 다른 효과일 지도 모르겠다.&lt;/p&gt;
+&lt;p&gt;어쨌거나 둘 다 상승 때 발동이 가능하나 패닐셀이 아니면 발동되기 힘든 기준이기 때문에 결론적으로 폭락 시에만 발동된다고 봐야 할 것 같다. 즉 시장에 피가 낭자할 때나 보이는 두 단어라 가급적 보고 싶지는 않은 것 같다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;사이드카와 서킷브레이커는 주식투자를 하다 보면 종종 들을 수 있는 단어이지만 특히 서킷브레이커를 경험해 보는 일은 쉽지 않은 일이다. 어느날 이 서킷브레이커 실제로 겪어보니 이 조치가 무엇인지 조금 더 알고 싶어져서 사이드카와 서킷브레이커에 대해 정리해 본다.&lt;/p&gt;
+&lt;h2&gt;사이드카(side car)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;선물시장&lt;/strong&gt;이 전날에 비해 급등락 할 경우 &lt;strong&gt;현물시장의 프로그램 매매를 5분간 중단시키는 제도&lt;/strong&gt;다. 발동 기준이 선물이고 실제 발동 대상은 현물임에 주의하자.&lt;/p&gt;
+&lt;p&gt;좀 더 상세히는 KOSPI 200 선물이 5% 이상, KOSDAQ 150 선물이 6% 이상 전날에 비해 오르거나 내리는 상황이 1분간 이어질 경우 5분간 주식시장에서 프로그래 매매를 중단시키는 제도다.&lt;/p&gt;
+&lt;p&gt;사람의 직접적인 트레이딩에 비해 프로그램 매매는 대량의 물량이 순식간에 거래되기 때문에 일반적인 트레이딩을 막지 않고도 순간적인 급등락을 막는 데는 효과적이라고 볼 수 있다.&lt;/p&gt;
+&lt;h2&gt;서킷 브레이커(circuit breaker)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;주식시장이 큰 폭으로 상승 혹은 하락할 때&lt;/strong&gt; 모든 거래를 중단시키거나 심하면 아예 거래를 완전히 종료시키는 제도다.&lt;/p&gt;
+&lt;p&gt;좀 더 상세한 조건은 코스피나 코스닥 지수가 전일 기준 8%, 15%, 20% 이상의 오르거나 내리는 상황이 1분 이상 이어질 경우 발동된다. 수치가 세 단계이기 때문에 세 단계 중 하나가 발동되며 1단계 및 2단계는 20분간 거래 중지 후 10분간 동시호가를 접수받아 단일가 매매만 진행, 3단계는 당일 거래를 완전히 종료시켜 버리는 강력한 조치가 발동된다.&lt;/p&gt;
+&lt;p&gt;장 마감 40분 전까지만 발동 가능하기 때문에 한국 기준 2시 50분 이후에는 발동되지 않는다. 그리고 하루에 한 차례만 발동 가능하다.&lt;/p&gt;
+&lt;p&gt;특이하게도 발동되면 아예 호가 접수 조차 안 된다. 즉 거래 중지 정도가 아니라 아예 작동이 멈추게 만드는데 회로차단기(circuit breaker)라는 이름과 딱 맞아 떨어지는 조치 같다.&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="이 글을 쓰게 만든 2024년 8월 5일의 실제 스크린샷" src="../upload/202408091642-8bb050ff.png" /&gt;
+&lt;em&gt;이 글을 쓰게 만든 2024년 8월 5일의 실제 스크린샷(KB증권 마블와이드)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;실제로 겪어보니 과연 이게 공포를 막을 수 있나 회의적인 생각이 들었다. 오히려 이런 조치가 장이 심각하다는 의미이기 때문에 공포를 더 키우는 것이지 않을까? 다만 개인적으론 저가 매수를 시도하다 이 조치로 낭패가 된 경우를 겪어봤기에 의미는 좀 달랐긴 했다.&lt;/p&gt;
+&lt;p&gt;어쨌든 두 제도 모두 미국에서 먼저 생겨났고 한국이 이를 비슷하게 도입한 제도인데 특이한 점은 사이드카는 미국에선 폐지된 제도라는 점이다. 미국과 같은 거대한 시장에서는 사람에 의한 트레이딩도 프로그램 매매 급일 수도 있으니 프로그램 매매 정지는 무의미한 조치일 지도 모르겠다. 할 수 있다면 그냥 프로그램 매매 속도를 좀 느리게 한다거나 하는 방안도 있을 것 같은데 비슷하면서도 다른 효과일 지도 모르겠다.&lt;/p&gt;
+&lt;p&gt;어쨌거나 둘 다 상승 때 발동이 가능하나 패닐셀이 아니면 발동되기 힘든 기준이기 때문에 결론적으로 폭락 시에만 발동된다고 봐야 할 것 같다. 즉 시장에 피가 낭자할 때나 보이는 두 단어라 가급적 보고 싶지는 않은 것 같다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/sidecar-and-circuit-breaker.html</guid>
+      <pubDate>Fri, 09 Aug 2024 17:02:00 +0900</pubDate>
+    </item>
     <item>
       <title>최근 확산 중이라는 코로나19 KP.3 변이</title>
       <link>https://seorenn.github.io/log/20240808-00.html</link>
@@ -4433,78 +4471,6 @@ AI 서비스 운영을 위한 서버 인프라의 전기 소모량은 천문학�
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240630-00.html</guid>
       <pubDate>Sun, 30 Jun 2024 21:58:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</title>
-      <link>https://seorenn.github.io/article/emacs-lisp-sharp-quote-sign.md.html</link>
-      <description>&lt;p&gt;Emacs Lisp 코드에서 샤프(&lt;code&gt;#&lt;/code&gt;, sharpsign)와 작은따옴표(&lt;code&gt;'&lt;/code&gt;, single-quote)를 붙인 기호가 종종 쓰이는데 무슨 의미인지 대충 알아보자.&lt;/p&gt;
-&lt;h2&gt;많이 쓰이는 예&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;#'&lt;/code&gt; 기호는 보통 함수 핸들러를 전달할 때 많이 보인다. 아래의 예는 개인적으로 사용하는 설정 코드에서의 예인데 Doom Emacs 전용 코드도 일부 포함되어 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lisp"&gt;(add-to-list 'treemacs-ignored-file-predicates #'treemacs-ignore-local-cache))
-(add-hook 'kill-emacs-hook #'my-exit-function)
-
-;; Doom Emacs config.el
-(add-hook! 'markdown-mode-hook #'my-text-styles)
-(map! &amp;quot;C-c a l&amp;quot; #'my-miracle-function)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;여기서 &lt;code&gt;#'&lt;/code&gt;가 붙어있는 심볼들이 모두 함수일 것 같은 기분이라면 바로 정답이다.&lt;/p&gt;
-&lt;h2&gt;Function Abbreviation&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;#'&lt;/code&gt;로 샤프와 작은따옴표를 붙여 쓰면 Function Quote 즉 함수 인용이라는 기능이 된다. 다른 말로 Function Abbreviation이라다 표현하기도 한다. 다른 언어에선 콜백 혹은 핸들러 정도의 의미와 비슷하다. 예를 들자면 이런 식이다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lisp"&gt;(defun do-what (f)
-  (funcall f &amp;quot;This is the what!&amp;quot;))
-
-(do-what #'message)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;위 예에서 &lt;code&gt;do-what&lt;/code&gt;이라는 함수의 첫번째 인자로 함수를 전달하기 위해 &lt;code&gt;#'&lt;/code&gt;가 함수 이름 앞에 붙어있다. 이렇게 함수를 어딘가 전달해야 할 때 &lt;code&gt;#'&lt;/code&gt;가 종종 사용된다.&lt;/p&gt;
-&lt;h2&gt;그래서 무슨 차이일까?&lt;/h2&gt;
-&lt;p&gt;사실 위 모든 예제에서 &lt;code&gt;#'&lt;/code&gt;을 그냥 &lt;code&gt;'&lt;/code&gt;으로 바꿔도 아무 문제 없이 동작한다. 함수 인용이든 인용이든 둘 다 인용이니 말이다.&lt;/p&gt;
-&lt;p&gt;그렇다면 &lt;code&gt;#'&lt;/code&gt;는 도대체 왜 쓰는 걸까?&lt;/p&gt;
-&lt;p&gt;개인적인 추측이지만 &lt;strong&gt;명시적인 표현&lt;/strong&gt; 때문에 쓴다고 생각된다. 즉 여기에는 반드시 함수 인용이 들어와야 할 자리이고 그래서 함수를 인용해서 넘긴다는 의미로 &lt;code&gt;#'&lt;/code&gt;을 명확하게 표기한다고 생각한다. &lt;/p&gt;
-&lt;p&gt;다르게 말해서 &lt;code&gt;#'&lt;/code&gt;를 표시한 자리에 함수가 아닌 다른 심볼이나 리스트 등을 넣으면 안 된다는 말이 된다. 실제로 여기에 함수가 아닌 것을 넣으면 호출 시점에서 에러가 발생한다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lisp"&gt;(funcall #'(1 2 3) &amp;quot;parameter&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;함수가 와야 할 자리에 리스트가 들어가 있으니 "Invalid Function"이라는 오류가 발생한다.&lt;/p&gt;
-&lt;p&gt;결국 &lt;code&gt;#'&lt;/code&gt;는 가독성을 좋게 만들기 위한 Lisp 만의 특수한 꾸밈 요소라고 생각된다. 물론 다른 언어에만 익숙한 사람이 보면 &lt;code&gt;'&lt;/code&gt;든 &lt;code&gt;#'&lt;/code&gt;든 암호 같은 건 마찬가지 겠지만 말이다.&lt;/p&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../article/emacs-lisp-funcall-and-apply.html"&gt;Emacs Lisp에서 funcall과 apply의 차이&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <content:encoded>&lt;p&gt;Emacs Lisp 코드에서 샤프(&lt;code&gt;#&lt;/code&gt;, sharpsign)와 작은따옴표(&lt;code&gt;'&lt;/code&gt;, single-quote)를 붙인 기호가 종종 쓰이는데 무슨 의미인지 대충 알아보자.&lt;/p&gt;
-&lt;h2&gt;많이 쓰이는 예&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;#'&lt;/code&gt; 기호는 보통 함수 핸들러를 전달할 때 많이 보인다. 아래의 예는 개인적으로 사용하는 설정 코드에서의 예인데 Doom Emacs 전용 코드도 일부 포함되어 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lisp"&gt;(add-to-list 'treemacs-ignored-file-predicates #'treemacs-ignore-local-cache))
-(add-hook 'kill-emacs-hook #'my-exit-function)
-
-;; Doom Emacs config.el
-(add-hook! 'markdown-mode-hook #'my-text-styles)
-(map! &amp;quot;C-c a l&amp;quot; #'my-miracle-function)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;여기서 &lt;code&gt;#'&lt;/code&gt;가 붙어있는 심볼들이 모두 함수일 것 같은 기분이라면 바로 정답이다.&lt;/p&gt;
-&lt;h2&gt;Function Abbreviation&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;#'&lt;/code&gt;로 샤프와 작은따옴표를 붙여 쓰면 Function Quote 즉 함수 인용이라는 기능이 된다. 다른 말로 Function Abbreviation이라다 표현하기도 한다. 다른 언어에선 콜백 혹은 핸들러 정도의 의미와 비슷하다. 예를 들자면 이런 식이다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lisp"&gt;(defun do-what (f)
-  (funcall f &amp;quot;This is the what!&amp;quot;))
-
-(do-what #'message)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;위 예에서 &lt;code&gt;do-what&lt;/code&gt;이라는 함수의 첫번째 인자로 함수를 전달하기 위해 &lt;code&gt;#'&lt;/code&gt;가 함수 이름 앞에 붙어있다. 이렇게 함수를 어딘가 전달해야 할 때 &lt;code&gt;#'&lt;/code&gt;가 종종 사용된다.&lt;/p&gt;
-&lt;h2&gt;그래서 무슨 차이일까?&lt;/h2&gt;
-&lt;p&gt;사실 위 모든 예제에서 &lt;code&gt;#'&lt;/code&gt;을 그냥 &lt;code&gt;'&lt;/code&gt;으로 바꿔도 아무 문제 없이 동작한다. 함수 인용이든 인용이든 둘 다 인용이니 말이다.&lt;/p&gt;
-&lt;p&gt;그렇다면 &lt;code&gt;#'&lt;/code&gt;는 도대체 왜 쓰는 걸까?&lt;/p&gt;
-&lt;p&gt;개인적인 추측이지만 &lt;strong&gt;명시적인 표현&lt;/strong&gt; 때문에 쓴다고 생각된다. 즉 여기에는 반드시 함수 인용이 들어와야 할 자리이고 그래서 함수를 인용해서 넘긴다는 의미로 &lt;code&gt;#'&lt;/code&gt;을 명확하게 표기한다고 생각한다. &lt;/p&gt;
-&lt;p&gt;다르게 말해서 &lt;code&gt;#'&lt;/code&gt;를 표시한 자리에 함수가 아닌 다른 심볼이나 리스트 등을 넣으면 안 된다는 말이 된다. 실제로 여기에 함수가 아닌 것을 넣으면 호출 시점에서 에러가 발생한다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lisp"&gt;(funcall #'(1 2 3) &amp;quot;parameter&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;함수가 와야 할 자리에 리스트가 들어가 있으니 "Invalid Function"이라는 오류가 발생한다.&lt;/p&gt;
-&lt;p&gt;결국 &lt;code&gt;#'&lt;/code&gt;는 가독성을 좋게 만들기 위한 Lisp 만의 특수한 꾸밈 요소라고 생각된다. 물론 다른 언어에만 익숙한 사람이 보면 &lt;code&gt;'&lt;/code&gt;든 &lt;code&gt;#'&lt;/code&gt;든 암호 같은 건 마찬가지 겠지만 말이다.&lt;/p&gt;
-&lt;h2&gt;관련된 글들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../article/emacs-lisp-single-quote.html"&gt;Emacs Lisp에서 작은따옴표의 의미&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="../article/emacs-lisp-funcall-and-apply.html"&gt;Emacs Lisp에서 funcall과 apply의 차이&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-sharp-quote-sign.md.html</guid>
-      <pubDate>Sat, 29 Jun 2024 15:44:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

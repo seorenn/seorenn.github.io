@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>공포에 사라고 했다 - Seorenn</title>
-    <meta name="twitter:title" content="공포에 사라고 했다" />
-    <meta name="og:title" content="공포에 사라고 했다" />
-    <meta name="description" content="누군가 이야기 했다. 공포에 사라고." />
-    <meta name="twitter:description" content="누군가 이야기 했다. 공포에 사라고." />
-    <meta name="og:description" content="누군가 이야기 했다. 공포에 사라고." />
-    <link rel="canonical" href="https://seorenn.github.io/log/20240805-00.html" />
-    <meta property="og:url" content="https://seorenn.github.io/log/20240805-00.html" />
+    <title>사이드카와 서킷브레이커는 무엇일까? - Seorenn</title>
+    <meta name="twitter:title" content="사이드카와 서킷브레이커는 무엇일까?" />
+    <meta name="og:title" content="사이드카와 서킷브레이커는 무엇일까?" />
+    <meta name="description" content="사이드카(side car)와 서킷브레이커(circuit breaker)의 의미를 정리해 보자" />
+    <meta name="twitter:description" content="사이드카(side car)와 서킷브레이커(circuit breaker)의 의미를 정리해 보자" />
+    <meta name="og:description" content="사이드카(side car)와 서킷브레이커(circuit breaker)의 의미를 정리해 보자" />
+    <link rel="canonical" href="https://seorenn.github.io/article/sidecar-and-circuit-breaker.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/sidecar-and-circuit-breaker.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -63,7 +63,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>공포에 사라고 했다</h1>
+          <h1>사이드카와 서킷브레이커는 무엇일까?</h1>
           <div class="title-date">
             
               
@@ -73,24 +73,28 @@
               <span>//</spans>
             
             
-              <span>2024년 08월 05일 작성</span>
+              <span>2024년 08월 09일 작성</span>
             
             
             
           </div>
         </header>
-        <p>주식시장에 피가 낭자하고 있다. 파란 피. 투구게는 아니지만 어쟀든 시퍼런 피바다다.</p>
-<p>누군가 이야기 했다. </p>
-<blockquote>
-<p>공포에 사라.</p>
-</blockquote>
-<p>지금은 초 공포의 월요일이다. 이럴 때가 아니면 언제 사겠나. 물려있다고? 지금이야 말로 물타기 찬스 아닌가.</p>
-<p>누르자 매수 버튼!</p>
-<p>...</p>
-<p><img alt="공포에 사기 실패" src="../upload/202408051418-8bb050ff.png" />
-<em>공포에 사기 실패</em></p>
-<p>...</p>
-<p>친절한 거래소의 호의에 오늘도 나의 지갑이 지켜졌다.</p>
+        <p>사이드카와 서킷브레이커는 주식투자를 하다 보면 종종 들을 수 있는 단어이지만 특히 서킷브레이커를 경험해 보는 일은 쉽지 않은 일이다. 어느날 이 서킷브레이커 실제로 겪어보니 이 조치가 무엇인지 조금 더 알고 싶어져서 사이드카와 서킷브레이커에 대해 정리해 본다.</p>
+<h2>사이드카(side car)</h2>
+<p><strong>선물시장</strong>이 전날에 비해 급등락 할 경우 <strong>현물시장의 프로그램 매매를 5분간 중단시키는 제도</strong>다. 발동 기준이 선물이고 실제 발동 대상은 현물임에 주의하자.</p>
+<p>좀 더 상세히는 KOSPI 200 선물이 5% 이상, KOSDAQ 150 선물이 6% 이상 전날에 비해 오르거나 내리는 상황이 1분간 이어질 경우 5분간 주식시장에서 프로그래 매매를 중단시키는 제도다.</p>
+<p>사람의 직접적인 트레이딩에 비해 프로그램 매매는 대량의 물량이 순식간에 거래되기 때문에 일반적인 트레이딩을 막지 않고도 순간적인 급등락을 막는 데는 효과적이라고 볼 수 있다.</p>
+<h2>서킷 브레이커(circuit breaker)</h2>
+<p><strong>주식시장이 큰 폭으로 상승 혹은 하락할 때</strong> 모든 거래를 중단시키거나 심하면 아예 거래를 완전히 종료시키는 제도다.</p>
+<p>좀 더 상세한 조건은 코스피나 코스닥 지수가 전일 기준 8%, 15%, 20% 이상의 오르거나 내리는 상황이 1분 이상 이어질 경우 발동된다. 수치가 세 단계이기 때문에 세 단계 중 하나가 발동되며 1단계 및 2단계는 20분간 거래 중지 후 10분간 동시호가를 접수받아 단일가 매매만 진행, 3단계는 당일 거래를 완전히 종료시켜 버리는 강력한 조치가 발동된다.</p>
+<p>장 마감 40분 전까지만 발동 가능하기 때문에 한국 기준 2시 50분 이후에는 발동되지 않는다. 그리고 하루에 한 차례만 발동 가능하다.</p>
+<p>특이하게도 발동되면 아예 호가 접수 조차 안 된다. 즉 거래 중지 정도가 아니라 아예 작동이 멈추게 만드는데 회로차단기(circuit breaker)라는 이름과 딱 맞아 떨어지는 조치 같다.</p>
+<h2>여담</h2>
+<p><img alt="이 글을 쓰게 만든 2024년 8월 5일의 실제 스크린샷" src="../upload/202408091642-8bb050ff.png" />
+<em>이 글을 쓰게 만든 2024년 8월 5일의 실제 스크린샷(KB증권 마블와이드)</em></p>
+<p>실제로 겪어보니 과연 이게 공포를 막을 수 있나 회의적인 생각이 들었다. 오히려 이런 조치가 장이 심각하다는 의미이기 때문에 공포를 더 키우는 것이지 않을까? 다만 개인적으론 저가 매수를 시도하다 이 조치로 낭패가 된 경우를 겪어봤기에 의미는 좀 달랐긴 했다.</p>
+<p>어쨌든 두 제도 모두 미국에서 먼저 생겨났고 한국이 이를 비슷하게 도입한 제도인데 특이한 점은 사이드카는 미국에선 폐지된 제도라는 점이다. 미국과 같은 거대한 시장에서는 사람에 의한 트레이딩도 프로그램 매매 급일 수도 있으니 프로그램 매매 정지는 무의미한 조치일 지도 모르겠다. 할 수 있다면 그냥 프로그램 매매 속도를 좀 느리게 한다거나 하는 방안도 있을 것 같은데 비슷하면서도 다른 효과일 지도 모르겠다.</p>
+<p>어쨌거나 둘 다 상승 때 발동이 가능하나 패닐셀이 아니면 발동되기 힘든 기준이기 때문에 결론적으로 폭락 시에만 발동된다고 봐야 할 것 같다. 즉 시장에 피가 낭자할 때나 보이는 두 단어라 가급적 보고 싶지는 않은 것 같다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -101,90 +105,6 @@
       <div class="refinfo-container">
         <div class="navinfo-container">
           
-            <div class="refinfo-cluster">
-              <h2>블로그 목록</h2>
-              <ul class="logarch-container">
-                
-                  <li>
-                    
-                      <a href="../log/20240808-00.html">최근 확산 중이라는 코로나19 KP.3 변이</a><br/>
-                      <small>2024년 08월 08일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240805-01.html">서비스업 PMI는 시장을 살려줄 수 있을까?</a><br/>
-                      <small>2024년 08월 05일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <b>공포에 사라고 했다</b><br/>
-                      <small>2024년 08월 05일</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240804-00.html">macOS 14.6, iOS 17.6 등 안정 버전 공개 외 한 주간의 애플 소식들 24-08-04</a><br/>
-                      <small>2024년 08월 04일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240802-02.html">주식시장엔 아포칼립스가 도래한 것 같다</a><br/>
-                      <small>2024년 08월 02일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240802-01.html">애플 3분기 실적 발표</a><br/>
-                      <small>2024년 08월 02일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240802-00.html">금리를 인하하는 게 나았을까?</a><br/>
-                      <small>2024년 08월 02일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240801-00.html">미 연준 7월 FOMC에서 기준금리 5.50%로 동결 결정</a><br/>
-                      <small>2024년 08월 01일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240731-00.html">일본은행 기준금리 0.25%로 인상</a><br/>
-                      <small>2024년 07월 31일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240730-00.html">민주당의 코리아 부스터 프로젝트?</a><br/>
-                      <small>2024년 07월 30일 작성</small>
-                    
-                  </li>
-                
-                  <li>
-                    
-                      <a href="../log/20240728-00.html">한 주간의 애플 소식들 24-07-28</a><br/>
-                      <small>2024년 07월 28일 작성</small>
-                    
-                  </li>
-                
-              </ul>
-            </div>
-          
           
           
             <div class="refinfo-cluster">
@@ -192,15 +112,15 @@
               <ul>
                 
                   <li>
-                    <a href="../article/sidecar-and-circuit-breaker.html">사이드카와 서킷브레이커는 무엇일까?</a>
-                  </li>
-                
-                  <li>
                     <a href="../article/wall-street-and-main-street.html">월스트리트와 메인스트리트의 의미</a>
                   </li>
                 
                   <li>
                     <a href="../log/20240805-01.html">서비스업 PMI는 시장을 살려줄 수 있을까?</a>
+                  </li>
+                
+                  <li>
+                    <a href="../log/20240805-00.html">공포에 사라고 했다</a>
                   </li>
                 
                   <li>

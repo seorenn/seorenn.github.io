@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-11T21:52:28.957941+09:00</updated>
+  <updated>2024-08-11T21:56:13.200391+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20240811-00.html</id>
     <title>macOS 14.6.1, iOS 17.6.1 릴리즈 등 한 주간의 애플 소식들 24-08-11</title>
-    <updated>2024-08-11T21:52:19.093971+09:00</updated>
+    <updated>2024-08-11T21:56:09.807397+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 안정 버전 릴리즈 소식들</h2>
 <p>미국 시각 8월 7일 애플은 플랫폼 OS 라인업의 현 버전에 버그 픽스 업데이트를 릴리즈 했다. 대상과 버전은 다음과 같다:</p>
@@ -54,8 +54,6 @@ M4가 탑재된 Macbook Pro를 비롯한 Mac Mini, iMac 등도 올해 중에 신
 macOS 15 Sequoia부터 화면 녹화 권한이 리부팅 및 일주일 단위로 리셋된다고 한다. 즉 매번 리부팅 때마다 혹은 일주일 마다 스크린샷 캡처나 화면 녹화 권한을 요구하는 앱이 해당 기능을 사용할 때 권한 허용 팝업이 뜬다는 말이다. 이 외에도 서명이 부적절하거나 공증이 되지 않은 앱은 실행이 거부될 수도 있는데 현재는 '우클릭 - 열기'로 열 수 있다는 점에서 나중에 좀 귀찮은 일이 생길 것 같다. 사용자에겐 불편해지는 일이 더 많아질 수 있겠지만 프라이버시와 편리 사이에는 상충하는 면이 많기에 어쩔 수 없을 지도 모르겠다.</p>
 <p><strong>Apple Intelligence</strong><br/>
 일단 애플 AI의 EU 진출에 물꼬는 트인 것 같지만 우선은 Mac만 지원될 것 같다. iPhone이나 iPad 등은 EU DMA의 적용 대상이지만 Mac은 여기에 해당되지 않는 모양이다. 이외에 Apple Intelligence의 일부 고급 기능이 월 최대 20 달러를 받는 구독 상품이 될 가능성도 전해지고 있다. 일기 앱에도 AI 적용 가능성이 점쳐지고 있다.</p>
-<p><strong>iOS 17.6.1 릴리즈 가능성</strong><br/>
-iOS 17.6이 나온지 얼마 되지 않아 iOS 17.6.1이 준비 중이라는 소식이 들렸다. 17.6의 경우 큰 변화가 없었기에 별 문제는 없지 않을까 개인적으론 추측 했었는데 의외로 버그나 보안결함이 있었던 모양이다.</p>
 <p><strong>한국 아이폰 빨리 나올까?</strong><br/>
 한국이 iPhone의 1차 출시국에 포함 되었다는 소식이 얼마전에 들렸었는데 해외 매체에서도 이를 전달할 정도로 기대감이 높아진 모양이다. 물론 애플의 공식적인 발표가 있기 전까진 확정은 아니다. 다만 애플이 중국의 점유율 하락을 일부 메꿀 시장으로 한국을 선택한 것이 아닌가 하는 추측도 있다.</p>
 <p><strong>EU DMA 겁박(?) 상황</strong><br/>

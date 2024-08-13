@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
+    <link rel="stylesheet" href="/static/v2style.css" />
+    <title>마크다운 문법 정리 - Seorenn</title>
+    <meta name="twitter:title" content="마크다운 문법 정리" />
+    <meta name="og:title" content="마크다운 문법 정리" />
+    <meta name="description" content="개인적으로 자주 사용하는 마크다운 문법(markdnwo syntax) 정리" />
+    <meta name="twitter:description" content="개인적으로 자주 사용하는 마크다운 문법(markdnwo syntax) 정리" />
+    <meta name="og:description" content="개인적으로 자주 사용하는 마크다운 문법(markdnwo syntax) 정리" />
+    <link rel="canonical" href="https://seorenn.github.io/article/markdown-syntax.html" />
+    <meta property="og:url" content="https://seorenn.github.io/article/markdown-syntax.html" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
+    <meta property="og:image:width" content="520" />
+    <meta property="og:image:height" content="329" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@seorenn" />
+    <meta name="twitter:creator" content="@seorenn" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Seorenn" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="follow,index" />
+    <link rel="alternate" type="application/atom+xml" href="https://seorenn.github.io/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://seorenn.github.io/rss.xml" />
+    <meta name="google-site-verification" content="YqTFZuthbvGIlDE1dhxiTjZ3m-GfyNs_rsHaOlPKpug" />
+    <meta name="naver-site-verification" content="24609571c04926ab1220d5d02610efa1c9e12221" />
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1071465863344332" crossorigin="anonymous"></script>
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5PL2YB2ZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N5PL2YB2ZH");
+    </script>
+  </head>
+  <body>
+    <div class="header-content">
+      <header class="top-header">
+        <div class="logo-container">
+          <span class="vertical-center-helper"></span>
+          <a href="/" title="Seorenn">
+            <img class="site-logo" src="/static/seorenn-v2-logo-light.png" alt="Seorenn" />
+          </a>
+          <nav>
+            <span class="vertical-center-helper"></span>
+            <a href="/" title="Home">HOME</a> |
+            <a href="https://seorenn.tistory.com" title="Seorenn Tistory Blog" target="_blank">TISTORY</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        <header>
+          <h1>마크다운 문법 정리</h1>
+          <div class="title-date">
+            
+              
+                <a href="../subject/etc.html">기타</a>
+                
+              
+              <span>//</spans>
+            
+            
+              <span>2024년 08월 13일 작성</span>
+            
+            
+            
+          </div>
+        </header>
+        <p>이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.</p>
+<h2>제목</h2>
+<p>마크다운에서는 구조적 글을 쓸 때 각 항목의 제목을 달 수 있는 문법으로 여러 방식이 제공된다.</p>
+<pre><code>대제목
+======
+
+대제목
+------
+
+# 대제목
+## 중제목
+### 소제목
+#### 제목 4
+##### 제목 5
+</code></pre>
+<p>이 중 <code>#</code>을 이용한 제목 문법은 차례대로 HTML의 <code>h1</code> 태그부터 <code>h5</code> 태그와 매칭된다고 볼 수 있다. 물론 여기서 끝이 아니라 더 깊이도 들어갈 수 있을 것 같다. 다만 개인적으로는 소제목 단위 이후로는 쓸 일이 없었다.</p>
+<h2>텍스트 스타일</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">마크다운</th>
+<th style="text-align: left;">렌더링 결과</th>
+<th style="text-align: left;">HTML 태그</th>
+<th style="text-align: left;">비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>**Bold**</code></td>
+<td style="text-align: left;"><strong>Bold</strong></td>
+<td style="text-align: left;"><code>strong</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__Bold__</code></td>
+<td style="text-align: left;"><strong>Bold</strong></td>
+<td style="text-align: left;"><code>strong</code></td>
+<td style="text-align: left;">좌우 공백 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>*Italic*</code></td>
+<td style="text-align: left;"><em>Italic</em></td>
+<td style="text-align: left;"><code>em</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>_Italic_</code></td>
+<td style="text-align: left;"><em>Italic</em></td>
+<td style="text-align: left;"><code>em</code></td>
+<td style="text-align: left;">좌우 공백 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>***Bold Italic***</code></td>
+<td style="text-align: left;"><strong><em>Bold Italic</em></strong></td>
+<td style="text-align: left;"><code>strong</code> + <code>em</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>___Bold Italic___</code></td>
+<td style="text-align: left;"><strong><em>Bold Italic</em></strong></td>
+<td style="text-align: left;"><code>strong</code> + <code>em</code></td>
+<td style="text-align: left;">좌우 공백 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>**_Bold Italic_**</code></td>
+<td style="text-align: left;"><strong><em>Bold Italic</em></strong></td>
+<td style="text-align: left;"><code>strong</code> + <code>em</code></td>
+<td style="text-align: left;">좌우 공백 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>`inline code`</code></td>
+<td style="text-align: left;"><code>inline code</code></td>
+<td style="text-align: left;"><code>code</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2>링크</h2>
+<ul>
+<li><code>[Google](https://google.com)</code> = <a href="https://google.com" target="_blank">Google📎</a></li>
+</ul>
+<p>이 외에로 파일의 절대 경로나 상대 경로도 사용할 수 있다.</p>
+<h2>이미지</h2>
+<ul>
+<li><code>![Alt Text](https://foo.bar/image/path.jpg)</code></li>
+</ul>
+<p>링크 문법과 거의 비슷하지만 제일 앞에 느낌표(<code>!</code>)가 붙으면 이미지 문법이 된다. 'Alt Text'로 표시한 부분은 이미지를 설명하기 위한 문구로 <code>img</code> 태그의 <code>alt</code> 속성의 값으로 들어가며 대체로(?) 화면에 표시되도록 렌더링 되지는 않지만 접근성을 높이기 위해서는 적어주는 편이 좋다.</p>
+<h2>인용</h2>
+<pre><code>&gt; 인용된 메시지
+</code></pre>
+<p>이 마크다운 문서는 아래와 같이 렌더링 된다.</p>
+<blockquote>
+<p>인용된 메시지</p>
+</blockquote>
+<p>인용은 별도의 블럭 처럼 사용할 수 있다.</p>
+<pre><code>&gt; ## 인용된 메시지
+&gt;
+&gt; 꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.
+&gt;
+&gt;&gt; 인용 안에 인용을 넣을 수도 있습니다.
+&gt;
+&gt; 문단으로 나눌 수도 있습니다.&lt;br/&gt;
+&gt; 줄 나눔은 `br` 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.
+</code></pre>
+<p>위 마크다운 문서는 아래와 같이 렌더링 된다.</p>
+<blockquote>
+<h2>인용된 메시지</h2>
+<p>꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.</p>
+<p>문단으로 나눌 수도 있습니다.<br/>
+줄바꿈은 <code>br</code> 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.</p>
+</blockquote>
+<h2>멀티 라인 코드</h2>
+<p>일반적인 코드 샘플을 적기 위해서 두 가지 문법이 제공된다. 아래와 같이 하나는 역따옴표 3개(<code>```</code>)로 둘러싸거나 혹은 지렁이 3개(<code>~~~</code>)로 둘러쌀 수 있다.</p>
+<pre><code>~~~
+multi 
+  line 
+    code
+~~~
+</code></pre>
+<pre><code>```
+multi 
+  line 
+    code
+```
+</code></pre>
+<p>위 두 마크다운 문서는 모두 아래와 같이 렌더링 된다.</p>
+<pre><code>multi 
+  line 
+    code
+</code></pre>
+<h2>테이블</h2>
+<p>테이블은 일종의 확장 개념이긴 하지만 그래도 종종 쓰이는 것 같으므로 정리한다. 대충 아래와 같은 형식으로 쓰면 표가 작성된다.</p>
+<pre><code>| Head 1 | Head 2 | Head 3 |
+|--------|--------|--------|
+| Body 1 | Body 2 | Body 3 |
+| Body a | Body b | Body c |
+</code></pre>
+<p>위 코드의 경우 아래와 같이 렌더링 된다.</p>
+<table>
+<thead>
+<tr>
+<th>Head 1</th>
+<th>Head 2</th>
+<th>Head 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Body 1</td>
+<td>Body 2</td>
+<td>Body 3</td>
+</tr>
+<tr>
+<td>Body a</td>
+<td>Body b</td>
+<td>Body c</td>
+</tr>
+</tbody>
+</table>
+<p>크기나 줄의 갯수 등은 딱히 상관은 없지만 딱 맞춰 써야 보기엔 편하긴 하다. 참고로 Doom Emacs에서 markdown을 사용하도록 하면 탭(Tab) 키 한 방으로 테이블의 크기가 정렬되서 편하다.</p>
+<p>좀 더 특수한 속성으로 제목줄과 내용줄 사이의 항목에 콜론(<code>:</code>)을 이용해 정렬(alignment)을 적용할 수도 있다.</p>
+<pre><code>| Head 1           | Head 2           |           Head 3 |
+|:-----------------|------------------|-----------------:|
+| Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
+| Body a text long | Body b text      |      Body c text |
+</code></pre>
+<p>위 문법의 경우 아래와 같이 렌더링 된다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Head 1</th>
+<th>Head 2</th>
+<th style="text-align: right;">Head 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Body 1 Text</td>
+<td>Body 2 Text Long</td>
+<td style="text-align: right;">Body 3 Text Long</td>
+</tr>
+<tr>
+<td style="text-align: left;">Body a text long</td>
+<td>Body b text</td>
+<td style="text-align: right;">Body c text</td>
+</tr>
+</tbody>
+</table>
+<p>위 처럼 제목과 본문 표 사이의 구분줄을 표시해 놓은 부분에 콜론(<code>:</code>)이 왼쪽에 있으면 좌측 정렬, 우측에 있으면 우측 정렬이 된다. 기본은 가운데 정렬이다.</p>
+<p>다만 정렬 부분은 사용하는 변환기나 패키지에 따라서 다를 수 있다.</p>
+<h2>HTML 태그</h2>
+<p>HTML 태그를 넣고 싶다면 고민할 필요 없이 그냥 넣으면 된다. 충돌하는 문법이 있어서 약간의 제약이 있을 수 있지만 대체로 그대로 렌더링 되는 편이다.</p>
+<pre><code>&lt;div style=&quot;width: 100%; border: 1px solid #777&quot;&gt;
+HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
+&lt;/div&gt;
+</code></pre>
+<p>위 마크다운 문서는 아래와 같이 렌더링 된다.</p>
+<div style="width: 100%; border: 1px solid #777">
+HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
+</div>
+
+<p>다만 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.</p>
+<h2>팁: 역 따옴표를 코드 스타일로 표시하기</h2>
+<p>여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.</p>
+<pre><code>`` ` ``
+``display ` back tick``
+</code></pre>
+<p>역따옴표 2개를 붙여서 좌우로 둘러싸면 inline code와 동일하게 쓸 수 있지만 여기서 '역따옴표 두개'와 '역따옴표' 사이만 붙여쓰지 않으면 '역따옴표'를 표시할 수 있었다.</p>
+<p>다만 역따옴표만 표시할 때는 좌우에 여백(스페이스)이 들어가게 되는 것은 어쩔 수 없는 것 같다.</p>
+<h2>관련된 글들</h2>
+<ul>
+<li><a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a></li>
+<li><a href="../article/python-markdown-table.html">Python-Markdown의 테이블 렌더링 지원</a></li>
+</ul>
+      </section>
+    </div>
+    <div class="splitter-container">
+      <hr/>
+    </div>
+    <!-- RefInfos -->
+    
+      <div class="refinfo-container">
+        <div class="navinfo-container">
+          
+          
+            <div class="refinfo-cluster">
+              <h2>이 글을 연결한 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-markdown-table.html">Python-Markdown의 테이블 렌더링 지원</a>
+                  </li>
+                
+                  <li>
+                    <a href="../article/python-markdown-weird-code-block.html">Python-Markdown에서 이상한 코드 블럭 렌더링 바로잡기</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+          
+            <div class="refinfo-cluster">
+              <h2>비슷한 주제의 글들</h2>
+              <ul>
+                
+                  <li>
+                    <a href="../article/future-of-ai-industry.html">AI 산업의 미래</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    
+    <!-- Bottom AD -->
+    <div class="mid-ad-container">
+      <ins class="adsbygoogle mid-ad" style="display:block" data-ad-client="ca-pub-1071465863344332" data-ad-slot="4306465772" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="footer-content">
+      <footer>
+        Copyright 2019 ~ 2024. Seorenn all rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

@@ -13,7 +13,441 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 12 Aug 2024 23:38:03 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2024 13:55:57 +0900</lastBuildDate>
+    <item>
+      <title>마크다운 문법 정리</title>
+      <link>https://seorenn.github.io/article/markdown-syntax.html</link>
+      <description>&lt;p&gt;이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.&lt;/p&gt;
+&lt;h2&gt;제목&lt;/h2&gt;
+&lt;p&gt;마크다운에서는 구조적 글을 쓸 때 각 항목의 제목을 달 수 있는 문법으로 여러 방식이 제공된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;대제목
+======
+
+대제목
+------
+
+# 대제목
+## 중제목
+### 소제목
+#### 제목 4
+##### 제목 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 중 &lt;code&gt;#&lt;/code&gt;을 이용한 제목 문법은 차례대로 HTML의 &lt;code&gt;h1&lt;/code&gt; 태그부터 &lt;code&gt;h5&lt;/code&gt; 태그와 매칭된다고 볼 수 있다. 물론 여기서 끝이 아니라 더 깊이도 들어갈 수 있을 것 같다. 다만 개인적으로는 소제목 단위 이후로는 쓸 일이 없었다.&lt;/p&gt;
+&lt;h2&gt;텍스트 스타일&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;마크다운&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;렌더링 결과&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;HTML 태그&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;비고&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;**Bold**&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;__Bold__&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;*Italic*&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;_Italic_&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;***Bold Italic***&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;&lt;em&gt;Bold Italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt; + &lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;___Bold Italic___&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;&lt;em&gt;Bold Italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt; + &lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;**_Bold Italic_**&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;&lt;em&gt;Bold Italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt; + &lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;`inline code`&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;inline code&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;링크&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[Google](https://google.com)&lt;/code&gt; = &lt;a href="https://google.com" target="_blank"&gt;Google📎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 외에로 파일의 절대 경로나 상대 경로도 사용할 수 있다.&lt;/p&gt;
+&lt;h2&gt;이미지&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;![Alt Text](https://foo.bar/image/path.jpg)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;링크 문법과 거의 비슷하지만 제일 앞에 느낌표(&lt;code&gt;!&lt;/code&gt;)가 붙으면 이미지 문법이 된다. 'Alt Text'로 표시한 부분은 이미지를 설명하기 위한 문구로 &lt;code&gt;img&lt;/code&gt; 태그의 &lt;code&gt;alt&lt;/code&gt; 속성의 값으로 들어가며 대체로(?) 화면에 표시되도록 렌더링 되지는 않지만 접근성을 높이기 위해서는 적어주는 편이 좋다.&lt;/p&gt;
+&lt;h2&gt;인용&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 인용된 메시지
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 마크다운 문서는 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;인용된 메시지&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;인용은 별도의 블럭 처럼 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; ## 인용된 메시지
+&amp;gt;
+&amp;gt; 꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.
+&amp;gt;
+&amp;gt;&amp;gt; 인용 안에 인용을 넣을 수도 있습니다.
+&amp;gt;
+&amp;gt; 문단으로 나눌 수도 있습니다.&amp;lt;br/&amp;gt;
+&amp;gt; 줄 나눔은 `br` 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 마크다운 문서는 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2&gt;인용된 메시지&lt;/h2&gt;
+&lt;p&gt;꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;문단으로 나눌 수도 있습니다.&lt;br/&gt;
+줄바꿈은 &lt;code&gt;br&lt;/code&gt; 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;멀티 라인 코드&lt;/h2&gt;
+&lt;p&gt;일반적인 코드 샘플을 적기 위해서 두 가지 문법이 제공된다. 아래와 같이 하나는 역따옴표 3개(&lt;code&gt;```&lt;/code&gt;)로 둘러싸거나 혹은 지렁이 3개(&lt;code&gt;~~~&lt;/code&gt;)로 둘러쌀 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~~
+multi 
+  line 
+    code
+~~~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;```
+multi 
+  line 
+    code
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 두 마크다운 문서는 모두 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;multi 
+  line 
+    code
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;테이블&lt;/h2&gt;
+&lt;p&gt;테이블은 일종의 확장 개념이긴 하지만 그래도 종종 쓰이는 것 같으므로 정리한다. 대충 아래와 같은 형식으로 쓰면 표가 작성된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| Head 1 | Head 2 | Head 3 |
+|--------|--------|--------|
+| Body 1 | Body 2 | Body 3 |
+| Body a | Body b | Body c |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 코드의 경우 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Head 1&lt;/th&gt;
+&lt;th&gt;Head 2&lt;/th&gt;
+&lt;th&gt;Head 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Body 1&lt;/td&gt;
+&lt;td&gt;Body 2&lt;/td&gt;
+&lt;td&gt;Body 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Body a&lt;/td&gt;
+&lt;td&gt;Body b&lt;/td&gt;
+&lt;td&gt;Body c&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;크기나 줄의 갯수 등은 딱히 상관은 없지만 딱 맞춰 써야 보기엔 편하긴 하다. 참고로 Doom Emacs에서 markdown을 사용하도록 하면 탭(Tab) 키 한 방으로 테이블의 크기가 정렬되서 편하다.&lt;/p&gt;
+&lt;p&gt;좀 더 특수한 속성으로 제목줄과 내용줄 사이의 항목에 콜론(&lt;code&gt;:&lt;/code&gt;)을 이용해 정렬(alignment)을 적용할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| Head 1           | Head 2           |           Head 3 |
+|:-----------------|------------------|-----------------:|
+| Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
+| Body a text long | Body b text      |      Body c text |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 문법의 경우 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;Head 1&lt;/th&gt;
+&lt;th&gt;Head 2&lt;/th&gt;
+&lt;th style="text-align: right;"&gt;Head 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;Body 1 Text&lt;/td&gt;
+&lt;td&gt;Body 2 Text Long&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;Body 3 Text Long&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;Body a text long&lt;/td&gt;
+&lt;td&gt;Body b text&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;Body c text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;위 처럼 제목과 본문 표 사이의 구분줄을 표시해 놓은 부분에 콜론(&lt;code&gt;:&lt;/code&gt;)이 왼쪽에 있으면 좌측 정렬, 우측에 있으면 우측 정렬이 된다. 기본은 가운데 정렬이다.&lt;/p&gt;
+&lt;p&gt;다만 정렬 부분은 사용하는 변환기나 패키지에 따라서 다를 수 있다.&lt;/p&gt;
+&lt;h2&gt;HTML 태그&lt;/h2&gt;
+&lt;p&gt;HTML 태그를 넣고 싶다면 고민할 필요 없이 그냥 넣으면 된다. 충돌하는 문법이 있어서 약간의 제약이 있을 수 있지만 대체로 그대로 렌더링 되는 편이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div style=&amp;quot;width: 100%; border: 1px solid #777&amp;quot;&amp;gt;
+HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 마크다운 문서는 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;div style="width: 100%; border: 1px solid #777"&gt;
+HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
+&lt;/div&gt;
+
+&lt;p&gt;다만 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.&lt;/p&gt;
+&lt;h2&gt;팁: 역 따옴표를 코드 스타일로 표시하기&lt;/h2&gt;
+&lt;p&gt;여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;`` ` ``
+``display ` back tick``
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;역따옴표 2개를 붙여서 좌우로 둘러싸면 inline code와 동일하게 쓸 수 있지만 여기서 '역따옴표 두개'와 '역따옴표' 사이만 붙여쓰지 않으면 '역따옴표'를 표시할 수 있었다.&lt;/p&gt;
+&lt;p&gt;다만 역따옴표만 표시할 때는 좌우에 여백(스페이스)이 들어가게 되는 것은 어쩔 수 없는 것 같다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/python-markdown.html"&gt;파이썬으로 마크다운 문서를 HTML로 변환하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/python-markdown-table.html"&gt;Python-Markdown의 테이블 렌더링 지원&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.&lt;/p&gt;
+&lt;h2&gt;제목&lt;/h2&gt;
+&lt;p&gt;마크다운에서는 구조적 글을 쓸 때 각 항목의 제목을 달 수 있는 문법으로 여러 방식이 제공된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;대제목
+======
+
+대제목
+------
+
+# 대제목
+## 중제목
+### 소제목
+#### 제목 4
+##### 제목 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 중 &lt;code&gt;#&lt;/code&gt;을 이용한 제목 문법은 차례대로 HTML의 &lt;code&gt;h1&lt;/code&gt; 태그부터 &lt;code&gt;h5&lt;/code&gt; 태그와 매칭된다고 볼 수 있다. 물론 여기서 끝이 아니라 더 깊이도 들어갈 수 있을 것 같다. 다만 개인적으로는 소제목 단위 이후로는 쓸 일이 없었다.&lt;/p&gt;
+&lt;h2&gt;텍스트 스타일&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;마크다운&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;렌더링 결과&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;HTML 태그&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;비고&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;**Bold**&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;__Bold__&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;*Italic*&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;_Italic_&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;***Bold Italic***&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;&lt;em&gt;Bold Italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt; + &lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;___Bold Italic___&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;&lt;em&gt;Bold Italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt; + &lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;**_Bold Italic_**&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;&lt;em&gt;Bold Italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;strong&lt;/code&gt; + &lt;code&gt;em&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;좌우 공백 필요&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;`inline code`&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;inline code&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;링크&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[Google](https://google.com)&lt;/code&gt; = &lt;a href="https://google.com" target="_blank"&gt;Google📎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 외에로 파일의 절대 경로나 상대 경로도 사용할 수 있다.&lt;/p&gt;
+&lt;h2&gt;이미지&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;![Alt Text](https://foo.bar/image/path.jpg)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;링크 문법과 거의 비슷하지만 제일 앞에 느낌표(&lt;code&gt;!&lt;/code&gt;)가 붙으면 이미지 문법이 된다. 'Alt Text'로 표시한 부분은 이미지를 설명하기 위한 문구로 &lt;code&gt;img&lt;/code&gt; 태그의 &lt;code&gt;alt&lt;/code&gt; 속성의 값으로 들어가며 대체로(?) 화면에 표시되도록 렌더링 되지는 않지만 접근성을 높이기 위해서는 적어주는 편이 좋다.&lt;/p&gt;
+&lt;h2&gt;인용&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 인용된 메시지
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 마크다운 문서는 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;인용된 메시지&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;인용은 별도의 블럭 처럼 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; ## 인용된 메시지
+&amp;gt;
+&amp;gt; 꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.
+&amp;gt;
+&amp;gt;&amp;gt; 인용 안에 인용을 넣을 수도 있습니다.
+&amp;gt;
+&amp;gt; 문단으로 나눌 수도 있습니다.&amp;lt;br/&amp;gt;
+&amp;gt; 줄 나눔은 `br` 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 마크다운 문서는 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2&gt;인용된 메시지&lt;/h2&gt;
+&lt;p&gt;꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;문단으로 나눌 수도 있습니다.&lt;br/&gt;
+줄바꿈은 &lt;code&gt;br&lt;/code&gt; 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;멀티 라인 코드&lt;/h2&gt;
+&lt;p&gt;일반적인 코드 샘플을 적기 위해서 두 가지 문법이 제공된다. 아래와 같이 하나는 역따옴표 3개(&lt;code&gt;```&lt;/code&gt;)로 둘러싸거나 혹은 지렁이 3개(&lt;code&gt;~~~&lt;/code&gt;)로 둘러쌀 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~~
+multi 
+  line 
+    code
+~~~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;```
+multi 
+  line 
+    code
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 두 마크다운 문서는 모두 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;multi 
+  line 
+    code
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;테이블&lt;/h2&gt;
+&lt;p&gt;테이블은 일종의 확장 개념이긴 하지만 그래도 종종 쓰이는 것 같으므로 정리한다. 대충 아래와 같은 형식으로 쓰면 표가 작성된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| Head 1 | Head 2 | Head 3 |
+|--------|--------|--------|
+| Body 1 | Body 2 | Body 3 |
+| Body a | Body b | Body c |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 코드의 경우 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Head 1&lt;/th&gt;
+&lt;th&gt;Head 2&lt;/th&gt;
+&lt;th&gt;Head 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Body 1&lt;/td&gt;
+&lt;td&gt;Body 2&lt;/td&gt;
+&lt;td&gt;Body 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Body a&lt;/td&gt;
+&lt;td&gt;Body b&lt;/td&gt;
+&lt;td&gt;Body c&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;크기나 줄의 갯수 등은 딱히 상관은 없지만 딱 맞춰 써야 보기엔 편하긴 하다. 참고로 Doom Emacs에서 markdown을 사용하도록 하면 탭(Tab) 키 한 방으로 테이블의 크기가 정렬되서 편하다.&lt;/p&gt;
+&lt;p&gt;좀 더 특수한 속성으로 제목줄과 내용줄 사이의 항목에 콜론(&lt;code&gt;:&lt;/code&gt;)을 이용해 정렬(alignment)을 적용할 수도 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| Head 1           | Head 2           |           Head 3 |
+|:-----------------|------------------|-----------------:|
+| Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
+| Body a text long | Body b text      |      Body c text |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 문법의 경우 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;Head 1&lt;/th&gt;
+&lt;th&gt;Head 2&lt;/th&gt;
+&lt;th style="text-align: right;"&gt;Head 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;Body 1 Text&lt;/td&gt;
+&lt;td&gt;Body 2 Text Long&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;Body 3 Text Long&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;Body a text long&lt;/td&gt;
+&lt;td&gt;Body b text&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;Body c text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;위 처럼 제목과 본문 표 사이의 구분줄을 표시해 놓은 부분에 콜론(&lt;code&gt;:&lt;/code&gt;)이 왼쪽에 있으면 좌측 정렬, 우측에 있으면 우측 정렬이 된다. 기본은 가운데 정렬이다.&lt;/p&gt;
+&lt;p&gt;다만 정렬 부분은 사용하는 변환기나 패키지에 따라서 다를 수 있다.&lt;/p&gt;
+&lt;h2&gt;HTML 태그&lt;/h2&gt;
+&lt;p&gt;HTML 태그를 넣고 싶다면 고민할 필요 없이 그냥 넣으면 된다. 충돌하는 문법이 있어서 약간의 제약이 있을 수 있지만 대체로 그대로 렌더링 되는 편이다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div style=&amp;quot;width: 100%; border: 1px solid #777&amp;quot;&amp;gt;
+HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 마크다운 문서는 아래와 같이 렌더링 된다.&lt;/p&gt;
+&lt;div style="width: 100%; border: 1px solid #777"&gt;
+HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
+&lt;/div&gt;
+
+&lt;p&gt;다만 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.&lt;/p&gt;
+&lt;h2&gt;팁: 역 따옴표를 코드 스타일로 표시하기&lt;/h2&gt;
+&lt;p&gt;여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;`` ` ``
+``display ` back tick``
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;역따옴표 2개를 붙여서 좌우로 둘러싸면 inline code와 동일하게 쓸 수 있지만 여기서 '역따옴표 두개'와 '역따옴표' 사이만 붙여쓰지 않으면 '역따옴표'를 표시할 수 있었다.&lt;/p&gt;
+&lt;p&gt;다만 역따옴표만 표시할 때는 좌우에 여백(스페이스)이 들어가게 되는 것은 어쩔 수 없는 것 같다.&lt;/p&gt;
+&lt;h2&gt;관련된 글들&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="../article/python-markdown.html"&gt;파이썬으로 마크다운 문서를 HTML로 변환하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/python-markdown-table.html"&gt;Python-Markdown의 테이블 렌더링 지원&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/markdown-syntax.html</guid>
+      <pubDate>Tue, 13 Aug 2024 13:54:00 +0900</pubDate>
+    </item>
     <item>
       <title>시동 켠 채로 도어를 잠그는 건 가능할까?</title>
       <link>https://seorenn.github.io/article/tucson-locking-door-with-ignition-on.html</link>
@@ -468,6 +902,7 @@ html = markdown.markdown(
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/python-markdown.html"&gt;파이썬으로 마크다운 문서를 HTML로 변환하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/markdown-syntax.html"&gt;마크다운 문법 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
       <content:encoded>&lt;p&gt;&lt;a href="../article/python-markdown.html"&gt;Python-Markdown&lt;/a&gt;으로 마크다운 문서를 HTML로 렌더링 할 때는 뭔가 고급(?) 기능이 빠진 것 같이 렌더링이 된다. 예를 들어 테이블의 경우가 그렇다.&lt;/p&gt;
 &lt;p&gt;다행히도 테이블 렌더링이 지원되지 않는 것은 아니다. 사실 아주 간단하다.&lt;/p&gt;
@@ -528,6 +963,7 @@ html = markdown.markdown(
 &lt;h2&gt;관련된 글들&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../article/python-markdown.html"&gt;파이썬으로 마크다운 문서를 HTML로 변환하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../article/markdown-syntax.html"&gt;마크다운 문법 정리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/python-markdown-table.html</guid>
       <pubDate>Mon, 05 Aug 2024 20:22:00 +0900</pubDate>
@@ -4425,94 +4861,6 @@ somemod = &amp;quot;1.0.0&amp;quot;
 &lt;p&gt;오늘도 이렇게 삽질을 하며 한 가지 사실을 배워간다. 빌드 의존성 문제는 어떤 언어든 어떤 프레임워크든 늘 겪는 문제인데 왜 이렇게 익숙해지지 않는지 모르겠다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/rust-no-external-crate.html</guid>
       <pubDate>Tue, 02 Jul 2024 23:41:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</title>
-      <link>https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html</link>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;이 글의 해법은 어느 정도 시간이 지나면 먹통이 되는 문제가 있어 다른 방법을 연구 중입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;과거에는 좀 달랐지만 언제부턴가 macOS에서 한영전환키를 누르며 이 키 입력이 Emacs에 닿지 않게 되었다. 그래서 Emacs 내장 한글 입력기로 전환하기 위해서는 &lt;code&gt;C-\&lt;/code&gt; 등 다른 단축키를 이용해야 했다. 하지만 헷갈려서 내장 입력기 전환은 거의 사용하지 않았고 macOS 자체 입력기를 쓰는 것도 그다지 무리는 없어서 쓰고는 있었다.&lt;/p&gt;
-&lt;p&gt;그런데 최근 macOS의 한글입력기 문제인지 아니면 Emacs 29 최신 버전의 문제인지 아니면 Evil과의 환상 조합 오작동인지 하여간 한글 입력이 조합 도중 씹히거나 사라졌다가 나중에 다시 나타나는 등 요상한 문제를 겪기 시작했다.&lt;/p&gt;
-&lt;p&gt;결국 근본적인 해결이 필요할 것 같아 방법을 찾아보다 기존에 종종 사용하던 Hammerspoon을 통해 해결할 수 있을 것 같아 약간의 삽질을 하다 겨우 성공하였다.&lt;/p&gt;
-&lt;h2&gt;문제 해결하기&lt;/h2&gt;
-&lt;p&gt;이 방법은 'Emacs를 쓸 때는 시스템의 한영전환키를 씹어버리고 Emacs 내장입력기 전환 키로 바꿔서 던지는 식'으로 동작하는 Hammerspoon용 LUA 코드로 구현했다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;local englishIMID = &amp;quot;com.apple.keylayout.ABC&amp;quot;
-
-function setEnglishInputMethod()
-    local source = hs.keycodes.currentSourceID()
-    if not (source == englishIMID) then
-        hs.keycodes.currentSourceID(englishIMID)
-    end
-end
-
-hs.eventtap.new({hs.eventtap.event.types.keyDown, hs.eventtap.event.types.systemDefined}, function(event)
-    local type = event:getType()
-    local flags = event:getFlags()
-    local keycode = event:getKeyCode()
-    local app = hs.application.frontmostApplication()
-    if type == hs.eventtap.event.types.keyDown and app:bundleID() == &amp;quot;org.gnu.Emacs&amp;quot; then
-        if flags.shift and keycode == hs.keycodes.map.space then
-            setEnglishInputMethod()
-            -- remap to C-\
-            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
-            hs.eventtap.event.newKeyEvent(&amp;quot;\\&amp;quot;, true):post()
-            hs.eventtap.event.newKeyEvent(&amp;quot;\\&amp;quot;, false):post()
-            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
-            return true
-        else
-            return false
-        end
-    else
-        return false
-    end
-end):start()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;bundle ID나 단축키 이름만 잘 바꾸면 어떤 앱이든 원하는 대로 단축키를 바꿀 수 있다. 그저 키 바꿔치기를 하는 경우에는 &lt;code&gt;return&lt;/code&gt; 값에 주의하면 된다. &lt;code&gt;true&lt;/code&gt;를 반환하면 기존에 입력된 키 스트로크를 무시시켜 버리기 때문이다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;setEnglishInputMethod()&lt;/code&gt; 함수는 주제에는 조금 벗어나 보이겠지만 중요한 문제를 예방하기 위해 사용한다. 예를 들어 macOS의 입력기가 한국어인 상태로 Emacs에 진입했다간 영문모드로 전환할 수 없는 불상사가 생기기 때문이 이를 막기 위해 시스템 입력기를 영어로 바꾸는 코드다. 만약 영문 입력기를 별도로 설치한 다른 것을 쓴다면 해당 입력기 ID로 고쳐주자.&lt;/p&gt;</description>
-      <content:encoded>&lt;blockquote&gt;
-&lt;p&gt;이 글의 해법은 어느 정도 시간이 지나면 먹통이 되는 문제가 있어 다른 방법을 연구 중입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;과거에는 좀 달랐지만 언제부턴가 macOS에서 한영전환키를 누르며 이 키 입력이 Emacs에 닿지 않게 되었다. 그래서 Emacs 내장 한글 입력기로 전환하기 위해서는 &lt;code&gt;C-\&lt;/code&gt; 등 다른 단축키를 이용해야 했다. 하지만 헷갈려서 내장 입력기 전환은 거의 사용하지 않았고 macOS 자체 입력기를 쓰는 것도 그다지 무리는 없어서 쓰고는 있었다.&lt;/p&gt;
-&lt;p&gt;그런데 최근 macOS의 한글입력기 문제인지 아니면 Emacs 29 최신 버전의 문제인지 아니면 Evil과의 환상 조합 오작동인지 하여간 한글 입력이 조합 도중 씹히거나 사라졌다가 나중에 다시 나타나는 등 요상한 문제를 겪기 시작했다.&lt;/p&gt;
-&lt;p&gt;결국 근본적인 해결이 필요할 것 같아 방법을 찾아보다 기존에 종종 사용하던 Hammerspoon을 통해 해결할 수 있을 것 같아 약간의 삽질을 하다 겨우 성공하였다.&lt;/p&gt;
-&lt;h2&gt;문제 해결하기&lt;/h2&gt;
-&lt;p&gt;이 방법은 'Emacs를 쓸 때는 시스템의 한영전환키를 씹어버리고 Emacs 내장입력기 전환 키로 바꿔서 던지는 식'으로 동작하는 Hammerspoon용 LUA 코드로 구현했다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-lua"&gt;local englishIMID = &amp;quot;com.apple.keylayout.ABC&amp;quot;
-
-function setEnglishInputMethod()
-    local source = hs.keycodes.currentSourceID()
-    if not (source == englishIMID) then
-        hs.keycodes.currentSourceID(englishIMID)
-    end
-end
-
-hs.eventtap.new({hs.eventtap.event.types.keyDown, hs.eventtap.event.types.systemDefined}, function(event)
-    local type = event:getType()
-    local flags = event:getFlags()
-    local keycode = event:getKeyCode()
-    local app = hs.application.frontmostApplication()
-    if type == hs.eventtap.event.types.keyDown and app:bundleID() == &amp;quot;org.gnu.Emacs&amp;quot; then
-        if flags.shift and keycode == hs.keycodes.map.space then
-            setEnglishInputMethod()
-            -- remap to C-\
-            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
-            hs.eventtap.event.newKeyEvent(&amp;quot;\\&amp;quot;, true):post()
-            hs.eventtap.event.newKeyEvent(&amp;quot;\\&amp;quot;, false):post()
-            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
-            return true
-        else
-            return false
-        end
-    else
-        return false
-    end
-end):start()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;bundle ID나 단축키 이름만 잘 바꾸면 어떤 앱이든 원하는 대로 단축키를 바꿀 수 있다. 그저 키 바꿔치기를 하는 경우에는 &lt;code&gt;return&lt;/code&gt; 값에 주의하면 된다. &lt;code&gt;true&lt;/code&gt;를 반환하면 기존에 입력된 키 스트로크를 무시시켜 버리기 때문이다.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;setEnglishInputMethod()&lt;/code&gt; 함수는 주제에는 조금 벗어나 보이겠지만 중요한 문제를 예방하기 위해 사용한다. 예를 들어 macOS의 입력기가 한국어인 상태로 Emacs에 진입했다간 영문모드로 전환할 수 없는 불상사가 생기기 때문이 이를 막기 위해 시스템 입력기를 영어로 바꾸는 코드다. 만약 영문 입력기를 별도로 설치한 다른 것을 쓴다면 해당 입력기 ID로 고쳐주자.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html</guid>
-      <pubDate>Mon, 01 Jul 2024 23:32:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-13T14:00:53.197645+09:00</updated>
+  <updated>2024-08-13T14:17:12.811555+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/article/markdown-syntax.html</id>
     <title>마크다운 문법 정리</title>
-    <updated>2024-08-13T14:00:49.058115+09:00</updated>
+    <updated>2024-08-13T14:17:06.579844+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.</p>
 <h2>제목</h2>
@@ -233,7 +233,7 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 </ul></div>
     </content>
     <link href="https://seorenn.github.io/article/markdown-syntax.html"/>
-    <summary type="text">개인적으로 자주 사용하는 마크다운 문법(markdnwo syntax) 정리</summary>
+    <summary type="text">개인적으로 자주 사용하는 마크다운 문법(markdown syntax) 정리</summary>
     <published>2024-08-13T13:54:00+09:00</published>
   </entry>
   <entry>

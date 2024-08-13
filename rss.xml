@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Tue, 13 Aug 2024 13:55:57 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2024 14:00:53 +0900</lastBuildDate>
     <item>
       <title>마크다운 문법 정리</title>
       <link>https://seorenn.github.io/article/markdown-syntax.html</link>
@@ -181,7 +181,7 @@ multi
 &lt;pre&gt;&lt;code&gt;| Head 1           | Head 2           |           Head 3 |
 |:-----------------|------------------|-----------------:|
 | Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
-| Body a text long | Body b text      |      Body c text |
+| Body 1 Long Text | Body 2 Text      |      Body 3 Text |
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;위 문법의 경우 아래와 같이 렌더링 된다.&lt;/p&gt;
 &lt;table&gt;
@@ -199,9 +199,9 @@ multi
 &lt;td style="text-align: right;"&gt;Body 3 Text Long&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left;"&gt;Body a text long&lt;/td&gt;
-&lt;td&gt;Body b text&lt;/td&gt;
-&lt;td style="text-align: right;"&gt;Body c text&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;Body 1 Long Text&lt;/td&gt;
+&lt;td&gt;Body 2 Text&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;Body 3 Text&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -218,7 +218,8 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 &lt;/div&gt;
 
-&lt;p&gt;다만 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.&lt;/p&gt;
+&lt;p&gt;보다시피 HTML 태그 블럭 내부의 마크다운 문법은 무시되는 것을 볼 수 있다.&lt;/p&gt;
+&lt;p&gt;특이사항으로 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.&lt;/p&gt;
 &lt;h2&gt;팁: 역 따옴표를 코드 스타일로 표시하기&lt;/h2&gt;
 &lt;p&gt;여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;`` ` ``
@@ -395,7 +396,7 @@ multi
 &lt;pre&gt;&lt;code&gt;| Head 1           | Head 2           |           Head 3 |
 |:-----------------|------------------|-----------------:|
 | Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
-| Body a text long | Body b text      |      Body c text |
+| Body 1 Long Text | Body 2 Text      |      Body 3 Text |
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;위 문법의 경우 아래와 같이 렌더링 된다.&lt;/p&gt;
 &lt;table&gt;
@@ -413,9 +414,9 @@ multi
 &lt;td style="text-align: right;"&gt;Body 3 Text Long&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left;"&gt;Body a text long&lt;/td&gt;
-&lt;td&gt;Body b text&lt;/td&gt;
-&lt;td style="text-align: right;"&gt;Body c text&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;Body 1 Long Text&lt;/td&gt;
+&lt;td&gt;Body 2 Text&lt;/td&gt;
+&lt;td style="text-align: right;"&gt;Body 3 Text&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -432,7 +433,8 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 &lt;/div&gt;
 
-&lt;p&gt;다만 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.&lt;/p&gt;
+&lt;p&gt;보다시피 HTML 태그 블럭 내부의 마크다운 문법은 무시되는 것을 볼 수 있다.&lt;/p&gt;
+&lt;p&gt;특이사항으로 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.&lt;/p&gt;
 &lt;h2&gt;팁: 역 따옴표를 코드 스타일로 표시하기&lt;/h2&gt;
 &lt;p&gt;여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;`` ` ``

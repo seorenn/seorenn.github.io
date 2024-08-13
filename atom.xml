@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-08-13T13:55:57.700253+09:00</updated>
+  <updated>2024-08-13T14:00:53.197645+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/article/markdown-syntax.html</id>
     <title>마크다운 문법 정리</title>
-    <updated>2024-08-13T13:54:49.801385+09:00</updated>
+    <updated>2024-08-13T14:00:49.058115+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.</p>
 <h2>제목</h2>
@@ -180,7 +180,7 @@ multi
 <pre><code>| Head 1           | Head 2           |           Head 3 |
 |:-----------------|------------------|-----------------:|
 | Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
-| Body a text long | Body b text      |      Body c text |
+| Body 1 Long Text | Body 2 Text      |      Body 3 Text |
 </code></pre>
 <p>위 문법의 경우 아래와 같이 렌더링 된다.</p>
 <table>
@@ -198,9 +198,9 @@ multi
 <td style="text-align: right;">Body 3 Text Long</td>
 </tr>
 <tr>
-<td style="text-align: left;">Body a text long</td>
-<td>Body b text</td>
-<td style="text-align: right;">Body c text</td>
+<td style="text-align: left;">Body 1 Long Text</td>
+<td>Body 2 Text</td>
+<td style="text-align: right;">Body 3 Text</td>
 </tr>
 </tbody>
 </table>
@@ -217,7 +217,8 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 </div>
 
-<p>다만 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.</p>
+<p>보다시피 HTML 태그 블럭 내부의 마크다운 문법은 무시되는 것을 볼 수 있다.</p>
+<p>특이사항으로 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.</p>
 <h2>팁: 역 따옴표를 코드 스타일로 표시하기</h2>
 <p>여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.</p>
 <pre><code>`` ` ``

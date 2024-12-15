@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-12-14T16:55:31.899443+09:00</updated>
+  <updated>2024-12-15T11:15:56.006535+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,21 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20241215-00.html</id>
+    <title>티스토리가 좀 괴롭다</title>
+    <updated>2024-12-15T11:15:34.729548+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>한동안 티스토리로 모든 블로그 역량을 집중하고 있는데 또 쿨타임이 온 모양이다. 또 티스토리를 버릴 고민을 하고 있다는 말이다.</p>
+<p>머리 속에서는 상당히 많은 부분에서 티스토리를 거부하고 있다. 상단 자체광고부터 비롯해 테마를 마음대로 수정하기 귀찮은(아니 어려운) 부분도 있고 무엇보다 글 쓰기 시스템이 그렇게 편하지도 않다.</p>
+<p>물론 티스토리의 장점이 없는 건 아니다. 메타사이트가 있어 트래픽 유입은 자체 블로그보단 쉬운 편이다. 그리고 이미지 업로드도 자유롭다. 전체 글 갯수나 용량 제한도 없고 당연히 트래픽 제한도 없다. 약간 멍청하긴 해도 맞춤법 교정기도 사용할 수 있기도 하다.</p>
+<p>그럼에도 자체 정적 블로그로 다시 돌아올 합리성이 있는지는 좀 따져보고 있다. 만약 돌아오게 된다면 빌드 시스템을 좀 더 수정해야 할 필요는 있다. 현재는 그다지 마음에 드는 결과물이 아니니 말이다.</p>
+<p>역시 Emacs에서 글을 쓰는 건 편하고 자유로운 기분이다. 왜 이렇게 술술 써지나 모르겠다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20241215-00.html"/>
+    <summary type="text">한동안 티스토리로 모든 블로그 역량을 집중하고 있는데 또 쿨타임이 온 모양이다. 또 티스토리를 버릴 고민을 하고 있다는 말이다.</summary>
+    <published>2024-12-15T11:15:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20240814-00.html</id>
     <title>PPI에 이어 CPI도 잘 나온 거 아니었나?</title>
@@ -2733,38 +2748,5 @@ macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재
     <link href="https://seorenn.github.io/article/git-stash.html"/>
     <summary type="text">Git 저장소에서 작업 내용을 잠깐 어딘가 보관해 두거나 이를 다시 복원시키는 stash 커맨드에 대해 알아보자.</summary>
     <published>2024-07-05T16:18:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20240704-00.html</id>
-    <title>이제 미국도 정말 경기 침체를 걱정하는 단계인가?</title>
-    <updated>2024-07-04T11:54:34.718004+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>육아에 지쳐 쓰러져 있는 동안 미국 노동시장과 관련된 정말 중요한 지표들이 나왔었나 보다. 적당히 정리해 보자.</p>
-<p>가장 먼저 전전일 발표된 JOLTs다.</p>
-<ul>
-<li>미국 5월 노동부 JOLTs: 8140M (+221M) 예상치 상회</li>
-</ul>
-<p>이를 보면 노동시장이 다시 회복하기 시작한 것처럼 보이지만 추세를 보면 하락세가 꺾인 것은 아니라서 반전이라고 보기엔 힘든 지표 같다. 이를 증명이나 하듯 전일 발표된 지표가 뭔가를 보여준다.</p>
-<ul>
-<li>미국 6월 ADP 비농업부문 고용 변화: 150K (-7K) 예상치 하회</li>
-<li>미국 연속 실업수당청구건수: 1858K (+26K) 예상치 상회</li>
-<li>미국 신규 실업수당청구건수: 238K (+4K) 예상치 상회</li>
-</ul>
-<p>ADP 지표나 실업수당으로 간접 유추해보면 노동시장이 둔화되고 있는 것처럼 보인다. JOLTs 지표를 하락 추세로 보는 게 합당하다고 뒷받침 하고 있다.</p>
-<p>그리고 또 충격의 지표가 하나 더 있다. 바로 그동안 강력하던 서비스 물가를 간접적으로 알려주던 서비스업 PMI다.</p>
-<ul>
-<li>미국 6월 서비스 PMI: 55.3 (+0.5) 예상치 상회</li>
-<li>미국 6월 ISM 비제조업 PMI: 48.8 (-5) 예상치 하회</li>
-</ul>
-<p>서비스업 PMI의 두 지표는 좀 상반되게 나왔지만, 영향력이 큰 ISM쪽 지표는 아예 위축세로 크게 하락한 모습을 보이며 좀 충격을 주는 듯하다. 물론 설문 조사로 만들어지는 지표기 때문에 객관성은 좀 떨어지겠지만 적어도 시장 분위기를 느끼기엔 더없이 좋은 지표기도 하다.</p>
-<p>안 그래도 여기에 GDP 예측치도 떨어지고 있고 뭔가가 느껴진다.</p>
-<blockquote>
-<p>많은 화살표가 일제히 미국의 경기 침체 쪽을 가리키는 느낌이다.</p>
-</blockquote>
-<p>이러면 적어도 주식시장에선 안 좋은 분위기가 느껴...져야 정상이겠지만 금리 인하 기대를 키우는 쪽으로 건드리며 오히려 좋은 분위기가 느껴지는 것 같기도 하다. 뭐... 침체는 그렇게 좋은 건 아니니 무작정 좋다고 보긴 무리겠지만 말이다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20240704-00.html"/>
-    <summary type="text">육아에 지쳐 쓰러져 있는 동안 미국 노동시장과 관련된 정말 중요한 지표들이 나왔었나 보다.</summary>
-    <published>2024-07-04T11:54:00+09:00</published>
   </entry>
 </feed>

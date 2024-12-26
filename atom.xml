@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-12-21T00:36:22.278132+09:00</updated>
+  <updated>2024-12-26T22:59:44.574914+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20241215-00.html</id>
     <title>티스토리가 좀 괴롭다</title>
-    <updated>2024-12-15T11:15:34.729548+09:00</updated>
+    <updated>2024-12-26T22:51:08.362027+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>한동안 티스토리로 모든 블로그 역량을 집중하고 있는데 또 쿨타임이 온 모양이다. 또 티스토리를 버릴 고민을 하고 있다는 말이다.</p>
 <p>머리 속에서는 상당히 많은 부분에서 티스토리를 거부하고 있다. 상단 자체광고부터 비롯해 테마를 마음대로 수정하기 귀찮은(아니 어려운) 부분도 있고 무엇보다 글 쓰기 시스템이 그렇게 편하지도 않다.</p>
@@ -29,7 +29,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20240814-00.html</id>
     <title>PPI에 이어 CPI도 잘 나온 거 아니었나?</title>
-    <updated>2024-08-14T23:47:21.885746+09:00</updated>
+    <updated>2024-12-26T21:24:33.132965+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>어제는 PPI가 나왔고 오늘은 CPI가 나왔다. 둘 다 한꺼번에 정리해 보자.</p>
 <ul>
@@ -52,7 +52,7 @@
   <entry>
     <id>https://seorenn.github.io/article/markdown-syntax.html</id>
     <title>마크다운 문법 정리</title>
-    <updated>2024-08-13T14:17:06.579844+09:00</updated>
+    <updated>2024-12-26T15:35:00.072202+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.</p>
 <h2>제목</h2>
@@ -277,7 +277,7 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
   <entry>
     <id>https://seorenn.github.io/article/tucson-locking-door-with-ignition-on.html</id>
     <title>시동 켠 채로 도어를 잠그는 건 가능할까?</title>
-    <updated>2024-08-14T00:31:06.462571+09:00</updated>
+    <updated>2024-12-26T22:47:45.465413+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>가끔이지만 시동을 켠 채로 문을 잠그고 싶을 때가 있다. 특히 여름에 비상등을 켜두고 잠깐 주차해 볼일을 봐야 할 때가 그렇다. 에어컨으로 만들어 놓은 시원함을 유지하고 싶기도 하고 비상등으로 인한 방전 위험도 방지하고 싶으니 말이다.</p>
 <p>그렇다면 과연 시동을 켜 놓은 채로 차 문을 잠그고 자리를 비울 방법이 있을까?</p>
@@ -316,7 +316,7 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
   <entry>
     <id>https://seorenn.github.io/log/20240811-00.html</id>
     <title>macOS 14.6.1, iOS 17.6.1 릴리즈 등 한 주간의 애플 소식들 24-08-11</title>
-    <updated>2024-08-11T21:56:09.807397+09:00</updated>
+    <updated>2024-12-26T15:36:59.562895+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 안정 버전 릴리즈 소식들</h2>
 <p>미국 시각 8월 7일 애플은 플랫폼 OS 라인업의 현 버전에 버그 픽스 업데이트를 릴리즈 했다. 대상과 버전은 다음과 같다:</p>
@@ -380,7 +380,7 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
   <entry>
     <id>https://seorenn.github.io/article/sidecar-and-circuit-breaker.html</id>
     <title>사이드카와 서킷브레이커는 무엇일까?</title>
-    <updated>2024-08-09T17:02:38.467720+09:00</updated>
+    <updated>2024-12-26T21:21:00.905215+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>사이드카와 서킷브레이커는 주식투자를 하다 보면 종종 들을 수 있는 단어이지만 특히 서킷브레이커를 경험해 보는 일은 쉽지 않은 일이다. 어느날 이 서킷브레이커 실제로 겪어보니 이 조치가 무엇인지 조금 더 알고 싶어져서 사이드카와 서킷브레이커에 대해 정리해 본다.</p>
 <h2>사이드카(side car)</h2>
@@ -406,7 +406,7 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
   <entry>
     <id>https://seorenn.github.io/log/20240808-00.html</id>
     <title>최근 확산 중이라는 코로나19 KP.3 변이</title>
-    <updated>2024-08-08T16:55:53.063013+09:00</updated>
+    <updated>2024-12-26T16:09:28.902787+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>최근 코로나가 다시 확산 중이라고 한다. 일단 코로나에 걸려도 격리 의무는 사라지긴 했지만 어쨌든 아프고 전염력이 강하니 주의해야 할 질병임에는 틀림없다.</p>
 <p>가장 큰 개인 사정은 아이가 다니는 어린이집의 담임 교사가 코로나에 걸렸다는 소식이 전해졌다는 점이다. 아이를 키우는 입장에서 이런 전염병 공지는 청천벽력 같은 소식이다.</p>
@@ -438,7 +438,7 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
   <entry>
     <id>https://seorenn.github.io/article/wall-street-and-main-street.html</id>
     <title>월스트리트와 메인스트리트의 의미</title>
-    <updated>2024-08-07T23:29:46.080840+09:00</updated>
+    <updated>2024-12-26T21:21:15.136230+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>주식 트레이딩이나 투자와 관련된 언론이나 커뮤니티를 접하다 보면 종종 '메인스트리트'라는 용어를 접할 때도 있다. 월스트리트는 익숙한데 메인스트리트는 무엇일까? 그래서 이 둘을 간략히 정리해 봤다.</p>
 <h2>월스트리트(Wall Street)</h2>
@@ -461,7 +461,7 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
   <entry>
     <id>https://seorenn.github.io/article/objc-exceptions.html</id>
     <title>Objective-C 예외 처리 정리</title>
-    <updated>2024-08-06T14:58:09.395653+09:00</updated>
+    <updated>2024-12-26T16:18:22.305632+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Objective-C에서도 예외(exceptions) 처리가 가능함을 이제서야 알게 되었다. 간단하게 정리해 보자.</p>
 <h2>Objective-C 예외 처리 기본</h2>
@@ -502,7 +502,7 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
   <entry>
     <id>https://seorenn.github.io/log/20240805-01.html</id>
     <title>서비스업 PMI는 시장을 살려줄 수 있을까?</title>
-    <updated>2024-08-05T23:19:42.693048+09:00</updated>
+    <updated>2024-12-26T21:24:37.360872+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>미장 연속 폭락에 이어 국장에도 파란색 피바다가 펼쳐진 후, 반등의 기미를 보여줄 만한 이벤트가 바로 다가왔다. 서비스업 PMI가 발표되기 때문이다. 실제 결과는 아래와 같다.</p>
 <blockquote>
@@ -522,7 +522,7 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
   <entry>
     <id>https://seorenn.github.io/article/python-markdown-table.html</id>
     <title>Python-Markdown의 테이블 렌더링 지원</title>
-    <updated>2024-08-13T13:55:36.710645+09:00</updated>
+    <updated>2024-12-26T15:33:21.158093+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p><a href="../article/python-markdown.html">Python-Markdown</a>으로 마크다운 문서를 HTML로 렌더링 할 때는 뭔가 고급(?) 기능이 빠진 것 같이 렌더링이 된다. 예를 들어 테이블의 경우가 그렇다.</p>
 <p>다행히도 테이블 렌더링이 지원되지 않는 것은 아니다. 사실 아주 간단하다.</p>
@@ -593,7 +593,7 @@ html = markdown.markdown(
   <entry>
     <id>https://seorenn.github.io/log/20240805-00.html</id>
     <title>공포에 사라고 했다</title>
-    <updated>2024-08-05T14:19:42.442302+09:00</updated>
+    <updated>2024-12-26T21:23:13.602762+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>주식시장에 피가 낭자하고 있다. 파란 피. 투구게는 아니지만 어쟀든 시퍼런 피바다다.</p>
 <p>누군가 이야기 했다. </p>
@@ -615,7 +615,7 @@ html = markdown.markdown(
   <entry>
     <id>https://seorenn.github.io/log/20240804-00.html</id>
     <title>macOS 14.6, iOS 17.6 등 안정 버전 공개 외 한 주간의 애플 소식들 24-08-04</title>
-    <updated>2024-08-04T23:43:36.481012+09:00</updated>
+    <updated>2024-12-26T15:37:51.794675+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈 소식들</h2>
 <p>애플은 미국 시각 7월 29일 아래의 애플 플랫폼 OS 안정 버전을 릴리즈 했다.</p>
@@ -674,7 +674,7 @@ iPhone의 주력 제품인 Pro 모델들도 인도에서 생산될 것 같다. �
   <entry>
     <id>https://seorenn.github.io/log/20240802-02.html</id>
     <title>주식시장엔 아포칼립스가 도래한 것 같다</title>
-    <updated>2024-08-02T23:33:52.298760+09:00</updated>
+    <updated>2024-12-26T21:24:40.555707+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>오늘도 미국의 여러 지표들이 나왔다. 특히 임금 관련 지표들이 너무 잘 나왔다. 여느 때였으면 호재를 부르짖으며 주식시장이 흥분했어야 할 그런 지표다.</p>
 <p>그런데 하필이면 고용 관련 지표들이 주식시장에 뭔가를 던진 듯하다. 안 그래도 뭔가 터져서 난리가 난 곳에 이번엔 운석이라도 떨어진 듯하다.</p>
@@ -695,7 +695,7 @@ iPhone의 주력 제품인 Pro 모델들도 인도에서 생산될 것 같다. �
   <entry>
     <id>https://seorenn.github.io/log/20240802-01.html</id>
     <title>애플 3분기 실적 발표</title>
-    <updated>2024-08-02T16:22:08.345973+09:00</updated>
+    <updated>2024-12-26T15:42:14.943290+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>새벽에 애플의 회계년도 3분기 실적 발표 및 어닝 콜이 있었다. 간단하게 정리해 보자.</p>
 <blockquote>
@@ -735,7 +735,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/log/20240802-00.html</id>
     <title>금리를 인하하는 게 나았을까?</title>
-    <updated>2024-08-02T00:18:17.077613+09:00</updated>
+    <updated>2024-12-26T21:24:43.672286+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>FOMC가 끝나자마자 다시 분위기가 반전되는 지표들이 등장했다. 바로 제조업 PMI와 실업수당 지표다.</p>
 <ul>
@@ -766,7 +766,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/log/20240801-00.html</id>
     <title>미 연준 7월 FOMC에서 기준금리 5.50%로 동결 결정</title>
-    <updated>2024-08-01T10:46:04.941297+09:00</updated>
+    <updated>2024-12-26T21:24:47.724692+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>연준은 미국 시각 7월 31일 FOMC를 통해 미국의 기준금리를 종전과 동일한 5.25% ~ 5.50%로 동결 결정했다.</p>
 <p><img alt="연준 기준금리 추이" src="../upload/202408011026-1476323e.png"/>
@@ -790,7 +790,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/article/chrome-debug-color-scheme.html</id>
     <title>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</title>
-    <updated>2024-07-31T16:49:20.897528+09:00</updated>
+    <updated>2024-12-26T16:20:36.435518+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>웹 페이지에서 CSS를 통해 다크 모드 혹은 라이트 모드를 지원하려 할 때는 물론 시스템의 설정을 바꿔서 간단하게 보면서 개발할 수는 있다. 하지만 웹 브라우저를 떠나서 계속 바꾸는 계 귀찮거나 시스템에 무리를 줄 가능성은 충분히 있다. 그래서 구글 크롬에서 이 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능이 있나 찾아봤고 실제로 존재하기에 그 방법을 정리해 본다.</p>
 <p>참고로 이 글은 macOS에서 다크 모드를 설정해 둔 상태로 라이트 모드의 CSS를 테스트 해보려는 상황을 가정하고 있다.</p>
@@ -817,7 +817,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/log/20240731-00.html</id>
     <title>일본은행 기준금리 0.25%로 인상</title>
-    <updated>2024-07-31T15:28:51.510250+09:00</updated>
+    <updated>2024-12-26T21:24:50.966660+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>일본은행(BOJ)은 7월의 마지막 날 열린 통화정책회의에서 기준금리를 종전 0.10%에서 0.25%로 15bp 인상했다. 기존 -0.10%에서 0.10%로 올리는 역사적인 날 이후 4개월 만에 또다시 기준금리를 올렸다.</p>
 <p><img alt="일본 기준금리 추이" src="../upload/202407311430-056cbb7e.png"/>
@@ -836,7 +836,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/log/20240730-00.html</id>
     <title>민주당의 코리아 부스터 프로젝트?</title>
-    <updated>2024-07-30T14:58:41.893626+09:00</updated>
+    <updated>2024-12-26T21:23:19.752122+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>윤석열 정부의 인센티브 기반 밸류업 정책에 한숨만 나오고 있던 와중에 갑자기 민주당이 밸류업 정책을 뛰어넘겠다며 '<a href="https://news.einfomax.co.kr/news/articleView.html?idxno=4319126" target="_blank">코리아 부스터 프로젝트📎</a>'를 추진하겠다고 한다. 그래서인지 굉장히 반가운 내용 같아서 기사를 읽어봤다.</p>
 <p>이 프로젝트는 대략 다음 다섯 가지 정책으로 구성되는 듯하다.</p>
@@ -865,7 +865,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/article/doom-emacs-shortcuts.html</id>
     <title>Doom Emacs 단축키 정리</title>
-    <updated>2024-08-05T17:09:07.287118+09:00</updated>
+    <updated>2024-12-26T15:53:30.358254+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키를 정리한다. 일부 단축키는 별도의 글로 분리하는 경우도 있으니 하단 관련글 항목을 참고하자.</p>
 <h2>설정(Configuration) 관련</h2>
@@ -1492,7 +1492,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/article/malaria.html</id>
     <title>말라리아란 질병은 무엇이고 어떻게 치료하고 예방할 수 있을까?</title>
-    <updated>2024-07-30T00:35:04.357853+09:00</updated>
+    <updated>2024-12-26T16:09:44.807455+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>날씨가 따뜻해지만 말라리아로 난리다. 2024년 7월 기준 사실상 서울 전역에서 확진자 발생 중이니 대한민국의 여름은 한창 심각한 와중이다. 도대체 말라리아는 뭐고 왜 발생하고 어떻게 치료하고 예방할 수 있을까?</p>
 <h2>말라리아(malaria)</h2>
@@ -1534,7 +1534,7 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
   <entry>
     <id>https://seorenn.github.io/log/20240728-00.html</id>
     <title>한 주간의 애플 소식들 24-07-28</title>
-    <updated>2024-07-28T23:26:59.418726+09:00</updated>
+    <updated>2024-12-26T15:38:11.510955+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈 소식</h2>
 <p>미국 시각 7월 23일 애플은 자사 플랫폼용 OS 및 소프트웨어들의 여러 업데이트를 공개했다.</p>
@@ -1597,7 +1597,7 @@ iCloud Private Relay이 중단되며 일부 사용자가 불편을 겪는 일이
   <entry>
     <id>https://seorenn.github.io/log/20240727-00.html</id>
     <title>7월 FOMC를 앞두고 또 연준 인사들의 발언들을 모아봤다</title>
-    <updated>2024-07-27T23:41:40.524649+09:00</updated>
+    <updated>2024-12-26T21:21:52.627704+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>7월 FOMC가 곧 열린다. 그렇다곤 해도 뭔가가 바뀔 것 같지는 않다. 그 배경에는 여러 연준 인사들의 발언들이 있다. 지난 글 이래로 있었던 여러 발언들을 또 모아봤다.</p>
 <p><strong>제롬 파월 (연준 의장)</strong>: "최근 지표들로 디스인플레이션 경로 복귀, 하지만 인하를 위해선 자신감이 생길 정도의 증거 필요", "인플레이션 목표 2%까지 기다리면 너무 늦어져"</p>
@@ -1628,7 +1628,7 @@ iCloud Private Relay이 중단되며 일부 사용자가 불편을 겪는 일이
   <entry>
     <id>https://seorenn.github.io/log/20240726-00.html</id>
     <title>미국 6월 PCE, 작은 걸림돌 출현?</title>
-    <updated>2024-07-27T00:02:47.443403+09:00</updated>
+    <updated>2024-12-26T21:24:54.910718+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>미국 6월 PCE가 발표되었다. 제목에서 느낄 수 있지만 약간은 좋지 못한 소식일 것 같다.</p>
 <ul>
@@ -1651,7 +1651,7 @@ iCloud Private Relay이 중단되며 일부 사용자가 불편을 겪는 일이
   <entry>
     <id>https://seorenn.github.io/article/fpies-allergy.html</id>
     <title>FPIES? 유아 알레르기? 뭐지 이건?</title>
-    <updated>2024-07-27T00:01:48.131268+09:00</updated>
+    <updated>2024-12-26T16:09:13.482073+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>생후 9개월 가량 된 둘째가 어느날 갑자기 심한 구토를 했다. 이유식으로 점심을 먹고 약 2시간 정도 지난 후 낮잠을 자기 위해 누웠다 분수토를 한 이후 세 차례에 걸쳐 먹은 것을 거의 모두 토해냈다. 부모로써는 걱정스러운 일이다. 어디 아픈가 걱정되기도 하고 빈 속이 되어서 배고프지 않을까 하는 걱정도 되고 말이다. 거기다 이런 일이 두 번째라 더더욱 마음에 걸렸다. </p>
 <p>과거의 사례는 잘 기억이 안 나지만 달걀과 관련이 있을 것 같다. 최근의 경우 평소 식사와 차이점이 있다는 달걀을 먹였다는 점이기 때문이다. 예전에는 달걀 노른자만 먹였었다면 이번에는 흰자까지 같이 먹였다는 차이가 있다. 다만 아이가 거부해서 오히려 더 적게 먹기는 했다. 종합해보면 달걀 알레르기일 가능성을 생각해 볼 수 있다.</p>
@@ -1678,7 +1678,7 @@ iCloud Private Relay이 중단되며 일부 사용자가 불편을 겪는 일이
   <entry>
     <id>https://seorenn.github.io/article/emacs-evil-surround.html</id>
     <title>Emacs의 evil-surround 확장 소개 및 기본 사용법</title>
-    <updated>2024-07-24T23:31:43.695232+09:00</updated>
+    <updated>2024-12-26T15:53:17.157293+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>evil-surround는 surround.vim 기능을 거의 그대로 Emacs의 Evil 용으로 옮겨놓은 듯한 확장이다. 이름처럼 뭔가를 둘러싸거나(surrounding) 둘러싸인 문자를 건드리는 등의 기능을 제공한다.</p>
 <p>설치 방법은 각자의 상황에 따라 다르니 일단 생략한다. 개인적으로는 Doom Emacs 설정 팩을 쓰고 있고 여기에는 기본 설정으로 들어있기 때문에 그대로 쓰고 있다. 당연하게도 관련 확장을 설치한 Vim에서도 동일한 방식으로 사용할 수 있을 것이다.</p>
@@ -1747,7 +1747,7 @@ int value = 0;
   <entry>
     <id>https://seorenn.github.io/article/python-find-out-module-name.html</id>
     <title>Python 모듈 이름 알아내기</title>
-    <updated>2024-07-24T15:46:13.574476+09:00</updated>
+    <updated>2024-12-26T15:33:33.500900+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>혹시나 어떤 의존성을 설치하고 import로 쓰려고 하는데 이름을 알 수 없는 경우가 있다면 어떻게 찾아야 할까? 간단히 알아보자.</p>
 <h2>이 글을 적게 된 발단</h2>
@@ -1807,7 +1807,7 @@ _testinternalcapi   glob                resource
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-run-cli-cmd-from-terminal-window.html</id>
     <title>Emacs Lisp에서 셸 커맨드를 터미널을 통해 실행시키기</title>
-    <updated>2024-07-22T22:49:36.233796+09:00</updated>
+    <updated>2024-12-26T15:57:25.428088+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 Emacs Lisp에서 셸 CLI 커맨드를 Emacs 자체 터미널을 통해 실행시키는 방법을 정리한다.</p>
 <h2>요구사항</h2>
@@ -1839,7 +1839,7 @@ _testinternalcapi   glob                resource
   <entry>
     <id>https://seorenn.github.io/log/20240722-00.html</id>
     <title>바이든 대통령 후보 사퇴 및 해리스 지지 선언</title>
-    <updated>2024-07-22T16:36:19.099438+09:00</updated>
+    <updated>2024-12-26T21:23:25.184470+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>조 바이든 현 미국 대통령은 미국 시각 7월 21일 내각 참모들도 발표 전에 바로 알았을 정도로 신속하게 비밀리에 <strong>대통령 후보 사퇴</strong>를 선언했다. 이미 코로나19 확진을 언론을 통해 공개하면서 '노령에다 건강 문제로 후보에서 사퇴하는 거 아니냐'는 관측이 많았었는데 정말 진짜로 아무도 모르게(?) 후보 사퇴를 결정했다고 한다. 다만 사퇴 분위기가 어땠을 지는 아직은 알 수 없는 것 같다.</p>
 <p>이제 중요한 것은 민주당의 새로운 대선 후보 선정일 텐데 바이든은 카멜라(카멀라) 해리스 현 부통령을 지지한다고 밝혔다. 마침 바이드 캠프에 모인 선거 자금을 쓰기에 적절하기도 하다. 상원 의원 시절 트럼프와 각을 세워서 유명해지기도 했기에 인지도도 좋을 것 같다. 그리고 몇몇 주요 인물들도 지지의사를 밝히면서 해리스의 후보 선출 가능성은 굉장히 높아진 것 같다. 물론 압도적인 지지율은 아니라서 경쟁은 좀 필요할 것 같다.</p>
@@ -1862,7 +1862,7 @@ _testinternalcapi   glob                resource
   <entry>
     <id>https://seorenn.github.io/log/20240721-00.html</id>
     <title>한 주간의 애플 소식들 24-07-21</title>
-    <updated>2024-07-21T21:18:47.916816+09:00</updated>
+    <updated>2024-12-26T15:38:20.646740+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈</h2>
 <p>차세대 OS들의 공개 베타가 슬슬 시작되고 있다.</p>
@@ -1916,7 +1916,7 @@ iOS 18의 사진 앱에 '복구된 앨범' 기능이 생기는 듯하다. 여기
   <entry>
     <id>https://seorenn.github.io/log/20240720-00.html</id>
     <title>토스증권 VS KB증권, WTS 유사성 분쟁?</title>
-    <updated>2024-07-20T23:44:01.721464+09:00</updated>
+    <updated>2024-12-26T21:27:27.356054+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>뉴스 피드를 읽다 아주 익숙한 단어가 보였다. 제목이 무려 'KB증권 VS 토스증권, WTS 유사성 두고 법적분쟁'이다. 정말이지 군침이 도는 읽고 싶은 제목이다. 그러니 링크를 클릭해 볼 수밖에 없었다.</p>
 <blockquote>
@@ -1937,7 +1937,7 @@ iOS 18의 사진 앱에 '복구된 앨범' 기능이 생기는 듯하다. 여기
   <entry>
     <id>https://seorenn.github.io/article/swift-run-after-delay.html</id>
     <title>Swift에서 딜레이 후 코드 호출하기</title>
-    <updated>2024-07-19T14:48:14.103476+09:00</updated>
+    <updated>2024-12-26T16:16:27.025068+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글에서는 Swift에서 UI를 멈추지 않게 하면서 특정 시간 동안 기다린 후 비동기로 코드를 실행시키는 방법 일부를 정리한다. 모든 방법이 아닌 개인적인 선호로 골랐다는 점에 주의하자.</p>
 <h2>타이머를 사용해 딜레이 후 호출하기</h2>
@@ -2000,7 +2000,7 @@ delayedTask.cancel()
   <entry>
     <id>https://seorenn.github.io/log/20240718-00.html</id>
     <title>체코 원전 잭팟이라더니 주가는 왜 비실거릴까?</title>
-    <updated>2024-07-18T16:51:35.851268+09:00</updated>
+    <updated>2024-12-26T21:23:29.676521+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>오랜만에 한국 원자력 수출에 좋은 소식이 떴다. 체코 원전 수주 소식이 들려온 것이다. 최소 15조 원 이상의 가치라며 말이다.</p>
 <p>그런데 정작 수주 소식이 들리자 관련 기업들의 주가는 호들갑은 커녕 차익실현 분위기가 강하다. 정확히 말해서 오전 까지는 분위기가 참 좋아 보였는데 오후가 되니 급격하게 사그라들었다고 보는 게 맞을 것 같다.</p>
@@ -2018,7 +2018,7 @@ delayedTask.cancel()
   <entry>
     <id>https://seorenn.github.io/article/xcode-swift-compiler-flag.html</id>
     <title>Xcode 및 Swift 프로젝트에서 컴파일러 플래그 추가하기</title>
-    <updated>2024-07-17T16:47:49.608629+09:00</updated>
+    <updated>2024-12-26T16:19:16.706895+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>하나의 소스 코드로 여러 일을 처리하고 싶은 욕심은 어떤 프로그래머나 가지고 있을 것 같다. 그 중 C 등의 컴파일 되는 언어에서 유래한 흔한 방식으로 바로 전처리기(Proprocessor)를 활용하는 방법이 있다. 코드가 아닌 빌드 도구 차원에서 빌드하는 코드가 어떻게 동작할 지를 결정할 수 있는 좋은 방법이니 말이다.</p>
 <p>그렇다면 Xcode에서 작업 중인 Swift 프로젝트에서는 이런 전처리기 플래그를 어떻게 추가하면 좋을까?</p>
@@ -2051,7 +2051,7 @@ useNormalFeature()
   <entry>
     <id>https://seorenn.github.io/article/swift-fix-cannot-convert-to-binding.html</id>
     <title>SwiftUI에서 바인딩 매개변수를 일반 타입의 값으로 넘기기</title>
-    <updated>2024-07-16T13:47:35.579875+09:00</updated>
+    <updated>2024-12-26T16:17:41.411328+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>SwiftUI로 뷰를 만들다 해당 뷰를 테스트 해야 할 일이 있을 수 있다. 예를 들자면 프리뷰(SwiftUI Preview)용 코드를 작성할 때 등등 말이다. 그래서 시험용으로 몇몇 변수의 값을 하드코딩으로 넘기는 경우도 허다할 것이다.</p>
 <p>그런데 이런 경우 아래와 같은 형식의 오류를 종종 볼 수 있다.</p>
@@ -2075,7 +2075,7 @@ useNormalFeature()
   <entry>
     <id>https://seorenn.github.io/article/tucson-hev-nx4-facelift-review.html</id>
     <title>투싼 하이브리드 개인적인 평가</title>
-    <updated>2024-08-12T16:17:55.502847+09:00</updated>
+    <updated>2024-12-26T22:47:35.341628+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>투싼 하이브리드(NX4 HEV PE, 부분변경 모델) 전륜 모델을 2024년 1월 구입하여 지금껏 계속 운행하고 있다. 이 글은 이 차의 장단점이나 평가를 간단히 정리해 보는 글이며 지속적으로 업데이트 될 예정이다.</p>
 <p><img alt="더 뉴 투싼" src="../upload/202407152138-a18f7cbb.png"/>
@@ -2168,7 +2168,7 @@ useNormalFeature()
   <entry>
     <id>https://seorenn.github.io/log/20240714-00.html</id>
     <title>한 주간의 애플 소식들 24-07-14</title>
-    <updated>2024-07-14T21:16:03.564593+09:00</updated>
+    <updated>2024-12-26T15:38:28.276582+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 릴리즈 소식들</h2>
 <p>차세대 애플 플랫폼 OS 들의 세 번째 개발자 베타가 공개되었다.</p>
@@ -2223,7 +2223,7 @@ iOS 18에는 집중이나 휴식 모드용 새로운 배경음이 추가되었�
   <entry>
     <id>https://seorenn.github.io/article/python-exceptions.html</id>
     <title>파이썬 예외 처리 정리</title>
-    <updated>2024-07-13T17:48:27.146074+09:00</updated>
+    <updated>2024-12-26T15:28:57.887250+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 Python의 예외(Exceptions) 처리의 가장 기초적인 부분을 정리한다. 참고로 문법은 버전 3.x 이후이며 2.x 버전에서도 문법은 비슷하지만 약간 느슨(?)할 수도 있다.</p>
 <h2>예외 처리 기본 구조</h2>
@@ -2340,7 +2340,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/log/20240712-01.html</id>
     <title>미국 6월 PPI가 망한 것 같은데 미장은 왜 저럴까?</title>
-    <updated>2024-07-12T23:28:43.802269+09:00</updated>
+    <updated>2024-12-26T21:24:57.744861+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>오늘은 미국 6월 PPI가 발표되었다. 제목에도 적었지만 예상보다는 좀 높게 나왔다.</p>
 <ul>
@@ -2363,7 +2363,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/log/20240712-00.html</id>
     <title>어쩌면 끔찍한 이야기</title>
-    <updated>2024-07-12T10:31:16.482646+09:00</updated>
+    <updated>2024-12-26T22:47:22.348054+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>아이가 어린이집에 가야 할 시간에 있었던 작고 사소하지만 끔찍한 이야기다.</p>
 <p>아이는 준비를 다 마쳤는데 오늘도 뭔가를 먹으면서 가고 싶다고 한다. 밖에서 뭔가 먹는 걸 굉장히 즐기는 시기 같다. 어쨌든 늘 그랬다시피 작은 비닐 지퍼백을 하나 꺼내서 여기다 늘 먹던 젤리를 3개만 담게 했다.</p>
@@ -2399,7 +2399,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/log/20240711-02.html</id>
     <title>CPI가 잘 나왔지만 뭐 어쩌라는 걸까</title>
-    <updated>2024-07-11T23:44:28.845785+09:00</updated>
+    <updated>2024-12-26T21:25:01.783368+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>미국의 6월 CPI가 발표되었다. 정리하자면 아주 잘 나왔다.</p>
 <ul>
@@ -2426,7 +2426,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/log/20240711-01.html</id>
     <title>중요하지만 왠지 소외된 한국 기준금리 동결 소식</title>
-    <updated>2024-07-11T15:18:15.339181+09:00</updated>
+    <updated>2024-12-26T21:25:05.904208+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>한국은행 금통위는 상당히 중요한 이벤트임에도 <a href="../log/20240711-00.html">파월 청문회</a> 소식에 개인적으로 뇌리에서 잊혀져 버렸다. 어쨌든 간에 오늘 금통위가 있었고 결과야 다들 예상하던 그거가 나왔다.</p>
 <blockquote>
@@ -2445,7 +2445,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/log/20240711-00.html</id>
     <title>이번 청문회 파월의 발언은 어땠나</title>
-    <updated>2024-07-17T10:07:32.314446+09:00</updated>
+    <updated>2024-12-26T21:22:01.209091+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>연 이틀간 미 국회에서 열린 금융 관련 청문회가 화제를 모았다. 당연하게도 전 세계 경제에 막대한 영향을 끼치는 연준의 수장이 출석하기 때문이었다. 이미 잘 알려졌지만 그의 발언이 어땠는지 대충 정리해 보려고 한다.</p>
 <h2>첫째날 상원 청문회</h2>
@@ -2484,7 +2484,7 @@ except Exception:
   <entry>
     <id>https://seorenn.github.io/article/python-poetry.html</id>
     <title>Poetry 소개 및 간단한 사용법 정리</title>
-    <updated>2024-07-09T23:51:57.493326+09:00</updated>
+    <updated>2024-12-26T15:33:42.849154+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 그리고 현대적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.</p>
 <h2>프로젝트 시작하기</h2>
@@ -2552,7 +2552,7 @@ pytest = "^5.2"
   <entry>
     <id>https://seorenn.github.io/article/emacs-lisp-async-call.html</id>
     <title>Emacs Lisp에서 비동기 호출 코드 작성하기</title>
-    <updated>2024-07-08T14:43:09.496888+09:00</updated>
+    <updated>2024-12-26T15:57:15.239250+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>그렇게 자주 있는 일은 아니겠지만 이맥스의 UI를 얼려버릴 만큼 무거운 코드를 돌려야 할 일이 있다면 느낌이 어떨까. 이맥스가 얼어버리는 현상은 결코 유쾌하지는 못 할 것이다. 그동안 다른 작업도 못 하고 말이다.</p>
 <p>그렇다면 비동기로 호출하면 이런 문제를 해결할 수 있지 않을까? 간단하게 이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.</p>
@@ -2607,7 +2607,7 @@ pytest = "^5.2"
   <entry>
     <id>https://seorenn.github.io/log/20240707-00.html</id>
     <title>한 주간의 애플 소식들 24-07-07</title>
-    <updated>2024-08-02T16:31:06.975404+09:00</updated>
+    <updated>2024-12-26T15:38:34.772265+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발자 베타 릴리즈 소식들</h2>
 <ul>
@@ -2651,7 +2651,7 @@ macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재
   <entry>
     <id>https://seorenn.github.io/article/git-disable-pager.html</id>
     <title>Git에서 페이저 비활성화 하기</title>
-    <updated>2024-07-06T23:04:10.719958+09:00</updated>
+    <updated>2024-12-26T15:58:55.496725+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자.</p>
 <h2>페이저(Pager)</h2>
@@ -2678,7 +2678,7 @@ macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재
   <entry>
     <id>https://seorenn.github.io/log/20240705-00.html</id>
     <title>미국 임금 및 고용 지표는 정말 뭔가를 가리키는 듯</title>
-    <updated>2024-07-05T23:35:26.334863+09:00</updated>
+    <updated>2024-12-26T21:25:10.300542+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>어제에 이어 오늘도 고용과 관련해 상당히 중요한 지표들이 발표되었다.</p>
 <ul>
@@ -2698,7 +2698,7 @@ macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재
   <entry>
     <id>https://seorenn.github.io/article/git-stash.html</id>
     <title>Git에서 작업 내역을 임시로 저장하고 복원하기</title>
-    <updated>2024-07-05T16:18:53.068840+09:00</updated>
+    <updated>2024-12-26T15:58:41.552327+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Git 저장소로 관리하는 프로젝트 작업 중 원래 소스를 참조해야 해서 현재의 작업 내용을 잠깐 어딘가 보관해 두고 수정된 내역을 다시 원래대로 돌리고 싶을 때가 있다. 이럴 때는 stash 커맨드를 사용할 수 있는데 어떻게 사용하는지 대충 정리해 보자.</p>
 <h2>Git Stash</h2>

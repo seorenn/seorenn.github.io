@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-12-29T23:25:59.338397+09:00</updated>
+  <updated>2024-12-29T23:27:15.459273+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20241229-00.html</id>
     <title>유럽에서 일부 아이폰 판매 중단 등 한 주간의 애플 소식들 24-12-29</title>
-    <updated>2024-12-29T23:25:50.838302+09:00</updated>
+    <updated>2024-12-29T23:27:06.252873+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>시험삼아 애플 소식 모음을 깃헙 페이지로 옮겨서 올려보는 중이다. 이번 주는 딱히 특별한 애플 관련 소식은 없었던 듯하지만 어쨌든 모인 소식들을 정리해 본다.</p>
 <h2>소프트웨어 관련 소식들</h2>
@@ -22,7 +22,7 @@
 iOS 19를 지원할 것 같은 디바이스로 iPhone SE 2 혹은 그 이후, iPhone XR 및 XS 시리즈 및 그 이후 출시된 모든 아이폰에 해당될 것 같다.</p>
 <h2>일반적인 소식들</h2>
 <p><strong>USB-C 포트 강제화의 결말?:</strong><br/>
-- 유럽에서 애플이 iPhone 14 및 iPhone SE의 판매를 중지시킨 국가가 점점 늘어나 대부분의 유럽 국가에서 이들 제품을 구입할 수 없다고 한다.</p>
+유럽에서 애플이 iPhone 14 및 iPhone SE의 판매를 중지시킨 국가가 점점 늘어나 대부분의 유럽 국가에서 이들 제품을 구입할 수 없다고 한다.</p>
 <h2>루머 소식들</h2>
 <p><strong>Mac</strong>:<br/>
 M4 Macbook Air는 내년 봄 출시 가능성이 높아보인다.</p>

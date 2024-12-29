@@ -13,7 +13,57 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sat, 28 Dec 2024 00:34:03 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2024 23:25:59 +0900</lastBuildDate>
+    <item>
+      <title>유럽에서 일부 아이폰 판매 중단 등 한 주간의 애플 소식들 24-12-29</title>
+      <link>https://seorenn.github.io/log/20241229-00.html</link>
+      <description>&lt;p&gt;시험삼아 애플 소식 모음을 깃헙 페이지로 옮겨서 올려보는 중이다. 이번 주는 딱히 특별한 애플 관련 소식은 없었던 듯하지만 어쨌든 모인 소식들을 정리해 본다.&lt;/p&gt;
+&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Apple Platform OS&lt;/strong&gt;:&lt;br/&gt;
+iOS 19를 지원할 것 같은 디바이스로 iPhone SE 2 혹은 그 이후, iPhone XR 및 XS 시리즈 및 그 이후 출시된 모든 아이폰에 해당될 것 같다.&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;USB-C 포트 강제화의 결말?:&lt;/strong&gt;&lt;br/&gt;
+- 유럽에서 애플이 iPhone 14 및 iPhone SE의 판매를 중지시킨 국가가 점점 늘어나 대부분의 유럽 국가에서 이들 제품을 구입할 수 없다고 한다.&lt;/p&gt;
+&lt;h2&gt;루머 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;:&lt;br/&gt;
+M4 Macbook Air는 내년 봄 출시 가능성이 높아보인다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone&lt;/strong&gt;:&lt;br/&gt;
+가변 조리개 렌즈가 탑재될 하드웨어는 iPhone 17이 아닌 iPhone 18일 가능성이 제기되고 있다. 아이폰 SE 4는 내년 봄 출시 가능성이 높아보인다. 베젤 없는 아이폰은 2026년이 되기 전에는 볼 수 없을 것 같다. 하나의 유리판 디자인의 적용도 iPhone 18 이후에나 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPad&lt;/strong&gt;:&lt;br/&gt;
+신형 아이패드 11은 2025년 봄 즈음 iPadOS 18.3과 함께 출시될 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple Silicon&lt;/strong&gt;:&lt;br/&gt;
+M5 Pro 혹은 그 상위 등급의 프로세서는 생산 수율을 높이기 위해 CPU와 GPU가 분리될 수도 있다고 한다. 다만 성능을 희생시키지 않기 위해 칩을 쌓고 연결해서 패키징하는 칩렛 기술을 채택할 것으로 보인다. 특히 이 경우 타겟 디바이스에 최적화된 패키징을 할 수가 있으며 덕분에 서버 시장에 진출하게 될 가능성 또한 말해주고 있는 듯하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;그 외 루머 소식들&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;한때 AirPort가 다시 나온다는 루머가 돌긴 했지만 확률은 낮은 듯하다. 혹은 에어포트가 아닌 Apple TV나 HomePod과 같은 다른 형태의 제품에 기능이 포함되어 나올 가능성도 있다고 한다.&lt;/li&gt;
+&lt;li&gt;AirPod 3 개발 이슈에 심박수 및 체온 관련 기능 개발이 포함되어 있는 것 같다.&lt;/li&gt;
+&lt;li&gt;애플이 HomePod mini 2를 내년에 출시할 예정이라고 하는 듯하다.&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <content:encoded>&lt;p&gt;시험삼아 애플 소식 모음을 깃헙 페이지로 옮겨서 올려보는 중이다. 이번 주는 딱히 특별한 애플 관련 소식은 없었던 듯하지만 어쨌든 모인 소식들을 정리해 본다.&lt;/p&gt;
+&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Apple Platform OS&lt;/strong&gt;:&lt;br/&gt;
+iOS 19를 지원할 것 같은 디바이스로 iPhone SE 2 혹은 그 이후, iPhone XR 및 XS 시리즈 및 그 이후 출시된 모든 아이폰에 해당될 것 같다.&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;USB-C 포트 강제화의 결말?:&lt;/strong&gt;&lt;br/&gt;
+- 유럽에서 애플이 iPhone 14 및 iPhone SE의 판매를 중지시킨 국가가 점점 늘어나 대부분의 유럽 국가에서 이들 제품을 구입할 수 없다고 한다.&lt;/p&gt;
+&lt;h2&gt;루머 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;:&lt;br/&gt;
+M4 Macbook Air는 내년 봄 출시 가능성이 높아보인다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone&lt;/strong&gt;:&lt;br/&gt;
+가변 조리개 렌즈가 탑재될 하드웨어는 iPhone 17이 아닌 iPhone 18일 가능성이 제기되고 있다. 아이폰 SE 4는 내년 봄 출시 가능성이 높아보인다. 베젤 없는 아이폰은 2026년이 되기 전에는 볼 수 없을 것 같다. 하나의 유리판 디자인의 적용도 iPhone 18 이후에나 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPad&lt;/strong&gt;:&lt;br/&gt;
+신형 아이패드 11은 2025년 봄 즈음 iPadOS 18.3과 함께 출시될 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple Silicon&lt;/strong&gt;:&lt;br/&gt;
+M5 Pro 혹은 그 상위 등급의 프로세서는 생산 수율을 높이기 위해 CPU와 GPU가 분리될 수도 있다고 한다. 다만 성능을 희생시키지 않기 위해 칩을 쌓고 연결해서 패키징하는 칩렛 기술을 채택할 것으로 보인다. 특히 이 경우 타겟 디바이스에 최적화된 패키징을 할 수가 있으며 덕분에 서버 시장에 진출하게 될 가능성 또한 말해주고 있는 듯하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;그 외 루머 소식들&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;한때 AirPort가 다시 나온다는 루머가 돌긴 했지만 확률은 낮은 듯하다. 혹은 에어포트가 아닌 Apple TV나 HomePod과 같은 다른 형태의 제품에 기능이 포함되어 나올 가능성도 있다고 한다.&lt;/li&gt;
+&lt;li&gt;AirPod 3 개발 이슈에 심박수 및 체온 관련 기능 개발이 포함되어 있는 것 같다.&lt;/li&gt;
+&lt;li&gt;애플이 HomePod mini 2를 내년에 출시할 예정이라고 하는 듯하다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20241229-00.html</guid>
+      <pubDate>Sun, 29 Dec 2024 23:25:00 +0900</pubDate>
+    </item>
     <item>
       <title>환율이 도대체 왜 이런가</title>
       <link>https://seorenn.github.io/log/20241228-00.html</link>
@@ -40,7 +90,7 @@
 &lt;p&gt;이런 불확실성이 투자자들 눈에 곱게 보일 리가 없다.&lt;/p&gt;
 &lt;h2&gt;결론&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;한국은행의 금리 인하 + 트럼프 효과 + 기업 경쟁역 약화 + 계엄 + 탄핵 지연 = 원화 떡락&lt;/p&gt;
+&lt;p&gt;한국은행의 금리 인하 + 트럼프 효과 + 기업 경쟁력 약화 + 계엄 + 탄핵 지연 = 원화 떡락&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;가장 중요한 것은 '헌재가 분발해서 빨리 탄핵 결론을 내는 것' 같다. 그나마 자력으로 해결할 수 있는 것들 중 가장 크고 중요한 일이니 말이다. 최대한 빨리 다음 정부가 들어서서 트럼프 정부와의 협상을 시작해야 나머지 자력으로 해소 가능한 요인들을 처리할 수 있을 테니 말이다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;환율이 연일 미친듯이 뛰고 있다. 이대로면 1달러가 1500원을 넘는 게 판지는 절대 아닐 것 같다. 그렇다면 왜 환율이 이따위일까? 개인적인 판단으로 정리해 보자. 아마도 비슷한 이야기를 다른 사람들을 통해서도 자주 들을 수 있겠지만 말이다.&lt;/p&gt;
@@ -66,7 +116,7 @@
 &lt;p&gt;이런 불확실성이 투자자들 눈에 곱게 보일 리가 없다.&lt;/p&gt;
 &lt;h2&gt;결론&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;한국은행의 금리 인하 + 트럼프 효과 + 기업 경쟁역 약화 + 계엄 + 탄핵 지연 = 원화 떡락&lt;/p&gt;
+&lt;p&gt;한국은행의 금리 인하 + 트럼프 효과 + 기업 경쟁력 약화 + 계엄 + 탄핵 지연 = 원화 떡락&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;가장 중요한 것은 '헌재가 분발해서 빨리 탄핵 결론을 내는 것' 같다. 그나마 자력으로 해결할 수 있는 것들 중 가장 크고 중요한 일이니 말이다. 최대한 빨리 다음 정부가 들어서서 트럼프 정부와의 협상을 시작해야 나머지 자력으로 해소 가능한 요인들을 처리할 수 있을 테니 말이다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20241228-00.html</guid>
@@ -4707,46 +4757,6 @@ macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240707-00.html</guid>
       <pubDate>Sun, 07 Jul 2024 21:10:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>Git에서 페이저 비활성화 하기</title>
-      <link>https://seorenn.github.io/article/git-disable-pager.html</link>
-      <description>&lt;p&gt;Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자.&lt;/p&gt;
-&lt;h2&gt;페이저(Pager)&lt;/h2&gt;
-&lt;p&gt;페이저(pager)란 less나 more 같은 CLI 도구로 터미널에서 로그나 변경사항을 볼 때 내용을 끊어서 볼 수 있게 해주거나 스크롤을 할 수 있게 해주는 등 긴 내용의 텍스트를 터미널에서 편하게 볼 수 있게 해주는 도구다.&lt;/p&gt;
-&lt;p&gt;Git에서는 브랜치 목록이나 변경사항(diff) 등 여러 부분에서 기본적으로 페이저를 사용하도록 동작한다.&lt;/p&gt;
-&lt;h2&gt;페이저 임시로 비활성화 하기&lt;/h2&gt;
-&lt;p&gt;페이저는 편한 도구이지만 특정 상황, 예를 들어 다른 UNIX 유틸리티로 파이프를 통해 내용을 넘기려 할 때는 오히려 방해가 되는 요소다. 이런 경우는 페이저를 비활성화 하면 오히려 도움이 된다.&lt;/p&gt;
-&lt;p&gt;페이저 비활성화는 &lt;code&gt;--no-pager&lt;/code&gt;라는 옵션으로 간단히 할 수 있다. 예를 들어 코드 변경 사항을 페이저 없이 보는 커맨드는 아래와 같다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-bash"&gt;git --no-pager diff
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;참고로 &lt;code&gt;--no-pager&lt;/code&gt; 옵션은 위치에 따라 동작하지 않거나 없는 옵션이라고 하기도 하니 순서에 주의하자. 어쨌거나 필요한 커맨드 마다 매번 이 옵션을 입력하는 것은 번거롭기는 하다.&lt;/p&gt;
-&lt;h2&gt;페이저 비활성화 설정하기&lt;/h2&gt;
-&lt;p&gt;아예 페이저를 안 쓰겠다면 설정에서 비활성화 하는 방법이 있다.&lt;/p&gt;
-&lt;p&gt;예를 들어 변경사항(diff) 커맨드에서 페이저를 비활성화 하고 싶다면 아래와 같이 설정할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-bash"&gt;git config --global pager.diff false
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이 외에도 다양한 설정이 있으므로 필요한 부분은 찾아보자.&lt;/p&gt;
-&lt;p&gt;다만 Git을 터미널에서 쓰는 경우가 잦다면 추천하기는 좀 힘든 설정 같다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;Git에서 페이저를 임시로 혹은 설정으로 비활성화 하는 방법을 간단히 알아보자.&lt;/p&gt;
-&lt;h2&gt;페이저(Pager)&lt;/h2&gt;
-&lt;p&gt;페이저(pager)란 less나 more 같은 CLI 도구로 터미널에서 로그나 변경사항을 볼 때 내용을 끊어서 볼 수 있게 해주거나 스크롤을 할 수 있게 해주는 등 긴 내용의 텍스트를 터미널에서 편하게 볼 수 있게 해주는 도구다.&lt;/p&gt;
-&lt;p&gt;Git에서는 브랜치 목록이나 변경사항(diff) 등 여러 부분에서 기본적으로 페이저를 사용하도록 동작한다.&lt;/p&gt;
-&lt;h2&gt;페이저 임시로 비활성화 하기&lt;/h2&gt;
-&lt;p&gt;페이저는 편한 도구이지만 특정 상황, 예를 들어 다른 UNIX 유틸리티로 파이프를 통해 내용을 넘기려 할 때는 오히려 방해가 되는 요소다. 이런 경우는 페이저를 비활성화 하면 오히려 도움이 된다.&lt;/p&gt;
-&lt;p&gt;페이저 비활성화는 &lt;code&gt;--no-pager&lt;/code&gt;라는 옵션으로 간단히 할 수 있다. 예를 들어 코드 변경 사항을 페이저 없이 보는 커맨드는 아래와 같다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-bash"&gt;git --no-pager diff
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;참고로 &lt;code&gt;--no-pager&lt;/code&gt; 옵션은 위치에 따라 동작하지 않거나 없는 옵션이라고 하기도 하니 순서에 주의하자. 어쨌거나 필요한 커맨드 마다 매번 이 옵션을 입력하는 것은 번거롭기는 하다.&lt;/p&gt;
-&lt;h2&gt;페이저 비활성화 설정하기&lt;/h2&gt;
-&lt;p&gt;아예 페이저를 안 쓰겠다면 설정에서 비활성화 하는 방법이 있다.&lt;/p&gt;
-&lt;p&gt;예를 들어 변경사항(diff) 커맨드에서 페이저를 비활성화 하고 싶다면 아래와 같이 설정할 수 있다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="language-bash"&gt;git config --global pager.diff false
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이 외에도 다양한 설정이 있으므로 필요한 부분은 찾아보자.&lt;/p&gt;
-&lt;p&gt;다만 Git을 터미널에서 쓰는 경우가 잦다면 추천하기는 좀 힘든 설정 같다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/git-disable-pager.html</guid>
-      <pubDate>Sat, 06 Jul 2024 23:04:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

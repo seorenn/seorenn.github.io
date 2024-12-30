@@ -13,7 +13,67 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 30 Dec 2024 23:42:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 23:57:35 +0900</lastBuildDate>
+    <item>
+      <title>셸에서 이미지 크기 구하기</title>
+      <link>https://seorenn.github.io/article/getting-image-size-from-shell.html</link>
+      <description>&lt;p&gt;셸에서 CLI 커맨드로 사진 이미지의 가로 세로 크기를 알아내는 방법을 두 가지 방법에 관해 정리해 보자. 사실은 IamgeMagick를 이용하는 두 가지 방법이며 사실상 동일한 내용이기는 하다.&lt;/p&gt;
+&lt;p&gt;참고로 예제 커맨드 제일 앞의 &lt;code&gt;$&lt;/code&gt;는 셸 프롬프트다. 실제 커맨드는 이후에 나온 것들이니 이런 표현(?)에 익숙하지 않다면 주의하자.&lt;/p&gt;
+&lt;h2&gt;identify&lt;/h2&gt;
+&lt;p&gt;ImageMagick의 &lt;code&gt;identify&lt;/code&gt;라는 도구를 사용하면 이미지 정보를 구할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ identify image.jpg
+image.jpg JPEG 1280x758 1280x758+0+0 8-bit sRGB 324498B 0.000u 0:00.004
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;만약 여기서 픽셀 단위의 가로 세로 크기만 얻어내고 싶다면 &lt;code&gt;-format&lt;/code&gt; 옵션을 이용해 포매팅을 지정해 줄 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ identify -format &amp;quot;%wx%h&amp;quot; image.jpg
+1280x758
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 가공하면 파이프로 얻어서 다른 용도로 쓰기에 더욱 쉬울 것 같다.&lt;/p&gt;
+&lt;h2&gt;magick(or convert)&lt;/h2&gt;
+&lt;p&gt;ImageMagick의 핵심 커맨드인 &lt;code&gt;magick&lt;/code&gt;를 이용해도 동일한 일을 할 수 있다. 예를 들어 아래와 같은 형식으로 픽셀 단위의 가로 세로 크기를 동일한 포매팅 규격으로 얻을 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Desktop $ magick image.jpg -print &amp;quot;%wx%h&amp;quot; /dev/null
+1280x758
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;magick&lt;/code&gt; 커맨드가 생소하다면 이 도구를 좀 오래 쓴 것일 지도 모르겠다. 어쨌거나 이 커맨드는 &lt;code&gt;convert&lt;/code&gt;와 사용법이 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ convert image.jpg -print &amp;quot;%wx%h&amp;quot; /dev/null
+WARNING: The convert command is deprecated in IMv7, use &amp;quot;magick&amp;quot; instead of &amp;quot;convert&amp;quot; or &amp;quot;magick convert&amp;quot;
+
+1280x758
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;단지 메시지로 알 수 있겠지만 이제 &lt;code&gt;convert&lt;/code&gt; 커맨드는 만료되어 사라질 운명인 듯하다.&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;사실 &lt;code&gt;identify&lt;/code&gt; 커맨드는 &lt;code&gt;magick identify&lt;/code&gt; 커맨드의 단축 커맨드 같은 느낌이라고 생각할 수 있을 것 같다. 어쨌거나 같은 도구를 쓰는 동일한 방법 같지만 그래도 뭔가 느낌이 달라서 두 가지 방법으로 정의해 봤다.&lt;/p&gt;
+&lt;p&gt;개인적으로 이 기능은 셸 커맨드로 이미지 자동 최적화(압축)를 구현하기 위해 찾아보다 알게 된 정보들이다. 비슷한 용도를 원한다면 아마도 의미 있는 정보가 될 것 같다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;셸에서 CLI 커맨드로 사진 이미지의 가로 세로 크기를 알아내는 방법을 두 가지 방법에 관해 정리해 보자. 사실은 IamgeMagick를 이용하는 두 가지 방법이며 사실상 동일한 내용이기는 하다.&lt;/p&gt;
+&lt;p&gt;참고로 예제 커맨드 제일 앞의 &lt;code&gt;$&lt;/code&gt;는 셸 프롬프트다. 실제 커맨드는 이후에 나온 것들이니 이런 표현(?)에 익숙하지 않다면 주의하자.&lt;/p&gt;
+&lt;h2&gt;identify&lt;/h2&gt;
+&lt;p&gt;ImageMagick의 &lt;code&gt;identify&lt;/code&gt;라는 도구를 사용하면 이미지 정보를 구할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ identify image.jpg
+image.jpg JPEG 1280x758 1280x758+0+0 8-bit sRGB 324498B 0.000u 0:00.004
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;만약 여기서 픽셀 단위의 가로 세로 크기만 얻어내고 싶다면 &lt;code&gt;-format&lt;/code&gt; 옵션을 이용해 포매팅을 지정해 줄 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ identify -format &amp;quot;%wx%h&amp;quot; image.jpg
+1280x758
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 가공하면 파이프로 얻어서 다른 용도로 쓰기에 더욱 쉬울 것 같다.&lt;/p&gt;
+&lt;h2&gt;magick(or convert)&lt;/h2&gt;
+&lt;p&gt;ImageMagick의 핵심 커맨드인 &lt;code&gt;magick&lt;/code&gt;를 이용해도 동일한 일을 할 수 있다. 예를 들어 아래와 같은 형식으로 픽셀 단위의 가로 세로 크기를 동일한 포매팅 규격으로 얻을 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Desktop $ magick image.jpg -print &amp;quot;%wx%h&amp;quot; /dev/null
+1280x758
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;magick&lt;/code&gt; 커맨드가 생소하다면 이 도구를 좀 오래 쓴 것일 지도 모르겠다. 어쨌거나 이 커맨드는 &lt;code&gt;convert&lt;/code&gt;와 사용법이 동일하다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ convert image.jpg -print &amp;quot;%wx%h&amp;quot; /dev/null
+WARNING: The convert command is deprecated in IMv7, use &amp;quot;magick&amp;quot; instead of &amp;quot;convert&amp;quot; or &amp;quot;magick convert&amp;quot;
+
+1280x758
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;단지 메시지로 알 수 있겠지만 이제 &lt;code&gt;convert&lt;/code&gt; 커맨드는 만료되어 사라질 운명인 듯하다.&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;사실 &lt;code&gt;identify&lt;/code&gt; 커맨드는 &lt;code&gt;magick identify&lt;/code&gt; 커맨드의 단축 커맨드 같은 느낌이라고 생각할 수 있을 것 같다. 어쨌거나 같은 도구를 쓰는 동일한 방법 같지만 그래도 뭔가 느낌이 달라서 두 가지 방법으로 정의해 봤다.&lt;/p&gt;
+&lt;p&gt;개인적으로 이 기능은 셸 커맨드로 이미지 자동 최적화(압축)를 구현하기 위해 찾아보다 알게 된 정보들이다. 비슷한 용도를 원한다면 아마도 의미 있는 정보가 될 것 같다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/article/getting-image-size-from-shell.html</guid>
+      <pubDate>Mon, 30 Dec 2024 23:57:00 +0900</pubDate>
+    </item>
     <item>
       <title>유럽에서 일부 아이폰 판매 중단 등 한 주간의 애플 소식들 24-12-29</title>
       <link>https://seorenn.github.io/log/20241229-00.html</link>
@@ -4683,80 +4743,6 @@ pytest = &amp;quot;^5.2&amp;quot;
 &lt;/ul&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/emacs-lisp-async-call.html</guid>
       <pubDate>Mon, 08 Jul 2024 14:41:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>한 주간의 애플 소식들 24-07-07</title>
-      <link>https://seorenn.github.io/log/20240707-00.html</link>
-      <description>&lt;h2&gt;개발자 베타 릴리즈 소식들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS 14.6 beta 2&lt;/li&gt;
-&lt;li&gt;iOS 17.6 beta 2&lt;/li&gt;
-&lt;li&gt;iPadOS 17.6 beta 2&lt;/li&gt;
-&lt;li&gt;visionOS 1.3 beta 2&lt;/li&gt;
-&lt;li&gt;watchOS 10.6 beta 2&lt;/li&gt;
-&lt;li&gt;tvOS 17.6 beta 2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;모두 개발자 베타 형식으로 공개되어 수일 후 공공 베타로 전환되었다. 이전 베타와의 차이점은 버그 수정 외에 알려진 내역이 없다. 애초에 이 버전대는 마이너 업데이트 버전 형식을 띠고 있지만 사실상 버그 픽스 업데이트로 평가되고 있다.&lt;/p&gt;
-&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;AI 관련 소식들&lt;/strong&gt;&lt;br/&gt;
-애플지능이 비전프로에도 언젠가 지원될 것 같다. 하지만 의외로 가장 유용할 것으로 보이는 홈팟에는 지원 가능성이 보이지 않는다. 사유로는 너무 적은 RAM이 꼽히는 듯하다. 그보다 더 성능 좋은 아이폰 14 이하 제품도 지원 안 되니 당연할 지도 모르겠다. 한편 물 건너 간 것으로 평가되던 구글과의 협업설이 다시 나오기 시작했다. 그리고 애플은 OpenAI 이사회 참관인(Observer) 자격을 얻었다고 한다. 애플지능 일부 기능의 유료화 가능성도 제기되고 있다. &lt;a href="../log/20240611-00.html"&gt;WWDC24&lt;/a&gt;를 통해 소개된 애플지능 기능은 일제히 가을에 보기는 힘들 것 같고 일부는 내년에야 볼 수 있을 것 같다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;구형이 된 제품들&lt;/strong&gt;&lt;br/&gt;
-애플은 아이폰 X, 1세대 홈팟, 1세대 에어팟을 소위 '빈티지'로 분류했다. 빈티지의 경우 수리나 소프트웨어 지원이 끊기는 것은 아니지만 보통 2년 후에는 '구식' 제품으로 분류되어 공식 지원이 끝나게 된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NFC 확장 가능?&lt;/strong&gt;&lt;br/&gt;
-애플도 회원으로 있는 NFC 포럼에서는 여러 기능의 확장에 대해 의견이 오가고 있는 모양이다. 아직 애플은 아이폰이나 애플워치의 NFC를 개방하지도 않고 그래서 굉장히 제한적인 기능만 사용할 수 있는데, 유럽에서의 NFC 개방 움직임과 함께 이런 기능의 확장이 도입된다면 당연히 좋을 것이다. 애플도 회원사인 만큼 표준화가 된다면 애플도 이에 동의했다는 의미일 테고 말이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;EU 파편화?&lt;/strong&gt;&lt;br/&gt;
-EU 내에서 visionOS 1.2부터 대체 결제 옵션을 사용할 수 있다고 한다. 다른 OS들은 이미 지원하고 있었고 visionOS가 좀 늦었을 뿐이었다. 외부 결제를 쓸 수 있다 하더라도 애플 측에 수수료를 내야 하는 것은 여전히 특이하긴 하다. 하여간 유럽은 뭔가가 많이 다르다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;macOS 15 Sequoia, iOS 18, iPadOS 18&lt;/strong&gt;&lt;br/&gt;
-macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재생을 위한 용도 같다. iOS 18의 날씨 앱도 조금씩 개선되는 듯하다. iPadOS 18에서는 이모티콘 입력이 개선된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;수리용이성&lt;/strong&gt;&lt;br/&gt;
-뉴욕에서 수리권 준수 점검으로 애플의 제품 3개가 검사되었는데, 의외로 수리용이성에서 아이폰 15는 A 등급을 받았다. M3 맥북프로는 C 등급, 비전프로는 최악의 F 등급을 받았다. 다만 비전프로의 경우는 아직 수리 매뉴얼이나 부품 등을 구할 수 없다는 점이 최하 등급 받게 만든 이유인 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;뒤끝이 긴 애플?&lt;/strong&gt;&lt;br/&gt;
-에픽이 유럽 지역에서 자체 앱스토어를 통해 게임 업데이트를 제출했다는 소식이 얼마 전 전해졌었는데, 이제는 애플이 이를 고의로 지연시켰다고 에픽이 애플을 비난하는 소식이 알려졌다. 다만 현재 애플은 에픽의 대체 앱스토어 및 앱을 승인했다.&lt;/p&gt;
-&lt;h2&gt;각종 루머 소식들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;비전프로의 염가판에는 당연하겠지만 크기가 크고 (즉 집적도가 낮고) 낮은 해상도의 디스플레이가 지원될 것 같다.&lt;/li&gt;
-&lt;li&gt;아이폰 16 프로의 디스플레이는 밝기와 수명 개선을 위해 삼성의 M14 OLED 패널을 채택할 것으로 보인다. 카메라에는 5배 광학 줌이 지원될 것으로 보인다.&lt;/li&gt;
-&lt;li&gt;아이폰 16 시리즈의 카메라 센서 공급망 개편에 관한 루머가 나왔다. 소문으론 삼성전자의 부품이 추가되지 않을까 예상되는 듯하다.&lt;/li&gt;
-&lt;li&gt;일부에서 M4를 탑재한 일명 애플 TV 프로 제품을 출시해야 한다고 주장하는 듯하다. 일종의 게임 콘솔을 겸해서다.&lt;/li&gt;
-&lt;li&gt;M5는 칩을 3차원으로 쌓는 TSMC의 SoIC 기술을 사용할 것으로 보인다.&lt;/li&gt;
-&lt;li&gt;신형 아이패드로 유추되는 기기 식별자 4종이 발견되었다고 한다.&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <content:encoded>&lt;h2&gt;개발자 베타 릴리즈 소식들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS 14.6 beta 2&lt;/li&gt;
-&lt;li&gt;iOS 17.6 beta 2&lt;/li&gt;
-&lt;li&gt;iPadOS 17.6 beta 2&lt;/li&gt;
-&lt;li&gt;visionOS 1.3 beta 2&lt;/li&gt;
-&lt;li&gt;watchOS 10.6 beta 2&lt;/li&gt;
-&lt;li&gt;tvOS 17.6 beta 2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;모두 개발자 베타 형식으로 공개되어 수일 후 공공 베타로 전환되었다. 이전 베타와의 차이점은 버그 수정 외에 알려진 내역이 없다. 애초에 이 버전대는 마이너 업데이트 버전 형식을 띠고 있지만 사실상 버그 픽스 업데이트로 평가되고 있다.&lt;/p&gt;
-&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;AI 관련 소식들&lt;/strong&gt;&lt;br/&gt;
-애플지능이 비전프로에도 언젠가 지원될 것 같다. 하지만 의외로 가장 유용할 것으로 보이는 홈팟에는 지원 가능성이 보이지 않는다. 사유로는 너무 적은 RAM이 꼽히는 듯하다. 그보다 더 성능 좋은 아이폰 14 이하 제품도 지원 안 되니 당연할 지도 모르겠다. 한편 물 건너 간 것으로 평가되던 구글과의 협업설이 다시 나오기 시작했다. 그리고 애플은 OpenAI 이사회 참관인(Observer) 자격을 얻었다고 한다. 애플지능 일부 기능의 유료화 가능성도 제기되고 있다. &lt;a href="../log/20240611-00.html"&gt;WWDC24&lt;/a&gt;를 통해 소개된 애플지능 기능은 일제히 가을에 보기는 힘들 것 같고 일부는 내년에야 볼 수 있을 것 같다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;구형이 된 제품들&lt;/strong&gt;&lt;br/&gt;
-애플은 아이폰 X, 1세대 홈팟, 1세대 에어팟을 소위 '빈티지'로 분류했다. 빈티지의 경우 수리나 소프트웨어 지원이 끊기는 것은 아니지만 보통 2년 후에는 '구식' 제품으로 분류되어 공식 지원이 끝나게 된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NFC 확장 가능?&lt;/strong&gt;&lt;br/&gt;
-애플도 회원으로 있는 NFC 포럼에서는 여러 기능의 확장에 대해 의견이 오가고 있는 모양이다. 아직 애플은 아이폰이나 애플워치의 NFC를 개방하지도 않고 그래서 굉장히 제한적인 기능만 사용할 수 있는데, 유럽에서의 NFC 개방 움직임과 함께 이런 기능의 확장이 도입된다면 당연히 좋을 것이다. 애플도 회원사인 만큼 표준화가 된다면 애플도 이에 동의했다는 의미일 테고 말이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;EU 파편화?&lt;/strong&gt;&lt;br/&gt;
-EU 내에서 visionOS 1.2부터 대체 결제 옵션을 사용할 수 있다고 한다. 다른 OS들은 이미 지원하고 있었고 visionOS가 좀 늦었을 뿐이었다. 외부 결제를 쓸 수 있다 하더라도 애플 측에 수수료를 내야 하는 것은 여전히 특이하긴 하다. 하여간 유럽은 뭔가가 많이 다르다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;macOS 15 Sequoia, iOS 18, iPadOS 18&lt;/strong&gt;&lt;br/&gt;
-macOS 15에 HDMI Passthrough가 지원되는데 주로 Dolby Atmos 오디오 재생을 위한 용도 같다. iOS 18의 날씨 앱도 조금씩 개선되는 듯하다. iPadOS 18에서는 이모티콘 입력이 개선된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;수리용이성&lt;/strong&gt;&lt;br/&gt;
-뉴욕에서 수리권 준수 점검으로 애플의 제품 3개가 검사되었는데, 의외로 수리용이성에서 아이폰 15는 A 등급을 받았다. M3 맥북프로는 C 등급, 비전프로는 최악의 F 등급을 받았다. 다만 비전프로의 경우는 아직 수리 매뉴얼이나 부품 등을 구할 수 없다는 점이 최하 등급 받게 만든 이유인 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;뒤끝이 긴 애플?&lt;/strong&gt;&lt;br/&gt;
-에픽이 유럽 지역에서 자체 앱스토어를 통해 게임 업데이트를 제출했다는 소식이 얼마 전 전해졌었는데, 이제는 애플이 이를 고의로 지연시켰다고 에픽이 애플을 비난하는 소식이 알려졌다. 다만 현재 애플은 에픽의 대체 앱스토어 및 앱을 승인했다.&lt;/p&gt;
-&lt;h2&gt;각종 루머 소식들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;비전프로의 염가판에는 당연하겠지만 크기가 크고 (즉 집적도가 낮고) 낮은 해상도의 디스플레이가 지원될 것 같다.&lt;/li&gt;
-&lt;li&gt;아이폰 16 프로의 디스플레이는 밝기와 수명 개선을 위해 삼성의 M14 OLED 패널을 채택할 것으로 보인다. 카메라에는 5배 광학 줌이 지원될 것으로 보인다.&lt;/li&gt;
-&lt;li&gt;아이폰 16 시리즈의 카메라 센서 공급망 개편에 관한 루머가 나왔다. 소문으론 삼성전자의 부품이 추가되지 않을까 예상되는 듯하다.&lt;/li&gt;
-&lt;li&gt;일부에서 M4를 탑재한 일명 애플 TV 프로 제품을 출시해야 한다고 주장하는 듯하다. 일종의 게임 콘솔을 겸해서다.&lt;/li&gt;
-&lt;li&gt;M5는 칩을 3차원으로 쌓는 TSMC의 SoIC 기술을 사용할 것으로 보인다.&lt;/li&gt;
-&lt;li&gt;신형 아이패드로 유추되는 기기 식별자 4종이 발견되었다고 한다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20240707-00.html</guid>
-      <pubDate>Sun, 07 Jul 2024 21:10:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

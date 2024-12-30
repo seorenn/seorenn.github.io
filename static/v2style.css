@@ -239,11 +239,23 @@ h6 {
     padding-bottom: 0;
     border-top: none;
 }
+.content h2:before {
+    content: "# ";
+    color: #888;
+    font-style: italic;
+    font-size: 1.1rem;
+}
 
 .content h3 {
     font-size: 1rem;
     margin-top: 2.0rem;
     margin-bottom: 1.8rem;
+}
+.content h3:before {
+ 	content: "## ";
+	color: #888;
+	font-style: italic;
+	font-size: 0.95rem;
 }
 
 .content h4 {

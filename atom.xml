@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2024-12-30T23:57:35.429876+09:00</updated>
+  <updated>2025-01-01T00:08:38.196602+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,27 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250101-00.html</id>
+    <title>2024년이 가고 2025년 새해가 밝았다</title>
+    <updated>2025-01-01T00:08:24.237319+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>다사다난했던 2024년이 순식간에 지나가 버렸다. 너무나 많은 일들이 지나갔다. 작은 일도 아니고 큰 일들이 말이다. 그것도 연말에 아주 큰 일이 지나가고 그 여파가 정말 크게 다가왔는데 거기서 또 더 큰 일이 터질 줄 누가 알았을까.</p>
+<blockquote>
+<p>사고로 유명을 달리하신 모든 분들의 명복을 빕니다. 부디 좋은 곳에서 편히 쉬시기 바랍니다.</p>
+</blockquote>
+<p>2025년은 정말 좋은 일들이 가득했으면 좋겠다. 당장 개인적인 문제부터 시작해서 우리 가족 모두의 걸림돌이 치워졌으면 좋겠다. 경기가 굉장히 나빠진 상황이라 쉽진 않겠지만 말이다. 무엇보다 이 상황을 만든 어떤 윗대가리의 폭탄이 빨리 해체되었으면 좋겠다.</p>
+<p>이제 2025년에는 무엇을 어떻게 해야 할까? 많은 고민이 지나가지만 명확한 해답이 없다. 뭔가 늙어가면서 보수적으로 바뀌는 건지 새로운 일에 접근하는 것에 더욱 큰 부담이 느껴진다.</p>
+<p>안 좋은 생각이 자꾸 떠올라서 회상은 포기하고 글은 여기서 마무리 해야겠다. 어쨌든 인사로 마무리를 해야 할 것 같다.</p>
+<blockquote>
+<p>새해 복 많이 받으시고 하시는 일과 소망 모두 성취하실 수 있길 기원합니다.</p>
+</blockquote>
+<p>하루의 있었던 일들을 기록으로 남기는 건 개인적인 목적으로는 의미는 있을 것 같다. 앞으로도 무의미한 이상한 글들이 싸질러지더라도 양해를 부탁드릴 수밖에 없을 것 같다. 그럼 이만....</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250101-00.html"/>
+    <summary type="text">다사다난했던 2024년이 순식간에 지나가 버렸다. 너무나 많은 일들이 지나갔다. 작은 일도 아니고 큰 일들이 말이다. 그것도 연말에 아주 큰 일이 지나가고 그 여파가 정말 크게 다가왔는데 거기서 또 더 큰 일이 터질 줄 누가 알았을까.</summary>
+    <published>2025-01-01T00:08:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/article/getting-image-size-from-shell.html</id>
     <title>셸에서 이미지 크기 구하기</title>
@@ -2670,60 +2691,5 @@ pytest = "^5.2"
     <link href="https://seorenn.github.io/article/python-poetry.html"/>
     <summary type="text">Poetry - Python용 패키징 겸 의존성 관리 도구의 간단한 사용법</summary>
     <published>2024-07-09T23:40:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/emacs-lisp-async-call.html</id>
-    <title>Emacs Lisp에서 비동기 호출 코드 작성하기</title>
-    <updated>2024-12-26T15:57:15.239250+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>그렇게 자주 있는 일은 아니겠지만 이맥스의 UI를 얼려버릴 만큼 무거운 코드를 돌려야 할 일이 있다면 느낌이 어떨까. 이맥스가 얼어버리는 현상은 결코 유쾌하지는 못 할 것이다. 그동안 다른 작업도 못 하고 말이다.</p>
-<p>그렇다면 비동기로 호출하면 이런 문제를 해결할 수 있지 않을까? 간단하게 이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.</p>
-<h2>run-with-idle-timer</h2>
-<pre><code class="language-lisp">(run-with-idle-timer 3 nil #'my-function)
-</code></pre>
-<p><code>run-with-idle-timer</code> 함수는 지정된 시간이 지난 후 이맥스가 쉬는(idle) 도중에 지정한 함수를 비동기로 호출한다.</p>
-<p>두 번째 인자는 반복 여부라 원하는 반복 횟수를 적어줄 수도 있다.</p>
-<h2>run-with-timer</h2>
-<pre><code class="language-lisp">(run-with-timer 3 nil #'my-function)
-</code></pre>
-<p><code>run-with-timer</code> 함수도 지정된 시간이 지난 후 지정한 함수를 비동기로 호출한다. 다만 이맥스가 쉬든 말든 무작정 호출하는 듯하다.</p>
-<p>역시나 두 번째 인자로 반복 횟수를 지정할 수 있다.</p>
-<h2>async.el</h2>
-<p>순수하게 비동기 호출만을 생각하고 외부 패키지에 대해 열려있다면(?) async.el 혹은 emacs-async라는 패키지를 사용할 수도 있다. 이 패키지 내의 <code>async-start</code> 함수를 이용할 수 있다고 한다.</p>
-<blockquote>
-<p>참고로 이 항목은 직접 돌려보진 않았고 그저 메모 목적으로 작성한다.</p>
-</blockquote>
-<pre><code class="language-lisp">(async-start
-  (lambda () (my-function)) 
-  ;; callback
-  (lambda (result) 
-    (message "Result: %s" result)))
-</code></pre>
-<p>이 <code>async-start</code> 함수는 두 개의 함수를 인자로 넘긴다. 첫 인자가 비동기로 호출할 함수이고 두 번째 인자는 비동기 실행 결과를 받아서 동작하는 함수다. 즉 위의 예의 경우 my-function이라는 함수가 비동기로 호출된 후 이 함수의 결과가 두 번째 인자의 함수에 첫 인자로 전달된다.</p>
-<p>만약 결과를 받을 필요가 없다면 무시(ignore) 심볼을 남겨주자.</p>
-<pre><code class="language-lisp">(async-start
-  (lambda () (my-function)) 
-  'ignore)
-</code></pre>
-<h2>쉴 시간 주기</h2>
-<p>이 항목은 비동기 처리 자체와는 관계가 없지만 약간의 덤이다. </p>
-<p>단순 비동기 호출이라도 과도한 작업은 당연하게도 이맥스를 얼려버리는 현상이 나타날 수밖에 없다. 이를 피하기 위해선 비동기 코드의 루프에서 쉴 시간을 조금씩 주는 편이 좋다. 예를 들자면 <code>sleep-for</code> 함수가 있다.</p>
-<pre><code class="language-lisp">(sleep-for 1)  ;; wait for 1 seconds
-</code></pre>
-<p>쉬게만 한다면 위의 코드로도 충분하겠지만 좀 더 깔끔하게(?) 쉬려면 <code>sit-for</code>를 사용하는 편이 좋다.</p>
-<pre><code class="language-lisp">(sit-for 1)  ;; redisplay and wait for 1 seconds
-</code></pre>
-<p><code>sit-for</code>는 <code>sleep-for</code>와 비슷하지만 화면을 한번 갱신시켜 준다는 점이 특징이다.  그 외에 입력이 가능하게 되면 멈추는 등 비동기 작업 용도로는 <code>sleep-for</code>에 비해 약간읜 전문적(?)인 느낌이다.</p>
-<p>참고로 쉬는 시간은 초(seconds) 단위인데 소수점 단위도 된다. 즉 0.1초나 0.01초 정도로 짧게 쉬는 것도 가능하다.</p>
-<h2>관련된 글들</h2>
-<ul>
-<li><a href="https://github.com/jwiegley/emacs-async" target="_blank">emacs-async📎</a></li>
-<li><a href="../article/emacs-lisp-single-quote.html">Emacs Lisp에서 작은따옴표의 의미</a></li>
-<li><a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/emacs-lisp-async-call.html"/>
-    <summary type="text">이맥스에서 비동기로 코드를 호출하는 방법을 정리해 보자.</summary>
-    <published>2024-07-08T14:41:00+09:00</published>
   </entry>
 </feed>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-01-01T00:27:01.318934+09:00</updated>
+  <updated>2025-01-02T11:38:58.066252+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,32 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/article/breach-of-duty.html</id>
+    <title>업무상 배임은 무슨 의미일까?</title>
+    <updated>2025-01-02T11:38:38.600787+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>경기가 나빠서인지 금융사의 '업무상 배임'이라는 사고 기사가 최근 수 년 간 자주 보이는 것 같다. 이게 분명 누군가가 돈을 훔친다는 의미 같긴 한데 도대체 이 '업무상 배임'은 정확히 무슨 의미일까?</p>
+<h2>업무상 배임</h2>
+<blockquote>
+<p>업무상 배임(業務上背任): 타인의 사무를 처리하는 자가 본인이나 제 3자의 재산상 이득을 위해 재산상 손해를 가하는 범죄</p>
+</blockquote>
+<p>뭔가 어려운 한자가 조합된 단어인 것 같으니 일단은 분리해서 이해해야 할 것 같다.</p>
+<p><strong>업무</strong>: '업무'는 우리가 일상적으로 쓰는 그 의미가 맞을 것 같다. 직장에서 하는 반복적인 일 말이다. </p>
+<p><strong>배임과 배임죄</strong>: 배임은 '역할을 잘못 함' 정도로 이해할 수 있을 듯하지만 일반적으로는 공무원이나 회사원이 자신이나 누군가의 이익을 위해 고의로 회사나 국가 혹은 다른 누군가에게 재산상 손해를 입힌 경우라고 하는 듯하다. 그리고 이 경우를 처벌하기 위한 죄목이 바로 '배임죄'라고 한다.</p>
+<h2>다시 정리해 보자</h2>
+<p>결과적으로 '업무상 배임'은 '배임'의 한 종류다. 누군가 고의로 자신 혹은 다른 누군가에게 돈을 빼돌리거나 편의를 제공했다는 점에서 '배임'과 '업무상 배임'은 비슷하다. 그저 업무상 배임은 업무를 특정하게 진행해서 회사나 국가에도 피해를 끼친다는 점이 추가되는 것 같다.</p>
+<p>일반적인 배임죄 보다 업무상 배임죄가 더 무거운 죄라고 하는데 회사와 고객 양쪽에 피해를 입히게 되니 당연할 지도 모르겠다.</p>
+<h2>결론 및 여담</h2>
+<p>뭐 어렵게 정리할 필요는 없을 것 같은데 그냥 <strong>어떤 회사의 누군가가 비리를 저질렀다</strong> 정도로 이해해도 틀린 말은 아닐 것 같다. 당연히 이런 일이 벌어지면 그 기업의 관리 책임도 있는 만큼 이익을 본 이를 제외한 모두에게 안 좋은 일이 될 것 같다.</p>
+<p>보통 은행에서 발생하는 업무상 배임의 대표적인 예는 부적격 대출이 대표적인 듯하다. 담보 가치를 속이는 등의 위조 자료 등에 눈을 감아주고 대출을 승인하는 경우 말이다. 이런 경우가 최근 기사로 자주 보인 형태 같다.</p>
+<p>업무상 배임은 도둑질에 준하는 행위라 당연히 처벌이 이뤄져야 하는 일임에는 분명해 보인다. 하지만 왜 이렇게 끊임없이 발생하는 걸까? 아마도 범죄로 취득한 이익이 제대로 회수되지 못 하는 현실이 큰 계기가 되는 게 아닐까 생각되기도 한다. 과연 이 문제는 바로 잡는 게 힘든 것일까?</p>
+<p>어쨌든 업무상 배임에 관해서는 이렇게 간단히 정리해 봤다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/article/breach-of-duty.html"/>
+    <summary type="text">경기가 나빠서인지 금융사의 '업무상 배임'이라는 사고 기사가 최근 수 년 간 자주 보이는 것 같다. 이게 분명 누군가가 돈을 훔친다는 의미 같긴 한데 도대체 이 '업무상 배임'은 정확히 무슨 의미일까?</summary>
+    <published>2025-01-02T11:38:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250101-00.html</id>
     <title>2024년이 가고 2025년 새해가 밝았다</title>
@@ -2623,73 +2649,5 @@ except Exception:
     <link href="https://seorenn.github.io/log/20240711-00.html"/>
     <summary type="text">연 이틀간 열린 미국 국회 금융 청문회에서 파월이 한 발언들을 간략히 정리하는 글</summary>
     <published>2024-07-11T13:43:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/python-poetry.html</id>
-    <title>Poetry 소개 및 간단한 사용법 정리</title>
-    <updated>2024-12-26T15:33:42.849154+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>Poetry는 Python용 패키징 겸 의존성 관리를 도와주는 도구로 pip나 virtualenv를 좀 더 포괄적으로 그리고 현대적으로 사용할 수 있게 도와준다. 이 Poetry의 사용법을 간단히 알아보자.</p>
-<h2>프로젝트 시작하기</h2>
-<p>Poetry는 당연하겠지만 프로젝트 단위로 사용할 수 있다. 그래서 사용하기 위해선 아래와 같이 <code>new</code> 커맨드로 프로젝트를 생성해야 한다.</p>
-<pre><code class="language-bash">poetry new PROJECT_NAME
-</code></pre>
-<p>이렇게 하면 몇몇 확인 단계를 거쳐 새로운 파이썬 프로젝트를 생성할 수 있다.</p>
-<p>만약 이미 존재하는 프로젝트에 Poetry 환경만 구성하고 싶다면 아래와 같이 <code>init</code> 커맨드를 사용해 보자.</p>
-<pre><code class="language-bash">poetry init
-</code></pre>
-<p>위 두 커맨드 모두 핵심으로 프로젝트 루트에 <code>pyproject.toml</code>이라는 파일을 생성한다. 이름대로 프로젝트 정의 및 의존성 목록을 담은 중요한 파일이다.</p>
-<h2>의존성 관리하기</h2>
-<p>프로젝트에 의존성을 추가하려면 아래와 같이 <code>add</code> 커맨드를 사용하면 된다. 여기에 특정 버전을 명시할 수도 있고, 개발 모드 전용 의존성일 경우 <code>--dev</code> 플래그도 추가해 줄 수 있다.</p>
-<pre><code class="language-bash">poetry add PACKAGE_NAME
-poetry add ANOTHER_PACKAGE_NAME==x.y.z
-poetry add --dev PACKAGE_NAME
-</code></pre>
-<p>이 명령들은 프로젝트의 virtualenv 환경에 자동으로 설치까지 진행된다.</p>
-<p>의존성 패키지를 삭제하려면 <code>remove</code> 커맨드를 사용할 수 있다.</p>
-<pre><code class="language-python">poetry remove PACKAGE_NAME
-</code></pre>
-<p>이 외에 사용하는 의존성 패키지들의 버전을 일괄적으로 업데이트 하려면 <code>update</code> 커맨드를 사용할 수 있다.</p>
-<pre><code class="language-bash">poetry update
-</code></pre>
-<p>물론 <code>pyproject.toml</code> 스펙에 적힌 한도 내에서 최신 버전으로 업데이트 된다.</p>
-<h2>수작업으로 의존성 관리하기</h2>
-<p>CLI 커맨드 보다 수작업을 좋아한다면 <code>pyproject.toml</code> 파일을 열어서 직접 명시해 주는 방법도 있다. 예를 들자면 이런 식이다.</p>
-<pre><code class="language-text">[tool.poetry.dependencies]
-python = "^3.8"
-somepackage = "^3.10.0"
-
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
-</code></pre>
-<p>버전 앞에 붙인 꺽쇠(<code>^</code>)의 의미는 '메이저 업데이트를 제외한 최신 버전' 이라는 의미이다. 즉 <code>^3.10.0</code>이라는 의미는 <code>3.x.y</code> 버전 중 가장 최신 버전을 사용한다는 의미다.</p>
-<p>이렇게 작성한 후 <code>install</code> 커맨드를 사용하면 프로젝트의 virtualenv 환경에 일괄 패키지 설치가 가능하다.</p>
-<pre><code class="language-python">poetry install
-</code></pre>
-<p>위 커맨드를 보고 <code>pip install -r requirements.txt</code>라는 커맨드가 떠오른다면 정답이다. 즉 이 커맨드를 <code>poetry install</code> 커맨드로 완전히 대체할 수 있다.</p>
-<h2>프로젝트 실행하기</h2>
-<p>프로젝트를 실행시키기 위해서는 <code>run</code> 커맨드를 사용하면 된다. 예를 들어 실행시킬 엔트리포인트 파일이 <code>main.py</code>라면 아래와 같은 식이다.</p>
-<pre><code class="language-bash">poetry run python main.py
-</code></pre>
-<p>이 경우 해당 프로젝트의 virtualenv 환경에서 <code>run</code> 뒤의 커맨드가 실행되는 식이다.</p>
-<h2>virtualenv 셸 얻기</h2>
-<p>프로젝트의 virtualenv 환경에서 여러 가지를 시험해 보기 위해 셸을 얻고 싶다면 단순하게 <code>shell</code> 커맨드를 사용하면 된다.</p>
-<pre><code class="language-bash">poetry shell
-</code></pre>
-<h2>Docker와 Poetry</h2>
-<p>Poetry의 특징은 virtualenv 환경을 자동으로 통합하는 것이다. 그리고 Docker 컨테이너는 프로젝트 단위로 독립된 환경을 구축하려는 의도가 있다. 결과적으로 해당 프로젝트를 Docker 컨테이너 내에서 돌린다면 Poetry의 virtualenv 환경 통합 기능은 불필요할 수도 있다.</p>
-<p>그럴 때는 간단하게 아래 커맨드로 virtualenv 환경을 생성하지 않도록 설정해 줄 수 있다.</p>
-<pre><code class="language-bash">poetry config virtualenvs.create false
-</code></pre>
-<p>위 커맨드는 Poetry의 virtualenv를 비활성화 시키므로 <code>Dockerfile</code> 등에 <code>poetry install</code> 커맨드를 실행하기 전에 동작하도록 작성하면 될 것 같다.</p>
-<h2>기타</h2>
-<p>Poetry 자체를 업그레이드 하려면 <code>self update</code> 커맨드를 사용해 보자.</p>
-<pre><code class="language-python">poetry self update
-</code></pre>
-<p>다만 Homebrew 등의 다른 패키지 매니저를 통해 Poetry를 설치했다면 위 커맨드를 신경 쓸 필요는 없을 것 같다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/article/python-poetry.html"/>
-    <summary type="text">Poetry - Python용 패키징 겸 의존성 관리 도구의 간단한 사용법</summary>
-    <published>2024-07-09T23:40:00+09:00</published>
   </entry>
 </feed>

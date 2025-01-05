@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-01-05T23:33:34.506414+09:00</updated>
+  <updated>2025-01-05T23:34:47.036126+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -13,8 +13,8 @@
   <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
     <id>https://seorenn.github.io/log/20250105-00.html</id>
-    <title>별로 특별한 일은 없었던 한 주간의 애플 소식들 24-12-29</title>
-    <updated>2025-01-05T23:32:39.749298+09:00</updated>
+    <title>별로 특별한 일은 없었던 한 주간의 애플 소식들 25-01-05</title>
+    <updated>2025-01-05T23:34:40.902170+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>일반적인 소식들</h2>
 <p><strong>용량이 늘어가는 애플 인텔리전스</strong>: Apple Intelligence는 iOS 18.2 들어 기존에 비해 거의 두 배의 저장공간을 필요로 하는 모양이다. 이유로는 Apple Intelligence 기능이 늘어나서일 가능성이 가장 객관적이겠지만 Apple Intelligence를 구동하기에 iPhone의 램이 부족한 것일 지도 모른다.</p>

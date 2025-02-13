@@ -292,7 +292,7 @@ h6 {
     /*white-space: pre-wrap;*/
 }
 
-.content code {
+.content p code {
     padding: 2px 4px 2px 4px;
     font-family: monospace;
     background: #f4f4f4;
@@ -621,7 +621,7 @@ footer {
         background-color: #21252b; /* TODO */
     }
 
-    .content code {
+    .content p code {
         background-color: #21252b; /* TODO */
     }
 

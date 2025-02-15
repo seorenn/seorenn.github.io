@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록 - Seorenn</title>
-    <meta name="twitter:title" content="라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록" />
-    <meta name="og:title" content="라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록" />
-    <meta name="description" content="어느 날 첫째가 갑자기 피자를 요구하며 익룡 소리를 내면서 저녁 밥을 거부하기 시작했다. 그래서 '라마노 화덕피자&파스타'라는 이름의 새로운 가게를 발견하여 여기서 꽈뜨로포르마지피자와 스파게티감베리를 주문하고 먹어봤다." />
-    <meta name="twitter:description" content="어느 날 첫째가 갑자기 피자를 요구하며 익룡 소리를 내면서 저녁 밥을 거부하기 시작했다. 그래서 '라마노 화덕피자&파스타'라는 이름의 새로운 가게를 발견하여 여기서 꽈뜨로포르마지피자와 스파게티감베리를 주문하고 먹어봤다." />
-    <meta name="og:description" content="어느 날 첫째가 갑자기 피자를 요구하며 익룡 소리를 내면서 저녁 밥을 거부하기 시작했다. 그래서 '라마노 화덕피자&파스타'라는 이름의 새로운 가게를 발견하여 여기서 꽈뜨로포르마지피자와 스파게티감베리를 주문하고 먹어봤다." />
-    <link rel="canonical" href="https://seorenn.github.io/log/20250205-01.html" />
-    <meta property="og:url" content="https://seorenn.github.io/log/20250205-01.html" />
+    <title>Emacs에서 함수 퍼포먼스 측정하기(Profiler) - Seorenn</title>
+    <meta name="twitter:title" content="Emacs에서 함수 퍼포먼스 측정하기(Profiler)" />
+    <meta name="og:title" content="Emacs에서 함수 퍼포먼스 측정하기(Profiler)" />
+    <meta name="description" content="Emacs든 뭐든 가장 사람을 괴롭히는 버그로 사용성을 떨어뜨리는 퍼포먼스 문제가 있는데 이런 문제를 경험했을 때 무엇이 원인인지 어떻게 알 수 있을까?" />
+    <meta name="twitter:description" content="Emacs든 뭐든 가장 사람을 괴롭히는 버그로 사용성을 떨어뜨리는 퍼포먼스 문제가 있는데 이런 문제를 경험했을 때 무엇이 원인인지 어떻게 알 수 있을까?" />
+    <meta name="og:description" content="Emacs든 뭐든 가장 사람을 괴롭히는 버그로 사용성을 떨어뜨리는 퍼포먼스 문제가 있는데 이런 문제를 경험했을 때 무엇이 원인인지 어떻게 알 수 있을까?" />
+    <link rel="canonical" href="https://seorenn.github.io/log/20250206-01.html" />
+    <meta property="og:url" content="https://seorenn.github.io/log/20250206-01.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -70,16 +70,16 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록</h1>
+          <h1>Emacs에서 함수 퍼포먼스 측정하기(Profiler)</h1>
           <div class="title-date">
             
               
-                <a href="../subject/meal.html">식사</a>
+                <a href="../subject/emacs.html">Emacs</a>
               
               <span>//</spans>
             
             
-              <span>2025년 02월 05일 작성</span>
+              <span>2025년 02월 06일 작성</span>
             
             
               <span>//</span>
@@ -89,26 +89,23 @@
             
           </div>
         </header>
-        <p>가까운 옛날(?) 이탈리아 여행을 다녀오고 나서 생긴 이상한 증상(?)이 있다. 바로 이탈리아식 화덕피자가 종종 땡기는 증상이다. 그래서 종종 집 주변 화덕피자 가게를 찾아보고 시켜 먹어보곤 했다. 불행히도 대부분은 꽝이었다. 어떤 건 화덕에 구운 것 같긴 한데 미국 피자 맛이 났고, 어떤 곳은 이탈리아 피자를 화덕이 아닌 오븐에 구운 듯한 맛이었다. 이탈리아식 화덕피자에 대한 갈망이 컸기에 실망도 컸고 욕구불만(?)은 쌓여가기만 하고 있었다.</p>
-<p>그러던 어느 날, 첫째가 갑자기 피자를 요구하며 익룡 소리를 내면서 저녁 밥을 거부하기 시작했다. 어떻게든 말로 설득을 시도했지만 공룡(?)에겐 말이 안 통하니 결국 포기했다. 그래서 배달앱을 통해 여기저기를 찾아보다 '라마노 화덕피자&amp;파스타'라는 이름의 새로운 가게를 발견하여 여기서 제목 처럼 꽈뜨로포르마지피자와 스파게티감베리를 주문하고 먹어봤다. 참고로 매장은 구로디지털단지역 근처였는데 체인점은 아닌 것 같았다. </p>
-<p><em>메뉴명이 띄어쓰기가 안 되어서 읽기 괴랄하지만 원문이 이러니 어쩔 수 없이 그대로 쓴다.</em></p>
-<h2>꽈뜨로포르마지피자</h2>
-<p><img alt="먹히다 찍힌 꽈뜨로포르마지피자" src="../upload/202502151517-6eab603d.jpg" />
-<em>먹히다 찍힌 꽈뜨로포르마지피자</em></p>
-<p>꽈뜨로포르마지(quattro formaggi)피자는 번역하여 '네 가지 치즈 피자'다. 정말 모짜렐라, 고르곤졸라, 그라나빠나도, 체다의 네 가지 치즈가 들어간 화덕에서 구운 피자라고 한다. 참 있어보이는 이름이다.</p>
-<p>이 피자의 비주얼은 정말 제대로 된 이탈리아식 화덕피자다. 그리고 인상을 한 마디로 정리하자면 '쫄깃하다'이다. 도우가 정말 쫄깃했는데 무슨 찹쌀떡을 반만 잘 익힌 건 같기도 한 식감이었다. 겉은 화덕에서 제대로 구운 비주얼과 맛이었는데 심지어 불맛이 느껴질 정도였다. 치즈와 쫄깃한 도우가 불맛과 함께 아주 하나로 잘 어울렸다.</p>
-<p>무엇보다 가장 중요한 건 첫째가 잘 먹었다는 점이다. 이게 가장 중요하다.</p>
-<h2>스파게티감베리</h2>
-<p><img alt="다행히도 아직 안 먹힌 스파게티감베리" src="../upload/202502151517-3d385ef5.jpg" />
-<em>다행히도 아직 안 먹힌 스파게티감베리</em></p>
-<p>스파게티감베리(spaghetti gamberi)는 번역하여 '새우 스파게티'다. 정말 직설적인 이름이지만 이탈리아어로 적으면 뭔가 있을 것 같은 느낌이기도 하다. 뭐 하여간 이름에 맞게 루꼴라와 새우가 들어간 오일 파스타다.</p>
-<p>맛을 정리하자면 오일 파스타의 표준적인 맛이었다. 악평이 아니라 맛있었다는 말이다. 새우는 엔쵸비(아마도 이탈리아의 멸치젖갈?)로 간을 냈다는데 사실 엔쵸비 맛은 잘 모르겠지만 적당히 짭짤한게 맛있었다. 특히 새우 하나가 껍질이 안 까여진 채로 조리가 되어 있어서 설마 손으로 직접 껍질을 까는게 아닐까 하는 추측에 측은함(?)이 약간 들기도 했다.</p>
-<p>단점으로 양이 좀 적었다. 물론 한국인이 좀 많이 먹긴 하지만 그래서 한국에서 밥 장사를 하려면 양은 충분해야 하지 않을까? 물론 맛있으니 이런 불평을 하는 것일 지도 모르겠다. 그밖에 루꼴라가 좀 썼다 정도가 있다.</p>
-<p>참고로 첫째가 먹기엔 살짝 매운 맛이 있었다. 한국 성인에겐 별거 아닌 매운맛이지만 아이들에겐 어림 없었다.</p>
-<h2>결론</h2>
-<p>재주문할 생각은 충분하다. 동일 메뉴도 충분히 먹을 수 있겠지만 다음엔 다른 걸 먹어보고 싶다는 생각이 강하다. 특히 이탈리아 3색 국기색을 상징한다는 피자의 표준과도 같은 마르게리따 피자는 꼭 먹어봐야 할 듯하다. 어쨌든 간만에 제대로 된 화덕피자였다.</p>
-<p>참고로 이 글을 읽을 때는 개인적으로 이탈리아빠라서 이탈리아 요리 자체를 선호하는 개인적인 특성을 간과하지 말아야 할 것 같다.</p>
-<p>그나저나 가게 이름의 라마노(La MANO)는 번역하면 '손'이라는데 '손맛' 뭐 이런 느낌일까?</p>
+        <p>Emacs Lisp 코드도 사람이 작성하든 AI가 작성하든 버그가 없을 수가 없다. 그 중에서 가장 사람을 괴롭히는 버그로 사용성을 떨어뜨리는 퍼포먼스 문제가 있다. 키를 하나 눌렀는데 잠깐 멈추는 증상이 발생한다면 얼마나 답답할까. 솔직히 이런 버그를 만나게 되면 Emacs를 쓰기 싫을 정도로 기분이 나빠지게 되기도 한다.</p>
+<p>그렇다면 이런 문제를 경험했을 때 무엇이 원인인지 어떻게 알 수 있을까?</p>
+<p>Emacs는 기본적으로 이런 경우를 위한 Profiler 도구를 제공한다.</p>
+<h2>Emacs Profiler 사용법</h2>
+<p>Profiler 사용법은 간단하다. 우선 <code>profiler-start</code> 함수를 실행시킨다.</p>
+<pre><code>M-x profiler-start
+</code></pre>
+<p>이 함수를 실행시키면 cpu, mem, cpu+mem 중 무엇을 측정할 것인지를 먼저 물어온다. 유추 가능하겠지만 CPU 점유율 및 메모리 사용량을 의미하며 원하는 것을 선택하면 된다.</p>
+<p>측정을 원하는 항목을 선택하면 다시 일상적인 화면으로 돌아오는데 이제 원하는 커맨드나 기능을 실행시켜서 퍼포먼스가 떨어지는 상황을 연출한다.</p>
+<p>이후 원하는 상황이 나왔다면 <code>profiler-repot</code> 함수를 실행시켜 보자.</p>
+<pre><code>M-x profiler-report
+</code></pre>
+<p>이러면 뭔가 복잡해 보이는 내역이 새로운 윈도우로 나타난다. 이 내역은 <code>profile-start</code> 함수가 실행되고 나서 <code>profile-report</code> 함수가 실행되기까지 중간에 실행된 각종 코드들의 측정 내역을 트리 형식으로 정리해서 보여준다. 여기의 내용을 살펴보면서 어떤 함수가 실행에 얼마나 시간이 걸렸는지 혹은 메모리를 얼마나 사용했는지를 파악할 수 있다.</p>
+<p>당연하겠지만 트리 형식이기 때문에 세부 내역을 탭 키를 이용해 펼쳐 볼 수 있다.</p>
+<h2>여담</h2>
+<p>이런 식으로 문제의 원인을 찾고 버그를 수정할 수 있다면 참 좋겠다. 하지만 개인적인 실력으론 아직 Emacs Lisp이 난해하다고 느끼고 있어서 오픈소스 패키지의 버그를 수정해 본 경험은 없다.</p>
+<p>다만 이 도구로는 문제가 되는 패키지를 찾을 수는 있다. 따라서 해당 패키지를 제외시키는 식으로 설정을 고치는 데는 큰 도움이 되었다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -159,7 +156,7 @@
                   
                     <li>
                       
-                        <a href="../log/20250206-01.html">Emacs에서 함수 퍼포먼스 측정하기(Profiler)</a><br/>
+                        <b>Emacs에서 함수 퍼포먼스 측정하기(Profiler)</b><br/>
                         <small>2025년 02월 06일 작성</small>
                       
                     </li>
@@ -173,7 +170,7 @@
                   
                     <li>
                       
-                        <b>라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록</b><br/>
+                        <a href="../log/20250205-01.html">라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록</a><br/>
                         <small>2025년 02월 05일 작성</small>
                       
                     </li>
@@ -304,18 +301,74 @@
             <div class="refinfo-cluster">
               
               
-                <h2>비슷한 주제의 블로그</h2>
+              
+                <h2>비슷한 주제의 노트</h2>
                 <ul class="logarch-container">
                   
                     <li>
                       
-                        <a href="../log/20250123-00.html">강남쌀국수의 소고기폭탄쌀국수 및 새우볶음밥에 관한 기록</a><br/>
+                        <a href="../article/emacs-lisp-run-cli-cmd-from-terminal-window.html">Emacs Lisp에서 셸 커맨드를 터미널을 통해 실행시키기</a><br/>
                       
-                      <small>2025년 01월 23일 작성</small>
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-async-call.html">Emacs Lisp에서 비동기 호출 코드 작성하기</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-plist.html">Emacs Lisp의 plist 사용법 간단 정리</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html">macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/doom-emacs-shortcuts.html">Doom Emacs 단축키 정리</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-evil-surround.html">Emacs의 evil-surround 확장 소개 및 기본 사용법</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
                     </li>
                   
                 </ul>
-              
               
             </div><!-- div.refinfo-cluster -->
           
@@ -327,7 +380,7 @@
     <footer>
         
         
-          <p>이 문서는 2025년 02월 05일 23:35에 작성되었으며 2025년 02월 15일 15:19에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 02월 06일 22:15에 작성되었으며 2025년 02월 15일 15:45에 마지막으로 편집되었습니다.</p>
         
         
         <p>

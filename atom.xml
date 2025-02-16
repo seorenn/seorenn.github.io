@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-02-15T16:15:41.256411+09:00</updated>
+  <updated>2025-02-16T23:57:35.299600+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,74 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250216-00.html</id>
+    <title>버그픽스 업데이트 출시와 2월 19일 신제품 출시 예정 등 한 주간의 Apple 소식들 25-02-16</title>
+    <updated>2025-02-16T23:57:18.381749+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>소프트웨어 관련 소식들</h2>
+<p><strong>버그픽스 업데이트 출시</strong><br/>
+Apple은 미국 시각 2월 10일 macOS 15.3.1, iOS 18.3.1, iPadOS 18.3.1, iPadOS 17.7.5, visionOS 2.3.1, watchOS 11.3.1 등의 버그픽스 업데이트를 공식 출시했다. 해당 버전들은 버그나 보안결함 수정에 초점이 맞춰졌기 때문에 기능적 변화는 없고 설치에도 부담이 없을 것으로 추측된다.</p>
+<p><strong>개발자 베타 업데이트</strong><br/>
+Apple은 Safari Technology Preview 213을 개발자 베타로 공개했다.</p>
+<p><strong>펌웨어 업데이트</strong><br/>
+Apple은 Powerbeats Pro 2의 출시를 앞두고 1차 펌웨어 업데이트인 7B24 빌드를 출시했다.</p>
+<h2>일반적인 소식들</h2>
+<p><strong>2월 19일 신제품 출시</strong><br/>
+Apple은 미국 시각 기준 2월 19일 특별한 제품이 출시될 것을 공식적으로 예고했다. 단 하나의 제품만 출시될 것으로 보이며 별도의 행사는 없을 것 같다. 아마도 출시된 제품은 iPhone SE 4세대일 가능성이 높은 것 같지만 이 외에도 M4 MacBook Air, M3 iPad Air, iPad 11 등의 제품 역시 출시될 가능성은 남아있는 듯하다.</p>
+<p><strong>중국산은 역시?</strong><br/>
+BOE의 iPhone용 OLED 패널의 품질이 Apple이 요구하는 수준에 못 미치는 것 같다. 결과적으로 삼성과 LGD에게 주문이 재분배될 가능성이 생긴 모양이다. 거기다 이 사례는 이번이 처음이 아니라서 OLED에 한해서는 중국이 기술적으로 한국을 많이 따라 잡았다지만 아직 추월은 아닌 모양이다.</p>
+<p><strong>더 가벼운 Vision Pro를 향해</strong><br/>
+Apple이 가벼운 Vision Pro를 제작하기 위한 새로운 특허를 출원한 모양이다. 배터리가 외장 형태로 연결된 것처럼 프로세서 등의 내부 부품을 일부 외장 팩에 옮기는 형태인 것으로 보인다. 물론 머리가 무거운 것보단 나은 형태일 순 있겠지만 좀 더 거추장스러울 것 같기도 하다.</p>
+<p><strong>Apple Intelligence 부활(?) 버그</strong><br/>
+최신 macOS 15.3.1 및 iOS 18.3.1 등의 버전 라인업에서 기존에 Apple Intelligence를 비활성화 했던 경우 다시 활성화되는 버그가 알려졌다. 다만 사용자나 기기에 따라 조금씩 동작에 차이가 있는 모양이다. 물론 이 경우 다시 비활성화하면 되는 터라 크리티컬한 버그는 아닌 듯하다.</p>
+<p><strong>Apple Intelligence는 아직 중국 진출 시도 중</strong><br/>
+아직 중국 사용자에게 Apple Intelligence가 진출하지는 못 하고 있지만, Apple은 이를 위한 준비로 바이두와 협력해 왔으며 알리바바와도 파트너십을 추진 중인 것으로 알려졌다. 그 외에 적용 가능성은 낮지만 DeepSeek 모델도 테스트를 했던 것으로 보인다. 중국 출시는 이르면 5월 즈음 가능할 지도 모르겠다.</p>
+<p><strong>Apple Watch Series 10 결함</strong><br/>
+일부 사용자들에게 Apple Watch Series 10의 스피커에 결함이 있다는 보고가 있다. 볼륨이 비정상적으로 낮은 현상이며 일부 사용자들은 점진적으로 문제가 생겼다는 듯하다. 소프트웨어 결함인지 하드웨어 결함인지 아직 확인은 되지 않았으며 아직 Apple은 해당 문제를 공식적으로 인정하지는 않았다.</p>
+<p><strong>Pixelmator 인수 완료</strong><br/>
+Apple은 공식적으로 Pixelmator 인수를 완료했다고 밝혔다. 이후 Pixelmator 및 Photomator 앱이 어떤 식으로 나아갈 지 확실하지는 않지만 당분간 해당 앱들은 App Store에서 그대로 유지될 것으로 보인다.</p>
+<p><strong>트럼프에 납작 엎드리기</strong><br/>
+Apple은 Apple Maps에서 기존 멕시코만(Gulf of Mexico) 지명을 아메리카만(Gulf of America)으로 바꾸었다. 다만 구글 지도의 행보와 비슷하게 미국 내 사용자들에게만 변경된 이름으로 보이는 듯하다.</p>
+<p><strong>계정 간 구입내역 이전</strong><br/>
+Apple이 Apple Account 간 구입 항목 마이그레이션 즉 구매내역을 특정 계정으로 옮기는 것을 지원한다. 실제로 이전하기 위해선 약간 까다로운 준비가 필요한 듯하지만 즉석에서 할 수는 있는 것 같다. 관련 내용은 <a href="https://support.apple.com/ko-kr/117294" target="_blank">Apple 계정 간에 구입 항목 마이그레이션하기📎</a> 문서를 참고하자.</p>
+<p><strong>살짝 노출?</strong><br/>
+프랑스의 한 전자제품 소매업체 웹사이트에서 iPhone SE 4가 곧 출시된다는 내용이 올라왔다. 물론 Apple은 아직 공식 출시하지는 않은 상태다.</p>
+<p><strong>신기한 버그</strong><br/>
+어느 한 게임이 이상하게 종료되는 것이 화제가 되었는데 In App Purchases의 버그가 원인으로 유추되어서 그런 것 같다. 일단 해당 앱은 지원이 종료되어 App Store에서 내려간 것으로 알려졌다.</p>
+<p><strong>구매내역 이전에 새 조건 추가</strong><br/>
+Apple이 구매내역 이전에 관해 새로운 조건을 추가했다. 추가된 조건은 이전시킬 구매내역을 가진 보조 계정에서 Testflight를 이용한 테스트를 한 앱이 있을 경우 이 앱들의 테스트를 직접 중지시켜야 하는 것으로 알려졌다. 그냥 알아서 다 자동으로 해줘도 모라잘 판에 어쨌든 저쨌든 더더욱 까다로워졌다.</p>
+<h2>루머 소식들</h2>
+<p><strong>Mac 루머들</strong><br/>
+2026년 출시를 목표로 한 OLED 디스플레이를 탑재한 Macbook Pro는 더 얇게 디자인 될 가능성이 있다고 한다. Macbook Air는 OLED 탑재는 2029 이후로 지연되는 모양이며 대신 2027년 경에 좀 더 개선된 LCD를 탑재하고 출시될 가능성이 있는 모양이다.</p>
+<p><strong>iPhone 루머들</strong><br/>
+iPhone 17 Pro Max는 Face ID용 렌즈를 최적화해 Dynamic Island가 더 작아질 것 같다는 추측이 나오고 있지만 크기가 그대로일 거라는 반박도 함께 나오고 있다. 그리고 카메라 섬이 가로로 길게 커지되 카메라 배치는 그대로인 새로운 레이아웃 루머도 나오고 있다.</p>
+<p><strong>AR 안경 계획은 여전히 진행 중</strong><br/>
+이전에 Mac에 연결되는 AR 안경 프로젝트가 취소되었다는 루머가 전해진 이후, 그 외의 형식에 대해서는 여전히 진행 중일 것이라는 루머가 나왔다. 예를 들자면 독립 동작형 AR 안경 프로젝트가 있다. 물론 이 프로젝트는 시간이 제법 걸릴 것이다. 추측으로는 최소한 3~5년은 더 걸릴 것으로 평가하는 모양이다.</p>
+<p><strong>홈 로봇 디바이스 투자</strong><br/>
+Apple이 가정용 로봇 디바이스 개발을 위한 연구 및 엔지니어링 팀의 채용을 확대하고 있는 모양이다. Apple이 생각하는 가정용 로봇의 모습은 명확하진 않다. 루머로는 디스플레이가 달린 HomePod 스마트 스피커에 팔다리가 달린 형태일 가능성이 제기되는 것 같지만 상상에 가까운 느낌이다.</p>
+<p><strong>늦어지는 가정용 디바이스</strong><br/>
+HomePad(가)와 같은 가정용 디바이스의 출시가 올해 3월 쯤 될 것이라는 예상이 나오기도 했지만 현재는 그보다 늦어질 것이라는 예측 또한 나오고 있다. 빠르면 4월 출시가 가능할 수도 있지만 그보다 늦어질 가능성도 있는 것 같다.</p>
+<p><strong>Studio Display Refresh</strong><br/>
+Apple은 Studio Display의 후속 제품일 것으로 추측되는 Mini LED가 탑재된 디스플레이 모니터를 2026년 까지 출시하기 위해 개발 및 테스트 중인 것 같다. 또다른 후보로 Pro Display XDR의 리프레시가 아닐까 하는 추측도 없는 건 아니지만 가능성은 낮은 듯하다.</p>
+<p><strong>광고 사업 확장 중?</strong><br/>
+Apple은 News 및 Stocks 앱에 이어 Maps에도 검색 광고 도입을 고려하고 있는 것 같다. 당연하게도 광고가 도입되면 새로운 수익 모델이 될 수 있을 것이다. 하지만 그 전에 이 앱들이 더 많이 쓰일 수 있게 개선되는게 우선일 것 같지만 말이다. 예를 들자면 한국에서 이 앱들은 인기가 없는 편이다.</p>
+<h2>AAPL</h2>
+<p><strong>AI 최후의 승자는 애플?</strong><br/>
+Apple이 AI 투자에 소극적이었던 것에 비판이 많았지만, 의외로 AI 투자 경쟁으로 인한 과도한 투자를 아낌과 동시에 좀 더 성숙한 AI 기술을 받아들일 수도 있게 되어서 Apple이 진정한 승자가 될 수도 있다는 전망이 나오는 모양이다. 즉 돈도 아끼고 AI 기술을 좋은 시점에 도입한다는 말이다. 물론 이는 Apple 식 패스트 팔로워 전략의 일부 처럼 비춰질 수도 있겠지만 그저그런 희망회로일 지도 모르겠다.</p>
+<p><strong>iPhone 업그레이드 주기가 빨라졌다</strong><br/>
+최근 스마트폰 교체 주기가 길어지고만 있었는데 어떤 보고서에선 iPhone의 업그레이드 주기가 피크를 찍고 빨라지고 있다는 내용이 강조되었다. 주요 원인으로 Apple Intelligence의 영향을 꼽는 듯하다.</p>
+<p><strong>X에 돌아온 Apple</strong><br/>
+Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과거 일론 머스크의 극우적 혹은 극단적 발언으로 광고를 철회했다가 다시 돌아온 것이다. 아무래도 트럼프 정권에 일론 머스크가 영향을 미치고 있는 점을 고려할 수밖에 없을 것 같기도 하다.</p>
+<p><strong>계속되는 ATT 독점 논란</strong><br/>
+독일에서 App Tracking Transparency를 써드파티 앱에만 적용하는 것은 반독점적이라는 조사가 아직도 이어지고 있는 모양이다.</p>
+<p><strong>영국의 지나친 요구에 미국 정치가 개입될 듯</strong><br/>
+최근 영국이 iCloud의 모든 암호화된 정보를 액세스 할 수 있는 기능을 요구한 것에 대해 미국 의원들이 맞서 싸울 것을 정보국장에게 촉구했다고 한다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250216-00.html"/>
+    <summary type="text">2월 둘째 주 Apple 관련 소식 및 루머 모음</summary>
+    <published>2025-02-16T23:57:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250214-00.html</id>
     <title>상법 개정은 국가의 의무다</title>
@@ -1667,632 +1735,5 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
     <link href="https://seorenn.github.io/log/20240730-00.html"/>
     <summary type="text">윤석열 정부의 인센티브 기반 밸류업 정책을 뛰어넘겠다는 민주당의 코리아 부스터 프로젝트</summary>
     <published>2024-07-30T14:48:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/doom-emacs-shortcuts.html</id>
-    <title>Doom Emacs 단축키 정리</title>
-    <updated>2024-12-26T15:53:30.358254+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>이 글은 Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키를 정리한다. 일부 단축키는 별도의 글로 분리하는 경우도 있으니 하단 관련글 항목을 참고하자.</p>
-<h2>설정(Configuration) 관련</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC f p</code></td>
-<td style="text-align: left;">설정 파일 열기(즉 <code>~/.doom.d</code>에 있는 파일들 목록이 뜬다)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC h r r</code></td>
-<td style="text-align: left;">설정 싱크(sync) 및 리로드(<code>doom/reload</code>)</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>파일, 프로젝트, 워크스페이스 관련</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC f f</code></td>
-<td style="text-align: left;">파일 열기</td>
-<td style="text-align: left;"><code>find-file</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC .</code></td>
-<td style="text-align: left;">현재 디렉토리에서 파일 열기</td>
-<td style="text-align: left;">생성하기도 가능</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC p p</code></td>
-<td style="text-align: left;">프로젝트 전환</td>
-<td style="text-align: left;">워크스페이스가 없으면 생성</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC SPC</code></td>
-<td style="text-align: left;">프로젝트 파일 열기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC TAB .</code></td>
-<td style="text-align: left;">워크스페이스(프로젝트) 목록 및 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC TAB NUM</code></td>
-<td style="text-align: left;">NUM 숫자에 해당하는 워크스페이스로 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>COMMAND NUM</code></td>
-<td style="text-align: left;">NUM 숫자에 해당하는 워크스페이스로 전환</td>
-<td style="text-align: left;">Mac 전용</td>
-</tr>
-</tbody>
-</table>
-<h2>버퍼(Buffer) 관련</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC ,</code></td>
-<td style="text-align: left;">워크스페이스(혹은 프로젝트) 버퍼 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC b b</code></td>
-<td style="text-align: left;">워크스페이스(혹은 프로젝트) 버퍼 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC `</code></td>
-<td style="text-align: left;">동일 워크스페이스의 이전 버퍼로 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC b B</code></td>
-<td style="text-align: left;">버퍼 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC b p</code></td>
-<td style="text-align: left;">이전 버퍼로 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC b n</code></td>
-<td style="text-align: left;">다음 버퍼로 전환</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC p x</code></td>
-<td style="text-align: left;">스크래치 버퍼를 작게 아래쪽에 띄우기</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>창(Window)</h2>
-<p>참고로 Emacs에서 창(window)이란 하나의 윈도를 여러 pane으로 분할해서 쓰는 것을 의미하니 용어에 주의하자.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC w s</code></td>
-<td style="text-align: left;">창을 위아래로 나누기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w v</code></td>
-<td style="text-align: left;">창을 좌우로 나누기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w w</code></td>
-<td style="text-align: left;">다음 창으로 포커스(커서) 이동</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w c</code> 혹은 <code>SPC w d</code></td>
-<td style="text-align: left;">창 닫기. 창이 하나 뿐이면 프로젝트 단기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w j</code> 혹은 <code>SPC w k</code></td>
-<td style="text-align: left;">아래쪽 창 혹은 윗쪽 창으로 이동하기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w h</code> 혹은 <code>SPC w l</code></td>
-<td style="text-align: left;">왼쪽 창 혹은 오른쪽쪽 창으로 이동하기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w o</code></td>
-<td style="text-align: left;">하나의 창을 많이 크게 만들기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w C-o</code></td>
-<td style="text-align: left;">현재 창만 남기고 다른 창 닫기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC w =</code></td>
-<td style="text-align: left;">모든 창의 크기를 비슷하게 맞추기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>C-w C-w</code> 혹은 <code>C-x o</code></td>
-<td style="text-align: left;">지정된 캐릭터의 윈도로 스위칭</td>
-<td style="text-align: left;">ace-window</td>
-</tr>
-</tbody>
-</table>
-<p>창 이동은 Evil을 쓸 경우 <code>C-w</code>와 <code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>을 조합하는 Vim 방식을 동일하게 사용할 수도 있다.</p>
-<h2>폴딩(Folding)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>z f</code></td>
-<td style="text-align: left;">선택 영역 접기(폴딩)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z a</code></td>
-<td style="text-align: left;">폴딩 토글하기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z d</code></td>
-<td style="text-align: left;">폴딩 제거하기</td>
-<td style="text-align: left;">코드 삭제 아님</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z E</code></td>
-<td style="text-align: left;">모든 폴딩 제거</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z j</code></td>
-<td style="text-align: left;">다음 폴딩으로 이동</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z k</code></td>
-<td style="text-align: left;">이전 폴딩으로 이동</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>셸(Shell) 혹은 터미널(Terminal)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC o t</code></td>
-<td style="text-align: left;">터미널 열기</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>템플릿(Snippets)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC s /</code></td>
-<td style="text-align: left;">스니펫 목록 및 검색하기</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>검색(Search)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC s p</code></td>
-<td style="text-align: left;">프로젝트에서 검색(search in project)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC s d</code></td>
-<td style="text-align: left;">디렉터리에서 검색(search in directory)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>C-c C-o</code></td>
-<td style="text-align: left;">검색 내용 버퍼를 별도의 창에 띄우기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC '</code></td>
-<td style="text-align: left;">계속 검색</td>
-<td style="text-align: left;">ivy-resume</td>
-</tr>
-</tbody>
-</table>
-<h2>점프(Jump)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>t [character]</code></td>
-<td style="text-align: left;">해당 문자로 점프</td>
-<td style="text-align: left;">evil-snipe</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>s [characters]</code></td>
-<td style="text-align: left;">문자 완성 형식으로 해당 문자열로 점프</td>
-<td style="text-align: left;">evil-snipe</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>S [characters]</code></td>
-<td style="text-align: left;">문자 완성 형식으로 해당 문자열로 역방향 점프</td>
-<td style="text-align: left;">evil-snipe</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g s j</code></td>
-<td style="text-align: left;">표시된 문자를 입력한 위치로 아래방향 점프</td>
-<td style="text-align: left;">evil-easymotion</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g s k</code></td>
-<td style="text-align: left;">표시된 문자를 입력한 위치로 아래방향 점프</td>
-<td style="text-align: left;">evil-easymotion</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g s SPC</code></td>
-<td style="text-align: left;">키보드로 입력하는 글자 위치로 점프</td>
-<td style="text-align: left;">avy</td>
-</tr>
-</tbody>
-</table>
-<h2>멀티 커서(Multiple Cursors) - evil-multiedit</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>M-d</code></td>
-<td style="text-align: left;">현재 커서 위치의 단어 혹은 선택영역 선택 혹은 아래 방향으로 같은 단어를 하나 검색해서 선택</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>M-D</code></td>
-<td style="text-align: left;">현재 커서 위치의 단어 혹은 선택영역 선택 혹은 윗쪽 방향으로 같은 단어를 하나 검색해서 선택</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;">영역 선택 후 <code>R</code></td>
-<td style="text-align: left;">해당 단어 모두 선택</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>R</code></td>
-<td style="text-align: left;">선택된 단어들을 덮어쓰기(Replace) 모드로 몽땅 편집하기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>I</code></td>
-<td style="text-align: left;">선택된 단어들을 삽입(Insert) 모드로 몽땅 편집하기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>D</code></td>
-<td style="text-align: left;">선택된 단어들을 삭제하기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>C-n</code></td>
-<td style="text-align: left;">선택중인 다음 단어들로 점프</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>C-p</code></td>
-<td style="text-align: left;">선택중인 이전 단어들로 점프</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>RET</code></td>
-<td style="text-align: left;">선택 영역 토글</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ESC</code></td>
-<td style="text-align: left;">탈출(Exit evil-multiedit mode)</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>멀티 커서(Multiple Cursors) - evil-mc</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>g z z</code></td>
-<td style="text-align: left;">현재 위치에 커서 만들기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g z j</code></td>
-<td style="text-align: left;">현재 커서 위치에서 서브커서를 만들고 아래로 이동 (<code>g z k</code> 는 위로)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g z m</code></td>
-<td style="text-align: left;">현재 커서 위치와 관련이 있는 모든 곳에 서브커서 생성</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g z d</code></td>
-<td style="text-align: left;">현재 커서의 단어 끝에 서브커서를 만들고 비슷한 다음 단어로 커서 이동</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>g z D</code></td>
-<td style="text-align: left;">현재 커서의 단어 끝에 서브커서를 만들고 비슷한 이전 단어로 커서 이동</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>특수 텍스트 변환</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>!</code></td>
-<td style="text-align: left;">연관 텍스트로 변환</td>
-<td style="text-align: left;">rotate-text</td>
-</tr>
-</tbody>
-</table>
-<p>연관 텍스트라는 것은 좀 특수한 경우인데, 예를 들어 C++에서 <code>public</code> - <code>private</code> - <code>protected</code> 등의 관계를 생각하면 될 것 같다.</p>
-<h2>Emacs Lisp 관련</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC :</code></td>
-<td style="text-align: left;">함수 실행하기(Emacs 의 <code>M-x</code> 와 동일). 콜론 주의.</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC ;</code></td>
-<td style="text-align: left;">명령 실행하기(eval expression). 세미콜론임에 주의</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC m e r</code></td>
-<td style="text-align: left;">Lisp Mode에서 선택 영역 실행하기(eval region).</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC m e b</code></td>
-<td style="text-align: left;">Lisp Mode에서 버퍼 전체 실행하기(eval buffer).</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>S b</code></td>
-<td style="text-align: left;">선택 영역을 괄호(braces)로 둘러싸기</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z M</code></td>
-<td style="text-align: left;">모든 헤드라인 폴딩</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>z R</code></td>
-<td style="text-align: left;">모든 헤드라인 폴딩 열기</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>프로그래밍 관련</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>g c</code></td>
-<td style="text-align: left;">영역을 주석처리(comment) 혹은 주석해제(uncomment) (Vim 스타일)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC a ;</code></td>
-<td style="text-align: left;">영역을 주석처리(comment) 혹은 주석해제(uncomment) (Doom Emacs 스타일)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC c d</code></td>
-<td style="text-align: left;">레퍼런스로 이동(Look up reference)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>=</code></td>
-<td style="text-align: left;">선택영역 들여쓰기(indentation) 정리 (Vim 스타일)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>]e</code></td>
-<td style="text-align: left;">Next Error</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[e</code></td>
-<td style="text-align: left;">Previous Error</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC c x</code></td>
-<td style="text-align: left;">List Errors</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>Org Mode 공통</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC m t</code></td>
-<td style="text-align: left;">TODO 마크</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC m p</code></td>
-<td style="text-align: left;">우선순위(priority)</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC n s</code></td>
-<td style="text-align: left;">노트(org) 검색</td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>SPC n r f</code></td>
-<td style="text-align: left;">Org Roam 문서 제목으로 파일 열기</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>Org Mode 테이블 스프레드시트</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC m b h</code></td>
-<td style="text-align: left;">테이블에서 커서 위치의 필드 정보</td>
-<td style="text-align: left;"><code>org-table-field-info</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>C-c }</code></td>
-<td style="text-align: left;">테이블 필드 정보 오버레이 토글</td>
-<td style="text-align: left;"><code>org-table-toggle-coordinate-overlays</code></td>
-</tr>
-</tbody>
-</table>
-<h2>프로파일러(profiler)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">단축키</th>
-<th style="text-align: left;">설명</th>
-<th style="text-align: left;">기타</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>SPC h T</code></td>
-<td style="text-align: left;">Toggle Profiler</td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>관련된 글들</h2>
-<ul>
-<li><a href="../article/emacs-evil-surround.html">Emacs의 evil-surround 확장 소개 및 기본 사용법</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/doom-emacs-shortcuts.html"/>
-    <summary type="text">Doom Emacs에서 개인적으로 자주 사용하는 혹은 인상적이지만 잘 까먹는 단축키 정리</summary>
-    <published>2024-07-29T16:46:00+09:00</published>
   </entry>
 </feed>

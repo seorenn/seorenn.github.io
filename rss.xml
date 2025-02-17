@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 17 Feb 2025 10:55:50 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2025 11:05:12 +0900</lastBuildDate>
     <item>
       <title>버그픽스 업데이트 출시와 2월 19일 신제품 출시 예정 등 한 주간의 Apple 소식들 25-02-16</title>
       <link>https://seorenn.github.io/log/20250216-00.html</link>
@@ -213,6 +213,50 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
 &lt;p&gt;모르겠다. 당분간 고민해 보자.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20250212-00.html</guid>
       <pubDate>Wed, 12 Feb 2025 16:24:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>Python으로 HTML 특수문자 인코딩 및 디코딩하기</title>
+      <link>https://seorenn.github.io/log/20250211-01.html</link>
+      <description>&lt;p&gt;HTML에는 몇몇 문법에 사용되는 문자를 표기하기 위해 독특한 표기 문법을 가지고 있다. 정확히 말해서 그 상위 개념인 XML이나 SGML에서 정의된 것일 것 같긴 하지만 대충 그렇다고 치자. 어쨌거나 HTML에서는 특수한 문자(HTML Entities)를 표시하기 위해 &lt;code&gt;&amp;amp;&lt;/code&gt;와 &lt;code&gt;;&lt;/code&gt; 사이에 특수문자 이름을 표시하는 방식을 사용한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;tag&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;예를 들어 위의 코드를 HTML의 body 내에 넣고 웹브라우저로 파일을 열어보면 &lt;code&gt;&amp;lt;tag&amp;gt;&lt;/code&gt; 라는 문자가 보이게 된다. 참고로 'lt'는 'less than', 'gt'는 'greater than'이라는 의미의 꺽쇠를 표시한다고 이해하면 된다.&lt;/p&gt;
+&lt;p&gt;물론 이 글은 HTML 문법을 소개하는 게 아니라 여기까지만 정리하자. 요지는 이 경우 &lt;strong&gt;실제 내용과 변환된 내용 사이를 Python을 통해 어떻게 바꾸고 얻는지&lt;/strong&gt;를 개인적인 용도로 메모하려는 것이다.&lt;/p&gt;
+&lt;h2&gt;Python으로 HTML 특수문자 인코딩 및 디코딩하기&lt;/h2&gt;
+&lt;p&gt;Python에서는 빌트인 모듈인 &lt;code&gt;html&lt;/code&gt;에서 원하는 기능을 찾을 수 있다. 예를 들어 HTML 특수문자를 눈에 보이는 형태로 바꾸려면 &lt;code&gt;unescape()&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import html
+&amp;gt;&amp;gt;&amp;gt; html.unescape('&amp;amp;lt;tag&amp;amp;gt;')
+'&amp;lt;tag&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;반대로 눈에 보이는 것을 HTML 특수문자 형태로 표시하면 이름에서 유추할 수 있듯이 &lt;code&gt;escape()&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import html
+&amp;gt;&amp;gt;&amp;gt; html.escape('&amp;lt;tag&amp;gt;')
+'&amp;amp;lt;tag&amp;amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;이런 기능을 굳이 사용할 일은 요즘엔 잘 없을 지도 모르겠지만 개인적인 프로젝트로 만들던 것(?)이 이런 기능이 필요해서 찾아보게 되었다.&lt;/p&gt;
+&lt;p&gt;혹시나 HTML이 아닌 URL의 HEX 인코딩 및 디코딩에 대해 알고 싶다면 해당 링크를 방문해 보자.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;HTML에는 몇몇 문법에 사용되는 문자를 표기하기 위해 독특한 표기 문법을 가지고 있다. 정확히 말해서 그 상위 개념인 XML이나 SGML에서 정의된 것일 것 같긴 하지만 대충 그렇다고 치자. 어쨌거나 HTML에서는 특수한 문자(HTML Entities)를 표시하기 위해 &lt;code&gt;&amp;amp;&lt;/code&gt;와 &lt;code&gt;;&lt;/code&gt; 사이에 특수문자 이름을 표시하는 방식을 사용한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;amp;lt;tag&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;예를 들어 위의 코드를 HTML의 body 내에 넣고 웹브라우저로 파일을 열어보면 &lt;code&gt;&amp;lt;tag&amp;gt;&lt;/code&gt; 라는 문자가 보이게 된다. 참고로 'lt'는 'less than', 'gt'는 'greater than'이라는 의미의 꺽쇠를 표시한다고 이해하면 된다.&lt;/p&gt;
+&lt;p&gt;물론 이 글은 HTML 문법을 소개하는 게 아니라 여기까지만 정리하자. 요지는 이 경우 &lt;strong&gt;실제 내용과 변환된 내용 사이를 Python을 통해 어떻게 바꾸고 얻는지&lt;/strong&gt;를 개인적인 용도로 메모하려는 것이다.&lt;/p&gt;
+&lt;h2&gt;Python으로 HTML 특수문자 인코딩 및 디코딩하기&lt;/h2&gt;
+&lt;p&gt;Python에서는 빌트인 모듈인 &lt;code&gt;html&lt;/code&gt;에서 원하는 기능을 찾을 수 있다. 예를 들어 HTML 특수문자를 눈에 보이는 형태로 바꾸려면 &lt;code&gt;unescape()&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import html
+&amp;gt;&amp;gt;&amp;gt; html.unescape('&amp;amp;lt;tag&amp;amp;gt;')
+'&amp;lt;tag&amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;반대로 눈에 보이는 것을 HTML 특수문자 형태로 표시하면 이름에서 유추할 수 있듯이 &lt;code&gt;escape()&lt;/code&gt; 함수를 사용할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import html
+&amp;gt;&amp;gt;&amp;gt; html.escape('&amp;lt;tag&amp;gt;')
+'&amp;amp;lt;tag&amp;amp;gt;'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;이런 기능을 굳이 사용할 일은 요즘엔 잘 없을 지도 모르겠지만 개인적인 프로젝트로 만들던 것(?)이 이런 기능이 필요해서 찾아보게 되었다.&lt;/p&gt;
+&lt;p&gt;혹시나 HTML이 아닌 URL의 HEX 인코딩 및 디코딩에 대해 알고 싶다면 해당 링크를 방문해 보자.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20250211-01.html</guid>
+      <pubDate>Tue, 11 Feb 2025 23:43:00 +0900</pubDate>
     </item>
     <item>
       <title>트럼프 무역 전쟁: 진척 없는 상황에 갑작스런 상호관세와 표적관세의 등장</title>
@@ -2763,46 +2807,6 @@ iPad: 71억 6천만 달러 (+23.63%)&lt;br/&gt;
 &lt;p&gt;그러니 내가 파월이라면 9월에는 뭐가 어떻게 되든 금리 인하를 할 거다. 적장에 침이라도 뱉고 죽어야지 안 그러면 억울해서 어떻게 눈을 감을 수... 아 아니다 안 죽는 게 최고다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20240801-00.html</guid>
       <pubDate>Thu, 01 Aug 2024 10:45:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</title>
-      <link>https://seorenn.github.io/article/chrome-debug-color-scheme.html</link>
-      <description>&lt;p&gt;웹 페이지에서 CSS를 통해 다크 모드 혹은 라이트 모드를 지원하려 할 때는 물론 시스템의 설정을 바꿔서 간단하게 보면서 개발할 수는 있다. 하지만 웹 브라우저를 떠나서 계속 바꾸는 계 귀찮거나 시스템에 무리를 줄 가능성은 충분히 있다. 그래서 구글 크롬에서 이 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능이 있나 찾아봤고 실제로 존재하기에 그 방법을 정리해 본다.&lt;/p&gt;
-&lt;p&gt;참고로 이 글은 macOS에서 다크 모드를 설정해 둔 상태로 라이트 모드의 CSS를 테스트 해보려는 상황을 가정하고 있다.&lt;/p&gt;
-&lt;h2&gt;크롬에서 다크 모드 혹은 라이트 모드 시험해 보기&lt;/h2&gt;
-&lt;p&gt;우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png" /&gt;
-&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png" /&gt;
-&lt;em&gt;CSS 미디어 기능 prefers-color-scheme 에뮬레이션&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png" /&gt;
-&lt;em&gt;컬러 스킴 선택 화면&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png" /&gt;
-&lt;em&gt;라이트 모드로 설정한 상태&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;사족&lt;/h2&gt;
-&lt;p&gt;컬러 스킴을 바꾸는 과정은 그다지 어렵거나 힘들진 않다. 하지만 좀 더 쉽게 할 수 있게 컬러 스킴 관련 부분만 접근성 좋은 위치에 배치해 줬으면 하는 바램도 없지는 않다. 안 그래도 렌더링 도구가 제법 크기를 잡아먹기 때문에 필요할 때마다 꺼내 쓰는 것도 좀 귀찮은 일인 것 같으니 말이다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;웹 페이지에서 CSS를 통해 다크 모드 혹은 라이트 모드를 지원하려 할 때는 물론 시스템의 설정을 바꿔서 간단하게 보면서 개발할 수는 있다. 하지만 웹 브라우저를 떠나서 계속 바꾸는 계 귀찮거나 시스템에 무리를 줄 가능성은 충분히 있다. 그래서 구글 크롬에서 이 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능이 있나 찾아봤고 실제로 존재하기에 그 방법을 정리해 본다.&lt;/p&gt;
-&lt;p&gt;참고로 이 글은 macOS에서 다크 모드를 설정해 둔 상태로 라이트 모드의 CSS를 테스트 해보려는 상황을 가정하고 있다.&lt;/p&gt;
-&lt;h2&gt;크롬에서 다크 모드 혹은 라이트 모드 시험해 보기&lt;/h2&gt;
-&lt;p&gt;우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png" /&gt;
-&lt;em&gt;크롬 개발자 도구에서 렌더링 도구를 추가하는 화면&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png" /&gt;
-&lt;em&gt;CSS 미디어 기능 prefers-color-scheme 에뮬레이션&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png" /&gt;
-&lt;em&gt;컬러 스킴 선택 화면&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png" /&gt;
-&lt;em&gt;라이트 모드로 설정한 상태&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;사족&lt;/h2&gt;
-&lt;p&gt;컬러 스킴을 바꾸는 과정은 그다지 어렵거나 힘들진 않다. 하지만 좀 더 쉽게 할 수 있게 컬러 스킴 관련 부분만 접근성 좋은 위치에 배치해 줬으면 하는 바램도 없지는 않다. 안 그래도 렌더링 도구가 제법 크기를 잡아먹기 때문에 필요할 때마다 꺼내 쓰는 것도 좀 귀찮은 일인 것 같으니 말이다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/article/chrome-debug-color-scheme.html</guid>
-      <pubDate>Wed, 31 Jul 2024 16:46:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

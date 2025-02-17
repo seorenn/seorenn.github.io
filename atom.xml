@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-02-17T10:55:50.480937+09:00</updated>
+  <updated>2025-02-17T11:05:12.996238+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -138,6 +138,35 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
     <link href="https://seorenn.github.io/log/20250212-00.html"/>
     <summary type="text">한동안 티스토리와 GitHub Pages를 떠나 구글 Blogger에서 블로그를 운영하고 있었다. 그런데 최근 왜 이를 계속 운영해야 하나 위기를 느낄 정도의 문제가 발견되었다.</summary>
     <published>2025-02-12T16:24:00+09:00</published>
+  </entry>
+  <entry>
+    <id>https://seorenn.github.io/log/20250211-01.html</id>
+    <title>Python으로 HTML 특수문자 인코딩 및 디코딩하기</title>
+    <updated>2025-02-17T11:05:00.924484+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>HTML에는 몇몇 문법에 사용되는 문자를 표기하기 위해 독특한 표기 문법을 가지고 있다. 정확히 말해서 그 상위 개념인 XML이나 SGML에서 정의된 것일 것 같긴 하지만 대충 그렇다고 치자. 어쨌거나 HTML에서는 특수한 문자(HTML Entities)를 표시하기 위해 <code>&amp;</code>와 <code>;</code> 사이에 특수문자 이름을 표시하는 방식을 사용한다.</p>
+<pre><code>&amp;lt;tag&amp;gt;
+</code></pre>
+<p>예를 들어 위의 코드를 HTML의 body 내에 넣고 웹브라우저로 파일을 열어보면 <code>&lt;tag&gt;</code> 라는 문자가 보이게 된다. 참고로 'lt'는 'less than', 'gt'는 'greater than'이라는 의미의 꺽쇠를 표시한다고 이해하면 된다.</p>
+<p>물론 이 글은 HTML 문법을 소개하는 게 아니라 여기까지만 정리하자. 요지는 이 경우 <strong>실제 내용과 변환된 내용 사이를 Python을 통해 어떻게 바꾸고 얻는지</strong>를 개인적인 용도로 메모하려는 것이다.</p>
+<h2>Python으로 HTML 특수문자 인코딩 및 디코딩하기</h2>
+<p>Python에서는 빌트인 모듈인 <code>html</code>에서 원하는 기능을 찾을 수 있다. 예를 들어 HTML 특수문자를 눈에 보이는 형태로 바꾸려면 <code>unescape()</code> 함수를 사용할 수 있다.</p>
+<pre><code>&gt;&gt;&gt; import html
+&gt;&gt;&gt; html.unescape('&amp;lt;tag&amp;gt;')
+'&lt;tag&gt;'
+</code></pre>
+<p>반대로 눈에 보이는 것을 HTML 특수문자 형태로 표시하면 이름에서 유추할 수 있듯이 <code>escape()</code> 함수를 사용할 수 있다.</p>
+<pre><code>&gt;&gt;&gt; import html
+&gt;&gt;&gt; html.escape('&lt;tag&gt;')
+'&amp;lt;tag&amp;gt;'
+</code></pre>
+<h2>여담</h2>
+<p>이런 기능을 굳이 사용할 일은 요즘엔 잘 없을 지도 모르겠지만 개인적인 프로젝트로 만들던 것(?)이 이런 기능이 필요해서 찾아보게 되었다.</p>
+<p>혹시나 HTML이 아닌 URL의 HEX 인코딩 및 디코딩에 대해 알고 싶다면 해당 링크를 방문해 보자.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250211-01.html"/>
+    <summary type="text">Python으로 HTML 특수문자를 인코딩 및 디코딩 하는 방법을 간단히 정리하는 글</summary>
+    <published>2025-02-11T23:43:00+09:00</published>
   </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250211-00.html</id>
@@ -1728,32 +1757,5 @@ iPad: 71억 6천만 달러 (+23.63%)<br/>
     <link href="https://seorenn.github.io/log/20240801-00.html"/>
     <summary type="text">연준은 미국 시각 7월 31일 FOMC를 통해 미국의 기준금리를 종전과 동일한 5.25% ~ 5.50%로 동결 결정했다.</summary>
     <published>2024-08-01T10:45:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/chrome-debug-color-scheme.html</id>
-    <title>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</title>
-    <updated>2024-12-26T16:20:36.435518+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>웹 페이지에서 CSS를 통해 다크 모드 혹은 라이트 모드를 지원하려 할 때는 물론 시스템의 설정을 바꿔서 간단하게 보면서 개발할 수는 있다. 하지만 웹 브라우저를 떠나서 계속 바꾸는 계 귀찮거나 시스템에 무리를 줄 가능성은 충분히 있다. 그래서 구글 크롬에서 이 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능이 있나 찾아봤고 실제로 존재하기에 그 방법을 정리해 본다.</p>
-<p>참고로 이 글은 macOS에서 다크 모드를 설정해 둔 상태로 라이트 모드의 CSS를 테스트 해보려는 상황을 가정하고 있다.</p>
-<h2>크롬에서 다크 모드 혹은 라이트 모드 시험해 보기</h2>
-<p>우선 크롬 개발자 도구에서 '렌더링' 도구를 표시해야 한다. macOS 기준으로 크롬에서 개발자 도구를 열고 개발자 도구 메뉴에서 '도구 더보기 - 렌더링'을 선택하면 된다.</p>
-<p><img alt="크롬 개발자 도구에서 렌더링 도구를 추가하는 화면" src="../upload/202407301420-8b62b531.png"/>
-<em>크롬 개발자 도구에서 렌더링 도구를 추가하는 화면</em></p>
-<p>이렇게 하면 렌더링 도구 페이지가 뜬다. 이 페이지에서 스크롤을 내리다 보면 'CSS 미디어 기능 prefers-color-scheme 에뮬레이션' 항목을 찾을 수 있다.</p>
-<p><img alt="CSS 미디어 기능 prefers-color-scheme 에뮬레이션" src="../upload/202407301421-3944d7ba.png"/>
-<em>CSS 미디어 기능 prefers-color-scheme 에뮬레이션</em></p>
-<p>아마도 별 다른 설정이 없는 한 드롭박스 버튼에 '에뮬레이션 없음'이 표시되어 있을 것이다. 이 드롭박스 버튼을 눌러보면 뭘 어떻게 해야 하는지 바로 알 수 있을 것이다.</p>
-<p><img alt="컬러 스킴 선택 화면" src="../upload/202407301422-5b696b8b.png"/>
-<em>컬러 스킴 선택 화면</em></p>
-<p>이렇게 다크 모드 혹은 라이트 모드 등 원하는 모드로 바로 에뮬레이션 할 수 있게 되었다.</p>
-<p><img alt="라이트 모드로 설정한 상태" src="../upload/202407301423-e4e04be3.png"/>
-<em>라이트 모드로 설정한 상태</em></p>
-<h2>사족</h2>
-<p>컬러 스킴을 바꾸는 과정은 그다지 어렵거나 힘들진 않다. 하지만 좀 더 쉽게 할 수 있게 컬러 스킴 관련 부분만 접근성 좋은 위치에 배치해 줬으면 하는 바램도 없지는 않다. 안 그래도 렌더링 도구가 제법 크기를 잡아먹기 때문에 필요할 때마다 꺼내 쓰는 것도 좀 귀찮은 일인 것 같으니 말이다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/article/chrome-debug-color-scheme.html"/>
-    <summary type="text">구글 크롬에서 다크 모드 혹은 라이트 모드를 쉽게 바꿔서 시험해 볼 수 있는 기능 정리</summary>
-    <published>2024-07-31T16:46:00+09:00</published>
   </entry>
 </feed>

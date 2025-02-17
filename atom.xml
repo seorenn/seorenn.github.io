@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-02-17T11:05:12.996238+09:00</updated>
+  <updated>2025-02-17T11:05:56.256647+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -142,7 +142,7 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
   <entry>
     <id>https://seorenn.github.io/log/20250211-01.html</id>
     <title>Python으로 HTML 특수문자 인코딩 및 디코딩하기</title>
-    <updated>2025-02-17T11:05:00.924484+09:00</updated>
+    <updated>2025-02-17T11:05:48.712026+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>HTML에는 몇몇 문법에 사용되는 문자를 표기하기 위해 독특한 표기 문법을 가지고 있다. 정확히 말해서 그 상위 개념인 XML이나 SGML에서 정의된 것일 것 같긴 하지만 대충 그렇다고 치자. 어쨌거나 HTML에서는 특수한 문자(HTML Entities)를 표시하기 위해 <code>&amp;</code>와 <code>;</code> 사이에 특수문자 이름을 표시하는 방식을 사용한다.</p>
 <pre><code>&amp;lt;tag&amp;gt;
@@ -162,7 +162,7 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
 </code></pre>
 <h2>여담</h2>
 <p>이런 기능을 굳이 사용할 일은 요즘엔 잘 없을 지도 모르겠지만 개인적인 프로젝트로 만들던 것(?)이 이런 기능이 필요해서 찾아보게 되었다.</p>
-<p>혹시나 HTML이 아닌 URL의 HEX 인코딩 및 디코딩에 대해 알고 싶다면 해당 링크를 방문해 보자.</p></div>
+<p>혹시나 HTML이 아닌 <a href="https://seorenn.tistory.com/894" target="_blank">URL의 HEX 인코딩 및 디코딩📎</a>에 대해 알고 싶다면 해당 링크를 방문해 보자.</p></div>
     </content>
     <link href="https://seorenn.github.io/log/20250211-01.html"/>
     <summary type="text">Python으로 HTML 특수문자를 인코딩 및 디코딩 하는 방법을 간단히 정리하는 글</summary>

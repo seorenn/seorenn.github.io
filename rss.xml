@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 17 Feb 2025 11:05:12 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2025 11:05:56 +0900</lastBuildDate>
     <item>
       <title>버그픽스 업데이트 출시와 2월 19일 신제품 출시 예정 등 한 주간의 Apple 소식들 25-02-16</title>
       <link>https://seorenn.github.io/log/20250216-00.html</link>
@@ -235,7 +235,7 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;여담&lt;/h2&gt;
 &lt;p&gt;이런 기능을 굳이 사용할 일은 요즘엔 잘 없을 지도 모르겠지만 개인적인 프로젝트로 만들던 것(?)이 이런 기능이 필요해서 찾아보게 되었다.&lt;/p&gt;
-&lt;p&gt;혹시나 HTML이 아닌 URL의 HEX 인코딩 및 디코딩에 대해 알고 싶다면 해당 링크를 방문해 보자.&lt;/p&gt;</description>
+&lt;p&gt;혹시나 HTML이 아닌 &lt;a href="https://seorenn.tistory.com/894" target="_blank"&gt;URL의 HEX 인코딩 및 디코딩📎&lt;/a&gt;에 대해 알고 싶다면 해당 링크를 방문해 보자.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;HTML에는 몇몇 문법에 사용되는 문자를 표기하기 위해 독특한 표기 문법을 가지고 있다. 정확히 말해서 그 상위 개념인 XML이나 SGML에서 정의된 것일 것 같긴 하지만 대충 그렇다고 치자. 어쨌거나 HTML에서는 특수한 문자(HTML Entities)를 표시하기 위해 &lt;code&gt;&amp;amp;&lt;/code&gt;와 &lt;code&gt;;&lt;/code&gt; 사이에 특수문자 이름을 표시하는 방식을 사용한다.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;amp;lt;tag&amp;amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -254,7 +254,7 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;여담&lt;/h2&gt;
 &lt;p&gt;이런 기능을 굳이 사용할 일은 요즘엔 잘 없을 지도 모르겠지만 개인적인 프로젝트로 만들던 것(?)이 이런 기능이 필요해서 찾아보게 되었다.&lt;/p&gt;
-&lt;p&gt;혹시나 HTML이 아닌 URL의 HEX 인코딩 및 디코딩에 대해 알고 싶다면 해당 링크를 방문해 보자.&lt;/p&gt;</content:encoded>
+&lt;p&gt;혹시나 HTML이 아닌 &lt;a href="https://seorenn.tistory.com/894" target="_blank"&gt;URL의 HEX 인코딩 및 디코딩📎&lt;/a&gt;에 대해 알고 싶다면 해당 링크를 방문해 보자.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20250211-01.html</guid>
       <pubDate>Tue, 11 Feb 2025 23:43:00 +0900</pubDate>
     </item>

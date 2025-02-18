@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>미국 1월 CPI가 나왔는데 - Seorenn</title>
-    <meta name="twitter:title" content="미국 1월 CPI가 나왔는데" />
-    <meta name="og:title" content="미국 1월 CPI가 나왔는데" />
-    <meta name="description" content="미국 1월 CPI가 나왔는데 예상보다 좀 안 좋은 모양이다." />
-    <meta name="twitter:description" content="미국 1월 CPI가 나왔는데 예상보다 좀 안 좋은 모양이다." />
-    <meta name="og:description" content="미국 1월 CPI가 나왔는데 예상보다 좀 안 좋은 모양이다." />
-    <link rel="canonical" href="https://seorenn.github.io/log/20250212-01.html" />
-    <meta property="og:url" content="https://seorenn.github.io/log/20250212-01.html" />
+    <title>Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기 - Seorenn</title>
+    <meta name="twitter:title" content="Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기" />
+    <meta name="og:title" content="Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기" />
+    <meta name="description" content="Emacs에서 현재 편집 중인 파일의 이름을 바꾸는 법을 간단히 정리해 보자." />
+    <meta name="twitter:description" content="Emacs에서 현재 편집 중인 파일의 이름을 바꾸는 법을 간단히 정리해 보자." />
+    <meta name="og:description" content="Emacs에서 현재 편집 중인 파일의 이름을 바꾸는 법을 간단히 정리해 보자." />
+    <link rel="canonical" href="https://seorenn.github.io/log/20250218-01.html" />
+    <meta property="og:url" content="https://seorenn.github.io/log/20250218-01.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -70,31 +70,30 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>미국 1월 CPI가 나왔는데</h1>
+          <h1>Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기</h1>
           <div class="title-date">
             
               
-                <a href="../subject/economy.html">경제</a>
+                <a href="../subject/emacs.html">Emacs</a>
               
               <span>//</spans>
             
             
-              <span>2025년 02월 12일 작성</span>
+              <span>2025년 02월 18일 작성</span>
             
             
             
           </div>
         </header>
-        <p>미국 1월 CPI가 나왔는데 예상보다 좀 안 좋은 모양이다. 대충 아래와 같다.</p>
-<ul>
-<li><strong>미국 1월 헤드라인 CPI</strong>: MoM 0.5% (+0.1%) 예상치 상회, YoY 3.0% (+0.1%) 예상치 상회</li>
-<li><strong>미국 1월 근원 CPI</strong>: MoM 0.4% (+0.2%) 예상치 상회, YoY 3.3% (+0.1%) 예상치 상회</li>
-</ul>
-<p>시장에서는 헤드라인과 근원 둘 다 예상치를 상회했다는 점을 문제로 취급할 것 같다. 그렇다면 뭐다? 뭐긴 선물 지수가 그냥 폭포수 처럼 갑자기 처박히는 것 뿐이다. 물론 슬프고 괴로운 이야기다.</p>
-<p>1월 이면 트럼프 취임이 겹쳐있긴 하지만 관세 행정명령은 아직 발동하기 전이다. 그렇다면 갑자기 이렇게 튄 것에 대한 설명에 트럼프의 짓거리(?)가 끼이지는 않을 것 같다.</p>
-<p>약간 상세히 까보면 음식물과 에너지를 제외한 모든 항목들의 인상률이 약간 오르고, 반대로 에너지 인상률은 내렸다. 특히 인상률에 큰 힘을 보탠 건 중고차 및 트럭, 의료용품, 운송비 등이다. 문제의 주거비도 약간 오르면서 여전히 쓰레기 봉투 안의 나무젓가락 처럼 주변을 괴롭히며 견디고 있다.</p>
-<p>뭐 좋게 보자면 미국 경기가 나쁘다는 말은 아닐 거다. 그리고 심하게 튄 건 아니라서 그저 금리 인하 정도만 늦어진다 정도로 해석할 수 있으며 그래서 시장에선 <strong>올해 금리인하는 두 번에서 한 번 정도로 예상이 바뀌었을 뿐</strong>이다. 헉! 으악! 사람 살려!</p>
-<p>결론: 숨통을 좀 조여올 테니 숨을 더 열심히 쉬자.</p>
+        <p>Emacs에서 현재 편집 중인 파일의 이름을 바꾸는 법을 간단히 정리해 보자. 사실 이런 기능을 쓸 일은 별로 없긴 하겠지만 개인적으로 쓰는 경우가 있었기에 메모해 본다.</p>
+<p>현재 편집 중인 버퍼의 파일 이름을 바꾸려먼 <code>rename-visited-file</code>이라는 함수를 실행시키면 된다. 참고로 별도의 키 바인딩은 없는 모양이니 바로 실행시킬 수밖에 없는 듯하다.</p>
+<pre><code>M-x rename-visited-file
+</code></pre>
+<p>별다른 옵션 없이 위 함수가 실행되면 바로 경로(path) 입력을 받는데 여기서 원하는 파일 이름을 입력하면 현재 버퍼에서 편집 중인 파일의 이름이 바뀐다.</p>
+<p>이 함수의 레퍼런스를 살펴보면 알 수 있지만 함수 첫 번째 매개변수로 바꾸려는 파일명을 입력해 줄 수도 있다. 필요하다면 아래와 같이 Lisp 코드로 호출해도 된다는 의미다.</p>
+<pre><code>(rename-visited-file NEW-LOCATION)
+</code></pre>
+<p>간단하니 그냥 잘 기억해두자.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -124,7 +123,7 @@
                   
                     <li>
                       
-                        <a href="../log/20250218-01.html">Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기</a><br/>
+                        <b>Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기</b><br/>
                         <small>2025년 02월 18일 작성</small>
                       
                     </li>
@@ -152,7 +151,7 @@
                   
                     <li>
                       
-                        <b>미국 1월 CPI가 나왔는데</b><br/>
+                        <a href="../log/20250212-01.html">미국 1월 CPI가 나왔는데</a><br/>
                         <small>2025년 02월 12일 작성</small>
                       
                     </li>
@@ -295,72 +294,9 @@
                   
                     <li>
                       
-                        <a href="../log/20250214-00.html">상법 개정은 국가의 의무다</a><br/>
+                        <a href="../log/20250206-01.html">Emacs에서 함수 퍼포먼스 측정하기(Profiler)</a><br/>
                       
-                      <small>2025년 02월 14일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250211-00.html">트럼프 무역 전쟁: 진척 없는 상황에 갑작스런 상호관세와 표적관세의 등장</a><br/>
-                      
-                      <small>2025년 02월 11일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250210-00.html">원유도 종류를 나눌 수 있는 거였어?</a><br/>
-                      
-                      <small>2025년 02월 10일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250207-01.html">이재용 2심을 통해 상법 개정이 왜 필요한지 또 증명되었다</a><br/>
-                      
-                      <small>2025년 02월 07일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250207-00.html">트럼프 무역 전쟁: VS 중국 그리고 VS 유럽 상황들</a><br/>
-                      
-                      <small>2025년 02월 07일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250205-00.html">절세 계좌가 오히려 세금을 이중으로 내게 만든다고?</a><br/>
-                      
-                      <small>2025년 02월 05일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250204-00.html">트럼프 무역전쟁: 방아쇠에 올라간 손가락이 갑자기 코를 후벼 파다</a><br/>
-                      
-                      <small>2025년 02월 04일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250203-00.html">트럼프 무역전쟁: 정말 시작하나 보다</a><br/>
-                      
-                      <small>2025년 02월 03일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250127-00.html">트럼프 무역전쟁: 콜롬비아 관세 해프닝과 트럼프의 품격</a><br/>
-                      
-                      <small>2025년 01월 27일 작성</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250117-00.html">7월 부터 해외주식형 TR ETF가 막힌다고 한다</a><br/>
-                      
-                      <small>2025년 01월 17일 작성</small>
+                      <small>2025년 02월 06일 작성</small>
                     </li>
                   
                 </ul>
@@ -371,49 +307,63 @@
                   
                     <li>
                       
-                        <a href="../article/foreign-exchange-stabilization-bond.html">외평채는 무엇일까?</a><br/>
-                      
-                      <small>2025년 01월 03일 업데이트</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../article/breach-of-duty.html">업무상 배임은 무슨 의미일까?</a><br/>
-                      
-                      <small>2025년 01월 03일 업데이트</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../article/diff-embezzlement-and-breach-of-trust.html">횡령과 배임은 무슨 차이가 있는 걸까?</a><br/>
-                      
-                      <small>2025년 01월 03일 업데이트</small>
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../article/bank-nim-nis.html">은행과 NIM과 NIS</a><br/>
+                        <a href="../article/emacs-lisp-run-cli-cmd-from-terminal-window.html">Emacs Lisp에서 셸 커맨드를 터미널을 통해 실행시키기</a><br/>
                       
                       <small>2024년 12월 26일 업데이트</small>
                     </li>
                   
                     <li>
                       
-                        <a href="../article/soft-landing-and-hard-landing.html">연착륙과 경착륙</a><br/>
+                        <a href="../article/emacs-lisp-async-call.html">Emacs Lisp에서 비동기 호출 코드 작성하기</a><br/>
                       
                       <small>2024년 12월 26일 업데이트</small>
                     </li>
                   
                     <li>
                       
-                        <a href="../article/wall-street-and-main-street.html">월스트리트와 메인스트리트의 의미</a><br/>
+                        <a href="../article/emacs-lisp-sharp-quote-sign.md.html">Emacs Lisp에서 샤프 작은따옴표(#') 기호의 의미</a><br/>
                       
                       <small>2024년 12월 26일 업데이트</small>
                     </li>
                   
                     <li>
                       
-                        <a href="../article/sidecar-and-circuit-breaker.html">사이드카와 서킷브레이커는 무엇일까?</a><br/>
+                        <a href="../article/emacs-lisp-alist.html">Emacs Lisp의 alist 사용법 간단 정리</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-plist.html">Emacs Lisp의 plist 사용법 간단 정리</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-lisp-setq-default.html">Emacs Lisp에서 setq와 setq-default의 차이</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/macos-emacs-korean-inputmethod-hotkey-hammerspoon.html">macOS에서 한영전환키를 Emacs에서도 사용하기 (Hammerspoon)</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/doom-emacs-shortcuts.html">Doom Emacs 단축키 정리</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../article/emacs-evil-surround.html">Emacs의 evil-surround 확장 소개 및 기본 사용법</a><br/>
                       
                       <small>2024년 12월 26일 업데이트</small>
                     </li>
@@ -430,7 +380,7 @@
     <footer>
         
         
-          <p>이 문서는 2025년 02월 12일 23:01에 작성되었으며 2025년 02월 12일 23:01에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 02월 18일 15:46에 작성되었으며 2025년 02월 18일 15:49에 마지막으로 편집되었습니다.</p>
         
         
         <p>

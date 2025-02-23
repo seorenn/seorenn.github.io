@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-02-21T23:51:32.669354+09:00</updated>
+  <updated>2025-02-23T23:04:43.396597+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,88 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250223-00.html</id>
+    <title>iPhone 16e 출시 등 한 주간의 Apple 소식들 25-02-23</title>
+    <updated>2025-02-23T23:04:33.906269+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><h2>iPhone 16e 출시</h2>
+<p><img alt="iPhone 16e (Apple)" src="../upload/202502201600-285312c8.jpg"/>
+<em>iPhone 16e (Apple)</em></p>
+<p>Apple은 iPhone의 보급형 모델인 iPhone 16e를 새롭게 출시했다. 기존 이름 대로라면 iPhone SE 4가 되었을 지도 모를 제품이 루머 대로 (다만 대문자 E가 아닌 소문자 e가 덧붙어서) 이름이 바뀌었다.</p>
+<p>보급형 모델임에도 6.1인치 OLED 디스플레이와 함게 Apple Intelligence를 쓸 수 있는 A18 칩이 탑재되었다. 최신 제품 답게 Action Button도 적용되었지만 디스플레이 상단 센서 부분은 Dynamic Island가 아닌 기존의 노치 디자인이 적용되었다. 그 외에 48MP 후면 단일 카메라가 탑재되고 저장 공간은 128GB가 최소 용량이다. 충전은 최대 29W 속도가 지원될 것으로 보인다. 다만 이상하게도 MagSafe는 빠진 것으로 알려졌다.</p>
+<p>특징적으로 드디어 애플의 자체 모뎀 칩인 C1이 적용되었다.</p>
+<p>한국에서는 2월 21일 부터 판매가 시작되며 가격은 99만 원 부터다. 미국에서는 599 달러부터 시작되는 가격을 보면 한국 판매 가격은 다소 비싸게 느껴지는 건 어쩔 수가 없는 것 같다. 물론 환율이 높다는 점과 미국 가격은 VAT가 빠졌다는 점을 고려해야겠지만 역시 체감이란 게 무시하긴 힘들다.</p>
+<h2>개발 및 소프트웨어 관련 소식들</h2>
+<p><strong>개발자 베타 릴리즈:</strong></p>
+<ul>
+<li>macOS 15.4 beta</li>
+<li>iOS 18.4 beta</li>
+<li>iPadOS 18.4 beta</li>
+<li>visionOS 2.4 beta</li>
+<li>watchOS 11.4 beta</li>
+<li>tvOS 18.4 beta</li>
+<li>Xcode 16.3 beta</li>
+</ul>
+<p>드디어 시작되는 마이너 업데이트 베타에서 슬슬 신형 Mail App의 베타 테스트가 시작된 것 같다. 그밖에 Priority Notification 기능 추가, Apple Intelligence 관련 개선, 기본 앱 설정 개선, Home App에 로봇청소기 관련 지원 등이 구현되는 듯하다.</p>
+<p>그리고 위 버전들은 한국과의 관계도 깊다. 왜 그런가에 대한 건 아래 소식으로 이어진다.</p>
+<p><strong>4월 Apple Intelligence 지원 언어 및 지역 확장</strong><br/>
+Apple이 4월 부터 Apple Intelligence의 지원 언어와 지역을 확장한다고 <a href="https://www.apple.com/kr/newsroom/2025/02/apple-intelligence-expands-to-more-languages-and-regions-in-april/" target="_blank">공식📎</a>적으로 알려왔다. 좀 더 정확히 프랑스어, 독일어, 이탈리아어, 포르투갈어(브라질), 스페인어, 일본어, 한국어, 중국어(간체)와 더불어, 싱가포르 및 인도 내 현지화된 영어까지 추가로 지원할 예정이라고 밝혔다. 다르게 말하자면 해당 지원이 추가될 macOS 15.4 및 iOS 18.4 등의 OS 버전 라인업이 4월에 출시될 예정이라고 볼 수 있다. 추가로 해당 시기에 Vision Pro에서도 Apple Intelligence가 지원된다고 밝히기도 했다.</p>
+<p><strong>iOS 18.5는 이미 테스트 중</strong><br/>
+아직 iOS 18.4 베타도 공개가 되지 않았지만 Apple 내부에서는 이미 iOS 18.5를 테스트 중인 것으로 추정되는 모양이다. 이 버전이 주목을 끄는 이유는 Apple Intelligence 개발이 여기까지 지연될 가능성이 있어서인 모양이다.</p>
+<p><strong>iOS 18.3 서명 중지</strong><br/>
+Apple은 iOS 18.3의 서명을 중지했다. 이제 iOS 18.3.1에서 iOS 18.3으로 다운그레이드가 불가능해졌다. iOS 18.3.1이 충분히 안정적이라는 이야기일 것이다.</p>
+<p><strong>유럽 기준 미충족 앱 삭제</strong><br/>
+EU Digital Service Act 법에 의해 trader status를 입력하지 않은 앱들이 유럽 App Store에서 삭제되고 있다고 애플이 알려왔다. 앱을 다시 올리기 위해서는 해당 정보를 반영해야 한다. <em>하지만 아무리 시도해도 안 되고 늦게 되고 애플이 애플하고 있다.</em></p>
+<p><strong>iOS 18.3.1 for iPhone 16e</strong><br/>
+iPhone 16e 출시와 함께 iOS 18.3.1의 iPhone 16e용 빌드도 갱신되었다. 당연하겠지만 기능적 차이는 없을 것으로 보인다.</p>
+<h2>일반적인 소식들</h2>
+<p><strong>일부 iPhone 단종</strong><br/>
+Apple은 iPhone 16e 출시와 더불어 iPhone 14 및 iPhone 14 Plus, iPhone SE의 생산을 중단하고 웹사이트에서도 내렸다. 공식적으로 단종된 것이다. iPhone 14 일반 모델의 경우 출시 시기를 보면 이례적으로 빠른 단종인 것 같다. 어쨌든 iPhone 16e가 단종된 모델들을 대체하는 목적이라고 볼 수 있을 것 같다. 동시에 이제 LCD 디스플레이, 홈 버튼, 소형 디스플레이 모델은 역사 속으로 사라지게 된다.</p>
+<p><strong>C1는 좀 느릴 것</strong><br/>
+iPhone 16e 출시와 함께 공개된 Apple의 자체 모뎀 칩인 C1은 mmWave 5G 기술을 지원하지 않는 것으로 알려졌다. 6GHz 미만의 5G 네트워크만 지원한다는 의미이며 퀄컴 칩 대비 상대적으로 성능이 딸릴 것은 어쩔 수 없을 것 같다. 아마도 이 C1는 iPhone 17 Air(가)에도 추가 개선 없이 그대로 탑재될 것으로 보인다.</p>
+<p><strong>C1과 MagSafe는 무관</strong><br/>
+Apple은 iPhone 16e에 애플의 자체 모뎀 칩인 C1이 탑재되면서 이로 인해 MagSafe가 제거되었다는 주장에 대해 공식적으로 부정했다. 이는 iPhone 17 Air(가)에도 C1 탑재로 인한 MagSafe 제거 가능성이 제기되는 것과도 관련이 있을 것 같다. 어쨌든 iPhone 17 Air(가)를 기다리고 있다면 일단 기대는 해 볼 수 있을 것 같다.</p>
+<p><strong>영국 자물쇠 풀림</strong><br/>
+Apple은 영국 정부의 요청으로 영국 사용자의 iCloud의 종단간 암호화 기능인 Advanced Data Protection을 해제한다고 한다. 이전 말도 안 되는 백도어 요구 대신 이 방법을 택한 것으로 보이는데 어쨌든 전세계가 아닌 영국 사용자들만 피해를 보게 생긴 건 그나마 다행일 지도 모르겠다.</p>
+<p><strong>Apple Intelligence에 Google Gemini 통합</strong><br/>
+Apple은 Apple Intelligence에 Google Gemini를 통합시키는 것을 고려하고 있다고 밝혔다. 아마도 Siri와 통합되어 ChatGPT와 경쟁 구도를 만들려는 것이 아닐까 추측된다.</p>
+<h2>루머 소식들</h2>
+<p><strong>Mac 관련 루머들</strong>:<br/></p>
+<ul>
+<li>M4 MacBook Air의 출시가 임박한 것으로 보이며 늦어도 3월에는 출시될 것으로 보이는 듯하다. </li>
+<li>M5 MacBook Pro는 가을 쯤 출시될 것으로 보인다.</li>
+</ul>
+<p><strong>iPhone 관련 루머들</strong>:<br/></p>
+<ul>
+<li>iPhone 17 Pro에 이어 iPhone 17 Air(가)에도 직사각형 카메라섬 도입 가능성이 있는 모양이다. </li>
+<li>iPhone 17 Pro 라인업에는 티타늄 대신 다시 알루미늄 프레임이 탑재될 가능성도 전해지고 있다. </li>
+<li>iPhone 17 Pro에서 무선 충전기 기능을 테스트 중일 지도 모르겠다.</li>
+<li>iPhone 17 및 iPhone 17 Air(가)의 디스플레이는 iPhone 16 Pro의 것과 동일한 OLED 패널이 들어갈 지도 모르겠다. </li>
+<li>iPhone 17 라인업 전체에는 35W 충전 기능과 애플 자체 Wi-Fi 칩이 탑재될 가능성이 있다. </li>
+<li>iPhone 17 Air(가)에는 예상보다 큰 6.7인치 디스플레이가 탑재될 수도 있다고 한다.</li>
+<li>폴더블 iPhone의 디스플레이가 외부 5.49인치, 내부 7.74인치라는 루머가 나왔다.</li>
+</ul>
+<p><strong>iPad 관련 루머들</strong><br/>
+M5 iPad Pro는 2026년 상반기 출시될 것으로 보인다.</p>
+<p><strong>C2는 이미 테스트 중?</strong><br/>
+퀄컴 칩에 비해 상대적으로 열세로 보이는 애플의 자체 모뎀 칩인 C1이 이제 막 등장했지만, Apple은 이미 다음 세대인 C2 칩을 테스트 중이라는 소식이 전해졌다. 당연하게도 C1에 비해 C2는 퍼포먼스 면에서 개선될 것은 분명해 보인다.</p>
+<p><strong>모뎀 칩은 통합될 것</strong><br/>
+C1 등장에 이어 C2가 테스트 되고 있다는 소문이 도는 마당이지만 최종적으로는 메인 칩셋에 모뎀 칩이 통합될 형태가 될 것이라는 추측 또한 나오고 있다. 개인적으로도 칩셋에 통합하는 형태가 수율을 제외한 모든 면에서 유리할 거라 생각되고 이런 대형 칩셋의 모듈화로 수율을 올리는 기술도 계속 발전하고 있어서 가능성은 높다고 생각된다.</p>
+<h2>AAPL</h2>
+<p><strong>중국의 공급망 다변화 방해?</strong><br/>
+중국이 인도 공급망의 성장을 의도적으로 방해하고 있다는 추측이 나오는 모양이다. 예를 들어 중국 엔지니어의 인도 방문을 제한한다거나, 장비나 부품의 수출을 통제한다거나, 중국 업체의 인도 공장 설립 금지 등의 방법을 쓰는 것 같다.</p>
+<p><strong>트럼프 관세 영향은 계속?</strong><br/>
+트럼프의 관세로 인해 Apple 제품 가격 인상의 거의 확정된 것 같은 소식들이 나오고 있다. 특히 iPhone의 경우 최대 9% 가량 인상될 것이라는 분석도 있다. 분명한 것은 본의든 아니든 제품 가격 인상은 판매 실적에 악영향을 준다는 점일 거다.</p>
+<p><strong>훌륭한 회담?</strong><br/>
+팀 쿡은 트럼프 미국 대통령과 백악관에서 회담을 가졌으며 Apple은 이에 대해 "훌륭한 회담이었다"라는 평을 했다. 회담 내용은 아무래도 관세에 관한 것이 대부분이었을 것으로 추정되고 있다.</p>
+<p><strong>멕시코 공장 미국으로 이전?</strong><br/>
+위의 회담에서 나온 이야기 인지는 잘 모르겠지만 트럼프는 Apple이 멕시코 공장을 미국으로 이전하며 투자한다고 밝혔다. 하지만 Apple은 이에 대해 공식적으로 반응을 내놓지는 않았다. 어쨌든 관세를 회피하기 위해 Apple이 뭔가 액션은 취할 게 분명해 보이긴 하다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250223-00.html"/>
+    <summary type="text">2월 셋째 주 Apple 관련 소식 및 루머 모음</summary>
+    <published>2025-02-23T23:03:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250221-01.html</id>
     <title>투싼 하이브리드 개인적인 평가 (v3)</title>
@@ -1748,46 +1830,5 @@ Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safa
     <link href="https://seorenn.github.io/article/wall-street-and-main-street.html"/>
     <summary type="text">월스트리트(Wall Street)와 메인스트리트(Main Street)의 의미를 알아보자</summary>
     <published>2024-08-07T23:23:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/objc-exceptions.html</id>
-    <title>Objective-C 예외 처리 정리</title>
-    <updated>2024-12-26T16:18:22.305632+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>Objective-C에서도 예외(exceptions) 처리가 가능함을 이제서야 알게 되었다. 간단하게 정리해 보자.</p>
-<h2>Objective-C 예외 처리 기본</h2>
-<p>Objective-C에서 예외 처리 루틴은 아래와 같은 문법으로 작성할 수 있다.</p>
-<pre><code class="language-c">@try {
-    // 예외 발생을 감시할 코드들
-}
-@catch (SomeAnotherException *e) {
-    // 특정 예외 감시 가능
-}
-@catch (NSException *e) {
-    // 대부분의 예외가 발생할 경우 호출
-}
-@finally {
-    // 예외 발생 여부와 상관 없이 try 블럭이 끝나면 이 곳이 호출
-    // 메모리 해제 루틴을 넣기에 좋은 위치
-}
-</code></pre>
-<p>현대적인 언어에서 자주 볼 수 있는 예외 처리 방식이라 굳이 상세히 설명할 필요는 없을 것 같다.</p>
-<h2>예외 발생시키기</h2>
-<p>예외를 발생시킬 때는 <code>@throw</code>를 이용할 수 있다.</p>
-<pre><code class="language-c">@throw [NSException exceptionName:@"MyException" 
-                           reason:@"I have no money" 
-                         userInfo:nil];
-</code></pre>
-<h2>예외 토스하기</h2>
-<p>예외가 발생하면 이를 더 상위로 던져줘서 거기서 알아서 처리하라고 하고 싶을 때가 있는데 이럴 때는 그냥 <code>@throw</code>를 쓰기만 해도 된다.</p>
-<pre><code class="language-c">@catch (NSException *e) {
-    @throw;
-}
-</code></pre>
-<p>이렇게 하면 굳이 예외 인스턴스를 적어주지 않아도 알아서 동일한 예외가 발생되므로 상위 레벨에서 예외를 잡을 수 있다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/article/objc-exceptions.html"/>
-    <summary type="text">Objective-C의 예외(Exceptions) 처리와 관련된 부분을 정리하는 글</summary>
-    <published>2024-08-06T14:58:00+09:00</published>
   </entry>
 </feed>

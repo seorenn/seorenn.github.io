@@ -13,7 +13,67 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Tue, 25 Feb 2025 15:10:06 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 14:16:55 +0900</lastBuildDate>
+    <item>
+      <title>macOS에서 Emacs 30 설치 및 실행 오류 해결하기</title>
+      <link>https://seorenn.github.io/log/20250226-00.html</link>
+      <description>&lt;p&gt;어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 Homebrew를 통해 emacs-plus 패키지 형태로 설치한 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다.&lt;/p&gt;
+&lt;p&gt;참고로 이 글을 쓰는 시점에서 macOS는 macOS Sequoia 15.3.1이다.&lt;/p&gt;
+&lt;h2&gt;Homebrew로 Emacs 30 설치하기&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;macOS에서 Homebrew로 Emacs를 설치할 때는 emacs-plus 패키지를 설치하는 것이 그나마 간단한 것 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Emacs의 최신 안정 버전이 30 버전대임에도 불구하고 머신의 Emacs 29 버전이 업그레이드가 안 되길래 확인해보니 버전을 지정하지 않으면 &lt;code&gt;emacs-plus@29&lt;/code&gt; formulae로 설치되기 때문에 그랬던 것 같다. 최근엔 바뀌었을 지도 모르겠지만 혹시나 Homebrew로 emacs-plus를 설치했는데 30 미만의 버전이 설치된다면 아래와 같이 강제로 버전을 지정해 주자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew install emacs-plus@30
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;상황에 따라 빌드에 시간이 필요할 수도 있으니 적절히 대응하자.&lt;/p&gt;
+&lt;p&gt;설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ osascript -e 'tell application &amp;quot;Finder&amp;quot; to make alias file to posix file &amp;quot;/usr/local/opt/emacs-plus@30/Emacs.app&amp;quot; at posix file &amp;quot;/Applications&amp;quot; with properties {name:&amp;quot;Emacs.app&amp;quot;}'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이제 터미널에서 open 커맨드로 실행시키거나 파인더에서 Applications를 열어서 Emacs.app을 실행시키면 돌아가야 한다. 돌아가야 정상일 텐데....&lt;/p&gt;
+&lt;h2&gt;그런데 실행이 안 된다&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;emacs-plus@29&lt;/code&gt; 때에도 비슷하지만 다른 문제가 있었는데 &lt;code&gt;emacs-plus@30&lt;/code&gt;에도 파인더에서 바로 실행이 안 되는 문제가 발생했다. 다만 오류 내용이 달랐는데 이번에는 아래와 같은 오류가 발생했다. 참고로 &lt;code&gt;$&lt;/code&gt; 표시는 셸 프롬프트이니 오해하지 말자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ open -a Emacs
+_LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/emacs-plus@30/30.1/Emacs.app with error -54.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이런저런 구글링을 하다 보니 다행히도 이것과 비슷한 문제에 대한 해답을 찾을 수 있었다. 개인적인 경우 아래의 한 줄의 커맨드가 해답이 되었다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo codesign --force --deep --sign - /usr/local/opt/emacs-plus@30/Emacs.app
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sudo 커맨드이기 때문에 사용자 패스워드를 물어온다. 이 커맨드를 실행한 이후 Emacs.app이 정상적으로 실행되고 Dock에도 잘 올라갔다. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Emacs 29 버전대에서 문제가 터진 후 참으로 오랜만에 Dock에 Emacs 아이콘을 올려놓고 쓸 수가 있게 되어서 살짝 감격했다.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;위 오류 해결 커맨드는 &lt;a href="https://github.com/d12frosted/homebrew-emacs-plus/issues/742" target="_blank"&gt;관련된 스레드📎&lt;/a&gt;에서 찾은 것이다. 여기에서는 여러 이야기가 오간다. 혹시 위의 커맨드로 해결이 안 된다면 스레드를 참고해보자. 몇몇 다른 옵션이나 퍼미션 관련 힌트도 있으니 시도해 볼 가치는 있을 것 같다. 개인적인 경우는 위 커맨드 만으로 해결이 되긴 했지만 말이다.&lt;/p&gt;
+&lt;p&gt;그 외에 비슷한 여러 질문을 볼 수 있었다. 예를 들어 PostgreSQL을 설치했는데 비슷한 오류가 발생하면 pgadmin을 새로 설치하니 해결되었다는 등등 말이다. 물론 원인은 좀 다른 것 같긴 하다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 Homebrew를 통해 emacs-plus 패키지 형태로 설치한 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다.&lt;/p&gt;
+&lt;p&gt;참고로 이 글을 쓰는 시점에서 macOS는 macOS Sequoia 15.3.1이다.&lt;/p&gt;
+&lt;h2&gt;Homebrew로 Emacs 30 설치하기&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;macOS에서 Homebrew로 Emacs를 설치할 때는 emacs-plus 패키지를 설치하는 것이 그나마 간단한 것 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Emacs의 최신 안정 버전이 30 버전대임에도 불구하고 머신의 Emacs 29 버전이 업그레이드가 안 되길래 확인해보니 버전을 지정하지 않으면 &lt;code&gt;emacs-plus@29&lt;/code&gt; formulae로 설치되기 때문에 그랬던 것 같다. 최근엔 바뀌었을 지도 모르겠지만 혹시나 Homebrew로 emacs-plus를 설치했는데 30 미만의 버전이 설치된다면 아래와 같이 강제로 버전을 지정해 주자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew install emacs-plus@30
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;상황에 따라 빌드에 시간이 필요할 수도 있으니 적절히 대응하자.&lt;/p&gt;
+&lt;p&gt;설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ osascript -e 'tell application &amp;quot;Finder&amp;quot; to make alias file to posix file &amp;quot;/usr/local/opt/emacs-plus@30/Emacs.app&amp;quot; at posix file &amp;quot;/Applications&amp;quot; with properties {name:&amp;quot;Emacs.app&amp;quot;}'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이제 터미널에서 open 커맨드로 실행시키거나 파인더에서 Applications를 열어서 Emacs.app을 실행시키면 돌아가야 한다. 돌아가야 정상일 텐데....&lt;/p&gt;
+&lt;h2&gt;그런데 실행이 안 된다&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;emacs-plus@29&lt;/code&gt; 때에도 비슷하지만 다른 문제가 있었는데 &lt;code&gt;emacs-plus@30&lt;/code&gt;에도 파인더에서 바로 실행이 안 되는 문제가 발생했다. 다만 오류 내용이 달랐는데 이번에는 아래와 같은 오류가 발생했다. 참고로 &lt;code&gt;$&lt;/code&gt; 표시는 셸 프롬프트이니 오해하지 말자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ open -a Emacs
+_LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/emacs-plus@30/30.1/Emacs.app with error -54.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이런저런 구글링을 하다 보니 다행히도 이것과 비슷한 문제에 대한 해답을 찾을 수 있었다. 개인적인 경우 아래의 한 줄의 커맨드가 해답이 되었다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo codesign --force --deep --sign - /usr/local/opt/emacs-plus@30/Emacs.app
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sudo 커맨드이기 때문에 사용자 패스워드를 물어온다. 이 커맨드를 실행한 이후 Emacs.app이 정상적으로 실행되고 Dock에도 잘 올라갔다. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Emacs 29 버전대에서 문제가 터진 후 참으로 오랜만에 Dock에 Emacs 아이콘을 올려놓고 쓸 수가 있게 되어서 살짝 감격했다.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;위 오류 해결 커맨드는 &lt;a href="https://github.com/d12frosted/homebrew-emacs-plus/issues/742" target="_blank"&gt;관련된 스레드📎&lt;/a&gt;에서 찾은 것이다. 여기에서는 여러 이야기가 오간다. 혹시 위의 커맨드로 해결이 안 된다면 스레드를 참고해보자. 몇몇 다른 옵션이나 퍼미션 관련 힌트도 있으니 시도해 볼 가치는 있을 것 같다. 개인적인 경우는 위 커맨드 만으로 해결이 되긴 했지만 말이다.&lt;/p&gt;
+&lt;p&gt;그 외에 비슷한 여러 질문을 볼 수 있었다. 예를 들어 PostgreSQL을 설치했는데 비슷한 오류가 발생하면 pgadmin을 새로 설치하니 해결되었다는 등등 말이다. 물론 원인은 좀 다른 것 같긴 하다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20250226-00.html</guid>
+      <pubDate>Wed, 26 Feb 2025 14:16:00 +0900</pubDate>
+    </item>
     <item>
       <title>상법 개정에 대한 경제계와 여당의 자세는 여전하다</title>
       <link>https://seorenn.github.io/log/20250225-01.html</link>
@@ -2819,120 +2879,6 @@ HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
 &lt;p&gt;물론 에어컨 냉기는 답이 없다. 그냥 약간 데워지는 정도로 타협하자. 그나마 가장 효율적인 대안인 것 같으니 이 정도는 희생해도 될 것 같다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/article/tucson-locking-door-with-ignition-on.html</guid>
       <pubDate>Mon, 12 Aug 2024 23:37:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>macOS 14.6.1, iOS 17.6.1 릴리즈 등 한 주간의 애플 소식들 24-08-11</title>
-      <link>https://seorenn.github.io/log/20240811-00.html</link>
-      <description>&lt;h2&gt;소프트웨어 안정 버전 릴리즈 소식들&lt;/h2&gt;
-&lt;p&gt;미국 시각 8월 7일 애플은 플랫폼 OS 라인업의 현 버전에 버그 픽스 업데이트를 릴리즈 했다. 대상과 버전은 다음과 같다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS 14.6.1&lt;/li&gt;
-&lt;li&gt;iOS 17.6.1&lt;/li&gt;
-&lt;li&gt;iPadOS 17.6.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;마이너 버전의 버그 픽스 릴리즈이기 때문에 기능적 변화는 없고 버그나 보안결함 수정이 대부분인 버전들이니 가급적 빠르게 설치하는 것을 추천한다.&lt;/p&gt;
-&lt;h2&gt;소프트웨어 개발자 베타 릴리즈 소식들&lt;/h2&gt;
-&lt;p&gt;미국 시각 8월 5일 애플 플랫폼 OS 차세대 버전들의 다섯번 째 개발자 베타가 다음과 같이 공개되었다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS 15 beta 5&lt;/li&gt;
-&lt;li&gt;iOS 18 beta 5&lt;/li&gt;
-&lt;li&gt;iPadOS 18 beta 5&lt;/li&gt;
-&lt;li&gt;visionOS 2 beta 5&lt;/li&gt;
-&lt;li&gt;watchOS 11 beta 5&lt;/li&gt;
-&lt;li&gt;tvOS 18 beta 5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;macOS 15, iOS 18, iPadOS 18의 Safari에 Distraction Control 기능이 추가된 모양이다. 이 기능은 일부 오버레이 레이아웃 요소를 차단하는 기능인 것으로 보인다. 예를 들어 화면을 가리는 광고 등을 치울 때 유용할 것 같다.&lt;/p&gt;
-&lt;p&gt;그 외에 사진 앱에서 새롭게 추가되었던 캐러셀(Carousel) 뷰 기능이 불만이 많았는지 제거되었다고 한다.&lt;/p&gt;
-&lt;p&gt;그 외에 다음 개발 도구도 다음날 릴리즈가 이어졌다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Xcode 16 beta 5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;개발자 베타는 설치를 위해선 애플 개발자 프로그램에 가입된 계정이 필요하다. 일반 사용자라면 안정 버전 설치를 추천하나 정 급하다면(?) 추후 공개될 공공 베타 릴리즈를 기다리는 편이 좋을 것 같다.&lt;/p&gt;
-&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;iPhone 16 출시 일정&lt;/strong&gt;&lt;br/&gt;
-Apple Intelligence가 생각보다 늦어지고 있지만 iPhone 16 시리즈 출시는 9월로 확정된 것 같다. 그 외에 한국이 1차 출시국에 포함 되었다는 소식도 들리고 있다. 수요가 높을 것을 대비하는지 폭스콘이 2주 만에 무려 5만 명을 채용했다고도 한다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;아이폰에 신분증이 쏘옥&lt;/strong&gt;&lt;br/&gt;
-아이폰 지갑 앱의 신분증이나 운전면허증을 추가할 수 있는 기능이 캘리포니아 주에서 지원되고 이후 테네시와 아이오와 주에서도 지원될 것으로 예상 된다고 한다. 아주 유용한 기능일 것 같은데 한국은 감감무소식이다. 물론 한국은 비슷한 기능이 이미 여러 국내 서비스에서 난립하는 중이라 외국 기업에 길을 열어줄 가능성은 낮아보인다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 17.5.1 바이바이&lt;/strong&gt;&lt;br/&gt;
-애플이 iOS 17.5.1의 서명을 중지했다. 이 말의 의미는 iOS 17.5.1를 쓰지 말라는 의미와 일맥상통한다. 그래서 해당 버전의 설치는 물론이고 iOS 17.6 이상의 상위 버전에서 이 버전으로의 다운그레이드도 불가능해 진다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;작아진 M4 Mac Mini?&lt;/strong&gt;&lt;br/&gt;
-M4가 탑재된 Macbook Pro를 비롯한 Mac Mini, iMac 등도 올해 중에 신제품을 볼 수 있을 것 같다. 그런데 특히 Mac Mini의 경우 한동안 리프레시가 없었기에 안 그래도 기대되는데 애플 역사상 가장 작은 컴퓨터가 될 수 있을 만큼 더 작아질 가능성이 커지며 더욱 기대를 모으고 있는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;더 귀찮게 할게요?&lt;/strong&gt;&lt;br/&gt;
-macOS 15 Sequoia부터 화면 녹화 권한이 리부팅 및 일주일 단위로 리셋된다고 한다. 즉 매번 리부팅 때마다 혹은 일주일 마다 스크린샷 캡처나 화면 녹화 권한을 요구하는 앱이 해당 기능을 사용할 때 권한 허용 팝업이 뜬다는 말이다. 이 외에도 서명이 부적절하거나 공증이 되지 않은 앱은 실행이 거부될 수도 있는데 현재는 '우클릭 - 열기'로 열 수 있다는 점에서 나중에 좀 귀찮은 일이 생길 것 같다. 사용자에겐 불편해지는 일이 더 많아질 수 있겠지만 프라이버시와 편리 사이에는 상충하는 면이 많기에 어쩔 수 없을 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Intelligence&lt;/strong&gt;&lt;br/&gt;
-일단 애플 AI의 EU 진출에 물꼬는 트인 것 같지만 우선은 Mac만 지원될 것 같다. iPhone이나 iPad 등은 EU DMA의 적용 대상이지만 Mac은 여기에 해당되지 않는 모양이다. 이외에 Apple Intelligence의 일부 고급 기능이 월 최대 20 달러를 받는 구독 상품이 될 가능성도 전해지고 있다. 일기 앱에도 AI 적용 가능성이 점쳐지고 있다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;한국 아이폰 빨리 나올까?&lt;/strong&gt;&lt;br/&gt;
-한국이 iPhone의 1차 출시국에 포함 되었다는 소식이 얼마전에 들렸었는데 해외 매체에서도 이를 전달할 정도로 기대감이 높아진 모양이다. 물론 애플의 공식적인 발표가 있기 전까진 확정은 아니다. 다만 애플이 중국의 점유율 하락을 일부 메꿀 시장으로 한국을 선택한 것이 아닌가 하는 추측도 있다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;EU DMA 겁박(?) 상황&lt;/strong&gt;&lt;br/&gt;
-애플은 앱스토어 비지니스 약관 및 구매 약관에서 EU 지역에서 외부 웹사이트 링크를 게제할 수 있도록 허용되었다. 이 말은 애플 앱스토어를 통해 외부 설치나 결제 옵션의 안내가 가능해졌다는 의미다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Maps&lt;/strong&gt;&lt;br/&gt;
-Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safari가 웹 표준 지원 개발 속도가 가장 느리다는 점에서 파이어폭스 지원이 그렇게 난이도가 높은 일은 아닐 거라 생각되지만 어쨌든 참 잘 하고 있는 일이다. 당연히 긍정적인 표현이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;AAPL&lt;/strong&gt;&lt;br/&gt;
-구글의 '브라우저 기본 검색엔진 사업'이 미국 반독점법에 의해 규제대상이 되면서 애플도 Safari 구글 검색을 통한 약 200억 달러 이상의 수익 감소가 예상된다. 구글과 애플 양쪽에 좋은 사업이었는데 아쉬운 것과 별개로, 사용자 입장에서도 이게 과연 좋은 건지 아닌지 모르겠다. 기본 검색엔진이야 그냥 바꾸면 되니 말이다.&lt;/p&gt;
-&lt;h2&gt;여러 루머 소식들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;차세대 Apple Wtach SE는 플라스틱으로 만들어질 수도 있어 보인다.&lt;/li&gt;
-&lt;li&gt;iOS 17.6.1이 준비 중이라는 소식이 들린다. 17.6에 큰 변화가 없어서 괜찮을 거라 생각했는데 의외로 좀 큰 보안결함이 있는 모양이다.&lt;/li&gt;
-&lt;li&gt;애플 지도의 실시간 교통 정보 기능이 일본 도쿄에서도 지원되는 모양이다. &lt;em&gt;한국은 지도라도 제대로 나오게 하는게 우선일 것 같다.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;iPad Air 및 iPad Mini에 OLED가 탑재되는 것은 빨라야 2026년이 될 것 같은 모양이다. OLED 패널은 아마도 삼성이 주로 공급할 것 같다.&lt;/li&gt;
-&lt;li&gt;애플이 스마트 안경을 여전히 개발 중이라는 소문이 들린다. 다만 디스플레이는 없는 형태로 유추된다.&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <content:encoded>&lt;h2&gt;소프트웨어 안정 버전 릴리즈 소식들&lt;/h2&gt;
-&lt;p&gt;미국 시각 8월 7일 애플은 플랫폼 OS 라인업의 현 버전에 버그 픽스 업데이트를 릴리즈 했다. 대상과 버전은 다음과 같다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS 14.6.1&lt;/li&gt;
-&lt;li&gt;iOS 17.6.1&lt;/li&gt;
-&lt;li&gt;iPadOS 17.6.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;마이너 버전의 버그 픽스 릴리즈이기 때문에 기능적 변화는 없고 버그나 보안결함 수정이 대부분인 버전들이니 가급적 빠르게 설치하는 것을 추천한다.&lt;/p&gt;
-&lt;h2&gt;소프트웨어 개발자 베타 릴리즈 소식들&lt;/h2&gt;
-&lt;p&gt;미국 시각 8월 5일 애플 플랫폼 OS 차세대 버전들의 다섯번 째 개발자 베타가 다음과 같이 공개되었다:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS 15 beta 5&lt;/li&gt;
-&lt;li&gt;iOS 18 beta 5&lt;/li&gt;
-&lt;li&gt;iPadOS 18 beta 5&lt;/li&gt;
-&lt;li&gt;visionOS 2 beta 5&lt;/li&gt;
-&lt;li&gt;watchOS 11 beta 5&lt;/li&gt;
-&lt;li&gt;tvOS 18 beta 5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;macOS 15, iOS 18, iPadOS 18의 Safari에 Distraction Control 기능이 추가된 모양이다. 이 기능은 일부 오버레이 레이아웃 요소를 차단하는 기능인 것으로 보인다. 예를 들어 화면을 가리는 광고 등을 치울 때 유용할 것 같다.&lt;/p&gt;
-&lt;p&gt;그 외에 사진 앱에서 새롭게 추가되었던 캐러셀(Carousel) 뷰 기능이 불만이 많았는지 제거되었다고 한다.&lt;/p&gt;
-&lt;p&gt;그 외에 다음 개발 도구도 다음날 릴리즈가 이어졌다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Xcode 16 beta 5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;개발자 베타는 설치를 위해선 애플 개발자 프로그램에 가입된 계정이 필요하다. 일반 사용자라면 안정 버전 설치를 추천하나 정 급하다면(?) 추후 공개될 공공 베타 릴리즈를 기다리는 편이 좋을 것 같다.&lt;/p&gt;
-&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;iPhone 16 출시 일정&lt;/strong&gt;&lt;br/&gt;
-Apple Intelligence가 생각보다 늦어지고 있지만 iPhone 16 시리즈 출시는 9월로 확정된 것 같다. 그 외에 한국이 1차 출시국에 포함 되었다는 소식도 들리고 있다. 수요가 높을 것을 대비하는지 폭스콘이 2주 만에 무려 5만 명을 채용했다고도 한다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;아이폰에 신분증이 쏘옥&lt;/strong&gt;&lt;br/&gt;
-아이폰 지갑 앱의 신분증이나 운전면허증을 추가할 수 있는 기능이 캘리포니아 주에서 지원되고 이후 테네시와 아이오와 주에서도 지원될 것으로 예상 된다고 한다. 아주 유용한 기능일 것 같은데 한국은 감감무소식이다. 물론 한국은 비슷한 기능이 이미 여러 국내 서비스에서 난립하는 중이라 외국 기업에 길을 열어줄 가능성은 낮아보인다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 17.5.1 바이바이&lt;/strong&gt;&lt;br/&gt;
-애플이 iOS 17.5.1의 서명을 중지했다. 이 말의 의미는 iOS 17.5.1를 쓰지 말라는 의미와 일맥상통한다. 그래서 해당 버전의 설치는 물론이고 iOS 17.6 이상의 상위 버전에서 이 버전으로의 다운그레이드도 불가능해 진다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;작아진 M4 Mac Mini?&lt;/strong&gt;&lt;br/&gt;
-M4가 탑재된 Macbook Pro를 비롯한 Mac Mini, iMac 등도 올해 중에 신제품을 볼 수 있을 것 같다. 그런데 특히 Mac Mini의 경우 한동안 리프레시가 없었기에 안 그래도 기대되는데 애플 역사상 가장 작은 컴퓨터가 될 수 있을 만큼 더 작아질 가능성이 커지며 더욱 기대를 모으고 있는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;더 귀찮게 할게요?&lt;/strong&gt;&lt;br/&gt;
-macOS 15 Sequoia부터 화면 녹화 권한이 리부팅 및 일주일 단위로 리셋된다고 한다. 즉 매번 리부팅 때마다 혹은 일주일 마다 스크린샷 캡처나 화면 녹화 권한을 요구하는 앱이 해당 기능을 사용할 때 권한 허용 팝업이 뜬다는 말이다. 이 외에도 서명이 부적절하거나 공증이 되지 않은 앱은 실행이 거부될 수도 있는데 현재는 '우클릭 - 열기'로 열 수 있다는 점에서 나중에 좀 귀찮은 일이 생길 것 같다. 사용자에겐 불편해지는 일이 더 많아질 수 있겠지만 프라이버시와 편리 사이에는 상충하는 면이 많기에 어쩔 수 없을 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Intelligence&lt;/strong&gt;&lt;br/&gt;
-일단 애플 AI의 EU 진출에 물꼬는 트인 것 같지만 우선은 Mac만 지원될 것 같다. iPhone이나 iPad 등은 EU DMA의 적용 대상이지만 Mac은 여기에 해당되지 않는 모양이다. 이외에 Apple Intelligence의 일부 고급 기능이 월 최대 20 달러를 받는 구독 상품이 될 가능성도 전해지고 있다. 일기 앱에도 AI 적용 가능성이 점쳐지고 있다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;한국 아이폰 빨리 나올까?&lt;/strong&gt;&lt;br/&gt;
-한국이 iPhone의 1차 출시국에 포함 되었다는 소식이 얼마전에 들렸었는데 해외 매체에서도 이를 전달할 정도로 기대감이 높아진 모양이다. 물론 애플의 공식적인 발표가 있기 전까진 확정은 아니다. 다만 애플이 중국의 점유율 하락을 일부 메꿀 시장으로 한국을 선택한 것이 아닌가 하는 추측도 있다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;EU DMA 겁박(?) 상황&lt;/strong&gt;&lt;br/&gt;
-애플은 앱스토어 비지니스 약관 및 구매 약관에서 EU 지역에서 외부 웹사이트 링크를 게제할 수 있도록 허용되었다. 이 말은 애플 앱스토어를 통해 외부 설치나 결제 옵션의 안내가 가능해졌다는 의미다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Maps&lt;/strong&gt;&lt;br/&gt;
-Apple Maps 웹 버전이 파이어폭스도 지원 한다고 한다. 사실 Safari가 웹 표준 지원 개발 속도가 가장 느리다는 점에서 파이어폭스 지원이 그렇게 난이도가 높은 일은 아닐 거라 생각되지만 어쨌든 참 잘 하고 있는 일이다. 당연히 긍정적인 표현이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;AAPL&lt;/strong&gt;&lt;br/&gt;
-구글의 '브라우저 기본 검색엔진 사업'이 미국 반독점법에 의해 규제대상이 되면서 애플도 Safari 구글 검색을 통한 약 200억 달러 이상의 수익 감소가 예상된다. 구글과 애플 양쪽에 좋은 사업이었는데 아쉬운 것과 별개로, 사용자 입장에서도 이게 과연 좋은 건지 아닌지 모르겠다. 기본 검색엔진이야 그냥 바꾸면 되니 말이다.&lt;/p&gt;
-&lt;h2&gt;여러 루머 소식들&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;차세대 Apple Wtach SE는 플라스틱으로 만들어질 수도 있어 보인다.&lt;/li&gt;
-&lt;li&gt;iOS 17.6.1이 준비 중이라는 소식이 들린다. 17.6에 큰 변화가 없어서 괜찮을 거라 생각했는데 의외로 좀 큰 보안결함이 있는 모양이다.&lt;/li&gt;
-&lt;li&gt;애플 지도의 실시간 교통 정보 기능이 일본 도쿄에서도 지원되는 모양이다. &lt;em&gt;한국은 지도라도 제대로 나오게 하는게 우선일 것 같다.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;iPad Air 및 iPad Mini에 OLED가 탑재되는 것은 빨라야 2026년이 될 것 같은 모양이다. OLED 패널은 아마도 삼성이 주로 공급할 것 같다.&lt;/li&gt;
-&lt;li&gt;애플이 스마트 안경을 여전히 개발 중이라는 소문이 들린다. 다만 디스플레이는 없는 형태로 유추된다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20240811-00.html</guid>
-      <pubDate>Sun, 11 Aug 2024 21:48:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

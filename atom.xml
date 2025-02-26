@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-02-26T14:16:55.042887+09:00</updated>
+  <updated>2025-02-26T15:00:27.723457+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20250226-00.html</id>
     <title>macOS에서 Emacs 30 설치 및 실행 오류 해결하기</title>
-    <updated>2025-02-26T14:16:49.375939+09:00</updated>
+    <updated>2025-02-26T14:59:55.981555+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 Homebrew를 통해 emacs-plus 패키지 형태로 설치한 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다.</p>
 <p>참고로 이 글을 쓰는 시점에서 macOS는 macOS Sequoia 15.3.1이다.</p>
@@ -26,7 +26,7 @@
 <pre><code>$ brew install emacs-plus@30
 </code></pre>
 <p>상황에 따라 빌드에 시간이 필요할 수도 있으니 적절히 대응하자.</p>
-<p>설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다.</p>
+<p>설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다. <em>추후 상황이나 버전에 따라 커맨드가 좀 달라질 수도 있으니 정확한 것은 메시지를 잘 확인하자.</em></p>
 <pre><code>$ osascript -e 'tell application "Finder" to make alias file to posix file "/usr/local/opt/emacs-plus@30/Emacs.app" at posix file "/Applications" with properties {name:"Emacs.app"}'
 </code></pre>
 <p>이제 터미널에서 open 커맨드로 실행시키거나 파인더에서 Applications를 열어서 Emacs.app을 실행시키면 돌아가야 한다. 돌아가야 정상일 텐데....</p>

@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Wed, 26 Feb 2025 14:16:55 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 15:00:27 +0900</lastBuildDate>
     <item>
       <title>macOS에서 Emacs 30 설치 및 실행 오류 해결하기</title>
       <link>https://seorenn.github.io/log/20250226-00.html</link>
@@ -27,7 +27,7 @@
 &lt;pre&gt;&lt;code&gt;$ brew install emacs-plus@30
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;상황에 따라 빌드에 시간이 필요할 수도 있으니 적절히 대응하자.&lt;/p&gt;
-&lt;p&gt;설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다.&lt;/p&gt;
+&lt;p&gt;설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다. &lt;em&gt;추후 상황이나 버전에 따라 커맨드가 좀 달라질 수도 있으니 정확한 것은 메시지를 잘 확인하자.&lt;/em&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ osascript -e 'tell application &amp;quot;Finder&amp;quot; to make alias file to posix file &amp;quot;/usr/local/opt/emacs-plus@30/Emacs.app&amp;quot; at posix file &amp;quot;/Applications&amp;quot; with properties {name:&amp;quot;Emacs.app&amp;quot;}'
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이제 터미널에서 open 커맨드로 실행시키거나 파인더에서 Applications를 열어서 Emacs.app을 실행시키면 돌아가야 한다. 돌아가야 정상일 텐데....&lt;/p&gt;
@@ -54,7 +54,7 @@ _LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/
 &lt;pre&gt;&lt;code&gt;$ brew install emacs-plus@30
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;상황에 따라 빌드에 시간이 필요할 수도 있으니 적절히 대응하자.&lt;/p&gt;
-&lt;p&gt;설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다.&lt;/p&gt;
+&lt;p&gt;설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다. &lt;em&gt;추후 상황이나 버전에 따라 커맨드가 좀 달라질 수도 있으니 정확한 것은 메시지를 잘 확인하자.&lt;/em&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ osascript -e 'tell application &amp;quot;Finder&amp;quot; to make alias file to posix file &amp;quot;/usr/local/opt/emacs-plus@30/Emacs.app&amp;quot; at posix file &amp;quot;/Applications&amp;quot; with properties {name:&amp;quot;Emacs.app&amp;quot;}'
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이제 터미널에서 open 커맨드로 실행시키거나 파인더에서 Applications를 열어서 Emacs.app을 실행시키면 돌아가야 한다. 돌아가야 정상일 텐데....&lt;/p&gt;

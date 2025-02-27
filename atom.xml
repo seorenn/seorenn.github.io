@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-02-26T23:13:24.915532+09:00</updated>
+  <updated>2025-02-27T14:34:52.691322+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,57 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250227-00.html</id>
+    <title>자동차 방향지시등에 대해 잘 알고 있을까?</title>
+    <updated>2025-02-27T14:34:45.056197+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>자동차 방향지시등, 일명 깜빡이에 대해 사용할 줄 모르면 자동차 면허 자격이 없다고 생각한다. 그 만큼 중요하면서 그만큼 책임 또한 높은 행위로 바로 깜빡이를 켜는 것 같다. 그렇다면 나는 과연 이 깜빡이를 제대로 사용하고 있는 걸까?</p>
+<h2>일단은 방향지시등에 대해 간단히 정리해보자</h2>
+<p>방향지시등(turn signals, turn indicator) 혹은 깜빡이(blinker, winker)는 끼어들기나 차선을 바꿀 때, 교차로에서 좌우측으로 갈 방향을 주변 차량이나 보행자에게 알려주기 위한 지시등이다. <em>여담이지만 영어로도 깜빡이와 비슷한 의미의 대체 용어를 쓰는 게 약간 귀엽게 느껴진다.</em></p>
+<p>이런 방향지시들은 차의 앞과 뒤에 위치하고 있기 때문에 앞 쪽은 전면 방향지시등, 뒷쪽은 후면 방향지시등으로 부른다. 전면이든 후면이든 좌우는 동기화가 되어있어서 동일한 방향의 감빡이가 점멸되거나 꺼진다.</p>
+<p><strong>방향지시등은 법적으로 30m 전에, 고속도로에서는 100m 전에 켜야 한다</strong>고 명시되어 있다. 즉 <strong>깜빡이를 켜는 것은 의무</strong>다. 깜빡이를 안 켰다고 바로 고발되고 처벌되는 것은 아니지만, 깜빡이를 켜지 않고 방향을 바꾸나 사고가 발생한 것은 법적 의무를 어긴 행위이기 때문에 민형사상 불이익은 물론 추가 과실비중을 떠안는 건 당연한 일이다.</p>
+<p>방향지시등은 기본적으로 해당 의도의 행위를 완전히 끝낸 후 꺼야 한다. 끼어들기를 하려는 목적이었다면 끼어들기가 완전히 끝난 후에 꺼야 한다는 말이다. 하지만 끼어들기 초입에 성공했다면 굳이 깜빡이를 유지할 필요도 별로 없는 것 같아서 암묵적으로 다들 일찍 끄기는 한다.</p>
+<h2>방향지시등은 정확하게 이렇게 써야 한다는 게 있을까?</h2>
+<p>방향지시등이라는 이름에서 '방향'과 '지시'의 의미를 이해하고 있다면 이 깜빡이의 사용법은 명확하다. 바로 <strong>내가 진행할 방향을 알려준다</strong>는 의미다. 다르게 표현하자면 내가 <strong>핸들(스티어링 휠)을 어느 방향으로 돌릴 거다라는 것을 알려주는 용도</strong>다.</p>
+<p>왜 이런 내용을 강조하냐면 바로 그런데 깜빡이와 관련된 논란이 많은 이슈가 하나 있기 때문이다. 바로 아래와 같은 상황이다.</p>
+<blockquote>
+<p>(문) 삼거리에서 우회전으로 합류할 때는 어떤 방향지시등을 켜야 하나?<br/>
+1: 우회전이니 우측 깜빡이를 켜야 한다.<br/>
+2: 끼어들기를 하는 셈이니 좌측 깜빡이를 켜야 한다.</p>
+</blockquote>
+<p>끝 없이 논쟁 거리가 되기는 하지만 사실 답은 이미 정해져 있는 그런 이슈긴 하다. 왜냐하면 앞서 이야기 했지만 방향지시등은 내가 이동하려는 '방향'을 '지시'해 주는 '전등'이라는 의미다. 핸들을 이 방향으로 돌릴 거다라는 것을 전후방 차량에 알린다는 목적 말이다.</p>
+<p>따라서 이 경우 삼거리에서 <strong>우회전으로 합류할 때는 우측 깜빡이</strong>를 켜고 합류가 완전히 끝나면 깜빡이를 끄면 된다. 단 합류가 어느 정도 끝난 뒤 더 안쪽 차선으로 이동하려 할 때는 이 때부터 좌측 깜빡이를 켜야한다. 그리고 끼어들기가 끝나면 깜빡이를 끄면 된다. 처음부터 끝까지 내가 핸들 돌릴 방향을 지시해주는 목적으로 사용하는 그런 정리다.</p>
+<p>반대 방향의 깜박이를 켜야 한다는 주장은 끼어들기와 비슷한 상황으로 보면 일견 일리는 있긴 하다. 하지만 애초의 정해진 용도가 있는 만큼 거기에 맞게 사용해야 하는 것은 당연하다고 생각된다.</p>
+<p>이 외에 회전교차로(로터리)에 진입할 때는 좌측 방향지시등을, 진출할 때는 우측 방향지시등을 켜야 한다는 것 정도도 상식 선으로 알아두면 좋을 것 같다.</p>
+<h2>덤. 비상등은 어떻게 써야 할까?</h2>
+<p>비상등은 약간 특이하게도 방향지시등의 좌우를 동시에 켜는 기능이다. 그런데 이 비상등은 여러 의미를 가지고 있다. 개인적인 경험과 더불어 조사해 본 바로 비상등은 다음과 같은 의미로 사용되는 것 같다.</p>
+<ul>
+<li>(도로 주행 중) "곧 주차할 거야"</li>
+<li>(차로변에서) "잠깐 정차 중이야"</li>
+<li>(주차장에서) "이 근처에 주차할 거야"</li>
+<li>(한국에서 누가 양보해 줬을 때) "고마워"</li>
+<li>(한국에서 무리하게 끼어들었을 때) "미안해"</li>
+<li>(응급상황 시) "미안! 급해! 좀 비켜줘!"</li>
+<li>(주변 사고나 급제동 시) "위험하니까 조심해"</li>
+<li>(안개 등으로 주변이 잘 안 보일 때) "난 여기 있고 위험하니까 조심해"</li>
+<li>(저속운행 시) "미안 좀 천천히 갈게"</li>
+<li>고속에서 급제동 시 자동으로 켜진다.</li>
+<li>추돌사고 발생 시 자동으로 켜질 수 있다.</li>
+</ul>
+<p>물론 모두가 다 알고 이해하고 있어야 의미를 가질 수 있을 것이다. 다만 비상등이 '비상'이라는 의미를 표현한다는 것 정도만 알아도 사실 별 문제는 없을 것 같기도 하다.</p>
+<h2>결론 및 여담</h2>
+<blockquote>
+<p>방향지시등은 내가 주행할 방향을 알려주기 위한 목적으로 사용한다.</p>
+</blockquote>
+<p>이 정도만 알아도 될 것을 괜히 길게 정리한 것 같다.</p>
+<p>사실 삼거리에서 우회전 끼어들기를 할 때 어느 방향 깜빡이를 넣어야 하느냐에 관해서는 잘 모르고 있던 입장이었기에 정보를 찾다보니 이걸 글이 탄생하게 된 것 같다. 앞으로는 좀 더 법을 잘 준수하는 모범 시민이 되어야겠다.</p>
+<p><em>그래도 주변에 차 없을 때 귀찮아서 깜빡이 안 넣는 귀차니즘은 참 극복하기 힘든 녀석이긴 하다.</em></p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250227-00.html"/>
+    <summary type="text">자동차 방향지시등, 일명 깜빡이에 대해 사용할 줄 모르면 자동차 면허 자격이 없다고 생각한다. 그 만큼 중요하면서 그만큼 책임 또한 높은 행위로 바로 깜빡이를 켜는 것 같다. 그렇다면 나는 과연 이 깜빡이를 제대로 사용하고 있는 걸까?</summary>
+    <published>2025-02-27T14:34:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250226-01.html</id>
     <title>드디어 배당소득 분리과세 카드가 나왔나?!</title>
@@ -1564,230 +1615,5 @@ M5 Pro 혹은 그 상위 등급의 프로세서는 생산 수율을 높이기 �
     <link href="https://seorenn.github.io/log/20240814-00.html"/>
     <summary type="text">어제는 PPI가 나왔고 오늘은 CPI가 나왔다. 둘 다 한꺼번에 정리해 보자.</summary>
     <published>2024-08-14T23:47:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/article/markdown-syntax.html</id>
-    <title>마크다운 문법 정리</title>
-    <updated>2024-12-26T15:35:00.072202+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>이 사이트의 글은 모두 마크다운(Markdown) 문법으로 작성되어 렌더링 된 글들이다. 이와 관련하여 마크다운 문법(syntax)을 정리해 본다. 다만 모든 문법을 정리하기엔 내용이 너무 길어질 수 있기에 개인적으로 자주 쓰는 것들 위주로 정리한다.</p>
-<h2>제목</h2>
-<p>마크다운에서는 구조적 글을 쓸 때 각 항목의 제목을 달 수 있는 문법으로 여러 방식이 제공된다.</p>
-<pre><code>대제목
-======
-
-대제목
-------
-
-# 대제목
-## 중제목
-### 소제목
-#### 제목 4
-##### 제목 5
-</code></pre>
-<p>이 중 <code>#</code>을 이용한 제목 문법은 차례대로 HTML의 <code>h1</code> 태그부터 <code>h5</code> 태그와 매칭된다고 볼 수 있다. 물론 여기서 끝이 아니라 더 깊이도 들어갈 수 있을 것 같다. 다만 개인적으로는 소제목 단위 이후로는 쓸 일이 없었다.</p>
-<h2>텍스트 스타일</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">마크다운</th>
-<th style="text-align: left;">렌더링 결과</th>
-<th style="text-align: left;">HTML 태그</th>
-<th style="text-align: left;">비고</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>**Bold**</code></td>
-<td style="text-align: left;"><strong>Bold</strong></td>
-<td style="text-align: left;"><code>strong</code></td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>__Bold__</code></td>
-<td style="text-align: left;"><strong>Bold</strong></td>
-<td style="text-align: left;"><code>strong</code></td>
-<td style="text-align: left;">좌우 공백 필요</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>*Italic*</code></td>
-<td style="text-align: left;"><em>Italic</em></td>
-<td style="text-align: left;"><code>em</code></td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>_Italic_</code></td>
-<td style="text-align: left;"><em>Italic</em></td>
-<td style="text-align: left;"><code>em</code></td>
-<td style="text-align: left;">좌우 공백 필요</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>***Bold Italic***</code></td>
-<td style="text-align: left;"><strong><em>Bold Italic</em></strong></td>
-<td style="text-align: left;"><code>strong</code> + <code>em</code></td>
-<td style="text-align: left;"/>
-</tr>
-<tr>
-<td style="text-align: left;"><code>___Bold Italic___</code></td>
-<td style="text-align: left;"><strong><em>Bold Italic</em></strong></td>
-<td style="text-align: left;"><code>strong</code> + <code>em</code></td>
-<td style="text-align: left;">좌우 공백 필요</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>**_Bold Italic_**</code></td>
-<td style="text-align: left;"><strong><em>Bold Italic</em></strong></td>
-<td style="text-align: left;"><code>strong</code> + <code>em</code></td>
-<td style="text-align: left;">좌우 공백 필요</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>`inline code`</code></td>
-<td style="text-align: left;"><code>inline code</code></td>
-<td style="text-align: left;"><code>code</code></td>
-<td style="text-align: left;"/>
-</tr>
-</tbody>
-</table>
-<h2>링크</h2>
-<ul>
-<li><code>[Google](https://google.com)</code> = <a href="https://google.com" target="_blank">Google📎</a></li>
-</ul>
-<p>이 외에로 파일의 절대 경로나 상대 경로도 사용할 수 있다.</p>
-<h2>이미지</h2>
-<ul>
-<li><code>![Alt Text](https://foo.bar/image/path.jpg)</code></li>
-</ul>
-<p>링크 문법과 거의 비슷하지만 제일 앞에 느낌표(<code>!</code>)가 붙으면 이미지 문법이 된다. 'Alt Text'로 표시한 부분은 이미지를 설명하기 위한 문구로 <code>img</code> 태그의 <code>alt</code> 속성의 값으로 들어가며 대체로(?) 화면에 표시되도록 렌더링 되지는 않지만 접근성을 높이기 위해서는 적어주는 편이 좋다.</p>
-<h2>인용</h2>
-<pre><code>&gt; 인용된 메시지
-</code></pre>
-<p>이 마크다운 문서는 아래와 같이 렌더링 된다.</p>
-<blockquote>
-<p>인용된 메시지</p>
-</blockquote>
-<p>인용은 별도의 블럭 처럼 사용할 수 있다.</p>
-<pre><code>&gt; ## 인용된 메시지
-&gt;
-&gt; 꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.
-&gt;
-&gt;&gt; 인용 안에 인용을 넣을 수도 있습니다.
-&gt;
-&gt; 문단으로 나눌 수도 있습니다.&lt;br/&gt;
-&gt; 줄 나눔은 `br` 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.
-</code></pre>
-<p>위 마크다운 문서는 아래와 같이 렌더링 된다.</p>
-<blockquote>
-<h2>인용된 메시지</h2>
-<p>꺽쇠를 사용하면 인용 기능을 사용할 수 있습니다.</p>
-<p>문단으로 나눌 수도 있습니다.<br/>
-줄바꿈은 <code>br</code> 태그를 쓰거나 줄바꿈할 라인 끝에 공백 문자를 2개 이상 남기면 됩니다.</p>
-</blockquote>
-<h2>멀티 라인 코드</h2>
-<p>일반적인 코드 샘플을 적기 위해서 두 가지 문법이 제공된다. 아래와 같이 하나는 역따옴표 3개(<code>```</code>)로 둘러싸거나 혹은 지렁이 3개(<code>~~~</code>)로 둘러쌀 수 있다.</p>
-<pre><code>~~~
-multi 
-  line 
-    code
-~~~
-</code></pre>
-<pre><code>```
-multi 
-  line 
-    code
-```
-</code></pre>
-<p>위 두 마크다운 문서는 모두 아래와 같이 렌더링 된다.</p>
-<pre><code>multi 
-  line 
-    code
-</code></pre>
-<h2>테이블</h2>
-<p>테이블은 일종의 확장 개념이긴 하지만 그래도 종종 쓰이는 것 같으므로 정리한다. 대충 아래와 같은 형식으로 쓰면 표가 작성된다.</p>
-<pre><code>| Head 1 | Head 2 | Head 3 |
-|--------|--------|--------|
-| Body 1 | Body 2 | Body 3 |
-| Body a | Body b | Body c |
-</code></pre>
-<p>위 코드의 경우 아래와 같이 렌더링 된다.</p>
-<table>
-<thead>
-<tr>
-<th>Head 1</th>
-<th>Head 2</th>
-<th>Head 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Body 1</td>
-<td>Body 2</td>
-<td>Body 3</td>
-</tr>
-<tr>
-<td>Body a</td>
-<td>Body b</td>
-<td>Body c</td>
-</tr>
-</tbody>
-</table>
-<p>크기나 줄의 갯수 등은 딱히 상관은 없지만 딱 맞춰 써야 보기엔 편하긴 하다. 참고로 Doom Emacs에서 markdown을 사용하도록 하면 탭(Tab) 키 한 방으로 테이블의 크기가 정렬되서 편하다.</p>
-<p>좀 더 특수한 속성으로 제목줄과 내용줄 사이의 항목에 콜론(<code>:</code>)을 이용해 정렬(alignment)을 적용할 수도 있다.</p>
-<pre><code>| Head 1           | Head 2           |           Head 3 |
-|:-----------------|------------------|-----------------:|
-| Body 1 Text      | Body 2 Text Long | Body 3 Text Long |
-| Body 1 Long Text | Body 2 Text      |      Body 3 Text |
-</code></pre>
-<p>위 문법의 경우 아래와 같이 렌더링 된다.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Head 1</th>
-<th>Head 2</th>
-<th style="text-align: right;">Head 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Body 1 Text</td>
-<td>Body 2 Text Long</td>
-<td style="text-align: right;">Body 3 Text Long</td>
-</tr>
-<tr>
-<td style="text-align: left;">Body 1 Long Text</td>
-<td>Body 2 Text</td>
-<td style="text-align: right;">Body 3 Text</td>
-</tr>
-</tbody>
-</table>
-<p>위 처럼 제목과 본문 표 사이의 구분줄을 표시해 놓은 부분에 콜론(<code>:</code>)이 왼쪽에 있으면 좌측 정렬, 우측에 있으면 우측 정렬이 된다. 기본은 가운데 정렬이다.</p>
-<p>다만 정렬 부분은 사용하는 변환기나 패키지에 따라서 다를 수 있다.</p>
-<h2>HTML 태그</h2>
-<p>HTML 태그를 넣고 싶다면 고민할 필요 없이 그냥 넣으면 된다. 충돌하는 문법이 있어서 약간의 제약이 있을 수 있지만 대체로 그대로 렌더링 되는 편이다.</p>
-<pre><code>&lt;div style="width: 100%; border: 1px solid #777"&gt;
-HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
-&lt;/div&gt;
-</code></pre>
-<p>위 마크다운 문서는 아래와 같이 렌더링 된다.</p>
-<div style="width: 100%; border: 1px solid #777">
-HTML 태그는 **쓰는 대로 거의 다 그대로** 출력됩니다.
-</div>
-
-<p>보다시피 HTML 태그 블럭 내부의 마크다운 문법은 무시되는 것을 볼 수 있다.</p>
-<p>특이사항으로 Python-Markdown의 경우 명확하게 태그가 닫기지 않으면 XML 파싱 관련 오류가 발생하므로 이런 부분은 주의하자.</p>
-<h2>팁: 역 따옴표를 코드 스타일로 표시하기</h2>
-<p>여러 방법을 찾아봤지만 개인적으로 사용하는 Python-Markdown 패키지에선 아래 방식만이 제대로 표시되는 것을 확인했다.</p>
-<pre><code>`` ` ``
-``display ` back tick``
-</code></pre>
-<p>역따옴표 2개를 붙여서 좌우로 둘러싸면 inline code와 동일하게 쓸 수 있지만 여기서 '역따옴표 두개'와 '역따옴표' 사이만 붙여쓰지 않으면 '역따옴표'를 표시할 수 있었다.</p>
-<p>다만 역따옴표만 표시할 때는 좌우에 여백(스페이스)이 들어가게 되는 것은 어쩔 수 없는 것 같다.</p>
-<h2>관련된 글들</h2>
-<ul>
-<li><a href="../article/python-markdown.html">파이썬으로 마크다운 문서를 HTML로 변환하기</a></li>
-<li><a href="../article/python-markdown-table.html">Python-Markdown의 테이블 렌더링 지원</a></li>
-</ul></div>
-    </content>
-    <link href="https://seorenn.github.io/article/markdown-syntax.html"/>
-    <summary type="text">개인적으로 자주 사용하는 마크다운 문법(markdown syntax) 정리</summary>
-    <published>2024-08-13T13:54:00+09:00</published>
   </entry>
 </feed>

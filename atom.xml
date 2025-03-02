@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-02T23:14:55.995397+09:00</updated>
+  <updated>2025-03-02T23:16:15.903382+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,20 +14,14 @@
   <entry>
     <id>https://seorenn.github.io/log/20250302-00.html</id>
     <title>iOS 18.4에서 한국 Find My 지원 등 한 주간의 Apple 소식들 25-03-02</title>
-    <updated>2025-03-02T23:14:52.512872+09:00</updated>
+    <updated>2025-03-02T23:16:13.513730+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발 및 소프트웨어 관련 소식들</h2>
 <p><strong>iOS 18.4 베타에서 한국 'Find My' 지원이 확인되었다.</strong> 이 기능이 한국에서 열리기까지 도대체 얼마나 시간이 흐른 건지 기억 조차 못 할 것 같은데 대충 찾아보니 15년 정도 걸린 것 같다. 어쨌든 이제 '내 분실 iPhone 찾기' 등 여러 위치 공유 관련 못 쓰던 서비스들을 쓸 수 있게 되는 날이 얼마 남지 않았다.</p>
 <p><strong>iOS 18.4 베타에서 Apple Intelligence 지원 확인되고 있다.</strong> EU에서는 거의 완벽하게 지원이 되고 있는 모양이다.</p>
 <p><strong>iOS 18.4 베타에서 Safari의 새 탭에 검색기록이 표시되고 있다.</strong> 일부에서는 이 변화가 개인정보보호와는 반대되는 방향으로 보고 비판하는 듯하다. 확실히 다른 사람에게 잠시 폰을 빌려줬을 때 문제가 될 소지는 있어 보인다.</p>
-<p><strong>개발자 베타 릴리즈</strong>:</p>
-<ul>
-<li>Safari Technology Preview 214</li>
-</ul>
-<p><strong>펌웨어 업데이트</strong>:</p>
-<ul>
-<li>AirPods Max Firmware build 6F25</li>
-</ul>
+<p><strong>개발자 베타 릴리즈</strong>: Safari Technology Preview 214</p>
+<p><strong>펌웨어 업데이트</strong>: AirPods Max Firmware build 6F25</p>
 <h2>일반적인 소식들</h2>
 <p><strong>영국에서 AirPods Pro 2의 보청기 기능이 지원된다.</strong> 이미 어느 정도 알려져 있지만 이 기능은 중간 정도의 청력 장애가 있을 경우 도움을 주는 수준인 것 같다. 물론 각 국가 법이나 규제와 관련이 있겠지만 왜 이런 좋은 기능이 국가별로 따로따로 지원되어야 하는 지가 좀 답답한 것 같다.</p>
 <p><strong>EU에서 앱 승인 문구가 변경되었다.</strong> 기존에는 '앱 배포가 승인되었다' 식의 문구였지만 '앱을 배포할 준비가 되었다'와 같은 의미로 변경된 듯하다. 이는 지난 선정적인 앱이 대체 앱스토어에 올라온 것과 관련해 Apple이 이런 앱이 배포되는 것은 자신들의 의지가 아님을 내비치는 것으로 이해가 된다.</p>
@@ -38,10 +32,7 @@
 <p><strong>Apple은 iPhone 16e에서 MagSafe가 빠진 이유에 대해 해명했다.</strong> 해당 모델을 구입할 사용자들은 MagSafe가 그리 필요하지 않을 것 같다는 단순한 이유였던 듯하다. <em>좀 석연친 않지만 개인적으로는 차량 구입 전까진 무선충전을 전혀 하지 않았었고 지금도 차 안에서만 무선충전을 한다는 점을 생각해보면 설득력이 아예 없는 건 아닌 것 같다.</em></p>
 <p><strong>영국에서도 구입 내역 이전 기능이 지원되기 시작했다.</strong> 정확한 이유는 모르겠지만 구입 내역 이전 기능이 시작되던 당시 영국은 서비스 제외 국가에 포함되어 있었는데 이번에 개선되면서 지원이 되기 시작한 것이다. 이제 인도 만이 유일하게 구매 내역 이전이 되지 않는 국가로 남았다.</p>
 <h2>루머 소식들</h2>
-<p><strong>Mac 관련 루머들</strong>:</p>
-<ul>
-<li>M4 MacBook Air 신제품 발표가 임박한 것으로 보인다.</li>
-</ul>
+<p><strong>Mac 관련 루머</strong>: M4 MacBook Air 신제품 발표가 임박한 것으로 보인다.</p>
 <p><strong>iPhone 관련 루머들</strong>:</p>
 <ul>
 <li>iPhone 17 Pro에서 영상 녹화 기능에 개선이 있을 것으로 추정된다.</li>

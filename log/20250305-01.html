@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>macOS에서 Emacs 30 설치 및 실행 오류 해결하기 - Seorenn</title>
-    <meta name="twitter:title" content="macOS에서 Emacs 30 설치 및 실행 오류 해결하기" />
-    <meta name="og:title" content="macOS에서 Emacs 30 설치 및 실행 오류 해결하기" />
-    <meta name="description" content="어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다." />
-    <meta name="twitter:description" content="어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다." />
-    <meta name="og:description" content="어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다." />
-    <link rel="canonical" href="https://seorenn.github.io/log/20250226-00.html" />
-    <meta property="og:url" content="https://seorenn.github.io/log/20250226-00.html" />
+    <title>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon) - Seorenn</title>
+    <meta name="twitter:title" content="macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)" />
+    <meta name="og:title" content="macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)" />
+    <meta name="description" content="macOS에서 돌아가는 Emacs를 위해 Shift+Space로 Emacs 내장 입력기 한영 전환하기, Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기, ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기를 설명하는 글" />
+    <meta name="twitter:description" content="macOS에서 돌아가는 Emacs를 위해 Shift+Space로 Emacs 내장 입력기 한영 전환하기, Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기, ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기를 설명하는 글" />
+    <meta name="og:description" content="macOS에서 돌아가는 Emacs를 위해 Shift+Space로 Emacs 내장 입력기 한영 전환하기, Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기, ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기를 설명하는 글" />
+    <link rel="canonical" href="https://seorenn.github.io/log/20250305-01.html" />
+    <meta property="og:url" content="https://seorenn.github.io/log/20250305-01.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -70,48 +70,97 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>macOS에서 Emacs 30 설치 및 실행 오류 해결하기</h1>
+          <h1>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</h1>
           <div class="title-date">
             
               
-                <a href="../subject/emacs.html">Emacs</a>
+                <a href="../subject/emacs.html">Emacs</a>, 
+              
+                <a href="../subject/macos.html">macOS</a>
               
               <span>//</spans>
             
             
-              <span>2025년 02월 26일 작성</span>
+              <span>2025년 03월 05일 작성</span>
             
             
             
           </div>
         </header>
-        <p>어느덧 Emacs가 30 버전을 넘어서 30.1 버전까지 나왔다. 하지만 개인적으로 사용하던 Emacs는 아직도 Homebrew를 통해 emacs-plus 패키지 형태로 설치한 29 버전대였다. 뭔가 뒤쳐지는 느낌이 나서 최신 버전을 설치해 보기로 했다. 그리고 그 과정에서 오류도 겪었기에 이를 해결하는 방법도 간단히 정리해 본다.</p>
-<p>참고로 이 글을 쓰는 시점에서 macOS는 macOS Sequoia 15.3.1이다.</p>
-<h2>Homebrew로 Emacs 30 설치하기</h2>
-<blockquote>
-<p>macOS에서 Homebrew로 Emacs를 설치할 때는 emacs-plus 패키지를 설치하는 것이 그나마 간단한 것 같다.</p>
-</blockquote>
-<p>Emacs의 최신 안정 버전이 30 버전대임에도 불구하고 머신의 Emacs 29 버전이 업그레이드가 안 되길래 확인해보니 버전을 지정하지 않으면 <code>emacs-plus@29</code> formulae로 설치되기 때문에 그랬던 것 같다. 최근엔 바뀌었을 지도 모르겠지만 혹시나 Homebrew로 emacs-plus를 설치했는데 30 미만의 버전이 설치된다면 아래와 같이 강제로 버전을 지정해 주자.</p>
-<pre><code>$ brew install emacs-plus@30
+        <p>Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.</p>
+<p>원초적인 문제를 정의하자면 <strong>macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다</strong>는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.</p>
+<p>그래서 macOS에서 돌아가는 Emacs에서는 <strong>내장 한글 입력기로 한글을 입력하는 게 많은 스트레스를 해소할 수 있는 편</strong>이다. 하지만 이를 위해 또다른 많은 문제를 해결해야 했다. 여러 삽질 끝이 이 문제들을 해결하는 데 성공했기에 세 가지 주제로 나누어 정리해 본다.</p>
+<h2>Shift+Space로 Emacs 내장 입력기 한영 전환하기</h2>
+<p>DOS 시절부터 개인적으로 한글 입력기 전환에 Shift+Space 키를 써왔다. 그런데 가장 큰 문제의 출발은 이거다. 옛날 macOS에서 돌아가던 Emacs는 Shift+Space 키가 입력되면 이를 Emacs가 잘 받아서 뭐라도 할 수 있었다. 하지만 요즘은 Shift+Space 키를 입력하면 이 키 이벤트가 Emacs까지 도달하지 않는 문제가 있다. 즉 <strong>macOS에서 입력기 전환에 Shift+Space키를 설정해서 쓰고 있다면 이 단축키는 Emacs 내장 입력기 토글 용으로 쓸 수 없다</strong>는 말이다.</p>
+<p>이 문제는 macOS의 근본적인 뭔가가 바뀌지 않는 한 순수하게 해결은 불가능하다. 대신 몇몇 유틸리티를 이용해 대안적으로 해결이 가능하긴 한데 이 글에서는 Hammerspoon을 이용한다. 무료이니 말이다.</p>
+<p>결국 Hammerspoon을 이용해 Emacs 창이 최상단에 있는 경우 Shift+Space 키가 입력되면 이를 무시하고 대신 Ctrl+\ 키로 바꿔서 Emacs에 전달하도록 구현하는 데 성공했다. 참고로 <code>C-\\</code>는 Emacs의 기본 내장 입력기 토글(<code>toggle-input-method</code>) 단축키다. 아래는 실제로 구현한 Hammerspoon 용 Lua 스크립트다.</p>
+<pre><code>local function remapKeys(event)
+    local flags = event:getFlags()
+    local keyCode = event:getKeyCode()
+    local app = hs.application.frontmostApplication()
+    local bundleID = app:bundleID()
+    local targetAppBundleID = &quot;org.gnu.Emacs&quot;
+
+    if bundleID == targetAppBundleID then
+        if flags.shift and keyCode == hs.keycodes.map.space then
+            hs.eventtap.keyStroke({'ctrl'}, &quot;\\&quot;)
+            return true
+        end
+    end
+    return false
+end
+
+keyRemapper = hs.eventtap.new({hs.eventtap.event.types.keyDown}, remapKeys)
+keyRemapper:start()
 </code></pre>
-<p>상황에 따라 빌드에 시간이 필요할 수도 있으니 적절히 대응하자.</p>
-<p>설치가 끝나면 메시지로 표시가 되겠지만, 파인더에서 액세스 할 수 있게 앱 바로가기를 Applications에 등록할 때는 아래 커맨드를 추가로 입력해 줘야 한다. <em>추후 상황이나 버전에 따라 커맨드가 좀 달라질 수도 있으니 정확한 것은 메시지를 잘 확인하자.</em></p>
-<pre><code>$ osascript -e 'tell application &quot;Finder&quot; to make alias file to posix file &quot;/usr/local/opt/emacs-plus@30/Emacs.app&quot; at posix file &quot;/Applications&quot; with properties {name:&quot;Emacs.app&quot;}'
+<p>이 코드를 적용하면 이후 Shift+Space 키를 눌렀을 때 macOS의 입력기가 아닌 Emacs의 내장 입력기가 토글되는 아름다운 결과를 얻을 수 있었다. 즉 목적을 달성했다. <em>참고로 Hammerspoon 버전에 따라 코드가 달라질 수 있다는 점에 주의하자.</em></p>
+<p>코드를 몇 줄 더 줄일 여지는 충분하니 하고 싶다면 직접 알아서 해보자. 이젠 귀찮아서 잘 돌아가는 코드를 고치는 건 사양하고 싶을 뿐이니 말이다.</p>
+<h2>Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기</h2>
+<p>그런데 위의 Shift+Space로 Emacs 내장 입력기를 토글시키는 Hammerspoon 코드를 작성한 이후 새로운 문제를 겪게 된다. 바로 macOS의 한글 입력기와 Emacs 내장 한글 입력기의 무한 순환 문제다.</p>
+<p>이 문제는 macOS의 입력기가 한글인 상태로 Emacs 창을 제일 위로 올리면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 누르면 macOS 입력기가 영문으로 바뀌는 대신 Emacs 내장 입력기가 한글로 바뀌면서 다시 한글만 입력되는 불상사가 나타난다. 여기서 다시 Shift+Space를 누르면 이제 다시 Emacs가 영문으로 바뀌는 대신 macOS 입력기가 한글로 바뀌어 다시 처음으로 돌아간다. <strong>무한의 '한글만 입력' 지옥 루프</strong>다.</p>
+<p>물론 이 경우 <strong>마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결</strong>이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 <strong>키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일</strong>이 아니다.</p>
+<p>그래서 이런 문제를 원천적으로 해결하는 게 필요하다. 간단하게 Emacs 창이 제일 위로 올라오게 되면 macOS 입력기를 자동으로 영문으로 바꾸도록 하면 될 것 같다. 그래서 또다시 Hammerspoon을 들쑤셨다.</p>
+<pre><code>function setEnglishInputMethod()
+    local source = hs.keycodes.currentSourceID()
+    if not (source == english) then
+        hs.keycodes.currentSourceID(english)
+    end
+end
+
+local function focusChanged(appName)
+    if appName == &quot;Emacs&quot; then
+        setEnglishInputMethod()
+    end
+end
+
+-- 앱 포커스가 변경될 때 이벤트를 감지
+hs.application.watcher.new(function(name, eventType, app)
+    if eventType == hs.application.watcher.launched or eventType == hs.application.watcher.activated then
+        focusChanged(name)
+    end
+end):start()
 </code></pre>
-<p>이제 터미널에서 open 커맨드로 실행시키거나 파인더에서 Applications를 열어서 Emacs.app을 실행시키면 돌아가야 한다. 돌아가야 정상일 텐데....</p>
-<h2>그런데 실행이 안 된다</h2>
-<p><code>emacs-plus@29</code> 때에도 비슷하지만 다른 문제가 있었는데 <code>emacs-plus@30</code>에도 파인더에서 바로 실행이 안 되는 문제가 발생했다. 다만 오류 내용이 달랐는데 이번에는 아래와 같은 오류가 발생했다. 참고로 <code>$</code> 표시는 셸 프롬프트이니 오해하지 말자.</p>
-<pre><code>$ open -a Emacs
-_LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/emacs-plus@30/30.1/Emacs.app with error -54.
+<p>위의 코드를 추가해서 Hammerspoon에서 재로딩을 하니 원하던 대로 이제 Emacs 창에 포커스가 가면 macOS 입력기가 영문으로 바뀐다. 이제 한글 입력기가 서로 꼬이는 문제는 발생할 일이 거의 없어진 셈이다. 상당히 마음이 놓이게 된 소중한 코드다.</p>
+<p><em>좀 오래 쓰다 보면 동작을 안 할 때가 있는데 콘솔을 띄우면 다시 동작하는 신기한 해머스푼이다.</em></p>
+<h2>ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기</h2>
+<p>사실 이건 꼭 필요한 건 아니지만 개인적으로 Vim을 써울 때부터 생긴 성향으로 <strong>ESC 키를 누르면 영문 입력 모드로 바뀔 필요</strong>가 있는데 Vim에서 상당한 효율 상승이 있기 때문이다. 비록 Emacs에서 (Doom Emacs를 통해) Evil을 쓰고 있긴 하지만 그 성향은 아직도 남아있다.</p>
+<p>이번에는 Emacs 내에서만의 문제이기 때문에 아래와 같은 Emacs Lisp 코드를 작성해서 설정 파일에 추가하는 식으로 해결할 수 있었다. 참고로 좀 하드하게 설정된 Doom Emacs를 사용 중이라 바닐라의 경우 동작 여부는 보장할 수 없을 것 같다.</p>
+<pre><code>;; 기본 입력기를 한글 2벌식으로 설정
+(setq default-input-method &quot;korean-hangul&quot;)
+
+(defun seorenn/esc-additional-function (&amp;optional ARG)
+  (set-input-method nil)
+  ;; 위 코드가 실행되면 기본 입력기 설정이 nil로 바뀌니 다시 업데이트
+  (setq default-input-method &quot;korean-hangul&quot;))
+
+;; ESC 키가 눌리며 실행되는 함수에 추가 기능 부여하기
+(advice-add 'evil-normal-state :before #'seorenn/esc-additional-function)
 </code></pre>
-<p>이런저런 구글링을 하다 보니 다행히도 이것과 비슷한 문제에 대한 해답을 찾을 수 있었다. 개인적인 경우 아래의 한 줄의 커맨드가 해답이 되었다.</p>
-<pre><code>$ sudo codesign --force --deep --sign - /usr/local/opt/emacs-plus@30/Emacs.app
-</code></pre>
-<p>sudo 커맨드이기 때문에 사용자 패스워드를 물어온다. 이 커맨드를 실행한 이후 Emacs.app이 정상적으로 실행되고 Dock에도 잘 올라갔다. </p>
-<p><em>Emacs 29 버전대에서 문제가 터진 후 참으로 오랜만에 Dock에 Emacs 아이콘을 올려놓고 쓸 수가 있게 되어서 살짝 감격했다.</em></p>
-<h2>여담</h2>
-<p>위 오류 해결 커맨드는 <a href="https://github.com/d12frosted/homebrew-emacs-plus/issues/742" target="_blank">관련된 스레드📎</a>에서 찾은 것이다. 여기에서는 여러 이야기가 오간다. 혹시 위의 커맨드로 해결이 안 된다면 스레드를 참고해보자. 몇몇 다른 옵션이나 퍼미션 관련 힌트도 있으니 시도해 볼 가치는 있을 것 같다. 개인적인 경우는 위 커맨드 만으로 해결이 되긴 했지만 말이다.</p>
-<p>그 외에 비슷한 여러 질문을 볼 수 있었다. 예를 들어 PostgreSQL을 설치했는데 비슷한 오류가 발생하면 pgadmin을 새로 설치하니 해결되었다는 등등 말이다. 물론 원인은 좀 다른 것 같긴 하다.</p>
+<p>코드에 삽질의 흔적이 약간 보일 것이다. 저 요상하고 보기 싫은 중복 코드가 없으면 입력기를 토글할 때마다 언어 세팅을 물어와서 너무 귀찮았기 때문에 어쩔 수 없는 타협이다.</p>
+<p>어쨌거나 이제 정말 마음에 드는 세팅이 되었다.</p>
+<h2>마무리</h2>
+<p>이제 Shift+Space 키를 이용해 macOS에서 돌아가는 Emacs에서 한영 전환을 손쉽게 할 수 있게 되었고 거기다 퍼포먼스 저하나 입력 유실 없이 한글을 편하게 쓸 수 있게 되었다. 거기다 ESC 키를 누르면 영문으로 자동으로 바껴서 Vim(Evil) 커맨드를 입력하는 데 지장도 없게 되었다. 만족스럽다.</p>
+<p>덕분에 Emacs에서 macOS 한글 입력기를 쓰다 받은 스트레스가 그렇게다 컸다는 것을 잘 알게 된 것 같다. 정말 눈물나게 편하다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -138,6 +187,48 @@ _LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/
                   <h2>블로그 목록</h2>
                 
                 <ul class="logarch-container">
+                  
+                    <li>
+                      
+                        <b>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</b><br/>
+                        <small>2025년 03월 05일 작성</small>
+                      
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250305-00.html">또래오래의 갈릭치킨에 관한 기록</a><br/>
+                        <small>2025년 03월 05일 작성</small>
+                      
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250304-01.html">어쨌든 술이 몸에 해롭다는 건 사실이다</a><br/>
+                        <small>2025년 03월 04일 작성</small>
+                      
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250304-00.html">아스파탐 외의 다른 인공감미료들은 어떤 평가를 받고 있을까?</a><br/>
+                        <small>2025년 03월 04일 작성</small>
+                      
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250302-00.html">iOS 18.4에서 한국 Find My 지원 등 한 주간의 Apple 소식들 25-03-02</a><br/>
+                        <small>2025년 03월 02일 작성</small>
+                      
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250301-00.html">트럼프 무역전쟁: 설마 정말 또라이 였던 거냐?!</a><br/>
+                        <small>2025년 03월 01일 작성</small>
+                      
+                    </li>
                   
                     <li>
                       
@@ -171,48 +262,6 @@ _LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/
                       
                         <a href="../log/20250226-01.html">드디어 배당소득 분리과세 카드가 나왔나?!</a><br/>
                         <small>2025년 02월 26일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <b>macOS에서 Emacs 30 설치 및 실행 오류 해결하기</b><br/>
-                        <small>2025년 02월 26일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250225-01.html">상법 개정에 대한 경제계와 여당의 자세는 여전하다</a><br/>
-                        <small>2025년 02월 25일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250225-00.html">한국은행이 결국 기준금리를 인하했다</a><br/>
-                        <small>2025년 02월 25일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250224-00.html">언타이틀 버거의 올데이 버거 세트에 관한 기록</a><br/>
-                        <small>2025년 02월 24일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250223-00.html">iPhone 16e 출시 등 한 주간의 Apple 소식들 25-02-23</a><br/>
-                        <small>2025년 02월 23일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250221-01.html">투싼 하이브리드 개인적인 평가 (v3)</a><br/>
-                        <small>2025년 02월 21일 작성</small>
                       
                     </li>
                   
@@ -312,9 +361,9 @@ _LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/
                   
                     <li>
                       
-                        <a href="../log/20250305-01.html">macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</a><br/>
+                        <a href="../log/20250226-00.html">macOS에서 Emacs 30 설치 및 실행 오류 해결하기</a><br/>
                       
-                      <small>2025년 03월 05일 작성</small>
+                      <small>2025년 02월 26일 작성</small>
                     </li>
                   
                     <li>
@@ -336,6 +385,13 @@ _LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/
               
                 <h2>비슷한 주제의 노트</h2>
                 <ul class="logarch-container">
+                  
+                    <li>
+                      
+                        <a href="../article/macos-safari-fix-video-blinks.html">macOS 사파리에서 전체화면 영상이 깜빡이는 증상 고치기</a><br/>
+                      
+                      <small>2024년 12월 26일 업데이트</small>
+                    </li>
                   
                     <li>
                       
@@ -412,7 +468,7 @@ _LSOpenURLsWithCompletionHandler() failed for the application /usr/local/Cellar/
     <footer>
         
         
-          <p>이 문서는 2025년 02월 26일 14:16에 작성되었으며 2025년 02월 26일 14:59에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 03월 05일 22:52에 작성되었으며 2025년 03월 05일 22:52에 마지막으로 편집되었습니다.</p>
         
         
         <p>

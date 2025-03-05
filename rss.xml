@@ -13,13 +13,14 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Wed, 05 Mar 2025 22:57:34 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 23:00:23 +0900</lastBuildDate>
     <item>
       <title>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</title>
       <link>https://seorenn.github.io/log/20250305-01.html</link>
       <description>&lt;p&gt;Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.&lt;/p&gt;
 &lt;p&gt;원초적인 문제를 정의하자면 &lt;strong&gt;macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다&lt;/strong&gt;는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.&lt;/p&gt;
 &lt;p&gt;그래서 macOS에서 돌아가는 Emacs에서는 &lt;strong&gt;내장 한글 입력기로 한글을 입력하는 게 많은 스트레스를 해소할 수 있는 편&lt;/strong&gt;이다. 하지만 이를 위해 또다른 많은 문제를 해결해야 했다. 여러 삽질 끝이 이 문제들을 해결하는 데 성공했기에 세 가지 주제로 나누어 정리해 본다.&lt;/p&gt;
+&lt;p&gt;참고로 이 글에서는 &lt;a href="https://www.hammerspoon.org/" target="_blank"&gt;Hammerspoon📎&lt;/a&gt;을 중요한 도구로 사용한다.&lt;/p&gt;
 &lt;h2&gt;Shift+Space로 Emacs 내장 입력기 한영 전환하기&lt;/h2&gt;
 &lt;p&gt;DOS 시절부터 개인적으로 한글 입력기 전환에 Shift+Space 키를 써왔다. 그래서 맥에서도 이 한영전환 단축키로 Shift+Space를 써왔다. 그런데 가장 큰 문제의 출발은 이거다. 옛날 macOS에서 돌아가던 Emacs는 Shift+Space 키가 입력되면 이를 Emacs가 잘 받아서 뭐라도 할 수 있었다. 하지만 요즘은 Shift+Space 키를 입력하면 이 키 이벤트가 Emacs까지 도달하지 않는 문제가 있다. 즉 &lt;strong&gt;macOS에서 입력기 전환에 Shift+Space키를 설정해서 쓰고 있다면 이 단축키는 Emacs 내장 입력기 토글 용으로 쓸 수 없다&lt;/strong&gt;는 말이다.&lt;/p&gt;
 &lt;p&gt;이 문제는 macOS의 근본적인 뭔가가 바뀌지 않는 한 순수하게 해결은 불가능하다. 대신 몇몇 유틸리티를 이용해 대안적으로 해결이 가능하긴 한데 이 글에서는 Hammerspoon을 이용한다. 무료이니 말이다.&lt;/p&gt;
@@ -93,6 +94,7 @@ end):start()
       <content:encoded>&lt;p&gt;Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.&lt;/p&gt;
 &lt;p&gt;원초적인 문제를 정의하자면 &lt;strong&gt;macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다&lt;/strong&gt;는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.&lt;/p&gt;
 &lt;p&gt;그래서 macOS에서 돌아가는 Emacs에서는 &lt;strong&gt;내장 한글 입력기로 한글을 입력하는 게 많은 스트레스를 해소할 수 있는 편&lt;/strong&gt;이다. 하지만 이를 위해 또다른 많은 문제를 해결해야 했다. 여러 삽질 끝이 이 문제들을 해결하는 데 성공했기에 세 가지 주제로 나누어 정리해 본다.&lt;/p&gt;
+&lt;p&gt;참고로 이 글에서는 &lt;a href="https://www.hammerspoon.org/" target="_blank"&gt;Hammerspoon📎&lt;/a&gt;을 중요한 도구로 사용한다.&lt;/p&gt;
 &lt;h2&gt;Shift+Space로 Emacs 내장 입력기 한영 전환하기&lt;/h2&gt;
 &lt;p&gt;DOS 시절부터 개인적으로 한글 입력기 전환에 Shift+Space 키를 써왔다. 그래서 맥에서도 이 한영전환 단축키로 Shift+Space를 써왔다. 그런데 가장 큰 문제의 출발은 이거다. 옛날 macOS에서 돌아가던 Emacs는 Shift+Space 키가 입력되면 이를 Emacs가 잘 받아서 뭐라도 할 수 있었다. 하지만 요즘은 Shift+Space 키를 입력하면 이 키 이벤트가 Emacs까지 도달하지 않는 문제가 있다. 즉 &lt;strong&gt;macOS에서 입력기 전환에 Shift+Space키를 설정해서 쓰고 있다면 이 단축키는 Emacs 내장 입력기 토글 용으로 쓸 수 없다&lt;/strong&gt;는 말이다.&lt;/p&gt;
 &lt;p&gt;이 문제는 macOS의 근본적인 뭔가가 바뀌지 않는 한 순수하게 해결은 불가능하다. 대신 몇몇 유틸리티를 이용해 대안적으로 해결이 가능하긴 한데 이 글에서는 Hammerspoon을 이용한다. 무료이니 말이다.&lt;/p&gt;

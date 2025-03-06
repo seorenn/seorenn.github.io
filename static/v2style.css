@@ -218,6 +218,15 @@ div.outline-text-2 > hr {
     color: #2b7bb9;
 }
 
+.content p a,
+.content p a:link,
+.content p a:visited,
+.content p a:hover,
+.content p a:active {
+    text-decoration: underline dotted #888;
+    text-underline-offset: 4px;
+}
+
 .content h1,
 h2,
 h3,

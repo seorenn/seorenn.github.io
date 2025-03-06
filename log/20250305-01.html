@@ -138,14 +138,15 @@ local function focusChanged(appName)
     end
 end
 
-hs.application.watcher.new(function(name, eventType, app)
+appWatcher = hs.application.watcher.new(function(name, eventType, app)
     if eventType == hs.application.watcher.launched or eventType == hs.application.watcher.activated then
         focusChanged(name)
     end
-end):start()
+end)
+appWatcher:start()
 </code></pre>
 <p>위의 코드를 추가해서 Hammerspoon에서 재로딩을 하니 원하던 대로 이제 Emacs 창에 포커스가 가면 macOS 입력기가 영문으로 바뀐다. 이제 한글 입력기가 서로 꼬이는 문제는 발생할 일이 거의 없어진 셈이다. 상당히 마음이 놓이게 된 소중한 코드다.</p>
-<p><em>좀 오래 쓰다 보면 동작을 안 할 때가 있는데 콘솔을 띄우면 다시 동작하는 신기한 해머스푼이다.</em></p>
+<p>_기존 코드는 좀 쓰다 보면 동작을 안 할 때가 있어서 전역 변수에 담아 가비지 콜렉션에 휩쓸리지 않도록 수정했다.__</p>
 <h2>ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기</h2>
 <p>사실 이건 꼭 필요한 건 아니지만 개인적으로 Vim을 써울 때부터 생긴 성향으로 <strong>ESC 키를 누르면 영문 입력 모드로 바뀔 필요</strong>가 있는데 Vim에서 상당한 효율 상승이 있기 때문이다. 비록 Emacs에서 (Doom Emacs를 통해) Evil을 쓰고 있긴 하지만 그 성향은 아직도 남아있다.</p>
 <p>이번에는 Emacs 내에서만의 문제이기 때문에 아래와 같은 Emacs Lisp 코드를 작성해서 설정 파일에 추가하는 식으로 해결할 수 있었다. 참고로 좀 하드하게 설정된 Doom Emacs를 사용 중이라 바닐라의 경우 동작 여부는 보장할 수 없을 것 같다.</p>
@@ -472,7 +473,7 @@ end):start()
     <footer>
         
         
-          <p>이 문서는 2025년 03월 05일 22:52에 작성되었으며 2025년 03월 06일 12:37에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 03월 05일 22:52에 작성되었으며 2025년 03월 06일 22:22에 마지막으로 편집되었습니다.</p>
         
         
         <p>

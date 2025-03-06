@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-06T12:26:39.589633+09:00</updated>
+  <updated>2025-03-06T12:48:13.727331+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -52,7 +52,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20250305-01.html</id>
     <title>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</title>
-    <updated>2025-03-05T23:00:20.880303+09:00</updated>
+    <updated>2025-03-06T12:37:06.049771+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.</p>
 <p>원초적인 문제를 정의하자면 <strong>macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다</strong>는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.</p>
@@ -61,7 +61,7 @@
 <h2>Shift+Space로 Emacs 내장 입력기 한영 전환하기</h2>
 <p>DOS 시절부터 개인적으로 한글 입력기 전환에 Shift+Space 키를 써왔다. 그래서 맥에서도 이 한영전환 단축키로 Shift+Space를 써왔다. 그런데 가장 큰 문제의 출발은 이거다. 옛날 macOS에서 돌아가던 Emacs는 Shift+Space 키가 입력되면 이를 Emacs가 잘 받아서 뭐라도 할 수 있었다. 하지만 요즘은 Shift+Space 키를 입력하면 이 키 이벤트가 Emacs까지 도달하지 않는 문제가 있다. 즉 <strong>macOS에서 입력기 전환에 Shift+Space키를 설정해서 쓰고 있다면 이 단축키는 Emacs 내장 입력기 토글 용으로 쓸 수 없다</strong>는 말이다.</p>
 <p>이 문제는 macOS의 근본적인 뭔가가 바뀌지 않는 한 순수하게 해결은 불가능하다. 대신 몇몇 유틸리티를 이용해 대안적으로 해결이 가능하긴 한데 이 글에서는 Hammerspoon을 이용한다. 무료이니 말이다.</p>
-<p>결국 Hammerspoon을 이용해 Emacs 창이 최상단에 있는 경우 Shift+Space 키가 입력되면 이를 무시하고 대신 Ctrl+\ 키로 바꿔서 Emacs에 전달하도록 구현하는 데 성공했다. 참고로 <code>C-\\</code>는 Emacs의 기본 내장 입력기 토글(<code>toggle-input-method</code>) 단축키다. 아래는 실제로 구현한 Hammerspoon 용 Lua 스크립트다.</p>
+<p>결국 Hammerspoon을 이용해 Emacs 창이 최상단에 있는 경우 Shift+Space 키가 입력되면 이를 무시하고 대신 Ctrl+\ 키로 바꿔서 Emacs에 전달하도록 구현하는 데 성공했다. 참고로 <code>C-\</code> 키는 Emacs의 기본 내장 입력기 토글(<code>toggle-input-method</code>) 단축키다. 아래는 실제로 구현한 Hammerspoon 용 Lua 스크립트다.</p>
 <pre><code>local function remapKeys(event)
     local flags = event:getFlags()
     local keyCode = event:getKeyCode()
@@ -85,8 +85,8 @@ keyRemapper:start()
 <p>코드를 몇 줄 더 줄일 여지는 충분하니 하고 싶다면 직접 알아서 해보자. 이젠 귀찮아서 잘 돌아가는 코드를 고치는 건 사양하고 싶을 뿐이니 말이다.</p>
 <h2>Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기</h2>
 <p>그런데 위의 Shift+Space로 Emacs 내장 입력기를 토글시키는 Hammerspoon 코드를 작성한 이후 새로운 문제를 겪게 된다. 바로 macOS의 한글 입력기와 Emacs 내장 한글 입력기의 무한 순환 문제다.</p>
-<p>이 문제는 macOS의 입력기가 한글인 상태로 Emacs 창을 제일 위로 올리면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 누르면 macOS 입력기가 영문으로 바뀌는 대신 Emacs 내장 입력기가 한글로 바뀌면서 다시 한글만 입력되는 불상사가 나타난다. 여기서 다시 Shift+Space를 누르면 이제 다시 Emacs가 영문으로 바뀌는 대신 macOS 입력기가 한글로 바뀌어 다시 처음으로 돌아간다. <strong>무한의 '한글만 입력' 지옥 루프</strong>다.</p>
-<p>물론 이 경우 <strong>마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결</strong>이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 <strong>키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일</strong>이 아니다.</p>
+<p>이 문제는 macOS의 입력기가 한글인 상태로 그리고 Emacs가 영문 입력 모드인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 누르면 macOS 입력기가 영문으로 바뀌는 대신 Emacs 내장 입력기가 한글로 바뀌면서 다시 한글만 입력되는 불상사가 나타난다. 여기서 다시 Shift+Space를 누르면 이제 다시 Emacs가 영문으로 바뀌는 대신 macOS 입력기가 한글로 바뀌어 다시 처음으로 돌아간다. <strong>무한의 '한글만 입력' 지옥 루프</strong>다.</p>
+<p>물론 이 경우 <strong>마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결</strong>이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 <strong>키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일이 아니다</strong>.</p>
 <p>그래서 이런 문제를 원천적으로 해결하는 게 필요하다. 간단하게 Emacs 창이 제일 위로 올라오게 되면 macOS 입력기를 자동으로 영문으로 바꾸도록 하면 될 것 같다. 그래서 또다시 Hammerspoon을 들쑤셨다.</p>
 <pre><code>function setEnglishInputMethod()
     local source = hs.keycodes.currentSourceID()
@@ -1132,7 +1132,7 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
   <entry>
     <id>https://seorenn.github.io/log/20250212-02.html</id>
     <title>또래오래의 후라이드반+양념반 순살 치킨에 대한 기록</title>
-    <updated>2025-02-17T11:25:34.227589+09:00</updated>
+    <updated>2025-03-06T12:48:10.051033+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>어느 날 또다시 찾아온 식사 메뉴 선정이라는 고뇌의 시간, 어찌하나 한참을 고민했지만 답이 나오지 않았는데 "한동안 안 먹었으니 치킨 시켜 먹을까?" 하는 생각 없던 소리에 다행히도 가족 구성원 중 발언력이 가장 센 분(?)께서 긍정해 주셨다. 그리하여 오랜만에 어떤 치킨을 시켜먹을까 찾아보게 되었다.</p>
 <p>다만 치킨 프랜차이즈 선택에는 조건이 있다. 이 조건에는 '닭다리살 순살이 아니면 잘 안 먹는 첫째의 식성(?)'이 큰 비중으로 포함되어 있다. 개인적으로는 순살에는 닭다리살과 가슴살이 섞여 있는 것을 좋아하지만 나머지 가족들 대부분이 닭다리살로만 구성된 것을 선호하기 때문에 개인의 선호는 좀 무시되는 편이다. 여담이지만 닭다리살만 쓰는 순살 치킨을 팔던 가게가 주변에서 상당히 많이 사라진 것은 좀 안타깝다. <em>후... 불경기...</em></p>
@@ -1151,7 +1151,7 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
 <p>또래오래를 주문한 핵심적인 이유 중 하나로 바로 순살이 100% 닭다리살로만 구성되어 있다는 것이 있었는데 이는 사실로 확인되었다. 가슴살은 단 하나도 없었다. 내심 안타까웠지만 이 글을 쓰는 작자를 제외한 가족 구성원 모두 만족할 수준이었다. 사진에서는 육즙이 잘 보이진 않지만 뚝뚝 떨어지는 수준이라는 정도로 정리해 보자.</p>
 <h2>결론</h2>
 <p>순살치킨의 세계에서 또래오래라는 새로운 마음에 드는 브랜드를 찾은 건 만족스럽다. 특히 후라이드 치킨은 다시 시켜먹을 생각이 있다.</p>
-<p>다만 양념치킨은 맛이 좀 질리는 것 같았다. 맛이 없는 수준은 아니지만 다음 번엔 다른 걸로 시켜 먹을 계획이다.</p>
+<p>다만 양념치킨은 맛이 좀 질리는 것 같았다. 맛이 없는 수준은 아니지만 <a href="../log/20250305-00.html">다음 번엔 다른 걸</a>로 시켜 먹을 계획이다.</p>
 <p>이로써 당분간 뼈치킨은 페리카나, 순살치킨은 또래오래라는 구도가 만들어질 지도 모르겠다는 결론으로 이 글을 마치자. 물론 이 글을 쓰는 작자의 집 근처에 한정된 이야기일 뿐이지만 말이다.</p></div>
     </content>
     <link href="https://seorenn.github.io/log/20250212-02.html"/>

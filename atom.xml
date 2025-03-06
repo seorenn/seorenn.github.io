@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-06T12:24:33.288915+09:00</updated>
+  <updated>2025-03-06T12:26:39.589633+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20250306-00.html</id>
     <title>미국 2월 PMI: 미국 서비스업이 죽어간다며?</title>
-    <updated>2025-03-06T12:24:30.176093+09:00</updated>
+    <updated>2025-03-06T12:26:36.265565+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>미국은 서비스업 국가다. 제조업이 있긴 하지만 높은 인건비 덕분에 아무래도 서비스업 비중이 높을 수밖에 없다.</p>
 <p>그런 와중에 얼마 전 PMI 예비치 지표가 이렇게 나왔었다.</p>
@@ -24,7 +24,7 @@
 </blockquote>
 <p>눈길을 끄는 건 서비스업 PMI가 예상치를 하회했다는 것도 있지만 50 아래로 떨어졌다는 점이다. PMI 지표는 설문 조사를 기준으로 측정하는 지표로 50을 기준으로 높으면 성장, 낮으면 하회를 예상하는 지표이기 때문에 서비스업 PMI가 50 아래로 나왔다는 건 미국에 상당히 안 좋은 것을 암시한다. 보통 말하는 침체 말이다.</p>
 <p>비중은 작지만 제조업 PMI는 반대로 50 위로 올라가며 오랜만에 성장 국면에 진입했다.</p>
-<p>다만 위 지표는 예비치로 미리 발표된 수치다. 얼마 후 제조업 PMI 부터 실 지표가 발표되었다.</p>
+<p>다만 위 지표는 예비치로 정확하진 않은 수치다. 얼마 후 제조업 PMI 부터 실 지표가 발표되었다.</p>
 <blockquote>
 <p>미국 2월 제조업 PMI 52.7 (+1.5): 예상치 상회<br/>
 미국 2월 ISM 제조업 PMI 50.3 (-0.6): 예상치 하회</p>

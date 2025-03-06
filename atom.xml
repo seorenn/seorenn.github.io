@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-06T22:22:47.404268+09:00</updated>
+  <updated>2025-03-06T22:25:36.828636+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -52,7 +52,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20250305-01.html</id>
     <title>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</title>
-    <updated>2025-03-06T22:22:41.590024+09:00</updated>
+    <updated>2025-03-06T22:25:32.336956+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.</p>
 <p>원초적인 문제를 정의하자면 <strong>macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다</strong>는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.</p>
@@ -109,7 +109,7 @@ end)
 appWatcher:start()
 </code></pre>
 <p>위의 코드를 추가해서 Hammerspoon에서 재로딩을 하니 원하던 대로 이제 Emacs 창에 포커스가 가면 macOS 입력기가 영문으로 바뀐다. 이제 한글 입력기가 서로 꼬이는 문제는 발생할 일이 거의 없어진 셈이다. 상당히 마음이 놓이게 된 소중한 코드다.</p>
-<p>_기존 코드는 좀 쓰다 보면 동작을 안 할 때가 있어서 전역 변수에 담아 가비지 콜렉션에 휩쓸리지 않도록 수정했다.__</p>
+<p><em>기존 코드는 좀 쓰다 보면 동작을 안 할 때가 있어서 전역 변수에 담아 가비지 콜렉션에 휩쓸리지 않도록 수정했다.</em></p>
 <h2>ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기</h2>
 <p>사실 이건 꼭 필요한 건 아니지만 개인적으로 Vim을 써울 때부터 생긴 성향으로 <strong>ESC 키를 누르면 영문 입력 모드로 바뀔 필요</strong>가 있는데 Vim에서 상당한 효율 상승이 있기 때문이다. 비록 Emacs에서 (Doom Emacs를 통해) Evil을 쓰고 있긴 하지만 그 성향은 아직도 남아있다.</p>
 <p>이번에는 Emacs 내에서만의 문제이기 때문에 아래와 같은 Emacs Lisp 코드를 작성해서 설정 파일에 추가하는 식으로 해결할 수 있었다. 참고로 좀 하드하게 설정된 Doom Emacs를 사용 중이라 바닐라의 경우 동작 여부는 보장할 수 없을 것 같다.</p>

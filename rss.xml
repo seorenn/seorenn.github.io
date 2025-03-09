@@ -13,7 +13,109 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Fri, 07 Mar 2025 23:28:02 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 23:53:36 +0900</lastBuildDate>
+    <item>
+      <title>Mac Studio, MacBook Air 및 iPad Air 신제품 출시 등 한 주간의 Apple 소식들 25-03-09</title>
+      <link>https://seorenn.github.io/log/20250309-00.html</link>
+      <description>&lt;h2&gt;신제품 출시&lt;/h2&gt;
+&lt;h3&gt;M3 iPad Air&lt;/h3&gt;
+&lt;p&gt;M3 칩을 달고 나온 만큼 더 빠르고 Apple Intelligence 지원은 당연하다. 최소 저장공간은 이전 대비 2배로 늘었다. 한국 정발일은 아직 미정이지만 11인치 모델은 9만 9천 원부터, 13인치 모델은 124만 9천 원부터 판매된다. 전용 Magic Keyboard도 이번에 리프레시 되었는데 11인치용은 41만 9천 원부터, 13인치 용은 44만 9천 원부터라는 합리적인(?) 가격에 출시되었다. &lt;em&gt;합리적...하아....&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;전날 iPad 11세대 제품도 A16 칩을 달고 리프레시 되었는데 공식 한국어 뉴스는 아직 안 나온 것 같다. 한때 A17을 달고 나오지 않을까 하는 루머가 있었는데 이건 틀린 모양이다.&lt;/p&gt;
+&lt;h3&gt;M3 Ultra&lt;/h3&gt;
+&lt;p&gt;Apple은 M3 Ultra를 발표하며 M1 Ultra 대비 2.6배 퍼포먼스가 뛰어남을 자랑했지만 왜 하필 M2 Ultra와 비교하지는 않는 건지 궁금하다. 어쨌든 많은 코어 많은 GPU 많은 램 용량 등 Apple 최강의 칩이 오랜만에 등장했다.&lt;/p&gt;
+&lt;h3&gt;Mac Studio&lt;/h3&gt;
+&lt;p&gt;Mac Studio가 리프레시 되었다. 기본적으로 M4 Max를 탑재하고 있으며 증설 시 M3 Ultra 까지 탑재가 가능한 미니 워크스테이션 구축도 가능한 Mac이다. 가격은 329만 원부터다. 물론 디스플레이 등은 별도로 구매해야 하니 상황에 따라 실제 구매 비용은 더 늘어날 수 있다.&lt;/p&gt;
+&lt;h3&gt;M4 MacBook Air&lt;/h3&gt;
+&lt;p&gt;개인적으로 가장 주시하는 M4를 탑재한 MacBook Air도 출시되었다. 스펙으로 보면 M4가 탑재되었다는 것을 제외하면 크게 뭐가 바뀐 건지 잘 모르겠다. 다만 가격을 999 달러로 내렸다는 단 하나의 큰 장점이 있다는 것은 강조해야 할 것 같다. 그런데 한국 가격은 13인치는 159만 원부터, 15인치는 189만 원부터라서 동결이라는 &lt;em&gt;미친...&lt;/em&gt; 하아... &lt;em&gt;아무리 환율이 그래도 좀 심하다.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Siri의 Apple Intelligence 개선사항 중 일부가 iOS 18.5로 딜레이 될 가능성이 있는 것 같다.&lt;/strong&gt; 일정 상 iOS 18.4에 적용되었어야 했겠지만 아마도 개발 상황이 만족스럽지는 않은 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.5에서 Apple Intelligence는 큰 개선 두 건이 이뤄질 것 같다.&lt;/strong&gt; 하나는 위의 Siri 개선에 관한 것이고 나머지 하나는 중국에 Apple Intelligence가 진출하는 것이다. 중국 진출은 그만큼 애플에는 간절한 일이기도 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;개발자 베타 릴리즈&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15.4 beta 2&lt;/li&gt;
+&lt;li&gt;iOS 18.4 beta 2&lt;/li&gt;
+&lt;li&gt;iPadOS 18.4 beta 2&lt;/li&gt;
+&lt;li&gt;visionOS 2.4 beta 2&lt;/li&gt;
+&lt;li&gt;watchOS 11.4 beta 2&lt;/li&gt;
+&lt;li&gt;tvOS 18.4 beta 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;알려진 변화로는 이모티콘(emoji) 추가, Vision Pro for iPhone 앱 추가, Priority Notification 대상 앱 선택 기능, Control Center에 Apple Intelligence 관련 항목 추가, Apple Maps의 자동차 충전소 경유 경로 개선, Shortcuts 항목 추가 외에 아래 내용 등이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.4 beta 2 부터는 iPhone 15 Pro 라인업에서도 Visual Intelligence 기능을 지원한다.&lt;/strong&gt; 기존 Apple Intelligence가 iPhone 16 및 그 이후 출시된 디바이스들에서만 지원되던 것에 생각하면 약간의 확장인 셈이다. &lt;em&gt;참고로 이 글을 쓴 이의 iPhone 14 Pro Max는 또 Apple Intelligence에서 소외되었다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.4에서 RCS 지원이 확장된다.&lt;/strong&gt; 미국 및 일부 국가에서 RCS를 지원하며 관련된 통신사는 Google Fi, Mint Mobile 및 T-Mobile의 일부 MVNO 등이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 Siri의 개인화 Apple Intelligence 기능을 내년으로 연기한다고 밝혔다.&lt;/strong&gt; 개인화, 화면 인식, 개선된 앱 통합 등과 관련된 기능으로 아마도 iOS 18 버전대에서는 업데이트 되지 않을 가능성이 높은 모양이다. 즉 해당 기능의 탑재는 iOS 19는 되어야 가능할 것으로 전망된다.&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;어떤 벤치마크에서 M3 Ultra가 M4 Max 보다 느리다는 결론이 나와 논란인 듯하다.&lt;/strong&gt; 좀 더 정확히는 단일 코어 벤치마크 점수 기준으로 M4 Max가 M3 Ultra 대비 20% 정도 높게 나왔다는 이야기다. 그리고 멀티코어 비교에서는 M3 Ultra가 M4 Max를 미약하게 앞서는 것으로 나왔다. 물론 벤치마킹 방식에 따라 유불리가 있을 수도 있고 GPU는 테스트 되지 않은 만큼 당장 객관성을 판단하기엔 무리인 건 있으니 후속 벤치마크 결과를 더 지켜봐야 제대로 된 성능 평가가 가능할 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;M3 Ultra는 최대 80코어 GPU 탑재가 가능한 것으로 알려졌다.&lt;/strong&gt; 당연하게도 이 정도면 애플 실리콘 중에서 GPU 퍼포먼스를 따라올 수 있는 존재는 없을 것이다. 위의 M4 Max와의 싱글코어 벤치마크 결과와는 다르게 M3 Ultra가 GPU 퍼포먼스에선 크게 승리했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;신형 MacBook Air에서 음소거 버튼 디자인이 새로 바뀌었다.&lt;/strong&gt; 기존의 스피커에 취소선이 있는 아이콘 대신 스피커의 음량이 표시되지 않는 형태로 바뀌었다. 참고로 기존 디자인은 20년 이상 꽤 오래 사용되었었다. &lt;em&gt;별 건 아닌데 여기에 감동 받는 사람도 있는 모양이다.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;루머 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;iPhone 관련 루머들&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;폴더블 iPhone은 주름 없는 디스플레이를 이용한 책 스타일 디자인과 함께 2천 달러 이상의 가격으로 2026년 말 혹은 그 이후에 출시될 것으로 보인다. 내부 공간 확보를 위해 Face ID가 사라지고 다시 Touch ID가 사이드 버튼 방식으로 탑재될 가능성도 있는 듯하다.&lt;/li&gt;
+&lt;li&gt;iPhone 17 Air(가)는 고밀도 배터리를 탑재할 것 같다.&lt;/li&gt;
+&lt;li&gt;iPhone 17 Air(가)의 두께를 제외한 크기가 iPhone 17 Pro Max와 동일할 것이라는 주장이 제기되었다.&lt;/li&gt;
+&lt;li&gt;iPhone 17 Pro Max는 더 커진 배터리 공간을 확보하기 위해 더 두꺼워질 가능성이 있는 모양이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;기타 루머들&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apple은 C1의 차기 버전인 C2 대신 mmWave를 탑재한 C1 리프레시를 계획 중인 듯하다. 어쩌면 이게 C2가 될 지도 모르는 것 같다.&lt;/li&gt;
+&lt;li&gt;Apple의 Smart Home Hub인 HomePad(가)의 출시가 연기될 모양이다. 아마도 Siri의 개인화 연기와 관련이 있는 듯하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;AAPL&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Apple Park의 무지개 형상 구조물이 철거되었다.&lt;/strong&gt; 마치 최근 DEI 폐지 거부 결정과는 반대되는 것 같은데, 명확하진 않지만 오히려 기존의 임시 구조물이 아닌 견고하고 영구적인 구조물 형태로 재설계될 것이라는 이야기가 있다. 물론 이 경우 트럼프의 화를 더 돋구는 것이 아닐까 약간 걱정되기도 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 iCloud 저장공간 소송에서 승소했다.&lt;/strong&gt; 5GB라는 클라우드 용량이 터무니없이 적기는 하지만 이게 불법은 아닐 거다. 아마도 이 소송의 취지는 사용자에게 비싼 iCloud를 요금제 구독을 유도했다는 것이었던 것 같지만 Apple이 승소했으니 아무렴 어떠려나 싶다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple TV+의 테트리스 다큐멘터리가 표절이라는 소송이 기각된 모양이다.&lt;/strong&gt; 2023년 Dan Ackerman에 의해 제기된 이 소송은 2016년에 출간된 그의 책을 모방한 것이라는 사유였다. 판결에 따르면 내용이 같더라도 사실을 옮기는 것은 표절이 아니라는 것 같다. &lt;em&gt;하긴 그렇네.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple AliveCor와의 특허 소송에서 일부 승소했다.&lt;/strong&gt; 해당 소송은 Apple Watch의 기능이 심박수 모니터링 및 ECG 기술과 관련된 AliveCor의 특허 3개를 침했다는 내용이다. 잘 하면 미국 내 Apple Watch 수입 금지를 피할 수 있을 지도 모르겠다.&lt;/p&gt;</description>
+      <content:encoded>&lt;h2&gt;신제품 출시&lt;/h2&gt;
+&lt;h3&gt;M3 iPad Air&lt;/h3&gt;
+&lt;p&gt;M3 칩을 달고 나온 만큼 더 빠르고 Apple Intelligence 지원은 당연하다. 최소 저장공간은 이전 대비 2배로 늘었다. 한국 정발일은 아직 미정이지만 11인치 모델은 9만 9천 원부터, 13인치 모델은 124만 9천 원부터 판매된다. 전용 Magic Keyboard도 이번에 리프레시 되었는데 11인치용은 41만 9천 원부터, 13인치 용은 44만 9천 원부터라는 합리적인(?) 가격에 출시되었다. &lt;em&gt;합리적...하아....&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;전날 iPad 11세대 제품도 A16 칩을 달고 리프레시 되었는데 공식 한국어 뉴스는 아직 안 나온 것 같다. 한때 A17을 달고 나오지 않을까 하는 루머가 있었는데 이건 틀린 모양이다.&lt;/p&gt;
+&lt;h3&gt;M3 Ultra&lt;/h3&gt;
+&lt;p&gt;Apple은 M3 Ultra를 발표하며 M1 Ultra 대비 2.6배 퍼포먼스가 뛰어남을 자랑했지만 왜 하필 M2 Ultra와 비교하지는 않는 건지 궁금하다. 어쨌든 많은 코어 많은 GPU 많은 램 용량 등 Apple 최강의 칩이 오랜만에 등장했다.&lt;/p&gt;
+&lt;h3&gt;Mac Studio&lt;/h3&gt;
+&lt;p&gt;Mac Studio가 리프레시 되었다. 기본적으로 M4 Max를 탑재하고 있으며 증설 시 M3 Ultra 까지 탑재가 가능한 미니 워크스테이션 구축도 가능한 Mac이다. 가격은 329만 원부터다. 물론 디스플레이 등은 별도로 구매해야 하니 상황에 따라 실제 구매 비용은 더 늘어날 수 있다.&lt;/p&gt;
+&lt;h3&gt;M4 MacBook Air&lt;/h3&gt;
+&lt;p&gt;개인적으로 가장 주시하는 M4를 탑재한 MacBook Air도 출시되었다. 스펙으로 보면 M4가 탑재되었다는 것을 제외하면 크게 뭐가 바뀐 건지 잘 모르겠다. 다만 가격을 999 달러로 내렸다는 단 하나의 큰 장점이 있다는 것은 강조해야 할 것 같다. 그런데 한국 가격은 13인치는 159만 원부터, 15인치는 189만 원부터라서 동결이라는 &lt;em&gt;미친...&lt;/em&gt; 하아... &lt;em&gt;아무리 환율이 그래도 좀 심하다.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Siri의 Apple Intelligence 개선사항 중 일부가 iOS 18.5로 딜레이 될 가능성이 있는 것 같다.&lt;/strong&gt; 일정 상 iOS 18.4에 적용되었어야 했겠지만 아마도 개발 상황이 만족스럽지는 않은 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.5에서 Apple Intelligence는 큰 개선 두 건이 이뤄질 것 같다.&lt;/strong&gt; 하나는 위의 Siri 개선에 관한 것이고 나머지 하나는 중국에 Apple Intelligence가 진출하는 것이다. 중국 진출은 그만큼 애플에는 간절한 일이기도 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;개발자 베타 릴리즈&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15.4 beta 2&lt;/li&gt;
+&lt;li&gt;iOS 18.4 beta 2&lt;/li&gt;
+&lt;li&gt;iPadOS 18.4 beta 2&lt;/li&gt;
+&lt;li&gt;visionOS 2.4 beta 2&lt;/li&gt;
+&lt;li&gt;watchOS 11.4 beta 2&lt;/li&gt;
+&lt;li&gt;tvOS 18.4 beta 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;알려진 변화로는 이모티콘(emoji) 추가, Vision Pro for iPhone 앱 추가, Priority Notification 대상 앱 선택 기능, Control Center에 Apple Intelligence 관련 항목 추가, Apple Maps의 자동차 충전소 경유 경로 개선, Shortcuts 항목 추가 외에 아래 내용 등이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.4 beta 2 부터는 iPhone 15 Pro 라인업에서도 Visual Intelligence 기능을 지원한다.&lt;/strong&gt; 기존 Apple Intelligence가 iPhone 16 및 그 이후 출시된 디바이스들에서만 지원되던 것에 생각하면 약간의 확장인 셈이다. &lt;em&gt;참고로 이 글을 쓴 이의 iPhone 14 Pro Max는 또 Apple Intelligence에서 소외되었다.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.4에서 RCS 지원이 확장된다.&lt;/strong&gt; 미국 및 일부 국가에서 RCS를 지원하며 관련된 통신사는 Google Fi, Mint Mobile 및 T-Mobile의 일부 MVNO 등이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 Siri의 개인화 Apple Intelligence 기능을 내년으로 연기한다고 밝혔다.&lt;/strong&gt; 개인화, 화면 인식, 개선된 앱 통합 등과 관련된 기능으로 아마도 iOS 18 버전대에서는 업데이트 되지 않을 가능성이 높은 모양이다. 즉 해당 기능의 탑재는 iOS 19는 되어야 가능할 것으로 전망된다.&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;어떤 벤치마크에서 M3 Ultra가 M4 Max 보다 느리다는 결론이 나와 논란인 듯하다.&lt;/strong&gt; 좀 더 정확히는 단일 코어 벤치마크 점수 기준으로 M4 Max가 M3 Ultra 대비 20% 정도 높게 나왔다는 이야기다. 그리고 멀티코어 비교에서는 M3 Ultra가 M4 Max를 미약하게 앞서는 것으로 나왔다. 물론 벤치마킹 방식에 따라 유불리가 있을 수도 있고 GPU는 테스트 되지 않은 만큼 당장 객관성을 판단하기엔 무리인 건 있으니 후속 벤치마크 결과를 더 지켜봐야 제대로 된 성능 평가가 가능할 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;M3 Ultra는 최대 80코어 GPU 탑재가 가능한 것으로 알려졌다.&lt;/strong&gt; 당연하게도 이 정도면 애플 실리콘 중에서 GPU 퍼포먼스를 따라올 수 있는 존재는 없을 것이다. 위의 M4 Max와의 싱글코어 벤치마크 결과와는 다르게 M3 Ultra가 GPU 퍼포먼스에선 크게 승리했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;신형 MacBook Air에서 음소거 버튼 디자인이 새로 바뀌었다.&lt;/strong&gt; 기존의 스피커에 취소선이 있는 아이콘 대신 스피커의 음량이 표시되지 않는 형태로 바뀌었다. 참고로 기존 디자인은 20년 이상 꽤 오래 사용되었었다. &lt;em&gt;별 건 아닌데 여기에 감동 받는 사람도 있는 모양이다.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;루머 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;iPhone 관련 루머들&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;폴더블 iPhone은 주름 없는 디스플레이를 이용한 책 스타일 디자인과 함께 2천 달러 이상의 가격으로 2026년 말 혹은 그 이후에 출시될 것으로 보인다. 내부 공간 확보를 위해 Face ID가 사라지고 다시 Touch ID가 사이드 버튼 방식으로 탑재될 가능성도 있는 듯하다.&lt;/li&gt;
+&lt;li&gt;iPhone 17 Air(가)는 고밀도 배터리를 탑재할 것 같다.&lt;/li&gt;
+&lt;li&gt;iPhone 17 Air(가)의 두께를 제외한 크기가 iPhone 17 Pro Max와 동일할 것이라는 주장이 제기되었다.&lt;/li&gt;
+&lt;li&gt;iPhone 17 Pro Max는 더 커진 배터리 공간을 확보하기 위해 더 두꺼워질 가능성이 있는 모양이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;기타 루머들&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apple은 C1의 차기 버전인 C2 대신 mmWave를 탑재한 C1 리프레시를 계획 중인 듯하다. 어쩌면 이게 C2가 될 지도 모르는 것 같다.&lt;/li&gt;
+&lt;li&gt;Apple의 Smart Home Hub인 HomePad(가)의 출시가 연기될 모양이다. 아마도 Siri의 개인화 연기와 관련이 있는 듯하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;AAPL&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Apple Park의 무지개 형상 구조물이 철거되었다.&lt;/strong&gt; 마치 최근 DEI 폐지 거부 결정과는 반대되는 것 같은데, 명확하진 않지만 오히려 기존의 임시 구조물이 아닌 견고하고 영구적인 구조물 형태로 재설계될 것이라는 이야기가 있다. 물론 이 경우 트럼프의 화를 더 돋구는 것이 아닐까 약간 걱정되기도 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 iCloud 저장공간 소송에서 승소했다.&lt;/strong&gt; 5GB라는 클라우드 용량이 터무니없이 적기는 하지만 이게 불법은 아닐 거다. 아마도 이 소송의 취지는 사용자에게 비싼 iCloud를 요금제 구독을 유도했다는 것이었던 것 같지만 Apple이 승소했으니 아무렴 어떠려나 싶다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple TV+의 테트리스 다큐멘터리가 표절이라는 소송이 기각된 모양이다.&lt;/strong&gt; 2023년 Dan Ackerman에 의해 제기된 이 소송은 2016년에 출간된 그의 책을 모방한 것이라는 사유였다. 판결에 따르면 내용이 같더라도 사실을 옮기는 것은 표절이 아니라는 것 같다. &lt;em&gt;하긴 그렇네.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple AliveCor와의 특허 소송에서 일부 승소했다.&lt;/strong&gt; 해당 소송은 Apple Watch의 기능이 심박수 모니터링 및 ECG 기술과 관련된 AliveCor의 특허 3개를 침했다는 내용이다. 잘 하면 미국 내 Apple Watch 수입 금지를 피할 수 있을 지도 모르겠다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20250309-00.html</guid>
+      <pubDate>Sun, 09 Mar 2025 23:53:00 +0900</pubDate>
+    </item>
     <item>
       <title>미국 2월 노동시장: 아슬아슬 하다더니 정말인가?</title>
       <link>https://seorenn.github.io/log/20250307-01.html</link>
@@ -2861,32 +2963,6 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
 &lt;p&gt;물론 이 이야기들은 정부는 물론 국회에도 하고 있는 소리다. 제발 과세저항을 높이지 말아줬으면 좋겠다. &lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20250117-00.html</guid>
       <pubDate>Fri, 17 Jan 2025 10:50:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>흔치 않은 토스 장애</title>
-      <link>https://seorenn.github.io/log/20250107-00.html</link>
-      <description>&lt;p&gt;오전 업무(?)를 해볼까 싶어 토스를 켜서 혜택 탭을 들여다 보려고 한 찰나였다. 아무리 기다려도 화면이 뜨지 않았다. 무슨 일일까?&lt;/p&gt;
-&lt;p&gt;최근 집 공유기가 느려지는 경우가 낮아서 또 공유기 문제인가 싶었다. 그런데 다른 사이트에선 별 문제나 장애가 느껴지지 않았다. &lt;/p&gt;
-&lt;p&gt;설마 토스의 장애인가? 그렇다고 하기엔 앱을 들어가도 아무런 공지 않은 것도 없고 그냥 로딩만 주구장창 오래 걸릴 뿐이었다.&lt;/p&gt;
-&lt;p&gt;얼마 지나지 않아 사실은 밝혀졌다. 정말 토스에서 장애가 발생한 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="실제 에러 메시지" src="../upload/202501071432-4739b55e.jpg" /&gt;
-&lt;em&gt;실제 에러 메시지&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;이런 24시간 돌아가야 되는 서비스에서 장애라니 드문 일이기도 하면서 지탄을 많이 받는 일임은 분명하다. 일단 뱅킹에는 문제는 없는 것 같지만 토스는 워낙 많은 핀테크 기능을 가지고 있어서 많은 사람들이 불편을 겪고 있을 테니 말이다.&lt;/p&gt;
-&lt;p&gt;하지만 역시 이쪽 업계(?)에 종사하다 보면 이런 서비스 장애를 당한 직원들이 측은하거나 애처롭게 볼 수밖에 없는 건 어쩔 수 없는 모양이다. 사고가 터져서 비상이 걸려 손발에 땀을 흘려가며 문제 찾고 수정하고 여기저기 뛰어다니며 보고하느라 긴장 속을 허우적 거리며 헤엄치고 있을 많은 사람들이 떠오른다. 아 손발에 땀은 안 흘린다고? 뭐 그건 사람 나름일 테긴 하다.&lt;/p&gt;
-&lt;p&gt;그리고 오전 11시가 되기 전 문제는 해결된 모양이다. 원래대로 빠릿빠릿하고 미려한 토스로 돌아왔다. 서비스가 돌아가는 순간 정말 긴장이 확 풀리는 순간이었을 것 같다. 누군가는 더욱 진땀을 흘리고 있을 지도 모르겠지만 말이다.&lt;/p&gt;
-&lt;p&gt;어쨌든 토스 장애는 흔치 않은 일이라 기념(?)할 만한 기록이자 기억이 될 것 같다. 이대로 박제해야겠다.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;오전 업무(?)를 해볼까 싶어 토스를 켜서 혜택 탭을 들여다 보려고 한 찰나였다. 아무리 기다려도 화면이 뜨지 않았다. 무슨 일일까?&lt;/p&gt;
-&lt;p&gt;최근 집 공유기가 느려지는 경우가 낮아서 또 공유기 문제인가 싶었다. 그런데 다른 사이트에선 별 문제나 장애가 느껴지지 않았다. &lt;/p&gt;
-&lt;p&gt;설마 토스의 장애인가? 그렇다고 하기엔 앱을 들어가도 아무런 공지 않은 것도 없고 그냥 로딩만 주구장창 오래 걸릴 뿐이었다.&lt;/p&gt;
-&lt;p&gt;얼마 지나지 않아 사실은 밝혀졌다. 정말 토스에서 장애가 발생한 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="실제 에러 메시지" src="../upload/202501071432-4739b55e.jpg" /&gt;
-&lt;em&gt;실제 에러 메시지&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;이런 24시간 돌아가야 되는 서비스에서 장애라니 드문 일이기도 하면서 지탄을 많이 받는 일임은 분명하다. 일단 뱅킹에는 문제는 없는 것 같지만 토스는 워낙 많은 핀테크 기능을 가지고 있어서 많은 사람들이 불편을 겪고 있을 테니 말이다.&lt;/p&gt;
-&lt;p&gt;하지만 역시 이쪽 업계(?)에 종사하다 보면 이런 서비스 장애를 당한 직원들이 측은하거나 애처롭게 볼 수밖에 없는 건 어쩔 수 없는 모양이다. 사고가 터져서 비상이 걸려 손발에 땀을 흘려가며 문제 찾고 수정하고 여기저기 뛰어다니며 보고하느라 긴장 속을 허우적 거리며 헤엄치고 있을 많은 사람들이 떠오른다. 아 손발에 땀은 안 흘린다고? 뭐 그건 사람 나름일 테긴 하다.&lt;/p&gt;
-&lt;p&gt;그리고 오전 11시가 되기 전 문제는 해결된 모양이다. 원래대로 빠릿빠릿하고 미려한 토스로 돌아왔다. 서비스가 돌아가는 순간 정말 긴장이 확 풀리는 순간이었을 것 같다. 누군가는 더욱 진땀을 흘리고 있을 지도 모르겠지만 말이다.&lt;/p&gt;
-&lt;p&gt;어쨌든 토스 장애는 흔치 않은 일이라 기념(?)할 만한 기록이자 기억이 될 것 같다. 이대로 박제해야겠다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20250107-00.html</guid>
-      <pubDate>Tue, 07 Jan 2025 14:35:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-10T15:48:15.592828+09:00</updated>
+  <updated>2025-03-11T14:00:46.734337+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,59 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250311-00.html</id>
+    <title>Visual Studio Code 확장(extensions) 개발 시작하기</title>
+    <updated>2025-03-11T14:00:41.582480+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs와 비슷하게 Visual Studio Code(이하 vscode)도 기본은 준수한 편집기지만 역시 확장 덕분에 성공한 에디터다. 그렇기에 확장을 개발하는 방법에 대해서도 기본은 알고 있는 편이 좋지 않을까 싶어 살짝 삽을 꺼내들었다. 간단하게 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</p>
+<p>참고로 이 글은 macOS를 기준으로 쓰여졌다. 윈도우의 경우 터미널 환경이나 단축키 등이 조금 다를 수도 있다는 점에 주의하자.</p>
+<h2>vscode extension project</h2>
+<p>vscode 확장 개발을 시작하기 위해 <code>node</code>와 함께 <code>yo</code> 및 <code>generator-code</code> 패키지가 필요하다. 간단히 Homebrew로 설치해 주자.</p>
+<pre><code>$ brew install node
+$ npm i -g yo generator-code
+</code></pre>
+<p>이제 vscode extension 프로젝트를 시작해 보자. 아래와 같은 커맨드를 입력하면 vscode extension 프로젝트를 생성할 수 있다.</p>
+<pre><code>$ yo code
+</code></pre>
+<p>이러면 프로젝트를 구성하기 위해 몇몇 질문을 해온다. 적절히 답해주면 입력된 이름의 디렉터리가 생성되며 여기서 개발을 시작할 수 있다. </p>
+<p>프로젝트 구성 작업이 끝나면 <code>yo</code>가 자동으로 vscode를 띄워주긴 하지만 그 다음에는 이 디렉터리에 들어가서 vscode를 띄워서 시작하자.</p>
+<pre><code>$ code .
+</code></pre>
+<h2>vscode 확장 구경 및 테스트하기</h2>
+<p>기본적으로 작성된 보일러플레이트 코드의 내용을 보면 활성화 시 어떤 메시지를 표시하는 코드가 구현되는 것 같다. 그런데 어떻게 이걸 실행시키는 걸까? F5 키를 누르면 돌아간다고는 하는데 vscode가 새 창으로 뜰 뿐 별다른 변화가 안 보이니 말이다.</p>
+<p>삽을 들고 여기저기를 찔러보다 <code>package.json</code> 파일에서 힌트를 찾을 수 있었다. 이 파일을 열어보면 아래와 같이 <code>contriubtes</code> 항목을 찾을 수 있다.</p>
+<pre><code>"contributes": {
+  "commands": [{
+    "command": "projectname.helloWorld",
+    "title": "Hello World"
+  }]
+},
+</code></pre>
+<p><em>참고로 당연하겠지만 command 이름 자체는 프로젝트 이름에 따라 다를 수 있다.</em></p>
+<p>이 내용으로 추측해 보면 기본적으로 생성되는 보일러플레이트 코드는 'Hello World'라는 vscode용 커맨드를 생성하는 확장이라는 것을 추측할 수 있다.</p>
+<p>그렇다면 이제 <code>extension.js</code> 파일을 열어서 <code>registerCommand</code> 코드가 있는 부분을 찾아보자. 앞서 말한 어떤 메시지를 찍는 코드가 구현되어 있는 부분인데 대충 이런 식으로 생겼다.</p>
+<pre><code>const disposable = vscode.commands.registerCommand('projectname.helloWorld', function () {
+  // The code you place here will be executed every time your command is executed
+
+  // Display a message box to the user
+  vscode.window.showInformationMessage('Hello World from projectname!');
+});
+</code></pre>
+<p>이제 대충 알겠다. <code>projectname.helloworld</code>라는 이름이 여기서도 보이는 것으로 보아 이것이 실제 함수와 연결되는 이름으로 추측할 수 있다. 즉 'Hello World'라는 커맨드를 팔레트에서 찾아 실행시키면 <code>projectname.helloworld</code>라는 이름으로 연결된 함수 - 여기서는 클로저 - 가 실행되는 형태로 이해할 수 있었다.</p>
+<p>그렇다면 실제로 돌려보면 될 것 같다. F5 키를 눌러서 실행시킨 후 Command+Shift+P 키로 커맨드 팔레트를 열어서 'Hello World'를 찾아서 엔터로 실행시켜 보자. 그러면 화면에 뭔가가 표시될 것이다.</p>
+<p><img alt="우측 하단에 메시지가 표시되었다." src="../upload/202503102347-2decba26.png"/>
+<em>우측 하단에 메시지가 표시되었다.</em></p>
+<p>이런 식으로 개발하면서 테스트를 할 수 있다는 것을 알 수 있었다.</p>
+<h2>마무리</h2>
+<p>처음에는 저 코드를 어떻게 해야 실행시킬 수 있는가 오래 고민했었는데 저런 함수 기반의 명령어 시스템은 Emacs와 비슷해서 익숙한 느낌도 들었다. 어쨌든 기본적인 시작은 이걸로 할 수는 있을 것 같다.</p>
+<p>하지만 역시나 vscode의 확장성에는 제한이 크다고 느껴진다. 어떤 틀에 갖혀있다고 해야 할까? 그런 규격이 있는 덕에 더 빠르게 성장한 면이 없는 건 아니겠지만 역시나 Emacs에 익숙한 사람으로써는 답답한 환경이라고도 느껴지기도 한다.</p>
+<p>어쨌거나 기회가 되면 Emacs 용으로 만들어 둔 개인적인 스크립트들을 vscode로 옮겨보는 것도 의미가 있을 지도 모르겠다. 그 때를 기약하며 이 글은 마무리한다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250311-00.html"/>
+    <summary type="text">간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</summary>
+    <published>2025-03-11T14:00:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250310-00.html</id>
     <title>Se7en Patty Burger의 레투스 안녕 버거에 관한 기록</title>
@@ -1794,48 +1847,5 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
     <link href="https://seorenn.github.io/log/20250123-00.html"/>
     <summary type="text">배우자와 늘 점심 식사 선정에 관해 "난 몰라 네가 골라"라며 티격태격 싸우는 편인데 이날은 누군가의 입에서 "쌀국수!"가 바로 튀어나오는 바람에 평화로운 점심 식사 메뉴 선정이 되었다. 그리하여 몇 가지 안 중에서 고른 식당이 바로 '강남쌀국수'다. 자 과연 경기도 촌놈에게 서울 강남이라는 대도시의 맛은 과연 어떤 맛일까?</summary>
     <published>2025-01-23T13:42:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20250213-00.html</id>
-    <title>투싼에 생애 첫 상처를 입혔다</title>
-    <updated>2025-02-13T12:42:51.200243+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>어떤 겨울 날, 좁은 골목길 삼거리 근처에서 주차했던 차를 빼고 있었다. 당시 빠져나가야 될 길의 조수석 방향에 전신주가 있었다. 운전석에선 딱히 다른 장애물은 보이지 않았기에 전신주를 잘 피해서 차를 살살 빼기 시작했다. </p>
-<p>그런데 잘 가나 싶었는데 <strong>누가 차 문을 조금 강하게 똑똑 노크하는 소리</strong>가 들렸다. 밖에는 아무도 없는데 도대체 누구일까? 혹시 키 작은 아이가 있었던 걸까? 급한 마음에 차에서 내려 조수석 방향으로 가봤다.</p>
-<h2>투싼에 생애 첫 상처를 입혔다</h2>
-<p>나가보니 사람은 안 보였다. 다행이다...라고 생각하는 순간, 차 옆에 무릎 정도 높이의 파란색 재설용 모래 상자가 보였다. 작아서 사이드미러에도 안 보일 정도였지만 무겁고 묵직했던 장애물이었다. 불안한 마음이 강하게 들었다. 설마...?</p>
-<p>차량 조수석 도어를 불안한 마음으로 처다봤다. 예상대로 도어 아랫쪽에 파랗게 잔뜩 긁힌 자국이 보였다.</p>
-<blockquote>
-<p>"... 아 ... 아아 ... 아아아아!!!"</p>
-</blockquote>
-<p>처참했다. 순간 눈 앞에 하얘지더니 이내 속이 쓰리기 시작했다. <em>당시 찍은 사진이 없다는 것만 봐도 얼마나 정신이 없었는지 알 수 있다.</em></p>
-<p>이후 어떻게든 무사히 좁은 길은 빠져나갔지만 귀가할 때까지 머리 속에 이 씁쓸함으로 가득 찼었다. 그나마 안전하게 도착한 것이 어디일까 싶을 정도였다.</p>
-<p>주차를 한 뒤 세척용 물티슈로 닦아보니 다행히도 어느 정도는 닦였다. 이대로 다 닦이나 싶었지만 일부는 닦이지 않았다. </p>
-<p><img alt="완전히 닦이지 않은 자국과 찌그러진 흔적" src="../upload/202501061600-00c16404.jpg"/>
-<em>완전히 닦이지 않은 자국과 찌그러진 흔적</em></p>
-<p>하지만 더 큰 문제가 있었으니 바로 긁힌 부분이 찌그러졌다는 점이다. 무거운 모래상자를 차 옆면으로 밀다시피 지나갔으니 찌그러질 수밖에 없었을 거다. 더더욱 속이 쓰리기 시작했다. 밤에는 이런저런 생각으로 잠까지 설칠 정도였다.</p>
-<h2>이대로 놔둘 순 없었다</h2>
-<p>이 상처를 어떻게 해야 하나 고민하다 시간이 좀 흘러갔다. 그런데 주변 사람들이 도장면이 훼손된 걸 방치하면 녹이 슬어서 더 크게 망가질 수도 있다는 것을 들었다. </p>
-<p>그래서 바로 주변 판금이나 도장하는 곳을 찾아봤다. 이런 곳을 <strong>덴트(dent)</strong>라고 하나 보다. </p>
-<blockquote>
-<p>원칙적으로 덴트(dent, PDR - Paintless Dent Repair)는 찌그러진 것을 복원(덴트복원 혹은 덴트리페어)하는 것을 의미한다고 한다. 도색까지 포함할 경우 판금도색이라고 하는 것이 정확하다고 한다.</p>
-</blockquote>
-<p>네이버 지도에서는 가까운 곳 근처에서 단 하나만 발견했는데 자동차 수리나 점검 관련 매장이 잔뜩 모여 있는 곳임에도 하나 밖에 안 보이는 것은 약간 이상하긴 했다.</p>
-<p>어쨌든 그 가까운 덴트 매장에 연락도 예약도 없이 들이닥쳤다. 생각보단 작은 가게였는데 작업 중이던 차 한 대가 들어가니 가득 찰 정도로 작았다. </p>
-<p>기사분께 문제의 상처를 보여주니 다행히도 도장이 벗겨진 것은 아니고 페인트가 묻은 것 같다는 판단을 들을 수 있었고 견적은 10만 원 정도가 나왔다. 다만 대기가 좀 있어서 오래 걸릴 수 있다고 한다. 물론 그대로 해달라고 했다. 굳이 돌아다니며 견적을 비교하는 건 그 시간이 더 아깝다고 생각하는 사람이라 그렇다.</p>
-<p>근처에서 식사를 하고 카페에서 잠깐 시간을 보냈다. 블루링크에서 주차 중 충격이니 시동이 꺼졌는데 차 문이 열렸니 창문이 열렸니 알림이 계속 왔다. 열심히 수리 중이라는 걸 알려주는 것 같았다.</p>
-<p>어쨌거나 수리를 맡겼다는 것에서 약간의 안도가 드는 것은 좋은 사이드이펙트 같았다.</p>
-<h2>그 결과</h2>
-<p>커피를 절반 가량 거의 다 마셔갈 무렵, 예상보다 빠르게 조치가 되었다고 연락이 왔다. 여유롭게 커피를 즐길 생각이었는데 너무 빨라서 약간 허탈했다.</p>
-<p>어쨌든 다시 매장을 방문하여 어떻게 되었나 살펴봤다.</p>
-<p><img alt="솔직히 어디가 찌그러졌었는지 모르겠다" src="../upload/202501061600-96a13581.jpg"/>
-<em>솔직히 어디가 찌그러졌었는지 모르겠다</em></p>
-<p>멀리서 확인해보니 뭔가 다 안 펴진 것처럼 보였지만 가까이서 보니 정말 기적과도 같이 깔끔하게 펴져 있고 별 자국도 보이지 않았다. 정말 다행이다. 이 정도로 끝난 것에 감사해야 할 지도 모르겠다.</p>
-<p>요금을 견적대로 지불하고 집으로 돌아왔다. 사고가 났을 땐 어떻게 해야하나 답답한 하루하루가 지나가고 있었는데 순식간에 해결이 되니 왜 그렇게 마음고생을 했나 한심을 정도였다. 덕분에 그날 밤은 기분 좋엔 잘 수 있었다.</p>
-<p>이제는 좀 더 조심해서 운전 해야겠다. 기껏 어라운드 뷰 까지 옵션으로 넣었으니 좁은 길에서는 자만하지 말고 꼭 활용해야 겠다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20250213-00.html"/>
-    <summary type="text">누가 차 문을 조금 강하게 똑똑똑 노크하는 소리가 들렸다. 밖에는 아무도 없는데 도대체 누구일까?</summary>
-    <published>2025-01-20T13:37:00+09:00</published>
   </entry>
 </feed>

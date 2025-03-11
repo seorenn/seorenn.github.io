@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-11T14:08:23.376474+09:00</updated>
+  <updated>2025-03-11T14:15:00.556863+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20250311-00.html</id>
     <title>Visual Studio Code 확장(extensions) 개발 시작하기</title>
-    <updated>2025-03-11T14:08:18.344204+09:00</updated>
+    <updated>2025-03-11T14:14:54.340515+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs와 비슷하게 Visual Studio Code(이하 vscode)도 기본은 준수한 편집기지만 역시 확장 덕분에 성공한 에디터다. 그렇기에 확장을 개발하는 방법에 대해서도 기본은 알고 있는 편이 좋지 않을까 싶어 살짝 삽을 꺼내들었다. 간단하게 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</p>
 <p>참고로 이 글은 macOS를 기준으로 쓰여졌다. 윈도우의 경우 터미널 환경이나 단축키 등이 조금 다를 수도 있다는 점에 주의하자.</p>

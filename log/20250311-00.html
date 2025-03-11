@@ -88,7 +88,7 @@
         <p>Emacs와 비슷하게 Visual Studio Code(이하 vscode)도 기본은 준수한 편집기지만 역시 확장 덕분에 성공한 에디터다. 그렇기에 확장을 개발하는 방법에 대해서도 기본은 알고 있는 편이 좋지 않을까 싶어 살짝 삽을 꺼내들었다. 간단하게 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</p>
 <p>참고로 이 글은 macOS를 기준으로 쓰여졌다. 윈도우의 경우 터미널 환경이나 단축키 등이 조금 다를 수도 있다는 점에 주의하자.</p>
 <h2>vscode extension project</h2>
-<p>vscode 확장 개발을 시작하기 위해 <code>node</code>와 함께 <code>yo</code> 및 <code>generator-code</code> 패키지가 필요하다. 간단히 Homebrew로 설치해 주자. 물론 설치되어 있다면 넘어가도 된다.</p>
+<p>vscode 확장 개발을 시작하기 위해 <code>node</code>와 함께 <code>yo</code> 및 <code>generator-code</code> 패키지가 필요하다. 간단히 Homebrew와 npm 등으로 설치해 주자. 물론 설치되어 있다면 넘어가도 된다.</p>
 <pre><code>$ brew install node
 $ npm i -g yo generator-code
 </code></pre>
@@ -119,11 +119,11 @@ $ npm i -g yo generator-code
   vscode.window.showInformationMessage('Hello World from projectname!');
 });
 </code></pre>
-<p>이제 대충 알겠다. <code>projectname.helloworld</code>라는 이름이 여기서도 보이는 것으로 보아 이것이 실제 함수와 연결되는 이름으로 추측할 수 있다. 즉 'Hello World'라는 커맨드를 팔레트에서 찾아 실행시키면 <code>projectname.helloworld</code>라는 이름으로 연결된 함수 - 여기서는 클로저 - 가 실행되는 형태로 이해할 수 있었다.</p>
+<p>이제 대충 알겠다. <code>projectname.helloworld</code>라는 이름이 여기서도 보이는 것으로 보아 이것이 실제 함수와 연결되는 이름으로 추측할 수 있다. 즉 'Hello World'라는 커맨드를 실행시키면 <code>projectname.helloworld</code>라는 이름의 특정한 기능을 실행시킨다. 그리고 위 코드를 통해 <code>projectname.helloworld</code>라는 이름으로 실행될 함수를 실제로 구현할 수 있는 것으로 이해가 된다.</p>
 <p>그렇다면 실제로 돌려보면 될 것 같다. F5 키를 눌러서 실행시킨 후 Command+Shift+P 키로 커맨드 팔레트를 열어서 'Hello World'를 찾아서 엔터로 실행시켜 보자. 그러면 화면에 뭔가가 표시될 것이다.</p>
 <p><img alt="예제와는 프로젝트 이름이 좀 다르지만 어쨌든 우측 하단에 메시지가 표시되었다." src="../upload/202503102347-2decba26.png" />
 <em>예제와는 프로젝트 이름이 좀 다르지만 어쨌든 우측 하단에 메시지가 표시되었다.</em></p>
-<p>이런 식으로 개발하면서 테스트를 할 수 있다는 것을 알 수 있었다.</p>
+<p>정답이었다. 이런 식으로 개발하면서 테스트를 할 수 있다는 것을 알 수 있었다.</p>
 <h2>마무리</h2>
 <p>처음에는 저 코드를 어떻게 해야 실행시킬 수 있는가 오래 고민했었는데 저런 함수 기반의 명령어 시스템은 Emacs와 비슷해서 익숙한 느낌도 들었다. 어쨌든 기본적인 시작은 이걸로 할 수는 있을 것 같다.</p>
 <p>하지만 역시나 vscode의 확장성에는 제한이 크다고 느껴진다. 어떤 틀에 갖혀있다고 해야 할까? 그런 규격이 있는 덕에 더 빠르게 성장한 면이 없는 건 아니겠지만 역시나 Emacs에 익숙한 사람으로써는 답답한 환경이라고도 느껴지기도 한다.</p>
@@ -328,7 +328,7 @@ $ npm i -g yo generator-code
     <footer>
         
         
-          <p>이 문서는 2025년 03월 11일 14:00에 작성되었으며 2025년 03월 11일 14:14에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 03월 11일 14:00에 작성되었으며 2025년 03월 11일 22:33에 마지막으로 편집되었습니다.</p>
         
         
         <p>

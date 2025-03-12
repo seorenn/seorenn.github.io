@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Wed, 12 Mar 2025 16:06:43 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Mar 2025 16:20:47 +0900</lastBuildDate>
     <item>
       <title>트럼프 무역전쟁: 이랬다 저랬다 정신없는 트럼프</title>
       <link>https://seorenn.github.io/log/20250312-00.html</link>
@@ -644,7 +644,7 @@ keyRemapper:start()
 &lt;p&gt;코드를 몇 줄 더 줄일 여지는 충분하니 하고 싶다면 직접 알아서 해보자. 이젠 귀찮아서 잘 돌아가는 코드를 고치는 건 사양하고 싶을 뿐이니 말이다.&lt;/p&gt;
 &lt;h2&gt;Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기&lt;/h2&gt;
 &lt;p&gt;그런데 위의 Shift+Space로 Emacs 내장 입력기를 토글시키는 Hammerspoon 코드를 작성한 이후 새로운 문제를 겪게 된다. 바로 macOS의 한글 입력기와 Emacs 내장 한글 입력기의 무한 순환 문제다.&lt;/p&gt;
-&lt;p&gt;이 문제는 macOS의 입력기가 한글인 상태로 그리고 Emacs가 영문 입력 모드인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 눌러도 해당 키 이벤트가 무시되니 macOS 입력기는 계속 한글 상태가 유지된다. 결국 &lt;strong&gt;무한의 '한글만 입력' 지옥&lt;/strong&gt;이 펼쳐진다.&lt;/p&gt;
+&lt;p&gt;이 문제는 macOS의 입력기가 한글인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 눌러도 Emacs 내장 입력기만 바뀔 뿐 macOS 입력기는 계속 한글 상태가 유지된다. 결국 &lt;strong&gt;무한의 '한글만 입력' 지옥&lt;/strong&gt;이 펼쳐진다.&lt;/p&gt;
 &lt;p&gt;물론 이 경우 &lt;strong&gt;마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결&lt;/strong&gt;이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 &lt;strong&gt;키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일이 아니다&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;그래서 이런 문제를 원천적으로 해결하는 게 필요하다. 간단하게 Emacs 창이 제일 위로 올라오게 되면 macOS 입력기를 자동으로 영문으로 바꾸도록 하면 될 것 같다. 그래서 또다시 Hammerspoon을 들쑤셨다.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;function setEnglishInputMethod()
@@ -719,7 +719,7 @@ keyRemapper:start()
 &lt;p&gt;코드를 몇 줄 더 줄일 여지는 충분하니 하고 싶다면 직접 알아서 해보자. 이젠 귀찮아서 잘 돌아가는 코드를 고치는 건 사양하고 싶을 뿐이니 말이다.&lt;/p&gt;
 &lt;h2&gt;Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기&lt;/h2&gt;
 &lt;p&gt;그런데 위의 Shift+Space로 Emacs 내장 입력기를 토글시키는 Hammerspoon 코드를 작성한 이후 새로운 문제를 겪게 된다. 바로 macOS의 한글 입력기와 Emacs 내장 한글 입력기의 무한 순환 문제다.&lt;/p&gt;
-&lt;p&gt;이 문제는 macOS의 입력기가 한글인 상태로 그리고 Emacs가 영문 입력 모드인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 눌러도 해당 키 이벤트가 무시되니 macOS 입력기는 계속 한글 상태가 유지된다. 결국 &lt;strong&gt;무한의 '한글만 입력' 지옥&lt;/strong&gt;이 펼쳐진다.&lt;/p&gt;
+&lt;p&gt;이 문제는 macOS의 입력기가 한글인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 눌러도 Emacs 내장 입력기만 바뀔 뿐 macOS 입력기는 계속 한글 상태가 유지된다. 결국 &lt;strong&gt;무한의 '한글만 입력' 지옥&lt;/strong&gt;이 펼쳐진다.&lt;/p&gt;
 &lt;p&gt;물론 이 경우 &lt;strong&gt;마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결&lt;/strong&gt;이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 &lt;strong&gt;키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일이 아니다&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;그래서 이런 문제를 원천적으로 해결하는 게 필요하다. 간단하게 Emacs 창이 제일 위로 올라오게 되면 macOS 입력기를 자동으로 영문으로 바꾸도록 하면 될 것 같다. 그래서 또다시 Hammerspoon을 들쑤셨다.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;function setEnglishInputMethod()

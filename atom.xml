@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-12T14:13:29.731793+09:00</updated>
+  <updated>2025-03-12T16:06:43.612703+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -375,7 +375,7 @@ $ npm i -g yo generator-code
   <entry>
     <id>https://seorenn.github.io/log/20250305-01.html</id>
     <title>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</title>
-    <updated>2025-03-06T22:25:32.336956+09:00</updated>
+    <updated>2025-03-12T16:06:20.988593+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.</p>
 <p>원초적인 문제를 정의하자면 <strong>macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다</strong>는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.</p>
@@ -408,7 +408,7 @@ keyRemapper:start()
 <p>코드를 몇 줄 더 줄일 여지는 충분하니 하고 싶다면 직접 알아서 해보자. 이젠 귀찮아서 잘 돌아가는 코드를 고치는 건 사양하고 싶을 뿐이니 말이다.</p>
 <h2>Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기</h2>
 <p>그런데 위의 Shift+Space로 Emacs 내장 입력기를 토글시키는 Hammerspoon 코드를 작성한 이후 새로운 문제를 겪게 된다. 바로 macOS의 한글 입력기와 Emacs 내장 한글 입력기의 무한 순환 문제다.</p>
-<p>이 문제는 macOS의 입력기가 한글인 상태로 그리고 Emacs가 영문 입력 모드인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 누르면 macOS 입력기가 영문으로 바뀌는 대신 Emacs 내장 입력기가 한글로 바뀌면서 다시 한글만 입력되는 불상사가 나타난다. 여기서 다시 Shift+Space를 누르면 이제 다시 Emacs가 영문으로 바뀌는 대신 macOS 입력기가 한글로 바뀌어 다시 처음으로 돌아간다. <strong>무한의 '한글만 입력' 지옥 루프</strong>다.</p>
+<p>이 문제는 macOS의 입력기가 한글인 상태로 그리고 Emacs가 영문 입력 모드인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 눌러도 해당 키 이벤트가 무시되니 macOS 입력기는 계속 한글 상태가 유지된다. 결국 <strong>무한의 '한글만 입력' 지옥</strong>이 펼쳐진다.</p>
 <p>물론 이 경우 <strong>마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결</strong>이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 <strong>키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일이 아니다</strong>.</p>
 <p>그래서 이런 문제를 원천적으로 해결하는 게 필요하다. 간단하게 Emacs 창이 제일 위로 올라오게 되면 macOS 입력기를 자동으로 영문으로 바꾸도록 하면 될 것 같다. 그래서 또다시 Hammerspoon을 들쑤셨다.</p>
 <pre><code>function setEnglishInputMethod()

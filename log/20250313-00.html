@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>Visual Studio Code 확장(extensions) 개발 시작하기 - Seorenn</title>
-    <meta name="twitter:title" content="Visual Studio Code 확장(extensions) 개발 시작하기" />
-    <meta name="og:title" content="Visual Studio Code 확장(extensions) 개발 시작하기" />
-    <meta name="description" content="간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자." />
-    <meta name="twitter:description" content="간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자." />
-    <meta name="og:description" content="간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자." />
-    <link rel="canonical" href="https://seorenn.github.io/log/20250311-00.html" />
-    <meta property="og:url" content="https://seorenn.github.io/log/20250311-00.html" />
+    <title>GTS BURGER의 그릴드 머쉬룸 버거에 관한 기록 - Seorenn</title>
+    <meta name="twitter:title" content="GTS BURGER의 그릴드 머쉬룸 버거에 관한 기록" />
+    <meta name="og:title" content="GTS BURGER의 그릴드 머쉬룸 버거에 관한 기록" />
+    <meta name="description" content="역시나 지쳤을 땐 햄버거다. 특히 수제버거다. 만능 피로회복제 수제버거! 찾다보니 새로운 가게를 하나 발견하게 되었다. GTS 버거?" />
+    <meta name="twitter:description" content="역시나 지쳤을 땐 햄버거다. 특히 수제버거다. 만능 피로회복제 수제버거! 찾다보니 새로운 가게를 하나 발견하게 되었다. GTS 버거?" />
+    <meta name="og:description" content="역시나 지쳤을 땐 햄버거다. 특히 수제버거다. 만능 피로회복제 수제버거! 찾다보니 새로운 가게를 하나 발견하게 되었다. GTS 버거?" />
+    <link rel="canonical" href="https://seorenn.github.io/log/20250313-00.html" />
+    <meta property="og:url" content="https://seorenn.github.io/log/20250313-00.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -70,64 +70,36 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>Visual Studio Code 확장(extensions) 개발 시작하기</h1>
+          <h1>GTS BURGER의 그릴드 머쉬룸 버거에 관한 기록</h1>
           <div class="title-date">
             
               
-                <a href="../subject/vscode.html">Visual Studio Code</a>
+                <a href="../subject/meal.html">식사</a>
               
               <span>//</spans>
             
             
-              <span>2025년 03월 11일 작성</span>
+              <span>2025년 03월 13일 작성</span>
             
             
             
           </div>
         </header>
-        <p>Emacs와 비슷하게 Visual Studio Code(이하 vscode)도 기본은 준수한 편집기지만 역시 확장 덕분에 성공한 에디터다. 그렇기에 확장을 개발하는 방법에 대해서도 기본은 알고 있는 편이 좋지 않을까 싶어 살짝 삽을 꺼내들었다. 간단하게 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</p>
-<p>참고로 이 글은 macOS를 기준으로 쓰여졌다. 윈도우의 경우 터미널 환경이나 단축키 등이 조금 다를 수도 있다는 점에 주의하자.</p>
-<h2>vscode extension project</h2>
-<p>vscode 확장 개발을 시작하기 위해 <code>node</code>와 함께 <code>yo</code> 및 <code>generator-code</code> 패키지가 필요하다. 간단히 Homebrew와 npm 등으로 설치해 주자. 물론 설치되어 있다면 넘어가도 된다.</p>
-<pre><code>$ brew install node
-$ npm i -g yo generator-code
-</code></pre>
-<p>이제 vscode extension 프로젝트를 시작해 보자. 아래와 같은 커맨드를 입력하면 vscode extension 프로젝트를 생성할 수 있다.</p>
-<pre><code>$ yo code
-</code></pre>
-<p>이러면 프로젝트를 구성하기 위해 몇몇 질문을 해온다. 적절히 답해주면 입력된 이름의 디렉터리가 생성되며 여기서 개발을 시작할 수 있다. </p>
-<p>프로젝트 구성 작업이 끝나면 <code>yo</code>가 자동으로 vscode를 띄워주긴 하지만 그 다음에는 이 디렉터리에 들어가서 vscode를 띄워서 시작하자.</p>
-<pre><code>$ code .
-</code></pre>
-<h2>vscode 확장 구경 및 테스트하기</h2>
-<p>기본적으로 작성된 보일러플레이트 코드의 내용을 보면 활성화 시 어떤 메시지를 표시하는 코드가 구현되는 것 같다. 그런데 어떻게 이걸 실행시키는 걸까? F5 키를 누르면 돌아간다고는 하는데 vscode가 새 창으로 뜰 뿐 별다른 변화가 안 보이니 말이다.</p>
-<p>삽을 들고 여기저기를 찔러보다 <code>package.json</code> 파일에서 힌트를 찾을 수 있었다. 이 파일을 열어보면 아래와 같이 <code>contriubtes</code> 항목을 찾을 수 있다.</p>
-<pre><code>&quot;contributes&quot;: {
-  &quot;commands&quot;: [{
-    &quot;command&quot;: &quot;projectname.helloWorld&quot;,
-    &quot;title&quot;: &quot;Hello World&quot;
-  }]
-},
-</code></pre>
-<p><em>참고로 당연하겠지만 command 이름 자체는 프로젝트 이름에 따라 다를 수 있다.</em></p>
-<p>이 내용으로 추측해 보면 기본적으로 생성되는 보일러플레이트 코드는 'Hello World'라는 vscode용 커맨드를 생성하는 확장이라는 것을 추측할 수 있다.</p>
-<p>그렇다면 이제 <code>extension.js</code> 파일을 열어서 <code>registerCommand</code> 코드가 있는 부분을 찾아보자. 앞서 말한 어떤 메시지를 찍는 코드가 구현되어 있는 부분인데 대충 이런 식으로 생겼다.</p>
-<pre><code>const disposable = vscode.commands.registerCommand('projectname.helloWorld', function () {
-  // The code you place here will be executed every time your command is executed
-
-  // Display a message box to the user
-  vscode.window.showInformationMessage('Hello World from projectname!');
-});
-</code></pre>
-<p>이제 대충 알겠다. <code>projectname.helloworld</code>라는 이름이 여기서도 보이는 것으로 보아 이것이 실제 함수와 연결되는 이름으로 추측할 수 있다. 즉 'Hello World'라는 커맨드를 실행시키면 <code>projectname.helloworld</code>라는 이름의 특정한 기능을 실행시킨다. 그리고 위 코드를 통해 <code>projectname.helloworld</code>라는 이름으로 실행될 함수를 실제로 구현할 수 있는 것으로 이해가 된다.</p>
-<p>그렇다면 실제로 돌려보면 될 것 같다. F5 키를 눌러서 실행시킨 후 Command+Shift+P 키로 커맨드 팔레트를 열어서 'Hello World'를 찾아서 엔터로 실행시켜 보자. 그러면 화면에 뭔가가 표시될 것이다.</p>
-<p><img alt="예제와는 프로젝트 이름이 좀 다르지만 어쨌든 우측 하단에 메시지가 표시되었다." src="../upload/202503102347-2decba26.png" />
-<em>예제와는 프로젝트 이름이 좀 다르지만 어쨌든 우측 하단에 메시지가 표시되었다.</em></p>
-<p>정답이었다. 이런 식으로 개발하면서 테스트를 할 수 있다는 것을 알 수 있었다.</p>
-<h2>마무리</h2>
-<p>처음에는 저 코드를 어떻게 해야 실행시킬 수 있는가 오래 고민했었는데 저런 함수 기반의 명령어 시스템은 Emacs와 비슷해서 익숙한 느낌도 들었다. 어쨌든 기본적인 시작은 이걸로 할 수는 있을 것 같다.</p>
-<p>하지만 역시나 vscode의 확장성에는 제한이 크다고 느껴진다. 어떤 틀에 갖혀있다고 해야 할까? 그런 규격이 있는 덕에 더 빠르게 성장한 면이 없는 건 아니겠지만 역시나 Emacs에 익숙한 사람으로써는 답답한 환경이라고도 느껴지기도 한다.</p>
-<p>어쨌거나 기회가 되면 Emacs 용으로 만들어 둔 개인적인 스크립트들을 vscode로 옮겨보는 것도 의미가 있을 지도 모르겠다. 그 때를 기약하며 이 글은 마무리한다.</p>
+        <p>또 혼자가 된 점심 시간, 오전에 너무 많은 일을 해서 피곤했던 관계로 지쳐서 결국 음식 배달을 시키게 되었다. 역시나 지쳤을 땐 햄버거다. 특히 수제버거다. 만능 피로회복제 수제버거!</p>
+<p>찾다보니 새로운 가게를 하나 발견하게 되었다. GTS 버거? 약자가 살짝 궁금해지긴 했지만 아무래도 괜찮았던 게 역시나 수제버거는 눈길을 끄는 아름다움이 있다. 어쨌든 메뉴를 찾아보다보니 머쉬룸 버거가 인기가 좋다길래 주문했다.</p>
+<p>실제로 주문한 메뉴는 '그릴드 머쉬룸 버거' 즉 불에 그을려 익힌 버섯 버거이며 세트가 아니라 감자튀김(오리지널 프라이즈)과 제로콜라를 옵션으로 따로 추가했다. 왜냐하면 세트에는 제로콜라가 없어서다. 덕분에 가격은 세트에 비해 천 원 가량 비쌌다. 이 부분이 불만스러웠지만 주문 할 때 요구사항으로 제로콜라 달라고 하면 되지 않았을까 하는 생각이 들기도 했다. 어쨌거나 귀찮게 하는 점은 좀 고쳐줬으면 좋겠다.</p>
+<p>어쨌든 주문 후 얼마 시간이 지나지 않아 무사히 배달로 도착했다. 바로 포장을 풀고 감상을 해보자.</p>
+<p><img alt="화가 날 것 같은 찌그러진 번" src="../upload/202503101553-5c10192b.jpg" />
+<em>화가 날 것 같은 찌그러진 번</em></p>
+<p>비주얼적으로 굉장한 장점이 있는 버거임에도 큰 문제가 보인다. 바로 <strong>번이 심각하게 찌그러지게 포장</strong>을 했다는 점이다. 사진에서는 잘 안 보이지만 트레이가 버거에 비해 작아서 트레이에 가려진 번 아랫쪽이 심하게 납작하게 찌그러졌다. 이는 <strong>큰 결격 사유</strong>다. 번이 찌그러졌음에 따라서 식감에서 좋은 점수를 주기엔 힘들 것 같다. 만약 배달 문제로 찌그러진 거였다면 모르겠지만 말이다.</p>
+<p>어쨌거나 찌그러진 번을 제외하고 식감을 평가하자면, 버섯이 꽤나 질긴 편이었다. 그 외에 나름 풍족하게 씹히는 속재료들의 전반적인 느낌은 괜찮았다. 그리고 육즙인지 아니면 소스인지 모르겠지만 제법 촉촉한 느낌도 괜찮았다. 하지만 베이컨의 딱딱한 식감이 좀 방해를 했다.</p>
+<p>맛은 훌륭한 편이다. 특히 '그릴드'라는 이름 답게 불 맛이 좀 느껴졌다. 하지만 불맛은 좀 먹다 보면 익숙해져서 아무 느낌이 없어지는 게 약간의 문제일 지도 모르겠다. 어쨌거나 전반적으로 기본적인 버거 구성인 만큼 맛도 좋은 편이라고 평가하고 싶다. 과하게 튀는 맛도 없었기에 조화도 괜찮았던 것 같다.</p>
+<p>추가 단점으로 먹기가 좀 힘들었다는 점을 들고 싶다. 소스인지 육즙인지 모르겠지만 기름기 있는 액체가 줄줄 흘려내려서 황급히 닦거나 피하다 다른데 흘리는 등 여러 해프닝이 있었다. 다른 수제버거에도 이런 경우를 종종 겪긴 했지만 역시나 이건 단점이며 식당 측에서 먹기 좋은 포장을 좀 연구해 줬으면 좋겠다.</p>
+<p>오리지널 프라이즈는 평범한 수제 감자튀김 맛이었다. 심하게 짜지도 않고 맛도 나쁘진 않았다. 물론 그렇다고 아주 맛있는 것도 아닌 그냥 펑범한 느낌이다.</p>
+<h2>결론</h2>
+<p>불행히도 같은 메뉴를 다시 시켜 먹을 생각은 안 들었다. 망가진 번과 질긴 버섯의 식감이 제법 마음에 안 들었기 때문이다.</p>
+<p>하지만 같은 집의 다른 메뉴를 시도해 볼 생각은 있다. 전반적인 맛은 나쁘지 않았으니 말이다. 하지만 배달에 한해서 자의적인 선택 가능성은 낮을 것 같다. 어쨌든 번이 심하게 찌그러지는 포장이니 말이다.</p>
+<p>이러다 집 주변의 모든 버거 집의 리뷰를 올리게 될 것 같다. 빨리 그런 날이 왔으면 좋...겠지만 이런 날도 머지 않았을 지도 모르겠다. 어쨌든 이 글은 여기서 마무리 한다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -157,7 +129,7 @@ $ npm i -g yo generator-code
                   
                     <li>
                       
-                        <a href="../log/20250313-00.html">GTS BURGER의 그릴드 머쉬룸 버거에 관한 기록</a><br/>
+                        <b>GTS BURGER의 그릴드 머쉬룸 버거에 관한 기록</b><br/>
                         <small>2025년 03월 13일 작성</small>
                       
                     </li>
@@ -185,7 +157,7 @@ $ npm i -g yo generator-code
                   
                     <li>
                       
-                        <b>Visual Studio Code 확장(extensions) 개발 시작하기</b><br/>
+                        <a href="../log/20250311-00.html">Visual Studio Code 확장(extensions) 개발 시작하기</a><br/>
                         <small>2025년 03월 11일 작성</small>
                       
                     </li>
@@ -320,6 +292,80 @@ $ npm i -g yo generator-code
             </div><!-- div.refinfo-cluster -->
           
           
+            <div class="refinfo-cluster">
+              
+              
+                <h2>비슷한 주제의 블로그</h2>
+                <ul class="logarch-container">
+                  
+                    <li>
+                      
+                        <a href="../log/20250310-00.html">Se7en Patty Burger의 레투스 안녕 버거에 관한 기록</a><br/>
+                      
+                      <small>2025년 03월 10일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250307-00.html">롯데리아의 리아 사각새우 더블 버거에 관한 기록</a><br/>
+                      
+                      <small>2025년 03월 07일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250305-00.html">또래오래의 갈릭치킨에 관한 기록</a><br/>
+                      
+                      <small>2025년 03월 05일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250228-00.html">KFC의 징거타워버거에 관한 기록</a><br/>
+                      
+                      <small>2025년 02월 28일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250224-00.html">언타이틀 버거의 올데이 버거 세트에 관한 기록</a><br/>
+                      
+                      <small>2025년 02월 24일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250221-00.html">롯데리아의 나폴리맛피아 모짜렐라버거(토마토바질)에 대한 기록</a><br/>
+                      
+                      <small>2025년 02월 21일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250212-02.html">또래오래의 후라이드반+양념반 순살 치킨에 대한 기록</a><br/>
+                      
+                      <small>2025년 02월 12일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250205-01.html">라마노 화덕피자&파스타의 꽈뜨로포르마지피자와 스파게티감베리에 관한 기록</a><br/>
+                      
+                      <small>2025년 02월 05일 작성</small>
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250123-00.html">강남쌀국수의 소고기폭탄쌀국수 및 새우볶음밥에 관한 기록</a><br/>
+                      
+                      <small>2025년 01월 23일 작성</small>
+                    </li>
+                  
+                </ul>
+              
+              
+            </div><!-- div.refinfo-cluster -->
+          
         </div><!-- div.navinfo-container -->
       </div><!-- div.refinfo-container -->
     
@@ -328,7 +374,7 @@ $ npm i -g yo generator-code
     <footer>
         
         
-          <p>이 문서는 2025년 03월 11일 14:00에 작성되었으며 2025년 03월 11일 22:33에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 03월 13일 13:01에 작성되었으며 2025년 03월 13일 13:03에 마지막으로 편집되었습니다.</p>
         
         
         <p>

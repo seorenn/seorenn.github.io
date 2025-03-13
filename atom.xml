@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-13T23:22:17.313456+09:00</updated>
+  <updated>2025-03-13T23:27:21.493192+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -13,10 +13,10 @@
   <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
     <id>https://seorenn.github.io/log/20250313-02.html</id>
-    <title>미국 2월 PPI: 이게 뭐야 무서워</title>
-    <updated>2025-03-13T23:22:13.133019+09:00</updated>
+    <title>미국 2월 PPI: 이게 뭐야 무서워...가 아니야?</title>
+    <updated>2025-03-13T23:26:36.310873+09:00</updated>
     <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>어제의 CPI에 이어 오늘은 미국 2월 PPI가 발표되는 날이다. 늘 CPI에 밀려 무시되기 일수인 PPI 이지만, 이번에는 트럼프의 관세에 대비하기 위해 기업들이 미리 원재료 등을 사재기 했을 가능성이 인플레이션으로 나타날 수도 있는 만큼 중요성을 높게 보는 모양이다.</p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>어제의 CPI에 이어 오늘은 미국 2월 PPI가 발표되는 날이다. 늘 CPI에 밀려 무시되기 일쑤인 PPI 이지만, 이번에는 트럼프의 관세에 대비하기 위해 기업들이 미리 원재료 등을 사재기 했을 가능성이 인플레이션으로 나타날 수도 있는 만큼 중요성을 높게 보는 모양이다.</p>
 <p>지표는 대충 정리해서 이렇게 나왔다.</p>
 <blockquote>
 <p>미국 2월 헤드라인 PPI: YoY 3.2% (-0.5%) 예상치 하회<br/>

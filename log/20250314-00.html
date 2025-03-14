@@ -6,12 +6,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>Visual Studio Code에서 한글이 씹히는 문제 해결하기 - Seorenn</title>
-    <meta name="twitter:title" content="Visual Studio Code에서 한글이 씹히는 문제 해결하기" />
-    <meta name="og:title" content="Visual Studio Code에서 한글이 씹히는 문제 해결하기" />
-    <meta name="description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
-    <meta name="twitter:description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
-    <meta name="og:description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
+    <title>Visual Studio Code에서 한글 입력이 씹히는 문제 해결하기 - Seorenn</title>
+    <meta name="twitter:title" content="Visual Studio Code에서 한글 입력이 씹히는 문제 해결하기" />
+    <meta name="og:title" content="Visual Studio Code에서 한글 입력이 씹히는 문제 해결하기" />
+    <meta name="description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 입력이 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
+    <meta name="twitter:description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 입력이 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
+    <meta name="og:description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 입력이 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
     <link rel="canonical" href="https://seorenn.github.io/log/20250314-00.html" />
     <meta property="og:url" content="https://seorenn.github.io/log/20250314-00.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
@@ -70,7 +70,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>Visual Studio Code에서 한글이 씹히는 문제 해결하기</h1>
+          <h1>Visual Studio Code에서 한글 입력이 씹히는 문제 해결하기</h1>
           <div class="title-date">
             
               
@@ -86,7 +86,7 @@
           </div>
         </header>
         <p>개인적으로 Visual Studio Code(이하 vscode)의 사용을 종종 꺼리게 만들던 요소로 한글 입력 문제를 꼽고 싶다. macOS에서만 발생하는 지는 잘 모르겠지만, 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다.</p>
-<p>어차피 Emacs를 선호하기도 해서 이 문제의 원인에 대해 오랜 시간 관심을 가지지 않다고 최근 Doom Emacs 업데이트 도중 뻑(?)이 나서 vscode를 임시로 써야 했을 때 또 문제를 겪게 되었고 그래서 원인에 대해 관심을 가지게 되었다.</p>
+<p>어차피 Emacs를 선호하기도 해서 이 문제의 원인에 대해 오랜 시간 관심을 가지지 않았지만 최근 Doom Emacs 업데이트 도중 뻑(?)이 나서 vscode를 임시로 써야 했을 때 또 문제를 겪게 되었고 그래서 원인에 대해 관심을 가지게 되었다.</p>
 <p>다행히도 원인 및 해결법은 쉽게 발견된 것 같다.</p>
 <h2>vscode에서 한글 입력이 비정상적인 문제 해결하기</h2>
 <p>개인적인 경우는 아래와 같은 방식으로 설정 하나만 고치면 해결되었다.</p>
@@ -96,9 +96,9 @@
 </ol>
 <p><img alt="해당 설정이 적용된 상태의 Settings 화면" src="../upload/202503111420-fc5c80ca.png" />
 <em>해당 설정이 적용된 상태의 Settings 화면</em></p>
-<p>해당 항목은 간단히 설명도 쓰여있긴 하지만 주로 영문자와 CR 및 LF와 같은 줄바꿈 문자 등을 제외한 문자가 입력될 경우 이를 강조 처리해 주는 기능인데 아마도 한글이 입력되는 도중에 실행된 하이라이트 렌더링 루틴이 한글의 입력이나 문자 완성을 방해하는 것으로 추정된다.</p>
+<p>해당 항목은 간단히 설명도 쓰여있긴 하지만 주로 영문자와 CR 및 LF와 같은 줄바꿈 문자 등을 제외한 문자가 입력될 경우 이를 하이라이트(강조) 처리해 주는 기능인데 아마도 한글이 입력되는 도중에 실행된 하이라이트 렌더링 루틴이 한글의 입력이나 문자 완성을 방해하는 것으로 추정된다.</p>
 <p>물론 해당 설정은 특정한 문자로 코드를 방해하는 경우, 예를 들어 세미콜론과 비슷한 문자가 특수문자 영역에도 있는데 이걸 입력해서 코드가 컴파일 될 때 알 수 없는 오류를 일으키게 하는 등의 문제를 미연에 방지하는 데 도움을 줄 수 있다고 생각한다.</p>
-<p>하지만 한국인에겐 한글 입력이 제대로 안 되는 문제는 치명적인 만큼 어쩔 수 없는 것 같다.</p>
+<p>하지만 한국인에겐 <strong>한글 입력이 제대로 안 되는 문제는 치명적</strong>인 만큼 어쩔 수 없는 것 같다.</p>
 <p>대안으로 기본 설정인 inUntrustedWorkspace 상태로 놔두고 Trusted Workspace로 설정해서 작업하는 방법도 있긴 하겠지만 언제 어떻게 어떤 파일을 편집하게 될지는 알 수 없는 것이다.</p>
 <p>어쨌거나 큰 문제가 해결되어 상쾌한 기분이다.</p>
       </section>
@@ -130,7 +130,7 @@
                   
                     <li>
                       
-                        <b>Visual Studio Code에서 한글이 씹히는 문제 해결하기</b><br/>
+                        <b>Visual Studio Code에서 한글 입력이 씹히는 문제 해결하기</b><br/>
                         <small>2025년 03월 14일 작성</small>
                       
                     </li>
@@ -319,7 +319,7 @@
     <footer>
         
         
-          <p>이 문서는 2025년 03월 14일 14:45에 작성되었으며 2025년 03월 14일 14:50에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 03월 14일 14:45에 작성되었으며 2025년 03월 14일 14:54에 마지막으로 편집되었습니다.</p>
         
         
         <p>

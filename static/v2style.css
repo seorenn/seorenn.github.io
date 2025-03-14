@@ -328,11 +328,8 @@ h6 {
     font-style: italic;
 }
 
-.content ul {
-    padding-left: 24px;
-}
-
 .content ul, ol {
+    padding-left: 24px;
     margin-top: 1.8rem;
     margin-bottom: 1.8rem;
 }

@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="battery-savings" content="allow-reduced-framerate allow-reduced-script-speed" />
     <link rel="stylesheet" href="/static/v2style.css" />
-    <title>Visual Studio Code 확장(extensions) 개발 시작하기 - Seorenn</title>
-    <meta name="twitter:title" content="Visual Studio Code 확장(extensions) 개발 시작하기" />
-    <meta name="og:title" content="Visual Studio Code 확장(extensions) 개발 시작하기" />
-    <meta name="description" content="간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자." />
-    <meta name="twitter:description" content="간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자." />
-    <meta name="og:description" content="간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자." />
-    <link rel="canonical" href="https://seorenn.github.io/log/20250311-00.html" />
-    <meta property="og:url" content="https://seorenn.github.io/log/20250311-00.html" />
+    <title>Visual Studio Code에서 한글이 씹히는 문제 해결하기 - Seorenn</title>
+    <meta name="twitter:title" content="Visual Studio Code에서 한글이 씹히는 문제 해결하기" />
+    <meta name="og:title" content="Visual Studio Code에서 한글이 씹히는 문제 해결하기" />
+    <meta name="description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
+    <meta name="twitter:description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
+    <meta name="og:description" content="macOS에서만 발생하는 지는 잘 모르겠지만, vscode에서 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다. 이 문제의 원인과 해결 방법을 정리하는 글이다." />
+    <link rel="canonical" href="https://seorenn.github.io/log/20250314-00.html" />
+    <meta property="og:url" content="https://seorenn.github.io/log/20250314-00.html" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <meta name="twitter:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
     <meta property="og:image" content="https://seorenn.github.io/static/seorenn-symbol.png" />
@@ -70,7 +70,7 @@
     <div class="content-container">
       <section class="content">
         <header>
-          <h1>Visual Studio Code 확장(extensions) 개발 시작하기</h1>
+          <h1>Visual Studio Code에서 한글이 씹히는 문제 해결하기</h1>
           <div class="title-date">
             
               
@@ -79,55 +79,28 @@
               <span>//</spans>
             
             
-              <span>2025년 03월 11일 작성</span>
+              <span>2025년 03월 14일 작성</span>
             
             
             
           </div>
         </header>
-        <p>Emacs와 비슷하게 Visual Studio Code(이하 vscode)도 기본은 준수한 편집기지만 역시 확장 덕분에 성공한 에디터다. 그렇기에 확장을 개발하는 방법에 대해서도 기본은 알고 있는 편이 좋지 않을까 싶어 살짝 삽을 꺼내들었다. 간단하게 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</p>
-<p>참고로 이 글은 macOS를 기준으로 쓰여졌다. 윈도우의 경우 터미널 환경이나 단축키 등이 조금 다를 수도 있다는 점에 주의하자.</p>
-<h2>vscode extension project</h2>
-<p>vscode 확장 개발을 시작하기 위해 <code>node</code>와 함께 <code>yo</code> 및 <code>generator-code</code> 패키지가 필요하다. 간단히 Homebrew와 npm 등으로 설치해 주자. 물론 설치되어 있다면 넘어가도 된다.</p>
-<pre><code>$ brew install node
-$ npm i -g yo generator-code
-</code></pre>
-<p>이제 vscode extension 프로젝트를 시작해 보자. 아래와 같은 커맨드를 입력하면 vscode extension 프로젝트를 생성할 수 있다.</p>
-<pre><code>$ yo code
-</code></pre>
-<p>이러면 프로젝트를 구성하기 위해 몇몇 질문을 해온다. 적절히 답해주면 입력된 이름의 디렉터리가 생성되며 여기서 개발을 시작할 수 있다. </p>
-<p>프로젝트 구성 작업이 끝나면 <code>yo</code>가 자동으로 vscode를 띄워주긴 하지만 그 다음에는 이 디렉터리에 들어가서 vscode를 띄워서 시작하자.</p>
-<pre><code>$ code .
-</code></pre>
-<h2>vscode 확장 구경 및 테스트하기</h2>
-<p>기본적으로 작성된 보일러플레이트 코드의 내용을 보면 활성화 시 어떤 메시지를 표시하는 코드가 구현되는 것 같다. 그런데 어떻게 이걸 실행시키는 걸까? F5 키를 누르면 돌아간다고는 하는데 vscode가 새 창으로 뜰 뿐 별다른 변화가 안 보이니 말이다.</p>
-<p>삽을 들고 여기저기를 찔러보다 <code>package.json</code> 파일에서 힌트를 찾을 수 있었다. 이 파일을 열어보면 아래와 같이 <code>contriubtes</code> 항목을 찾을 수 있다.</p>
-<pre><code>&quot;contributes&quot;: {
-  &quot;commands&quot;: [{
-    &quot;command&quot;: &quot;projectname.helloWorld&quot;,
-    &quot;title&quot;: &quot;Hello World&quot;
-  }]
-},
-</code></pre>
-<p><em>참고로 당연하겠지만 command 이름 자체는 프로젝트 이름에 따라 다를 수 있다.</em></p>
-<p>이 내용으로 추측해 보면 기본적으로 생성되는 보일러플레이트 코드는 'Hello World'라는 vscode용 커맨드를 생성하는 확장이라는 것을 추측할 수 있다.</p>
-<p>그렇다면 이제 <code>extension.js</code> 파일을 열어서 <code>registerCommand</code> 코드가 있는 부분을 찾아보자. 앞서 말한 어떤 메시지를 찍는 코드가 구현되어 있는 부분인데 대충 이런 식으로 생겼다.</p>
-<pre><code>const disposable = vscode.commands.registerCommand('projectname.helloWorld', function () {
-  // The code you place here will be executed every time your command is executed
-
-  // Display a message box to the user
-  vscode.window.showInformationMessage('Hello World from projectname!');
-});
-</code></pre>
-<p>이제 대충 알겠다. <code>projectname.helloworld</code>라는 이름이 여기서도 보이는 것으로 보아 이것이 실제 함수와 연결되는 이름으로 추측할 수 있다. 즉 'Hello World'라는 커맨드를 실행시키면 <code>projectname.helloworld</code>라는 이름의 특정한 기능을 실행시킨다. 그리고 위 코드를 통해 <code>projectname.helloworld</code>라는 이름으로 실행될 함수를 실제로 구현할 수 있는 것으로 이해가 된다.</p>
-<p>그렇다면 실제로 돌려보면 될 것 같다. F5 키를 눌러서 실행시킨 후 Command+Shift+P 키로 커맨드 팔레트를 열어서 'Hello World'를 찾아서 엔터로 실행시켜 보자. 그러면 화면에 뭔가가 표시될 것이다.</p>
-<p><img alt="예제와는 프로젝트 이름이 좀 다르지만 어쨌든 우측 하단에 메시지가 표시되었다." src="../upload/202503102347-2decba26.png" />
-<em>예제와는 프로젝트 이름이 좀 다르지만 어쨌든 우측 하단에 메시지가 표시되었다.</em></p>
-<p>정답이었다. 이런 식으로 개발하면서 테스트를 할 수 있다는 것을 알 수 있었다.</p>
-<h2>마무리</h2>
-<p>처음에는 저 코드를 어떻게 해야 실행시킬 수 있는가 오래 고민했었는데 저런 함수 기반의 명령어 시스템은 Emacs와 비슷해서 익숙한 느낌도 들었다. 어쨌든 기본적인 시작은 이걸로 할 수는 있을 것 같다.</p>
-<p>하지만 역시나 vscode의 확장성에는 제한이 크다고 느껴진다. 어떤 틀에 갖혀있다고 해야 할까? 그런 규격이 있는 덕에 더 빠르게 성장한 면이 없는 건 아니겠지만 역시나 Emacs에 익숙한 사람으로써는 답답한 환경이라고도 느껴지기도 한다.</p>
-<p>어쨌거나 기회가 되면 Emacs 용으로 만들어 둔 개인적인 스크립트들을 vscode로 옮겨보는 것도 의미가 있을 지도 모르겠다. 그 때를 기약하며 이 글은 마무리한다.</p>
+        <p>개인적으로 Visual Studio Code(이하 vscode)의 사용을 종종 꺼리게 만들던 요소로 한글 입력 문제를 꼽고 싶다. macOS에서만 발생하는 지는 잘 모르겠지만, 한글을 입력할 때 어떨 때는 문제가 없다가도 어떨 때는 입력이 마구 씹히거나 글자 완성이 제대로 안 되는 등의 문제를 겪었다.</p>
+<p>어차피 Emacs를 선호하기도 해서 이 문제의 원인에 대해 오랜 시간 관심을 가지지 않다고 최근 Doom Emacs 업데이트 도중 뻑(?)이 나서 vscode를 임시로 써야 했을 때 또 문제를 겪게 되었고 그래서 원인에 대해 관심을 가지게 되었다.</p>
+<p>다행히도 원인 및 해결법은 쉽게 발견된 것 같다.</p>
+<h2>vscode에서 한글 입력이 비정상적인 문제 해결하기</h2>
+<p>개인적인 경우는 아래와 같은 방식으로 설정 하나만 고치면 해결되었다.</p>
+<ol>
+<li>Settings를 찾아 들어간 후 'Unicode Highlight: Non Basic ASCII' 설정을 찾는다.</li>
+<li>이 설정의 값을 false로 바꾼다.</li>
+</ol>
+<p><img alt="해당 설정이 적용된 상태의 Settings 화면" src="../upload/202503111420-fc5c80ca.png" />
+<em>해당 설정이 적용된 상태의 Settings 화면</em></p>
+<p>해당 항목은 간단히 설명도 쓰여있긴 하지만 주로 영문자와 CR 및 LF와 같은 줄바꿈 문자 등을 제외한 문자가 입력될 경우 이를 강조 처리해 주는 '고맙지만 한글 입력에 방해'가 되는 그런 설정이다. 아마도 한글이 입력되는 도중에 하이라이트 렌더링 루틴이 한글의 입력이나 문자 완성을 방해하는 것으로 추정된다.</p>
+<p>물론 해당 설정은 특정한 문자로 코드를 방해하는 경우, 예를 들어 세미콜론과 비슷한 문자가 특수문자 영역에도 있는데 이걸 입력해서 코드가 컴파일 될 때 알 수 없는 오류를 일으키게 하는 등의 문제를 미연에 방지하는 데 도움을 줄 수 있다고 생각한다.</p>
+<p>하지만 한국인에겐 한글 입력이 제대로 안 되는 문제는 치명적인 만큼 어쩔 수 없는 것 같다.</p>
+<p>물론 기본 설정인 inUntrustedWorkspace 상태로 놔두고 Trusted Workspace로 설정해서 작업하는 방법도 있긴 하겠지만 언제 어떻게 어떤 파일을 편집하게 될지는 알 수 ㅇ벗는 것이다.</p>
+<p>어쨌거나 큰 문제가 해결되어 상쾌한 기분이다.</p>
       </section>
     </div>
     <div class="splitter-container">
@@ -154,6 +127,20 @@ $ npm i -g yo generator-code
                   <h2>블로그 목록</h2>
                 
                 <ul class="logarch-container">
+                  
+                    <li>
+                      
+                        <b>Visual Studio Code에서 한글이 씹히는 문제 해결하기</b><br/>
+                        <small>2025년 03월 14일 작성</small>
+                      
+                    </li>
+                  
+                    <li>
+                      
+                        <a href="../log/20250313-02.html">미국 2월 PPI: 이게 뭐야 무서워...가 아니야?</a><br/>
+                        <small>2025년 03월 13일 작성</small>
+                      
+                    </li>
                   
                     <li>
                       
@@ -192,7 +179,7 @@ $ npm i -g yo generator-code
                   
                     <li>
                       
-                        <b>Visual Studio Code 확장(extensions) 개발 시작하기</b><br/>
+                        <a href="../log/20250311-00.html">Visual Studio Code 확장(extensions) 개발 시작하기</a><br/>
                         <small>2025년 03월 11일 작성</small>
                       
                     </li>
@@ -215,20 +202,6 @@ $ npm i -g yo generator-code
                       
                         <a href="../log/20250307-01.html">미국 2월 노동시장: 아슬아슬 하다더니 정말인가?</a><br/>
                         <small>2025년 03월 07일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250307-00.html">롯데리아의 리아 사각새우 더블 버거에 관한 기록</a><br/>
-                        <small>2025년 03월 07일 작성</small>
-                      
-                    </li>
-                  
-                    <li>
-                      
-                        <a href="../log/20250306-01.html">트럼프 무역전쟁: 이런 순수 또라이</a><br/>
-                        <small>2025년 03월 06일 작성</small>
                       
                     </li>
                   
@@ -328,9 +301,9 @@ $ npm i -g yo generator-code
                   
                     <li>
                       
-                        <a href="../log/20250314-00.html">Visual Studio Code에서 한글이 씹히는 문제 해결하기</a><br/>
+                        <a href="../log/20250311-00.html">Visual Studio Code 확장(extensions) 개발 시작하기</a><br/>
                       
-                      <small>2025년 03월 14일 작성</small>
+                      <small>2025년 03월 11일 작성</small>
                     </li>
                   
                 </ul>
@@ -346,7 +319,7 @@ $ npm i -g yo generator-code
     <footer>
         
         
-          <p>이 문서는 2025년 03월 11일 14:00에 작성되었으며 2025년 03월 11일 22:33에 마지막으로 편집되었습니다.</p>
+          <p>이 문서는 2025년 03월 14일 14:45에 작성되었으며 2025년 03월 14일 14:45에 마지막으로 편집되었습니다.</p>
         
         
         <p>

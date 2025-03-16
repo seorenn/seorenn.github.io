@@ -13,12 +13,11 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Sun, 16 Mar 2025 22:18:46 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 22:20:38 +0900</lastBuildDate>
     <item>
       <title>macOS 15.3.2 및 iOS 18.3.2 등 출시 외 한 주간의 애플 소식들 25-03-16</title>
       <link>https://seorenn.github.io/log/20250316-00.html</link>
-      <description>&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;소프트웨어 업데이트:&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;h2&gt;소프트웨어 업데이트&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;macOS 15.3.2&lt;/li&gt;
 &lt;li&gt;iOS 18.3.2&lt;/li&gt;
@@ -27,14 +26,7 @@
 &lt;/ul&gt;
 &lt;p&gt;버전의 세 번째 번호가 올라가는 업데이트는 주로 자잘한 버그 수정과 함께 심각한 보안 결함 수정이 있을 경우 출시되고 이번의 경우도 동일한 사유인 듯하다.&lt;/p&gt;
 &lt;p&gt;참고로 해당 버전을 설치할 경우 Apple Intelligence가 다시 활성화되는 문제가 또 발생하고 있는 것으로 알려졌다. 물론 크리티컬한 문제는 아니긴 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19는 Apple Intelligence의 신기능 보다는 기존 기능의 확장에 중점을 둘 것으로 보인다.&lt;/strong&gt; 어쩌면 써드파티 앱에의 지원 확장을 의미하는 것일 지도 모르겠다. 실망할 필요는 없는 게 Apple은 늘 써드파티 앱의 확장을 통해 생태계 또한 확장시켜 왔고 그 연장선에서 보면 오히려 Apple 다운 방식이기도 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19는 외형적으로 상당히 많은 변화가 예상되는 듯하다.&lt;/strong&gt; 외형은 visionOS를 상당히 닮을 것으로 추정되는데 사실상 visionOS의 레이아웃을 이용한 재설계에 가깝다는 느낌이다. 물론 이전에 나온 루머의 재탕 같은 느낌도 있지만 그만큼 가능성을 높게 본다는 말일 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19에 AirPods 실시간 번역 기능이 개발되고 있는 듯하다.&lt;/strong&gt; 그러니까 상대방의 말을 즉석에서 바로 번역해서 들려준다는 말이다. 물론 번역은 iPhone의 도움이 필요한 모양이다. 어쨌든 AirPods의 노이즈 캔슬 기능과 함께 변역 레이턴시만 제대로 잡으면 정말 미래에 온 것 같은 느낌이 들 것 같다. 이 기능의 출시 시기는 iOS 19 출시 이후 올해 말이 예상되는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19에서 RCS 메시징에서도 P2P 암호화가 지원될 듯하다.&lt;/strong&gt; Apple은 GSM 협회와 협력하여 RCS 메시징에도 종단간 암호화 지원이 추가된 RCS Universal Profile 3.0을 지원할 것이라고 발표했다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;visionOS 3에는 새로운 기능이 많을 것 같다.&lt;/strong&gt; 차세대 Vision Pro 출시가 답답한 만큼 소프트웨어적인 혁신을 꽤하는 것일 수도 있으며 개인적으로는 하드웨어 발전 보다 소프트웨어의 진적을 더 크게 보는 터라 나쁘진 않은 것 같다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HomeKit 아키텍저 업데이트가 얼마 안 남은 듯하다.&lt;/strong&gt; 사용자들이 이 기능을 정상적으로 쓰기 위해서는 iOS 18.4로의 업그레이드가 필수일 것 같다. 참고로 iOS 18.4는 4월 초 출시가 유력해 보인다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Swift Assist 출시가 계속 늦어지고 있다.&lt;/strong&gt; Swift Assist는 Xcode 16에 탑재될 자연어 프롬프트를 이용한 AI 코딩 보조 도구로 GitHub의 Copoilt과 비슷하다고도 볼 수 있다. 문제는 Xcode가 벌써 16.3을 테스트 하는 와중에도 아직까지 소식이 없다는 점이었다. 어쩌면 Xcode 17로 넘어갈 가능성 까지도 거론되는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;개발자 베타 릴리즈&lt;/strong&gt;:&lt;/p&gt;
+&lt;h2&gt;개발자 베타 릴리즈&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;macOS 15.4 beta 3&lt;/li&gt;
 &lt;li&gt;iOS 18.4 beta 3&lt;/li&gt;
@@ -43,6 +35,14 @@
 &lt;li&gt;watchOS 11.4 beta 3&lt;/li&gt;
 &lt;li&gt;tvOS 18.4 beta 3&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;이 외의 소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19는 Apple Intelligence의 신기능 보다는 기존 기능의 확장에 중점을 둘 것으로 보인다.&lt;/strong&gt; 어쩌면 써드파티 앱에의 지원 확장을 의미하는 것일 지도 모르겠다. 실망할 필요는 없는 게 Apple은 늘 써드파티 앱의 확장을 통해 생태계 또한 확장시켜 왔고 그 연장선에서 보면 오히려 Apple 다운 방식이기도 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19는 외형적으로 상당히 많은 변화가 예상되는 듯하다.&lt;/strong&gt; 외형은 visionOS를 상당히 닮을 것으로 추정되는데 사실상 visionOS의 레이아웃을 이용한 재설계에 가깝다는 느낌이다. 물론 이전에 나온 루머의 재탕 같은 느낌도 있지만 그만큼 가능성을 높게 본다는 말일 지도 모르겠다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19에 AirPods 실시간 번역 기능이 개발되고 있는 듯하다.&lt;/strong&gt; 그러니까 상대방의 말을 즉석에서 바로 번역해서 들려준다는 말이다. 물론 번역은 iPhone의 도움이 필요한 모양이다. 어쨌든 AirPods의 노이즈 캔슬 기능과 함께 변역 레이턴시만 제대로 잡으면 정말 미래에 온 것 같은 느낌이 들 것 같다. 이 기능의 출시 시기는 iOS 19 출시 이후 올해 말이 예상되는 듯하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19에서 RCS 메시징에서도 P2P 암호화가 지원될 듯하다.&lt;/strong&gt; Apple은 GSM 협회와 협력하여 RCS 메시징에도 종단간 암호화 지원이 추가된 RCS Universal Profile 3.0을 지원할 것이라고 발표했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;visionOS 3에는 새로운 기능이 많을 것 같다.&lt;/strong&gt; 차세대 Vision Pro 출시가 답답한 만큼 소프트웨어적인 혁신을 꽤하는 것일 수도 있으며 개인적으로는 하드웨어 발전 보다 소프트웨어의 진적을 더 크게 보는 터라 나쁘진 않은 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HomeKit 아키텍저 업데이트가 얼마 안 남은 듯하다.&lt;/strong&gt; 사용자들이 이 기능을 정상적으로 쓰기 위해서는 iOS 18.4로의 업그레이드가 필수일 것 같다. 참고로 iOS 18.4는 4월 초 출시가 유력해 보인다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Swift Assist 출시가 계속 늦어지고 있다.&lt;/strong&gt; Swift Assist는 Xcode 16에 탑재될 자연어 프롬프트를 이용한 AI 코딩 보조 도구로 GitHub의 Copoilt과 비슷하다고도 볼 수 있다. 문제는 Xcode가 벌써 16.3을 테스트 하는 와중에도 아직까지 소식이 없다는 점이었다. 어쩌면 Xcode 17로 넘어갈 가능성 까지도 거론되는 모양이다.&lt;/p&gt;
 &lt;h2&gt;일반적인 소식들&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;M4 Ultra 출시는 늦어질 것 같다.&lt;/strong&gt; 정확히는 칩 모듈 결합(UltraFusion) 기능이 빠져있다는 기술적 이슈로 나오지 않을 가능성이 높다고 보는 듯하다. 대신 새로운 설계의 M5가 나온다면 이걸 이용해 M5 Ultra가 나올 가능성을 높게 보는 듯하다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;M4 Max를 탑재한 Mac Studio에 High Power 모드 설정이 제공되지 않는 것 같다.&lt;/strong&gt; 해당 기능은 MacBook Pro나 Mac Mini 등에서 전원 연결 여부와 상관 없이 성능을 최대한 끌어 올리는 모드다.&lt;/p&gt;
@@ -65,8 +65,7 @@
 &lt;p&gt;&lt;strong&gt;EU가 애플에 나름 소액(?)의 벌금을 부과한다고 한다.&lt;/strong&gt; 사유는 EU DMA 위반이며 App Store 외부의 수수료나 결제 가격과 관련된 사항인 것으로 보인다. 심지어 이걸로 끝은 아니고 아직 여러 혐의가 남은 모양이다. 유럽과의 분쟁은 끝이 없어서 좀 답답한 느낌인데 Apple이 계속 발전할 수 있게 좀 적당히 했으면 좋겠다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;영국 규제 기관이 웹브라우저 경쟁을 방해한 Apple을 비난했다.&lt;/strong&gt; 정확히는 WebView에 WebKit을 강제화 하는 것을 문제 삼는 느낌이다. 이걸 열어주는 것이 기술적으로 가능한 지는 잘 모르겠다. 어쨌든 조사 결과는 Apple에 부정적으로 나올 것 같다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Apple Intelligence의 미흡함이 계속 지적되고 있다.&lt;/strong&gt; 개인화 Siri가 연기되면서 파장이 좀 커지는 모양인데 다양한 언론과 함께 유명 인사들의 개인적인 의견도 일치되고 있다. 물론 Apple도 이에 대해서는 잘 알고 있을 것이며 덕분이 iPhone 판매에 지장을 주고 있다는 것조차도 알고 있을 것이다. 대신 미완성 기능을 내놓는 것만큼 위험한 일도 없다는 지적 또한 있어 무작정 나쁘게 볼 것만은 아닌 듯하다.&lt;/p&gt;</description>
-      <content:encoded>&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;소프트웨어 업데이트:&lt;/strong&gt;&lt;/p&gt;
+      <content:encoded>&lt;h2&gt;소프트웨어 업데이트&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;macOS 15.3.2&lt;/li&gt;
 &lt;li&gt;iOS 18.3.2&lt;/li&gt;
@@ -75,14 +74,7 @@
 &lt;/ul&gt;
 &lt;p&gt;버전의 세 번째 번호가 올라가는 업데이트는 주로 자잘한 버그 수정과 함께 심각한 보안 결함 수정이 있을 경우 출시되고 이번의 경우도 동일한 사유인 듯하다.&lt;/p&gt;
 &lt;p&gt;참고로 해당 버전을 설치할 경우 Apple Intelligence가 다시 활성화되는 문제가 또 발생하고 있는 것으로 알려졌다. 물론 크리티컬한 문제는 아니긴 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19는 Apple Intelligence의 신기능 보다는 기존 기능의 확장에 중점을 둘 것으로 보인다.&lt;/strong&gt; 어쩌면 써드파티 앱에의 지원 확장을 의미하는 것일 지도 모르겠다. 실망할 필요는 없는 게 Apple은 늘 써드파티 앱의 확장을 통해 생태계 또한 확장시켜 왔고 그 연장선에서 보면 오히려 Apple 다운 방식이기도 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19는 외형적으로 상당히 많은 변화가 예상되는 듯하다.&lt;/strong&gt; 외형은 visionOS를 상당히 닮을 것으로 추정되는데 사실상 visionOS의 레이아웃을 이용한 재설계에 가깝다는 느낌이다. 물론 이전에 나온 루머의 재탕 같은 느낌도 있지만 그만큼 가능성을 높게 본다는 말일 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19에 AirPods 실시간 번역 기능이 개발되고 있는 듯하다.&lt;/strong&gt; 그러니까 상대방의 말을 즉석에서 바로 번역해서 들려준다는 말이다. 물론 번역은 iPhone의 도움이 필요한 모양이다. 어쨌든 AirPods의 노이즈 캔슬 기능과 함께 변역 레이턴시만 제대로 잡으면 정말 미래에 온 것 같은 느낌이 들 것 같다. 이 기능의 출시 시기는 iOS 19 출시 이후 올해 말이 예상되는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iOS 19에서 RCS 메시징에서도 P2P 암호화가 지원될 듯하다.&lt;/strong&gt; Apple은 GSM 협회와 협력하여 RCS 메시징에도 종단간 암호화 지원이 추가된 RCS Universal Profile 3.0을 지원할 것이라고 발표했다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;visionOS 3에는 새로운 기능이 많을 것 같다.&lt;/strong&gt; 차세대 Vision Pro 출시가 답답한 만큼 소프트웨어적인 혁신을 꽤하는 것일 수도 있으며 개인적으로는 하드웨어 발전 보다 소프트웨어의 진적을 더 크게 보는 터라 나쁘진 않은 것 같다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HomeKit 아키텍저 업데이트가 얼마 안 남은 듯하다.&lt;/strong&gt; 사용자들이 이 기능을 정상적으로 쓰기 위해서는 iOS 18.4로의 업그레이드가 필수일 것 같다. 참고로 iOS 18.4는 4월 초 출시가 유력해 보인다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Swift Assist 출시가 계속 늦어지고 있다.&lt;/strong&gt; Swift Assist는 Xcode 16에 탑재될 자연어 프롬프트를 이용한 AI 코딩 보조 도구로 GitHub의 Copoilt과 비슷하다고도 볼 수 있다. 문제는 Xcode가 벌써 16.3을 테스트 하는 와중에도 아직까지 소식이 없다는 점이었다. 어쩌면 Xcode 17로 넘어갈 가능성 까지도 거론되는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;개발자 베타 릴리즈&lt;/strong&gt;:&lt;/p&gt;
+&lt;h2&gt;개발자 베타 릴리즈&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;macOS 15.4 beta 3&lt;/li&gt;
 &lt;li&gt;iOS 18.4 beta 3&lt;/li&gt;
@@ -91,6 +83,14 @@
 &lt;li&gt;watchOS 11.4 beta 3&lt;/li&gt;
 &lt;li&gt;tvOS 18.4 beta 3&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;이 외의 소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19는 Apple Intelligence의 신기능 보다는 기존 기능의 확장에 중점을 둘 것으로 보인다.&lt;/strong&gt; 어쩌면 써드파티 앱에의 지원 확장을 의미하는 것일 지도 모르겠다. 실망할 필요는 없는 게 Apple은 늘 써드파티 앱의 확장을 통해 생태계 또한 확장시켜 왔고 그 연장선에서 보면 오히려 Apple 다운 방식이기도 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19는 외형적으로 상당히 많은 변화가 예상되는 듯하다.&lt;/strong&gt; 외형은 visionOS를 상당히 닮을 것으로 추정되는데 사실상 visionOS의 레이아웃을 이용한 재설계에 가깝다는 느낌이다. 물론 이전에 나온 루머의 재탕 같은 느낌도 있지만 그만큼 가능성을 높게 본다는 말일 지도 모르겠다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19에 AirPods 실시간 번역 기능이 개발되고 있는 듯하다.&lt;/strong&gt; 그러니까 상대방의 말을 즉석에서 바로 번역해서 들려준다는 말이다. 물론 번역은 iPhone의 도움이 필요한 모양이다. 어쨌든 AirPods의 노이즈 캔슬 기능과 함께 변역 레이턴시만 제대로 잡으면 정말 미래에 온 것 같은 느낌이 들 것 같다. 이 기능의 출시 시기는 iOS 19 출시 이후 올해 말이 예상되는 듯하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 19에서 RCS 메시징에서도 P2P 암호화가 지원될 듯하다.&lt;/strong&gt; Apple은 GSM 협회와 협력하여 RCS 메시징에도 종단간 암호화 지원이 추가된 RCS Universal Profile 3.0을 지원할 것이라고 발표했다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;visionOS 3에는 새로운 기능이 많을 것 같다.&lt;/strong&gt; 차세대 Vision Pro 출시가 답답한 만큼 소프트웨어적인 혁신을 꽤하는 것일 수도 있으며 개인적으로는 하드웨어 발전 보다 소프트웨어의 진적을 더 크게 보는 터라 나쁘진 않은 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HomeKit 아키텍저 업데이트가 얼마 안 남은 듯하다.&lt;/strong&gt; 사용자들이 이 기능을 정상적으로 쓰기 위해서는 iOS 18.4로의 업그레이드가 필수일 것 같다. 참고로 iOS 18.4는 4월 초 출시가 유력해 보인다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Swift Assist 출시가 계속 늦어지고 있다.&lt;/strong&gt; Swift Assist는 Xcode 16에 탑재될 자연어 프롬프트를 이용한 AI 코딩 보조 도구로 GitHub의 Copoilt과 비슷하다고도 볼 수 있다. 문제는 Xcode가 벌써 16.3을 테스트 하는 와중에도 아직까지 소식이 없다는 점이었다. 어쩌면 Xcode 17로 넘어갈 가능성 까지도 거론되는 모양이다.&lt;/p&gt;
 &lt;h2&gt;일반적인 소식들&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;M4 Ultra 출시는 늦어질 것 같다.&lt;/strong&gt; 정확히는 칩 모듈 결합(UltraFusion) 기능이 빠져있다는 기술적 이슈로 나오지 않을 가능성이 높다고 보는 듯하다. 대신 새로운 설계의 M5가 나온다면 이걸 이용해 M5 Ultra가 나올 가능성을 높게 보는 듯하다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;M4 Max를 탑재한 Mac Studio에 High Power 모드 설정이 제공되지 않는 것 같다.&lt;/strong&gt; 해당 기능은 MacBook Pro나 Mac Mini 등에서 전원 연결 여부와 상관 없이 성능을 최대한 끌어 올리는 모드다.&lt;/p&gt;

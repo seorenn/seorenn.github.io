@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-03-27T13:14:01.846006+09:00</updated>
+  <updated>2025-03-28T23:16:12.173155+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,29 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250328-00.html</id>
+    <title>미국 2월 PCE: 우려가 현실로</title>
+    <updated>2025-03-28T23:16:05.268266+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>미국 2월 CPI 때는 생각보다 좋은 지표 덕분에 안도감이 들었었다. 하지만 PCE에 반영되는 수치들이 그다지 좋지 못하면서 PCE에 대한 우려가 있었다. 마침 지표가 발표되었으니 다짜고짜 살펴보자.</p>
+<blockquote>
+<p>미국 2월 헤드라인 PCE: MoM 0.3% 예상 부합<br/>
+미국 2월 헤드라인 PCE: YoY 2.5% 예상 부합<br/>
+미국 2월 근원 PCE: MoM 0.4% (+0.1%) 예상치 상회<br/>
+미국 2월 근원 PCE: YoY 2.8% (+0.1%) 예상치 상회</p>
+</blockquote>
+<p>연준이 가장 중요하게 보는 근원 PCE가 예상보다 소폭 상회하는 수치가 나왔다.</p>
+<p>좀 더 상세한 발표 내용을 까봤다. 비내구 상품류 물가가 크게 뛰었다. 그밖에 의료비, 중고차, 식품 등의 인플레이션도 제법 뛴 것 같다. 물론 에너지를 비롯해 감소한 항목도 일부 있지만 이번엔 오른 항목들이 압도적으로 많다는 점에서 우려가 현실이 된 모양이다. 그나마 다행이라면 이제 주거비 오름폭은 크게 뛰지는 않는다는 점 정도일까?</p>
+<p>이런 수치가 나온 것에는 역시 관세 무역전쟁을 대비한 사재기가 관련이 있지 않을까 의심하지 않을 수가 없다. 하여간 트럼프가 참 큰 일을 하고 있다. 그러면서 금리를 인하했어야 했다는 둥 참 자기 멋대로 사는 사람이다.</p>
+<p>이후 나온 미시간대의 기대 인플레이션 지표들도 예상보다 조금 높게들 나왔다. 심리적으로도 아직 우려가 많다는 말일 거다. 다만 이전의 말도 안 되게 높게 나온 기대 인플레이션에 비하면 그나마 양호하다고 해야 약간은 안도가 될 것 같다. <em>지난 번엔 민주당 지지자들이 "대변 발사!"를 외쳤다며?</em></p>
+<p>어쨌든 주식시장은 꽤나 가파른 하락세로 시작한 것 같다. <strong>경기가 나빠지고 있는데 인플레이션은 높아져가니 당연히 스태그플레이션 걱정이 되살아날 뿐</strong>이다. 다만 이미 예상된 수순이라는 점이 그나마 내리막길의 작은 걸림돌(?)이 되어주고 있는 느낌이다.</p>
+<p>어쨌든 금리 인상까지 할 수준은 아직 아닐 거다. 관세 영향도 아직 판단하기엔 너무너무 이르고 말이다. 그리고 주식시장은 아마도 오늘은 안 좋을 것 같다. 일찍 자는 게 몸 건강과 정신 건강 모두에 좋을 것 같다. <em>훌쩍.</em></p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250328-00.html"/>
+    <summary type="text">미국 2월 CPI 때는 생각보다 좋은 지표 덕분에 안도감이 들었었다. 하지만 PCE에 반영되는 수치들이 그다지 좋지 못하면서 PCE에 대한 우려가 있었다. 마침 지표가 발표되었다.</summary>
+    <published>2025-03-28T23:16:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250326-00.html</id>
     <title>강한 집중력으로 말을 못 듣는 아이를 바로 잡을 수는 있을까?</title>
@@ -2127,28 +2150,5 @@ Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과
     <link href="https://seorenn.github.io/log/20250216-00.html"/>
     <summary type="text">2월 둘째 주 Apple 관련 소식 및 루머 모음</summary>
     <published>2025-02-16T23:57:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20250214-00.html</id>
-    <title>상법 개정은 국가의 의무다</title>
-    <updated>2025-02-14T15:17:58.746767+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>정부의 상법 개정에 대한 태도는 불행히도 친기업 성향에 치우친 것 같다. 상법 개정에 대한 소액투자자들의 간절함에도 이런 식으로 극구 무시하고 있기 때문이다. </p>
-<blockquote>
-<p>이복현 금융감독원장이 주주 보호를 위한 공감대는 형성되어 있지만, 법률 개정에 대해 의견이 대립하고 있다며 지속적인 논의가 필요하다고 봤다. (<a href="https://news.einfomax.co.kr/news/articleView.html?idxno=4343054" target="_blank">출처📎</a>)</p>
-</blockquote>
-<p>이런 표현에 대해서 명확한 정의가 필요하다. 상법 개정 등을 반대하는 이들은 재계다. 그리고 정부와 여당 및 이쪽의 맹목적인 지지자들을 제외하곤 모두 상법 개정을 찬성한다고 보인다. 이런 정의를 다르게 표현하면 이렇다.</p>
-<blockquote>
-<p>강자는 상법 개정을 반대하고 약자는 상법 개정을 찬성한다.</p>
-</blockquote>
-<p>국가가 해야 할 일 중에는 약자를 보호하는 것이 있다. 즉 약자 보호는 국가의 의무 중 하나다. 그렇다면 상법 개정은 약자를 보호하기 위해 최소한으로 해야 할 국가의 의무다. 그렇기에 <strong>'여론이 충돌한다'는 식으로 표현하는 것은 국가로써의 의무를 저버리는 일</strong>이다. 이걸 아무렇지도 않게 말하는 것도 상당히 불쾌한 일이다.</p>
-<p>상법 개정과 자본시장법 개정과의 관계를 구분하는 것도 문제다. <strong>상법 개정은 약자 보호를 위한 기초적인 정의를 다지는 일</strong>이다. 그리고 자본시장법은 개정된 상법을 근거로 그 규칙과 처벌 수위를 정의하고 조정하는 목적이 될 수 있다. 그리고 상법 개정은 자본시장법 등등에 의해 규정되지 않는 '주주에게 손해를 끼치는 일'에 대해서도 미연에 방지하거나 혹은 손해 배상을 청구할 수 있는 최소한의 근거가 된다.</p>
-<p>다시금 말하지만 상법 개정은 약자를 보호하기 위해 국가가 취해야 할 의무다. 이를 잊지 말아야 할 것이다.</p>
-<h2>여담</h2>
-<p>사실 아무렴 어떻고 본심은 그냥 <strong>배상소득세 분리과세</strong>만 좀 해줬으면 좋겠다라고 말하는 것 같다. 물론 미국 주식 배당의 경우도 포함해서다. 상법 개정도 되면 더없이 좋고 말이다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20250214-00.html"/>
-    <summary type="text">정부의 상법 개정에 대한 태도는 불행히도 친기업 성향에 치우친 것 같다. 상법 개정에 대한 소액투자자들의 간절함에도 극구 무시하고 있기 때문이다.</summary>
-    <published>2025-02-14T15:17:00+09:00</published>
   </entry>
 </feed>

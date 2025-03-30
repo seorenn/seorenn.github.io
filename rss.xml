@@ -13,7 +13,93 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Fri, 28 Mar 2025 23:16:12 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Mar 2025 23:03:07 +0900</lastBuildDate>
+    <item>
+      <title>WWDC25 행사 예고 등 한 주간의 애플 소식들 25-03-30</title>
+      <link>https://seorenn.github.io/log/20250330-00.html</link>
+      <description>&lt;h2&gt;WWDC25 개최일 공개&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="WWDC25" src="../upload/202503302300-0947d49b.png" /&gt;
+&lt;em&gt;WWDC25&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Apple은 미국시각 기준 2025년 6월 9일 WWDC(world wide developer conferences, 세계 개발자 회의) 개최를 공식적으로 알려왔다. WWDC는 이름처럼 개발자를 위한 다양한 기술적 발표가 있는 회의이며 첫날 키노트에서는 macOS 15나 iOS 19 등과 같은 소프트웨어 차기 버전 발표와 함께 일부 제품 발표도 겸하고 있어서 비개발자들에게도 유용한 정보가 있을 수도 있다. &lt;/p&gt;
+&lt;p&gt;이번 행사는 6월 9일 부터 13일까지 온라인 위주로 진행되지만 첫 날에는 Apple Park에서 오프라인 이벤트가 열릴 예정이라고 한다.&lt;/p&gt;
+&lt;p&gt;현재로썬 차세대 OS 소프트웨어 라인업을 제외하곤 어떤 제품이 발표될 지에 대한 예측은 부족한 듯하다. 그저 행사 로고 등을 통해 iOS 19 등의 디자인 변경 컨셉에 대한 추측은 가능한 것 같다.&lt;/p&gt;
+&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;개발자 베타 릴리즈&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15.4 RC, RC 2&lt;/li&gt;
+&lt;li&gt;iOS 18.4 RC, RC 2&lt;/li&gt;
+&lt;li&gt;iPadOS 18.4 RC, RC 2&lt;/li&gt;
+&lt;li&gt;iPadOS 17.7.6 RC&lt;/li&gt;
+&lt;li&gt;visionOS 2.4 RC&lt;/li&gt;
+&lt;li&gt;watchOS 11.4 RC&lt;/li&gt;
+&lt;li&gt;tvOS 18.4 RC&lt;/li&gt;
+&lt;li&gt;Xcode 16.3 RC, RC 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;일부 OS 및 소프트웨어의 두 번째 RC가 거의 바로 나왔다는 점에서 첫 RC에 크리티컬한 버그가 있었을 가능성을 추측해 볼 수 있다. RC도 완벽하진 않다는 말이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;기타 소프트웨어 업데이트&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Final Cut Pro for Mac 11.1&lt;/li&gt;
+&lt;li&gt;swiftly 1.0 &lt;em&gt;(참고로 swiftly는 Swift version manager다)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;펌웨어 업데이트&lt;/strong&gt;: Powerbeats Pro 2 Firmware 7B30&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.4 RC 등에서도 여전히 EU에서는 iPhone Mirroring, SharePlay Screen Sharing 등의 기능을 사용하지 못 한다고 한다.&lt;/strong&gt; 이는 EU의 규제에 의해 제공하지 못 하는 것으로 알려졌다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 건강(Health) 앱을 새로 개발 중인 것으로 보인다.&lt;/strong&gt; Apple Intelligence를 접목한 완전히 새로운 형태를 목표로 하는 모양이다. 이르면 iOS 19.4에서 탑재될 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;AirPods Pro 2의 Hearing Aid가 더 많은 국가로 확장된다.&lt;/strong&gt; 추가 지원 대상 국가로 호주, 브라질, 사우디 아라비아, 콜롬비아, 말레이시아 등이 알려졌다. 해당 기능은 청력 손실 감지 및 실제 손실 측정 시 거기에 맞게 음량 등을 대응하도록 하는 기능이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple Card Savings Account(저축계좌)의 금리가 또 인하된다.&lt;/strong&gt; 기존 3.9%에서 3.75%로 15bp 내려간다. 그래도 한국의 예금금리 보다는 높긴 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mac 루머들&lt;/strong&gt;: 2026년 MacBook Pro의 대규모 업데이트를 앞두고 M5 MacBook Pro가 올해 말 리프레시 될 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone 루머들&lt;/strong&gt;: 폴더블 iPhone은 2000 달러 근방의 가격과 함께 펼치면 iPad와 비슷한 4:3 크기가 될 것 같다. 기타 소형 iPhone 모델에 관한 계획은 아직 없는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPad 루머들&lt;/strong&gt;: Apple은 올해 말 생산을 목표로 M5 iPad Pro를 개발 중인 것으로 보인다. M6가 탑재될 iPad Pro에는 새로운 모뎀 칩이 탑재될 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple Watch 루머들&lt;/strong&gt;: 혈압 측정 기능 개발과 관련하여 내부 테스트 도중 걸림돌이 계속 발견되고 있는 모양이다. Apple Watch Ultra 3에는 5G 및 위성 문자 기능이 제공될 것 같다.&lt;/p&gt;
+&lt;h2&gt;AAPL&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Tim Cook이 DeepSeek를 칭찬했다고 한다.&lt;/strong&gt; 중국개발포험에 참석하기 위해 중국을 방문한 중의 발언인 것 같다. 다만 개인정보가 노출되거나 민감한 보안 결함이 계속되고 있고 여러 국가에서 DeepSeek를 금지하는 와중이라 중국 만을 위한 일종의 립 서비스가 아닐까 추측된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;드디어 인도네시아에서 iPhone 16 시리즈가 4월 11일 출시된다.&lt;/strong&gt; 그동안 Apple의 투자를 요구하며 출시를 방해하던 인도네시아 정부와의 협상이 정말 마무리 되어가고 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 중국 앱 개발에 400만 달러를 기부했다.&lt;/strong&gt; 여전히 중국 시장에 공을 들이는 Apple이다. 이 밖에도 Tim Cook은 DeepSeek 개발자들의 본거지인 항저우 등을 방문했다고 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;미국 유타 주에서 App Store 책임법을 통과시켰다.&lt;/strong&gt; 이 법은 연령 확인의 책임을 개별 앱이 아닌 App Store 등에 요구하는 법이다. 다만 이 변화가 전세계를 대상으로 확대될 지는 미지수다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EU는 Apple의 DMA 위반에 따른 벌금을 최소화 했다.&lt;/strong&gt; 그런데 이 이유 중 하나가 트럼프의 관세 보복을 우려하는 것 같다는 추측이 있다. &lt;em&gt;트럼프의 관세가 이런 데서 장점을 보여줄 줄은 몰랐다.&lt;/em&gt;&lt;/p&gt;</description>
+      <content:encoded>&lt;h2&gt;WWDC25 개최일 공개&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="WWDC25" src="../upload/202503302300-0947d49b.png" /&gt;
+&lt;em&gt;WWDC25&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Apple은 미국시각 기준 2025년 6월 9일 WWDC(world wide developer conferences, 세계 개발자 회의) 개최를 공식적으로 알려왔다. WWDC는 이름처럼 개발자를 위한 다양한 기술적 발표가 있는 회의이며 첫날 키노트에서는 macOS 15나 iOS 19 등과 같은 소프트웨어 차기 버전 발표와 함께 일부 제품 발표도 겸하고 있어서 비개발자들에게도 유용한 정보가 있을 수도 있다. &lt;/p&gt;
+&lt;p&gt;이번 행사는 6월 9일 부터 13일까지 온라인 위주로 진행되지만 첫 날에는 Apple Park에서 오프라인 이벤트가 열릴 예정이라고 한다.&lt;/p&gt;
+&lt;p&gt;현재로썬 차세대 OS 소프트웨어 라인업을 제외하곤 어떤 제품이 발표될 지에 대한 예측은 부족한 듯하다. 그저 행사 로고 등을 통해 iOS 19 등의 디자인 변경 컨셉에 대한 추측은 가능한 것 같다.&lt;/p&gt;
+&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;개발자 베타 릴리즈&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS 15.4 RC, RC 2&lt;/li&gt;
+&lt;li&gt;iOS 18.4 RC, RC 2&lt;/li&gt;
+&lt;li&gt;iPadOS 18.4 RC, RC 2&lt;/li&gt;
+&lt;li&gt;iPadOS 17.7.6 RC&lt;/li&gt;
+&lt;li&gt;visionOS 2.4 RC&lt;/li&gt;
+&lt;li&gt;watchOS 11.4 RC&lt;/li&gt;
+&lt;li&gt;tvOS 18.4 RC&lt;/li&gt;
+&lt;li&gt;Xcode 16.3 RC, RC 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;일부 OS 및 소프트웨어의 두 번째 RC가 거의 바로 나왔다는 점에서 첫 RC에 크리티컬한 버그가 있었을 가능성을 추측해 볼 수 있다. RC도 완벽하진 않다는 말이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;기타 소프트웨어 업데이트&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Final Cut Pro for Mac 11.1&lt;/li&gt;
+&lt;li&gt;swiftly 1.0 &lt;em&gt;(참고로 swiftly는 Swift version manager다)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;펌웨어 업데이트&lt;/strong&gt;: Powerbeats Pro 2 Firmware 7B30&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iOS 18.4 RC 등에서도 여전히 EU에서는 iPhone Mirroring, SharePlay Screen Sharing 등의 기능을 사용하지 못 한다고 한다.&lt;/strong&gt; 이는 EU의 규제에 의해 제공하지 못 하는 것으로 알려졌다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 건강(Health) 앱을 새로 개발 중인 것으로 보인다.&lt;/strong&gt; Apple Intelligence를 접목한 완전히 새로운 형태를 목표로 하는 모양이다. 이르면 iOS 19.4에서 탑재될 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;AirPods Pro 2의 Hearing Aid가 더 많은 국가로 확장된다.&lt;/strong&gt; 추가 지원 대상 국가로 호주, 브라질, 사우디 아라비아, 콜롬비아, 말레이시아 등이 알려졌다. 해당 기능은 청력 손실 감지 및 실제 손실 측정 시 거기에 맞게 음량 등을 대응하도록 하는 기능이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple Card Savings Account(저축계좌)의 금리가 또 인하된다.&lt;/strong&gt; 기존 3.9%에서 3.75%로 15bp 내려간다. 그래도 한국의 예금금리 보다는 높긴 하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mac 루머들&lt;/strong&gt;: 2026년 MacBook Pro의 대규모 업데이트를 앞두고 M5 MacBook Pro가 올해 말 리프레시 될 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPhone 루머들&lt;/strong&gt;: 폴더블 iPhone은 2000 달러 근방의 가격과 함께 펼치면 iPad와 비슷한 4:3 크기가 될 것 같다. 기타 소형 iPhone 모델에 관한 계획은 아직 없는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iPad 루머들&lt;/strong&gt;: Apple은 올해 말 생산을 목표로 M5 iPad Pro를 개발 중인 것으로 보인다. M6가 탑재될 iPad Pro에는 새로운 모뎀 칩이 탑재될 가능성이 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple Watch 루머들&lt;/strong&gt;: 혈압 측정 기능 개발과 관련하여 내부 테스트 도중 걸림돌이 계속 발견되고 있는 모양이다. Apple Watch Ultra 3에는 5G 및 위성 문자 기능이 제공될 것 같다.&lt;/p&gt;
+&lt;h2&gt;AAPL&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Tim Cook이 DeepSeek를 칭찬했다고 한다.&lt;/strong&gt; 중국개발포험에 참석하기 위해 중국을 방문한 중의 발언인 것 같다. 다만 개인정보가 노출되거나 민감한 보안 결함이 계속되고 있고 여러 국가에서 DeepSeek를 금지하는 와중이라 중국 만을 위한 일종의 립 서비스가 아닐까 추측된다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;드디어 인도네시아에서 iPhone 16 시리즈가 4월 11일 출시된다.&lt;/strong&gt; 그동안 Apple의 투자를 요구하며 출시를 방해하던 인도네시아 정부와의 협상이 정말 마무리 되어가고 있는 모양이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apple은 중국 앱 개발에 400만 달러를 기부했다.&lt;/strong&gt; 여전히 중국 시장에 공을 들이는 Apple이다. 이 밖에도 Tim Cook은 DeepSeek 개발자들의 본거지인 항저우 등을 방문했다고 한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;미국 유타 주에서 App Store 책임법을 통과시켰다.&lt;/strong&gt; 이 법은 연령 확인의 책임을 개별 앱이 아닌 App Store 등에 요구하는 법이다. 다만 이 변화가 전세계를 대상으로 확대될 지는 미지수다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EU는 Apple의 DMA 위반에 따른 벌금을 최소화 했다.&lt;/strong&gt; 그런데 이 이유 중 하나가 트럼프의 관세 보복을 우려하는 것 같다는 추측이 있다. &lt;em&gt;트럼프의 관세가 이런 데서 장점을 보여줄 줄은 몰랐다.&lt;/em&gt;&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20250330-00.html</guid>
+      <pubDate>Sun, 30 Mar 2025 23:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>미국 2월 PCE: 우려가 현실로</title>
       <link>https://seorenn.github.io/log/20250328-00.html</link>
@@ -3471,128 +3557,6 @@ C1 등장에 이어 C2가 테스트 되고 있다는 소문이 도는 마당이�
 &lt;p&gt;어쨌거나 별일 없이 조용히 잘 지나갔으면 좋겠다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20250218-00.html</guid>
       <pubDate>Tue, 18 Feb 2025 10:07:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>버그픽스 업데이트 출시와 2월 19일 신제품 출시 예정 등 한 주간의 Apple 소식들 25-02-16</title>
-      <link>https://seorenn.github.io/log/20250216-00.html</link>
-      <description>&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;버그픽스 업데이트 출시&lt;/strong&gt;&lt;br/&gt;
-Apple은 미국 시각 2월 10일 macOS 15.3.1, iOS 18.3.1, iPadOS 18.3.1, iPadOS 17.7.5, visionOS 2.3.1, watchOS 11.3.1 등의 버그픽스 업데이트를 공식 출시했다. 해당 버전들은 버그나 보안결함 수정에 초점이 맞춰졌기 때문에 기능적 변화는 없고 설치에도 부담이 없을 것으로 추측된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;개발자 베타 업데이트&lt;/strong&gt;&lt;br/&gt;
-Apple은 Safari Technology Preview 213을 개발자 베타로 공개했다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;펌웨어 업데이트&lt;/strong&gt;&lt;br/&gt;
-Apple은 Powerbeats Pro 2의 출시를 앞두고 1차 펌웨어 업데이트인 7B24 빌드를 출시했다.&lt;/p&gt;
-&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;2월 19일 신제품 출시&lt;/strong&gt;&lt;br/&gt;
-Apple은 미국 시각 기준 2월 19일 특별한 제품이 출시될 것을 공식적으로 예고했다. 단 하나의 제품만 출시될 것으로 보이며 별도의 행사는 없을 것 같다. 아마도 출시된 제품은 iPhone SE 4세대일 가능성이 높은 것 같지만 이 외에도 M4 MacBook Air, M3 iPad Air, iPad 11 등의 제품 역시 출시될 가능성은 남아있는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;중국산은 역시?&lt;/strong&gt;&lt;br/&gt;
-BOE의 iPhone용 OLED 패널의 품질이 Apple이 요구하는 수준에 못 미치는 것 같다. 결과적으로 삼성과 LGD에게 주문이 재분배될 가능성이 생긴 모양이다. 거기다 이 사례는 이번이 처음이 아니라서 OLED에 한해서는 중국이 기술적으로 한국을 많이 따라 잡았다지만 아직 추월은 아닌 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;더 가벼운 Vision Pro를 향해&lt;/strong&gt;&lt;br/&gt;
-Apple이 가벼운 Vision Pro를 제작하기 위한 새로운 특허를 출원한 모양이다. 배터리가 외장 형태로 연결된 것처럼 프로세서 등의 내부 부품을 일부 외장 팩에 옮기는 형태인 것으로 보인다. 물론 머리가 무거운 것보단 나은 형태일 순 있겠지만 좀 더 거추장스러울 것 같기도 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Intelligence 부활(?) 버그&lt;/strong&gt;&lt;br/&gt;
-최신 macOS 15.3.1 및 iOS 18.3.1 등의 버전 라인업에서 기존에 Apple Intelligence를 비활성화 했던 경우 다시 활성화되는 버그가 알려졌다. 다만 사용자나 기기에 따라 조금씩 동작에 차이가 있는 모양이다. 물론 이 경우 다시 비활성화하면 되는 터라 크리티컬한 버그는 아닌 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Intelligence는 아직 중국 진출 시도 중&lt;/strong&gt;&lt;br/&gt;
-아직 중국 사용자에게 Apple Intelligence가 진출하지는 못 하고 있지만, Apple은 이를 위한 준비로 바이두와 협력해 왔으며 알리바바와도 파트너십을 추진 중인 것으로 알려졌다. 그 외에 적용 가능성은 낮지만 DeepSeek 모델도 테스트를 했던 것으로 보인다. 중국 출시는 이르면 5월 즈음 가능할 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Watch Series 10 결함&lt;/strong&gt;&lt;br/&gt;
-일부 사용자들에게 Apple Watch Series 10의 스피커에 결함이 있다는 보고가 있다. 볼륨이 비정상적으로 낮은 현상이며 일부 사용자들은 점진적으로 문제가 생겼다는 듯하다. 소프트웨어 결함인지 하드웨어 결함인지 아직 확인은 되지 않았으며 아직 Apple은 해당 문제를 공식적으로 인정하지는 않았다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Pixelmator 인수 완료&lt;/strong&gt;&lt;br/&gt;
-Apple은 공식적으로 Pixelmator 인수를 완료했다고 밝혔다. 이후 Pixelmator 및 Photomator 앱이 어떤 식으로 나아갈 지 확실하지는 않지만 당분간 해당 앱들은 App Store에서 그대로 유지될 것으로 보인다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;트럼프에 납작 엎드리기&lt;/strong&gt;&lt;br/&gt;
-Apple은 Apple Maps에서 기존 멕시코만(Gulf of Mexico) 지명을 아메리카만(Gulf of America)으로 바꾸었다. 다만 구글 지도의 행보와 비슷하게 미국 내 사용자들에게만 변경된 이름으로 보이는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;계정 간 구입내역 이전&lt;/strong&gt;&lt;br/&gt;
-Apple이 Apple Account 간 구입 항목 마이그레이션 즉 구매내역을 특정 계정으로 옮기는 것을 지원한다. 실제로 이전하기 위해선 약간 까다로운 준비가 필요한 듯하지만 즉석에서 할 수는 있는 것 같다. 관련 내용은 &lt;a href="https://support.apple.com/ko-kr/117294" target="_blank"&gt;Apple 계정 간에 구입 항목 마이그레이션하기📎&lt;/a&gt; 문서를 참고하자.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;살짝 노출?&lt;/strong&gt;&lt;br/&gt;
-프랑스의 한 전자제품 소매업체 웹사이트에서 iPhone SE 4가 곧 출시된다는 내용이 올라왔다. 물론 Apple은 아직 공식 출시하지는 않은 상태다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;신기한 버그&lt;/strong&gt;&lt;br/&gt;
-어느 한 게임이 이상하게 종료되는 것이 화제가 되었는데 In App Purchases의 버그가 원인으로 유추되어서 그런 것 같다. 일단 해당 앱은 지원이 종료되어 App Store에서 내려간 것으로 알려졌다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;구매내역 이전에 새 조건 추가&lt;/strong&gt;&lt;br/&gt;
-Apple이 구매내역 이전에 관해 새로운 조건을 추가했다. 추가된 조건은 이전시킬 구매내역을 가진 보조 계정에서 Testflight를 이용한 테스트를 한 앱이 있을 경우 이 앱들의 테스트를 직접 중지시켜야 하는 것으로 알려졌다. 그냥 알아서 다 자동으로 해줘도 모라잘 판에 어쨌든 저쨌든 더더욱 까다로워졌다.&lt;/p&gt;
-&lt;h2&gt;루머 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Mac 루머들&lt;/strong&gt;&lt;br/&gt;
-2026년 출시를 목표로 한 OLED 디스플레이를 탑재한 Macbook Pro는 더 얇게 디자인 될 가능성이 있다고 한다. Macbook Air는 OLED 탑재는 2029 이후로 지연되는 모양이며 대신 2027년 경에 좀 더 개선된 LCD를 탑재하고 출시될 가능성이 있는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iPhone 루머들&lt;/strong&gt;&lt;br/&gt;
-iPhone 17 Pro Max는 Face ID용 렌즈를 최적화해 Dynamic Island가 더 작아질 것 같다는 추측이 나오고 있지만 크기가 그대로일 거라는 반박도 함께 나오고 있다. 그리고 카메라 섬이 가로로 길게 커지되 카메라 배치는 그대로인 새로운 레이아웃 루머도 나오고 있다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;AR 안경 계획은 여전히 진행 중&lt;/strong&gt;&lt;br/&gt;
-이전에 Mac에 연결되는 AR 안경 프로젝트가 취소되었다는 루머가 전해진 이후, 그 외의 형식에 대해서는 여전히 진행 중일 것이라는 루머가 나왔다. 예를 들자면 독립 동작형 AR 안경 프로젝트가 있다. 물론 이 프로젝트는 시간이 제법 걸릴 것이다. 추측으로는 최소한 3~5년은 더 걸릴 것으로 평가하는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;홈 로봇 디바이스 투자&lt;/strong&gt;&lt;br/&gt;
-Apple이 가정용 로봇 디바이스 개발을 위한 연구 및 엔지니어링 팀의 채용을 확대하고 있는 모양이다. Apple이 생각하는 가정용 로봇의 모습은 명확하진 않다. 루머로는 디스플레이가 달린 HomePod 스마트 스피커에 팔다리가 달린 형태일 가능성이 제기되는 것 같지만 상상에 가까운 느낌이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;늦어지는 가정용 디바이스&lt;/strong&gt;&lt;br/&gt;
-HomePad(가)와 같은 가정용 디바이스의 출시가 올해 3월 쯤 될 것이라는 예상이 나오기도 했지만 현재는 그보다 늦어질 것이라는 예측 또한 나오고 있다. 빠르면 4월 출시가 가능할 수도 있지만 그보다 늦어질 가능성도 있는 것 같다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Studio Display Refresh&lt;/strong&gt;&lt;br/&gt;
-Apple은 Studio Display의 후속 제품일 것으로 추측되는 Mini LED가 탑재된 디스플레이 모니터를 2026년 까지 출시하기 위해 개발 및 테스트 중인 것 같다. 또다른 후보로 Pro Display XDR의 리프레시가 아닐까 하는 추측도 없는 건 아니지만 가능성은 낮은 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;광고 사업 확장 중?&lt;/strong&gt;&lt;br/&gt;
-Apple은 News 및 Stocks 앱에 이어 Maps에도 검색 광고 도입을 고려하고 있는 것 같다. 당연하게도 광고가 도입되면 새로운 수익 모델이 될 수 있을 것이다. 하지만 그 전에 이 앱들이 더 많이 쓰일 수 있게 개선되는게 우선일 것 같지만 말이다. 예를 들자면 한국에서 이 앱들은 인기가 없는 편이다.&lt;/p&gt;
-&lt;h2&gt;AAPL&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;AI 최후의 승자는 애플?&lt;/strong&gt;&lt;br/&gt;
-Apple이 AI 투자에 소극적이었던 것에 비판이 많았지만, 의외로 AI 투자 경쟁으로 인한 과도한 투자를 아낌과 동시에 좀 더 성숙한 AI 기술을 받아들일 수도 있게 되어서 Apple이 진정한 승자가 될 수도 있다는 전망이 나오는 모양이다. 즉 돈도 아끼고 AI 기술을 좋은 시점에 도입한다는 말이다. 물론 이는 Apple 식 패스트 팔로워 전략의 일부 처럼 비춰질 수도 있겠지만 그저그런 희망회로일 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iPhone 업그레이드 주기가 빨라졌다&lt;/strong&gt;&lt;br/&gt;
-최근 스마트폰 교체 주기가 길어지고만 있었는데 어떤 보고서에선 iPhone의 업그레이드 주기가 피크를 찍고 빨라지고 있다는 내용이 강조되었다. 주요 원인으로 Apple Intelligence의 영향을 꼽는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;X에 돌아온 Apple&lt;/strong&gt;&lt;br/&gt;
-Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과거 일론 머스크의 극우적 혹은 극단적 발언으로 광고를 철회했다가 다시 돌아온 것이다. 아무래도 트럼프 정권에 일론 머스크가 영향을 미치고 있는 점을 고려할 수밖에 없을 것 같기도 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;계속되는 ATT 독점 논란&lt;/strong&gt;&lt;br/&gt;
-독일에서 App Tracking Transparency를 써드파티 앱에만 적용하는 것은 반독점적이라는 조사가 아직도 이어지고 있는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;영국의 지나친 요구에 미국 정치가 개입될 듯&lt;/strong&gt;&lt;br/&gt;
-최근 영국이 iCloud의 모든 암호화된 정보를 액세스 할 수 있는 기능을 요구한 것에 대해 미국 의원들이 맞서 싸울 것을 정보국장에게 촉구했다고 한다.&lt;/p&gt;</description>
-      <content:encoded>&lt;h2&gt;소프트웨어 관련 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;버그픽스 업데이트 출시&lt;/strong&gt;&lt;br/&gt;
-Apple은 미국 시각 2월 10일 macOS 15.3.1, iOS 18.3.1, iPadOS 18.3.1, iPadOS 17.7.5, visionOS 2.3.1, watchOS 11.3.1 등의 버그픽스 업데이트를 공식 출시했다. 해당 버전들은 버그나 보안결함 수정에 초점이 맞춰졌기 때문에 기능적 변화는 없고 설치에도 부담이 없을 것으로 추측된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;개발자 베타 업데이트&lt;/strong&gt;&lt;br/&gt;
-Apple은 Safari Technology Preview 213을 개발자 베타로 공개했다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;펌웨어 업데이트&lt;/strong&gt;&lt;br/&gt;
-Apple은 Powerbeats Pro 2의 출시를 앞두고 1차 펌웨어 업데이트인 7B24 빌드를 출시했다.&lt;/p&gt;
-&lt;h2&gt;일반적인 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;2월 19일 신제품 출시&lt;/strong&gt;&lt;br/&gt;
-Apple은 미국 시각 기준 2월 19일 특별한 제품이 출시될 것을 공식적으로 예고했다. 단 하나의 제품만 출시될 것으로 보이며 별도의 행사는 없을 것 같다. 아마도 출시된 제품은 iPhone SE 4세대일 가능성이 높은 것 같지만 이 외에도 M4 MacBook Air, M3 iPad Air, iPad 11 등의 제품 역시 출시될 가능성은 남아있는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;중국산은 역시?&lt;/strong&gt;&lt;br/&gt;
-BOE의 iPhone용 OLED 패널의 품질이 Apple이 요구하는 수준에 못 미치는 것 같다. 결과적으로 삼성과 LGD에게 주문이 재분배될 가능성이 생긴 모양이다. 거기다 이 사례는 이번이 처음이 아니라서 OLED에 한해서는 중국이 기술적으로 한국을 많이 따라 잡았다지만 아직 추월은 아닌 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;더 가벼운 Vision Pro를 향해&lt;/strong&gt;&lt;br/&gt;
-Apple이 가벼운 Vision Pro를 제작하기 위한 새로운 특허를 출원한 모양이다. 배터리가 외장 형태로 연결된 것처럼 프로세서 등의 내부 부품을 일부 외장 팩에 옮기는 형태인 것으로 보인다. 물론 머리가 무거운 것보단 나은 형태일 순 있겠지만 좀 더 거추장스러울 것 같기도 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Intelligence 부활(?) 버그&lt;/strong&gt;&lt;br/&gt;
-최신 macOS 15.3.1 및 iOS 18.3.1 등의 버전 라인업에서 기존에 Apple Intelligence를 비활성화 했던 경우 다시 활성화되는 버그가 알려졌다. 다만 사용자나 기기에 따라 조금씩 동작에 차이가 있는 모양이다. 물론 이 경우 다시 비활성화하면 되는 터라 크리티컬한 버그는 아닌 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Intelligence는 아직 중국 진출 시도 중&lt;/strong&gt;&lt;br/&gt;
-아직 중국 사용자에게 Apple Intelligence가 진출하지는 못 하고 있지만, Apple은 이를 위한 준비로 바이두와 협력해 왔으며 알리바바와도 파트너십을 추진 중인 것으로 알려졌다. 그 외에 적용 가능성은 낮지만 DeepSeek 모델도 테스트를 했던 것으로 보인다. 중국 출시는 이르면 5월 즈음 가능할 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Apple Watch Series 10 결함&lt;/strong&gt;&lt;br/&gt;
-일부 사용자들에게 Apple Watch Series 10의 스피커에 결함이 있다는 보고가 있다. 볼륨이 비정상적으로 낮은 현상이며 일부 사용자들은 점진적으로 문제가 생겼다는 듯하다. 소프트웨어 결함인지 하드웨어 결함인지 아직 확인은 되지 않았으며 아직 Apple은 해당 문제를 공식적으로 인정하지는 않았다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Pixelmator 인수 완료&lt;/strong&gt;&lt;br/&gt;
-Apple은 공식적으로 Pixelmator 인수를 완료했다고 밝혔다. 이후 Pixelmator 및 Photomator 앱이 어떤 식으로 나아갈 지 확실하지는 않지만 당분간 해당 앱들은 App Store에서 그대로 유지될 것으로 보인다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;트럼프에 납작 엎드리기&lt;/strong&gt;&lt;br/&gt;
-Apple은 Apple Maps에서 기존 멕시코만(Gulf of Mexico) 지명을 아메리카만(Gulf of America)으로 바꾸었다. 다만 구글 지도의 행보와 비슷하게 미국 내 사용자들에게만 변경된 이름으로 보이는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;계정 간 구입내역 이전&lt;/strong&gt;&lt;br/&gt;
-Apple이 Apple Account 간 구입 항목 마이그레이션 즉 구매내역을 특정 계정으로 옮기는 것을 지원한다. 실제로 이전하기 위해선 약간 까다로운 준비가 필요한 듯하지만 즉석에서 할 수는 있는 것 같다. 관련 내용은 &lt;a href="https://support.apple.com/ko-kr/117294" target="_blank"&gt;Apple 계정 간에 구입 항목 마이그레이션하기📎&lt;/a&gt; 문서를 참고하자.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;살짝 노출?&lt;/strong&gt;&lt;br/&gt;
-프랑스의 한 전자제품 소매업체 웹사이트에서 iPhone SE 4가 곧 출시된다는 내용이 올라왔다. 물론 Apple은 아직 공식 출시하지는 않은 상태다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;신기한 버그&lt;/strong&gt;&lt;br/&gt;
-어느 한 게임이 이상하게 종료되는 것이 화제가 되었는데 In App Purchases의 버그가 원인으로 유추되어서 그런 것 같다. 일단 해당 앱은 지원이 종료되어 App Store에서 내려간 것으로 알려졌다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;구매내역 이전에 새 조건 추가&lt;/strong&gt;&lt;br/&gt;
-Apple이 구매내역 이전에 관해 새로운 조건을 추가했다. 추가된 조건은 이전시킬 구매내역을 가진 보조 계정에서 Testflight를 이용한 테스트를 한 앱이 있을 경우 이 앱들의 테스트를 직접 중지시켜야 하는 것으로 알려졌다. 그냥 알아서 다 자동으로 해줘도 모라잘 판에 어쨌든 저쨌든 더더욱 까다로워졌다.&lt;/p&gt;
-&lt;h2&gt;루머 소식들&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Mac 루머들&lt;/strong&gt;&lt;br/&gt;
-2026년 출시를 목표로 한 OLED 디스플레이를 탑재한 Macbook Pro는 더 얇게 디자인 될 가능성이 있다고 한다. Macbook Air는 OLED 탑재는 2029 이후로 지연되는 모양이며 대신 2027년 경에 좀 더 개선된 LCD를 탑재하고 출시될 가능성이 있는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iPhone 루머들&lt;/strong&gt;&lt;br/&gt;
-iPhone 17 Pro Max는 Face ID용 렌즈를 최적화해 Dynamic Island가 더 작아질 것 같다는 추측이 나오고 있지만 크기가 그대로일 거라는 반박도 함께 나오고 있다. 그리고 카메라 섬이 가로로 길게 커지되 카메라 배치는 그대로인 새로운 레이아웃 루머도 나오고 있다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;AR 안경 계획은 여전히 진행 중&lt;/strong&gt;&lt;br/&gt;
-이전에 Mac에 연결되는 AR 안경 프로젝트가 취소되었다는 루머가 전해진 이후, 그 외의 형식에 대해서는 여전히 진행 중일 것이라는 루머가 나왔다. 예를 들자면 독립 동작형 AR 안경 프로젝트가 있다. 물론 이 프로젝트는 시간이 제법 걸릴 것이다. 추측으로는 최소한 3~5년은 더 걸릴 것으로 평가하는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;홈 로봇 디바이스 투자&lt;/strong&gt;&lt;br/&gt;
-Apple이 가정용 로봇 디바이스 개발을 위한 연구 및 엔지니어링 팀의 채용을 확대하고 있는 모양이다. Apple이 생각하는 가정용 로봇의 모습은 명확하진 않다. 루머로는 디스플레이가 달린 HomePod 스마트 스피커에 팔다리가 달린 형태일 가능성이 제기되는 것 같지만 상상에 가까운 느낌이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;늦어지는 가정용 디바이스&lt;/strong&gt;&lt;br/&gt;
-HomePad(가)와 같은 가정용 디바이스의 출시가 올해 3월 쯤 될 것이라는 예상이 나오기도 했지만 현재는 그보다 늦어질 것이라는 예측 또한 나오고 있다. 빠르면 4월 출시가 가능할 수도 있지만 그보다 늦어질 가능성도 있는 것 같다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Studio Display Refresh&lt;/strong&gt;&lt;br/&gt;
-Apple은 Studio Display의 후속 제품일 것으로 추측되는 Mini LED가 탑재된 디스플레이 모니터를 2026년 까지 출시하기 위해 개발 및 테스트 중인 것 같다. 또다른 후보로 Pro Display XDR의 리프레시가 아닐까 하는 추측도 없는 건 아니지만 가능성은 낮은 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;광고 사업 확장 중?&lt;/strong&gt;&lt;br/&gt;
-Apple은 News 및 Stocks 앱에 이어 Maps에도 검색 광고 도입을 고려하고 있는 것 같다. 당연하게도 광고가 도입되면 새로운 수익 모델이 될 수 있을 것이다. 하지만 그 전에 이 앱들이 더 많이 쓰일 수 있게 개선되는게 우선일 것 같지만 말이다. 예를 들자면 한국에서 이 앱들은 인기가 없는 편이다.&lt;/p&gt;
-&lt;h2&gt;AAPL&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;AI 최후의 승자는 애플?&lt;/strong&gt;&lt;br/&gt;
-Apple이 AI 투자에 소극적이었던 것에 비판이 많았지만, 의외로 AI 투자 경쟁으로 인한 과도한 투자를 아낌과 동시에 좀 더 성숙한 AI 기술을 받아들일 수도 있게 되어서 Apple이 진정한 승자가 될 수도 있다는 전망이 나오는 모양이다. 즉 돈도 아끼고 AI 기술을 좋은 시점에 도입한다는 말이다. 물론 이는 Apple 식 패스트 팔로워 전략의 일부 처럼 비춰질 수도 있겠지만 그저그런 희망회로일 지도 모르겠다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;iPhone 업그레이드 주기가 빨라졌다&lt;/strong&gt;&lt;br/&gt;
-최근 스마트폰 교체 주기가 길어지고만 있었는데 어떤 보고서에선 iPhone의 업그레이드 주기가 피크를 찍고 빨라지고 있다는 내용이 강조되었다. 주요 원인으로 Apple Intelligence의 영향을 꼽는 듯하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;X에 돌아온 Apple&lt;/strong&gt;&lt;br/&gt;
-Apple이 X(Twitter)에 다시 광고를 게재하기 시작했다고 한다. 과거 일론 머스크의 극우적 혹은 극단적 발언으로 광고를 철회했다가 다시 돌아온 것이다. 아무래도 트럼프 정권에 일론 머스크가 영향을 미치고 있는 점을 고려할 수밖에 없을 것 같기도 하다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;계속되는 ATT 독점 논란&lt;/strong&gt;&lt;br/&gt;
-독일에서 App Tracking Transparency를 써드파티 앱에만 적용하는 것은 반독점적이라는 조사가 아직도 이어지고 있는 모양이다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;영국의 지나친 요구에 미국 정치가 개입될 듯&lt;/strong&gt;&lt;br/&gt;
-최근 영국이 iCloud의 모든 암호화된 정보를 액세스 할 수 있는 기능을 요구한 것에 대해 미국 의원들이 맞서 싸울 것을 정보국장에게 촉구했다고 한다.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20250216-00.html</guid>
-      <pubDate>Sun, 16 Feb 2025 23:57:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

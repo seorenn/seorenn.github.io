@@ -13,7 +13,7 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Tue, 01 Apr 2025 00:01:23 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 00:06:01 +0900</lastBuildDate>
     <item>
       <title>Emacs의 자동 저장 기능 알아보기</title>
       <link>https://seorenn.github.io/log/20250401-00.html</link>
@@ -55,7 +55,8 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이 변수에 원하는 문자 갯수를 입력해 주면 될 것 같다. 이 값을 0으로 할 경우 입력 문자 갯수 기준 자동 저장 기능이 비활성화 된다고 한다. 다만 실제로 동작하는지 확인은 해보지 못했다.&lt;/p&gt;
 &lt;h2&gt;여담&lt;/h2&gt;
-&lt;p&gt;자동 저장 대신 자동 백업 모드도 있기는 하지만 Git의 사용이 보편화된 지금 굳이 별도의 파일로 백업할 필요가 있을까도 싶다. 그래도 나중에 기회가 된다면 별도로 기록해 보고 싶다는 생각이 든다.&lt;/p&gt;</description>
+&lt;p&gt;자동 저장 대신 자동 백업 모드도 있기는 하지만 Git의 사용이 보편화된 지금 굳이 별도의 파일로 백업할 필요가 있을까도 싶다. 그래도 나중에 기회가 된다면 별도로 기록해 보고 싶다는 생각이 든다.&lt;/p&gt;
+&lt;p&gt;어쨌든 이제 글을 막 날려먹는 일은 드물어지지 않을까 하는 만족감과 함께 글을 마무리 한다.&lt;/p&gt;</description>
       <content:encoded>&lt;p&gt;Emacs를 써온지 오래 되었지만 자동 저장 기능을 써 본다거나 알아볼 생각을 한 적이 없다. 워낙 자주 저장하는 습관이 들어있다보니 그다지 필요성을 못 느꼈기 때문이다. 하지만 최근 저장을 깜빡해서 (정확히는 한글 상태에서 저장 커맨드가 제대로 인식되지 않아서) 쓰던 글을 일부 날려먹은 경험이 생기다보니 자동 저장 기능에 대해 호기심이 생겼다.&lt;/p&gt;
 &lt;p&gt;찾아보니 별도의 확장 필요 없이 Emacs 자체적으로 자동 저장 기능을 제공하고 있었다. 이에 관해 간단히 기록해 본다.&lt;/p&gt;
 &lt;h2&gt;Emacs에서 자동 저장 기능 활성화하기&lt;/h2&gt;
@@ -94,7 +95,8 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이 변수에 원하는 문자 갯수를 입력해 주면 될 것 같다. 이 값을 0으로 할 경우 입력 문자 갯수 기준 자동 저장 기능이 비활성화 된다고 한다. 다만 실제로 동작하는지 확인은 해보지 못했다.&lt;/p&gt;
 &lt;h2&gt;여담&lt;/h2&gt;
-&lt;p&gt;자동 저장 대신 자동 백업 모드도 있기는 하지만 Git의 사용이 보편화된 지금 굳이 별도의 파일로 백업할 필요가 있을까도 싶다. 그래도 나중에 기회가 된다면 별도로 기록해 보고 싶다는 생각이 든다.&lt;/p&gt;</content:encoded>
+&lt;p&gt;자동 저장 대신 자동 백업 모드도 있기는 하지만 Git의 사용이 보편화된 지금 굳이 별도의 파일로 백업할 필요가 있을까도 싶다. 그래도 나중에 기회가 된다면 별도로 기록해 보고 싶다는 생각이 든다.&lt;/p&gt;
+&lt;p&gt;어쨌든 이제 글을 막 날려먹는 일은 드물어지지 않을까 하는 만족감과 함께 글을 마무리 한다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20250401-00.html</guid>
       <pubDate>Tue, 01 Apr 2025 00:01:00 +0900</pubDate>
     </item>

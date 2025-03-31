@@ -13,7 +13,91 @@
       <link>https://seorenn.github.io</link>
     </image>
     <language>ko</language>
-    <lastBuildDate>Mon, 31 Mar 2025 11:39:06 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 00:01:23 +0900</lastBuildDate>
+    <item>
+      <title>Emacs의 자동 저장 기능 알아보기</title>
+      <link>https://seorenn.github.io/log/20250401-00.html</link>
+      <description>&lt;p&gt;Emacs를 써온지 오래 되었지만 자동 저장 기능을 써 본다거나 알아볼 생각을 한 적이 없다. 워낙 자주 저장하는 습관이 들어있다보니 그다지 필요성을 못 느꼈기 때문이다. 하지만 최근 저장을 깜빡해서 (정확히는 한글 상태에서 저장 커맨드가 제대로 인식되지 않아서) 쓰던 글을 일부 날려먹은 경험이 생기다보니 자동 저장 기능에 대해 호기심이 생겼다.&lt;/p&gt;
+&lt;p&gt;찾아보니 별도의 확장 필요 없이 Emacs 자체적으로 자동 저장 기능을 제공하고 있었다. 이에 관해 간단히 기록해 본다.&lt;/p&gt;
+&lt;h2&gt;Emacs에서 자동 저장 기능 활성화하기&lt;/h2&gt;
+&lt;p&gt;자동 저장 기능을 활성화하기 위해 아래 설정을 추가해 주면 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(setq auto-save-default t)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 설정을 추가한 뒤 Emacs를 껐다 켜고 파일을 편집하다 잠깐 쉬다 보면 아래와 같은 메시지를 볼 수 있게 된다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Auto-saving...done&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;말 그대로 자동으로 저장이 된다. 다만 즉시는 아니고 기본 설정 상태로 30초간 유휴 시간을 가지면 저장된다.&lt;/p&gt;
+&lt;p&gt;만약 자동 저장 기능을 비활성화 하고 싶다면 반대로 &lt;code&gt;t&lt;/code&gt; 대신 &lt;code&gt;nil&lt;/code&gt;을 넣어주면 된다. 물론 설정 자체를 지워버려도 된다.&lt;/p&gt;
+&lt;h2&gt;특정 버퍼에서만 자동 저장 기능을 활성화하기&lt;/h2&gt;
+&lt;p&gt;혹시나 기본적으로 자동 저장을 비활성화한 상태로 특정 파일(버퍼)만 자동 저장 기능을 활성화 하고 싶다면 해당 파일에서 자동 저장 모드를 켜자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;M-x auto-save-mode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 경우 auto-save-mode는 해당 버퍼에서 마이너모드로 동작하며 전역 자동 저장 기능이 켜진 것과 비슷하게 동작한다.&lt;/p&gt;
+&lt;h2&gt;자동 저장을 수동으로 하기&lt;/h2&gt;
+&lt;p&gt;만약 자동 저장을 수동으로 트리거하는 독특한(?) 명령을 내리고 싶다면 &lt;code&gt;do-auto-save&lt;/code&gt; 함수를 사용해 보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;M-x do-auto-save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;타임아웃이 너무 길어서 바로 저장해야 할 것 같은 특수한 상황에서나 쓸 법한 기능이라 크게 신경 쓸 필요는 없을 것 같다.&lt;/p&gt;
+&lt;p&gt;아니 솔직히 말해서 이런 명령을 쓸 정도면 그냥 저장을 하라고 해야 되는 거 아니야? &lt;/p&gt;
+&lt;p&gt;음... 그런 것 같다.&lt;/p&gt;
+&lt;h2&gt;설정&lt;/h2&gt;
+&lt;p&gt;자동 저장 모드와 관련된 설정을 일부 정리해 보자. 다만 별로 크게 걸드릴 필요도 없을 것 같아서 이 항목을 굳이 볼 필요는 없을 지도 모르겠다.&lt;/p&gt;
+&lt;h3&gt;Timeout&lt;/h3&gt;
+&lt;p&gt;자동 저장 주기를 바꾸고 싶다면 &lt;code&gt;audo-save-timeout&lt;/code&gt;의 값을 원하는 값(초 단위)으로 바꿔주면 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(setq auto-save-timeout 30)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;다만 0으로 설정할 경우 유휴 시간 자동 저장이 비활성화 된다.&lt;/p&gt;
+&lt;p&gt;참고로 기본 값은 30초 인데 이 값은 Emacs의 Garbage Collection 주기와 동일해서 추천되는 모양이다만 RAM이 충분한 요즘엔 본인의 기호에 맞게 설정하는 게 더 나을 것 같다.&lt;/p&gt;
+&lt;h3&gt;Interval&lt;/h3&gt;
+&lt;p&gt;찾다보니 자동 저장 기능에는 문자 입력 수를 기준으로 동작하게 하는 것도 있는 것 같다. &lt;code&gt;auto-save-interval&lt;/code&gt; 변수가 그것 같다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(setq auto-save-interval 300)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 변수에 원하는 문자 갯수를 입력해 주면 될 것 같다. 이 값을 0으로 할 경우 입력 문자 갯수 기준 자동 저장 기능이 비활성화 된다고 한다. 다만 실제로 동작하는지 확인은 해보지 못했다.&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;자동 저장 대신 자동 백업 모드도 있기는 하지만 Git의 사용이 보편화된 지금 굳이 별도의 파일로 백업할 필요가 있을까도 싶다. 그래도 나중에 기회가 된다면 별도로 기록해 보고 싶다는 생각이 든다.&lt;/p&gt;</description>
+      <content:encoded>&lt;p&gt;Emacs를 써온지 오래 되었지만 자동 저장 기능을 써 본다거나 알아볼 생각을 한 적이 없다. 워낙 자주 저장하는 습관이 들어있다보니 그다지 필요성을 못 느꼈기 때문이다. 하지만 최근 저장을 깜빡해서 (정확히는 한글 상태에서 저장 커맨드가 제대로 인식되지 않아서) 쓰던 글을 일부 날려먹은 경험이 생기다보니 자동 저장 기능에 대해 호기심이 생겼다.&lt;/p&gt;
+&lt;p&gt;찾아보니 별도의 확장 필요 없이 Emacs 자체적으로 자동 저장 기능을 제공하고 있었다. 이에 관해 간단히 기록해 본다.&lt;/p&gt;
+&lt;h2&gt;Emacs에서 자동 저장 기능 활성화하기&lt;/h2&gt;
+&lt;p&gt;자동 저장 기능을 활성화하기 위해 아래 설정을 추가해 주면 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(setq auto-save-default t)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 설정을 추가한 뒤 Emacs를 껐다 켜고 파일을 편집하다 잠깐 쉬다 보면 아래와 같은 메시지를 볼 수 있게 된다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Auto-saving...done&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;말 그대로 자동으로 저장이 된다. 다만 즉시는 아니고 기본 설정 상태로 30초간 유휴 시간을 가지면 저장된다.&lt;/p&gt;
+&lt;p&gt;만약 자동 저장 기능을 비활성화 하고 싶다면 반대로 &lt;code&gt;t&lt;/code&gt; 대신 &lt;code&gt;nil&lt;/code&gt;을 넣어주면 된다. 물론 설정 자체를 지워버려도 된다.&lt;/p&gt;
+&lt;h2&gt;특정 버퍼에서만 자동 저장 기능을 활성화하기&lt;/h2&gt;
+&lt;p&gt;혹시나 기본적으로 자동 저장을 비활성화한 상태로 특정 파일(버퍼)만 자동 저장 기능을 활성화 하고 싶다면 해당 파일에서 자동 저장 모드를 켜자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;M-x auto-save-mode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 경우 auto-save-mode는 해당 버퍼에서 마이너모드로 동작하며 전역 자동 저장 기능이 켜진 것과 비슷하게 동작한다.&lt;/p&gt;
+&lt;h2&gt;자동 저장을 수동으로 하기&lt;/h2&gt;
+&lt;p&gt;만약 자동 저장을 수동으로 트리거하는 독특한(?) 명령을 내리고 싶다면 &lt;code&gt;do-auto-save&lt;/code&gt; 함수를 사용해 보자.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;M-x do-auto-save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;타임아웃이 너무 길어서 바로 저장해야 할 것 같은 특수한 상황에서나 쓸 법한 기능이라 크게 신경 쓸 필요는 없을 것 같다.&lt;/p&gt;
+&lt;p&gt;아니 솔직히 말해서 이런 명령을 쓸 정도면 그냥 저장을 하라고 해야 되는 거 아니야? &lt;/p&gt;
+&lt;p&gt;음... 그런 것 같다.&lt;/p&gt;
+&lt;h2&gt;설정&lt;/h2&gt;
+&lt;p&gt;자동 저장 모드와 관련된 설정을 일부 정리해 보자. 다만 별로 크게 걸드릴 필요도 없을 것 같아서 이 항목을 굳이 볼 필요는 없을 지도 모르겠다.&lt;/p&gt;
+&lt;h3&gt;Timeout&lt;/h3&gt;
+&lt;p&gt;자동 저장 주기를 바꾸고 싶다면 &lt;code&gt;audo-save-timeout&lt;/code&gt;의 값을 원하는 값(초 단위)으로 바꿔주면 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(setq auto-save-timeout 30)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;다만 0으로 설정할 경우 유휴 시간 자동 저장이 비활성화 된다.&lt;/p&gt;
+&lt;p&gt;참고로 기본 값은 30초 인데 이 값은 Emacs의 Garbage Collection 주기와 동일해서 추천되는 모양이다만 RAM이 충분한 요즘엔 본인의 기호에 맞게 설정하는 게 더 나을 것 같다.&lt;/p&gt;
+&lt;h3&gt;Interval&lt;/h3&gt;
+&lt;p&gt;찾다보니 자동 저장 기능에는 문자 입력 수를 기준으로 동작하게 하는 것도 있는 것 같다. &lt;code&gt;auto-save-interval&lt;/code&gt; 변수가 그것 같다.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(setq auto-save-interval 300)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이 변수에 원하는 문자 갯수를 입력해 주면 될 것 같다. 이 값을 0으로 할 경우 입력 문자 갯수 기준 자동 저장 기능이 비활성화 된다고 한다. 다만 실제로 동작하는지 확인은 해보지 못했다.&lt;/p&gt;
+&lt;h2&gt;여담&lt;/h2&gt;
+&lt;p&gt;자동 저장 대신 자동 백업 모드도 있기는 하지만 Git의 사용이 보편화된 지금 굳이 별도의 파일로 백업할 필요가 있을까도 싶다. 그래도 나중에 기회가 된다면 별도로 기록해 보고 싶다는 생각이 든다.&lt;/p&gt;</content:encoded>
+      <guid isPermaLink="false">https://seorenn.github.io/log/20250401-00.html</guid>
+      <pubDate>Tue, 01 Apr 2025 00:01:00 +0900</pubDate>
+    </item>
     <item>
       <title>밥을 잘 먹지 않는 아이</title>
       <link>https://seorenn.github.io/log/20250331-00.html</link>
@@ -90,8 +174,8 @@
       <title>WWDC25 행사 예고 등 한 주간의 애플 소식들 25-03-30</title>
       <link>https://seorenn.github.io/log/20250330-00.html</link>
       <description>&lt;h2&gt;WWDC25 개최일 공개&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="WWDC25" src="../upload/202503302300-0947d49b.png" /&gt;
-&lt;em&gt;WWDC25&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WWDC25 (Apple)" src="../upload/202503302300-0947d49b.png" /&gt;
+&lt;em&gt;WWDC25 (Apple)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Apple은 미국시각 기준 2025년 6월 9일 WWDC(world wide developer conferences, 세계 개발자 회의) 개최를 공식적으로 알려왔다. WWDC는 이름처럼 개발자를 위한 다양한 기술적 발표가 있는 회의이며 첫날 키노트에서는 macOS 15나 iOS 19 등과 같은 소프트웨어 차기 버전 발표와 함께 일부 제품 발표도 겸하고 있어서 비개발자들에게도 유용한 정보가 있을 수도 있다. &lt;/p&gt;
 &lt;p&gt;이번 행사는 6월 9일 부터 13일까지 온라인 위주로 진행되지만 첫 날에는 Apple Park에서 오프라인 이벤트가 열릴 예정이라고 한다.&lt;/p&gt;
 &lt;p&gt;현재로썬 차세대 OS 소프트웨어 라인업을 제외하곤 어떤 제품이 발표될 지에 대한 예측은 부족한 듯하다. 그저 행사 로고 등을 통해 iOS 19 등의 디자인 변경 컨셉에 대한 추측은 가능한 것 같다.&lt;/p&gt;
@@ -130,8 +214,8 @@
 &lt;p&gt;&lt;strong&gt;미국 유타 주에서 App Store 책임법을 통과시켰다.&lt;/strong&gt; 이 법은 연령 확인의 책임을 개별 앱이 아닌 App Store 등에 요구하는 법이다. 다만 이 변화가 전세계를 대상으로 확대될 지는 미지수다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;EU는 Apple의 DMA 위반에 따른 벌금을 최소화 했다.&lt;/strong&gt; 그런데 이 이유 중 하나가 트럼프의 관세 보복을 우려하는 것 같다는 추측이 있다. &lt;em&gt;트럼프의 관세가 이런 데서 장점을 보여줄 줄은 몰랐다.&lt;/em&gt;&lt;/p&gt;</description>
       <content:encoded>&lt;h2&gt;WWDC25 개최일 공개&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="WWDC25" src="../upload/202503302300-0947d49b.png" /&gt;
-&lt;em&gt;WWDC25&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="WWDC25 (Apple)" src="../upload/202503302300-0947d49b.png" /&gt;
+&lt;em&gt;WWDC25 (Apple)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Apple은 미국시각 기준 2025년 6월 9일 WWDC(world wide developer conferences, 세계 개발자 회의) 개최를 공식적으로 알려왔다. WWDC는 이름처럼 개발자를 위한 다양한 기술적 발표가 있는 회의이며 첫날 키노트에서는 macOS 15나 iOS 19 등과 같은 소프트웨어 차기 버전 발표와 함께 일부 제품 발표도 겸하고 있어서 비개발자들에게도 유용한 정보가 있을 수도 있다. &lt;/p&gt;
 &lt;p&gt;이번 행사는 6월 9일 부터 13일까지 온라인 위주로 진행되지만 첫 날에는 Apple Park에서 오프라인 이벤트가 열릴 예정이라고 한다.&lt;/p&gt;
 &lt;p&gt;현재로썬 차세대 OS 소프트웨어 라인업을 제외하곤 어떤 제품이 발표될 지에 대한 예측은 부족한 듯하다. 그저 행사 로고 등을 통해 iOS 19 등의 디자인 변경 컨셉에 대한 추측은 가능한 것 같다.&lt;/p&gt;
@@ -3535,30 +3619,6 @@ C1 등장에 이어 C2가 테스트 되고 있다는 소문이 도는 마당이�
 &lt;p&gt;마지막으로 할 말도 여전하다. 탄핵 좀 빨리 처리하자. 내란 동조 세력들도 빨리 처치하자. 안 그래도 너무 혼란스러운 한국을 빨리 정리할 다음 정권의 등장이 가장 우선임은 분명해 보인다.&lt;/p&gt;</content:encoded>
       <guid isPermaLink="false">https://seorenn.github.io/log/20250219-00.html</guid>
       <pubDate>Wed, 19 Feb 2025 10:47:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>Emacs에서 현재 편집 중인 버퍼 파일 이름을 변경하기</title>
-      <link>https://seorenn.github.io/log/20250218-01.html</link>
-      <description>&lt;p&gt;Emacs에서 현재 편집 중인 파일의 이름을 바꾸는 법을 간단히 정리해 보자. 사실 이런 기능을 쓸 일은 별로 없긴 하겠지만 개인적으로 쓰는 경우가 있었기에 메모해 본다.&lt;/p&gt;
-&lt;p&gt;현재 편집 중인 버퍼의 파일 이름을 바꾸려먼 &lt;code&gt;rename-visited-file&lt;/code&gt;이라는 함수를 실행시키면 된다. 참고로 별도의 키 바인딩은 없는 모양이니 바로 실행시킬 수밖에 없는 듯하다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;M-x rename-visited-file
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;별다른 옵션 없이 위 함수가 실행되면 바로 경로(path) 입력을 받는데 여기서 원하는 파일 이름을 입력하면 현재 버퍼에서 편집 중인 파일의 이름이 바뀐다.&lt;/p&gt;
-&lt;p&gt;이 함수의 레퍼런스를 살펴보면 알 수 있지만 함수 첫 번째 매개변수로 바꾸려는 파일명을 입력해 줄 수도 있다. 필요하다면 아래와 같이 Lisp 코드로 호출해도 된다는 의미다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;(rename-visited-file NEW-LOCATION)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;간단하니 그냥 잘 기억해두자.&lt;/p&gt;</description>
-      <content:encoded>&lt;p&gt;Emacs에서 현재 편집 중인 파일의 이름을 바꾸는 법을 간단히 정리해 보자. 사실 이런 기능을 쓸 일은 별로 없긴 하겠지만 개인적으로 쓰는 경우가 있었기에 메모해 본다.&lt;/p&gt;
-&lt;p&gt;현재 편집 중인 버퍼의 파일 이름을 바꾸려먼 &lt;code&gt;rename-visited-file&lt;/code&gt;이라는 함수를 실행시키면 된다. 참고로 별도의 키 바인딩은 없는 모양이니 바로 실행시킬 수밖에 없는 듯하다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;M-x rename-visited-file
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;별다른 옵션 없이 위 함수가 실행되면 바로 경로(path) 입력을 받는데 여기서 원하는 파일 이름을 입력하면 현재 버퍼에서 편집 중인 파일의 이름이 바뀐다.&lt;/p&gt;
-&lt;p&gt;이 함수의 레퍼런스를 살펴보면 알 수 있지만 함수 첫 번째 매개변수로 바꾸려는 파일명을 입력해 줄 수도 있다. 필요하다면 아래와 같이 Lisp 코드로 호출해도 된다는 의미다.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;(rename-visited-file NEW-LOCATION)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;간단하니 그냥 잘 기억해두자.&lt;/p&gt;</content:encoded>
-      <guid isPermaLink="false">https://seorenn.github.io/log/20250218-01.html</guid>
-      <pubDate>Tue, 18 Feb 2025 15:46:00 +0900</pubDate>
     </item>
   </channel>
 </rss>

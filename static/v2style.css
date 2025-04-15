@@ -242,8 +242,8 @@ h6 {
 
 .content h2 {
     font-size: 1.2rem;
-    margin-top: 3.4rem;
-    margin-bottom: 1.8rem;
+    margin-top: 3.2rem;
+    margin-bottom: 1.6rem;
     padding-top: 0;
     padding-bottom: 0;
     border-top: none;
@@ -251,8 +251,8 @@ h6 {
 
 .content h3 {
     font-size: 1rem;
-    margin-top: 2.4rem;
-    margin-bottom: 1.8rem;
+    margin-top: 2.2rem;
+    margin-bottom: 1.6rem;
 }
 
 .content h4 {
@@ -263,8 +263,8 @@ h6 {
 
 .content p {
     margin: 0 auto;
-    margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 .content i {
@@ -278,8 +278,8 @@ h6 {
 
 .content pre {
     max-width: 100%;
-    margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
     padding: 1.2rem 1.2rem 1.2rem 1.2rem;
     color: #bcc2ce;
     background-color: #292c33;
@@ -303,7 +303,7 @@ h6 {
 }
 
 .content blockquote {
-    margin: 1.8rem 0 1.8rem 0;
+    margin: 1.6rem 0 1.6rem 0;
     padding-left: 24px;
     border-left: 2px solid #ee746f;
 }
@@ -318,8 +318,8 @@ h6 {
 
 .content ul, ol {
     padding-left: 24px;
-    margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 .content .org-ul li {
@@ -341,8 +341,8 @@ h6 {
  */
 
 .content table {
-    margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
     border-collapse: collapse;
     width: 100%;
 }

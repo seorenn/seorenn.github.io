@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-04-16T15:34:38.663664+09:00</updated>
+  <updated>2025-04-17T14:23:52.511037+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,24 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250417-00.html</id>
+    <title>한국은행 기준금리 동결</title>
+    <updated>2025-04-17T14:23:45.435892+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>미국의 엉망진창 난리에 한국은행 금통위가 머리 속에서 잊혀진 것 같았다. 어쨌든 4월 금통위가 열렸고 그 결과는 제목처럼 이렇다.</p>
+<blockquote>
+<p>한국은행은 4월 17일 금융통화위원회 회의를 통해 기준금리를 연 2.75%로 동결 결정했다.</p>
+</blockquote>
+<p>물가가 한동안 안정적이라고 생각했었지만 고환율이 겹쳐서 좀 불안정하게 상방으로 튀는 경향이 있었나 보다. 그런데 경기는 여전히 침체 상황이고 그게 해소될 만한 이벤트는 없다. 거기에 트럼프는 관세로 안 그래도 힘든 곳에 초를 치고 있다. 그나마 최근 환율이 좀 하향 안정화 되어가는 듯이 보이지만 아직도 높은 수준인 것도 사실이고 말이다.</p>
+<p>즉 금리를 올려야 할 인자와 내려야 할 인자가 충돌하고 있다. 거기다 트럼프 때문이라도 성급하게 결론을 내리기가 힘든 시기이기도 하고 말이다.</p>
+<p>개인적으로는 이번 동결 조치는 지지하는 편이다. 그리고 트럼프 관세의 영향이 어떻게 영향을 미칠지 확인하는 시간은 충분히 가져야 할 것 같다.</p>
+<p><em>아 젠장 이사해야 하는데 금리 내리면 좋겠는데 그래도 안 내리는 게 우리나라 경제엔 더 나은 선택이겠지? 에휴.</em></p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250417-00.html"/>
+    <summary type="text">미국의 엉망진창 난리에 한국은행 금통위가 머리 속에서 잊혀진 것 같았다. 어쨌든 4월 금통위가 열렸고 그 결과는 제목처럼 이렇다.</summary>
+    <published>2025-04-17T14:23:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250416-00.html</id>
     <title>아파트 재건축 시 장기수선충당금은 어떻게 될까?</title>
@@ -2031,62 +2049,5 @@ appWatcher:start()
     <link href="https://seorenn.github.io/log/20250304-00.html"/>
     <summary type="text">사카린, 스테비아, 수크랄로스, 에리스리톨, 알룰로스 등은 과연 혈당을 높이지 않으면서도 안전할까?</summary>
     <published>2025-03-04T14:22:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20250302-00.html</id>
-    <title>iOS 18.4에서 한국 Find My 지원 등 한 주간의 Apple 소식들 25-03-02</title>
-    <updated>2025-03-02T23:16:13.513730+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><h2>개발 및 소프트웨어 관련 소식들</h2>
-<p><strong>iOS 18.4 베타에서 한국 'Find My' 지원이 확인되었다.</strong> 이 기능이 한국에서 열리기까지 도대체 얼마나 시간이 흐른 건지 기억 조차 못 할 것 같은데 대충 찾아보니 15년 정도 걸린 것 같다. 어쨌든 이제 '내 분실 iPhone 찾기' 등 여러 위치 공유 관련 못 쓰던 서비스들을 쓸 수 있게 되는 날이 얼마 남지 않았다.</p>
-<p><strong>iOS 18.4 베타에서 Apple Intelligence 지원 확인되고 있다.</strong> EU에서는 거의 완벽하게 지원이 되고 있는 모양이다.</p>
-<p><strong>iOS 18.4 베타에서 Safari의 새 탭에 검색기록이 표시되고 있다.</strong> 일부에서는 이 변화가 개인정보보호와는 반대되는 방향으로 보고 비판하는 듯하다. 확실히 다른 사람에게 잠시 폰을 빌려줬을 때 문제가 될 소지는 있어 보인다.</p>
-<p><strong>개발자 베타 릴리즈</strong>: Safari Technology Preview 214</p>
-<p><strong>펌웨어 업데이트</strong>: AirPods Max Firmware build 6F25</p>
-<h2>일반적인 소식들</h2>
-<p><strong>영국에서 AirPods Pro 2의 보청기 기능이 지원된다.</strong> 이미 어느 정도 알려져 있지만 이 기능은 중간 정도의 청력 장애가 있을 경우 도움을 주는 수준인 것 같다. 물론 각 국가 법이나 규제와 관련이 있겠지만 왜 이런 좋은 기능이 국가별로 따로따로 지원되어야 하는 지가 좀 답답한 것 같다.</p>
-<p><strong>EU에서 앱 승인 문구가 변경되었다.</strong> 기존에는 '앱 배포가 승인되었다' 식의 문구였지만 '앱을 배포할 준비가 되었다'와 같은 의미로 변경된 듯하다. 이는 지난 선정적인 앱이 대체 앱스토어에 올라온 것과 관련해 Apple이 이런 앱이 배포되는 것은 자신들의 의지가 아님을 내비치는 것으로 이해가 된다.</p>
-<p><strong>M4 MacBook Air의 GPU는 M4 iPad Pro와 비슷한 수준인 것 같다.</strong> 어떤 벤치마크에 올라온 수치로 확인되었기에 가능성은 높아보이는 내용 같다. 애초에 MacBook Air는 팬리스 디자인이라 iPad Pro와 열관리 면에서 비슷한 입장이긴 하다.</p>
-<p><strong>iPhone 12 라인업에서 iOS 18.4 베타를 임시로 사용할 수 없게 되었다.</strong> 일부 기기에서 무한 재부팅이 되는 등 치명적인 문제가 발생해서 잠시 해당 기기 지원을 중단시키는 것 같다. 물론 다음 베타에서는 해결될 가능성이 높을 것 같다.</p>
-<p><strong>iPhone에서 받아쓰기로 '인종차별주의자'를 입력하면 '트럼프'라는 단어가 잠시 표시되는 문제가 있었다.</strong> Apple 해당 문제를 인정하고 수정하는 중이라고 밝혔다.</p>
-<p><strong>프랑스에서 개인정보보호가 취약해질 가능성이 높아졌다.</strong> 프랑스 정부는 App Tracking Transparency가 Apple의 앱에는 적용되지 않는 등 자의적이라며 Apple에 해당 기능의 중단 명령을 내릴 가능성이 높아졌다. 해당 기능은 써드파티 앱이 사용자의 유니크 고유 ID를 획득할 수 있는 여지를 사용자가 결정할 수 있는 시스템이다.</p>
-<p><strong>Apple은 iPhone 16e에서 MagSafe가 빠진 이유에 대해 해명했다.</strong> 해당 모델을 구입할 사용자들은 MagSafe가 그리 필요하지 않을 것 같다는 단순한 이유였던 듯하다. <em>좀 석연친 않지만 개인적으로는 차량 구입 전까진 무선충전을 전혀 하지 않았었고 지금도 차 안에서만 무선충전을 한다는 점을 생각해보면 설득력이 아예 없는 건 아닌 것 같다.</em></p>
-<p><strong>영국에서도 구입 내역 이전 기능이 지원되기 시작했다.</strong> 정확한 이유는 모르겠지만 구입 내역 이전 기능이 시작되던 당시 영국은 서비스 제외 국가에 포함되어 있었는데 이번에 개선되면서 지원이 되기 시작한 것이다. 이제 인도 만이 유일하게 구매 내역 이전이 되지 않는 국가로 남았다.</p>
-<h2>루머 소식들</h2>
-<p><strong>Mac 관련 루머</strong>: M4 MacBook Air 신제품 발표가 임박한 것으로 보인다.</p>
-<p><strong>iPhone 관련 루머들</strong>:</p>
-<ul>
-<li>iPhone 17 Pro에서 영상 녹화 기능에 개선이 있을 것으로 추정된다.</li>
-<li>iPhone 17 Pro 라인업에 탑재될 RAM 용량은 원활한 Apple Intelligence 사용을 위해 12GB가 될 것으로 보인다.</li>
-<li>iPhone 18 Pro 라인업에 Apple의 자체 모뎀 칩인 C2 칩이 탑재될 것 같다.</li>
-<li>Foldable iPhone 및 새로운 디자인의 iPhone이 2026년에 출시될 가능성이 있는 모양이다.</li>
-<li>Foldable iPhone의 디스플레이는 주름이 없는 패널이 채용될 것 같다.</li>
-<li>iPhone 17 Air(가)의 초박형 디자인 덕분에 하단 스피커, 초광각 카메라, SIM 슬롯 등 몇몇 기능이 탑재되지 않을 수도 있어 보인다.</li>
-</ul>
-<p><strong>iPad 관련 루머들</strong>:</p>
-<ul>
-<li>M4 iPad Air 신제품 발표가 임박한 것으로 보인다.</li>
-<li>iPad 신제품 발표 가능성도 높은 듯하다.</li>
-</ul>
-<p><strong>소프트웨어 관련 루머들</strong>:</p>
-<ul>
-<li>iOS 19에서는 새로운 카메라 앱, Siri 개선 등이 전망되는 모양이다.</li>
-<li>특히 iOS 19에서 개선될 Siri는 ChatGPT 등의 AI 챗봇과 비슷한 대화형 비서 기능이 될 것 같다.</li>
-<li>iOS 19는 iPhone XS 라인업, iPhone XR, iPhone SE 2 혹은 그 이후 출시된 모델들에 설치할 수 있을 것으로 보인다.</li>
-</ul>
-<p><strong>기타 루머들</strong>:</p>
-<ul>
-<li>AirTag 2는 2세대 초광대역 칩을 탑재하고 5~6월 사이에 출시될 것 같다.</li>
-<li>Face ID를 탑재한 스마트 홈 도어벨에 MagSafe가 탑재될 가능성이 있는 듯한데 이는 배터리가 분리가 안 되며 대신 무선 충전이 가능할 수도 있다는 의미로 해석되는 듯하다.</li>
-</ul>
-<h2>AAPL</h2>
-<p><strong>Apple이 미국 투자를 늘릴 모양이다.</strong> 고급형 M5 칩을 탑재한 서버를 미국 텍사스 휴스턴에서 생산할 가능성이 알려지고 있다. 2026년 제조 시설이 열릴 모양이며 주로 AI 용도의 서버로 추정된다. 물론 M5 칩을 생산한다는 의미는 아니며 여전히 M5는 대만 TSMC에서 제조될 것 같다.</p>
-<p><strong>인도네시아의 iPhone 16 판매 금지가 해제될 것 같다.</strong> Apple의 10억 달러 이상 투자의 대가일 뿐이지만 말이다. 참 깡패 같지만 시장이 크면 이런 짓도 가능하구나 싶다.</p>
-<p><strong>일부 투자자에 의해 제기된 DEI 폐지 제안이 Apple 주주총회에서 부결되었다.</strong> DEI는 다양성, 형평성, 포용성을 의미하며 사람들의 차이를 인정하며 그 가치를 존중하는 것을 의미한다. 트럼프 대통령은 당선 이후 기업들에게 DEI 폐지를 강요하고 있으며 이 부결 이후 Apple에도 압력을 넣고 있다.</p>
-<p><strong>Apple Watch가 Apple이 주장하는 만큼 탄소 중립적이지 않다며 캘리포니아에서 Apple이 소송을 당했다.</strong> Apple은 2030년까지 모든 제품을 탄소 중립화 한다는 목표를 가지고 있으며 관련 광고를 지속하는 중인데 이 광고가 거짓이라는 사유다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20250302-00.html"/>
-    <summary type="text">2월 마지막 주 Apple 관련 소식 및 루머 모음</summary>
-    <published>2025-03-02T23:10:00+09:00</published>
   </entry>
 </feed>

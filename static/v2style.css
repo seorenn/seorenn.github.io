@@ -397,7 +397,8 @@ td.org-left {
 
 .logarch-container small {
     font-size: 0.8rem;
-    color: #777;
+    color: #888;
+    font-style: italic;
 }
 
 .logarch-desc {

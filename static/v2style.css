@@ -332,6 +332,13 @@ h6 {
     height: auto;
 }
 
+.content hr {
+    margin: 48px auto 48px auto;
+    max-width: 128px;
+    border: none;
+    border-top: 0.5px solid #888;
+}
+
 /*
 .content table {
     margin: 0 auto;

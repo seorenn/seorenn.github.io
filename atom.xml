@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-04-21T15:54:08.933777+09:00</updated>
+  <updated>2025-04-21T23:13:28.540585+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,34 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250421-01.html</id>
+    <title>설마 빙(Bing)이 내 사이트를 차단시킨 것일까?</title>
+    <updated>2025-04-21T23:13:23.037082+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>구글에 비해서 점유율도 낮고 그래서 인지도도 낮지만 그래도 존재감이 없지는 않은 검색엔진이 하나 있다. 바로 빙(Bing)이다. 무려 마이크로소프트라는 거대 기업의 검색엔진이다. 당연하게도 무시할 수는 없는 그런 검색엔진이다. 그리고 이 사이트 역시 빙 웹마스터 도구를 이용해 콘텐츠 검색 인덱싱을 관리하고 있었다.</p>
+<p>그런데 문제는 최근 들어 빙이 페이지 인덱싱을 거부하는 경우가 많이 보인다는 점이다. 이 경우 페이지 URL을 검사해 보면 '차단됨'이라고 표시되며 빙 측이 인덱싱을 거부함을 알 수 있다. 다만 <strong>문제는 왜 차단되었는지에 대한 설명이 전혀 없다</strong>는 점이다. 알려주는 지침서에는 해당되는 내용이 없고 말이다. </p>
+<p>참고로 사이트 검사를 해보면 빙이 사이트 페이지를 읽어들이는 데는 특별한 문제가 없었다는 것만 알 수 있었다. 봇 차단이나 서비스 거절 등의 사유는 아니라는 말이다.</p>
+<blockquote>
+<p>가장 기분 나쁜 점은 빙 측에서 문제가 있는 것처럼 알려주는 게 전혀 없다는 점이다. 마치 아무 문제가 없다는 듯이 말이다. 그래서 오히려 더 기분이 나빴을 정도다.</p>
+</blockquote>
+<p>그런데 <strong>최근 들어 더 큰 문제</strong>가 생겼다. 아래 스크린샷 처럼 최근 수 일간 페이지 클릭은 커녕 노출 조차 전혀 안 되고 있는 상황을 발견했기 때문이다.</p>
+<p><img alt="이 사이트의 Bing 보고서" src="../upload/202504211402-5b3fd96e.png"/>
+<em>이 사이트의 Bing 보고서</em></p>
+<p>클릭 수가 적은 것은 애초에 빙 사용자가 적으니 어쩔 수 없다고 본다. 그런데 노출 수가 어느 날을 기점으로 아예 0가 되어버렸다. 어떻게 갑자기 이렇게 될 수가 있을까?</p>
+<blockquote>
+<p>이유는 모르겠지만 빙 측에서 이 사이트를 통채로 차단시킨 것으로 밖에 볼 수가 없다.</p>
+</blockquote>
+<p>물론 위의 페이지 차단 문제와 동일하게 빙에서는 여전히 이 사이트에 어떤 문제가 있다고는 전혀 알려주고 있지 않다. 역시나 아무 문제가 없다는 듯이 말이다. 또 너무 열 받는다.</p>
+<p>어떻게 하면 좋을까. 애초에 인바운드 트래픽도 적어서 딱히 차단되어도 문제는 없지만 <strong>찝찝하다는 것은 극복하기 어려운 일</strong>이다. 그리고 만약 구글이 심각한 규제를 처맞게 된다면 빙으로 수혜가 일부 몰릴 가능성도 없지는 않아서 어떻게든 놓고 싶지는 않기도 하고 말이다.</p>
+<hr/>
+<p>빙 웹마스터 도구에서 뭔가 지원을 받을 수 있을까 싶어 뒤져보다가 AI 챗봇인 Copilot이 보이길래 그냥 질문을 던져봤다. '내 사이트가 인덱싱이 안 되고 차단된 것처럼 보이는데 도대체 무슨 일이냐?' 이런 식으로 말이다. 그런데 Copilot에서 질문에 대답을 하지 않고 갑자기 자동으로 '지원이 요청되었으니 이메일 기다려라' 이런 메시지가 떴다. 이건 도대체 뭘까? 마이크로소프트가 하는 일은 왜 항상 이 모양이냐 하는 생각만 들었지만, 그래도 본의 아니게 지원 요청이 들어갔으니 지켜보기로 했다.</p>
+<p>부디 좋은 결과가 나왔으면 좋겠다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250421-01.html"/>
+    <summary type="text">문제는 최근 들어 빙이 인덱싱을 거부하는 경우가 많이 보인다는 점이다.</summary>
+    <published>2025-04-21T23:13:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250421-00.html</id>
     <title>투싼 화면에 항상 어라운드뷰를 띄울 순 없을까?</title>
@@ -1960,90 +1988,5 @@ $ npm i -g yo generator-code
     <link href="https://seorenn.github.io/log/20250306-00.html"/>
     <summary type="text">미국은 서비스업 국가다. 제조업이 있긴 하지만 높은 인건비 덕분에 아무래도 서비스업 비중이 높을 수밖에 없다. 그런 와중에 얼마 전 PMI 예비치 지표가 낮게 나왔었다.</summary>
     <published>2025-03-06T12:24:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20250305-01.html</id>
-    <title>macOS용 Emacs에서 좀 더 편한 한글 입력 환경 구축하기 (feat. Hammerspoon)</title>
-    <updated>2025-03-12T16:22:07.631114+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>Emacs를 메인 에디터로 쓰는 사람으로써 '원활한 한글 입력'은 여러 면에서 중요하다. 특히 Emacs로 글도 쓴다는 점에서 한글 입력이 좀 더 완벽(?)에 가까워야 할 필요가 있다. 물론 이런 글을 쓴다는 건 기본적으로 macOS에서 Emacs의 한글 입력이 완벽하진 않다는 걸 의미한다. 여기에는 여러 문제가 누적되어 있다.</p>
-<p>원초적인 문제를 정의하자면 <strong>macOS의 한글 입력기와 Emacs와의 상성이 그다지 좋지 못하다</strong>는 점이 있다. 가끔 입력이 씹히기도 하고 퍼포먼스 문제를 일으키기도 한다. 그리고 그게 버전 업을 거듭하다 Emacs 30에 와서는 더더욱 심해지는 느낌이다. 참고로 구름과 같은 오픈소스 한글 입력기도 비슷한 문제가 발생하고 있어서 별 도움이 안 된다.</p>
-<p>그래서 macOS에서 돌아가는 Emacs에서는 <strong>내장 한글 입력기로 한글을 입력하는 게 많은 스트레스를 해소할 수 있는 편</strong>이다. 하지만 이를 위해 또다른 많은 문제를 해결해야 했다. 여러 삽질 끝이 이 문제들을 해결하는 데 성공했기에 세 가지 주제로 나누어 정리해 본다.</p>
-<p>참고로 이 글에서는 <a href="https://www.hammerspoon.org/" target="_blank">Hammerspoon📎</a>을 중요한 도구로 사용한다.</p>
-<h2>Shift+Space로 Emacs 내장 입력기 한영 전환하기</h2>
-<p>DOS 시절부터 개인적으로 한글 입력기 전환에 Shift+Space 키를 써왔다. 그래서 맥에서도 이 한영전환 단축키로 Shift+Space를 써왔다. 그런데 가장 큰 문제의 출발은 이거다. 옛날 macOS에서 돌아가던 Emacs는 Shift+Space 키가 입력되면 이를 Emacs가 잘 받아서 뭐라도 할 수 있었다. 하지만 요즘은 Shift+Space 키를 입력하면 이 키 이벤트가 Emacs까지 도달하지 않는 문제가 있다. 즉 <strong>macOS에서 입력기 전환에 Shift+Space키를 설정해서 쓰고 있다면 이 단축키는 Emacs 내장 입력기 토글 용으로 쓸 수 없다</strong>는 말이다.</p>
-<p>이 문제는 macOS의 근본적인 뭔가가 바뀌지 않는 한 순수하게 해결은 불가능하다. 대신 몇몇 유틸리티를 이용해 대안적으로 해결이 가능하긴 한데 이 글에서는 Hammerspoon을 이용한다. 무료이니 말이다.</p>
-<p>결국 Hammerspoon을 이용해 Emacs 창이 최상단에 있는 경우 Shift+Space 키가 입력되면 이를 무시하고 대신 Ctrl+\ 키로 바꿔서 Emacs에 전달하도록 구현하는 데 성공했다. 참고로 <code>C-\</code> 키는 Emacs의 기본 내장 입력기 토글(<code>toggle-input-method</code>) 단축키다. 아래는 실제로 구현한 Hammerspoon 용 Lua 스크립트다.</p>
-<pre><code>local function remapKeys(event)
-    local flags = event:getFlags()
-    local keyCode = event:getKeyCode()
-    local app = hs.application.frontmostApplication()
-    local bundleID = app:bundleID()
-    local targetAppBundleID = "org.gnu.Emacs"
-
-    if bundleID == targetAppBundleID then
-        if flags.shift and keyCode == hs.keycodes.map.space then
-            hs.eventtap.keyStroke({'ctrl'}, "\\")
-            return true
-        end
-    end
-    return false
-end
-
-keyRemapper = hs.eventtap.new({hs.eventtap.event.types.keyDown}, remapKeys)
-keyRemapper:start()
-</code></pre>
-<p>이 코드를 적용하면 이후 Shift+Space 키를 눌렀을 때 macOS의 입력기가 아닌 Emacs의 내장 입력기가 토글되는 아름다운 결과를 얻을 수 있었다. 즉 목적을 달성했다. <em>참고로 Hammerspoon 버전에 따라 코드가 달라질 수 있다는 점에 주의하자.</em></p>
-<p>코드를 몇 줄 더 줄일 여지는 충분하니 하고 싶다면 직접 알아서 해보자. 이젠 귀찮아서 잘 돌아가는 코드를 고치는 건 사양하고 싶을 뿐이니 말이다.</p>
-<h2>Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기</h2>
-<p>그런데 위의 Shift+Space로 Emacs 내장 입력기를 토글시키는 Hammerspoon 코드를 작성한 이후 새로운 문제를 겪게 된다. 바로 macOS의 한글 입력기와 Emacs 내장 한글 입력기의 무한 순환 문제다.</p>
-<p>이 문제는 macOS의 입력기가 한글인 상태로 Emacs 창에 포커스가 가면 그 때부터 발생한다. macOS 입력기가 한글이니 뭐든 입력하면 Emacs에서도 한글이 입력된다. 그런데 이걸 끄기 위해 Shift+Space를 눌러도 Emacs 내장 입력기만 바뀔 뿐 macOS 입력기는 계속 한글 상태가 유지된다. 결국 <strong>무한의 '한글만 입력' 지옥</strong>이 펼쳐진다.</p>
-<p>물론 이 경우 <strong>마우스를 이용해 macOS 입력기를 영어로 바꿔주면 바로 해결</strong>이 되어서 사실 별 일 아닌 문제가 될 수도 있다. 하지만 <strong>키보드만 쓰길 원하는 사용자에겐 여간 귀찮은 일이 아니다</strong>.</p>
-<p>그래서 이런 문제를 원천적으로 해결하는 게 필요하다. 간단하게 Emacs 창이 제일 위로 올라오게 되면 macOS 입력기를 자동으로 영문으로 바꾸도록 하면 될 것 같다. 그래서 또다시 Hammerspoon을 들쑤셨다.</p>
-<pre><code>function setEnglishInputMethod()
-    local source = hs.keycodes.currentSourceID()
-    if not (source == english) then
-        hs.keycodes.currentSourceID(english)
-    end
-end
-
-local function focusChanged(appName)
-    if appName == "Emacs" then
-        setEnglishInputMethod()
-    end
-end
-
-appWatcher = hs.application.watcher.new(function(name, eventType, app)
-    if eventType == hs.application.watcher.launched or eventType == hs.application.watcher.activated then
-        focusChanged(name)
-    end
-end)
-appWatcher:start()
-</code></pre>
-<p>위의 코드를 추가해서 Hammerspoon에서 재로딩을 하니 원하던 대로 이제 Emacs 창에 포커스가 가면 macOS 입력기가 영문으로 바뀐다. 이제 한글 입력기가 계속 안 사라지는 문제는 발생할 일이 거의 없어진 셈이다. 상당히 마음이 놓이게 된 소중한 코드다.</p>
-<p><em>기존 코드는 좀 쓰다 보면 동작을 안 할 때가 있어서 전역 변수에 담아 가비지 콜렉션에 휩쓸리지 않도록 수정했다.</em></p>
-<h2>ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기</h2>
-<p>사실 이건 꼭 필요한 건 아니지만 개인적으로 Vim을 써울 때부터 생긴 성향으로 <strong>ESC 키를 누르면 영문 입력 모드로 바뀔 필요</strong>가 있는데 Vim에서 상당한 효율 상승이 있기 때문이다. 비록 Emacs에서 (Doom Emacs를 통해) Evil을 쓰고 있긴 하지만 그 성향은 아직도 남아있다.</p>
-<p>이번에는 Emacs 내에서만의 문제이기 때문에 아래와 같은 Emacs Lisp 코드를 작성해서 설정 파일에 추가하는 식으로 해결할 수 있었다. 참고로 좀 하드하게 설정된 Doom Emacs를 사용 중이라 바닐라의 경우 동작 여부는 보장할 수 없을 것 같다.</p>
-<pre><code>;; 기본 입력기를 한글 2벌식으로 설정
-(setq default-input-method "korean-hangul")
-
-(defun seorenn/esc-additional-function (&amp;optional ARG)
-  (set-input-method nil)
-  ;; 위 코드가 실행되면 기본 입력기 설정이 nil로 바뀌니 다시 업데이트
-  (setq default-input-method "korean-hangul"))
-
-;; ESC 키가 눌리며 실행되는 함수에 추가 기능 부여하기
-(advice-add 'evil-normal-state :before #'seorenn/esc-additional-function)
-</code></pre>
-<p>코드에 삽질의 흔적이 약간 보일 것이다. 저 요상하고 보기 싫은 중복 코드가 없으면 입력기를 토글할 때마다 언어 세팅을 물어와서 너무 귀찮았기 때문에 어쩔 수 없는 타협이다.</p>
-<p>어쨌거나 이제 정말 마음에 드는 세팅이 되었다.</p>
-<h2>마무리</h2>
-<p>이제 Shift+Space 키를 이용해 macOS에서 돌아가는 Emacs에서 한영 전환을 손쉽게 할 수 있게 되었고 거기다 퍼포먼스 저하나 입력 유실 없이 한글을 편하게 쓸 수 있게 되었다. 거기다 ESC 키를 누르면 영문으로 자동으로 바껴서 Vim(Evil) 커맨드를 입력하는 데 지장도 없게 되었다. 만족스럽다.</p>
-<p>덕분에 Emacs에서 macOS 한글 입력기를 쓰다 받은 스트레스가 그렇게다 컸다는 것을 잘 알게 된 것 같다. 정말 눈물나게 편하다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20250305-01.html"/>
-    <summary type="text">macOS에서 돌아가는 Emacs를 위해 Shift+Space로 Emacs 내장 입력기 한영 전환하기, Emacs 창이 활성화되면 macOS 입력기를 영문으로 전환하기, ESC 키를 누르면 Emacs 내장 입력기를 영문으로 전환하기를 설명하는 글</summary>
-    <published>2025-03-05T22:52:00+09:00</published>
   </entry>
 </feed>

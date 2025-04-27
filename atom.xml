@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-04-27T22:51:39.524857+09:00</updated>
+  <updated>2025-04-27T22:54:03.648403+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -13,8 +13,8 @@
   <subtitle>Seorenn Notes and Logs</subtitle>
   <entry>
     <id>https://seorenn.github.io/log/20250427-00.html</id>
-    <title>차기 마이너 업데이트 세 번째 개발자 베타 출시 등 한 주간의 애플 소식들 25-04-27</title>
-    <updated>2025-04-27T22:50:28.707971+09:00</updated>
+    <title>마이너 업데이트 세 번째 개발자 베타 출시 등 한 주간의 애플 소식들 25-04-27</title>
+    <updated>2025-04-27T22:52:47.352282+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>먼저 소프트웨어와 관련된 소식이다. Apple은 각종 플랫폼 OS들의 다음 마이너 업데이트의 세 번째 개발자 베타를 릴리즈했다. 상세한 대상은 아래와 같다.</p>
 <ul>

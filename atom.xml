@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-04-26T00:04:05.001261+09:00</updated>
+  <updated>2025-04-27T22:51:39.524857+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -11,6 +11,45 @@
   <generator>https://seorenn.github.io</generator>
   <logo>https://seorenn.github.io/static/seorenn-symbol.png</logo>
   <subtitle>Seorenn Notes and Logs</subtitle>
+  <entry>
+    <id>https://seorenn.github.io/log/20250427-00.html</id>
+    <title>차기 마이너 업데이트 세 번째 개발자 베타 출시 등 한 주간의 애플 소식들 25-04-27</title>
+    <updated>2025-04-27T22:50:28.707971+09:00</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>먼저 소프트웨어와 관련된 소식이다. Apple은 각종 플랫폼 OS들의 다음 마이너 업데이트의 세 번째 개발자 베타를 릴리즈했다. 상세한 대상은 아래와 같다.</p>
+<ul>
+<li>macOS 15.5 beta 3</li>
+<li>iOS 18.5 beta 3</li>
+<li>iPadOS 18.5 beta 3</li>
+<li>visionOS 2.5 beta 3</li>
+<li>watchOS 11.5 beta 3</li>
+<li>tvOS 18.5 beta 3</li>
+</ul>
+<p>이와 함께 Apple은 이전에 릴리즈 되었던 개발자 베타 2 버전들을 공개 베타로 전환했다.</p>
+<p>일부 사용자들이 iOS 18.4.1을 설치 후 벽돌 증상을 보고하고 있다. 혹은 IMEI를 인식하지 못한다는 등 다양한 문제가 보고되고 있는 모양이다. 보통 이런 버그픽스 업데이트가 심각한 문제를 일으키는 경우는 흔하진 않아서 의아하기는 하다. 참고로 개인적으론 이 버전에서 이런 심각한 버그를 겪은 적은 없다.</p>
+<p>이런 버그 사례에도 Apple은 iOS 18.4의 서명을 중단했다. 이제 iOS 18.4.1 등의 버전에서 iOS 18.4로 다운그레이드가 불가능하다는 의미다. 아마도 동일 시기의 각 플랫폼 OS 라인업들도 동일하지 않을까 생각된다.</p>
+<p>iOS 18.5에서는 중국향 Apple Intelligence가 구현될 가능성이 있는 모양이다. 추측으론 iOS 18.5 버전대의 모든 OS 라인업에선 큰 변화가 보이지 않을 것이라는 관측이 있었는데 이와 함께 생각해 보면 가능성은 있을 것 같은 루머 같다. 어쨌거나 실제로 구현 된다면 중국 매출을 높이는데 도움은 될 수 있을 것이다.</p>
+<p>iOS 19에는 macOS나 iPadOS에 구현된 창 관리 기능인 Stage Manager가 제한적으로 탑재될 가능성이 있는 모양이다. 이는 USB-C 포트를 탑재한 iPhone에서 외부 모니터를 연결할 경우 사용성을 높이기 위한 기능으로 생각할 수 있다. <em>솔직히 그다지 편하진 않았기에 들어오든 말든 잘 모르겠다.</em></p>
+<p>iPadOS 19에서는 개선된 창 관리자인 Stage Manager 2.0이 탑재될 것 같고, Magic Keyboard가 연결될 경우 macOS와 비슷한 메뉴바가 구현될 가능성이 있는 모양이다. 점점 iPadOS와 macOS 간의 경계가 허물어져 가는 느낌이다.</p>
+<hr/>
+<p>그 외의 여러 일반적인 소식들도 많았다. 특히 아래와 같이 iPhone 관련 루머들이 대부분의 소식을 차지했다.</p>
+<ul>
+<li>iPhone 17 Pro에서 예상되는 카메라 섬 디자인에 숨겨진 능력(?)이 있을 거란 루머가 나왔는데 예를 들자면 <em>약간 하찮지만</em> 카메라 섬 전용 케이스 부품 등이 거론되는 것 같다.</li>
+<li>iPhone 17e가 개발이 시작되었고 내년에 출시될 것이라는 루머도 들려오고 있다.</li>
+<li>iPhone 17 Air(가)는 Pro 라인업과 동일한 12GB의 RAM이 탑재될 가능성이 있는 모양이다. iPhone 17 전 라인업에 12GB RAM이 탑재될 가능성이 조심스럽게 제기되는 것 같으며 특히 iPhone Pro 라인업과 함께 iPhone 17 Air(가)에는 탑재 가능성이 더 높은 모양이다.</li>
+</ul>
+<p>Apple Watch Ultra 3에서는 자체 처리 기능이 더욱 강화될 것 같다. Apple Watch는 상당수 기능을 페어링 된 iPhone에 의존하고 있는데 iPhone 없이도 기능할 수 있도록 개선하고 있다는 의미다. 물론 이 경우 별도의 통신 요금제 가입은 필요하겠지만 말이다.</p>
+<hr/>
+<p>그밖에 AAPL 투자자들이 관심을 가질 만한 소식들도 있었다.</p>
+<p>EU와 미국 간의 관세 협상 진행 와중에 Apple이 EU로 부터 DMA 위반 사유로 5억 7천만 달러의 벌금을 부과받았다. 백악관은 이에 대해 맹비난했고 Apple은 항소할 계획이라고 한다. <em>EU의 행동이 좀 심하다 싶긴 하다.</em></p>
+<p>Apple의 Robotics 팀이 개편을 준비 중인 모양이다. 팀 리더가 AI 책임자인 John Giannandrea에서 하드웨어 엔지니어링 수석 부사장 John Ternus로 바뀌어지면서 개편이 시작될 것 같다. 이로 인해 John Ternus는 주요 AI 팀을 통제하게 될 것으로 알려졌다. 참고로 John Ternus는 차기 Apple CEO 후보로 거론되기도 했다.</p>
+<p>Apple는 2026년까지(어떤 미디어에선 2027년까지) 미국에 수입할 iPhone을 전량 인도에서 생산할 계획이라고 한다. 중국 공급망은 여전히 벗어날 수는 없겠지만 적어도 트럼프 관세 영향을 최소화 시키는 데는 도움이 될 것 같다. 거기다 아무래도 미국 내에서 생산하는 것은 리스크가 상당히 크기도 하고 말이다.</p>
+<p>이상으로 이번주 소식 모음을 마친다.</p></div>
+    </content>
+    <link href="https://seorenn.github.io/log/20250427-00.html"/>
+    <summary type="text">2025년 4월 넷째 주의 Apple 관련 소식 모음</summary>
+    <published>2025-04-27T22:50:00+09:00</published>
+  </entry>
   <entry>
     <id>https://seorenn.github.io/log/20250425-01.html</id>
     <title>macOS 사파리의 넷플릭스 전체화면 깜빡임 문제 해결하기</title>
@@ -1907,28 +1946,5 @@ $ npm i -g yo generator-code
     <link href="https://seorenn.github.io/log/20250311-00.html"/>
     <summary type="text">간단하게 vscode 확장 개발을 시작하고 테스트 하는 방법을 알아보자.</summary>
     <published>2025-03-11T14:00:00+09:00</published>
-  </entry>
-  <entry>
-    <id>https://seorenn.github.io/log/20250310-00.html</id>
-    <title>Se7en Patty Burger의 레투스 안녕 버거에 관한 기록</title>
-    <updated>2025-03-10T15:48:08.303553+09:00</updated>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>수제 버거가 예전에는 비쌌다지만 요즘은 대형 프랜차이즈 버거의 가격이 계속 올라가더니 이제는 수제버거가 그렇게 비싸다는 느낌이 안 드는 요즘이다. 물론 수제버거를 시켜 먹겠다는 명분 중 하나일 뿐이다. 어쨌든 그래서 오랜만에 패티 7장 버거로 유명한 Se7en Patty Burger(세븐패티버거)의 Lettuce&amp;Onion Burger, 한글로 '레투스 안녕 버거'라는 요상한 이름의 버거를 세트로 주문했다.</p>
-<p><em>사소하지만 왜 '레투스 양파'가 아니라 '레투스 안녕'인지 좀 궁금하긴 하다.</em></p>
-<p><img alt="레투스 안녕 버거 세트인데 왠일로 콜라가 피신하지 않고 있다" src="../upload/202503051231-9c7d9aa9.jpg"/>
-<em>레투스 안녕 버거 세트인데 왠일로 콜라가 피신하지 않고 있다</em></p>
-<p>보다시피 역시 포장이 잘 된 수제버거의 번은 정말 아름답다. 배달로 왔음에도 이렇게 완성도 높게 도착한 것에는 박수를 치고 싶다.</p>
-<p>'레투스 안녕 버거'는 소고기 패티와 상추, 양파, 체다치즈가 들어간 버거다. 사실상 가장 기본적인 구성인 셈이다. 다만 양상추가 아닌 상추라는 게 특이점이다.</p>
-<p>그 특이점 때문인지는 잘 모르겠지만 맛은 다른 버거에 비하면 좀 강렬한 양파 초절임 맛에 사로잡힌다. 좋게 말해서 상추와 양파 그리고 산미로 소고기 패티의 느끼함을 싹 잡아준다. 나쁘게 말해서 소고기 패티 맛이 잘 안 느껴질 정도로 좀 과한 느낌도 있긴 하지만 말이다.</p>
-<p>풍부한 야채는 확실히 식감을 잘 살려준다. 푹신한 번에 이어 아삭한 야채가 왕창 씹히고 그리고 패티가 마무리로 씹는 식감을 부여한다. 다만 패티가 좀 더 두꺼웠으면 좋겠다라는 느낌이 들기도 했는데 아무래도 강렬한 산미에 패티 맛이 묻히는 것처럼 식감도 그렇게 묻히는 느낌이었다.</p>
-<p>감자튀김은 짭잘하고 바삭하긴 했는데 여기에도 약간의 산미가 느껴진 건 좀 독특했다. 그리고 양이 좀 많았는데 가격을 생각하면 많은 게 당연할 지도 모르겠지만 세트는 1인분이 기준이 되어야 할 테니 차라리 양을 좀 줄이고 가격도 좀 저렴하게 하는 게 어떨까 하는 생각이다.</p>
-<h2>결론</h2>
-<p>안 좋게 평가한 것 같지만 사실 맹점이 하나 있다. 이 집은 패티 7장 버거가 사실상 시그니처 메뉴다. 즉 패티가 많으면 많을 수록 더 맛있을 수도 있다는 말이다. 그래서 다음엔 패티 한 장을 추가해서 한번 더 시도해 봐도 되지 않을까 하는 생각이 들었다. 다른 패티가 두 장 이상인 버거는 오히려 패티 맛이 너무 과해서 불편하다는 평가를 많이 하긴 했는데 이번엔 반대 방향의 평가를 하게 된 것도 좀 신선하다. 다만 이번에 시킨 메뉴에 한한 이야기라는 점은 주의하자.</p>
-<p>다음에는 다른 메뉴를 시도해 봐야겠다. 사실 이 메뉴만 끌려서 몇 번 째 시켜 먹었는지 잘 모르겠으니 말이다.</p>
-<p>결론적으로 다시 시켜 먹을 생각은 있다. 같은 메뉴의 구성을 다르게 하거나 혹은 다른 메뉴를 골라보면 제대로 평가도 가능할 것 같다.</p></div>
-    </content>
-    <link href="https://seorenn.github.io/log/20250310-00.html"/>
-    <summary type="text">오랜만에 패티 7장 버거로 유명한 Se7en Patty Burger(세븐패티버거)의 Lettuce&amp;Onion Burger, 한글로 '레투스 안녕 버거'라는 요상한 이름의 버거를 세트로 주문했다.</summary>
-    <published>2025-03-10T15:48:00+09:00</published>
   </entry>
 </feed>

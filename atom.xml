@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
   <id>https://seorenn.github.io</id>
   <title>Seorenn</title>
-  <updated>2025-04-29T13:51:54.433233+09:00</updated>
+  <updated>2025-04-29T13:53:29.936923+09:00</updated>
   <author>
     <name>Seorenn</name>
     <uri>https://seorenn.github.io</uri>
@@ -14,7 +14,7 @@
   <entry>
     <id>https://seorenn.github.io/log/20250429-00.html</id>
     <title>유심 해킹으로 난리? 유심이 뭐길래?</title>
-    <updated>2025-04-29T13:51:46.114523+09:00</updated>
+    <updated>2025-04-29T13:53:12.170857+09:00</updated>
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml"><p>개인적으로 SKT를 쓰고 있지 않아서 최근 생긴 SKT의 유심 정보 유출 사태에 대해 둔감하게 생각하고 있었다. 하지만 이 유심 해킹으로 유심 정보가 유출되면 발생할 수 있는 일이 심상치 않음을 느끼게 되었다. 무엇보다 가족 중에 SKT 가입자가 있었기에 그냥 넘길 수도 없는 일이다. 그래서 이 유심에 관한 것을 정리해 보는 게 대처법을 알 수도 있을 것 같아 기록을 남겨보려고 한다.</p>
 <h2>유심(USIM) - univalsal subscriber identity module</h2>
